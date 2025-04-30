@@ -1,5 +1,25 @@
-import {grammemes as grammemesByPartOfSpeech} from './morphemes';
-import {suffixPositions, encliticPositions} from './positions';
+function loadFile(filePath: string): string
+{
+    const xmlhttp = new XMLHttpRequest();
+    xmlhttp.open('GET', filePath, false);
+    xmlhttp.send();
+    if (xmlhttp.status == 200) 
+	{
+        const result: string = xmlhttp.responseText;
+		return result;
+    }
+	else
+	{
+		throw new Error('File not found: ' + filePath);
+	}
+}
+
+const grammemesByPartOfSpeech: {[key: string]: {[key: string]: {[key: string]: string}}}
+	= JSON.parse(loadFile(process.env.PUBLIC_URL + '/hurrian/morphemes.json'));
+const suffixPositions: {[key: string]: string[]}
+	= JSON.parse(loadFile(process.env.PUBLIC_URL + '/hurrian/positions.json'));
+const encliticPositions: string[] = suffixPositions.enclitic;
+delete suffixPositions.enclitic;
 
 function makeCategoryGroup(partOfSpeech: string, position: string, sep: string): string
 {
