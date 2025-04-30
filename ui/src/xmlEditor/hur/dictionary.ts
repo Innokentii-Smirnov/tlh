@@ -1,49 +1,11 @@
 import {XmlElementNode} from 'simple_xml';
-import {getText} from './xmlUtilities';
+import {getText, getMrps} from './xmlUtilities';
 import {makeBoundTranscription} from './transcribe';
 import {makeStandardAnalyses} from './standardAnalysis';
-import {storeGloss, retrieveGloss, logGlosses} from './glossProvider';
+import {logGlosses} from './glossProvider';
+import {setGlosses, saveGloss} from './glossUpdater';
 
-const mrpRegex = /^mrp(\d+)$/;
 const dictionary: Map<string, Set<string>> = new Map();
-
-function getMrps(node: XmlElementNode): Map<string, string>
-{
-	const mrps: Map<string, string> = new Map();
-	for (const attribute of Object.keys(node.attributes))
-	{
-		const match = attribute.trim().match(mrpRegex);
-		if (match !== null)
-		{
-			const key: string = match[1];
-			const value: string = node.attributes[attribute] || '';
-			mrps.set(key, value);
-		}
-	}
-	return mrps;
-}
-
-function setGlosses(node: XmlElementNode): void
-{
-	const mrps: Map<string, string> = getMrps(node);
-	for (const pair of mrps)
-	{
-		const [key, mrp] = pair;
-		const [segmentation, gloss, tag, template, det] = mrp.split('@').map(x => x.trim());
-		if (gloss === '')
-		{
-			const stem = getStem(segmentation);
-			const pos = getPos(template);
-			const glosses = retrieveGloss(stem, pos);
-			if (glosses != null)
-			{
-				const newGloss = Array.from(glosses).sort().join('; ');
-				const newMrp = [segmentation, newGloss, tag, template, det].join(' @ ');
-				node.attributes['mrp' + key] = newMrp;
-			}
-		}
-	}
-}
 
 export function annotateHurrianWord(node: XmlElementNode): void
 {
@@ -110,43 +72,6 @@ export function annotateHurrianWord(node: XmlElementNode): void
 		}
 		logGlosses();
 		setGlosses(node);
-	}
-}
-
-function getStem(segmentation: string): string
-{
-	let i;
-	for (i = 0; i < segmentation.length; i++)
-	{
-		const char: string = segmentation[i];
-		if (char == '-' || char == '=')
-		{
-			break;
-		}
-	}
-	return segmentation.substring(0, i);
-}
-
-function getPos(template: string): string
-{
-	if (template === 'noun' || template === 'indecl')
-	{
-		return template;
-	}
-	else
-	{
-		return 'verb';
-	}
-}
-
-function saveGloss(mrp: string): void
-{
-	const [segmentation, gloss, tag, template, det] = mrp.split('@').map(x => x.trim());
-	if (gloss != '')
-	{
-		const stem = getStem(segmentation);
-		const pos = getPos(template);
-		storeGloss(stem, pos, gloss);
 	}
 }
 
