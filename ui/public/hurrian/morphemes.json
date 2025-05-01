@@ -37,14 +37,14 @@
 			"tan": "ABL",
 			"dan": "ABL",
 			"ra": "COM",
-			"a": "ESS",
+			"a": ["ESS", "DAT"],
 			"ae": "INS",
 			"ai": "INS",
 			"uš": "EQU1",
 			"nna": "EQU2",
 			"nni": "ASSOC",
 			"ne": "ABL/INS",
-			"e": "DIR/LOC"
+			"e": ["DIR/LOC", "GEN"]
 		},
 		"them": {
 			"u": "EPNTH"

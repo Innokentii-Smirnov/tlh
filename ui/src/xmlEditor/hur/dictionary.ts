@@ -4,6 +4,8 @@ import {makeBoundTranscription} from './transcribe';
 import {makeStandardAnalyses} from './standardAnalysis';
 import {logGlosses} from './glossProvider';
 import {setGlosses, saveGloss} from './glossUpdater';
+import {MorphologicalAnalysis, writeMorphAnalysisValue}
+	from '../../model/morphologicalAnalysis';
 
 const dictionary: Map<string, Set<string>> = new Map();
 
@@ -54,14 +56,13 @@ export function annotateHurrianWord(node: XmlElementNode): void
 		const mrps: Map<string, string> = getMrps(node);
 		if (mrps.size == 0)
 		{
-			const analyses: string[] = makeStandardAnalyses(transcription);
+			const analyses: MorphologicalAnalysis[] = makeStandardAnalyses(transcription);
 			if (analyses.length > 0)
 			{
-				for (let i = 0; i < analyses.length; i++)
+				for (const ma of analyses)
 				{
-					const index: string = (i+1).toString();
-					const analysis: string = analyses[i];
-					node.attributes['mrp' + index] = analysis;
+					node.attributes['mrp' + ma.number.toString()]
+						= writeMorphAnalysisValue(ma);
 				}
 			}
 			else

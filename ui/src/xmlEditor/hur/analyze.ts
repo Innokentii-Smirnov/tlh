@@ -14,7 +14,9 @@ function loadFile(filePath: string): string
 	}
 }
 
-const grammemesByPartOfSpeech: {[key: string]: {[key: string]: {[key: string]: string}}}
+type Seq = string | string[];
+
+const grammemesByPartOfSpeech: {[key: string]: {[key: string]: {[key: string]: Seq}}}
 	= JSON.parse(loadFile(process.env.PUBLIC_URL + '/hurrian/morphemes.json'));
 const suffixPositions: {[key: string]: string[]}
 	= JSON.parse(loadFile(process.env.PUBLIC_URL + '/hurrian/positions.json'));
@@ -24,7 +26,7 @@ delete suffixPositions.enclitic;
 function makeCategoryGroup(partOfSpeech: string, position: string, sep: string): string
 {
     const category: string = position.replace('2', '');
-	const grammemes: {[key: string]: {[key: string]: string}} = grammemesByPartOfSpeech[partOfSpeech];
+	const grammemes: {[key: string]: {[key: string]: Seq}} = grammemesByPartOfSpeech[partOfSpeech];
     if (grammemes[category] === undefined)
 	{
         console.log(category);
@@ -46,20 +48,48 @@ for (const pos of partsOfSpeech)
 	const suffixes: string = suffixPositions[pos]
 		.map((category: string) => makeCategoryGroup(pos, category, '-'))
 		.join('');
-	const rootLength: string = pos === 'noun' ? '3' : '2'; 
-	const segmentedWord: string = '^(?<stem>[^-=]{' + rootLength + ',}?)' + suffixes + enclitics + '$';
-	expr[pos] = new RegExp(segmentedWord);
+	const segmentedGrammaticalMorphemes: string = suffixes + enclitics + '$';
+	expr[pos] = new RegExp(segmentedGrammaticalMorphemes);
 }
 
-export function analyze(word: string, pos: string): [string, string | null] | null
+function expand(array: Seq[]): string[][]
+{
+	let sequences: string[][] = [[]];
+	for (let i = 0; i < array.length; i++)
+	{
+		const element = array[i];
+		if (typeof(element) === 'string')
+		{
+			for (const sequence of sequences)
+			{
+				sequence.push(element);
+			}
+		}
+		else
+		{
+			const newSequences: string[][] = [];
+			for (const sequence of sequences)
+			{
+				for (const subelement of element)
+				{
+					newSequences.push(sequence.concat([subelement]));
+				}
+			}
+			sequences = newSequences;
+		}
+	}
+	return sequences;
+}
+
+export function analyze(grammaticalMorphemes: string, pos: string): string[] | null
 {
     if (pos == 'indecl')
 	{
-        return [word, null];
+        return null;
     }
     else 
 	{
-        const match = word.match(expr[pos]);
+        const match = grammaticalMorphemes.match(expr[pos]);
         if (match === null)
 		{
             return null;
@@ -69,39 +99,40 @@ export function analyze(word: string, pos: string): [string, string | null] | nu
             const groups = match.groups;
 			if (groups !== undefined)
 			{
-				const stem: string = groups['stem'];
-				const suffixes: string = suffixPositions[pos]
-					.filter(position => groups[position] !== undefined)
-					.map(position =>
-					{
-						const grammemes: {[key: string]: string} =
-							grammemesByPartOfSpeech[pos][position.replace('2', '')];
-						return grammemes[groups[position]];
-					})
-					.join('-');
-				const enclitics: string = encliticPositions
-					.filter(position => groups[position] !== undefined)
-					.map(position => 
-					{
-						const grammemes: {[key: string]: string} =
-							grammemesByPartOfSpeech.enclitic[position.replace('2', '')];
-						return grammemes[groups[position]];
-					})
-					.join('=');
-				let tag: string | null;
-				if (suffixes != '')
+				const suffixChains: string[][] = 
+				expand(
+					suffixPositions[pos]
+						.filter(position => groups[position] !== undefined)
+						.map(position =>
+						{
+							const grammemes: {[key: string]: Seq} =
+								grammemesByPartOfSpeech[pos][position.replace('2', '')];
+							return grammemes[groups[position]];
+						})
+				);
+				const encliticChains: string[][] =
+				expand(
+					encliticPositions
+						.filter(position => groups[position] !== undefined)
+						.map(position => 
+						{
+							const grammemes: {[key: string]: Seq} =
+								grammemesByPartOfSpeech.enclitic[position.replace('2', '')];
+							return grammemes[groups[position]];
+						})
+				);
+				const result: string[] = [];
+				for (const suffixChain of suffixChains)
 				{
-					tag = suffixes;
-					if (enclitics != '')
+					for (const encliticChain of encliticChains)
 					{
-						tag += '=' + enclitics;
+						const chain: string = encliticChain.length > 0 ?
+							suffixChain.join('-') + '=' + encliticChain.join('=') :
+							suffixChain.join('-');
+						result.push(chain);
 					}
 				}
-				else
-				{
-					tag = null;
-				}
-				return [stem, tag];
+				return result;
 			}
 			else
 			{

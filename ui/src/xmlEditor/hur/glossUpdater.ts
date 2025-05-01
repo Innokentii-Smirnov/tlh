@@ -3,20 +3,7 @@ import {MorphologicalAnalysis, readMorphologicalAnalysis,
 		from '../../model/morphologicalAnalysis';
 import {XmlElementNode} from 'simple_xml';
 import {storeGloss, retrieveGloss} from './glossProvider';
-
-function getStem(segmentation: string): string
-{
-	let i;
-	for (i = 0; i < segmentation.length; i++)
-	{
-		const char: string = segmentation[i];
-		if (char == '-' || char == '=')
-		{
-			break;
-		}
-	}
-	return segmentation.substring(0, i);
-}
+import {getStem} from './splitter';
 
 function getPos(template: string): string
 {

@@ -8,8 +8,8 @@ const noun = new RegExp(
 	'((?:n|(?<=r)r|(?<=l)l)(?:[ei](?!$)|a|(?=[aā])))?' + 
 	'([aā]ž)?' +
 	thematicVowel + 
-	'(|ž|ve|va|ta)' + 
-	'(?:(ne|na)(aš)?(u)?(ž|ve|va|ta)?)?' + 
+	'(|ž|ve|va|ta|da|e|a)' + 
+	'(?:(ne|na)(aš)?(u)?(ž|ve|va|ta|da|e|a)?)?' + 
 	enclitics
 );
 

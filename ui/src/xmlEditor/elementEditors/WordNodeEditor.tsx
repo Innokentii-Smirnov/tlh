@@ -227,6 +227,7 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
                 toggleAnalysisSelection={(letter, encLetter, targetState) => toggleAnalysisSelection(m.number, letter, encLetter, targetState)}
                 updateMorphology={(newMa) => updateMorphology(m.number, newMa)}
                 setKeyHandlingEnabled={setKeyHandlingEnabled}
+				hurrian={language === 'Hur'}
               />
             </div>
           )}
@@ -234,7 +235,8 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
         {state === 'AddMorphology'
           ? <MorphAnalysisOptionEditor initialMorphologicalAnalysis={nextMorphAnalysis()}
                                        onSubmit={(newMa) => updateMorphology(morphologies.length, newMa)}
-                                       cancelUpdate={toggleAddMorphology}/>
+                                       cancelUpdate={toggleAddMorphology}
+                                       hurrian={language === 'Hur'}/>
           : (
             <div className="text-center">
               <button type="button" className="my-4 px-4 py-2 rounded bg-cyan-400 text-white" onClick={toggleAddMorphology}>
