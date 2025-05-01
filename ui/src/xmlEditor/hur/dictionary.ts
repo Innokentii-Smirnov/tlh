@@ -97,5 +97,5 @@ export function updateHurrianDictionary(node: XmlElementNode, number: number, va
 		throw new Error();
 	}
 	possibilities.add(value);
-	saveGloss(value);
+	saveGloss(number, value);
 }

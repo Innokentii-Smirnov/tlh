@@ -1,4 +1,6 @@
-import {getMrps} from './xmlUtilities';
+import {MorphologicalAnalysis, readMorphologicalAnalysis,
+		readMorphologiesFromNode, writeMorphAnalysisValue}
+		from '../../model/morphologicalAnalysis';
 import {XmlElementNode} from 'simple_xml';
 import {storeGloss, retrieveGloss} from './glossProvider';
 
@@ -30,33 +32,30 @@ function getPos(template: string): string
 
 export function setGlosses(node: XmlElementNode): void
 {
-	const mrps: Map<string, string> = getMrps(node);
-	for (const pair of mrps)
+	const mas: MorphologicalAnalysis[] = readMorphologiesFromNode(node, []);
+	for (const ma of mas)
 	{
-		const [key, mrp] = pair;
-		const [segmentation, gloss, tag, template, det] = mrp.split('@').map(x => x.trim());
-		if (gloss === '')
+		if (ma.translation === '')
 		{
-			const stem = getStem(segmentation);
-			const pos = getPos(template);
+			const stem = getStem(ma.referenceWord);
+			const pos = getPos(ma.paradigmClass);
 			const glosses = retrieveGloss(stem, pos);
 			if (glosses != null)
 			{
-				const newGloss = Array.from(glosses).sort().join('; ');
-				const newMrp = [segmentation, newGloss, tag, template, det].join(' @ ');
-				node.attributes['mrp' + key] = newMrp;
+				ma.translation = Array.from(glosses).sort().join('; ');
+				node.attributes['mrp' + ma.number.toString()] = writeMorphAnalysisValue(ma);
 			}
 		}
 	}
 }
 
-export function saveGloss(mrp: string): void
+export function saveGloss(number: number, mrp: string): void
 {
-	const [segmentation, gloss, tag, template, det] = mrp.split('@').map(x => x.trim());
-	if (gloss != '')
+	const ma: MorphologicalAnalysis | undefined = readMorphologicalAnalysis(number, mrp, []);
+	if (ma !== undefined && ma.translation != '')
 	{
-		const stem = getStem(segmentation);
-		const pos = getPos(template);
-		storeGloss(stem, pos, gloss);
+		const stem = getStem(ma.referenceWord);
+		const pos = getPos(ma.paradigmClass);
+		storeGloss(stem, pos, ma.translation);
 	}
 }
