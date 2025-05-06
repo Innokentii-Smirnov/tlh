@@ -32,6 +32,8 @@
 			"ž": "ERG",
 			"ve": "GEN",
 			"va": "DAT",
+			"we": "GEN",
+			"wa": "DAT",
 			"ta": "DIR",
 			"da": "DIR",
 			"tan": "ABL",
@@ -74,13 +76,32 @@
 	},
 	"voice":
 	{
+		"res":
+		{
+			"ašt": "RES",
+			"ešt": "RES",
+			"ōšt": "RES"
+		},
 		"voice":
 		{
-			"u": "MED"
+			"u": "MED",
+			"i": "ANTIP",
+			"ī": "ANTIP",
+			"a": "INT"
+		},
+		"person":
+		{
+			"b": "b"
 		}
 	},
 	"aspect":
 	{
+		"res":
+		{
+			"ašt": "RES",
+			"ešt": "RES",
+			"ōšt": "RES"
+		},
 		"aspect":
 		{
 			"u": "TR.PFV",

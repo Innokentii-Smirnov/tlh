@@ -4,6 +4,10 @@ import {MorphologicalAnalysis} from '../../model/morphologicalAnalysis';
 import {SelectableLetteredAnalysisOption} from '../../model/analysisOptions';
 import {getGrammaticalMorphemes} from './splitter';
 
+// Erstellt morphologische Analysen für Wörter, die im Lexicon fehlen.
+// Das unbekannte Wort wird zuerst durch die Funktion "segment" in Morpheme getrennt, möglicherweise auf mehrere verschiedene Weisen.
+// Der grammatische Teil der Segmentierung, die Suffixe und Enklitika, werden dann durch "analyze" grammatisch analysiert. Auch hier mehrere Optionen möglich.
+// Der Stamm wird an diesem Schritt noch nicht im Wörterbuch nachgeschlagen.
 export function makeStandardAnalyses(transcription: string): MorphologicalAnalysis[]
 {
 	const analyses: MorphologicalAnalysis[] = [];
@@ -33,7 +37,7 @@ export function makeStandardAnalyses(transcription: string): MorphologicalAnalys
 			else
 			{
 				const analysisOptions: SelectableLetteredAnalysisOption[] = [];
-				let c = 97;
+				let c = 97; // Code von 'a'
 				for (const tag of tags)
 				{
 					const analysisOption: SelectableLetteredAnalysisOption = 

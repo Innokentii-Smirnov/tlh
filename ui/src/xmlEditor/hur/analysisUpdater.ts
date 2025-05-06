@@ -3,9 +3,9 @@ import {SelectableLetteredAnalysisOption} from '../../model/analysisOptions';
 import {analyze} from './analyze';
 import {getGrammaticalMorphemes} from './splitter';
 
+// Falls der Benutzer eine neue Segmentierung eingegeben hat, muss diese neu analysiert werden.
 export function updateHurrianAnalysis(oldma: MorphologicalAnalysis, referenceWord: string)
 {
-	console.log('hur');
 	const grammaticalMorphemes = getGrammaticalMorphemes(referenceWord);
 	const tags: string[] | null = analyze(grammaticalMorphemes, oldma.paradigmClass);
 	if (tags !== null && tags.length > 0)
@@ -41,9 +41,9 @@ export function updateHurrianAnalysis(oldma: MorphologicalAnalysis, referenceWor
 	}
 	else
 	{
-			return {referenceWord: {$set: referenceWord},
-					encliticsAnalysis: {$set: undefined},
-					selected: {$set: false}
-			};
+		return {referenceWord: {$set: referenceWord},
+				encliticsAnalysis: {$set: undefined},
+				selected: {$set: false}
+		};
 	}
 }

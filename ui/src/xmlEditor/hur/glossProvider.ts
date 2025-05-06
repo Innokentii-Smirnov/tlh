@@ -1,3 +1,4 @@
+//Dieses Modul kann Bedeutungen von Stämmen speichern und nachschlagen.
 const glosses: Map<string, Set<string>> = new Map();
 
 function getKey(word: string, pos: string): string
@@ -48,6 +49,6 @@ export function logGlosses(): void
 {
 	for(const [key, value] of glosses)
 	{
-		console.log(key + " -> " + Array.from(value).sort().join('; '));
+		console.log(key + ' -> ' + Array.from(value).sort().join('; '));
 	}
 }

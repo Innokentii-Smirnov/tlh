@@ -1,3 +1,6 @@
+// Dieses Modul kann Segmentierungen morphologische Glossierung zuweisen.
+// Sowohl den vom Benutzer eingegebenen Segmentierungen als auch den automatisch erstellten.
+// Die Grammatik (Annotationen von Suffixen und ihre Reihenfolge) wird als 2 JSON-Dateien in "public" gespeichert.
 function loadFile(filePath: string): string
 {
     const xmlhttp = new XMLHttpRequest();
