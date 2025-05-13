@@ -6,6 +6,7 @@ import {logGlosses} from './glossProvider';
 import {setGlosses, saveGloss} from './glossUpdater';
 import {MorphologicalAnalysis, writeMorphAnalysisValue}
 	from '../../model/morphologicalAnalysis';
+import {convertDictionary, updateDictionary} from './utility';
 
 const dictionary: Map<string, Set<string>> = new Map();
 
@@ -99,4 +100,14 @@ export function updateHurrianDictionary(node: XmlElementNode, number: number, va
 	}
 	possibilities.add(value);
 	saveGloss(number, value);
+}
+
+export function getDictionary(): {[key: string]: string[]}
+{
+  return convertDictionary(dictionary);
+}
+
+export function upgradeDictionary(object: {[key: string]: string[]}): void
+{
+  updateDictionary(dictionary, object);
 }

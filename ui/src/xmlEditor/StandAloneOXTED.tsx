@@ -9,6 +9,8 @@ import { OxtedExportData } from './OxtedExportData';
 import { makeDownload } from '../downloadHelper';
 import { DocumentEditTypes } from './documentEditTypes';
 import { XmlValidityChecker } from './XmlValidityChecker';
+import { getDictionary } from './hur/dictionary';
+import { getGlosses } from './hur/glossProvider';
 
 const locStoreKey = 'editorState';
 
@@ -116,6 +118,15 @@ export function StandAloneOXTED({ editorConfig }: IProps): ReactElement {
     makeDownload(writeXml(rootNode), loadedDocument.filename);
   }
 
+  function downloadDictionary()
+  {
+    const dictionary = getDictionary();
+    const glosses = getGlosses();
+    const obj = {dictionary, glosses};
+    const jsonText = JSON.stringify(obj, undefined, '\t');
+    makeDownload(jsonText, 'Dictionary.json');
+  }
+
   function closeFile(): void {
     setLoadedDocument(undefined);
     localStorage.removeItem(locStoreKey);
@@ -127,7 +138,9 @@ export function StandAloneOXTED({ editorConfig }: IProps): ReactElement {
         ? (
           <XmlValidityChecker xmlSource={loadedDocument.source}>
             {(rootNode) =>
-              <XmlDocumentEditor node={rootNode} editorConfig={editorConfig} onExportXml={download} filename={loadedDocument.filename}
+              <XmlDocumentEditor node={rootNode} editorConfig={editorConfig} onExportXml={download}
+              onExportDict={downloadDictionary}
+              filename={loadedDocument.filename}
                 closeFile={closeFile} autoSave={(node) => autoSave(loadedDocument.filename, node)}>
                 <OxtedExportData setExportNode={setExportAddNode} />
               </XmlDocumentEditor>}

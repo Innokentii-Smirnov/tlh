@@ -1,3 +1,5 @@
+import {convertDictionary, updateDictionary} from './utility';
+
 //Dieses Modul kann Bedeutungen von Stämmen speichern und nachschlagen.
 const glosses: Map<string, Set<string>> = new Map();
 
@@ -51,4 +53,14 @@ export function logGlosses(): void
 	{
 		console.log(key + ' -> ' + Array.from(value).sort().join('; '));
 	}
+}
+
+export function getGlosses(): {[key: string]: string[]}
+{
+  return convertDictionary(glosses);
+}
+
+export function upgradeGlosses(object: {[key: string]: string[]}): void
+{
+  updateDictionary(glosses, object);
 }

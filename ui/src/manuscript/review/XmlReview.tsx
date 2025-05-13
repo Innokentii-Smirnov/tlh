@@ -42,7 +42,11 @@ function InnerInner({mainIdentifier, rootNode, reviewType}: InnerInnerProps): Re
       </div>
     )
     : (
-      <XmlDocumentEditor node={rootNode} filename={mainIdentifier} onExportXml={onExportXml} exportDisabled={loading}
+      <XmlDocumentEditor node={rootNode} filename={mainIdentifier} onExportXml={onExportXml}
+      onExportDict={() => {
+        // do nothing
+      }}
+      exportDisabled={loading}
                          otherButtonConfig={{title: t('submitReview'), color: 'green', onClick: onSubmit}}/>
     );
 }
