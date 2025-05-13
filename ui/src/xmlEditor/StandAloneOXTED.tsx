@@ -9,8 +9,8 @@ import { OxtedExportData } from './OxtedExportData';
 import { makeDownload } from '../downloadHelper';
 import { DocumentEditTypes } from './documentEditTypes';
 import { XmlValidityChecker } from './XmlValidityChecker';
-import { getDictionary } from './hur/dictionary';
-import { getGlosses } from './hur/glossProvider';
+import { getDictionary, upgradeDictionary } from './hur/dictionary';
+import { getGlosses, upgradeGlosses } from './hur/glossProvider';
 
 const locStoreKey = 'editorState';
 
@@ -78,6 +78,14 @@ export function StandAloneOXTED({ editorConfig }: IProps): ReactElement {
     const source = await file.text();
 
     setLoadedDocument({ source, filename: file.name });
+  };
+
+  const readDict = async (file: File) => {
+    const source = await file.text();
+    const parsed = JSON.parse(source);
+    const {dictionary, glosses} = parsed;
+    upgradeDictionary(dictionary);
+    upgradeGlosses(glosses);
   };
 
   function download(rootNode: XmlElementNode): void {
@@ -148,6 +156,7 @@ export function StandAloneOXTED({ editorConfig }: IProps): ReactElement {
         ) : (
           <div className="container mx-auto">
             <FileLoader accept="text/xml" onLoad={readFile} />
+            <FileLoader accept="text/json" onLoad={readDict} text="Wörterbuch hochladen"/>
           </div>
         )}
     </div>
