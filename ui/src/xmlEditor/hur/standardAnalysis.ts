@@ -14,69 +14,30 @@ export async function makeStandardAnalyses(transcription: string): Promise<Morph
 	for (let i = 0; i < segmentations.length; i++)
 	{
 		const segmentation = segmentations[i];
-		let ma: MorphologicalAnalysis;
-        const morphAnalyses: string[] = await analyze(segmentation);
-        for (const morphAnalysis of morphAnalyses)
+        if (segmentation !== '+?')
         {
-            const tags: string | null = getGrammaticalMorphemes(morphAnalysis);
-            if (tags !== null && tags.length > 0)
+            let ma: MorphologicalAnalysis;
+            const morphAnalyses: string[] = await analyze(segmentation);
+            for (const morphAnalysis of morphAnalyses)
             {
-                if (tags.length == 1)
+                let tag: string  = getGrammaticalMorphemes(morphAnalysis);
+                if (tag[0] === '-')
                 {
-                    ma = {
-                        number: i + 1,
-                        referenceWord: segmentation,
-                        translation: '',
-                        analysis: tags[0],
-                        paradigmClass: '',
-                        determinative: '',
-                        _type: 'SingleMorphAnalysisWithoutEnclitics',
-                        encliticsAnalysis: undefined,
-                        selected: false
-                    };
+                  tag = tag.substring(1);
                 }
-                else
-                {
-                    const analysisOptions: SelectableLetteredAnalysisOption[] = [];
-                    let c = 97; // Code von 'a'
-                    for (const tag of tags)
-                    {
-                        const analysisOption: SelectableLetteredAnalysisOption =
-                        {
-                            letter: String.fromCodePoint(c),
-                            analysis: tag,
-                            selected: false
-                        };
-                        c++;
-                        analysisOptions.push(analysisOption);
-                    }
-                    ma = {
-                        number: i + 1,
-                        referenceWord: segmentation,
-                        translation: '',
-                        analysisOptions,
-                        paradigmClass: '',
-                        determinative: '',
-                        _type: 'MultiMorphAnalysisWithoutEnclitics',
-                        encliticsAnalysis: undefined
-                    };
-                }
-            }
-            else
-            {
                 ma = {
                     number: i + 1,
                     referenceWord: segmentation,
                     translation: '',
-                    analysis: '',
+                    analysis: tag,
                     paradigmClass: '',
                     determinative: '',
                     _type: 'SingleMorphAnalysisWithoutEnclitics',
                     encliticsAnalysis: undefined,
                     selected: false
                 };
+                analyses.push(ma);
             }
-            analyses.push(ma);
         }
 	}
 	return analyses;

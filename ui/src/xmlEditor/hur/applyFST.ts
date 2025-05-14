@@ -2,7 +2,7 @@ async function applyFST(fst: string, word: string)
 {
 	const url = new URL('http://127.0.0.2:8067');
 	url.searchParams.set('fst', fst);
-	url.searchParams.set('word', word);
+	url.searchParams.set('word', encodeURIComponent(word));
     try
     {
       const response = await fetch(url);

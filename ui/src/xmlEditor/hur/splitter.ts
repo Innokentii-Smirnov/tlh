@@ -4,7 +4,7 @@ function findBoundary(segmentation: string): number
 	for (i = 0; i < segmentation.length; i++)
 	{
 		const char: string = segmentation[i];
-		if (char == '-' || char == '=')
+		if (char == '-' || char == '=' || char == '.')
 		{
 			break;
 		}
