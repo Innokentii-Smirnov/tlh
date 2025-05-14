@@ -1,6 +1,6 @@
 import {XmlEditableNodeIProps} from '../editorConfig';
 import {useTranslation} from 'react-i18next';
-import {JSX, useState} from 'react';
+import {JSX, useState, useReducer} from 'react';
 import {MorphologicalAnalysis, multiMorphAnalysisWithoutEnclitics, readMorphologiesFromNode, writeMorphAnalysisValue} from '../../model/morphologicalAnalysis';
 import {MorphAnalysisOptionContainer} from '../morphAnalysisOption/MorphAnalysisOptionContainer';
 import {findFirstXmlElementByTagName, isXmlElementNode, lastChildNode, xmlElementNode, XmlElementNode} from 'simple_xml';
@@ -30,8 +30,12 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
     .get();
 
   const language: string = node.attributes.lg || lineBreakLanguage || textLanguage || 'Hit';
+
+  const [ignored, forceUpdate] = useReducer(x => x + 1, 0);
   if (language === 'Hur') {
-    annotateHurrianWord(node);
+    annotateHurrianWord(node).then(() => {
+        forceUpdate();
+    });
   }
 
   const selectedMorphologies: SelectedMorphAnalysis[] = node.attributes.mrp0sel !== undefined
