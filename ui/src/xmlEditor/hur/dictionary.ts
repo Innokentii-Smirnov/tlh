@@ -10,7 +10,7 @@ import {convertDictionary, updateDictionary} from './utility';
 
 const dictionary: Map<string, Set<string>> = new Map();
 
-export function annotateHurrianWord(node: XmlElementNode): void
+export async function annotateHurrianWord(node: XmlElementNode): Promise<void>
 {
 	const transliteration: string = getText(node);
 	const transcription: string = makeBoundTranscription(transliteration);
@@ -57,7 +57,7 @@ export function annotateHurrianWord(node: XmlElementNode): void
 		const mrps: Map<string, string> = getMrps(node);
 		if (mrps.size == 0)
 		{
-			const analyses: MorphologicalAnalysis[] = makeStandardAnalyses(transcription);
+			const analyses: MorphologicalAnalysis[] = await makeStandardAnalyses(transcription);
 			if (analyses.length > 0)
 			{
 				for (const ma of analyses)
