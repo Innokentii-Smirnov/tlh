@@ -13,6 +13,8 @@ import {getPriorSibling, getPriorSiblingPath} from '../../nodeIterators';
 import {AOption} from '../../myOption';
 import {fetchCuneiform} from './LineBreakEditor';
 import {annotateHurrianWord, updateHurrianDictionary} from '../hur/dictionary';
+import {makeStandardAnalyses} from '../hur/standardAnalysis';
+import {SingleMorphologicalAnalysisWithoutEnclitics} from '../../model/morphologicalAnalysis';
 
 type States = 'DefaultState' | 'AddMorphology' | 'EditEditingQuestion' | 'EditFootNoteState' | 'EditContent';
 
@@ -31,14 +33,8 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
 
   const language: string = node.attributes.lg || lineBreakLanguage || textLanguage || 'Hit';
 
-  const [mrp1, setMrp1] = useState('');
   if (language === 'Hur') {
-    if (mrp1 === '')
-    {
-      annotateHurrianWord(node).then((mrp1) => {
-        setMrp1(mrp1);
-      });
-    }
+    annotateHurrianWord(node);
   }
 
   const selectedMorphologies: SelectedMorphAnalysis[] = node.attributes.mrp0sel !== undefined
@@ -46,6 +42,37 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
     : [];
 
   const morphologies: MorphologicalAnalysis[] = readMorphologiesFromNode(node, selectedMorphologies);
+
+  if(morphologies.length === 0 && language === 'Hur')
+  {
+    const transcription = node.attributes.trans || '';
+    makeStandardAnalyses(transcription).then((analyses: MorphologicalAnalysis[]) =>
+    {
+      if (analyses.length > 0)
+      {
+        for (const ma of analyses)
+        {
+          updateMorphology(ma.number, ma, true);
+        }
+      }
+      else
+      {
+        const ma: SingleMorphologicalAnalysisWithoutEnclitics = {
+          number: 1,
+          referenceWord: transcription,
+          translation: '',
+          analysis: '',
+          paradigmClass: '',
+          determinative: '',
+          _type: 'SingleMorphAnalysisWithoutEnclitics',
+          encliticsAnalysis: undefined,
+          selected: false
+        };
+        updateMorphology(ma.number, ma, true);
+        node.attributes.firstAnalysisIsPlaceholder = 'true';
+      }
+    });
+  }
 
   function toggleMorphology(currentMrp0sel: string, morphNumber: number, letter: string | undefined, encLetter: string | undefined, targetState: boolean | undefined): string {
 
@@ -92,11 +119,11 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
     setState('DefaultState');
   }
 
-  function updateMorphology(number: number, newMa: MorphologicalAnalysis): void {
+  function updateMorphology(number: number, newMa: MorphologicalAnalysis, suppress=false): void {
     const value: string = writeMorphAnalysisValue(newMa);
     updateEditedNode({attributes: {[`mrp${number}`]: {$set: value}}});
     setState('DefaultState');
-    if (language === 'Hur') {
+    if (language === 'Hur' && !suppress) {
         updateHurrianDictionary(node, number, value);
     }
   }

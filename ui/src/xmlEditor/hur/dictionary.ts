@@ -1,16 +1,13 @@
 import {XmlElementNode} from 'simple_xml';
 import {getText, getMrps} from './xmlUtilities';
 import {makeBoundTranscription} from './transcribe';
-import {makeStandardAnalyses} from './standardAnalysis';
 import {logGlosses} from './glossProvider';
 import {setGlosses, saveGloss} from './glossUpdater';
-import {MorphologicalAnalysis, writeMorphAnalysisValue}
-	from '../../model/morphologicalAnalysis';
 import {convertDictionary, updateDictionary} from './utility';
 
 const dictionary: Map<string, Set<string>> = new Map();
 
-export async function annotateHurrianWord(node: XmlElementNode): Promise<string>
+export async function annotateHurrianWord(node: XmlElementNode): Promise<void>
 {
 	const transliteration: string = getText(node);
 	const transcription: string = makeBoundTranscription(transliteration);
@@ -54,28 +51,9 @@ export async function annotateHurrianWord(node: XmlElementNode): Promise<string>
 	}
 	else 
 	{
-		const mrps: Map<string, string> = getMrps(node);
-		if (mrps.size == 0)
-		{
-			const analyses: MorphologicalAnalysis[] = await makeStandardAnalyses(transcription);
-			if (analyses.length > 0)
-			{
-				for (const ma of analyses)
-				{
-					node.attributes['mrp' + ma.number.toString()]
-						= writeMorphAnalysisValue(ma);
-				}
-			}
-			else
-			{
-				node.attributes.mrp1 = transcription + '@@@@';
-				node.attributes.firstAnalysisIsPlaceholder = 'true';
-			}
-		}
 		logGlosses();
 		setGlosses(node);
 	}
-	return node.attributes.mrp1 || '';
 }
 
 export function updateHurrianDictionary(node: XmlElementNode, number: number, value: string): void
