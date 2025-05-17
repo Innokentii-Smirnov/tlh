@@ -1,10 +1,11 @@
-import {isMultiMorphologicalAnalysis, MorphologicalAnalysis, MultiMorphologicalAnalysis, SingleMorphologicalAnalysis} from '../../model/morphologicalAnalysis';
+import {isMultiMorphologicalAnalysis, MorphologicalAnalysis, MultiMorphologicalAnalysis, SingleMorphologicalAnalysis, SingleMorphologicalAnalysisWithoutEnclitics} from '../../model/morphologicalAnalysis';
 import {isMultiEncliticsAnalysis, MultiEncliticsAnalysis} from '../../model/encliticsAnalysis';
 import {LetteredAnalysisOption, SelectableLetteredAnalysisOption} from '../../model/analysisOptions';
 import {useTranslation} from 'react-i18next';
 import {JSX, useState} from 'react';
 import {convertSingleMorphAnalysisToMultiMorphAnalysis} from '../../model/morphologicalAnalysisConverter';
 import update from 'immutability-helper';
+import {fetchFSTGeneratedTagForSegmentedWord} from '../hur/applyFST';
 
 interface IProps {
   initialMorphologicalAnalysis: MorphologicalAnalysis;
@@ -34,7 +35,23 @@ export function MorphAnalysisOptionEditor({initialMorphologicalAnalysis, onSubmi
   const [morphAnalysis, setMorphAnalysis] = useState(initialMorphologicalAnalysis);
 
   const setTranslation = (value: string): void => setMorphAnalysis((ma) => update(ma, {translation: {$set: value}}));
-  const setReferenceWord = (value: string): void => setMorphAnalysis((ma) => update(ma, {referenceWord: {$set: value}}));
+  const setReferenceWord = hurrian ?
+  (value: string): void => setMorphAnalysis(ma =>
+    {
+      const newMa = update(
+        ma as SingleMorphologicalAnalysisWithoutEnclitics,
+        {referenceWord: {$set: value}}
+      );
+      fetchFSTGeneratedTagForSegmentedWord(value).then(tag =>
+        setMorphAnalysis(x => update(
+          x as SingleMorphologicalAnalysisWithoutEnclitics,
+          {analysis: {$set: tag}}
+        ))
+      );
+      return newMa;
+    }
+  )
+  : (value: string): void => setMorphAnalysis((ma) => update(ma, {referenceWord: {$set: value}}));
   const setDeterminativ = (value: string): void => setMorphAnalysis((ma) => update(ma, {determinative: {$set: value}}));
   const setParadigmClass = (value: string): void => setMorphAnalysis((ma) => update(ma, {paradigmClass: {$set: value}}));
 
