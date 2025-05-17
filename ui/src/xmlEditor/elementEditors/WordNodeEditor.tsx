@@ -13,8 +13,7 @@ import {getPriorSibling, getPriorSiblingPath} from '../../nodeIterators';
 import {AOption} from '../../myOption';
 import {fetchCuneiform} from './LineBreakEditor';
 import {annotateHurrianWord, updateHurrianDictionary} from '../hur/dictionary';
-import {makeStandardAnalyses} from '../hur/standardAnalysis';
-import {SingleMorphologicalAnalysisWithoutEnclitics} from '../../model/morphologicalAnalysis';
+import {fetchFSTGeneratedAnalyses} from '../hur/applyFST';
 
 type States = 'DefaultState' | 'AddMorphology' | 'EditEditingQuestion' | 'EditFootNoteState' | 'EditContent';
 
@@ -46,29 +45,20 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
   if(morphologies.length === 0 && language === 'Hur')
   {
     const transcription = node.attributes.trans || '';
-    makeStandardAnalyses(transcription).then((analyses: MorphologicalAnalysis[]) =>
+    fetchFSTGeneratedAnalyses(transcription).then((analyses: string[]) =>
     {
       if (analyses.length > 0)
       {
+        let i = 1;
         for (const ma of analyses)
         {
-          updateMorphology(ma.number, ma, true);
+          updateMorphologyRaw(i, ma);
+          i += 1;
         }
       }
       else
       {
-        const ma: SingleMorphologicalAnalysisWithoutEnclitics = {
-          number: 1,
-          referenceWord: transcription,
-          translation: '',
-          analysis: '',
-          paradigmClass: '',
-          determinative: '',
-          _type: 'SingleMorphAnalysisWithoutEnclitics',
-          encliticsAnalysis: undefined,
-          selected: false
-        };
-        updateMorphology(ma.number, ma, true);
+        updateMorphologyRaw(1, ' @ ' + transcription + ' @  @  @ ');
         node.attributes.firstAnalysisIsPlaceholder = 'true';
       }
     });
@@ -119,11 +109,16 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
     setState('DefaultState');
   }
 
-  function updateMorphology(number: number, newMa: MorphologicalAnalysis, suppress=false): void {
+  function updateMorphologyRaw(number: number, value: string): void {
+    updateEditedNode({attributes: {[`mrp${number}`]: {$set: value}}});
+    setState('DefaultState');
+  }
+
+  function updateMorphology(number: number, newMa: MorphologicalAnalysis): void {
     const value: string = writeMorphAnalysisValue(newMa);
     updateEditedNode({attributes: {[`mrp${number}`]: {$set: value}}});
     setState('DefaultState');
-    if (language === 'Hur' && !suppress) {
+    if (language === 'Hur') {
         updateHurrianDictionary(node, number, value);
     }
   }
