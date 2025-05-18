@@ -73,11 +73,9 @@ const sep = ' @ ';
 
 export function insertGloss(analysis: string): string
 {
-  console.log(analysis);
   const fields: string[] = analysis.split(sep);
   const segmentation = fields[0];
   const pos = fields[3];
-  console.log(segmentation + ',' + pos);
   const gloss = getGloss(segmentation, pos);
   fields[1] = gloss;
   return fields.join(sep);

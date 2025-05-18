@@ -1,6 +1,6 @@
 import {XmlEditableNodeIProps} from '../editorConfig';
 import {useTranslation} from 'react-i18next';
-import {JSX, useState} from 'react';
+import {JSX, useState, useEffect} from 'react';
 import {MorphologicalAnalysis, multiMorphAnalysisWithoutEnclitics, readMorphologiesFromNode, writeMorphAnalysisValue} from '../../model/morphologicalAnalysis';
 import {MorphAnalysisOptionContainer} from '../morphAnalysisOption/MorphAnalysisOptionContainer';
 import {findFirstXmlElementByTagName, isXmlElementNode, lastChildNode, xmlElementNode, XmlElementNode} from 'simple_xml';
@@ -36,15 +36,18 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
 
   const language: string = node.attributes.lg || lineBreakLanguage || textLanguage || 'Hit';
 
-  if (language === 'Hur') {
-    if (node.attributes.mrp0sel === 'HURR')
-    {
-      node.attributes.mrp0sel = '';
+  useEffect(() =>
+  {
+    if (language === 'Hur') {
+      if (node.attributes.mrp0sel === 'HURR')
+      {
+        node.attributes.mrp0sel = '';
+      }
+      const transliteration: string = getText(node);
+      const transcription: string = makeBoundTranscription(transliteration);
+      node.attributes.trans = transcription;
     }
-    const transliteration: string = getText(node);
-    const transcription: string = makeBoundTranscription(transliteration);
-    node.attributes.trans = transcription;
-  }
+  }, []);
 
   const selectedMorphologies: SelectedMorphAnalysis[] = node.attributes.mrp0sel !== undefined
     ? readSelectedMorphology(node.attributes.mrp0sel)
@@ -52,48 +55,51 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
 
   const morphologies: MorphologicalAnalysis[] = readMorphologiesFromNode(node, selectedMorphologies);
 
-  if(morphologies.length === 0 && language === 'Hur')
+  useEffect(() =>
   {
-    const transcription = node.attributes.trans || '';
-    const possibilities: Set<string> | undefined = dictionary.get(transcription);
-    if (possibilities !== undefined)
+    if(morphologies.length === 0 && language === 'Hur')
     {
-      let i = 1;
-      for (const analysis of possibilities)
+      const transcription = node.attributes.trans || '';
+      const possibilities: Set<string> | undefined = dictionary.get(transcription);
+      if (possibilities !== undefined)
       {
-        node.attributes['mrp' + i.toString()] = analysis;
-        i += 1;
+        let i = 1;
+        for (const analysis of possibilities)
+        {
+          node.attributes['mrp' + i.toString()] = analysis;
+          i += 1;
+        }
+        if (possibilities.size === 1)
+        {
+          updateEditedNode({attributes: {mrp0sel: (value) => '1'}});
+        }
       }
-      if (possibilities.size === 1)
+      else
       {
-        updateEditedNode({attributes: {mrp0sel: (value) => '1'}});
+        fetchFSTGeneratedAnalyses(transcription).then((analyses: string[]) =>
+        {
+          if (analyses.length > 0)
+          {
+            let i = 1;
+            for (const ma of analyses)
+            {
+              const withGloss = insertGloss(ma);
+              updateMorphologyRaw(i, withGloss);
+              i += 1;
+            }
+            if (analyses.length === 1)
+            {
+              updateEditedNode({attributes: {mrp0sel: (value) => '1'}});
+            }
+          }
+          else
+          {
+            updateMorphologyRaw(1, ' @ ' + transcription + ' @  @  @ ');
+          }
+        });
       }
     }
-    else
-    {
-      fetchFSTGeneratedAnalyses(transcription).then((analyses: string[]) =>
-      {
-        if (analyses.length > 0)
-        {
-          let i = 1;
-          for (const ma of analyses)
-          {
-            const withGloss = insertGloss(ma);
-            updateMorphologyRaw(i, withGloss);
-            i += 1;
-          }
-          if (analyses.length === 1)
-          {
-            updateEditedNode({attributes: {mrp0sel: (value) => '1'}});
-          }
-        }
-        else
-        {
-          updateMorphologyRaw(1, ' @ ' + transcription + ' @  @  @ ');
-        }
-      });
-    }
-  }
+  }, []);
 
   function toggleMorphology(currentMrp0sel: string, morphNumber: number, letter: string | undefined, encLetter: string | undefined, targetState: boolean | undefined): string {
 
@@ -149,7 +155,7 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
     const value: string = writeMorphAnalysisValue(newMa);
     updateEditedNode({attributes: {[`mrp${number}`]: {$set: value}}});
     setState('DefaultState');
-    if (language === 'Hur') {
+    if (language === 'Hur' && newMa.translation !== '') {
         updateHurrianDictionary(node, number, value);
     }
   }
