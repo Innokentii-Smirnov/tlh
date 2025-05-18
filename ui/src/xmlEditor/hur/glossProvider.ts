@@ -3,9 +3,16 @@ import {convertDictionary, updateDictionary} from './utility';
 //Dieses Modul kann Bedeutungen von Stämmen speichern und nachschlagen.
 const glosses: Map<string, Set<string>> = new Map();
 
+const specialSymbols = /[()>]/g;
+
+function preprocessWord(word: string): string
+{
+	return word.replaceAll(specialSymbols, '');
+}
+
 function getKey(word: string, pos: string): string
 {
-	return word + ',' + pos;
+  return preprocessWord(word) + ',' + pos;
 }
 
 export function storeGloss(word: string, pos: string, gloss: string)
