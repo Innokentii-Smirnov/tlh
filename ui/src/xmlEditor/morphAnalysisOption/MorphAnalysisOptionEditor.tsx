@@ -6,6 +6,7 @@ import {JSX, useState} from 'react';
 import {convertSingleMorphAnalysisToMultiMorphAnalysis} from '../../model/morphologicalAnalysisConverter';
 import update from 'immutability-helper';
 import {fetchFSTGeneratedTagForSegmentedWord} from '../hur/applyFST';
+import {getGloss} from '../hur/glossProvider';
 
 interface IProps {
   initialMorphologicalAnalysis: MorphologicalAnalysis;
@@ -40,7 +41,10 @@ export function MorphAnalysisOptionEditor({initialMorphologicalAnalysis, onSubmi
     {
       const newMa = update(
         ma as SingleMorphologicalAnalysisWithoutEnclitics,
-        {referenceWord: {$set: value}}
+        {
+          referenceWord: {$set: value},
+          translation: {$set: getGloss(value, morphAnalysis.paradigmClass)}
+        }
       );
       fetchFSTGeneratedTagForSegmentedWord(value).then(tag =>
         setMorphAnalysis(x => update(

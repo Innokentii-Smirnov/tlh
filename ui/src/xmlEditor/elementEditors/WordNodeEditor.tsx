@@ -12,8 +12,12 @@ import {WordStringChildEditor} from './WordStringChildEditor';
 import {getPriorSibling, getPriorSiblingPath} from '../../nodeIterators';
 import {AOption} from '../../myOption';
 import {fetchCuneiform} from './LineBreakEditor';
-import {annotateHurrianWord, updateHurrianDictionary} from '../hur/dictionary';
+import {updateHurrianDictionary} from '../hur/dictionary';
 import {fetchFSTGeneratedAnalyses} from '../hur/applyFST';
+import {insertGloss} from '../hur/glossProvider';
+import {getText} from '../hur/xmlUtilities';
+import {makeBoundTranscription} from '../hur/transcribe';
+import {dictionary} from '../hur/dictionary';
 
 type States = 'DefaultState' | 'AddMorphology' | 'EditEditingQuestion' | 'EditFootNoteState' | 'EditContent';
 
@@ -33,7 +37,13 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
   const language: string = node.attributes.lg || lineBreakLanguage || textLanguage || 'Hit';
 
   if (language === 'Hur') {
-    annotateHurrianWord(node);
+    if (node.attributes.mrp0sel === 'HURR')
+    {
+      node.attributes.mrp0sel = '';
+    }
+    const transliteration: string = getText(node);
+    const transcription: string = makeBoundTranscription(transliteration);
+    node.attributes.trans = transcription;
   }
 
   const selectedMorphologies: SelectedMorphAnalysis[] = node.attributes.mrp0sel !== undefined
@@ -45,23 +55,37 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
   if(morphologies.length === 0 && language === 'Hur')
   {
     const transcription = node.attributes.trans || '';
-    fetchFSTGeneratedAnalyses(transcription).then((analyses: string[]) =>
+    const possibilities: Set<string> | undefined = dictionary.get(transcription);
+    if (possibilities !== undefined)
     {
-      if (analyses.length > 0)
+      let i = 1;
+      for (const analysis of possibilities)
       {
-        let i = 1;
-        for (const ma of analyses)
+        updateMorphologyRaw(i, analysis);
+        i += 1;
+      }
+    }
+    else
+    {
+      fetchFSTGeneratedAnalyses(transcription).then((analyses: string[]) =>
+      {
+        if (analyses.length > 0)
         {
-          updateMorphologyRaw(i, ma);
-          i += 1;
+          let i = 1;
+          for (const ma of analyses)
+          {
+            const withGloss = insertGloss(ma);
+            updateMorphologyRaw(i, withGloss);
+            i += 1;
+          }
         }
-      }
-      else
-      {
-        updateMorphologyRaw(1, ' @ ' + transcription + ' @  @  @ ');
-        node.attributes.firstAnalysisIsPlaceholder = 'true';
-      }
-    });
+        else
+        {
+          updateMorphologyRaw(1, ' @ ' + transcription + ' @  @  @ ');
+          //node.attributes.firstAnalysisIsPlaceholder = 'true';
+        }
+      });
+    }
   }
 
   function toggleMorphology(currentMrp0sel: string, morphNumber: number, letter: string | undefined, encLetter: string | undefined, targetState: boolean | undefined): string {

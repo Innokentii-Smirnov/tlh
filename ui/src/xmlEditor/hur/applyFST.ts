@@ -6,7 +6,7 @@ export async function fetchFSTGeneratedAnalyses(word: string): Promise<string[]>
     {
       const response = await fetch(url);
       const body = await response.text();
-      return body.trim().split('\n').filter(analysis => analysis !== '');
+      return body.split('\n').filter(analysis => analysis !== '');
     }
     catch (error)
     {

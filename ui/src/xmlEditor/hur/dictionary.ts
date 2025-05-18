@@ -1,24 +1,15 @@
 import {XmlElementNode} from 'simple_xml';
-import {getText, getMrps} from './xmlUtilities';
-import {makeBoundTranscription} from './transcribe';
-import {logGlosses} from './glossProvider';
-import {setGlosses, saveGloss} from './glossUpdater';
+import {getMrps} from './xmlUtilities';
+import {saveGloss} from './glossUpdater';
 import {convertDictionary, updateDictionary} from './utility';
 
-const dictionary: Map<string, Set<string>> = new Map();
+export const dictionary: Map<string, Set<string>> = new Map();
 
 export async function annotateHurrianWord(node: XmlElementNode): Promise<void>
 {
-	const transliteration: string = getText(node);
-	const transcription: string = makeBoundTranscription(transliteration);
-	node.attributes.trans = transcription;
-	if (node.attributes.mrp0sel === 'HURR')
-	{
-		node.attributes.mrp0sel = '';
-	}
+	const transcription: string = node.attributes.trans || '';
 	if (dictionary.has(transcription))
 	{
-		setGlosses(node);
 		const possibilities: Set<string> | undefined = dictionary.get(transcription);
 		if (possibilities === undefined)
 		{
@@ -48,11 +39,6 @@ export async function annotateHurrianWord(node: XmlElementNode): Promise<void>
 				node.attributes['mrp' + i.toString()] = analysis;
 			}
 		}
-	}
-	else 
-	{
-		logGlosses();
-		setGlosses(node);
 	}
 }
 

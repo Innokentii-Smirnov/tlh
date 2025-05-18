@@ -1,4 +1,5 @@
 import {convertDictionary, updateDictionary} from './utility';
+import {getStem} from './splitter';
 
 //Dieses Modul kann Bedeutungen von Stämmen speichern und nachschlagen.
 const glosses: Map<string, Set<string>> = new Map();
@@ -52,6 +53,34 @@ export function retrieveGloss(word: string, pos: string): Set<string> | null
 	{
 		return null;
 	}
+}
+
+export function getGloss(word: string, pos: string): string
+{
+    const stem = getStem(word);
+    const retrieved = retrieveGloss(stem, pos);
+    if (retrieved === null)
+    {
+        return '';
+    }
+    else
+    {
+        return Array.from(retrieved).sort().join('; ');
+    }
+}
+
+const sep = ' @ ';
+
+export function insertGloss(analysis: string): string
+{
+  console.log(analysis);
+  const fields: string[] = analysis.split(sep);
+  const segmentation = fields[0];
+  const pos = fields[3];
+  console.log(segmentation + ',' + pos);
+  const gloss = getGloss(segmentation, pos);
+  fields[1] = gloss;
+  return fields.join(sep);
 }
 
 export function logGlosses(): void
