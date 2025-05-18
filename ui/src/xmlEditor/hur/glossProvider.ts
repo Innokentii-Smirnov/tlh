@@ -83,14 +83,6 @@ export function insertGloss(analysis: string): string
   return fields.join(sep);
 }
 
-export function logGlosses(): void
-{
-	for(const [key, value] of glosses)
-	{
-		console.log(key + ' -> ' + Array.from(value).sort().join('; '));
-	}
-}
-
 export function getGlosses(): {[key: string]: string[]}
 {
   return convertDictionary(glosses);

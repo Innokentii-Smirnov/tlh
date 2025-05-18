@@ -1,23 +1,5 @@
 import {isXmlTextNode, XmlTextNode, XmlElementNode} from 'simple_xml';
 
-const mrpRegex = /^mrp(\d+)$/;
-
-export function getMrps(node: XmlElementNode): Map<string, string>
-{
-	const mrps: Map<string, string> = new Map();
-	for (const attribute of Object.keys(node.attributes))
-	{
-		const match = attribute.trim().match(mrpRegex);
-		if (match !== null)
-		{
-			const key: string = match[1];
-			const value: string = node.attributes[attribute] || '';
-			mrps.set(key, value);
-		}
-	}
-	return mrps;
-}
-
 function substitution(vowel: string): string
 {
 	if (vowel == 'u')
