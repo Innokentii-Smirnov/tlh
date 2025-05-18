@@ -61,8 +61,12 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
       let i = 1;
       for (const analysis of possibilities)
       {
-        updateMorphologyRaw(i, analysis);
+        node.attributes['mrp' + i.toString()] = analysis;
         i += 1;
+      }
+      if (possibilities.size === 1)
+      {
+        updateEditedNode({attributes: {mrp0sel: (value) => '1'}});
       }
     }
     else
@@ -78,11 +82,14 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
             updateMorphologyRaw(i, withGloss);
             i += 1;
           }
+          if (analyses.length === 1)
+          {
+            updateEditedNode({attributes: {mrp0sel: (value) => '1'}});
+          }
         }
         else
         {
           updateMorphologyRaw(1, ' @ ' + transcription + ' @  @  @ ');
-          //node.attributes.firstAnalysisIsPlaceholder = 'true';
         }
       });
     }
