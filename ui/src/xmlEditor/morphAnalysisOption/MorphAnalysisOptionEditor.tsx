@@ -1,15 +1,17 @@
-import {isMultiMorphologicalAnalysis, MorphologicalAnalysis, MultiMorphologicalAnalysis, SingleMorphologicalAnalysis} from '../../model/morphologicalAnalysis';
+import {isMultiMorphologicalAnalysis, MorphologicalAnalysis, MultiMorphologicalAnalysis, SingleMorphologicalAnalysis, SingleMorphologicalAnalysisWithoutEnclitics} from '../../model/morphologicalAnalysis';
 import {isMultiEncliticsAnalysis, MultiEncliticsAnalysis} from '../../model/encliticsAnalysis';
 import {LetteredAnalysisOption, SelectableLetteredAnalysisOption} from '../../model/analysisOptions';
 import {useTranslation} from 'react-i18next';
 import {JSX, useState} from 'react';
 import {convertSingleMorphAnalysisToMultiMorphAnalysis} from '../../model/morphologicalAnalysisConverter';
 import update from 'immutability-helper';
+import {updateHurrianAnalysis} from '../hur/analysisUpdater';
 
 interface IProps {
   initialMorphologicalAnalysis: MorphologicalAnalysis;
   onSubmit: (ma: MorphologicalAnalysis) => void;
   cancelUpdate: () => void;
+  hurrian: boolean;
 }
 
 const lowerAlphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
@@ -27,13 +29,16 @@ function nextAnalysisOption(laos: LetteredAnalysisOption[], alphabet: string[] =
   return {letter, analysis: '', selected: false};
 }
 
-export function MorphAnalysisOptionEditor({initialMorphologicalAnalysis, onSubmit, cancelUpdate}: IProps): JSX.Element {
+export function MorphAnalysisOptionEditor({initialMorphologicalAnalysis, onSubmit, cancelUpdate, hurrian}: IProps): JSX.Element {
 
   const {t} = useTranslation('common');
   const [morphAnalysis, setMorphAnalysis] = useState(initialMorphologicalAnalysis);
 
   const setTranslation = (value: string): void => setMorphAnalysis((ma) => update(ma, {translation: {$set: value}}));
-  const setReferenceWord = (value: string): void => setMorphAnalysis((ma) => update(ma, {referenceWord: {$set: value}}));
+  const setReferenceWord = hurrian
+    ? (value: string): void => setMorphAnalysis((ma) => update(ma as SingleMorphologicalAnalysisWithoutEnclitics,
+		updateHurrianAnalysis(ma as SingleMorphologicalAnalysisWithoutEnclitics, value)))
+    : (value: string): void => setMorphAnalysis((ma) => update(ma, {referenceWord: {$set: value}}));
   const setDeterminativ = (value: string): void => setMorphAnalysis((ma) => update(ma, {determinative: {$set: value}}));
   const setParadigmClass = (value: string): void => setMorphAnalysis((ma) => update(ma, {paradigmClass: {$set: value}}));
 

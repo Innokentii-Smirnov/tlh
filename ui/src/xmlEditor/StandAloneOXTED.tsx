@@ -9,6 +9,8 @@ import { OxtedExportData } from './OxtedExportData';
 import { makeDownload } from '../downloadHelper';
 import { DocumentEditTypes } from './documentEditTypes';
 import { XmlValidityChecker } from './XmlValidityChecker';
+import { getDictionary, upgradeDictionary } from './hur/dictionary';
+import { getGlosses, upgradeGlosses } from './hur/glossProvider';
 
 const locStoreKey = 'editorState';
 
@@ -78,6 +80,14 @@ export function StandAloneOXTED({ editorConfig }: IProps): ReactElement {
     setLoadedDocument({ source, filename: file.name });
   };
 
+  const readDict = async (file: File) => {
+    const source = await file.text();
+    const parsed = JSON.parse(source);
+    const {dictionary, glosses} = parsed;
+    upgradeDictionary(dictionary);
+    upgradeGlosses(glosses);
+  };
+
   function download(rootNode: XmlElementNode): void {
     if (loadedDocument === undefined) {
       return;
@@ -116,6 +126,15 @@ export function StandAloneOXTED({ editorConfig }: IProps): ReactElement {
     makeDownload(writeXml(rootNode), loadedDocument.filename);
   }
 
+  function downloadDictionary()
+  {
+    const dictionary = getDictionary();
+    const glosses = getGlosses();
+    const obj = {dictionary, glosses};
+    const jsonText = JSON.stringify(obj, undefined, '\t');
+    makeDownload(jsonText, 'Dictionary.json');
+  }
+
   function closeFile(): void {
     setLoadedDocument(undefined);
     localStorage.removeItem(locStoreKey);
@@ -127,7 +146,9 @@ export function StandAloneOXTED({ editorConfig }: IProps): ReactElement {
         ? (
           <XmlValidityChecker xmlSource={loadedDocument.source}>
             {(rootNode) =>
-              <XmlDocumentEditor node={rootNode} editorConfig={editorConfig} onExportXml={download} filename={loadedDocument.filename}
+              <XmlDocumentEditor node={rootNode} editorConfig={editorConfig} onExportXml={download}
+              onExportDict={downloadDictionary}
+              filename={loadedDocument.filename}
                 closeFile={closeFile} autoSave={(node) => autoSave(loadedDocument.filename, node)}>
                 <OxtedExportData setExportNode={setExportAddNode} />
               </XmlDocumentEditor>}
@@ -135,6 +156,7 @@ export function StandAloneOXTED({ editorConfig }: IProps): ReactElement {
         ) : (
           <div className="container mx-auto">
             <FileLoader accept="text/xml" onLoad={readFile} />
+            <FileLoader accept="text/json" onLoad={readDict} text="Wörterbuch hochladen"/>
           </div>
         )}
     </div>

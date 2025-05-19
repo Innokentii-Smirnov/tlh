@@ -39,6 +39,7 @@ interface IProps {
   autoSave?: (rootNode: XmlNode) => void;
   exportDisabled?: boolean;
   onExportXml: (node: XmlElementNode) => void;
+  onExportDict: () => void;
   otherButtonConfig?: ButtonConfig;
   children?: ReactElement;
 }
@@ -99,6 +100,7 @@ export function XmlDocumentEditor({
   node: initialNode,
   editorConfig = tlhXmlEditorConfig,
   onExportXml,
+  onExportDict,
   filename,
   closeFile,
   autoSave,
@@ -348,7 +350,9 @@ export function XmlDocumentEditor({
           )
           : (
             <EditorEmptyRightSide editorConfig={editorConfig} currentInsertedElement={currentInsertedElement} toggleElementInsert={toggleElementInsert}
-                                  toggleCompareChanges={toggleCompareChanges} onExportXml={exportXml} exportDisabled={exportDisabled || false}
+                                  toggleCompareChanges={toggleCompareChanges} onExportXml={exportXml}
+                                  onExportDict={onExportDict}
+                                  exportDisabled={exportDisabled || false}
                                   otherButton={otherButton}>
               {children}
             </EditorEmptyRightSide>

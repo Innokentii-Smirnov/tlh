@@ -12,6 +12,7 @@ import {WordStringChildEditor} from './WordStringChildEditor';
 import {getPriorSibling, getPriorSiblingPath} from '../../nodeIterators';
 import {AOption} from '../../myOption';
 import {fetchCuneiform} from './LineBreakEditor';
+import {annotateHurrianWord, updateHurrianDictionary} from '../hur/dictionary';
 
 type States = 'DefaultState' | 'AddMorphology' | 'EditEditingQuestion' | 'EditFootNoteState' | 'EditContent';
 
@@ -27,6 +28,11 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
   const lineBreakLanguage = AOption.of(getPriorSibling(rootNode, path, 'lb'))
     .map((lineBreakElement) => lineBreakElement.attributes.lg)
     .get();
+
+  const language: string = node.attributes.lg || lineBreakLanguage || textLanguage || 'Hit';
+  if (language === 'Hur') {
+    annotateHurrianWord(node);
+  }
 
   const selectedMorphologies: SelectedMorphAnalysis[] = node.attributes.mrp0sel !== undefined
     ? readSelectedMorphology(node.attributes.mrp0sel)
@@ -80,8 +86,12 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
   }
 
   function updateMorphology(number: number, newMa: MorphologicalAnalysis): void {
-    updateEditedNode({attributes: {[`mrp${number}`]: {$set: writeMorphAnalysisValue(newMa)}}});
+    const value: string = writeMorphAnalysisValue(newMa);
+    updateEditedNode({attributes: {[`mrp${number}`]: {$set: value}}});
     setState('DefaultState');
+    if (language === 'Hur') {
+        updateHurrianDictionary(node, number, value);
+    }
   }
 
   function toggleAddMorphology(): void {
@@ -217,6 +227,7 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
                 toggleAnalysisSelection={(letter, encLetter, targetState) => toggleAnalysisSelection(m.number, letter, encLetter, targetState)}
                 updateMorphology={(newMa) => updateMorphology(m.number, newMa)}
                 setKeyHandlingEnabled={setKeyHandlingEnabled}
+				hurrian={language === 'Hur'}
               />
             </div>
           )}
@@ -224,7 +235,8 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
         {state === 'AddMorphology'
           ? <MorphAnalysisOptionEditor initialMorphologicalAnalysis={nextMorphAnalysis()}
                                        onSubmit={(newMa) => updateMorphology(morphologies.length, newMa)}
-                                       cancelUpdate={toggleAddMorphology}/>
+                                       cancelUpdate={toggleAddMorphology}
+                                       hurrian={language === 'Hur'}/>
           : (
             <div className="text-center">
               <button type="button" className="my-4 px-4 py-2 rounded bg-cyan-400 text-white" onClick={toggleAddMorphology}>
