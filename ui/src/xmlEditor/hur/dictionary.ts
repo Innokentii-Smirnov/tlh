@@ -7,8 +7,15 @@ import { setGlosses, saveGloss } from './glossUpdater';
 import { MorphologicalAnalysis, writeMorphAnalysisValue }
   from '../../model/morphologicalAnalysis';
 import { convertDictionary, updateDictionary } from './utility';
+import { updateHurrianDictionaryUrl, getHurrianDictionaryUrl } from '../../urls';
 
 const dictionary: Map<string, Set<string>> = new Map();
+
+fetch(getHurrianDictionaryUrl, {method: 'GET'}).then(response => {
+  response.json().then(obj => {
+    upgradeDictionary(obj);
+  });
+});
 
 export function annotateHurrianWord(node: XmlElementNode): void {
   const transliteration: string = getText(node);
@@ -64,6 +71,14 @@ export function annotateHurrianWord(node: XmlElementNode): void {
   }
 }
 
+export function sendMorphologicalAnalysisToTheServer(word: string, analysis: string) {
+  const formData = new FormData();
+  formData.append('word', word);
+  formData.append('analysis', analysis);
+
+  fetch(updateHurrianDictionaryUrl, {method: 'POST', body: formData});
+}
+
 export function updateHurrianDictionary(node: XmlElementNode, number: number, value: string): void {
   if (number === 1) {
     delete node.attributes.firstAnalysisIsPlaceholder;
@@ -81,6 +96,7 @@ export function updateHurrianDictionary(node: XmlElementNode, number: number, va
     throw new Error();
   }
   possibilities.add(value);
+  sendMorphologicalAnalysisToTheServer(transcription, value);
   saveGloss(number, value);
 }
 
