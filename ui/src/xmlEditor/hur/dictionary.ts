@@ -80,24 +80,26 @@ export function sendMorphologicalAnalysisToTheServer(word: string, analysis: str
 }
 
 export function updateHurrianDictionary(node: XmlElementNode, number: number, value: string): void {
-  if (number === 1) {
-    delete node.attributes.firstAnalysisIsPlaceholder;
+  if (value.split(' @ ', 3)[1] !== '') {
+    if (number === 1) {
+      delete node.attributes.firstAnalysisIsPlaceholder;
+    }
+    const transcription: string = node.attributes.trans || '';
+    let possibilities: Set<string> | undefined;
+    if (dictionary.has(transcription)) {
+      possibilities = dictionary.get(transcription);
+    }
+    else {
+      possibilities = new Set<string>();
+      dictionary.set(transcription, possibilities);
+    }
+    if (possibilities === undefined) {
+      throw new Error();
+    }
+    possibilities.add(value);
+    sendMorphologicalAnalysisToTheServer(transcription, value);
+    saveGloss(number, value);
   }
-  const transcription: string = node.attributes.trans || '';
-  let possibilities: Set<string> | undefined;
-  if (dictionary.has(transcription)) {
-    possibilities = dictionary.get(transcription);
-  }
-  else {
-    possibilities = new Set<string>();
-    dictionary.set(transcription, possibilities);
-  }
-  if (possibilities === undefined) {
-    throw new Error();
-  }
-  possibilities.add(value);
-  sendMorphologicalAnalysisToTheServer(transcription, value);
-  saveGloss(number, value);
 }
 
 export function getDictionary(): { [key: string]: string[] } {

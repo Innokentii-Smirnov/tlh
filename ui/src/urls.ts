@@ -8,8 +8,9 @@ export const baseUrl = process.env.NODE_ENV !== 'development'
 
 export const apolloUri = `${baseServerUrl}/graphql.php`;
 
-export const updateHurrianDictionaryUrl = baseServerUrl + '/updateHurrianDictionary.php';
-export const getHurrianDictionaryUrl = baseServerUrl + '/getHurrianDictionary.php';
+export const updateHurrianDictionaryUrl = baseServerUrl + '/hurrian/updateHurrianDictionary.php';
+export const getHurrianDictionaryUrl = baseServerUrl + '/hurrian/getHurrianDictionary.php';
+export const getHurrianLexiconUrl = baseServerUrl + '/hurrian/getHurrianLexicon.php';
 
 export const pictureUploadUrl = (mainIdentifier: string): string => `${baseServerUrl}/uploadPicture.php?id=${encodeURIComponent(mainIdentifier)}`;
 
