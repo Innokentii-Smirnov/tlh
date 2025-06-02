@@ -13,29 +13,7 @@ list($stem, $suffixes) = parseSegmentation($segmentation);
 $db = new SQLite3($dbFileName);
 if (!$dbExists)
 {
-  $sql = <<<SQL
-  CREATE TABLE 'lemmata' (
-    'lemma_id' INTEGER PRIMARY KEY,
-    'stem' TEXT,
-    'part_of_speech' TEXT,
-    'translation_de' TEXT,
-    'det' TEXT
-  );
-  CREATE TABLE 'suffix_chains' (
-    'suffix_chain_id' INTEGER PRIMARY KEY,
-    'suffixes' TEXT,
-    'morph_tag' TEXT,
-    'part_of_speech' TEXT
-  );
-  CREATE TABLE 'wordforms' (
-    'wordform_id' INTEGER PRIMARY KEY,
-    'transcription' TEXT,
-    'segmentation' TEXT,
-    'lemma_id' INTEGER,
-    'suffix_chain_id' INTEGER
-  );
-  SQL;
-  $db->exec($sql);
+  error_log("Database not found.")
 }
 
 //Lemma finden oder hinzufügen
