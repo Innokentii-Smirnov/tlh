@@ -1,6 +1,11 @@
 create database if not exists hurrian_lexical_database;
 use hurrian_lexical_database;
 
+/*drop table if exists
+  wordform,
+  lemma,
+  suffix_chain;*/
+
 /* begin table creation */
 
 CREATE TABLE if not exists lemma (
@@ -8,7 +13,7 @@ CREATE TABLE if not exists lemma (
   stem text not null,
   part_of_speech text not null,
   translation_de text not null,
-  determinative text,
+  determinative text not null,
   constraint pk_lemma primary key (lemma_id)
 );
 
@@ -34,3 +39,25 @@ CREATE TABLE if not exists wordform (
 );
 
 /* end table creation */
+
+/* begin data population */
+
+/* lemma data */
+insert into lemma (lemma_id, stem, part_of_speech, translation_de, determinative)
+values (null, 'nāli', 'noun', 'Rehbock', '');
+insert into lemma (lemma_id, stem, part_of_speech, translation_de, determinative)
+values (null, 'tāri', 'noun', 'Feuer', '');
+insert into lemma (lemma_id, stem, part_of_speech, translation_de, determinative)
+values (null, 'id', 'verb', 'schlagen', '');
+insert into lemma (lemma_id, stem, part_of_speech, translation_de, determinative)
+values (null, 'am', 'verb', 'brennen', '');
+
+/* suffix chain data */
+insert into suffix_chain (suffix_chain_id, suffixes, morph_tag, part_of_speech)
+values (null, '(n>)re-ž', 'RELAT.SG-ERG', 'noun');
+
+/* wordform data */
+insert into wordform (wordform_id, transcription, segmentation, lemma_id, suffix_chain_id)
+values (null, 'tārrež', 'tār(i)-(n>)re-ž', 2, 1);
+
+/* end data population */
