@@ -7,7 +7,7 @@ import {getStem} from './splitter';
 
 function getPos(template: string): string
 {
-	if (template === 'noun' || template === 'indecl')
+	if (template === 'noun' || template === 'indecl' || template === '')
 	{
 		return template;
 	}
