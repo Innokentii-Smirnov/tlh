@@ -5,9 +5,10 @@ import { makeStandardAnalyses } from './standardAnalysis';
 import { setGlosses, saveGloss } from './glossUpdater';
 import { MorphologicalAnalysis, writeMorphAnalysisValue }
   from '../../model/morphologicalAnalysis';
-import { updateHurrianDictionaryUrl, getHurrianDictionaryUrl } from '../../urls';
+import { getHurrianDictionaryUrl } from '../../urls';
 import { convertDictionary, updateAndValidateDictionary } from './utility';
 import { isValid, normalize } from './morphologicalAnalysisValidator';
+import { sendMorphologicalAnalysisToTheServer } from './sendToTheServer';
 
 const dictionary: Map<string, Set<string>> = new Map();
 
@@ -70,14 +71,6 @@ export function annotateHurrianWord(node: XmlElementNode): void {
     }
     setGlosses(node);
   }
-}
-
-export function sendMorphologicalAnalysisToTheServer(word: string, analysis: string) {
-  const formData = new FormData();
-  formData.append('word', word);
-  formData.append('analysis', analysis);
-
-  fetch(updateHurrianDictionaryUrl, {method: 'POST', body: formData});
 }
 
 export function updateHurrianDictionary(node: XmlElementNode, number: number, value: string): void {
