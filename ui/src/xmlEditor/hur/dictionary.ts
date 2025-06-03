@@ -33,7 +33,7 @@ export function annotateHurrianWord(node: XmlElementNode): void {
     const analyses: Set<string> = new Set(mrps.values());
     let i: number;
     if (mrps.size > 0) {
-      i = Math.max(...Array.from(mrps.keys()).map(parseInt));
+      i = Math.max(...Array.from(mrps.keys()).map(num => parseInt(num, 10)));
     }
     else {
       i = 0;
