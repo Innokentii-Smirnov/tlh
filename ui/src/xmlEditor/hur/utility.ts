@@ -8,7 +8,21 @@ export function convertDictionary(dictionary: Map<string, Set<string>>): { [key:
   return object;
 }
 
-export function updateDictionary(dictionary: Map<string, Set<string>>, object: { [key: string]: string[] }): void {
+export function updateGlossesLexicon(dictionary: Map<string, Set<string>>, object: { [key: string]: string[] }): void {
+  for (const [key, values] of Object.entries(object)) {
+    const currSet = dictionary.get(key);
+    if (currSet === undefined) {
+      dictionary.set(key, new Set(values));
+    }
+    else {
+      for (const value of values) {
+        currSet.add(value);
+      }
+    }
+  }
+}
+
+export function updateAndValidateDictionary(dictionary: Map<string, Set<string>>, object: { [key: string]: string[] }): void {
   for (const [key, values] of Object.entries(object)) {
     const currSet = dictionary.get(key);
     if (currSet === undefined) {

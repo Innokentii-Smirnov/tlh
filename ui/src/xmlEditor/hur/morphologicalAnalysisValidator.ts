@@ -16,24 +16,26 @@ function normalizeOption(option: string): string {
   }
   return option;
 }
-function normalizePairs(pairs: string[]): string[] {
+function normalizePairs(pairs: string[]): string[][] {
   return pairs
     .map((option: string) => option.split('→').map(s => s.trim()))
-    .filter((pair: string[]) => pair[1] !== '')
-    .map((pair: string[]) => pair[0] + ' → ' + normalizeOption(pair[1]));
+    .filter((pair: string[]) => pair[1] !== '');
 }
 function normalizeMorphTag(morphTag: string): string {
   if (morphTag.startsWith('{') && morphTag.endsWith('}')) {
-    const options: string[] = morphTag
+    const options: string[][] = normalizePairs(morphTag
       .substring(1, morphTag.length - 1)
       .replaceAll(' ', '')
       .replaceAll('\n', '')
-      .split('}{');
+      .split('}{'));
     if (options.length === 1) {
-      return normalizeOption(options[0].split('→')[1].trim());
+      return normalizeOption(options[0][1].trim());
     }
     else {
-      return '{' + normalizePairs(options).join('}{') + '}';
+      return '{' + options
+        .map((pair: string[]) => pair[0] + ' → ' + normalizeOption(pair[1]))
+        .join('}{') +
+      '}';
     }
   } else {
     return normalizeOption(morphTag);
