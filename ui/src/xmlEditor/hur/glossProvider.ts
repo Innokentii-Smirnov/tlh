@@ -47,14 +47,6 @@ export function retrieveGloss(word: string, pos: string): Set<string> | null
 	}
 }
 
-export function logGlosses(): void
-{
-	for(const [key, value] of glosses)
-	{
-		console.log(key + ' -> ' + Array.from(value).sort().join('; '));
-	}
-}
-
 export function getGlosses(): {[key: string]: string[]}
 {
   return convertDictionary(glosses);

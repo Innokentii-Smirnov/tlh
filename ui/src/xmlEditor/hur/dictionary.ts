@@ -2,7 +2,6 @@ import { XmlElementNode } from 'simple_xml';
 import { getText, getMrps } from './xmlUtilities';
 import { makeBoundTranscription } from './transcribe';
 import { makeStandardAnalyses } from './standardAnalysis';
-import { logGlosses } from './glossProvider';
 import { setGlosses, saveGloss } from './glossUpdater';
 import { MorphologicalAnalysis, writeMorphAnalysisValue }
   from '../../model/morphologicalAnalysis';
@@ -62,7 +61,6 @@ export function annotateHurrianWord(node: XmlElementNode): void {
         node.attributes.firstAnalysisIsPlaceholder = 'true';
       }
     }
-    logGlosses();
     setGlosses(node);
   }
 }
