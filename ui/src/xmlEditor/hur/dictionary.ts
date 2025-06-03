@@ -7,6 +7,7 @@ import { setGlosses, saveGloss } from './glossUpdater';
 import { MorphologicalAnalysis, writeMorphAnalysisValue }
   from '../../model/morphologicalAnalysis';
 import { convertDictionary, updateDictionary } from './utility';
+import { isValid, normalize } from './morphologicalAnalysisValidator';
 
 const dictionary: Map<string, Set<string>> = new Map();
 
@@ -67,6 +68,10 @@ export function annotateHurrianWord(node: XmlElementNode): void {
 }
 
 export function updateHurrianDictionary(node: XmlElementNode, number: number, value: string): void {
+  if (!isValid(value)) {
+    return;
+  }
+  value = normalize(value);
   if (number === 1) {
     delete node.attributes.firstAnalysisIsPlaceholder;
   }
