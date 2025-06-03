@@ -30,7 +30,9 @@ export function annotateHurrianWord(node: XmlElementNode): void {
       delete node.attributes.firstAnalysisIsPlaceholder;
     }
     const mrps: Map<string, string> = getMrps(node);
-    const analyses: Set<string> = new Set(mrps.values());
+    const analyses: Set<string> = new Set(
+      Array.from(mrps.values()).map((an: string) => an.replaceAll(' ', ''))
+    );
     let i: number;
     if (mrps.size > 0) {
       i = Math.max(...Array.from(mrps.keys()).map(num => parseInt(num, 10)));
@@ -39,7 +41,7 @@ export function annotateHurrianWord(node: XmlElementNode): void {
       i = 0;
     }
     for (const analysis of possibilities) {
-      if (!analyses.has(analysis)) {
+      if (!analyses.has(analysis.replaceAll(' ', ''))) {
         i++;
         node.attributes['mrp' + i.toString()] = analysis;
       }
