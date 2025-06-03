@@ -71,7 +71,7 @@ export function updateHurrianDictionary(node: XmlElementNode, number: number, va
   if (!isValid(value)) {
     return;
   }
-  value = normalize(value);
+  value = normalize(value, false);
   if (number === 1) {
     delete node.attributes.firstAnalysisIsPlaceholder;
   }

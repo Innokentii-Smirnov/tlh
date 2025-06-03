@@ -16,19 +16,21 @@ function normalizeOption(option: string): string {
   }
   return option;
 }
-function normalizePairs(pairs: string[]): string[][] {
-  return pairs
-    .map((option: string) => option.split('→').map(s => s.trim()))
-    .filter((pair: string[]) => pair[1] !== '');
+function normalizePairs(pairs: string[], unify: boolean): string[][] {
+  let result: string[][] = pairs.map((option: string) => option.split('→').map(s => s.trim()));
+  if (unify) {
+    result = result.filter((pair: string[]) => pair[1] !== '');
+  }
+  return result;
 }
-function normalizeMorphTag(morphTag: string): string {
+function normalizeMorphTag(morphTag: string, unify: boolean): string {
   if (morphTag.startsWith('{') && morphTag.endsWith('}')) {
     const options: string[][] = normalizePairs(morphTag
       .substring(1, morphTag.length - 1)
       .replaceAll(' ', '')
       .replaceAll('\n', '')
-      .split('}{'));
-    if (options.length === 1) {
+      .split('}{'), unify);
+    if (unify && options.length === 1) {
       return normalizeOption(options[0][1].trim());
     }
     else {
@@ -41,9 +43,9 @@ function normalizeMorphTag(morphTag: string): string {
     return normalizeOption(morphTag);
   }
 }
-export function normalize(analysis: string): string {
+export function normalize(analysis: string, unify: boolean): string {
   const fields: string[] = analysis.split('@').map(field => field.trim());
   const morphTag = fields[2];
-  fields[2] = normalizeMorphTag(morphTag);
+  fields[2] = normalizeMorphTag(morphTag, unify);
   return fields.join(' @ ');
 }
