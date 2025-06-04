@@ -1,3 +1,5 @@
+import { isValid, normalize } from './morphologicalAnalysisValidator';
+
 export function convertDictionary(dictionary: Map<string, Set<string>>): { [key: string]: string[] } {
   const object: { [key: string]: string[] } = {};
   for (const [key, value] of dictionary) {
@@ -6,7 +8,7 @@ export function convertDictionary(dictionary: Map<string, Set<string>>): { [key:
   return object;
 }
 
-export function updateDictionary(dictionary: Map<string, Set<string>>, object: { [key: string]: string[] }): void {
+export function updateGlossesLexicon(dictionary: Map<string, Set<string>>, object: { [key: string]: string[] }): void {
   for (const [key, values] of Object.entries(object)) {
     const currSet = dictionary.get(key);
     if (currSet === undefined) {
@@ -15,6 +17,29 @@ export function updateDictionary(dictionary: Map<string, Set<string>>, object: {
     else {
       for (const value of values) {
         currSet.add(value);
+      }
+    }
+  }
+}
+
+export function updateAndValidateDictionary(dictionary: Map<string, Set<string>>, object: { [key: string]: string[] }): void {
+  for (const [key, values] of Object.entries(object)) {
+    const currSet = dictionary.get(key);
+    if (currSet === undefined) {
+      const newSet: Set<string> = new Set();
+      for (const value of values) {
+        if (isValid(value)) {
+          newSet.add(normalize(value, true));
+        }
+      }
+      if (newSet.size > 0) {
+        dictionary.set(key, newSet);
+      }
+    } else {
+      for (const value of values) {
+        if (isValid(value)) {
+          currSet.add(normalize(value, true));
+        }
       }
     }
   }

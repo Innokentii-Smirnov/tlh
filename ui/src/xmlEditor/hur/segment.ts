@@ -3,6 +3,14 @@ import {patterns, firstEnclitics} from './patterns';
 
 const indecl = new Set(['tiššan', 'ḫenni']);
 
+function postprocessSegmentation(segmentation: string): string {
+  segmentation = segmentation.replace('-=', '=');
+  if (segmentation.endsWith('-')) {
+    return segmentation.substring(0, segmentation.length - 1);
+  }
+  return segmentation;
+}
+
 function joinSegments(groups: string[], firstEnclitic: number)
 {
     const morphs = groups
@@ -12,7 +20,7 @@ function joinSegments(groups: string[], firstEnclitic: number)
 		.slice(firstEnclitic)
 		.filter((enclitic: string | undefined) => enclitic !==  undefined).join('=');
     const segmented = enclitics === '' ? morphs : morphs + '=' + enclitics;
-    return segmented;
+    return postprocessSegmentation(segmented);
 }
 
 export function segment(word: string): [string, string][]
