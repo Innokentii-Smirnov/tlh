@@ -10,6 +10,12 @@ import { isValid, normalize } from './morphologicalAnalysisValidator';
 
 const dictionary: Map<string, Set<string>> = new Map();
 
+fetch(getHurrianDictionaryUrl, {method: 'GET'}).then(response => {
+  response.json().then(obj => {
+    upgradeDictionary(obj);
+  });
+});
+
 export function annotateHurrianWord(node: XmlElementNode): void {
   const transliteration: string = getText(node);
   const transcription: string = makeBoundTranscription(transliteration);
@@ -65,6 +71,14 @@ export function annotateHurrianWord(node: XmlElementNode): void {
   }
 }
 
+export function sendMorphologicalAnalysisToTheServer(word: string, analysis: string) {
+  const formData = new FormData();
+  formData.append('word', word);
+  formData.append('analysis', analysis);
+
+  fetch(updateHurrianDictionaryUrl, {method: 'POST', body: formData});
+}
+
 export function updateHurrianDictionary(node: XmlElementNode, number: number, value: string): void {
   if (!isValid(value)) {
     return;
@@ -84,9 +98,8 @@ export function updateHurrianDictionary(node: XmlElementNode, number: number, va
   }
   if (possibilities === undefined) {
     throw new Error();
+
   }
-  possibilities.add(value);
-  saveGloss(number, value);
 }
 
 export function getDictionary(): { [key: string]: string[] } {

@@ -1,11 +1,23 @@
+import { getHurrianLexiconUrl } from '../../urls';
 import {convertDictionary, updateGlossesLexicon} from './utility';
 
 //Dieses Modul kann Bedeutungen von Stämmen speichern und nachschlagen.
 const glosses: Map<string, Set<string>> = new Map();
 
-function getKey(word: string, pos: string): string
+fetch(getHurrianLexiconUrl, {method: 'GET'}).then(response => {
+  response.json().then(obj => {
+    upgradeGlosses(obj);
+  });
+});
+
+function preprocessStem(stem: string): string
 {
-	return word + ',' + pos;
+  return stem.replace('(', '').replace(')', '');
+}
+
+function getKey(stem: string, pos: string): string
+{
+	return preprocessStem(stem) + ',' + pos;
 }
 
 export function storeGloss(word: string, pos: string, gloss: string)
