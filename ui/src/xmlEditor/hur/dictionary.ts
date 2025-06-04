@@ -73,6 +73,14 @@ export function annotateHurrianWord(node: XmlElementNode): void {
   }
 }
 
+export function sendMorphologicalAnalysisToTheServer(word: string, analysis: string) {
+  const formData = new FormData();
+  formData.append('word', word);
+  formData.append('analysis', analysis);
+
+  fetch(updateHurrianDictionaryUrl, {method: 'POST', body: formData});
+}
+
 export function updateHurrianDictionary(node: XmlElementNode, number: number, value: string): void {
   if (isValid(value)) {
     value = normalize(value, false);
