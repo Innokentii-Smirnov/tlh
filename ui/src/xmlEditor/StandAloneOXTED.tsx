@@ -156,7 +156,7 @@ export function StandAloneOXTED({ editorConfig }: IProps): ReactElement {
         ) : (
           <div className="container mx-auto">
             <FileLoader accept="text/xml" onLoad={readFile} />
-            <FileLoader accept="text/json" onLoad={readDict} text="Wörterbuch hochladen"/>
+            <FileLoader accept="application/JSON" onLoad={readDict} text="Wörterbuch hochladen"/>
           </div>
         )}
     </div>

@@ -2,12 +2,11 @@ import { XmlElementNode } from 'simple_xml';
 import { getText, getMrps } from './xmlUtilities';
 import { makeBoundTranscription } from './transcribe';
 import { makeStandardAnalyses } from './standardAnalysis';
-import { logGlosses } from './glossProvider';
 import { setGlosses, saveGloss } from './glossUpdater';
 import { MorphologicalAnalysis, writeMorphAnalysisValue }
   from '../../model/morphologicalAnalysis';
-import { convertDictionary, updateDictionary } from './utility';
-import { updateHurrianDictionaryUrl, getHurrianDictionaryUrl } from '../../urls';
+import { convertDictionary, updateAndValidateDictionary } from './utility';
+import { isValid, normalize } from './morphologicalAnalysisValidator';
 
 const dictionary: Map<string, Set<string>> = new Map();
 
@@ -37,16 +36,18 @@ export function annotateHurrianWord(node: XmlElementNode): void {
       delete node.attributes.firstAnalysisIsPlaceholder;
     }
     const mrps: Map<string, string> = getMrps(node);
-    const analyses: Set<string> = new Set(mrps.values());
+    const analyses: Set<string> = new Set(
+      Array.from(mrps.values()).map((an: string) => an.replaceAll(' ', ''))
+    );
     let i: number;
     if (mrps.size > 0) {
-      i = Math.max(...Array.from(mrps.keys()).map(parseInt));
+      i = Math.max(...Array.from(mrps.keys()).map(num => parseInt(num, 10)));
     }
     else {
       i = 0;
     }
     for (const analysis of possibilities) {
-      if (!analyses.has(analysis)) {
+      if (!analyses.has(analysis.replaceAll(' ', ''))) {
         i++;
         node.attributes['mrp' + i.toString()] = analysis;
       }
@@ -66,7 +67,6 @@ export function annotateHurrianWord(node: XmlElementNode): void {
         node.attributes.firstAnalysisIsPlaceholder = 'true';
       }
     }
-    logGlosses();
     setGlosses(node);
   }
 }
@@ -80,25 +80,25 @@ export function sendMorphologicalAnalysisToTheServer(word: string, analysis: str
 }
 
 export function updateHurrianDictionary(node: XmlElementNode, number: number, value: string): void {
-  if (value.split(' @ ', 3)[1] !== '') {
-    if (number === 1) {
-      delete node.attributes.firstAnalysisIsPlaceholder;
-    }
-    const transcription: string = node.attributes.trans || '';
-    let possibilities: Set<string> | undefined;
-    if (dictionary.has(transcription)) {
-      possibilities = dictionary.get(transcription);
-    }
-    else {
-      possibilities = new Set<string>();
-      dictionary.set(transcription, possibilities);
-    }
-    if (possibilities === undefined) {
-      throw new Error();
-    }
-    possibilities.add(value);
-    sendMorphologicalAnalysisToTheServer(transcription, value);
-    saveGloss(number, value);
+  if (!isValid(value)) {
+    return;
+  }
+  value = normalize(value, false);
+  if (number === 1) {
+    delete node.attributes.firstAnalysisIsPlaceholder;
+  }
+  const transcription: string = node.attributes.trans || '';
+  let possibilities: Set<string> | undefined;
+  if (dictionary.has(transcription)) {
+    possibilities = dictionary.get(transcription);
+  }
+  else {
+    possibilities = new Set<string>();
+    dictionary.set(transcription, possibilities);
+  }
+  if (possibilities === undefined) {
+    throw new Error();
+
   }
 }
 
@@ -107,5 +107,5 @@ export function getDictionary(): { [key: string]: string[] } {
 }
 
 export function upgradeDictionary(object: { [key: string]: string[] }): void {
-  updateDictionary(dictionary, object);
+  updateAndValidateDictionary(dictionary, object);
 }

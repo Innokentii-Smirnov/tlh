@@ -14,20 +14,26 @@ export function getStem(segmentation: string): string {
   return segmentation.substring(0, i);
 }
 
-export function getGrammaticalMorphemes(segmentation: string): string {
-  const i: number = findBoundary(segmentation);
+function basicGetGrammaticalMorphemes(segmentation: string, i: number): string {
   if (i == segmentation.length) {
     return '-';
   }
   else {
+    if (segmentation[i] === '=') {
+      return '-' + segmentation.substring(i);
+    }
     return segmentation.substring(i);
   }
+}
+
+export function getGrammaticalMorphemes(segmentation: string): string {
+  const i: number = findBoundary(segmentation);
+  return basicGetGrammaticalMorphemes(segmentation, i);
 }
 
 export function getStemAndGrammaticalMorphemes(segmentation: string): [string, string] {
   const i: number = findBoundary(segmentation);
   const stem: string = segmentation.substring(0, i);
-  const grammaticalMorphemes =
-    i == segmentation.length ? '-' : segmentation.substring(i);
+  const grammaticalMorphemes = basicGetGrammaticalMorphemes(segmentation, i);
   return [stem, grammaticalMorphemes];
 }
