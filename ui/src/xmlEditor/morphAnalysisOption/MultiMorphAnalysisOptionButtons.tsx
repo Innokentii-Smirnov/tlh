@@ -5,6 +5,7 @@ import {MultiMorphAnalysisSelection} from './MultiMorphAnalysisSelection';
 import {MultiMorphMultiEncAnalysisSelection} from './MultiMorphMultiEncAnalysisSelection';
 import {SelectableButton} from '../../genericElements/Buttons';
 import {MultiMorphMultiSelectionButton} from './MultiMorphMultiSelectionButton';
+import {MorphemesEditor} from './MorphemesEditor';
 
 
 const otherClasses = ['p-2', 'rounded', 'w-full'];
@@ -25,6 +26,11 @@ export function MultiMorphAnalysisOptionButtons({morphAnalysis, toggleAnalysisSe
             <SelectableButton selected={selected} otherClasses={otherClasses} onClick={() => toggleAnalysisSelection(letter, undefined)}>
               <>{letter} - {analysis}</>
             </SelectableButton>
+            <MorphemesEditor
+              segmentation={morphAnalysis.referenceWord}
+              translation={morphAnalysis.translation}
+              analysis={analysis}
+            />
           </div>)}
         </div>
       );
