@@ -1,12 +1,53 @@
 interface IProps {
   segmentation: string,
   translation: string,
-  analysis: string
+  analysis: string,
+  onSegmentationChange: (newSegmentation: string) => void,
+  //onTranslationChange: (newTranslation: string) => void,
+  //onAnalysisChange: (newAnalysis: string) => void
 }
 
 const sep = /-|=/;
 
-export function MorphemesEditor({segmentation, translation, analysis} : IProps) {
+// Returns the position in the string of the morpheme with the required number
+function findMorphemeStart(requiredMorphemeNumber: number, segmentation: string): number {
+  if (requiredMorphemeNumber == 0) {
+    return 0;
+  }
+  let morphemeNumber = 0;
+  for (let i = 0; i < segmentation.length; i++) {
+    const char = segmentation[i];
+    if (char == '-' || char == '=') {
+      morphemeNumber += 1;
+    }
+    if (morphemeNumber == requiredMorphemeNumber) {
+      return i + 1;
+    }
+  }
+  return -1;
+}
+
+// Replaces n characters at position i with replacement.
+function replaceAt(s: string, i: number, n: number, replacement: string): string {
+  return s.substring(0, i) + replacement + s.substring(i + n);
+}
+
+// Replaces a morpheme or its annotation
+// by newMorpheme (or new annotation)
+// in the given position, where positions are counted
+// in morphemes (not in characters).
+function replaceMorpheme(morpheme: string, newMorpheme: string,
+                         segmentation: string, position: number) {
+  const morphemeStart = findMorphemeStart(position, segmentation);
+  const newSegmentation = replaceAt(segmentation, morphemeStart, morpheme.length, newMorpheme);
+  console.log(newSegmentation);
+  return newSegmentation;
+}
+
+export function MorphemesEditor({
+  segmentation, translation, analysis,
+  onSegmentationChange
+} : IProps) {
   const morphemes: string[] = segmentation.split(sep);
   const tags: string[] = analysis.split(sep);
   return (
@@ -16,7 +57,14 @@ export function MorphemesEditor({segmentation, translation, analysis} : IProps) 
       return (
         <div key={i.toString()} className="morpheme-box">
           <div className="field-box">
-            <input type="text" className="morpheme-input" defaultValue={morpheme}>
+            <input
+              type="text"
+              className="morpheme-input"
+              defaultValue={morpheme}
+              onChange={(event) => onSegmentationChange(
+                replaceMorpheme(morpheme, event.target.value, segmentation, i)
+              )}
+            >
             </input>
           </div>
           <div className="field-box">

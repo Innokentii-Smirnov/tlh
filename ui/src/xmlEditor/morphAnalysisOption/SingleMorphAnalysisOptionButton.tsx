@@ -6,6 +6,7 @@ import {MorphemesEditor} from './MorphemesEditor';
 interface IProps {
   morphAnalysis: SingleMorphologicalAnalysis;
   toggleAnalysisSelection: (encLetter: string | undefined) => void;
+  setReferenceWord: (newReferenceWord: string) => void;
 }
 
 export function EncliticsAnalysisDisplay({enclitics, analysis}: { enclitics: string, analysis: string }): JSX.Element {
@@ -16,7 +17,12 @@ export function EncliticsAnalysisDisplay({enclitics, analysis}: { enclitics: str
 
 const otherClasses = ['p-2', 'rounded', 'w-full'];
 
-export function SingleMorphAnalysisOptionButton({morphAnalysis, toggleAnalysisSelection}: IProps): JSX.Element {
+export function SingleMorphAnalysisOptionButton({
+  morphAnalysis,
+  toggleAnalysisSelection,
+  setReferenceWord
+}: IProps
+): JSX.Element {
   switch (morphAnalysis._type) {
     case 'SingleMorphAnalysisWithoutEnclitics':
       return (
@@ -28,6 +34,7 @@ export function SingleMorphAnalysisOptionButton({morphAnalysis, toggleAnalysisSe
             segmentation={morphAnalysis.referenceWord}
             translation={morphAnalysis.translation}
             analysis={morphAnalysis.analysis}
+            onSegmentationChange={setReferenceWord}
           />
         </div>
       );

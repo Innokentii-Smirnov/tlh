@@ -13,9 +13,10 @@ const otherClasses = ['p-2', 'rounded', 'w-full'];
 interface IProps {
   morphAnalysis: MultiMorphologicalAnalysis;
   toggleAnalysisSelection: (letter: string, encLetter: string | undefined) => void;
+  setReferenceWord: (newReferenceWord: string) => void;
 }
 
-export function MultiMorphAnalysisOptionButtons({morphAnalysis, toggleAnalysisSelection}: IProps): JSX.Element {
+export function MultiMorphAnalysisOptionButtons({morphAnalysis, toggleAnalysisSelection, setReferenceWord}: IProps): JSX.Element {
   switch (morphAnalysis._type) {
     case 'MultiMorphAnalysisWithoutEnclitics':
       return (
@@ -30,6 +31,7 @@ export function MultiMorphAnalysisOptionButtons({morphAnalysis, toggleAnalysisSe
               segmentation={morphAnalysis.referenceWord}
               translation={morphAnalysis.translation}
               analysis={analysis}
+              onSegmentationChange={setReferenceWord}
             />
           </div>)}
         </div>

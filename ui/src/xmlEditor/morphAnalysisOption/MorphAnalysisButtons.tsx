@@ -6,17 +6,23 @@ import {CanToggleAnalysisSelection} from './MorphAnalysisOptionContainer';
 import {MultiMorphAnalysisOptionButtons} from './MultiMorphAnalysisOptionButtons';
 import classNames from 'classnames';
 import {analysisIsInNumerus, numeri, NumerusOption, stringifyNumerus} from './numerusOption';
+import update from 'immutability-helper';
 
 interface IProps extends CanToggleAnalysisSelection {
-  morphologicalAnalysis: MorphologicalAnalysis;
+  initialMorphologicalAnalysis: MorphologicalAnalysis;
   enableEditMode: () => void;
 }
 
-export function MorphAnalysisOptionButtons({morphologicalAnalysis, toggleAnalysisSelection, enableEditMode}: IProps): JSX.Element {
+export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggleAnalysisSelection, enableEditMode}: IProps): JSX.Element {
 
   const {t} = useTranslation('common');
   const [isReduced, setIsReduced] = useState(false);
   const [lastNumerusSelected, setLastNumerusSelected] = useState<NumerusOption>();
+
+  const [morphologicalAnalysis, setMorphAnalysis] = useState(initialMorphologicalAnalysis);
+  const setReferenceWord = (value: string): void => setMorphAnalysis(
+    (ma) => update(ma, { referenceWord: { $set: value } })
+  );
 
   const {number, translation, referenceWord, paradigmClass, determinative} = morphologicalAnalysis;
   const isSingleAnalysisOption = isSingleMorphologicalAnalysis(morphologicalAnalysis);
@@ -65,9 +71,11 @@ export function MorphAnalysisOptionButtons({morphologicalAnalysis, toggleAnalysi
       {!isReduced && <div className="mt-2">
         {isSingleAnalysisOption
           ? <SingleMorphAnalysisOptionButton morphAnalysis={morphologicalAnalysis}
-                                             toggleAnalysisSelection={(encLetter) => toggleAnalysisSelection(undefined, encLetter, undefined)}/>
+                                             toggleAnalysisSelection={(encLetter) => toggleAnalysisSelection(undefined, encLetter, undefined)}
+                                             setReferenceWord={setReferenceWord}/>
           : <MultiMorphAnalysisOptionButtons morphAnalysis={morphologicalAnalysis}
-                                             toggleAnalysisSelection={(letter, encLetter) => toggleAnalysisSelection(letter, encLetter, undefined)}/>}
+                                             toggleAnalysisSelection={(letter, encLetter) => toggleAnalysisSelection(letter, encLetter, undefined)}
+                                             setReferenceWord={setReferenceWord}/>}
 
       </div>}
     </div>
