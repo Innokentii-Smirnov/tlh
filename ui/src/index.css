@@ -201,8 +201,9 @@ code {
 
 .field-box {
   white-space: pre-line;
-  padding: 15px;
+  padding: 1px;
   display: table-row;
+  width: 7.5rem;
   size: 5;
 }
 

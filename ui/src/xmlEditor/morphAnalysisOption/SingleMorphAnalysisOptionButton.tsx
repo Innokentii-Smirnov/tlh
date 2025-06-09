@@ -28,19 +28,19 @@ export function SingleMorphAnalysisOptionButton({morphAnalysis, toggleAnalysisSe
         {morphAnalysis.referenceWord.split(sep).map((morpheme: string, i:number) => {
           const tags: string[] = morphAnalysis.analysis.split(sep);
           return (
-            <span key={i.toString()}
+            <div key={i.toString()}
                   className="morpheme-box">
-              <input type="text"
+              <label
                 key={i.toString()}
-                className="field-box"
-                defaultValue={morpheme}>
-              </input>
+                className="field-box">
+                {morpheme}
+              </label>
               <input
                 key={i.toString()}
                 className="field-box"
                 defaultValue={i > 0 ? tags[i - 1] : morphAnalysis.translation}>
               </input>
-            </span>
+            </div>
           );
         })}
         </div>
