@@ -1,4 +1,4 @@
-import {JSX, useState} from 'react';
+import {JSX, useState, useEffect} from 'react';
 import {useTranslation} from 'react-i18next';
 import {SingleMorphAnalysisOptionButton} from './SingleMorphAnalysisOptionButton';
 import {isSingleMorphologicalAnalysis, MorphologicalAnalysis, SingleMorphologicalAnalysis, MultiMorphologicalAnalysis} from '../../model/morphologicalAnalysis';
@@ -21,17 +21,15 @@ export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggle
   const [lastNumerusSelected, setLastNumerusSelected] = useState<NumerusOption>();
 
   const [morphologicalAnalysis, setMorphAnalysis] = useState(initialMorphologicalAnalysis);
+  useEffect(() => updateMorphology(morphologicalAnalysis, false));
   const setReferenceWord = (value: string): void => {
     setMorphAnalysis((ma) => update(ma, { referenceWord: { $set: value } }));
-    updateMorphology(morphologicalAnalysis, false);
   };
   const setTranslation = (value: string): void => {
     setMorphAnalysis((ma) => update(ma, { translation: { $set: value } }));
-    updateMorphology(morphologicalAnalysis, false);
   };
   const setSingleMorphAnalysis = (value: string): void => {
     setMorphAnalysis((ma) => update(ma as SingleMorphologicalAnalysis, { analysis: { $set: value } }));
-    updateMorphology(morphologicalAnalysis, false);
   };
 
   const {number, translation, referenceWord, paradigmClass, determinative} = morphologicalAnalysis;
