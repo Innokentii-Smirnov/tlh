@@ -52,7 +52,8 @@ export function MorphemesEditor({
   return (
     <div className="segmentation-box">
     {morphemes.map((morpheme: string, i:number) => {
-      const tag: string = i > 0 ? tags[i - 1] : translation;
+      const tagIndex: number = i - (morphemes.length - tags.length);
+      const tag: string = i > 0 ? tags[tagIndex] : translation;
       return (
         <div key={i.toString()} className="morpheme-box">
           <div className="field-box">
