@@ -11,10 +11,10 @@ import update from 'immutability-helper';
 interface IProps extends CanToggleAnalysisSelection {
   initialMorphologicalAnalysis: MorphologicalAnalysis;
   enableEditMode: () => void;
-  onSubmit: (ma: MorphologicalAnalysis) => void;
+  updateMorphology: (ma: MorphologicalAnalysis, updateDictionary: boolean) => void;
 }
 
-export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggleAnalysisSelection, enableEditMode, onSubmit}: IProps): JSX.Element {
+export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggleAnalysisSelection, enableEditMode, updateMorphology}: IProps): JSX.Element {
 
   const {t} = useTranslation('common');
   const [isReduced, setIsReduced] = useState(false);
@@ -23,15 +23,15 @@ export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggle
   const [morphologicalAnalysis, setMorphAnalysis] = useState(initialMorphologicalAnalysis);
   const setReferenceWord = (value: string): void => {
     setMorphAnalysis((ma) => update(ma, { referenceWord: { $set: value } }));
-    onSubmit(morphologicalAnalysis);
+    updateMorphology(morphologicalAnalysis, false);
   };
   const setTranslation = (value: string): void => {
     setMorphAnalysis((ma) => update(ma, { translation: { $set: value } }));
-    onSubmit(morphologicalAnalysis);
+    updateMorphology(morphologicalAnalysis, false);
   };
   const setSingleMorphAnalysis = (value: string): void => {
     setMorphAnalysis((ma) => update(ma as SingleMorphologicalAnalysis, { analysis: { $set: value } }));
-    onSubmit(morphologicalAnalysis);
+    updateMorphology(morphologicalAnalysis, false);
   };
 
   const {number, translation, referenceWord, paradigmClass, determinative} = morphologicalAnalysis;

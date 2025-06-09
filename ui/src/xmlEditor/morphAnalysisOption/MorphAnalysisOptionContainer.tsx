@@ -9,7 +9,7 @@ export interface CanToggleAnalysisSelection {
 
 interface IProps extends CanToggleAnalysisSelection {
   morphologicalAnalysis: MorphologicalAnalysis;
-  updateMorphology: (ma: MorphologicalAnalysis) => void;
+  updateMorphology: (ma: MorphologicalAnalysis, updateDictionary: boolean) => void;
   setKeyHandlingEnabled: (b: boolean) => void;
   hurrian: boolean;
 }
@@ -43,12 +43,12 @@ export function MorphAnalysisOptionContainer({
 
   function onEditSubmit(ma: MorphologicalAnalysis): void {
     disableUpdateMode();
-    updateMorphology(ma);
+    updateMorphology(ma, true);
   }
 
   return isUpdateMode
     ? <MorphAnalysisOptionEditor initialMorphologicalAnalysis={morphologicalAnalysis} onSubmit={onEditSubmit} cancelUpdate={disableUpdateMode} hurrian={hurrian}/>
     : <MorphAnalysisOptionButtons initialMorphologicalAnalysis={morphologicalAnalysis} toggleAnalysisSelection={toggleAnalysisSelection}
                                   enableEditMode={enableUpdateMode}
-                                  onSubmit={onEditSubmit}/>;
+                                  updateMorphology={updateMorphology}/>;
 }

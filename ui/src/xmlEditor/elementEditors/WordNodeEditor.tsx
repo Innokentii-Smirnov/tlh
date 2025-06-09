@@ -85,11 +85,12 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
     setState('DefaultState');
   }
 
-  function updateMorphology(number: number, newMa: MorphologicalAnalysis): void {
+  function updateMorphology(number: number, newMa: MorphologicalAnalysis,
+                            updateDictionary: boolean): void {
     const value: string = writeMorphAnalysisValue(newMa);
     updateEditedNode({attributes: {[`mrp${number}`]: {$set: value}}});
     setState('DefaultState');
-    if (language === 'Hur') {
+    if (language === 'Hur' && updateDictionary) {
         updateHurrianDictionary(node, number, value);
     }
   }
@@ -225,7 +226,7 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
               <MorphAnalysisOptionContainer
                 morphologicalAnalysis={m}
                 toggleAnalysisSelection={(letter, encLetter, targetState) => toggleAnalysisSelection(m.number, letter, encLetter, targetState)}
-                updateMorphology={(newMa) => updateMorphology(m.number, newMa)}
+                updateMorphology={(newMa, updateDictionary) => updateMorphology(m.number, newMa, updateDictionary)}
                 setKeyHandlingEnabled={setKeyHandlingEnabled}
 				hurrian={language === 'Hur'}
               />
@@ -234,7 +235,7 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
 
         {state === 'AddMorphology'
           ? <MorphAnalysisOptionEditor initialMorphologicalAnalysis={nextMorphAnalysis()}
-                                       onSubmit={(newMa) => updateMorphology(Math.max(0, ...morphologies.map(({number}) => number)) + 1, newMa)}
+                                       onSubmit={(newMa) => updateMorphology(Math.max(0, ...morphologies.map(({number}) => number)) + 1, newMa, true)}
                                        cancelUpdate={toggleAddMorphology}
                                        hurrian={language === 'Hur'}/>
           : (
