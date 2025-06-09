@@ -12,9 +12,10 @@ interface IProps extends CanToggleAnalysisSelection {
   initialMorphologicalAnalysis: MorphologicalAnalysis;
   enableEditMode: () => void;
   updateMorphology: (ma: MorphologicalAnalysis, updateDictionary: boolean) => void;
+  hurrian: boolean;
 }
 
-export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggleAnalysisSelection, enableEditMode, updateMorphology}: IProps): JSX.Element {
+export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggleAnalysisSelection, enableEditMode, updateMorphology, hurrian}: IProps): JSX.Element {
 
   const {t} = useTranslation('common');
   const [isReduced, setIsReduced] = useState(false);
@@ -88,12 +89,14 @@ export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggle
                                              toggleAnalysisSelection={(encLetter) => toggleAnalysisSelection(undefined, encLetter, undefined)}
                                              setReferenceWord={setReferenceWord}
                                              setTranslation={setTranslation}
-                                             setAnalysis={setSingleMorphAnalysis}/>
+                                             setAnalysis={setSingleMorphAnalysis}
+                                             hurrian={hurrian}/>
           : <MultiMorphAnalysisOptionButtons morphAnalysis={morphologicalAnalysis}
                                              toggleAnalysisSelection={(letter, encLetter) => toggleAnalysisSelection(letter, encLetter, undefined)}
                                              setReferenceWord={setReferenceWord}
                                              setTranslation={setTranslation}
-                                             setAnalysis={setMultiMorphAnalysis}/>}
+                                             setAnalysis={setMultiMorphAnalysis}
+                                             hurrian={hurrian}/>}
 
       </div>}
     </div>

@@ -50,5 +50,6 @@ export function MorphAnalysisOptionContainer({
     ? <MorphAnalysisOptionEditor initialMorphologicalAnalysis={morphologicalAnalysis} onSubmit={onEditSubmit} cancelUpdate={disableUpdateMode} hurrian={hurrian}/>
     : <MorphAnalysisOptionButtons initialMorphologicalAnalysis={morphologicalAnalysis} toggleAnalysisSelection={toggleAnalysisSelection}
                                   enableEditMode={enableUpdateMode}
-                                  updateMorphology={updateMorphology}/>;
+                                  updateMorphology={updateMorphology}
+                                  hurrian={hurrian}/>;
 }

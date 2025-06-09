@@ -9,6 +9,7 @@ interface IProps {
   setReferenceWord: (newReferenceWord: string) => void;
   setTranslation: (newTranslation: string) => void;
   setAnalysis: (newTranslation: string) => void;
+  hurrian: boolean;
 }
 
 export function EncliticsAnalysisDisplay({enclitics, analysis}: { enclitics: string, analysis: string }): JSX.Element {
@@ -24,7 +25,8 @@ export function SingleMorphAnalysisOptionButton({
   toggleAnalysisSelection,
   setReferenceWord,
   setTranslation,
-  setAnalysis
+  setAnalysis,
+  hurrian
 }: IProps
 ): JSX.Element {
   switch (morphAnalysis._type) {
@@ -34,14 +36,14 @@ export function SingleMorphAnalysisOptionButton({
           <SelectableButton selected={morphAnalysis.selected} otherClasses={otherClasses} onClick={() => toggleAnalysisSelection(undefined)}>
             <>{morphAnalysis.analysis || morphAnalysis.paradigmClass}</>
           </SelectableButton>
-          <MorphemesEditor
+          {hurrian && <MorphemesEditor
             segmentation={morphAnalysis.referenceWord}
             translation={morphAnalysis.translation}
             analysis={morphAnalysis.analysis}
             onSegmentationChange={setReferenceWord}
             onTranslationChange={setTranslation}
             onAnalysisChange={setAnalysis}
-          />
+          />}
         </div>
       );
 
