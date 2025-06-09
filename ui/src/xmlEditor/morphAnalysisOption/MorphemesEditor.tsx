@@ -7,7 +7,17 @@ interface IProps {
   onAnalysisChange: (newAnalysis: string) => void
 }
 
-const sep = /-|=/;
+const sep = /(-|=)/;
+
+function split(segmentation: string): [string, boolean][] {
+  const morphemes: [string, boolean][] = [];
+  const spl = segmentation.split(sep);
+  morphemes.push([spl[0], false]);
+  for (let i = 1; i < spl.length; i += 2) {
+    morphemes.push([spl[i + 1], spl[i] === '=']);
+  }
+  return morphemes;
+}
 
 // Returns the position in the string of the morpheme with the required number
 function findMorphemeStart(requiredMorphemeNumber: number, segmentation: string): number {
@@ -43,17 +53,41 @@ function replaceMorpheme(morpheme: string, newMorpheme: string,
   return newSegmentation;
 }
 
+function addSep(pair: [string, boolean], posit: number): string {
+  const [tag, isEnclitic] = pair;
+  if (posit === 0) {
+    return tag;
+  }
+  if (isEnclitic) {
+    return '=' + tag;
+  }
+  return '-' + tag;
+}
+
 export function MorphemesEditor({
   segmentation, translation, analysis,
   onSegmentationChange, onTranslationChange, onAnalysisChange
 } : IProps) {
-  const morphemes: string[] = segmentation.split(sep);
-  const tags = analysis.split(sep);
+  const morphemes = split(segmentation);
+  const tags = split(analysis);
   return (
     <div className="segmentation-box">
-    {morphemes.map((morpheme: string, i:number) => {
+    {morphemes.map((pair: [string, boolean], i: number) => {
+      const [morpheme, isEnclitic] = pair;
       const tagIndex: number = i - (morphemes.length - tags.length);
-      const tag: string = i > 0 ? tags[tagIndex] : translation;
+      let tag: string;
+      if (i === 0) {
+        tag = translation;
+      } else {
+        if (0 <= tagIndex && tagIndex < tags.length) {
+          tag = tags[tagIndex][0];
+          if (isEnclitic !== tags[tagIndex][1]) {
+            throw new Error([morpheme, tag, segmentation, analysis, isEnclitic, tags[tagIndex][1]].join(' '));
+          }
+        } else {
+          tag = '';
+        }
+      }
       return (
         <div key={i.toString()} className="morpheme-box">
           <div className="field-box">
@@ -77,13 +111,14 @@ export function MorphemesEditor({
                   onTranslationChange(event.target.value);
                 }
                 else {
-                  const index = i - 1; // Because of the stem, which has no tag
-                  let newTags: string[] = tags.slice(0, index);
-                  newTags.push(event.target.value);
-                  if (index < tags.length - 1) {
-                    newTags = newTags.concat(tags.slice(index + 1));
+                  let newTags: [string, boolean][] = tags.slice(0, tagIndex);
+                  newTags.push([event.target.value, isEnclitic]);
+                  if (tagIndex < tags.length - 1) {
+                    newTags = newTags.concat(tags.slice(tagIndex + 1));
                   }
-                  onAnalysisChange(newTags.join('-'));
+                  onAnalysisChange(newTags
+                    .map((pair, posit) => addSep(pair, posit))
+                    .join(''));
                 }
               }}
             >
