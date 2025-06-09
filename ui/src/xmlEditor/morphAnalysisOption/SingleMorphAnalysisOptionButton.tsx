@@ -14,14 +14,37 @@ export function EncliticsAnalysisDisplay({enclitics, analysis}: { enclitics: str
 }
 
 const otherClasses = ['p-2', 'rounded', 'w-full'];
+const sep = /-|=/;
 
 export function SingleMorphAnalysisOptionButton({morphAnalysis, toggleAnalysisSelection}: IProps): JSX.Element {
   switch (morphAnalysis._type) {
     case 'SingleMorphAnalysisWithoutEnclitics':
       return (
+        <div>
         <SelectableButton selected={morphAnalysis.selected} otherClasses={otherClasses} onClick={() => toggleAnalysisSelection(undefined)}>
           <>{morphAnalysis.analysis || morphAnalysis.paradigmClass}</>
         </SelectableButton>
+        <div className="segmentation-box">
+        {morphAnalysis.referenceWord.split(sep).map((morpheme: string, i:number) => {
+          const tags: string[] = morphAnalysis.analysis.split(sep);
+          return (
+            <span key={i.toString()}
+                  className="morpheme-box">
+              <input type="text"
+                key={i.toString()}
+                className="field-box"
+                defaultValue={morpheme}>
+              </input>
+              <input
+                key={i.toString()}
+                className="field-box"
+                defaultValue={i > 0 ? tags[i - 1] : morphAnalysis.translation}>
+              </input>
+            </span>
+          );
+        })}
+        </div>
+        </div>
       );
 
     case 'SingleMorphAnalysisWithSingleEnclitics':
