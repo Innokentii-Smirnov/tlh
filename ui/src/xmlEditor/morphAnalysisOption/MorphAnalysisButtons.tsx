@@ -31,6 +31,12 @@ export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggle
   const setSingleMorphAnalysis = (value: string): void => {
     setMorphAnalysis((ma) => update(ma as SingleMorphologicalAnalysis, { analysis: { $set: value } }));
   };
+  const setMultiMorphAnalysis = (index: number, value: string): void => {
+    setMorphAnalysis((ma) => update(
+      ma as MultiMorphologicalAnalysis,
+      { analysisOptions: { [index]: { analysis: { $set: value } } } }
+    ));
+  };
 
   const {number, translation, referenceWord, paradigmClass, determinative} = morphologicalAnalysis;
   const isSingleAnalysisOption = isSingleMorphologicalAnalysis(morphologicalAnalysis);
@@ -86,7 +92,8 @@ export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggle
           : <MultiMorphAnalysisOptionButtons morphAnalysis={morphologicalAnalysis}
                                              toggleAnalysisSelection={(letter, encLetter) => toggleAnalysisSelection(letter, encLetter, undefined)}
                                              setReferenceWord={setReferenceWord}
-                                             setTranslation={setTranslation}/>}
+                                             setTranslation={setTranslation}
+                                             setAnalysis={setMultiMorphAnalysis}/>}
 
       </div>}
     </div>

@@ -15,9 +15,10 @@ interface IProps {
   toggleAnalysisSelection: (letter: string, encLetter: string | undefined) => void;
   setReferenceWord: (newReferenceWord: string) => void;
   setTranslation: (newTranslation: string) => void;
+  setAnalysis: (num: number, newAnalysis: string) => void;
 }
 
-export function MultiMorphAnalysisOptionButtons({morphAnalysis, toggleAnalysisSelection, setReferenceWord, setTranslation}: IProps): JSX.Element {
+export function MultiMorphAnalysisOptionButtons({morphAnalysis, toggleAnalysisSelection, setReferenceWord, setTranslation, setAnalysis}: IProps): JSX.Element {
   switch (morphAnalysis._type) {
     case 'MultiMorphAnalysisWithoutEnclitics':
       return (
@@ -34,8 +35,8 @@ export function MultiMorphAnalysisOptionButtons({morphAnalysis, toggleAnalysisSe
               analysis={analysis}
               onSegmentationChange={setReferenceWord}
               onTranslationChange={setTranslation}
-              onAnalysisChange={(s: string) => {
-                // do nothing
+              onAnalysisChange={(newAnalysis: string) => {
+                setAnalysis(index, newAnalysis);
               }}
             />
           </div>)}
