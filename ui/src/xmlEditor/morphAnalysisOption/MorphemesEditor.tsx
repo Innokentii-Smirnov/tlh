@@ -3,8 +3,8 @@ interface IProps {
   translation: string,
   analysis: string,
   onSegmentationChange: (newSegmentation: string) => void,
-  //onTranslationChange: (newTranslation: string) => void,
-  //onAnalysisChange: (newAnalysis: string) => void
+  onTranslationChange: (newTranslation: string) => void,
+  onAnalysisChange: (newAnalysis: string) => void
 }
 
 const sep = /-|=/;
@@ -40,16 +40,15 @@ function replaceMorpheme(morpheme: string, newMorpheme: string,
                          segmentation: string, position: number) {
   const morphemeStart = findMorphemeStart(position, segmentation);
   const newSegmentation = replaceAt(segmentation, morphemeStart, morpheme.length, newMorpheme);
-  console.log(newSegmentation);
   return newSegmentation;
 }
 
 export function MorphemesEditor({
   segmentation, translation, analysis,
-  onSegmentationChange
+  onSegmentationChange, onTranslationChange, onAnalysisChange
 } : IProps) {
   const morphemes: string[] = segmentation.split(sep);
-  const tags: string[] = analysis.split(sep);
+  const tags = analysis.split(sep);
   return (
     <div className="segmentation-box">
     {morphemes.map((morpheme: string, i:number) => {
@@ -68,7 +67,25 @@ export function MorphemesEditor({
             </input>
           </div>
           <div className="field-box">
-            <input type="text" className="morpheme-input" defaultValue={tag}>
+            <input
+              type="text"
+              className="morpheme-input"
+              defaultValue={tag}
+              onChange={(event) => {
+                if (i == 0) {
+                  onTranslationChange(event.target.value);
+                }
+                else {
+                  const index = i - 1; // Because of the stem, which has no tag
+                  let newTags: string[] = tags.slice(0, index);
+                  newTags.push(event.target.value);
+                  if (index < tags.length - 1) {
+                    newTags = newTags.concat(tags.slice(index + 1));
+                  }
+                  onAnalysisChange(newTags.join('-'));
+                }
+              }}
+            >
             </input>
           </div>
         </div>

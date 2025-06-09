@@ -7,6 +7,8 @@ interface IProps {
   morphAnalysis: SingleMorphologicalAnalysis;
   toggleAnalysisSelection: (encLetter: string | undefined) => void;
   setReferenceWord: (newReferenceWord: string) => void;
+  setTranslation: (newTranslation: string) => void;
+  setAnalysis: (newTranslation: string) => void;
 }
 
 export function EncliticsAnalysisDisplay({enclitics, analysis}: { enclitics: string, analysis: string }): JSX.Element {
@@ -20,7 +22,9 @@ const otherClasses = ['p-2', 'rounded', 'w-full'];
 export function SingleMorphAnalysisOptionButton({
   morphAnalysis,
   toggleAnalysisSelection,
-  setReferenceWord
+  setReferenceWord,
+  setTranslation,
+  setAnalysis
 }: IProps
 ): JSX.Element {
   switch (morphAnalysis._type) {
@@ -35,6 +39,8 @@ export function SingleMorphAnalysisOptionButton({
             translation={morphAnalysis.translation}
             analysis={morphAnalysis.analysis}
             onSegmentationChange={setReferenceWord}
+            onTranslationChange={setTranslation}
+            onAnalysisChange={setAnalysis}
           />
         </div>
       );
