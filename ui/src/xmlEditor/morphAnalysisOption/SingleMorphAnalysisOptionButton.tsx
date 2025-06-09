@@ -1,6 +1,7 @@
 import {SingleMorphologicalAnalysis} from '../../model/morphologicalAnalysis';
 import {SelectableButton} from '../../genericElements/Buttons';
 import {JSX} from 'react';
+import {MorphemesEditor} from './MorphemesEditor';
 
 interface IProps {
   morphAnalysis: SingleMorphologicalAnalysis;
@@ -14,37 +15,16 @@ export function EncliticsAnalysisDisplay({enclitics, analysis}: { enclitics: str
 }
 
 const otherClasses = ['p-2', 'rounded', 'w-full'];
-const sep = /-|=/;
 
 export function SingleMorphAnalysisOptionButton({morphAnalysis, toggleAnalysisSelection}: IProps): JSX.Element {
   switch (morphAnalysis._type) {
     case 'SingleMorphAnalysisWithoutEnclitics':
       return (
         <div>
-        <SelectableButton selected={morphAnalysis.selected} otherClasses={otherClasses} onClick={() => toggleAnalysisSelection(undefined)}>
-          <>{morphAnalysis.analysis || morphAnalysis.paradigmClass}</>
-        </SelectableButton>
-        <div className="segmentation-box">
-        {morphAnalysis.referenceWord.split(sep).map((morpheme: string, i:number) => {
-          const tags: string[] = morphAnalysis.analysis.split(sep);
-          const tag: string = i > 0 ? tags[i - 1] : morphAnalysis.translation;
-          return (
-            <div key={i.toString()}
-                  className="morpheme-box">
-              <div className="field-box">
-                <input type="text" className="morpheme-input"
-                  defaultValue={morpheme}>
-                </input>
-              </div>
-              <div className="field-box">
-                <input type="text" className="morpheme-input"
-                  defaultValue={tag}>
-                </input>
-              </div>
-            </div>
-          );
-        })}
-        </div>
+          <SelectableButton selected={morphAnalysis.selected} otherClasses={otherClasses} onClick={() => toggleAnalysisSelection(undefined)}>
+            <>{morphAnalysis.analysis || morphAnalysis.paradigmClass}</>
+          </SelectableButton>
+          <MorphemesEditor morphAnalysis={morphAnalysis}/>
         </div>
       );
 
