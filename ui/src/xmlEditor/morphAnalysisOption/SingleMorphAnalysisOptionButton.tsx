@@ -30,16 +30,16 @@ export function SingleMorphAnalysisOptionButton({morphAnalysis, toggleAnalysisSe
           return (
             <div key={i.toString()}
                   className="morpheme-box">
-              <label
-                key={i.toString()}
-                className="field-box">
-                {morpheme}
-              </label>
-              <input
-                key={i.toString()}
-                className="field-box"
-                defaultValue={i > 0 ? tags[i - 1] : morphAnalysis.translation}>
-              </input>
+              <div className="field-box">
+                <input type="text" className="morpheme-input"
+                  defaultValue={morpheme}>
+                </input>
+              </div>
+              <div className="field-box">
+                <input type="text" className="morpheme-input"
+                  defaultValue={i > 0 ? tags[i - 1] : morphAnalysis.translation}>
+                </input>
+              </div>
             </div>
           );
         })}

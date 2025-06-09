@@ -203,6 +203,9 @@ code {
   white-space: pre-line;
   padding: 1px;
   display: table-row;
+}
+
+.morpheme-input {
   width: 7.5rem;
   size: 5;
 }
