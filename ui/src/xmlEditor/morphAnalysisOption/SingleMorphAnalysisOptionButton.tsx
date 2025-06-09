@@ -24,7 +24,11 @@ export function SingleMorphAnalysisOptionButton({morphAnalysis, toggleAnalysisSe
           <SelectableButton selected={morphAnalysis.selected} otherClasses={otherClasses} onClick={() => toggleAnalysisSelection(undefined)}>
             <>{morphAnalysis.analysis || morphAnalysis.paradigmClass}</>
           </SelectableButton>
-          <MorphemesEditor morphAnalysis={morphAnalysis}/>
+          <MorphemesEditor
+            segmentation={morphAnalysis.referenceWord}
+            translation={morphAnalysis.translation}
+            analysis={morphAnalysis.analysis}
+          />
         </div>
       );
 

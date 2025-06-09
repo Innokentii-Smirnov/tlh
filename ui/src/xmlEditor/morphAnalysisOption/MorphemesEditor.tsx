@@ -1,17 +1,18 @@
-import {SingleMorphologicalAnalysis} from '../../model/morphologicalAnalysis';
-
 interface IProps {
-  morphAnalysis: SingleMorphologicalAnalysis;
+  segmentation: string,
+  translation: string,
+  analysis: string
 }
 
 const sep = /-|=/;
 
-export function MorphemesEditor({morphAnalysis} : IProps) {
+export function MorphemesEditor({segmentation, translation, analysis} : IProps) {
+  const morphemes: string[] = segmentation.split(sep);
+  const tags: string[] = analysis.split(sep);
   return (
     <div className="segmentation-box">
-    {morphAnalysis.referenceWord.split(sep).map((morpheme: string, i:number) => {
-      const tags: string[] = morphAnalysis.analysis.split(sep);
-      const tag: string = i > 0 ? tags[i - 1] : morphAnalysis.translation;
+    {morphemes.map((morpheme: string, i:number) => {
+      const tag: string = i > 0 ? tags[i - 1] : translation;
       return (
         <div key={i.toString()} className="morpheme-box">
           <div className="field-box">
