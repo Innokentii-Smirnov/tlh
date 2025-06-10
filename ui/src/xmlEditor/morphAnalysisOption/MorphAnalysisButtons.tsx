@@ -43,17 +43,19 @@ export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggle
     ));
   };
 
+  const updateLexicon = () => {
+    const stem = getStem(morphologicalAnalysis.referenceWord);
+    const pos = getPos(morphologicalAnalysis.paradigmClass);
+    storeGloss(stem, pos, morphologicalAnalysis.translation);
+  };
+
   if (!globalUpdateButtonRef) {
     throw new Error('No global update button passed.');
   }
   if (!globalUpdateButtonRef.current) {
     console.log('The global update button is null.');
   } else {
-      globalUpdateButtonRef.current.addEventListener('click', () => {
-        const stem = getStem(morphologicalAnalysis.referenceWord);
-        const pos = getPos(morphologicalAnalysis.paradigmClass);
-        storeGloss(stem, pos, morphologicalAnalysis.translation);
-      });
+      globalUpdateButtonRef.current.addEventListener('click', updateLexicon);
   }
 
 
