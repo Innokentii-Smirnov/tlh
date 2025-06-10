@@ -46,7 +46,10 @@ export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggle
   const updateLexicon = () => {
     const stem = getStem(morphologicalAnalysis.referenceWord);
     const pos = getPos(morphologicalAnalysis.paradigmClass);
-    storeGloss(stem, pos, morphologicalAnalysis.translation);
+    const gloss = morphologicalAnalysis.translation;
+    if (gloss !== '') {
+      storeGloss(stem, pos, gloss);
+    }
   };
 
   useEffect(() => {
