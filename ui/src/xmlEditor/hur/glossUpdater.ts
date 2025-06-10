@@ -5,7 +5,7 @@ import {XmlElementNode} from 'simple_xml';
 import {storeGloss, retrieveGloss} from './glossProvider';
 import {getStem} from './splitter';
 
-function getPos(template: string): string
+export function getPos(template: string): string
 {
 	if (template === 'noun' || template === 'indecl' || template === '')
 	{

@@ -7,6 +7,9 @@ import {MultiMorphAnalysisOptionButtons} from './MultiMorphAnalysisOptionButtons
 import classNames from 'classnames';
 import {analysisIsInNumerus, numeri, NumerusOption, stringifyNumerus} from './numerusOption';
 import update from 'immutability-helper';
+import { getStem } from '../hur/splitter';
+import { getPos } from '../hur/glossUpdater';
+import { storeGloss } from '../hur/glossProvider';
 
 interface IProps extends CanToggleAnalysisSelection {
   initialMorphologicalAnalysis: MorphologicalAnalysis;
@@ -43,6 +46,16 @@ export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggle
   if (!globalUpdateButtonRef) {
     throw new Error('No global update button passed.');
   }
+  if (!globalUpdateButtonRef.current) {
+    console.log('The global update button is null.');
+  } else {
+      globalUpdateButtonRef.current.addEventListener('click', () => {
+        const stem = getStem(morphologicalAnalysis.referenceWord);
+        const pos = getPos(morphologicalAnalysis.paradigmClass);
+        storeGloss(stem, pos, morphologicalAnalysis.translation);
+      });
+  }
+
 
   const {number, translation, referenceWord, paradigmClass, determinative} = morphologicalAnalysis;
   const isSingleAnalysisOption = isSingleMorphologicalAnalysis(morphologicalAnalysis);
