@@ -11,7 +11,8 @@ function findBoundary(segmentation: string): number {
 
 export function getStem(segmentation: string): string {
   const i: number = findBoundary(segmentation);
-  return segmentation.substring(0, i);
+  const stem: string = segmentation.substring(0, i);
+  return stem.replaceAll('(', '').replaceAll(')', '');
 }
 
 function basicGetGrammaticalMorphemes(segmentation: string, i: number): string {
