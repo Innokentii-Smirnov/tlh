@@ -111,7 +111,19 @@ export function MorphemesEditor({
       return (
         <div key={i.toString()} className="morpheme-box">
           <div className="field-box">
-            <label className="morpheme-input">{morpheme.kind}</label>
+            <select
+              className="morpheme-input"
+              defaultValue={morpheme.kind}
+              onChange={(event) => {
+                morphemes[i].kind = event.target.value;
+                onSegmentationChange(makeSegmentation(morphemes));
+                onAnalysisChange(makeAnalysis(morphemes));
+              }}>
+              <option value='stem'>Stamm</option>
+              <option value='suffix'>Suffix</option>
+              <option value='enclitic'>Enklitik</option>
+              <option value='zero'>Nullsuf.</option>
+            </select>
           </div>
           <div className="field-box">
             <input
