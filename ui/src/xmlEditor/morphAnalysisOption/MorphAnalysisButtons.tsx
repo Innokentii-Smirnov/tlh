@@ -1,7 +1,7 @@
 import {JSX, useState, useEffect, RefObject} from 'react';
 import {useTranslation} from 'react-i18next';
 import {SingleMorphAnalysisOptionButton} from './SingleMorphAnalysisOptionButton';
-import {isSingleMorphologicalAnalysis, MorphologicalAnalysis, SingleMorphologicalAnalysis, MultiMorphologicalAnalysis} from '../../model/morphologicalAnalysis';
+import {isSingleMorphologicalAnalysis, MorphologicalAnalysis, SingleMorphologicalAnalysis, MultiMorphologicalAnalysis, writeMorphAnalysisValue} from '../../model/morphologicalAnalysis';
 import {CanToggleAnalysisSelection} from './MorphAnalysisOptionContainer';
 import {MultiMorphAnalysisOptionButtons} from './MultiMorphAnalysisOptionButtons';
 import classNames from 'classnames';
@@ -10,6 +10,7 @@ import update from 'immutability-helper';
 import { getStem } from '../hur/splitter';
 import { getPos } from '../hur/glossUpdater';
 import { storeGloss } from '../hur/glossProvider';
+import { basicUpdateHurrianDictionary } from '../hur/dictionary';
 
 interface IProps extends CanToggleAnalysisSelection {
   initialMorphologicalAnalysis: MorphologicalAnalysis;
@@ -17,9 +18,10 @@ interface IProps extends CanToggleAnalysisSelection {
   updateMorphology: (ma: MorphologicalAnalysis, updateDictionary: boolean) => void;
   hurrian: boolean;
   globalUpdateButtonRef?: RefObject<HTMLButtonElement>;
+  transcription: string;
 }
 
-export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggleAnalysisSelection, enableEditMode, updateMorphology, hurrian, globalUpdateButtonRef}: IProps): JSX.Element {
+export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggleAnalysisSelection, enableEditMode, updateMorphology, hurrian, globalUpdateButtonRef, transcription}: IProps): JSX.Element {
 
   const {t} = useTranslation('common');
   const [isReduced, setIsReduced] = useState(false);
@@ -43,6 +45,11 @@ export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggle
     ));
   };
 
+  const updateDictionary = () => {
+    const value: string = writeMorphAnalysisValue(morphologicalAnalysis);
+    basicUpdateHurrianDictionary(transcription, value);
+  };
+
   const updateLexicon = () => {
     const stem = getStem(morphologicalAnalysis.referenceWord);
     const pos = getPos(morphologicalAnalysis.paradigmClass);
@@ -60,11 +67,13 @@ export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggle
       console.log('The global update button is null.');
     } else {
       globalUpdateButtonRef.current.addEventListener('click', updateLexicon);
+      globalUpdateButtonRef.current.addEventListener('click', updateDictionary);
       return () => {
         if (!globalUpdateButtonRef.current) {
           console.log('The global update button is null.');
         } else {
           globalUpdateButtonRef.current.removeEventListener('click', updateLexicon);
+          globalUpdateButtonRef.current.removeEventListener('click', updateDictionary);
         }
       };
     }

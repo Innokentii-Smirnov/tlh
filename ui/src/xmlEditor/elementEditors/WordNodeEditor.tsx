@@ -230,6 +230,7 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
                 setKeyHandlingEnabled={setKeyHandlingEnabled}
 				hurrian={language === 'Hur'}
 				globalUpdateButtonRef={globalUpdateButtonRef}
+				transcription={node.attributes.trans || ''}
               />
             </div>
           )}

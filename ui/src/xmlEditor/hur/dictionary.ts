@@ -65,15 +65,24 @@ export function annotateHurrianWord(node: XmlElementNode): void {
   }
 }
 
-export function updateHurrianDictionary(node: XmlElementNode, number: number, value: string): void {
-  if (!isValid(value)) {
-    return;
-  }
-  value = normalize(value, false);
+export function updateHurrianDictionary(
+  node: XmlElementNode, number: number, value: string
+): void {
   if (number === 1) {
     delete node.attributes.firstAnalysisIsPlaceholder;
   }
   const transcription: string = node.attributes.trans || '';
+  basicUpdateHurrianDictionary(transcription, value);
+  saveGloss(number, value);
+}
+
+export function basicUpdateHurrianDictionary(
+  transcription: string, value: string
+): void {
+  if (!isValid(value)) {
+    return;
+  }
+  value = normalize(value, false);
   let possibilities: Set<string> | undefined;
   if (dictionary.has(transcription)) {
     possibilities = dictionary.get(transcription);
@@ -86,7 +95,6 @@ export function updateHurrianDictionary(node: XmlElementNode, number: number, va
     throw new Error();
   }
   possibilities.add(value);
-  saveGloss(number, value);
 }
 
 export function getDictionary(): { [key: string]: string[] } {
