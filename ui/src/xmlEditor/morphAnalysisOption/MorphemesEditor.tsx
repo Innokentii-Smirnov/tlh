@@ -7,112 +7,95 @@ interface IProps {
   onAnalysisChange: (newAnalysis: string) => void
 }
 
-const sep = /(-|=)/;
+const sep = /(-|=|\.(?=ABS))/;
 
-function split(segmentation: string): [string, boolean][] {
-  const morphemes: [string, boolean][] = [];
+function split(segmentation: string): [string, string][] {
+  const morphemes: [string, string][] = [];
   const spl = segmentation.split(sep);
-  morphemes.push([spl[0], false]);
+  morphemes.push([spl[0], '']);
   for (let i = 1; i < spl.length; i += 2) {
-    morphemes.push([spl[i + 1], spl[i] === '=']);
+    morphemes.push([spl[i + 1], spl[i]]);
   }
   return morphemes;
 }
 
-// Returns the position in the string of the morpheme with the required number
-function findMorphemeStart(requiredMorphemeNumber: number, segmentation: string): number {
-  if (requiredMorphemeNumber == 0) {
-    return 0;
+class Morpheme {
+  form: string;
+  tag: string;
+  boundary: string;
+  constructor(form: string, tag: string, boundary: string) {
+    this.form = form;
+    this.tag = tag;
+    this.boundary = boundary;
   }
-  let morphemeNumber = 0;
-  for (let i = 0; i < segmentation.length; i++) {
-    const char = segmentation[i];
-    if (char == '-' || char == '=') {
-      morphemeNumber += 1;
+  getForm(): string {
+    if (this.boundary === '.') {
+      return '';
     }
-    if (morphemeNumber == requiredMorphemeNumber) {
-      return i + 1;
+    return this.boundary + this.form;
+  }
+  getTag(): string {
+    return this.boundary + this.tag;
+  }
+}
+
+function makeSegmentation(morphemes: Morpheme[]): string {
+  return morphemes.map(morpheme => morpheme.getForm()).join('');
+}
+
+function makeAnalysis(morphemes: Morpheme[]): string {
+  return morphemes.slice(1).map(morpheme => morpheme.getTag()).join('');
+}
+
+function buildMorphemes(segmentation: string, translation: string, analysis: string): Morpheme[] {
+  const forms: [string, string][] = split(segmentation);
+  const tags: [string, string][] = analysis === '' ? [] : split(analysis);
+  const morphemes: Morpheme[] = [];
+  let j = tags.length - 1;
+  for (let i = forms.length - 1; i >= 0; i--) {
+    const form = forms[i][0];
+    let tag, boundary;
+    if (j >= 0) {
+      [tag, boundary] = tags[j];
+      if (boundary === '.') {
+        const zero = new Morpheme('', tag, boundary);
+        morphemes.push(zero);
+        j--;
+        continue;
+      }
+    } else if (i === 0) {
+      tag = translation;
+      boundary = '';
+    } else {
+      tag = '';
+      boundary = '-';
     }
+    const morpheme = new Morpheme(form, tag, boundary);
+    morphemes.push(morpheme);
+    j--;
   }
-  return -1;
-}
-
-// Replaces n characters at position i with replacement.
-function replaceAt(s: string, i: number, n: number, replacement: string): string {
-  return s.substring(0, i) + replacement + s.substring(i + n);
-}
-
-// Replaces a morpheme or its annotation
-// by newMorpheme (or new annotation)
-// in the given position, where positions are counted
-// in morphemes (not in characters).
-function replaceMorpheme(morpheme: string, newMorpheme: string,
-                         segmentation: string, position: number) {
-  const morphemeStart = findMorphemeStart(position, segmentation);
-  const newSegmentation = replaceAt(segmentation, morphemeStart, morpheme.length, newMorpheme);
-  return newSegmentation;
-}
-
-function addSep(pair: [string, boolean], posit: number): string {
-  const [tag, isEnclitic] = pair;
-  if (posit === 0) {
-    return tag;
-  }
-  if (isEnclitic) {
-    return '=' + tag;
-  }
-  return '-' + tag;
-}
-
-function makeAnalysis(tags: [string, boolean][], isAbsolutive: boolean): string {
-  const analysis: string = tags
-    .map((pair, posit) => addSep(pair, posit))
-    .join('');
-  if (isAbsolutive) {
-    if (analysis === '') {
-      return '.ABS';
-    }
-    return '.ABS-' + analysis;
-  }
-  return analysis;
+  return morphemes.reverse();
 }
 
 export function MorphemesEditor({
   segmentation, translation, analysis,
   onSegmentationChange, onTranslationChange, onAnalysisChange
 } : IProps) {
-  const morphemes = split(segmentation);
-  let tags: [string, boolean][] = analysis === '' ? [] : split(analysis);
-  const isAbsolutive = tags[0][0] === '.ABS';
-  if (isAbsolutive) {
-    tags = tags.slice(1);
-  }
-  if (tags.length < morphemes.length - 1) {
-    const front: [string, boolean][] = morphemes
-      .slice(1, morphemes.length - tags.length)
-      .map(pair => ['', pair[1]]);
-    tags = front.concat(tags);
-  }
-  else if (tags.length > morphemes.length - 1) {
-    tags = tags.slice(tags.length - morphemes.length + 1);
-    onAnalysisChange(makeAnalysis(tags, isAbsolutive));
-  }
+  const morphemes = buildMorphemes(segmentation, translation, analysis);
   return (
     <div className="segmentation-box">
-    {morphemes.map((pair: [string, boolean], i: number) => {
-      const [morpheme, isEnclitic] = pair;
-      const tagIndex: number = i - 1;
-      const tag: string = (i === 0) ? translation : tags[tagIndex][0];
+    {morphemes.map((morpheme: Morpheme, i: number) => {
       return (
         <div key={i.toString()} className="morpheme-box">
           <div className="field-box">
             <input
               type="text"
               className="morpheme-input"
-              defaultValue={morpheme}
-              onChange={(event) => onSegmentationChange(
-                replaceMorpheme(morpheme, event.target.value, segmentation, i)
-              )}
+              defaultValue={morpheme.form}
+              onChange={(event) => {
+                morphemes[i].form = event.target.value;
+                onSegmentationChange(makeSegmentation(morphemes));
+              }}
             >
             </input>
           </div>
@@ -120,18 +103,14 @@ export function MorphemesEditor({
             <input
               type="text"
               className="morpheme-input"
-              defaultValue={tag}
+              defaultValue={morpheme.tag}
               onChange={(event) => {
+                morphemes[i].tag = event.target.value;
                 if (i == 0) {
                   onTranslationChange(event.target.value);
                 }
                 else {
-                  let newTags: [string, boolean][] = tags.slice(0, tagIndex);
-                  newTags.push([event.target.value, isEnclitic]);
-                  if (tagIndex < tags.length - 1) {
-                    newTags = newTags.concat(tags.slice(tagIndex + 1));
-                  }
-                  onAnalysisChange(makeAnalysis(newTags, isAbsolutive));
+                  onAnalysisChange(makeAnalysis(morphemes));
                 }
               }}
             >
