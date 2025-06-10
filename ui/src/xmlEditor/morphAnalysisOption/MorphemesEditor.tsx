@@ -70,11 +70,21 @@ export function MorphemesEditor({
 } : IProps) {
   const morphemes = split(segmentation);
   let tags: [string, boolean][] = analysis === '' ? [] : split(analysis);
+  const isAbsolutive = tags[0][0] === '.ABS';
+  if (isAbsolutive) {
+    tags = tags.slice(1);
+  }
   if (tags.length < morphemes.length - 1) {
     const front: [string, boolean][] = morphemes
       .slice(1, morphemes.length - tags.length)
       .map(pair => ['', pair[1]]);
     tags = front.concat(tags);
+  }
+  else if (tags.length > morphemes.length - 1) {
+    tags = tags.slice(tags.length - morphemes.length + 1);
+    onAnalysisChange(tags
+      .map((pair, posit) => addSep(pair, posit))
+      .join(''));
   }
   return (
     <div className="segmentation-box">
@@ -110,9 +120,13 @@ export function MorphemesEditor({
                   if (tagIndex < tags.length - 1) {
                     newTags = newTags.concat(tags.slice(tagIndex + 1));
                   }
-                  onAnalysisChange(newTags
+                  let newAnalysis: string = newTags
                     .map((pair, posit) => addSep(pair, posit))
-                    .join(''));
+                    .join('');
+                  if (isAbsolutive) {
+                    newAnalysis = '.ABS' + newAnalysis;
+                  }
+                  onAnalysisChange(newAnalysis);
                 }
               }}
             >
