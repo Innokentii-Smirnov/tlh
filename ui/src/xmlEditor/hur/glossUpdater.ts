@@ -36,13 +36,20 @@ export function setGlosses(node: XmlElementNode): void
 	}
 }
 
-export function saveGloss(number: number, mrp: string): void
-{
-	const ma: MorphologicalAnalysis | undefined = readMorphologicalAnalysis(number, mrp, []);
-	if (ma !== undefined && ma.translation != '')
-	{
-		const stem = getStem(ma.referenceWord);
-		const pos = getPos(ma.paradigmClass);
-		storeGloss(stem, pos, ma.translation);
+export function saveGloss(number: number, mrp: string): void {
+	const ma: MorphologicalAnalysis | undefined = readMorphologicalAnalysis(
+      number, mrp, []
+    );
+	if (ma !== undefined) {
+		basicSaveGloss(ma);
 	}
+}
+
+export function basicSaveGloss(morphologicalAnalysis: MorphologicalAnalysis): void {
+  const gloss = morphologicalAnalysis.translation;
+  if (gloss !== '') {
+    const stem = getStem(morphologicalAnalysis.referenceWord);
+    const pos = getPos(morphologicalAnalysis.paradigmClass);
+    storeGloss(stem, pos, gloss);
+  }
 }

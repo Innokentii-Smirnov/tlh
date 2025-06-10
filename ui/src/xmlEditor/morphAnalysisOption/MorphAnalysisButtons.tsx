@@ -7,9 +7,7 @@ import {MultiMorphAnalysisOptionButtons} from './MultiMorphAnalysisOptionButtons
 import classNames from 'classnames';
 import {analysisIsInNumerus, numeri, NumerusOption, stringifyNumerus} from './numerusOption';
 import update from 'immutability-helper';
-import { getStem } from '../hur/splitter';
-import { getPos } from '../hur/glossUpdater';
-import { storeGloss } from '../hur/glossProvider';
+import { basicSaveGloss } from '../hur/glossUpdater';
 import { basicUpdateHurrianDictionary } from '../hur/dictionary';
 
 interface IProps extends CanToggleAnalysisSelection {
@@ -51,12 +49,7 @@ export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggle
   };
 
   const updateLexicon = () => {
-    const stem = getStem(morphologicalAnalysis.referenceWord);
-    const pos = getPos(morphologicalAnalysis.paradigmClass);
-    const gloss = morphologicalAnalysis.translation;
-    if (gloss !== '') {
-      storeGloss(stem, pos, gloss);
-    }
+    basicSaveGloss(morphologicalAnalysis);
   };
 
   useEffect(() => {
