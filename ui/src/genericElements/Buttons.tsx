@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import {useTranslation} from 'react-i18next';
-import {JSX} from 'react';
+import {JSX, RefObject} from 'react';
 
 interface BaseProps {
   onClick: () => void;
@@ -11,13 +11,16 @@ interface BaseProps {
 interface SelectableButtonProps extends BaseProps {
   children: JSX.Element;
   selected: boolean;
+  ref?: RefObject<HTMLButtonElement>;
 }
 
-export function SelectableButton({children, title, selected, onClick, otherClasses}: SelectableButtonProps): JSX.Element {
+export function SelectableButton({children, title, selected, onClick, otherClasses, ref}: SelectableButtonProps): JSX.Element {
   const className = classNames(otherClasses, selected ? ['bg-blue-500', 'text-white'] : ['border', 'border-slate-500']);
 
   return (
-    <button type="button" className={className} onClick={onClick} title={title}>{children}</button>
+    ref === undefined ?
+    <button type="button" className={className} onClick={onClick} title={title}>{children}</button> :
+    <button type="button" className={className} onClick={onClick} title={title} ref={ref}>{children}</button>
   );
 }
 

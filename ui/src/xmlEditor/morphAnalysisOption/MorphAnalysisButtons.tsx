@@ -1,4 +1,4 @@
-import {JSX, useState, useEffect} from 'react';
+import {JSX, useState, useEffect, RefObject} from 'react';
 import {useTranslation} from 'react-i18next';
 import {SingleMorphAnalysisOptionButton} from './SingleMorphAnalysisOptionButton';
 import {isSingleMorphologicalAnalysis, MorphologicalAnalysis, SingleMorphologicalAnalysis, MultiMorphologicalAnalysis} from '../../model/morphologicalAnalysis';
@@ -13,9 +13,10 @@ interface IProps extends CanToggleAnalysisSelection {
   enableEditMode: () => void;
   updateMorphology: (ma: MorphologicalAnalysis, updateDictionary: boolean) => void;
   hurrian: boolean;
+  globalUpdateButtonRef?: RefObject<HTMLButtonElement>;
 }
 
-export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggleAnalysisSelection, enableEditMode, updateMorphology, hurrian}: IProps): JSX.Element {
+export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggleAnalysisSelection, enableEditMode, updateMorphology, hurrian, globalUpdateButtonRef}: IProps): JSX.Element {
 
   const {t} = useTranslation('common');
   const [isReduced, setIsReduced] = useState(false);
@@ -38,6 +39,10 @@ export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggle
       { analysisOptions: { [index]: { analysis: { $set: value } } } }
     ));
   };
+
+  if (!globalUpdateButtonRef) {
+    throw new Error('No global update button passed.');
+  }
 
   const {number, translation, referenceWord, paradigmClass, determinative} = morphologicalAnalysis;
   const isSingleAnalysisOption = isSingleMorphologicalAnalysis(morphologicalAnalysis);

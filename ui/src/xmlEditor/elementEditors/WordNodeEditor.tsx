@@ -16,7 +16,7 @@ import {annotateHurrianWord, updateHurrianDictionary} from '../hur/dictionary';
 
 type States = 'DefaultState' | 'AddMorphology' | 'EditEditingQuestion' | 'EditFootNoteState' | 'EditContent';
 
-export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnabled, rootNode, updateOtherNode}: XmlEditableNodeIProps<'w'>): JSX.Element {
+export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnabled, rootNode, updateOtherNode, globalUpdateButtonRef}: XmlEditableNodeIProps<'w'>): JSX.Element {
 
   const {t} = useTranslation('common');
   const [state, setState] = useState<States>('DefaultState');
@@ -229,6 +229,7 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
                 updateMorphology={(newMa, updateDictionary) => updateMorphology(m.number, newMa, updateDictionary)}
                 setKeyHandlingEnabled={setKeyHandlingEnabled}
 				hurrian={language === 'Hur'}
+				globalUpdateButtonRef={globalUpdateButtonRef}
               />
             </div>
           )}
