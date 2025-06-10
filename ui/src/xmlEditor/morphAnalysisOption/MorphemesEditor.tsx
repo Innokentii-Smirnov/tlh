@@ -64,6 +64,19 @@ function addSep(pair: [string, boolean], posit: number): string {
   return '-' + tag;
 }
 
+function makeAnalysis(tags: [string, boolean][], isAbsolutive: boolean): string {
+  const analysis: string = tags
+    .map((pair, posit) => addSep(pair, posit))
+    .join('');
+  if (isAbsolutive) {
+    if (analysis === '') {
+      return '.ABS';
+    }
+    return '.ABS-' + analysis;
+  }
+  return analysis;
+}
+
 export function MorphemesEditor({
   segmentation, translation, analysis,
   onSegmentationChange, onTranslationChange, onAnalysisChange
@@ -82,9 +95,7 @@ export function MorphemesEditor({
   }
   else if (tags.length > morphemes.length - 1) {
     tags = tags.slice(tags.length - morphemes.length + 1);
-    onAnalysisChange(tags
-      .map((pair, posit) => addSep(pair, posit))
-      .join(''));
+    onAnalysisChange(makeAnalysis(tags, isAbsolutive));
   }
   return (
     <div className="segmentation-box">
@@ -120,13 +131,7 @@ export function MorphemesEditor({
                   if (tagIndex < tags.length - 1) {
                     newTags = newTags.concat(tags.slice(tagIndex + 1));
                   }
-                  let newAnalysis: string = newTags
-                    .map((pair, posit) => addSep(pair, posit))
-                    .join('');
-                  if (isAbsolutive) {
-                    newAnalysis = '.ABS' + newAnalysis;
-                  }
-                  onAnalysisChange(newAnalysis);
+                  onAnalysisChange(makeAnalysis(newTags, isAbsolutive));
                 }
               }}
             >
