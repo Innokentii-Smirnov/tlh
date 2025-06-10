@@ -12,7 +12,7 @@ import {WordStringChildEditor} from './WordStringChildEditor';
 import {getPriorSibling, getPriorSiblingPath} from '../../nodeIterators';
 import {AOption} from '../../myOption';
 import {fetchCuneiform} from './LineBreakEditor';
-import {annotateHurrianWord, updateHurrianDictionary} from '../hur/dictionary';
+import {annotateHurrianWord} from '../hur/dictionary';
 
 type States = 'DefaultState' | 'AddMorphology' | 'EditEditingQuestion' | 'EditFootNoteState' | 'EditContent';
 
@@ -85,14 +85,10 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
     setState('DefaultState');
   }
 
-  function updateMorphology(number: number, newMa: MorphologicalAnalysis,
-                            updateDictionary: boolean): void {
+  function updateMorphology(number: number, newMa: MorphologicalAnalysis): void {
     const value: string = writeMorphAnalysisValue(newMa);
     updateEditedNode({attributes: {[`mrp${number}`]: {$set: value}}});
     setState('DefaultState');
-    if (language === 'Hur' && updateDictionary) {
-        updateHurrianDictionary(node, number, value);
-    }
   }
 
   function toggleAddMorphology(): void {
@@ -226,7 +222,7 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
               <MorphAnalysisOptionContainer
                 morphologicalAnalysis={m}
                 toggleAnalysisSelection={(letter, encLetter, targetState) => toggleAnalysisSelection(m.number, letter, encLetter, targetState)}
-                updateMorphology={(newMa, updateDictionary) => updateMorphology(m.number, newMa, updateDictionary)}
+                updateMorphology={(newMa) => updateMorphology(m.number, newMa)}
                 setKeyHandlingEnabled={setKeyHandlingEnabled}
 				hurrian={language === 'Hur'}
 				globalUpdateButtonRef={globalUpdateButtonRef}
@@ -237,7 +233,7 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
 
         {state === 'AddMorphology'
           ? <MorphAnalysisOptionEditor initialMorphologicalAnalysis={nextMorphAnalysis()}
-                                       onSubmit={(newMa) => updateMorphology(Math.max(0, ...morphologies.map(({number}) => number)) + 1, newMa, true)}
+                                       onSubmit={(newMa) => updateMorphology(Math.max(0, ...morphologies.map(({number}) => number)) + 1, newMa)}
                                        cancelUpdate={toggleAddMorphology}
                                        hurrian={language === 'Hur'}/>
           : (

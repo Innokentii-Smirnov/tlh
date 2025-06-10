@@ -14,7 +14,7 @@ import { updateHurrianAnalysis } from '../hur/analysisUpdater';
 interface IProps extends CanToggleAnalysisSelection {
   initialMorphologicalAnalysis: MorphologicalAnalysis;
   enableEditMode: () => void;
-  updateMorphology: (ma: MorphologicalAnalysis, updateDictionary: boolean) => void;
+  updateMorphology: (ma: MorphologicalAnalysis) => void;
   hurrian: boolean;
   globalUpdateButtonRef?: RefObject<HTMLButtonElement>;
   transcription: string;
@@ -27,7 +27,7 @@ export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggle
   const [lastNumerusSelected, setLastNumerusSelected] = useState<NumerusOption>();
 
   const [morphologicalAnalysis, setMorphAnalysis] = useState(initialMorphologicalAnalysis);
-  useEffect(() => updateMorphology(morphologicalAnalysis, false));
+  useEffect(() => updateMorphology(morphologicalAnalysis));
   const setReferenceWord = (value: string): void => {
     setMorphAnalysis((ma) => update(ma, updateHurrianAnalysis(ma, value)));
   };
