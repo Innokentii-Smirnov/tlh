@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 interface IProps {
   segmentation: string,
   translation: string,
@@ -19,23 +21,43 @@ function split(segmentation: string): [string, string][] {
   return morphemes;
 }
 
+const kindToBoundary: { [key: string]: string } = {
+  'stem': '',
+  'zero': '.',
+  'suffix': '-',
+  'enclitic': '='
+};
+
+const boundaryToKind: { [key: string]: string } = {
+  '': 'stem',
+  '.':'zero',
+  '-': 'suffix',
+  '=': 'enclitic'
+};
+
 class Morpheme {
   form: string;
   tag: string;
-  boundary: string;
-  constructor(form: string, tag: string, boundary: string) {
+  kind: string;
+  constructor(form: string, tag: string, kind: string) {
     this.form = form;
     this.tag = tag;
-    this.boundary = boundary;
+    this.kind = kind;
   }
   getForm(): string {
-    if (this.boundary === '.') {
+    if (this.kind === 'zero') {
       return '';
     }
-    return this.boundary + this.form;
+    return kindToBoundary[this.kind] + this.form;
   }
-  getTag(): string {
-    return this.boundary + this.tag;
+  getTag(position: number): string {
+    return this.getTagBoundary(position) + this.tag;
+  }
+  getTagBoundary(position: number): string {
+    if (position === 0 && this.kind === 'suffix') {
+      return '';
+    }
+    return kindToBoundary[this.kind];
   }
 }
 
@@ -44,33 +66,33 @@ function makeSegmentation(morphemes: Morpheme[]): string {
 }
 
 function makeAnalysis(morphemes: Morpheme[]): string {
-  return morphemes.slice(1).map(morpheme => morpheme.getTag()).join('');
+  return morphemes.slice(1).map((morpheme, i) => morpheme.getTag(i)).join('');
 }
 
 function buildMorphemes(segmentation: string, translation: string, analysis: string): Morpheme[] {
   const forms: [string, string][] = split(segmentation);
-  const tags: [string, string][] = analysis === '' ? [] : split(analysis);
+  const tags: [string, string][] = analysis === '' ? []
+    : split(analysis);
   const morphemes: Morpheme[] = [];
   let j = tags.length - 1;
   for (let i = forms.length - 1; i >= 0; i--) {
-    const form = forms[i][0];
-    let tag, boundary;
-    if (j >= 0) {
-      [tag, boundary] = tags[j];
-      if (boundary === '.') {
-        const zero = new Morpheme('', tag, boundary);
-        morphemes.push(zero);
-        j--;
-        continue;
-      }
-    } else if (i === 0) {
+    const [form, boundary] = forms[i];
+    let tag: string;
+    while (j >= 0 && tags[j][1] === '.') {
+      tag = tags[j][0];
+      const zero = new Morpheme('', tag, 'zero');
+      morphemes.push(zero);
+      j--;
+    }
+    const kind: string = boundaryToKind[boundary];
+    if (i === 0) {
       tag = translation;
-      boundary = '';
+    } else if (j >= 0) {
+      tag = tags[j][0];
     } else {
       tag = '';
-      boundary = '-';
     }
-    const morpheme = new Morpheme(form, tag, boundary);
+    const morpheme = new Morpheme(form, tag, kind);
     morphemes.push(morpheme);
     j--;
   }
@@ -82,11 +104,15 @@ export function MorphemesEditor({
   onSegmentationChange, onTranslationChange, onAnalysisChange
 } : IProps) {
   const morphemes = buildMorphemes(segmentation, translation, analysis);
+  useEffect(() => onAnalysisChange(makeAnalysis(morphemes)));
   return (
     <div className="segmentation-box">
     {morphemes.map((morpheme: Morpheme, i: number) => {
       return (
         <div key={i.toString()} className="morpheme-box">
+          <div className="field-box">
+            <label className="morpheme-input">{morpheme.kind}</label>
+          </div>
           <div className="field-box">
             <input
               type="text"
