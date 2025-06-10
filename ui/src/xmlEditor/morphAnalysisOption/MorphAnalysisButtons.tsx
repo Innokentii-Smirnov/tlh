@@ -49,15 +49,23 @@ export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggle
     storeGloss(stem, pos, morphologicalAnalysis.translation);
   };
 
-  if (!globalUpdateButtonRef) {
-    throw new Error('No global update button passed.');
-  }
-  if (!globalUpdateButtonRef.current) {
-    console.log('The global update button is null.');
-  } else {
+  useEffect(() => {
+    if (!globalUpdateButtonRef) {
+      throw new Error('No global update button passed.');
+    }
+    if (!globalUpdateButtonRef.current) {
+      console.log('The global update button is null.');
+    } else {
       globalUpdateButtonRef.current.addEventListener('click', updateLexicon);
-  }
-
+      return () => {
+        if (!globalUpdateButtonRef.current) {
+          console.log('The global update button is null.');
+        } else {
+          globalUpdateButtonRef.current.removeEventListener('click', updateLexicon);
+        }
+      };
+    }
+  });
 
   const {number, translation, referenceWord, paradigmClass, determinative} = morphologicalAnalysis;
   const isSingleAnalysisOption = isSingleMorphologicalAnalysis(morphologicalAnalysis);
