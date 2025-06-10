@@ -9,6 +9,7 @@ import {analysisIsInNumerus, numeri, NumerusOption, stringifyNumerus} from './nu
 import update from 'immutability-helper';
 import { basicSaveGloss } from '../hur/glossUpdater';
 import { basicUpdateHurrianDictionary } from '../hur/dictionary';
+import { updateHurrianAnalysis } from '../hur/analysisUpdater';
 
 interface IProps extends CanToggleAnalysisSelection {
   initialMorphologicalAnalysis: MorphologicalAnalysis;
@@ -28,7 +29,7 @@ export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggle
   const [morphologicalAnalysis, setMorphAnalysis] = useState(initialMorphologicalAnalysis);
   useEffect(() => updateMorphology(morphologicalAnalysis, false));
   const setReferenceWord = (value: string): void => {
-    setMorphAnalysis((ma) => update(ma, { referenceWord: { $set: value } }));
+    setMorphAnalysis((ma) => update(ma, updateHurrianAnalysis(ma, value)));
   };
   const setTranslation = (value: string): void => {
     setMorphAnalysis((ma) => update(ma, { translation: { $set: value } }));
