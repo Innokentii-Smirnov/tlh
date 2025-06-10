@@ -44,34 +44,36 @@ export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggle
     ));
   };
 
-  const updateDictionary = () => {
-    const value: string = writeMorphAnalysisValue(morphologicalAnalysis);
-    basicUpdateHurrianDictionary(transcription, value);
-  };
+  if (hurrian) {
+    const updateDictionary = () => {
+      const value: string = writeMorphAnalysisValue(morphologicalAnalysis);
+      basicUpdateHurrianDictionary(transcription, value);
+    };
 
-  const updateLexicon = () => {
-    basicSaveGloss(morphologicalAnalysis);
-  };
+    const updateLexicon = () => {
+      basicSaveGloss(morphologicalAnalysis);
+    };
 
-  useEffect(() => {
-    if (!globalUpdateButtonRef) {
-      throw new Error('No global update button passed.');
-    }
-    if (!globalUpdateButtonRef.current) {
-      console.log('The global update button is null.');
-    } else {
-      globalUpdateButtonRef.current.addEventListener('click', updateLexicon);
-      globalUpdateButtonRef.current.addEventListener('click', updateDictionary);
-      return () => {
-        if (!globalUpdateButtonRef.current) {
-          console.log('The global update button is null.');
-        } else {
-          globalUpdateButtonRef.current.removeEventListener('click', updateLexicon);
-          globalUpdateButtonRef.current.removeEventListener('click', updateDictionary);
-        }
-      };
-    }
-  });
+    useEffect(() => {
+      if (!globalUpdateButtonRef) {
+        throw new Error('No global update button passed.');
+      }
+      if (!globalUpdateButtonRef.current) {
+        console.log('The global update button is null.');
+      } else {
+        globalUpdateButtonRef.current.addEventListener('click', updateLexicon);
+        globalUpdateButtonRef.current.addEventListener('click', updateDictionary);
+        return () => {
+          if (!globalUpdateButtonRef.current) {
+            console.log('The global update button is null.');
+          } else {
+            globalUpdateButtonRef.current.removeEventListener('click', updateLexicon);
+            globalUpdateButtonRef.current.removeEventListener('click', updateDictionary);
+          }
+        };
+      }
+    });
+  }
 
   const {number, translation, referenceWord, paradigmClass, determinative} = morphologicalAnalysis;
   const isSingleAnalysisOption = isSingleMorphologicalAnalysis(morphologicalAnalysis);
