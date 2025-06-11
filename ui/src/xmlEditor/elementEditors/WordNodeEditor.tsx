@@ -4,7 +4,6 @@ import {JSX, useState, useEffect} from 'react';
 import {MorphologicalAnalysis, multiMorphAnalysisWithoutEnclitics, readMorphologiesFromNode, writeMorphAnalysisValue} from '../../model/morphologicalAnalysis';
 import {MorphAnalysisOptionContainer} from '../morphAnalysisOption/MorphAnalysisOptionContainer';
 import {findFirstXmlElementByTagName, isXmlElementNode, lastChildNode, xmlElementNode, XmlElementNode} from 'simple_xml';
-import {MorphAnalysisOptionEditor} from '../morphAnalysisOption/MorphAnalysisOptionEditor';
 import {WordContentEditor} from './wordContentEditor/WordContentEditor';
 import {LanguageInput} from '../LanguageInput';
 import {readSelectedMorphology, SelectedMorphAnalysis} from '../../model/selectedMorphologicalAnalysis';
@@ -96,7 +95,7 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
     setState(state === 'AddMorphology' ? 'DefaultState' : 'AddMorphology');
   }
 
-  const nextMorphAnalysis = (): MorphologicalAnalysis => multiMorphAnalysisWithoutEnclitics(Math.max(0, ...morphologies.map(({number}) => number)) + 1);
+  const nextMorphAnalysis = (): MorphologicalAnalysis => multiMorphAnalysisWithoutEnclitics(Math.max(0, ...morphologies.map(({number}) => number)) + 1, node.attributes.trans || '');
 
   const updateAttribute = (name: string, value: string | undefined): void => updateEditedNode({attributes: {[name]: {$set: value}}});
 
@@ -157,6 +156,10 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
         cancelEdit={cancelEdit}
         updateNode={handleEditUpdate}/>
     );
+  }
+
+  if (state === 'AddMorphology') {
+    updateMorphology(Math.max(0, ...morphologies.map(({number}) => number)) + 1, nextMorphAnalysis());
   }
 
   return (
@@ -230,19 +233,11 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
               />
             </div>
           )}
-
-        {state === 'AddMorphology'
-          ? <MorphAnalysisOptionEditor initialMorphologicalAnalysis={nextMorphAnalysis()}
-                                       onSubmit={(newMa) => updateMorphology(Math.max(0, ...morphologies.map(({number}) => number)) + 1, newMa)}
-                                       cancelUpdate={toggleAddMorphology}
-                                       hurrian={language === 'Hur'}/>
-          : (
-            <div className="text-center">
-              <button type="button" className="my-4 px-4 py-2 rounded bg-cyan-400 text-white" onClick={toggleAddMorphology}>
-                {t('manuallyAddMorphologicalAnalysis')}
-              </button>
-            </div>
-          )}
+          <div className="text-center">
+            <button type="button" className="my-4 px-4 py-2 rounded bg-cyan-400 text-white" onClick={toggleAddMorphology}>
+              {t('manuallyAddMorphologicalAnalysis')}
+            </button>
+          </div>
       </section>
     </>
   );
