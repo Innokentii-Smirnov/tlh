@@ -10,6 +10,14 @@ import { isValid, normalize } from './morphologicalAnalysisValidator';
 
 const dictionary: Map<string, Set<string>> = new Map();
 
+const pattern = /(?<=@)[-=]+/g;
+
+function preprocessAnalysis(analysis: string) {
+  analysis = analysis.replaceAll(' ', '');
+  analysis = analysis.replaceAll(pattern, '');
+  return analysis;
+}
+
 export function annotateHurrianWord(node: XmlElementNode): void {
   const transliteration: string = getText(node);
   const transcription: string = makeBoundTranscription(transliteration);
@@ -31,7 +39,7 @@ export function annotateHurrianWord(node: XmlElementNode): void {
     }
     const mrps: Map<string, string> = getMrps(node);
     const analyses: Set<string> = new Set(
-      Array.from(mrps.values()).map((an: string) => an.replaceAll(' ', ''))
+      Array.from(mrps.values()).map((an: string) => preprocessAnalysis(an))
     );
     let i: number;
     if (mrps.size > 0) {
