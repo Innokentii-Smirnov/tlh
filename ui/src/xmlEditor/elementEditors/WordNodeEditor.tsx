@@ -90,11 +90,6 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
     setState('DefaultState');
   }
 
-  function toggleAddMorphology(): void {
-    setKeyHandlingEnabled(state === 'AddMorphology');
-    setState(state === 'AddMorphology' ? 'DefaultState' : 'AddMorphology');
-  }
-
   const nextMorphAnalysis = (): MorphologicalAnalysis => multiMorphAnalysisWithoutEnclitics(Math.max(0, ...morphologies.map(({number}) => number)) + 1, node.attributes.trans || '');
 
   const updateAttribute = (name: string, value: string | undefined): void => updateEditedNode({attributes: {[name]: {$set: value}}});
@@ -156,10 +151,6 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
         cancelEdit={cancelEdit}
         updateNode={handleEditUpdate}/>
     );
-  }
-
-  if (state === 'AddMorphology') {
-    updateMorphology(Math.max(0, ...morphologies.map(({number}) => number)) + 1, nextMorphAnalysis());
   }
 
   return (
@@ -234,7 +225,12 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
             </div>
           )}
           <div className="text-center">
-            <button type="button" className="my-4 px-4 py-2 rounded bg-cyan-400 text-white" onClick={toggleAddMorphology}>
+            <button
+              type="button"
+              className="my-4 px-4 py-2 rounded bg-cyan-400 text-white"
+              onClick={() =>
+                updateMorphology(Math.max(0, ...morphologies.map(({number}) => number)) + 1, nextMorphAnalysis())
+              }>
               {t('manuallyAddMorphologicalAnalysis')}
             </button>
           </div>
