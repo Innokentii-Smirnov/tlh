@@ -1,10 +1,11 @@
-import {SingleMorphologicalAnalysis} from '../../model/morphologicalAnalysis';
+import {SingleMorphologicalAnalysis, SingleMorphologicalAnalysisWithoutEnclitics} from '../../model/morphologicalAnalysis';
 import {SelectableButton} from '../../genericElements/Buttons';
 import {JSX} from 'react';
 import {MorphemesEditor} from './MorphemesEditor';
 
 interface IProps {
   morphAnalysis: SingleMorphologicalAnalysis;
+  initialMorphAnalysis: SingleMorphologicalAnalysis;
   toggleAnalysisSelection: (encLetter: string | undefined) => void;
   setReferenceWord: (newReferenceWord: string) => void;
   setTranslation: (newTranslation: string) => void;
@@ -22,6 +23,7 @@ const otherClasses = ['p-2', 'rounded', 'w-full'];
 
 export function SingleMorphAnalysisOptionButton({
   morphAnalysis,
+  initialMorphAnalysis,
   toggleAnalysisSelection,
   setReferenceWord,
   setTranslation,
@@ -33,7 +35,10 @@ export function SingleMorphAnalysisOptionButton({
     case 'SingleMorphAnalysisWithoutEnclitics':
       return (
         <div>
-          <SelectableButton selected={morphAnalysis.selected} otherClasses={otherClasses} onClick={() => toggleAnalysisSelection(undefined)}>
+          <SelectableButton
+            selected={(initialMorphAnalysis as SingleMorphologicalAnalysisWithoutEnclitics).selected}
+            otherClasses={otherClasses}
+            onClick={() => toggleAnalysisSelection(undefined)}>
             <>{morphAnalysis.analysis || morphAnalysis.paradigmClass}</>
           </SelectableButton>
           {hurrian && <MorphemesEditor

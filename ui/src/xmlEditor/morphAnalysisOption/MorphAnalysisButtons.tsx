@@ -122,12 +122,14 @@ export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggle
       {!isReduced && <div className="mt-2">
         {isSingleAnalysisOption
           ? <SingleMorphAnalysisOptionButton morphAnalysis={morphologicalAnalysis}
+                                            initialMorphAnalysis={(initialMorphologicalAnalysis as SingleMorphologicalAnalysis)}
                                              toggleAnalysisSelection={(encLetter) => toggleAnalysisSelection(undefined, encLetter, undefined)}
                                              setReferenceWord={setReferenceWord}
                                              setTranslation={setTranslation}
                                              setAnalysis={setSingleMorphAnalysis}
                                              hurrian={hurrian}/>
           : <MultiMorphAnalysisOptionButtons morphAnalysis={morphologicalAnalysis}
+                                            initialMorphAnalysis={(initialMorphologicalAnalysis as MultiMorphologicalAnalysis)}
                                              toggleAnalysisSelection={(letter, encLetter) => toggleAnalysisSelection(letter, encLetter, undefined)}
                                              setReferenceWord={setReferenceWord}
                                              setTranslation={setTranslation}

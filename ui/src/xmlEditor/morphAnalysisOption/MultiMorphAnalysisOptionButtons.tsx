@@ -1,4 +1,4 @@
-import {MultiMorphologicalAnalysis} from '../../model/morphologicalAnalysis';
+import {MultiMorphologicalAnalysis, MultiMorphologicalAnalysisWithoutEnclitics} from '../../model/morphologicalAnalysis';
 import {JSX} from 'react';
 import {EncliticsAnalysisDisplay} from './SingleMorphAnalysisOptionButton';
 import {MultiMorphAnalysisSelection} from './MultiMorphAnalysisSelection';
@@ -12,6 +12,7 @@ const otherClasses = ['p-2', 'rounded', 'w-full'];
 
 interface IProps {
   morphAnalysis: MultiMorphologicalAnalysis;
+  initialMorphAnalysis: MultiMorphologicalAnalysis;
   toggleAnalysisSelection: (letter: string, encLetter: string | undefined) => void;
   setReferenceWord: (newReferenceWord: string) => void;
   setTranslation: (newTranslation: string) => void;
@@ -19,28 +20,35 @@ interface IProps {
   hurrian: boolean;
 }
 
-export function MultiMorphAnalysisOptionButtons({morphAnalysis, toggleAnalysisSelection, setReferenceWord, setTranslation, setAnalysis, hurrian}: IProps): JSX.Element {
+export function MultiMorphAnalysisOptionButtons({morphAnalysis, initialMorphAnalysis, toggleAnalysisSelection, setReferenceWord, setTranslation, setAnalysis, hurrian}: IProps): JSX.Element {
   switch (morphAnalysis._type) {
     case 'MultiMorphAnalysisWithoutEnclitics':
       return (
         <div>
           <MultiMorphAnalysisSelection ma={morphAnalysis}/>
 
-          {morphAnalysis.analysisOptions.map(({letter, analysis, selected}, index) => <div key={index} className="mb-1">
-            <SelectableButton selected={selected} otherClasses={otherClasses} onClick={() => toggleAnalysisSelection(letter, undefined)}>
-              <>{letter} - {analysis}</>
-            </SelectableButton>
-            {hurrian && <MorphemesEditor
-              segmentation={morphAnalysis.referenceWord}
-              translation={morphAnalysis.translation}
-              analysis={analysis}
-              onSegmentationChange={setReferenceWord}
-              onTranslationChange={setTranslation}
-              onAnalysisChange={(newAnalysis: string) => {
-                setAnalysis(index, newAnalysis);
-              }}
-            />}
-          </div>)}
+          {morphAnalysis.analysisOptions.map(({letter, analysis}, index) => {
+            const options = (initialMorphAnalysis as MultiMorphologicalAnalysisWithoutEnclitics).analysisOptions;
+            const selected = index < options.length ? options[index].selected : false;
+            return (
+              <div key={index} className="mb-1">
+                <SelectableButton selected={selected} otherClasses={otherClasses} onClick={() => toggleAnalysisSelection(letter, undefined)}>
+                  <>{letter} - {analysis}</>
+                </SelectableButton>
+                {hurrian && <MorphemesEditor
+                  segmentation={morphAnalysis.referenceWord}
+                  translation={morphAnalysis.translation}
+                  analysis={analysis}
+                  onSegmentationChange={setReferenceWord}
+                  onTranslationChange={setTranslation}
+                  onAnalysisChange={(newAnalysis: string) => {
+                    setAnalysis(index, newAnalysis);
+                  }}/>
+                }
+              </div>
+            );
+          })
+          }
         </div>
       );
 
