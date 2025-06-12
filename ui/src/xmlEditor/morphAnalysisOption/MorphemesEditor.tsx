@@ -9,7 +9,7 @@ interface IProps {
   onAnalysisChange: (newAnalysis: string) => void
 }
 
-const sep = /(-|=|\.(?=ABS))/;
+export const sep = /(-|=|\.(?=ABS))/;
 
 function split(segmentation: string): [string, string][] {
   const morphemes: [string, string][] = [];

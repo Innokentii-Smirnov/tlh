@@ -29,7 +29,10 @@ export function updateAndValidateDictionary(dictionary: Map<string, Set<string>>
       const newSet: Set<string> = new Set();
       for (const value of values) {
         if (isValid(value)) {
-          newSet.add(normalize(value, true));
+          const normalized = normalize(value, true);
+          if (normalized !== null) {
+            newSet.add(normalized);
+          }
         }
       }
       if (newSet.size > 0) {
@@ -38,7 +41,10 @@ export function updateAndValidateDictionary(dictionary: Map<string, Set<string>>
     } else {
       for (const value of values) {
         if (isValid(value)) {
-          currSet.add(normalize(value, true));
+          const normalized = normalize(value, true);
+          if (normalized !== null) {
+            currSet.add(normalized);
+          }
         }
       }
     }

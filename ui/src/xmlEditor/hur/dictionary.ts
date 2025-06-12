@@ -90,19 +90,21 @@ export function basicUpdateHurrianDictionary(
   if (!isValid(value)) {
     return;
   }
-  value = normalize(value, false);
-  let possibilities: Set<string> | undefined;
-  if (dictionary.has(transcription)) {
-    possibilities = dictionary.get(transcription);
+  const normalized = normalize(value, false);
+  if (normalized !== null) {
+    let possibilities: Set<string> | undefined;
+    if (dictionary.has(transcription)) {
+      possibilities = dictionary.get(transcription);
+    }
+    else {
+      possibilities = new Set<string>();
+      dictionary.set(transcription, possibilities);
+    }
+    if (possibilities === undefined) {
+      throw new Error();
+    }
+    possibilities.add(normalized);
   }
-  else {
-    possibilities = new Set<string>();
-    dictionary.set(transcription, possibilities);
-  }
-  if (possibilities === undefined) {
-    throw new Error();
-  }
-  possibilities.add(value);
 }
 
 export function getDictionary(): { [key: string]: string[] } {
