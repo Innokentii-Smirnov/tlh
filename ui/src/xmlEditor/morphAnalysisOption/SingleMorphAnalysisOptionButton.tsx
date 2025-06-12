@@ -1,4 +1,6 @@
-import {SingleMorphologicalAnalysis, SingleMorphologicalAnalysisWithoutEnclitics} from '../../model/morphologicalAnalysis';
+import {SingleMorphologicalAnalysis, SingleMorphologicalAnalysisWithoutEnclitics,
+  SingleMorphologicalAnalysisWithSingleEnclitics, SingleMorphologicalAnalysisWithMultiEnclitics
+} from '../../model/morphologicalAnalysis';
 import {SelectableButton} from '../../genericElements/Buttons';
 import {JSX} from 'react';
 import {MorphemesEditor} from './MorphemesEditor';
@@ -53,22 +55,28 @@ export function SingleMorphAnalysisOptionButton({
       );
 
     case 'SingleMorphAnalysisWithSingleEnclitics':
-      return (
-        <SelectableButton selected={morphAnalysis.selected} otherClasses={otherClasses} onClick={() => toggleAnalysisSelection(undefined)}>
-          <>{morphAnalysis.analysis} <EncliticsAnalysisDisplay enclitics={morphAnalysis.encliticsAnalysis.enclitics}
-                                                               analysis={morphAnalysis.encliticsAnalysis.analysis}/></>
-        </SelectableButton>
-      );
+      {
+        const ma = initialMorphAnalysis as SingleMorphologicalAnalysisWithSingleEnclitics;
+        return (
+          <SelectableButton selected={ma.selected} otherClasses={otherClasses} onClick={() => toggleAnalysisSelection(undefined)}>
+            <>{ma.analysis} <EncliticsAnalysisDisplay enclitics={ma.encliticsAnalysis.enclitics}
+                                                                analysis={ma.encliticsAnalysis.analysis}/></>
+          </SelectableButton>
+        );
+      }
 
     case 'SingleMorphAnalysisWithMultiEnclitics':
-      return (
-        <>
-          {morphAnalysis.encliticsAnalysis.analysisOptions.map(({letter, analysis, selected}) =>
-            <SelectableButton key={letter} selected={selected} otherClasses={['mb-1', ...otherClasses]} onClick={() => toggleAnalysisSelection(letter)}>
-              <>{letter} - {morphAnalysis.analysis} <EncliticsAnalysisDisplay enclitics={morphAnalysis.encliticsAnalysis.enclitics} analysis={analysis}/></>
-            </SelectableButton>
-          )}
-        </>
-      );
+      {
+        const ma = initialMorphAnalysis as SingleMorphologicalAnalysisWithMultiEnclitics;
+        return (
+          <>
+            {ma.encliticsAnalysis.analysisOptions.map(({letter, analysis, selected}) =>
+              <SelectableButton key={letter} selected={selected} otherClasses={['mb-1', ...otherClasses]} onClick={() => toggleAnalysisSelection(letter)}>
+                <>{letter} - {ma.analysis} <EncliticsAnalysisDisplay enclitics={ma.encliticsAnalysis.enclitics} analysis={analysis}/></>
+              </SelectableButton>
+            )}
+          </>
+        );
+      }
   }
 }

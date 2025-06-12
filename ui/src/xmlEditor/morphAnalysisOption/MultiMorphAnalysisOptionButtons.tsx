@@ -1,4 +1,6 @@
-import {MultiMorphologicalAnalysis, MultiMorphologicalAnalysisWithoutEnclitics} from '../../model/morphologicalAnalysis';
+import {MultiMorphologicalAnalysis, MultiMorphologicalAnalysisWithoutEnclitics,
+  MultiMorphologicalAnalysisWithSingleEnclitics, MultiMorphologicalAnalysisWithMultiEnclitics
+} from '../../model/morphologicalAnalysis';
 import {JSX} from 'react';
 import {EncliticsAnalysisDisplay} from './SingleMorphAnalysisOptionButton';
 import {MultiMorphAnalysisSelection} from './MultiMorphAnalysisSelection';
@@ -53,31 +55,37 @@ export function MultiMorphAnalysisOptionButtons({morphAnalysis, initialMorphAnal
       );
 
     case 'MultiMorphAnalysisWithSingleEnclitics':
-      return (
-        <div>
-          <MultiMorphAnalysisSelection ma={morphAnalysis}/>
+      {
+        const ma = initialMorphAnalysis as MultiMorphologicalAnalysisWithSingleEnclitics;
+        return (
+          <div>
+            <MultiMorphAnalysisSelection ma={ma}/>
 
-          {morphAnalysis.analysisOptions.map(({letter, analysis, selected}, index) => <div key={index} className="mb-1">
-            <SelectableButton selected={selected} otherClasses={otherClasses} onClick={() => toggleAnalysisSelection(letter, undefined)}>
-              <>{letter} - {analysis} <EncliticsAnalysisDisplay enclitics={morphAnalysis.encliticsAnalysis.enclitics}
-                                                                analysis={morphAnalysis.encliticsAnalysis.analysis}/></>
-            </SelectableButton>
-          </div>)}
-        </div>
-      );
+            {ma.analysisOptions.map(({letter, analysis, selected}, index) => <div key={index} className="mb-1">
+              <SelectableButton selected={selected} otherClasses={otherClasses} onClick={() => toggleAnalysisSelection(letter, undefined)}>
+                <>{letter} - {analysis} <EncliticsAnalysisDisplay enclitics={ma.encliticsAnalysis.enclitics}
+                                                                  analysis={ma.encliticsAnalysis.analysis}/></>
+              </SelectableButton>
+            </div>)}
+          </div>
+        );
+      }
 
     case 'MultiMorphAnalysisWithMultiEnclitics':
-      return (
-        <div>
-          <MultiMorphMultiEncAnalysisSelection ma={morphAnalysis}/>
+      {
+        const ma = initialMorphAnalysis as MultiMorphologicalAnalysisWithMultiEnclitics;
+        return (
+          <div>
+            <MultiMorphMultiEncAnalysisSelection ma={ma}/>
 
-          {morphAnalysis.analysisOptions.map((morphAnalysisOption, index) =>
-            <MultiMorphMultiSelectionButton key={index} ma={morphAnalysis} morphAnalysisOption={morphAnalysisOption}
-                                            enclitics={morphAnalysis.encliticsAnalysis.enclitics}
-                                            encliticsAnalysisOptions={morphAnalysis.encliticsAnalysis.analysisOptions}
-                                            toggleAnalysisSelection={(letterIndex) => toggleAnalysisSelection(morphAnalysisOption.letter, letterIndex)}/>
-          )}
-        </div>
-      );
+            {ma.analysisOptions.map((morphAnalysisOption, index) =>
+              <MultiMorphMultiSelectionButton key={index} ma={ma} morphAnalysisOption={morphAnalysisOption}
+                                              enclitics={ma.encliticsAnalysis.enclitics}
+                                              encliticsAnalysisOptions={ma.encliticsAnalysis.analysisOptions}
+                                              toggleAnalysisSelection={(letterIndex) => toggleAnalysisSelection(morphAnalysisOption.letter, letterIndex)}/>
+            )}
+          </div>
+        );
+      }
   }
 }
