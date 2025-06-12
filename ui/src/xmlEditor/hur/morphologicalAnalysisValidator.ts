@@ -1,5 +1,9 @@
 const sep = /[-=]/;
 
+function haveMatchingNumberOfMorphemes(segmentation: string, analysis: string) {
+  return segmentation.split(sep).length === analysis.split(sep).filter(tag => tag !== '.ABS').length + 1;
+}
+
 export function isValid(analysis: string): boolean {
   const fields: string[] = analysis.split('@').map(field => field.trim());
   if (fields.length !== 5) {
@@ -12,7 +16,7 @@ export function isValid(analysis: string): boolean {
     return false;
   }
   if (!(morphTag.startsWith('{') && morphTag.endsWith('}'))) {
-    if (segmentation.split(sep).length !== morphTag.split(sep).length + 1) {
+    if (!haveMatchingNumberOfMorphemes(segmentation, morphTag)) {
       return false;
     }
   }
@@ -28,7 +32,7 @@ function normalizePairs(pairs: string[], unify: boolean, segmentation: string): 
   let result: string[][] = pairs.map((option: string) => option.split('→').map(s => s.trim()));
   if (unify) {
     result = result.filter((pair: string[]) => pair[1] !== '')
-      .filter(pair => segmentation.split(sep).length === pair[1].split(sep).length + 1);
+      .filter(pair => haveMatchingNumberOfMorphemes(segmentation, pair[1]));
   }
   return result;
 }
