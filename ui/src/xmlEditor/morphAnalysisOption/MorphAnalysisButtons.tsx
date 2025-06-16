@@ -43,6 +43,9 @@ export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggle
       { analysisOptions: { [index]: { analysis: { $set: value } } } }
     ));
   };
+  const setParadigmClass = (value: string): void => {
+    updateMorphology(update(morphologicalAnalysis, { paradigmClass: { $set: value } }));
+  };
 
   if (hurrian) {
     const updateDictionary = () => {
@@ -53,6 +56,13 @@ export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggle
     const updateLexicon = () => {
       basicSaveGloss(morphologicalAnalysis);
     };
+
+    useEffect(() => {
+      const newParadigmClass = getPos(paradigmClass, getSomeMorphTag(morphologicalAnalysis), translation);
+      if (newParadigmClass !== paradigmClass) {
+        setParadigmClass(newParadigmClass)
+      }
+    });
 
     useEffect(() => {
       if (!globalUpdateButtonRef) {
@@ -75,7 +85,8 @@ export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggle
     });
   }
 
-  const {number, translation, referenceWord, paradigmClass, determinative} = morphologicalAnalysis;
+  const {paradigmClass} = initialMorphologicalAnalysis;
+  const {number, translation, referenceWord, determinative} = morphologicalAnalysis;
   const isSingleAnalysisOption = isSingleMorphologicalAnalysis(morphologicalAnalysis);
 
   function selectAll(ma: MultiMorphologicalAnalysis, numerus: NumerusOption): void {
@@ -94,6 +105,56 @@ export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggle
     updateMorphology(morphologicalAnalysis);
   };
 
+  function getSomeMorphTag(morphAnalysis: MorphologicalAnalysis): string | null {
+    switch (morphAnalysis._type) {
+      case 'SingleMorphAnalysisWithoutEnclitics':
+        return morphAnalysis.analysis;
+      case 'MultiMorphAnalysisWithoutEnclitics':
+        return morphAnalysis.analysisOptions[0].analysis;
+      default:
+        return null;
+    }
+  }
+
+  const cases = /.*(?:ABS|ERG|GEN|DAT|DIR|ABL|COM|ESS|EQU|ASSOC).*/;
+  const partsOfSpeech = /\.?(ADV|CONJ|PREP|INTJ).*/;
+
+  function getPos(template: string, morphTag: string | null, translation: string): string
+  {
+    if (translation.includes('PRON')) {
+      return 'PRON';
+    }
+    if (morphTag !== null) {
+      const match = morphTag.match(partsOfSpeech);
+      if (match) {
+        return match[1];
+      }
+    }
+    if (template === '') {
+      if (morphTag === 'CVB' || morphTag === 'INF') {
+        return morphTag;
+      }
+      if (morphTag !== null) {
+        if (morphTag.includes('PRON')) {
+          return 'PRON';
+        }
+        if (morphTag.match(cases)) {
+          return 'noun';
+        }
+        return 'verb';
+      }
+      return 'unclear';
+    }
+    if (template === 'aspect' || template === 'modal' || template === 'voice')
+    {
+      return 'verb';
+    }
+    else
+    {
+      return template;
+    }
+  }
+
   return (
     <div className="mt-2">
       <div className="flex flex-row">
@@ -105,7 +166,28 @@ export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggle
 
         <div className="flex-grow p-2 border-l border-y border-slate-500 bg-gray-100">
           <span className="text-red-600">{translation}</span>&nbsp;({referenceWord},&nbsp;
-          {t('paradigmClass')}:&nbsp;<span className="text-red-600">{paradigmClass}</span>
+          {t('paradigmClass')}:&nbsp;
+          <span className="text-red-600">
+            <select
+              defaultValue={getPos(paradigmClass,
+                            getSomeMorphTag(morphologicalAnalysis),
+                                   translation)}
+              onChange={(event) => {
+                setParadigmClass(event.target.value);
+              }}
+              onBlur={updateNodeMorphology}>
+              <option value='ADV'>ADV</option>
+              <option value='CONJ'>CONJ</option>
+              <option value='PREP'>PREP</option>
+              <option value='INTJ'>INTJ</option>
+              <option value='PRON'>PRON</option>
+              <option value='INF'>INF</option>
+              <option value='CVB'>CVB</option>
+              <option value='noun'>noun</option>
+              <option value='verb'>verb</option>
+              <option value='unclear'>unclear</option>
+            </select>
+          </span>
           {determinative && <span>, {t('determinative')}:&nbsp;<span className="text-red-600">{determinative}</span></span>})&nbsp;
         </div>
 

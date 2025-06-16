@@ -10,7 +10,7 @@ interface IProps {
   updateNodeMorphology: () => void;
 }
 
-export const sep = /((?<!\()-|-(?!\))|=|\.(?=ABS)|^\.)/;
+export const sep = /((?<!\()-|-(?!\))|=|(?<!=[123](?:SG|PL))\.(?=ABS)|^\.)/;
 const stemFragmentGloss = 'u.B.';
 
 function split(segmentation: string): [string, string][] {
