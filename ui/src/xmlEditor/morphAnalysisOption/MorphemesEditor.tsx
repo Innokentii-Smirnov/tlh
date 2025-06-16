@@ -9,7 +9,7 @@ interface IProps {
   onAnalysisChange: (newAnalysis: string) => void
 }
 
-export const sep = /((?<!\()-|-(?!\))|=|\.(?=ABS|ADV))/;
+export const sep = /((?<!\()-|-(?!\))|=|\.(?=ABS)|^\.)/;
 const stemFragmentGloss = 'u.B.';
 
 function split(segmentation: string): [string, string][] {
