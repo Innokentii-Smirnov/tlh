@@ -10,6 +10,7 @@ interface IProps {
 }
 
 export const sep = /(-|=|\.(?=ABS))/;
+const stemFragmentGloss = 'u.B.';
 
 function split(segmentation: string): [string, string][] {
   const morphemes: [string, string][] = [];
@@ -106,7 +107,7 @@ function buildMorphemes(segmentation: string, translation: string, analysis: str
       let kind, tag: string;
       if (i === 0) {
         kind = 'stemFragment';
-        tag = 'u.B.';
+        tag = translation;
       } else {
         kind = 'fragment';
         tag = '<fragm>';
@@ -171,13 +172,18 @@ export function MorphemesEditor({
               className="morpheme-input"
               defaultValue={morpheme.form}
               onChange={(event) => {
-                morphemes[i].form = event.target.value;
+                const newForm = event.target.value;
+                morphemes[i].form = newForm;
                 onSegmentationChange(makeSegmentation(morphemes));
+                if (i == 0 && formIsFragment(newForm)) {
+                  morphemes[i].tag = stemFragmentGloss;
+                  onTranslationChange(stemFragmentGloss);
+                }
               }}
             >
             </input>
           </div>
-          {!(morphemeIsFragment(morpheme)) &&
+          {!(morpheme.kind === 'fragment') &&
             <div className="field-box">
               <input
                 type="text"
