@@ -175,7 +175,7 @@ export function MorphemesEditor({
                 const newForm = event.target.value;
                 morphemes[i].form = newForm;
                 onSegmentationChange(makeSegmentation(morphemes));
-                if (i == 0 && formIsFragment(newForm)) {
+                if (i == 0 && formIsFragment(newForm) && translation === '') {
                   morphemes[i].tag = stemFragmentGloss;
                   onTranslationChange(stemFragmentGloss);
                 }
