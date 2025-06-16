@@ -27,7 +27,7 @@ export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggle
   const [lastNumerusSelected, setLastNumerusSelected] = useState<NumerusOption>();
 
   const [morphologicalAnalysis, setMorphAnalysis] = useState(initialMorphologicalAnalysis);
-  useEffect(() => updateMorphology(morphologicalAnalysis));
+
   const setReferenceWord = (value: string): void => {
     setMorphAnalysis((ma) => update(ma, updateHurrianAnalysis(ma, value)));
   };
@@ -54,6 +54,10 @@ export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggle
       basicSaveGloss(morphologicalAnalysis);
     };
 
+    const updateNodeMorphology = () => {
+      updateMorphology(morphologicalAnalysis);
+    };
+
     useEffect(() => {
       if (!globalUpdateButtonRef) {
         throw new Error('No global update button passed.');
@@ -63,12 +67,14 @@ export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggle
       } else {
         globalUpdateButtonRef.current.addEventListener('click', updateLexicon);
         globalUpdateButtonRef.current.addEventListener('click', updateDictionary);
+        globalUpdateButtonRef.current.addEventListener('click', updateNodeMorphology);
         return () => {
           if (!globalUpdateButtonRef.current) {
             console.log('The global update button is null.');
           } else {
             globalUpdateButtonRef.current.removeEventListener('click', updateLexicon);
             globalUpdateButtonRef.current.removeEventListener('click', updateDictionary);
+            globalUpdateButtonRef.current.removeEventListener('click', updateNodeMorphology);
           }
         };
       }
