@@ -9,7 +9,7 @@ interface IProps {
   onAnalysisChange: (newAnalysis: string) => void
 }
 
-export const sep = /(-|=|\.(?=ABS))/;
+export const sep = /((?<!\()-|-(?!\))|=|\.(?=ABS))/;
 const stemFragmentGloss = 'u.B.';
 
 function split(segmentation: string): [string, string][] {
@@ -76,7 +76,7 @@ function makeAnalysis(morphemes: Morpheme[]): string {
 }
 
 function formIsFragment(form: string): boolean {
-  return form.includes('[') || form.includes(']');
+  return form.includes('[') || form.includes(']') || form.includes('(-)');
 }
 
 function kindIsFragment(kind: string): boolean {
