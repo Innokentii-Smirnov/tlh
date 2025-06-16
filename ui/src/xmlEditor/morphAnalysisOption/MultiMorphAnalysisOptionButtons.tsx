@@ -20,9 +20,10 @@ interface IProps {
   setTranslation: (newTranslation: string) => void;
   setAnalysis: (num: number, newAnalysis: string) => void;
   hurrian: boolean;
+  updateNodeMorphology: () => void;
 }
 
-export function MultiMorphAnalysisOptionButtons({morphAnalysis, initialMorphAnalysis, toggleAnalysisSelection, setReferenceWord, setTranslation, setAnalysis, hurrian}: IProps): JSX.Element {
+export function MultiMorphAnalysisOptionButtons({morphAnalysis, initialMorphAnalysis, toggleAnalysisSelection, setReferenceWord, setTranslation, setAnalysis, hurrian, updateNodeMorphology}: IProps): JSX.Element {
   switch (morphAnalysis._type) {
     case 'MultiMorphAnalysisWithoutEnclitics':
       return (
@@ -45,7 +46,10 @@ export function MultiMorphAnalysisOptionButtons({morphAnalysis, initialMorphAnal
                   onTranslationChange={setTranslation}
                   onAnalysisChange={(newAnalysis: string) => {
                     setAnalysis(index, newAnalysis);
-                  }}/>
+                  }
+                  }
+                  updateNodeMorphology={updateNodeMorphology}
+                  />
                 }
               </div>
             );

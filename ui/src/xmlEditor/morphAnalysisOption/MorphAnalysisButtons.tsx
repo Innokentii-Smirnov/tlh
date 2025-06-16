@@ -54,10 +54,6 @@ export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggle
       basicSaveGloss(morphologicalAnalysis);
     };
 
-    const updateNodeMorphology = () => {
-      updateMorphology(morphologicalAnalysis);
-    };
-
     useEffect(() => {
       if (!globalUpdateButtonRef) {
         throw new Error('No global update button passed.');
@@ -67,14 +63,12 @@ export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggle
       } else {
         globalUpdateButtonRef.current.addEventListener('click', updateLexicon);
         globalUpdateButtonRef.current.addEventListener('click', updateDictionary);
-        globalUpdateButtonRef.current.addEventListener('click', updateNodeMorphology);
         return () => {
           if (!globalUpdateButtonRef.current) {
             console.log('The global update button is null.');
           } else {
             globalUpdateButtonRef.current.removeEventListener('click', updateLexicon);
             globalUpdateButtonRef.current.removeEventListener('click', updateDictionary);
-            globalUpdateButtonRef.current.removeEventListener('click', updateNodeMorphology);
           }
         };
       }
@@ -95,6 +89,10 @@ export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggle
       }
     });
   }
+
+  const updateNodeMorphology = () => {
+    updateMorphology(morphologicalAnalysis);
+  };
 
   return (
     <div className="mt-2">
@@ -133,14 +131,16 @@ export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggle
                                              setReferenceWord={setReferenceWord}
                                              setTranslation={setTranslation}
                                              setAnalysis={setSingleMorphAnalysis}
-                                             hurrian={hurrian}/>
+                                             hurrian={hurrian}
+                                             updateNodeMorphology={updateNodeMorphology}/>
           : <MultiMorphAnalysisOptionButtons morphAnalysis={morphologicalAnalysis}
                                             initialMorphAnalysis={(initialMorphologicalAnalysis as MultiMorphologicalAnalysis)}
                                              toggleAnalysisSelection={(letter, encLetter) => toggleAnalysisSelection(letter, encLetter, undefined)}
                                              setReferenceWord={setReferenceWord}
                                              setTranslation={setTranslation}
                                              setAnalysis={setMultiMorphAnalysis}
-                                             hurrian={hurrian}/>}
+                                             hurrian={hurrian}
+                                             updateNodeMorphology={updateNodeMorphology}/>}
 
       </div>}
     </div>
