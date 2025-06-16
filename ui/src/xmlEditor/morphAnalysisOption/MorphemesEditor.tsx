@@ -54,9 +54,6 @@ class Morpheme {
     return kindToBoundary[this.kind] + this.form;
   }
   getTag(position: number): string {
-    if (this.kind === 'fragment') {
-      return '';
-    }
     return this.getTagBoundary(position) + this.tag;
   }
   getTagBoundary(position: number): string {
@@ -72,7 +69,7 @@ function makeSegmentation(morphemes: Morpheme[]): string {
 }
 
 function makeAnalysis(morphemes: Morpheme[]): string {
-  return morphemes.slice(1).map((morpheme, i) => morpheme.getTag(i)).join('');
+  return morphemes.slice(1).filter(morpheme => morpheme.kind !== 'fragment').map((morpheme, i) => morpheme.getTag(i)).join('');
 }
 
 function formIsFragment(form: string): boolean {
