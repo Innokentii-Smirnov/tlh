@@ -157,11 +157,15 @@ export function XmlDocumentEditor({
     }
   );
 
-  const updateEditedNode = (updateSpec: Spec<XmlElementNode>): void => setState((state) => update(state, {
+  const updateEditedNode = (updateSpec: Spec<XmlElementNode>): void => {
+    console.log(JSON.stringify(updateSpec));
+    setState((state) => update(state, {
+
     editorState: (editorState) => editorState._type === 'EditNodeRightState'
       ? update(editorState, {node: updateSpec, changed: {$set: true}})
       : editorState
   }));
+}
 
   const updateAttribute = (key: string, value: string | undefined): void => updateEditedNode({attributes: {[key]: {$set: value}}});
 
