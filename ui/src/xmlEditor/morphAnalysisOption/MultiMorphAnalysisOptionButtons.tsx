@@ -32,7 +32,7 @@ export function MultiMorphAnalysisOptionButtons({morphAnalysis, initialMorphAnal
 
           {morphAnalysis.analysisOptions.map(({letter, analysis}, index) => {
             const options = (initialMorphAnalysis as MultiMorphologicalAnalysisWithoutEnclitics).analysisOptions;
-            const selected = index < options.length ? options[index].selected : false;
+            const selected = options && index < options.length ? options[index].selected : false;
             return (
               <div key={index} className="mb-1">
                 <SelectableButton selected={selected} otherClasses={otherClasses} onClick={() => toggleAnalysisSelection(letter, undefined)}>
