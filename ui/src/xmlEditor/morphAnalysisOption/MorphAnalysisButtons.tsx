@@ -10,6 +10,7 @@ import update from 'immutability-helper';
 import { basicSaveGloss } from '../hur/glossUpdater';
 import { basicUpdateHurrianDictionary } from '../hur/dictionary';
 import { updateHurrianAnalysis } from '../hur/analysisUpdater';
+import { deleteAnalysisFromHurrianDictionary } from '../hur/dictionary';
 
 interface IProps extends CanToggleAnalysisSelection {
   initialMorphologicalAnalysis: MorphologicalAnalysis;
@@ -108,6 +109,8 @@ export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggle
 
   const deleteNodeMorphology = () => {
     deleteMorphology(morphologicalAnalysis);
+    const value: string = writeMorphAnalysisValue(morphologicalAnalysis);
+    deleteAnalysisFromHurrianDictionary(transcription, value);
   };
 
   function getSomeMorphTag(morphAnalysis: MorphologicalAnalysis): string | null {

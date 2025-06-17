@@ -90,6 +90,13 @@ export function basicUpdateHurrianDictionary(
   }
 }
 
+export function deleteAnalysisFromHurrianDictionary(transcription: string, analysis: string) {
+  const possibilities = dictionary.get(transcription);
+  if (possibilities !== undefined) {
+    possibilities.delete(analysis);
+  }
+}
+
 export function getDictionary(): { [key: string]: string[] } {
   return convertDictionary(dictionary);
 }
