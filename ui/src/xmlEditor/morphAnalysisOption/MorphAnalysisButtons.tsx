@@ -118,10 +118,16 @@ export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggle
     switch (morphologicalAnalysis._type) {
       case 'SingleMorphAnalysisWithoutEnclitics':
         return morphologicalAnalysis.selected;
+      case 'SingleMorphAnalysisWithSingleEnclitics':
+        return morphologicalAnalysis.selected;
+      case 'SingleMorphAnalysisWithMultiEnclitics':
+        return morphologicalAnalysis.encliticsAnalysis.analysisOptions.some(({selected}) => selected);
       case 'MultiMorphAnalysisWithoutEnclitics':
         return morphologicalAnalysis.analysisOptions.some(({selected}) => selected);
-      default:
-        return false;
+      case 'MultiMorphAnalysisWithSingleEnclitics':
+        return morphologicalAnalysis.analysisOptions.some(({selected}) => selected);
+      case 'MultiMorphAnalysisWithMultiEnclitics':
+        return morphologicalAnalysis.selectedAnalysisCombinations.length > 0;
     }
   }
 
