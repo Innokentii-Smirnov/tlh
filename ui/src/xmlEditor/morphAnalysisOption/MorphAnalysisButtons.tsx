@@ -116,6 +116,10 @@ export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggle
 
   const deleteNodeMorphology = () => {
     deleteMorphology(morphologicalAnalysis);
+  };
+
+  const deleteNodeAndDictionaryMorphology = () => {
+    deleteMorphology(morphologicalAnalysis);
     const value: string = writeMorphAnalysisValue(morphologicalAnalysis);
     deleteAnalysisFromHurrianDictionary(transcription, value);
   };
@@ -208,6 +212,12 @@ export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggle
 
         <button type="button" className="p-2 rounded-r border border-slate-500"
                 onClick={deleteNodeMorphology}
+                title={'Delete for this only'}>
+        &#9960;
+        </button>
+
+        <button type="button" className="p-2 rounded-r border border-slate-500"
+                onClick={deleteNodeAndDictionaryMorphology}
                 title={'Delete morphological analysis'}>
         &#10754;
         </button>
