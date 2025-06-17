@@ -58,20 +58,22 @@ export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggle
   const {number, translation, referenceWord, determinative} = morphologicalAnalysis;
 
   if (hurrian) {
+    const newParadigmClass = getPos(paradigmClass, getSomeMorphTag(morphologicalAnalysis), translation);
+    if (newParadigmClass !== paradigmClass) {
+      setParadigmClass(newParadigmClass);
+      actualParadigmClass = newParadigmClass;
+    }
+
     const updateDictionary = () => {
-      const value: string = writeMorphAnalysisValue(morphologicalAnalysis);
+      const value: string = writeMorphAnalysisValue(
+        update(morphologicalAnalysis, { paradigmClass: { $set: actualParadigmClass } })
+      );
       basicUpdateHurrianDictionary(transcription, value);
     };
 
     const updateLexicon = () => {
       basicSaveGloss(morphologicalAnalysis);
     };
-
-    const newParadigmClass = getPos(paradigmClass, getSomeMorphTag(morphologicalAnalysis), translation);
-    if (newParadigmClass !== paradigmClass) {
-      setParadigmClass(newParadigmClass);
-      actualParadigmClass = newParadigmClass;
-    }
 
     useEffect(() => {
       if (!globalUpdateButtonRef) {
