@@ -11,6 +11,10 @@ import { basicSaveGloss } from '../hur/glossUpdater';
 import { basicUpdateHurrianDictionary } from '../hur/dictionary';
 import { updateHurrianAnalysis } from '../hur/analysisUpdater';
 import { deleteAnalysisFromHurrianDictionary } from '../hur/dictionary';
+import { getPartsOfSpeech } from '../hur/partsOfSpeech';
+
+const cases = /.*(?:ABS|ERG|GEN|DAT|DIR|ABL|COM|ESS|EQU|ASSOC).*/;
+const partsOfSpeech = /\.?(ADV|CONJ|PREP|INTJ).*/;
 
 interface IProps extends CanToggleAnalysisSelection {
   initialMorphologicalAnalysis: MorphologicalAnalysis;
@@ -49,6 +53,10 @@ export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggle
     updateMorphology(update(morphologicalAnalysis, { paradigmClass: { $set: value } }));
   };
 
+  const {paradigmClass} = initialMorphologicalAnalysis;
+  let actualParadigmClass: string = paradigmClass;
+  const {number, translation, referenceWord, determinative} = morphologicalAnalysis;
+
   if (hurrian) {
     const updateDictionary = () => {
       const value: string = writeMorphAnalysisValue(morphologicalAnalysis);
@@ -59,12 +67,11 @@ export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggle
       basicSaveGloss(morphologicalAnalysis);
     };
 
-    useEffect(() => {
-      const newParadigmClass = getPos(paradigmClass, getSomeMorphTag(morphologicalAnalysis), translation);
-      if (newParadigmClass !== paradigmClass) {
-        setParadigmClass(newParadigmClass);
-      }
-    });
+    const newParadigmClass = getPos(paradigmClass, getSomeMorphTag(morphologicalAnalysis), translation);
+    if (newParadigmClass !== paradigmClass) {
+      setParadigmClass(newParadigmClass);
+      actualParadigmClass = newParadigmClass;
+    }
 
     useEffect(() => {
       if (!globalUpdateButtonRef) {
@@ -87,8 +94,6 @@ export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggle
     });
   }
 
-  const {paradigmClass} = initialMorphologicalAnalysis;
-  const {number, translation, referenceWord, determinative} = morphologicalAnalysis;
   const isSingleAnalysisOption = isSingleMorphologicalAnalysis(morphologicalAnalysis);
 
   function selectAll(ma: MultiMorphologicalAnalysis, numerus: NumerusOption): void {
@@ -123,9 +128,6 @@ export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggle
         return null;
     }
   }
-
-  const cases = /.*(?:ABS|ERG|GEN|DAT|DIR|ABL|COM|ESS|EQU|ASSOC).*/;
-  const partsOfSpeech = /\.?(ADV|CONJ|PREP|INTJ).*/;
 
   function getPos(template: string, morphTag: string | null, translation: string): string
   {
@@ -177,23 +179,14 @@ export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggle
           {t('paradigmClass')}:&nbsp;
           <span className="text-red-600">
             <select
-              defaultValue={getPos(paradigmClass,
-                            getSomeMorphTag(morphologicalAnalysis),
-                                   translation)}
+              defaultValue={actualParadigmClass}
               onChange={(event) => {
                 setParadigmClass(event.target.value);
               }}
               onBlur={updateNodeMorphology}>
-              <option value='ADV'>ADV</option>
-              <option value='CONJ'>CONJ</option>
-              <option value='PREP'>PREP</option>
-              <option value='INTJ'>INTJ</option>
-              <option value='PRON'>PRON</option>
-              <option value='INF'>INF</option>
-              <option value='CVB'>CVB</option>
-              <option value='noun'>noun</option>
-              <option value='verb'>verb</option>
-              <option value='unclear'>unclear</option>
+              {getPartsOfSpeech().map((partOfSpeech: string) => {
+                return (<option key={partOfSpeech} value={partOfSpeech}>{partOfSpeech}</option>);
+              })}
             </select>
           </span>
           {determinative && <span>, {t('determinative')}:&nbsp;<span className="text-red-600">{determinative}</span></span>})&nbsp;
