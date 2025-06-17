@@ -126,7 +126,7 @@ export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggle
   }
 
   const deleteNodeMorphology = () => {
-    if (isSelected(morphologicalAnalysis)) {
+    if (isSelected(initialMorphologicalAnalysis)) {
       alert('You should unselect the analysis before deletion.');
     }
     else {
@@ -135,7 +135,7 @@ export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggle
   };
 
   const deleteNodeAndDictionaryMorphology = () => {
-    if (isSelected(morphologicalAnalysis)) {
+    if (isSelected(initialMorphologicalAnalysis)) {
       alert('You should unselect the analysis before deletion.');
     }
     else {
