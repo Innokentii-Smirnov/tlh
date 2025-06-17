@@ -176,19 +176,23 @@ export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggle
 
         <div className="flex-grow p-2 border-l border-y border-slate-500 bg-gray-100">
           <span className="text-red-600">{translation}</span>&nbsp;({referenceWord},&nbsp;
-          {t('paradigmClass')}:&nbsp;
-          <span className="text-red-600">
-            <select
-              defaultValue={actualParadigmClass}
-              onChange={(event) => {
-                setParadigmClass(event.target.value);
-              }}
-              onBlur={updateNodeMorphology}>
-              {getPartsOfSpeech().map((partOfSpeech: string) => {
-                return (<option key={partOfSpeech} value={partOfSpeech}>{partOfSpeech}</option>);
-              })}
-            </select>
-          </span>
+          {hurrian ? 'Wortart' : t('paradigmClass')}:&nbsp;
+            <span className="text-red-600">
+            {
+              hurrian ?
+              <select
+                defaultValue={actualParadigmClass}
+                onChange={(event) => {
+                  setParadigmClass(event.target.value);
+                }}
+                onBlur={updateNodeMorphology}>
+                {getPartsOfSpeech().map((partOfSpeech: string) => {
+                  return (<option key={partOfSpeech} value={partOfSpeech}>{partOfSpeech}</option>);
+                })}
+              </select> :
+              paradigmClass
+            }
+            </span>
           {determinative && <span>, {t('determinative')}:&nbsp;<span className="text-red-600">{determinative}</span></span>})&nbsp;
         </div>
 
