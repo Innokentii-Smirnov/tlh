@@ -14,7 +14,6 @@ const otherClasses = ['p-2', 'rounded', 'w-full'];
 
 interface IProps {
   morphAnalysis: MultiMorphologicalAnalysis;
-  initialMorphAnalysis: MultiMorphologicalAnalysis;
   toggleAnalysisSelection: (letter: string, encLetter: string | undefined) => void;
   setReferenceWord: (newReferenceWord: string) => void;
   setTranslation: (newTranslation: string) => void;
@@ -23,7 +22,7 @@ interface IProps {
   updateNodeMorphology: () => void;
 }
 
-export function MultiMorphAnalysisOptionButtons({morphAnalysis, initialMorphAnalysis, toggleAnalysisSelection, setReferenceWord, setTranslation, setAnalysis, hurrian, updateNodeMorphology}: IProps): JSX.Element {
+export function MultiMorphAnalysisOptionButtons({morphAnalysis, toggleAnalysisSelection, setReferenceWord, setTranslation, setAnalysis, hurrian, updateNodeMorphology}: IProps): JSX.Element {
   switch (morphAnalysis._type) {
     case 'MultiMorphAnalysisWithoutEnclitics':
       return (
@@ -31,7 +30,7 @@ export function MultiMorphAnalysisOptionButtons({morphAnalysis, initialMorphAnal
           <MultiMorphAnalysisSelection ma={morphAnalysis}/>
 
           {morphAnalysis.analysisOptions.map(({letter, analysis}, index) => {
-            const options = (initialMorphAnalysis as MultiMorphologicalAnalysisWithoutEnclitics).analysisOptions;
+            const options = (morphAnalysis as MultiMorphologicalAnalysisWithoutEnclitics).analysisOptions;
             const selected = options && index < options.length ? options[index].selected : false;
             return (
               <div key={index} className="mb-1">
@@ -60,7 +59,7 @@ export function MultiMorphAnalysisOptionButtons({morphAnalysis, initialMorphAnal
 
     case 'MultiMorphAnalysisWithSingleEnclitics':
       {
-        const ma = initialMorphAnalysis as MultiMorphologicalAnalysisWithSingleEnclitics;
+        const ma = morphAnalysis as MultiMorphologicalAnalysisWithSingleEnclitics;
         return (
           <div>
             <MultiMorphAnalysisSelection ma={ma}/>
@@ -77,7 +76,7 @@ export function MultiMorphAnalysisOptionButtons({morphAnalysis, initialMorphAnal
 
     case 'MultiMorphAnalysisWithMultiEnclitics':
       {
-        const ma = initialMorphAnalysis as MultiMorphologicalAnalysisWithMultiEnclitics;
+        const ma = morphAnalysis as MultiMorphologicalAnalysisWithMultiEnclitics;
         return (
           <div>
             <MultiMorphMultiEncAnalysisSelection ma={ma}/>

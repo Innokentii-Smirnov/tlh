@@ -142,7 +142,12 @@ export function MorphemesEditor({
   updateNodeMorphology
 } : IProps) {
   const morphemes = buildMorphemes(segmentation, translation, analysis);
-  useEffect(() => onAnalysisChange(makeAnalysis(morphemes)));
+  useEffect(() => {
+    const newAnalysis = makeAnalysis(morphemes);
+    if (newAnalysis !== analysis) {
+      onAnalysisChange(newAnalysis);
+    }
+  });
   return (
     <div className="segmentation-box">
     {morphemes.map((morpheme: Morpheme, i: number) => {

@@ -17,7 +17,7 @@ const cases = /.*(?:ABS|ERG|GEN|DAT|DIR|ABL|COM|ESS|EQU|ASSOC).*/;
 const partsOfSpeech = /\.?(ADV|CONJ|PREP|INTJ).*/;
 
 interface IProps extends CanToggleAnalysisSelection {
-  initialMorphologicalAnalysis: MorphologicalAnalysis;
+  morphologicalAnalysis: MorphologicalAnalysis;
   enableEditMode: () => void;
   updateMorphology: (ma: MorphologicalAnalysis) => void;
   hurrian: boolean;
@@ -26,26 +26,24 @@ interface IProps extends CanToggleAnalysisSelection {
   deleteMorphology: (ma: MorphologicalAnalysis) => void;
 }
 
-export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggleAnalysisSelection, enableEditMode, updateMorphology, hurrian, globalUpdateButtonRef, transcription, deleteMorphology}: IProps): JSX.Element {
+export function MorphAnalysisOptionButtons({morphologicalAnalysis, toggleAnalysisSelection, enableEditMode, updateMorphology, hurrian, globalUpdateButtonRef, transcription, deleteMorphology}: IProps): JSX.Element {
 
   const {t} = useTranslation('common');
   const [isReduced, setIsReduced] = useState(false);
   const [lastNumerusSelected, setLastNumerusSelected] = useState<NumerusOption>();
 
-  const [morphologicalAnalysis, setMorphAnalysis] = useState(initialMorphologicalAnalysis);
-
   const setReferenceWord = (value: string): void => {
-    setMorphAnalysis((ma) => update(ma, updateHurrianAnalysis(ma, value)));
+    updateMorphology(update(morphologicalAnalysis, updateHurrianAnalysis(morphologicalAnalysis, value)));
   };
   const setTranslation = (value: string): void => {
-    setMorphAnalysis((ma) => update(ma, { translation: { $set: value } }));
+    updateMorphology(update(morphologicalAnalysis, { translation: { $set: value } }));
   };
   const setSingleMorphAnalysis = (value: string): void => {
-    setMorphAnalysis((ma) => update(ma as SingleMorphologicalAnalysis, { analysis: { $set: value } }));
+    updateMorphology(update(morphologicalAnalysis as SingleMorphologicalAnalysis, { analysis: { $set: value } }));
   };
   const setMultiMorphAnalysis = (index: number, value: string): void => {
-    setMorphAnalysis((ma) => update(
-      ma as MultiMorphologicalAnalysis,
+    updateMorphology(update(
+      morphologicalAnalysis as MultiMorphologicalAnalysis,
       { analysisOptions: { [index]: { analysis: { $set: value } } } }
     ));
   };
@@ -53,9 +51,8 @@ export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggle
     updateMorphology(update(morphologicalAnalysis, { paradigmClass: { $set: value } }));
   };
 
-  const {paradigmClass} = initialMorphologicalAnalysis;
+  const {number, translation, referenceWord, paradigmClass, determinative} = morphologicalAnalysis;
   let actualParadigmClass: string = paradigmClass;
-  const {number, translation, referenceWord, determinative} = morphologicalAnalysis;
 
   if (hurrian) {
     const newParadigmClass = getPos(paradigmClass, getSomeMorphTag(morphologicalAnalysis), translation);
@@ -132,7 +129,7 @@ export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggle
   }
 
   const deleteNodeMorphology = () => {
-    if (isSelected(initialMorphologicalAnalysis)) {
+    if (isSelected(morphologicalAnalysis)) {
       alert('You should unselect the analysis before deletion.');
     }
     else {
@@ -141,7 +138,7 @@ export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggle
   };
 
   const deleteNodeAndDictionaryMorphology = () => {
-    if (isSelected(initialMorphologicalAnalysis)) {
+    if (isSelected(morphologicalAnalysis)) {
       alert('You should unselect the analysis before deletion.');
     }
     else {
@@ -259,7 +256,6 @@ export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggle
       {!isReduced && <div className="mt-2">
         {isSingleAnalysisOption
           ? <SingleMorphAnalysisOptionButton morphAnalysis={morphologicalAnalysis}
-                                            initialMorphAnalysis={(initialMorphologicalAnalysis as SingleMorphologicalAnalysis)}
                                              toggleAnalysisSelection={(encLetter) => toggleAnalysisSelection(undefined, encLetter, undefined)}
                                              setReferenceWord={setReferenceWord}
                                              setTranslation={setTranslation}
@@ -267,7 +263,6 @@ export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggle
                                              hurrian={hurrian}
                                              updateNodeMorphology={updateNodeMorphology}/>
           : <MultiMorphAnalysisOptionButtons morphAnalysis={morphologicalAnalysis}
-                                            initialMorphAnalysis={(initialMorphologicalAnalysis as MultiMorphologicalAnalysis)}
                                              toggleAnalysisSelection={(letter, encLetter) => toggleAnalysisSelection(letter, encLetter, undefined)}
                                              setReferenceWord={setReferenceWord}
                                              setTranslation={setTranslation}

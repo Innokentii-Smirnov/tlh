@@ -7,7 +7,6 @@ import {MorphemesEditor} from './MorphemesEditor';
 
 interface IProps {
   morphAnalysis: SingleMorphologicalAnalysis;
-  initialMorphAnalysis: SingleMorphologicalAnalysis;
   toggleAnalysisSelection: (encLetter: string | undefined) => void;
   setReferenceWord: (newReferenceWord: string) => void;
   setTranslation: (newTranslation: string) => void;
@@ -26,7 +25,6 @@ const otherClasses = ['p-2', 'rounded', 'w-full'];
 
 export function SingleMorphAnalysisOptionButton({
   morphAnalysis,
-  initialMorphAnalysis,
   toggleAnalysisSelection,
   setReferenceWord,
   setTranslation,
@@ -40,7 +38,7 @@ export function SingleMorphAnalysisOptionButton({
       return (
         <div>
           <SelectableButton
-            selected={(initialMorphAnalysis as SingleMorphologicalAnalysisWithoutEnclitics).selected}
+            selected={(morphAnalysis as SingleMorphologicalAnalysisWithoutEnclitics).selected}
             otherClasses={otherClasses}
             onClick={() => toggleAnalysisSelection(undefined)}>
             <>{morphAnalysis.analysis || morphAnalysis.paradigmClass}</>
@@ -59,7 +57,7 @@ export function SingleMorphAnalysisOptionButton({
 
     case 'SingleMorphAnalysisWithSingleEnclitics':
       {
-        const ma = initialMorphAnalysis as SingleMorphologicalAnalysisWithSingleEnclitics;
+        const ma = morphAnalysis as SingleMorphologicalAnalysisWithSingleEnclitics;
         return (
           <SelectableButton selected={ma.selected} otherClasses={otherClasses} onClick={() => toggleAnalysisSelection(undefined)}>
             <>{ma.analysis} <EncliticsAnalysisDisplay enclitics={ma.encliticsAnalysis.enclitics}
@@ -70,7 +68,7 @@ export function SingleMorphAnalysisOptionButton({
 
     case 'SingleMorphAnalysisWithMultiEnclitics':
       {
-        const ma = initialMorphAnalysis as SingleMorphologicalAnalysisWithMultiEnclitics;
+        const ma = morphAnalysis as SingleMorphologicalAnalysisWithMultiEnclitics;
         return (
           <>
             {ma.encliticsAnalysis.analysisOptions.map(({letter, analysis, selected}) =>
