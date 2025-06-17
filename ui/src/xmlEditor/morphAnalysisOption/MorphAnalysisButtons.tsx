@@ -114,14 +114,35 @@ export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggle
     updateMorphology(morphologicalAnalysis);
   };
 
+  function isSelected(morphologicalAnalysis: MorphologicalAnalysis) {
+    switch (morphologicalAnalysis._type) {
+      case 'SingleMorphAnalysisWithoutEnclitics':
+        return morphologicalAnalysis.selected;
+      case 'MultiMorphAnalysisWithoutEnclitics':
+        return morphologicalAnalysis.analysisOptions.some(({selected}) => selected);
+      default:
+        return false;
+    }
+  }
+
   const deleteNodeMorphology = () => {
-    deleteMorphology(morphologicalAnalysis);
+    if (isSelected(morphologicalAnalysis)) {
+      alert('You should unselect the analysis before deletion.');
+    }
+    else {
+      deleteMorphology(morphologicalAnalysis);
+    }
   };
 
   const deleteNodeAndDictionaryMorphology = () => {
-    deleteMorphology(morphologicalAnalysis);
-    const value: string = writeMorphAnalysisValue(morphologicalAnalysis);
-    deleteAnalysisFromHurrianDictionary(transcription, value);
+    if (isSelected(morphologicalAnalysis)) {
+      alert('You should unselect the analysis before deletion.');
+    }
+    else {
+      deleteMorphology(morphologicalAnalysis);
+      const value: string = writeMorphAnalysisValue(morphologicalAnalysis);
+      deleteAnalysisFromHurrianDictionary(transcription, value);
+    }
   };
 
   function getSomeMorphTag(morphAnalysis: MorphologicalAnalysis): string | null {
