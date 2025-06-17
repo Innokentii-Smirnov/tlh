@@ -18,9 +18,10 @@ interface IProps extends CanToggleAnalysisSelection {
   hurrian: boolean;
   globalUpdateButtonRef?: RefObject<HTMLButtonElement>;
   transcription: string;
+  deleteMorphology: (ma: MorphologicalAnalysis) => void;
 }
 
-export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggleAnalysisSelection, enableEditMode, updateMorphology, hurrian, globalUpdateButtonRef, transcription}: IProps): JSX.Element {
+export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggleAnalysisSelection, enableEditMode, updateMorphology, hurrian, globalUpdateButtonRef, transcription, deleteMorphology}: IProps): JSX.Element {
 
   const {t} = useTranslation('common');
   const [isReduced, setIsReduced] = useState(false);
@@ -60,7 +61,7 @@ export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggle
     useEffect(() => {
       const newParadigmClass = getPos(paradigmClass, getSomeMorphTag(morphologicalAnalysis), translation);
       if (newParadigmClass !== paradigmClass) {
-        setParadigmClass(newParadigmClass)
+        setParadigmClass(newParadigmClass);
       }
     });
 
@@ -103,6 +104,10 @@ export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggle
 
   const updateNodeMorphology = () => {
     updateMorphology(morphologicalAnalysis);
+  };
+
+  const deleteNodeMorphology = () => {
+    deleteMorphology(morphologicalAnalysis);
   };
 
   function getSomeMorphTag(morphAnalysis: MorphologicalAnalysis): string | null {
@@ -199,7 +204,14 @@ export function MorphAnalysisOptionButtons({initialMorphologicalAnalysis, toggle
             </button>)}
         </>}
 
-        <button type="button" className="p-2 rounded-r border border-slate-500" onClick={enableEditMode}
+        <button type="button" className="p-2 rounded-r border border-slate-500"
+                onClick={deleteNodeMorphology}
+                title={'Delete morphological analysis'}>
+        &#10754;
+        </button>
+
+        <button type="button" className="p-2 rounded-r border border-slate-500"
+                onClick={enableEditMode}
                 title={t('editMorphologicalAnalyses') || 'editMorphologicalAnalyses'}>
           &#x2699;
         </button>

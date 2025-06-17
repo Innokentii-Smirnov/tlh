@@ -14,6 +14,7 @@ interface IProps extends CanToggleAnalysisSelection {
   hurrian: boolean;
   globalUpdateButtonRef?: RefObject<HTMLButtonElement>;
   transcription: string;
+  deleteMorphology: (ma: MorphologicalAnalysis) => void;
 }
 
 export function MorphAnalysisOptionContainer({
@@ -23,7 +24,8 @@ export function MorphAnalysisOptionContainer({
   setKeyHandlingEnabled,
   hurrian,
   globalUpdateButtonRef,
-  transcription
+  transcription,
+  deleteMorphology
 }: IProps): JSX.Element {
 
   const [isUpdateMode, setIsUpdateMode] = useState(false);
@@ -57,5 +59,6 @@ export function MorphAnalysisOptionContainer({
                                   updateMorphology={updateMorphology}
                                   hurrian={hurrian}
                                   globalUpdateButtonRef={globalUpdateButtonRef}
-                                  transcription={transcription}/>;
+                                  transcription={transcription}
+                                  deleteMorphology={deleteMorphology}/>;
 }

@@ -90,6 +90,11 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
     setState('DefaultState');
   }
 
+  function deleteMorphology(number: number): void {
+    updateEditedNode({attributes: {$unset: [`mrp${number}`]}});
+    setState('DefaultState');
+  }
+
   const nextMorphAnalysis = (): MorphologicalAnalysis => multiMorphAnalysisWithoutEnclitics(Math.max(0, ...morphologies.map(({number}) => number)) + 1, node.attributes.trans || '');
 
   const updateAttribute = (name: string, value: string | undefined): void => updateEditedNode({attributes: {[name]: {$set: value}}});
@@ -221,6 +226,7 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
 				hurrian={language === 'Hur'}
 				globalUpdateButtonRef={globalUpdateButtonRef}
 				transcription={node.attributes.trans || ''}
+				deleteMorphology={(ma: MorphologicalAnalysis) => deleteMorphology(ma.number)}
               />
             </div>
           )}
