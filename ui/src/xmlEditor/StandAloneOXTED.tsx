@@ -11,6 +11,7 @@ import { DocumentEditTypes } from './documentEditTypes';
 import { XmlValidityChecker } from './XmlValidityChecker';
 import { getDictionary, upgradeDictionary } from './hur/dictionary';
 import { getGlosses, upgradeGlosses } from './hur/glossProvider';
+import { setPartsOfSpeech, getPartsOfSpeech } from './hur/partsOfSpeech';
 
 const locStoreKey = 'editorState';
 
@@ -86,6 +87,9 @@ export function StandAloneOXTED({ editorConfig }: IProps): ReactElement {
     const {dictionary, glosses} = parsed;
     upgradeDictionary(dictionary);
     upgradeGlosses(glosses);
+    if ('partsOfSpeech' in parsed) {
+      setPartsOfSpeech(parsed.partsOfSpeech);
+    }
   };
 
   function download(rootNode: XmlElementNode): void {
@@ -130,7 +134,8 @@ export function StandAloneOXTED({ editorConfig }: IProps): ReactElement {
   {
     const dictionary = getDictionary();
     const glosses = getGlosses();
-    const obj = {dictionary, glosses};
+    const partsOfSpeech = getPartsOfSpeech();
+    const obj = {partsOfSpeech, dictionary, glosses};
     const jsonText = JSON.stringify(obj, undefined, '\t');
     makeDownload(jsonText, 'Dictionary.json');
   }
