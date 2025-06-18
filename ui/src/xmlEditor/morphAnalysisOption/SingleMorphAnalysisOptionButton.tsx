@@ -12,7 +12,6 @@ interface IProps {
   setTranslation: (newTranslation: string) => void;
   setAnalysis: (newTranslation: string) => void;
   hurrian: boolean;
-  updateNodeMorphology: () => void;
 }
 
 export function EncliticsAnalysisDisplay({enclitics, analysis}: { enclitics: string, analysis: string }): JSX.Element {
@@ -29,8 +28,7 @@ export function SingleMorphAnalysisOptionButton({
   setReferenceWord,
   setTranslation,
   setAnalysis,
-  hurrian,
-  updateNodeMorphology
+  hurrian
 }: IProps
 ): JSX.Element {
   switch (morphAnalysis._type) {
@@ -50,7 +48,6 @@ export function SingleMorphAnalysisOptionButton({
             onSegmentationChange={setReferenceWord}
             onTranslationChange={setTranslation}
             onAnalysisChange={setAnalysis}
-            updateNodeMorphology={updateNodeMorphology}
           />}
         </div>
       );

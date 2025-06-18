@@ -107,10 +107,6 @@ export function MorphAnalysisOptionButtons({morphologicalAnalysis, toggleAnalysi
     });
   }
 
-  const updateNodeMorphology = () => {
-    updateMorphology(morphologicalAnalysis);
-  };
-
   function isSelected(morphologicalAnalysis: MorphologicalAnalysis) {
     switch (morphologicalAnalysis._type) {
       case 'SingleMorphAnalysisWithoutEnclitics':
@@ -214,8 +210,7 @@ export function MorphAnalysisOptionButtons({morphologicalAnalysis, toggleAnalysi
                 defaultValue={actualParadigmClass}
                 onChange={(event) => {
                   setParadigmClass(event.target.value);
-                }}
-                onBlur={updateNodeMorphology}>
+                }}>
                 {getPartsOfSpeech().map((partOfSpeech: string) => {
                   return (<option key={partOfSpeech} value={partOfSpeech}>{partOfSpeech}</option>);
                 })}
@@ -260,15 +255,13 @@ export function MorphAnalysisOptionButtons({morphologicalAnalysis, toggleAnalysi
                                              setReferenceWord={setReferenceWord}
                                              setTranslation={setTranslation}
                                              setAnalysis={setSingleMorphAnalysis}
-                                             hurrian={hurrian}
-                                             updateNodeMorphology={updateNodeMorphology}/>
+                                             hurrian={hurrian}/>
           : <MultiMorphAnalysisOptionButtons morphAnalysis={morphologicalAnalysis}
                                              toggleAnalysisSelection={(letter, encLetter) => toggleAnalysisSelection(letter, encLetter, undefined)}
                                              setReferenceWord={setReferenceWord}
                                              setTranslation={setTranslation}
                                              setAnalysis={setMultiMorphAnalysis}
-                                             hurrian={hurrian}
-                                             updateNodeMorphology={updateNodeMorphology}/>}
+                                             hurrian={hurrian}/>}
 
       </div>}
     </div>

@@ -7,7 +7,6 @@ interface IProps {
   onSegmentationChange: (newSegmentation: string) => void,
   onTranslationChange: (newTranslation: string) => void,
   onAnalysisChange: (newAnalysis: string) => void,
-  updateNodeMorphology: () => void;
 }
 
 export const sep = /((?<!\()-|-(?!\))|=|(?<!=[123](?:SG|PL))\.(?=ABS)|^\.)/;
@@ -138,8 +137,7 @@ function buildMorphemes(segmentation: string, translation: string, analysis: str
 
 export function MorphemesEditor({
   segmentation, translation, analysis,
-  onSegmentationChange, onTranslationChange, onAnalysisChange,
-  updateNodeMorphology
+  onSegmentationChange, onTranslationChange, onAnalysisChange
 } : IProps) {
   const morphemes = buildMorphemes(segmentation, translation, analysis);
   useEffect(() => {
@@ -184,7 +182,6 @@ export function MorphemesEditor({
                   onTranslationChange(stemFragmentGloss);
                 }
               }}
-              onBlur={updateNodeMorphology}
             >
             </input>
           </div>
@@ -203,7 +200,6 @@ export function MorphemesEditor({
                     onAnalysisChange(makeAnalysis(morphemes));
                   }
                 }}
-                onBlur={updateNodeMorphology}
               >
               </input>
             </div>
