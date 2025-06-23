@@ -100,8 +100,15 @@ function buildMorphemes(segmentation: string, translation: string, analysis: str
   let j = tags.length - 1;
   for (let i = forms.length - 1; i >= 0; i--) {
     const [form, boundary] = forms[i];
+    let tag: string;
+    while (j >= 0 && tags[j][1] === '.') {
+      tag = tags[j][0];
+      const zero = new Morpheme('', tag, 'zero');
+      morphemes.push(zero);
+      j--;
+    }
     if (formIsFragment(form)) {
-      let kind, tag: string;
+      let kind: string;
       if (i === 0) {
         kind = 'stemFragment';
         tag = translation;
@@ -112,13 +119,6 @@ function buildMorphemes(segmentation: string, translation: string, analysis: str
       const morpheme = new Morpheme(form, tag, kind);
       morphemes.push(morpheme);
     } else {
-      let tag: string;
-      while (j >= 0 && tags[j][1] === '.') {
-        tag = tags[j][0];
-        const zero = new Morpheme('', tag, 'zero');
-        morphemes.push(zero);
-        j--;
-      }
       const kind: string = boundaryToKind[boundary];
       if (i === 0) {
         tag = translation;
