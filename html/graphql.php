@@ -44,11 +44,35 @@ function resolveLogin(string $username, string $password): ?string
     : null;
 }
 
+function getAuthorization() {
+	$auth = null;
+    
+	if (isset($_SERVER['Authorization'])) {
+		$auth = trim($_SERVER["Authorization"]);
+	} elseif (isset($_SERVER['HTTP_AUTHORIZATION'])) {
+		$auth = trim($_SERVER["HTTP_AUTHORIZATION"]);
+	} elseif (function_exists('apache_request_headers')) {
+		$requestHeaders = apache_request_headers();
+		$requestHeaders = array_combine(
+			array_map('ucwords', array_keys($requestHeaders)), 
+			array_values($requestHeaders)
+		);
+        
+		if (isset($requestHeaders['Authorization'])) {
+			$auth = trim($requestHeaders['Authorization']);
+		}
+	}
+    
+	return $auth;
+}
+
 /** @throws MySafeGraphQLException */
 function resolveUser(): ?User
 {
-  $jwt = $_SERVER['HTTP_AUTHORIZATION'] ?? null;
+  $jwt = getAuthorization();
 
+  // error_log("JWT: " . (is_null($jwt) ? "Null" : $jwt));
+  
   if (is_null($jwt)) {
     return null;
   }
