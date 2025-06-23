@@ -6,8 +6,7 @@ interface IProps {
   segmentation: string,
   translation: string,
   analysis: string,
-  onAnalysisChange: (newAnalysis: string) => void,
-  updateMorphology: (ma: Spec<MorphologicalAnalysis>) => void;
+  updateMorphology: (ma: Spec<MorphologicalAnalysis>, analysis: string | null) => void;
   paradigmClass: string;
 }
 
@@ -139,23 +138,31 @@ function buildMorphemes(segmentation: string, translation: string, analysis: str
 }
 
 export function MorphemesEditor({
-  segmentation, translation, analysis, onAnalysisChange, updateMorphology,
+  segmentation, translation, analysis, updateMorphology,
   paradigmClass
 } : IProps) {
 
   const onSegmentationChange = (value: string): void => {
-    updateMorphology(updateHurrianAnalysis(value, paradigmClass));
+    updateMorphology(updateHurrianAnalysis(value, paradigmClass), null);
   };
 
   const onTranslationChange = (value: string): void => {
-    updateMorphology({ translation: { $set: value } });
+    updateMorphology({ translation: { $set: value } }, null);
   };
 
   const onSegmentationAndTranslationChange = (segmentation: string, translation: string): void => {
     updateMorphology({
       referenceWord: { $set: segmentation },
       translation: { $set: translation }
-    });
+    }, null);
+  };
+
+  const onAnalysisChange = (analysis: string): void => {
+    updateMorphology({}, analysis);
+  };
+
+  const onSegmentationAndAnalysisChange = (segmentation: string, analysis: string): void => {
+    updateMorphology(updateHurrianAnalysis(segmentation, paradigmClass), analysis);
   };
 
   const morphemes = buildMorphemes(segmentation, translation, analysis);
@@ -174,8 +181,10 @@ export function MorphemesEditor({
               value={morpheme.kind}
               onChange={(event) => {
                 morphemes[i].kind = event.target.value;
-                onSegmentationChange(makeSegmentation(morphemes));
-                onAnalysisChange(makeAnalysis(morphemes));
+                onSegmentationAndAnalysisChange(
+                  makeSegmentation(morphemes),
+                  makeAnalysis(morphemes)
+                );
               }}>
               <option value='stem'>Stamm</option>
               <option value='suffix'>Suffix</option>

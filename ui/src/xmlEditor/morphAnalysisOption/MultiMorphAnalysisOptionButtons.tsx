@@ -8,7 +8,7 @@ import {MultiMorphMultiEncAnalysisSelection} from './MultiMorphMultiEncAnalysisS
 import {SelectableButton} from '../../genericElements/Buttons';
 import {MultiMorphMultiSelectionButton} from './MultiMorphMultiSelectionButton';
 import {MorphemesEditor} from './MorphemesEditor';
-import { Spec } from 'immutability-helper';
+import update, { Spec } from 'immutability-helper';
 
 
 const otherClasses = ['p-2', 'rounded', 'w-full'];
@@ -16,14 +16,23 @@ const otherClasses = ['p-2', 'rounded', 'w-full'];
 interface IProps {
   morphAnalysis: MultiMorphologicalAnalysis;
   toggleAnalysisSelection: (letter: string, encLetter: string | undefined) => void;
-  setAnalysis: (num: number, newAnalysis: string) => void;
   hurrian: boolean;
-  updateMorphology: (ma: Spec<MorphologicalAnalysis>) => void;
+  updateMorphology: (ma: MorphologicalAnalysis) => void;
 }
 
-export function MultiMorphAnalysisOptionButtons({morphAnalysis, toggleAnalysisSelection, setAnalysis, hurrian,
-  updateMorphology
-}: IProps): JSX.Element {
+export function MultiMorphAnalysisOptionButtons({morphAnalysis, toggleAnalysisSelection, hurrian, updateMorphology}: IProps): JSX.Element {
+
+  const partialUpdateMorphology = (spec: Spec<MorphologicalAnalysis>, analysis: string | null, index: number): void => {
+    if (analysis === null) {
+      updateMorphology(update(morphAnalysis, spec));
+    } else {
+      updateMorphology(update(morphAnalysis, {
+        ...spec,
+        analysisOptions: { [index]: { analysis: { $set: analysis } } }
+      }));
+    }
+  };
+
   switch (morphAnalysis._type) {
     case 'MultiMorphAnalysisWithoutEnclitics':
       return (
@@ -42,11 +51,10 @@ export function MultiMorphAnalysisOptionButtons({morphAnalysis, toggleAnalysisSe
                   segmentation={morphAnalysis.referenceWord}
                   translation={morphAnalysis.translation}
                   analysis={analysis}
-                  onAnalysisChange={(newAnalysis: string) => {
-                    setAnalysis(index, newAnalysis);
+                  updateMorphology={(spec: Spec<MorphologicalAnalysis>, analysis: string | null) => {
+                    partialUpdateMorphology(spec, analysis, index);
                   }
                   }
-                  updateMorphology={updateMorphology}
                   paradigmClass={morphAnalysis.paradigmClass}
                   />
                 }

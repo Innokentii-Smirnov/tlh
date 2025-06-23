@@ -1,7 +1,7 @@
 import {JSX, useState, useEffect, RefObject} from 'react';
 import {useTranslation} from 'react-i18next';
 import {SingleMorphAnalysisOptionButton} from './SingleMorphAnalysisOptionButton';
-import {isSingleMorphologicalAnalysis, MorphologicalAnalysis, SingleMorphologicalAnalysis, MultiMorphologicalAnalysis, writeMorphAnalysisValue} from '../../model/morphologicalAnalysis';
+import {isSingleMorphologicalAnalysis, MorphologicalAnalysis, MultiMorphologicalAnalysis, writeMorphAnalysisValue} from '../../model/morphologicalAnalysis';
 import {CanToggleAnalysisSelection} from './MorphAnalysisOptionContainer';
 import {MultiMorphAnalysisOptionButtons} from './MultiMorphAnalysisOptionButtons';
 import classNames from 'classnames';
@@ -11,7 +11,6 @@ import { basicSaveGloss } from '../hur/glossUpdater';
 import { basicUpdateHurrianDictionary } from '../hur/dictionary';
 import { deleteAnalysisFromHurrianDictionary } from '../hur/dictionary';
 import { getPartsOfSpeech } from '../hur/partsOfSpeech';
-import { Spec } from 'immutability-helper';
 
 const cases = /.*(?:ABS|ERG|GEN|DAT|DIR|ABL|COM|ESS|EQU|ASSOC).*/;
 const partsOfSpeech = /\.?(ADV|CONJ|PREP|INTJ).*/;
@@ -32,19 +31,6 @@ export function MorphAnalysisOptionButtons({morphologicalAnalysis, toggleAnalysi
   const [isReduced, setIsReduced] = useState(false);
   const [lastNumerusSelected, setLastNumerusSelected] = useState<NumerusOption>();
 
-  const partialUpdateMorphology = (spec: Spec<MorphologicalAnalysis>): void => {
-    updateMorphology(update(morphologicalAnalysis, spec));
-  };
-
-  const setSingleMorphAnalysis = (value: string): void => {
-    updateMorphology(update(morphologicalAnalysis as SingleMorphologicalAnalysis, { analysis: { $set: value } }));
-  };
-  const setMultiMorphAnalysis = (index: number, value: string): void => {
-    updateMorphology(update(
-      morphologicalAnalysis as MultiMorphologicalAnalysis,
-      { analysisOptions: { [index]: { analysis: { $set: value } } } }
-    ));
-  };
   const setParadigmClass = (value: string): void => {
     updateMorphology(update(morphologicalAnalysis, { paradigmClass: { $set: value } }));
   };
@@ -250,14 +236,12 @@ export function MorphAnalysisOptionButtons({morphologicalAnalysis, toggleAnalysi
         {isSingleAnalysisOption
           ? <SingleMorphAnalysisOptionButton morphAnalysis={morphologicalAnalysis}
                                              toggleAnalysisSelection={(encLetter) => toggleAnalysisSelection(undefined, encLetter, undefined)}
-                                             setAnalysis={setSingleMorphAnalysis}
                                              hurrian={hurrian}
-                                             updateMorphology={partialUpdateMorphology}/>
+                                             updateMorphology={updateMorphology}/>
           : <MultiMorphAnalysisOptionButtons morphAnalysis={morphologicalAnalysis}
                                              toggleAnalysisSelection={(letter, encLetter) => toggleAnalysisSelection(letter, encLetter, undefined)}
-                                             setAnalysis={setMultiMorphAnalysis}
                                              hurrian={hurrian}
-                                             updateMorphology={partialUpdateMorphology}/>}
+                                             updateMorphology={updateMorphology}/>}
 
       </div>}
     </div>
