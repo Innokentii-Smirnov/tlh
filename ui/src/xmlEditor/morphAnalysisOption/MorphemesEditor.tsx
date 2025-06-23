@@ -10,13 +10,15 @@ interface IProps {
   paradigmClass: string;
 }
 
-export const sep = /((?<!\()-|-(?!\))|=|(?<!=[123](?:SG|PL))\.(?=ABS)|^\.)/;
+export const sep = /((?<!\()-|-(?!\))|=| |(?<!=[123](?:SG|PL))\.(?=ABS)|^\.)/;
 const stemFragmentGloss = '?';
+
+const prestemBoundary = ' ';
 
 function split(segmentation: string): [string, string][] {
   const morphemes: [string, string][] = [];
   const spl = segmentation.split(sep);
-  morphemes.push([spl[0], '']);
+  morphemes.push([spl[0], prestemBoundary]);
   for (let i = 1; i < spl.length; i += 2) {
     morphemes.push([spl[i + 1], spl[i]]);
   }
@@ -24,7 +26,7 @@ function split(segmentation: string): [string, string][] {
 }
 
 const kindToBoundary: { [key: string]: string } = {
-  'stem': '',
+  'stem': prestemBoundary,
   'zero': '.',
   'suffix': '-',
   'enclitic': '=',
@@ -32,7 +34,7 @@ const kindToBoundary: { [key: string]: string } = {
 };
 
 const boundaryToKind: { [key: string]: string } = {
-  '': 'stem',
+  ' ': 'stem',
   '.':'zero',
   '-': 'suffix',
   '=': 'enclitic'
@@ -57,14 +59,12 @@ class Morpheme {
     }
     return form;
   }
-  getTag(position: number): string {
-    return this.getTagBoundary(position) + this.tag;
-  }
-  getTagBoundary(position: number): string {
-    if (position === 0 && this.kind === 'suffix') {
-      return '';
+  getTag(i: number): string {
+    let tag = this.tag;
+    if (i > 0) {
+      tag = kindToBoundary[this.kind] + tag;
     }
-    return kindToBoundary[this.kind];
+    return tag;
   }
 }
 
@@ -167,6 +167,8 @@ export function MorphemesEditor({
 
   const morphemes = buildMorphemes(segmentation, translation, analysis);
   const newAnalysis = makeAnalysis(morphemes);
+  console.log(segmentation);
+  console.log(analysis);
   if (newAnalysis !== analysis) {
     onAnalysisChange(newAnalysis);
   }
