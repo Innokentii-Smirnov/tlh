@@ -1,17 +1,17 @@
-import {SingleMorphologicalAnalysis, SingleMorphologicalAnalysisWithoutEnclitics,
+import {MorphologicalAnalysis, SingleMorphologicalAnalysis, SingleMorphologicalAnalysisWithoutEnclitics,
   SingleMorphologicalAnalysisWithSingleEnclitics, SingleMorphologicalAnalysisWithMultiEnclitics
 } from '../../model/morphologicalAnalysis';
 import {SelectableButton} from '../../genericElements/Buttons';
 import {JSX} from 'react';
 import {MorphemesEditor} from './MorphemesEditor';
+import { Spec } from 'immutability-helper';
 
 interface IProps {
   morphAnalysis: SingleMorphologicalAnalysis;
   toggleAnalysisSelection: (encLetter: string | undefined) => void;
-  setReferenceWord: (newReferenceWord: string) => void;
-  setTranslation: (newTranslation: string) => void;
   setAnalysis: (newTranslation: string) => void;
   hurrian: boolean;
+  updateMorphology: (ma: Spec<MorphologicalAnalysis>) => void;
 }
 
 export function EncliticsAnalysisDisplay({enclitics, analysis}: { enclitics: string, analysis: string }): JSX.Element {
@@ -25,10 +25,9 @@ const otherClasses = ['p-2', 'rounded', 'w-full'];
 export function SingleMorphAnalysisOptionButton({
   morphAnalysis,
   toggleAnalysisSelection,
-  setReferenceWord,
-  setTranslation,
   setAnalysis,
-  hurrian
+  hurrian,
+  updateMorphology
 }: IProps
 ): JSX.Element {
   switch (morphAnalysis._type) {
@@ -45,9 +44,9 @@ export function SingleMorphAnalysisOptionButton({
             segmentation={morphAnalysis.referenceWord}
             translation={morphAnalysis.translation}
             analysis={morphAnalysis.analysis}
-            onSegmentationChange={setReferenceWord}
-            onTranslationChange={setTranslation}
             onAnalysisChange={setAnalysis}
+            updateMorphology={updateMorphology}
+            paradigmClass={morphAnalysis.paradigmClass}
           />}
         </div>
       );

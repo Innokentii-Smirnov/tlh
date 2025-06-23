@@ -1,16 +1,18 @@
-import { useEffect } from 'react';
+import { Spec } from 'immutability-helper';
+import { MorphologicalAnalysis } from '../../model/morphologicalAnalysis';
+import { updateHurrianAnalysis } from '../hur/analysisUpdater';
 
 interface IProps {
   segmentation: string,
   translation: string,
   analysis: string,
-  onSegmentationChange: (newSegmentation: string) => void,
-  onTranslationChange: (newTranslation: string) => void,
   onAnalysisChange: (newAnalysis: string) => void,
+  updateMorphology: (ma: Spec<MorphologicalAnalysis>) => void;
+  paradigmClass: string;
 }
 
 export const sep = /((?<!\()-|-(?!\))|=|(?<!=[123](?:SG|PL))\.(?=ABS)|^\.)/;
-const stemFragmentGloss = 'u.B.';
+const stemFragmentGloss = '?';
 
 function split(segmentation: string): [string, string][] {
   const morphemes: [string, string][] = [];
@@ -28,7 +30,6 @@ const kindToBoundary: { [key: string]: string } = {
   'suffix': '-',
   'enclitic': '=',
   'fragment': '-',
-  'stemFragment': ''
 };
 
 const boundaryToKind: { [key: string]: string } = {
@@ -47,11 +48,15 @@ class Morpheme {
     this.tag = tag;
     this.kind = kind;
   }
-  getForm(): string {
+  getForm(i: number): string {
     if (this.kind === 'zero') {
       return '';
     }
-    return kindToBoundary[this.kind] + this.form;
+    let form = this.form;
+    if (i > 0) {
+      form = kindToBoundary[this.kind] + form;
+    }
+    return form;
   }
   getTag(position: number): string {
     return this.getTagBoundary(position) + this.tag;
@@ -65,7 +70,7 @@ class Morpheme {
 }
 
 function makeSegmentation(morphemes: Morpheme[]): string {
-  return morphemes.map(morpheme => morpheme.getForm()).join('');
+  return morphemes.map((morpheme, i) => morpheme.getForm(i)).join('');
 }
 
 function makeAnalysis(morphemes: Morpheme[]): string {
@@ -77,7 +82,7 @@ function formIsFragment(form: string): boolean {
 }
 
 function kindIsFragment(kind: string): boolean {
-  return kind === 'fragment' || kind === 'stemFragment';
+  return kind === 'fragment';
 }
 
 function morphemeIsFragment(morpheme: Morpheme): boolean {
@@ -108,12 +113,10 @@ function buildMorphemes(segmentation: string, translation: string, analysis: str
       j--;
     }
     if (formIsFragment(form)) {
-      let kind: string;
+      const kind = 'fragment';
       if (i === 0) {
-        kind = 'stemFragment';
         tag = translation;
       } else {
-        kind = 'fragment';
         tag = '<fragm>';
       }
       const morpheme = new Morpheme(form, tag, kind);
@@ -136,16 +139,30 @@ function buildMorphemes(segmentation: string, translation: string, analysis: str
 }
 
 export function MorphemesEditor({
-  segmentation, translation, analysis,
-  onSegmentationChange, onTranslationChange, onAnalysisChange
+  segmentation, translation, analysis, onAnalysisChange, updateMorphology,
+  paradigmClass
 } : IProps) {
+
+  const onSegmentationChange = (value: string): void => {
+    updateMorphology(updateHurrianAnalysis(value, paradigmClass));
+  };
+
+  const onTranslationChange = (value: string): void => {
+    updateMorphology({ translation: { $set: value } });
+  };
+
+  const onSegmentationAndTranslationChange = (segmentation: string, translation: string): void => {
+    updateMorphology({
+      referenceWord: { $set: segmentation },
+      translation: { $set: translation }
+    });
+  };
+
   const morphemes = buildMorphemes(segmentation, translation, analysis);
-  useEffect(() => {
-    const newAnalysis = makeAnalysis(morphemes);
-    if (newAnalysis !== analysis) {
-      onAnalysisChange(newAnalysis);
-    }
-  });
+  const newAnalysis = makeAnalysis(morphemes);
+  if (newAnalysis !== analysis) {
+    onAnalysisChange(newAnalysis);
+  }
   return (
     <div className="segmentation-box">
     {morphemes.map((morpheme: Morpheme, i: number) => {
@@ -165,7 +182,6 @@ export function MorphemesEditor({
               <option value='enclitic'>Enklitik</option>
               <option value='zero'>Nullsuf.</option>
               <option value='fragment'>Fragm.</option>
-              <option value='stemFragment'>St.-fr.</option>
             </select>
           </div>
           <div className="field-box">
@@ -176,10 +192,16 @@ export function MorphemesEditor({
               onChange={(event) => {
                 const newForm = event.target.value;
                 morphemes[i].form = newForm;
-                onSegmentationChange(makeSegmentation(morphemes));
-                if (i == 0 && formIsFragment(newForm) && translation === '') {
+                if (i == 0 && formIsFragment(newForm) &&
+                  (translation === '' || translation === 'u.B.' ||
+                    translation === 'u. B.')) {
                   morphemes[i].tag = stemFragmentGloss;
-                  onTranslationChange(stemFragmentGloss);
+                  onSegmentationAndTranslationChange(
+                    makeSegmentation(morphemes),
+                    stemFragmentGloss
+                  );
+                } else {
+                  onSegmentationChange(makeSegmentation(morphemes));
                 }
               }}
             >

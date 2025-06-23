@@ -1,4 +1,4 @@
-import {MultiMorphologicalAnalysis, MultiMorphologicalAnalysisWithoutEnclitics,
+import {MorphologicalAnalysis, MultiMorphologicalAnalysis, MultiMorphologicalAnalysisWithoutEnclitics,
   MultiMorphologicalAnalysisWithSingleEnclitics, MultiMorphologicalAnalysisWithMultiEnclitics
 } from '../../model/morphologicalAnalysis';
 import {JSX} from 'react';
@@ -8,6 +8,7 @@ import {MultiMorphMultiEncAnalysisSelection} from './MultiMorphMultiEncAnalysisS
 import {SelectableButton} from '../../genericElements/Buttons';
 import {MultiMorphMultiSelectionButton} from './MultiMorphMultiSelectionButton';
 import {MorphemesEditor} from './MorphemesEditor';
+import { Spec } from 'immutability-helper';
 
 
 const otherClasses = ['p-2', 'rounded', 'w-full'];
@@ -15,13 +16,14 @@ const otherClasses = ['p-2', 'rounded', 'w-full'];
 interface IProps {
   morphAnalysis: MultiMorphologicalAnalysis;
   toggleAnalysisSelection: (letter: string, encLetter: string | undefined) => void;
-  setReferenceWord: (newReferenceWord: string) => void;
-  setTranslation: (newTranslation: string) => void;
   setAnalysis: (num: number, newAnalysis: string) => void;
   hurrian: boolean;
+  updateMorphology: (ma: Spec<MorphologicalAnalysis>) => void;
 }
 
-export function MultiMorphAnalysisOptionButtons({morphAnalysis, toggleAnalysisSelection, setReferenceWord, setTranslation, setAnalysis, hurrian}: IProps): JSX.Element {
+export function MultiMorphAnalysisOptionButtons({morphAnalysis, toggleAnalysisSelection, setAnalysis, hurrian,
+  updateMorphology
+}: IProps): JSX.Element {
   switch (morphAnalysis._type) {
     case 'MultiMorphAnalysisWithoutEnclitics':
       return (
@@ -40,12 +42,12 @@ export function MultiMorphAnalysisOptionButtons({morphAnalysis, toggleAnalysisSe
                   segmentation={morphAnalysis.referenceWord}
                   translation={morphAnalysis.translation}
                   analysis={analysis}
-                  onSegmentationChange={setReferenceWord}
-                  onTranslationChange={setTranslation}
                   onAnalysisChange={(newAnalysis: string) => {
                     setAnalysis(index, newAnalysis);
                   }
                   }
+                  updateMorphology={updateMorphology}
+                  paradigmClass={morphAnalysis.paradigmClass}
                   />
                 }
               </div>

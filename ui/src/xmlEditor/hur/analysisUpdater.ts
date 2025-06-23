@@ -5,9 +5,9 @@ import { getPos } from './glossUpdater';
 import { retrieveGloss } from './glossProvider';
 
 // Falls der Benutzer eine neue Segmentierung eingegeben hat, muss diese neu analysiert werden.
-export function updateHurrianAnalysis(oldma: MorphologicalAnalysis, referenceWord: string): Spec<MorphologicalAnalysis> {
+export function updateHurrianAnalysis(referenceWord: string, paradigmClass: string): Spec<MorphologicalAnalysis> {
   const stem = getStem(referenceWord);
-  const pos = getPos(oldma.paradigmClass);
+  const pos = getPos(paradigmClass);
   const glosses: Set<string> | null = retrieveGloss(stem, pos);
   if (glosses === null) {
     return {

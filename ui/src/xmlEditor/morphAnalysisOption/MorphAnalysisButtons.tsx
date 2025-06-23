@@ -9,9 +9,9 @@ import {analysisIsInNumerus, numeri, NumerusOption, stringifyNumerus} from './nu
 import update from 'immutability-helper';
 import { basicSaveGloss } from '../hur/glossUpdater';
 import { basicUpdateHurrianDictionary } from '../hur/dictionary';
-import { updateHurrianAnalysis } from '../hur/analysisUpdater';
 import { deleteAnalysisFromHurrianDictionary } from '../hur/dictionary';
 import { getPartsOfSpeech } from '../hur/partsOfSpeech';
+import { Spec } from 'immutability-helper';
 
 const cases = /.*(?:ABS|ERG|GEN|DAT|DIR|ABL|COM|ESS|EQU|ASSOC).*/;
 const partsOfSpeech = /\.?(ADV|CONJ|PREP|INTJ).*/;
@@ -32,12 +32,10 @@ export function MorphAnalysisOptionButtons({morphologicalAnalysis, toggleAnalysi
   const [isReduced, setIsReduced] = useState(false);
   const [lastNumerusSelected, setLastNumerusSelected] = useState<NumerusOption>();
 
-  const setReferenceWord = (value: string): void => {
-    updateMorphology(update(morphologicalAnalysis, updateHurrianAnalysis(morphologicalAnalysis, value)));
+  const partialUpdateMorphology = (spec: Spec<MorphologicalAnalysis>): void => {
+    updateMorphology(update(morphologicalAnalysis, spec));
   };
-  const setTranslation = (value: string): void => {
-    updateMorphology(update(morphologicalAnalysis, { translation: { $set: value } }));
-  };
+
   const setSingleMorphAnalysis = (value: string): void => {
     updateMorphology(update(morphologicalAnalysis as SingleMorphologicalAnalysis, { analysis: { $set: value } }));
   };
@@ -252,16 +250,14 @@ export function MorphAnalysisOptionButtons({morphologicalAnalysis, toggleAnalysi
         {isSingleAnalysisOption
           ? <SingleMorphAnalysisOptionButton morphAnalysis={morphologicalAnalysis}
                                              toggleAnalysisSelection={(encLetter) => toggleAnalysisSelection(undefined, encLetter, undefined)}
-                                             setReferenceWord={setReferenceWord}
-                                             setTranslation={setTranslation}
                                              setAnalysis={setSingleMorphAnalysis}
-                                             hurrian={hurrian}/>
+                                             hurrian={hurrian}
+                                             updateMorphology={partialUpdateMorphology}/>
           : <MultiMorphAnalysisOptionButtons morphAnalysis={morphologicalAnalysis}
                                              toggleAnalysisSelection={(letter, encLetter) => toggleAnalysisSelection(letter, encLetter, undefined)}
-                                             setReferenceWord={setReferenceWord}
-                                             setTranslation={setTranslation}
                                              setAnalysis={setMultiMorphAnalysis}
-                                             hurrian={hurrian}/>}
+                                             hurrian={hurrian}
+                                             updateMorphology={partialUpdateMorphology}/>}
 
       </div>}
     </div>
