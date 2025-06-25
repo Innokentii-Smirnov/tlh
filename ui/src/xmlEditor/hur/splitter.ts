@@ -38,3 +38,10 @@ export function getStemAndGrammaticalMorphemes(segmentation: string): [string, s
   const grammaticalMorphemes = basicGetGrammaticalMorphemes(segmentation, i);
   return [stem, grammaticalMorphemes];
 }
+
+export function getStemAndGrammaticalMorphemesWithBoundary(segmentation: string): [string, string] {
+  const i: number = findBoundary(segmentation);
+  const stem: string = segmentation.substring(0, i);
+  const grammaticalMorphemes = segmentation.substring(i);
+  return [stem, grammaticalMorphemes];
+}

@@ -10,10 +10,7 @@ import update from 'immutability-helper';
 import { basicSaveGloss } from '../hur/glossUpdater';
 import { basicUpdateHurrianDictionary } from '../hur/dictionary';
 import { deleteAnalysisFromHurrianDictionary } from '../hur/dictionary';
-import { getPartsOfSpeech } from '../hur/partsOfSpeech';
-
-const cases = /.*(?:ABS|ERG|GEN|DAT|DIR|ABL|COM|ESS|EQU|ASSOC).*/;
-const partsOfSpeech = /\.?(ADV|CONJ|PREP|INTJ).*/;
+import { getPartsOfSpeech, getPos } from '../hur/partsOfSpeech';
 
 interface IProps extends CanToggleAnalysisSelection {
   morphologicalAnalysis: MorphologicalAnalysis;
@@ -136,42 +133,6 @@ export function MorphAnalysisOptionButtons({morphologicalAnalysis, toggleAnalysi
         return morphAnalysis.analysisOptions[0].analysis;
       default:
         return null;
-    }
-  }
-
-  function getPos(template: string, morphTag: string | null, translation: string): string
-  {
-    if (translation.includes('PRON')) {
-      return 'PRON';
-    }
-    if (morphTag !== null) {
-      const match = morphTag.match(partsOfSpeech);
-      if (match) {
-        return match[1];
-      }
-    }
-    if (template === '') {
-      if (morphTag === 'CVB' || morphTag === 'INF') {
-        return morphTag;
-      }
-      if (morphTag !== null) {
-        if (morphTag.includes('PRON')) {
-          return 'PRON';
-        }
-        if (morphTag.match(cases)) {
-          return 'noun';
-        }
-        return 'verb';
-      }
-      return 'unclear';
-    }
-    if (template === 'aspect' || template === 'modal' || template === 'voice')
-    {
-      return 'verb';
-    }
-    else
-    {
-      return template;
     }
   }
 
