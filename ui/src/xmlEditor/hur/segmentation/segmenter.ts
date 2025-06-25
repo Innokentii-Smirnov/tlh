@@ -1,5 +1,19 @@
-import BasicSegmenter from './basicSegmenter';
+import BasicSegmenter, {PartialAnalysis} from './basicSegmenter';
 import { getPos } from '../partsOfSpeech';
+
+export class Analysis extends PartialAnalysis {
+  pos: string;
+
+  constructor(segmentation: string, translation: string, morphTag: string, pos: string) {
+    super(segmentation, translation, morphTag);
+    this.pos = pos;
+  }
+
+  toString(): string {
+    const det = '';
+    return [this.segmentation, this.translation, this.morphTag, this.pos, det].join(' @ ');
+  }
+}
 
 class Segmenter {
   segmenters = new Map<string, BasicSegmenter>();
@@ -16,15 +30,21 @@ class Segmenter {
       segmenter = new BasicSegmenter();
       this.segmenters.set(pos, segmenter);
     }
-    segmenter.add(segmentation);
+    segmenter.add(segmentation, translation, morphTag);
   }
 
-  segment(wordform: string): [string, string][] {
-    const result: [string, string][] = [];
+  segment(wordform: string): Analysis[] {
+    const result: Analysis[] = [];
     for (const [pos, segmenter] of this.segmenters) {
-      const segmentations = segmenter.segment(wordform);
-      for (const segmentation of segmentations) {
-        result.push([segmentation, pos]);
+      const partialAnalyses = segmenter.segment(wordform);
+      for (const partialAnalysis of partialAnalyses) {
+        const analysis = new Analysis(
+          partialAnalysis.segmentation,
+          partialAnalysis.translation,
+          partialAnalysis.morphTag,
+          pos
+        );
+        result.push(analysis);
       }
     }
     return result;

@@ -41,11 +41,11 @@ export function annotateHurrianWord(node: XmlElementNode): void {
   } else {
     const mrps: Map<string, string> = getMrps(node);
     if (mrps.size === 0) {
-      const result = segmenter.segment(transcription);
-      if (result.length > 0) {
+      const results = segmenter.segment(transcription);
+      if (results.length > 0) {
         let i = 1;
-        for (const [segmentation, pos] of result) {
-          const analysis = segmentation + '@@@' + pos + '@';
+        for (const result of results) {
+          const analysis = result.toString();
           node.attributes['mrp' + i.toString()] = analysis;
           i++;
         }
