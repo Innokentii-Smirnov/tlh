@@ -5,17 +5,18 @@ export default class BasicSegmenter {
   suffixChains = new Map<string, Set<string>>();
 
   add(segmentation: string) {
+    segmentation = segmentation.replaceAll(/\(.*\)/g, '');
     const [stem, segmentedGrammaticalMorphemes] =
       getStemAndGrammaticalMorphemesWithBoundary(segmentation);
     this.stems.add(stem);
     const grammaticalMorphemes = segmentedGrammaticalMorphemes
-      .replace('-', '').replace('=', '');
+      .replaceAll('-', '').replaceAll('=', '');
     let current = this.suffixChains.get(grammaticalMorphemes);
     if (current === undefined) {
-      current = new Set<string>(segmentedGrammaticalMorphemes);
+      current = new Set<string>();
       this.suffixChains.set(grammaticalMorphemes, current);
     }
-    current.add(segmentedGrammaticalMorphemes)
+    current.add(segmentedGrammaticalMorphemes);
   }
 
   segment(wordform: string): string[] {

@@ -1,24 +1,22 @@
 import BasicSegmenter from './basicSegmenter';
 import { getPos } from '../partsOfSpeech';
 
-export default class Segmenter {
+class Segmenter {
   segmenters = new Map<string, BasicSegmenter>();
 
-  constructor(analyses: string[]) {
-    for (const analysis of analyses) {
-      const fields = analysis.split('@').map(field => field.trim());
-      const segmentation = fields[0];
-      const translation = fields[1];
-      const morphTag = fields[2];
-      const template = fields[3];
-      const pos = getPos(template, morphTag, translation);
-      let segmenter = this.segmenters.get(pos);
-      if (segmenter === undefined) {
-        segmenter = new BasicSegmenter();
-        this.segmenters.set(pos, segmenter);
-      }
-      segmenter.add(segmentation);
+  add(analysis: string) {
+    const fields = analysis.split('@').map(field => field.trim());
+    const segmentation = fields[0];
+    const translation = fields[1];
+    const morphTag = fields[2];
+    const template = fields[3];
+    const pos = getPos(template, morphTag, translation);
+    let segmenter = this.segmenters.get(pos);
+    if (segmenter === undefined) {
+      segmenter = new BasicSegmenter();
+      this.segmenters.set(pos, segmenter);
     }
+    segmenter.add(segmentation);
   }
 
   segment(wordform: string): [string, string][] {
@@ -32,3 +30,6 @@ export default class Segmenter {
     return result;
   }
 }
+
+const segmenter = new Segmenter();
+export default segmenter;

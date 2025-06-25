@@ -1,4 +1,5 @@
 import { isValid, normalize } from './morphologicalAnalysisValidator';
+import segmenter from './segmentation/segmenter';
 
 export function convertDictionary(dictionary: Map<string, Set<string>>): { [key: string]: string[] } {
   const object: { [key: string]: string[] } = {};
@@ -32,6 +33,7 @@ export function updateAndValidateDictionary(dictionary: Map<string, Set<string>>
           const normalized = normalize(value, true);
           if (normalized !== null) {
             newSet.add(normalized);
+            segmenter.add(normalized);
           }
         }
       }
@@ -44,9 +46,16 @@ export function updateAndValidateDictionary(dictionary: Map<string, Set<string>>
           const normalized = normalize(value, true);
           if (normalized !== null) {
             currSet.add(normalized);
+            segmenter.add(normalized);
           }
         }
       }
     }
+  }
+  console.log(Array.from(segmenter.segmenters.keys()));
+  for (const [key, basicSegmenter] of segmenter.segmenters) {
+    console.log(key);
+    const values = basicSegmenter.suffixChains;
+    console.log(Array.from(values.keys()));
   }
 }

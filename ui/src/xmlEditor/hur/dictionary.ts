@@ -7,6 +7,7 @@ import { MorphologicalAnalysis, writeMorphAnalysisValue }
   from '../../model/morphologicalAnalysis';
 import { convertDictionary, updateAndValidateDictionary } from './utility';
 import { isValid, normalize } from './morphologicalAnalysisValidator';
+import segmenter from './segmentation/segmenter';
 
 const dictionary: Map<string, Set<string>> = new Map();
 
@@ -19,7 +20,7 @@ export function annotateHurrianWord(node: XmlElementNode): void {
     node.attributes.mrp0sel = '';
   }
 
-  if (dictionary.has(transcription)) {
+  if (transcription.startsWith('*') && dictionary.has(transcription)) {
     setGlosses(node);
     const possibilities: Set<string> | undefined = dictionary.get(transcription);
     if (possibilities === undefined) {
@@ -39,20 +40,30 @@ export function annotateHurrianWord(node: XmlElementNode): void {
     }
   } else {
     const mrps: Map<string, string> = getMrps(node);
-    if (mrps.size == 0) {
-      const analyses: MorphologicalAnalysis[] = makeStandardAnalyses(transcription);
-      if (analyses.length > 0) {
-        for (const ma of analyses) {
-          node.attributes['mrp' + ma.number.toString()]
+    if (mrps.size === 0) {
+      const result = segmenter.segment(transcription);
+      if (result.length > 0) {
+        let i = 1;
+        for (const [segmentation, pos] of result) {
+          const analysis = segmentation + '@@@' + pos + '@';
+          node.attributes['mrp' + i.toString()] = analysis;
+          i++;
+        }
+      } else if (transcription.startsWith('*')) {
+        const analyses: MorphologicalAnalysis[] = makeStandardAnalyses(transcription);
+        if (analyses.length > 0) {
+          for (const ma of analyses) {
+            node.attributes['mrp' + ma.number.toString()]
             = writeMorphAnalysisValue(ma);
+          }
+        }
+        else {
+          node.attributes.mrp1 = transcription + '@@@@';
+          node.attributes.firstAnalysisIsPlaceholder = 'true';
         }
       }
-      else {
-        node.attributes.mrp1 = transcription + '@@@@';
-        node.attributes.firstAnalysisIsPlaceholder = 'true';
-      }
+      setGlosses(node);
     }
-    setGlosses(node);
   }
 }
 
@@ -87,6 +98,7 @@ export function basicUpdateHurrianDictionary(
       throw new Error();
     }
     possibilities.add(normalized);
+    segmenter.add(normalized);
   }
 }
 
