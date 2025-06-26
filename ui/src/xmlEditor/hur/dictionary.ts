@@ -20,7 +20,7 @@ export function annotateHurrianWord(node: XmlElementNode): void {
     node.attributes.mrp0sel = '';
   }
 
-  if (transcription.startsWith('*') && dictionary.has(transcription)) {
+  if (dictionary.has(transcription)) {
     setGlosses(node);
     const possibilities: Set<string> | undefined = dictionary.get(transcription);
     if (possibilities === undefined) {
@@ -49,7 +49,7 @@ export function annotateHurrianWord(node: XmlElementNode): void {
           node.attributes['mrp' + i.toString()] = analysis;
           i++;
         }
-      } else if (transcription.startsWith('*')) {
+      } else {
         const analyses: MorphologicalAnalysis[] = makeStandardAnalyses(transcription);
         if (analyses.length > 0) {
           for (const ma of analyses) {
