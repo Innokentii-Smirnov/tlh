@@ -84,7 +84,6 @@ class Segmenter {
           partialAnalysis.morphTags,
           pos
         );
-        console.log([analysis.segmentation, analysis.morphTags].join(' '));
         result.push(analysis.toMorphologicalAnalysis());
       }
     }
