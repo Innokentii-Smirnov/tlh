@@ -1,5 +1,6 @@
 import { isValid, normalize, isValidForm } from './morphologicalAnalysisValidator';
 import segmenter from './segmentation/segmenter';
+import { readMorphologicalAnalysis } from '../../model/morphologicalAnalysis';
 
 export function convertDictionary(dictionary: Map<string, Set<string>>): { [key: string]: string[] } {
   const object: { [key: string]: string[] } = {};
@@ -35,7 +36,10 @@ export function updateAndValidateDictionary(dictionary: Map<string, Set<string>>
           const normalized = normalize(value, true);
           if (normalized !== null) {
             newSet.add(normalized);
-            segmenter.add(key, normalized);
+            const ma = readMorphologicalAnalysis(1, normalized, []);
+            if (ma !== undefined) {
+              segmenter.add(key, ma);
+            }
           }
         }
       }
@@ -48,7 +52,10 @@ export function updateAndValidateDictionary(dictionary: Map<string, Set<string>>
           const normalized = normalize(value, true);
           if (normalized !== null) {
             currSet.add(normalized);
-            segmenter.add(key, normalized);
+            const ma = readMorphologicalAnalysis(1, normalized, []);
+            if (ma !== undefined) {
+              segmenter.add(key, ma);
+            }
           }
         }
       }

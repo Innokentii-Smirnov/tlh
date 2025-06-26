@@ -3,7 +3,7 @@ import { getText, getMrps } from './xmlUtilities';
 import { makeBoundTranscription } from './transcribe';
 import { makeStandardAnalyses } from './standardAnalysis';
 import { setGlosses, saveGloss } from './glossUpdater';
-import { MorphologicalAnalysis, writeMorphAnalysisValue }
+import { MorphologicalAnalysis, writeMorphAnalysisValue, readMorphologicalAnalysis }
   from '../../model/morphologicalAnalysis';
 import { convertDictionary, updateAndValidateDictionary } from './utility';
 import { isValid, normalize } from './morphologicalAnalysisValidator';
@@ -98,7 +98,10 @@ export function basicUpdateHurrianDictionary(
       throw new Error();
     }
     possibilities.add(normalized);
-    segmenter.add(transcription, normalized);
+    const ma = readMorphologicalAnalysis(1, normalized, []);
+    if (ma !== undefined) {
+      segmenter.add(transcription, ma);
+    }
   }
 }
 

@@ -1,5 +1,6 @@
 import BasicSegmenter, {PartialAnalysis} from './basicSegmenter';
 import { getPos } from '../partsOfSpeech';
+import { MorphologicalAnalysis } from '../../../model/morphologicalAnalysis';
 
 export class Analysis extends PartialAnalysis {
   pos: string;
@@ -15,22 +16,34 @@ export class Analysis extends PartialAnalysis {
   }
 }
 
+function getMorphTags(analysis: MorphologicalAnalysis): string[] | null {
+  switch (analysis._type) {
+    case 'SingleMorphAnalysisWithoutEnclitics':
+      return [analysis.analysis];
+    case 'MultiMorphAnalysisWithoutEnclitics':
+      return analysis.analysisOptions.map(({analysis}) => analysis);
+    default:
+      return null;
+  }
+}
+
 class Segmenter {
   segmenters = new Map<string, BasicSegmenter>();
 
-  add(transcription: string, analysis: string) {
-    const fields = analysis.split('@').map(field => field.trim());
-    const segmentation = fields[0];
-    const translation = fields[1];
-    const morphTag = fields[2];
-    const template = fields[3];
-    const pos = getPos(template, morphTag, translation);
-    let segmenter = this.segmenters.get(pos);
-    if (segmenter === undefined) {
-      segmenter = new BasicSegmenter();
-      this.segmenters.set(pos, segmenter);
+  add(transcription: string, analysis: MorphologicalAnalysis) {
+    const morphTags = getMorphTags(analysis);
+    if (morphTags !== null) {
+      const segmentation = analysis.referenceWord;
+      const translation = analysis.translation;
+      const template = analysis.paradigmClass;
+      const pos = getPos(template, morphTags[0], translation);
+      let segmenter = this.segmenters.get(pos);
+      if (segmenter === undefined) {
+        segmenter = new BasicSegmenter();
+        this.segmenters.set(pos, segmenter);
+      }
+      segmenter.add(transcription, segmentation, translation, morphTags);
     }
-    segmenter.add(transcription, segmentation, translation, morphTag);
   }
 
   segment(wordform: string): Analysis[] {

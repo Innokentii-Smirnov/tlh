@@ -57,7 +57,7 @@ export default class BasicSegmenter {
   stems = new Map<string, Set<string>>();
   suffixChains = new Map<string, Set<string>>();
 
-  add(transcription: string, segmentation: string, translation: string, analysis: string) {
+  add(transcription: string, segmentation: string, translation: string, morphTags: string[]) {
     const [underlyingStem, underlyingSuffixChain] =
       getStemAndGrammaticalMorphemesWithBoundary(segmentation);
     if (underlyingStem !== '') {
@@ -71,8 +71,10 @@ export default class BasicSegmenter {
         preprocessedSuffixChain;
       const stem = new Stem(underlyingStem, translation);
       add(this.stems, surfaceStem, stem.toString());
-      const suffixChain = new SuffixChain(underlyingSuffixChain, analysis);
-      add(this.suffixChains, surfaceSuffixChain, suffixChain.toString());
+      for (const morphTag of morphTags) {
+        const suffixChain = new SuffixChain(underlyingSuffixChain, morphTag);
+        add(this.suffixChains, surfaceSuffixChain, suffixChain.toString());
+      }
     }
   }
 
