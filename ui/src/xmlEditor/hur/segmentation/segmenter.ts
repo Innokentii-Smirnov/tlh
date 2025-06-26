@@ -1,18 +1,45 @@
 import BasicSegmenter, {PartialAnalysis} from './basicSegmenter';
 import { getPos } from '../partsOfSpeech';
-import { MorphologicalAnalysis } from '../../../model/morphologicalAnalysis';
+import { MorphologicalAnalysis, SingleMorphologicalAnalysisWithoutEnclitics,
+  MultiMorphologicalAnalysisWithoutEnclitics
+} from '../../../model/morphologicalAnalysis';
+import { makeAnalysisOptions } from '../utils';
 
 export class Analysis extends PartialAnalysis {
   pos: string;
 
-  constructor(segmentation: string, translation: string, morphTag: string, pos: string) {
-    super(segmentation, translation, morphTag);
+  constructor(segmentation: string, translation: string, morphTags: string[], pos: string) {
+    super(segmentation, translation, morphTags);
     this.pos = pos;
   }
 
-  toString(): string {
-    const det = '';
-    return [this.segmentation, this.translation, this.morphTag, this.pos, det].join(' @ ');
+  toMorphologicalAnalysis(): MorphologicalAnalysis {
+    if (this.morphTags.length === 1) {
+      const ma: SingleMorphologicalAnalysisWithoutEnclitics = {
+        _type: 'SingleMorphAnalysisWithoutEnclitics',
+        number: 1,
+        selected: false,
+        encliticsAnalysis: undefined,
+        referenceWord: this.segmentation,
+        translation: this.translation,
+        analysis: this.morphTags[0],
+        paradigmClass: this.pos,
+        determinative: ''
+      };
+      return ma;
+    } else {
+      const ma: MultiMorphologicalAnalysisWithoutEnclitics = {
+        _type: 'MultiMorphAnalysisWithoutEnclitics',
+        number: 1,
+        encliticsAnalysis: undefined,
+        referenceWord: this.segmentation,
+        translation: this.translation,
+        analysisOptions: makeAnalysisOptions(this.morphTags),
+        paradigmClass: this.pos,
+        determinative: ''
+      };
+      return ma;
+    }
   }
 }
 
@@ -46,18 +73,19 @@ class Segmenter {
     }
   }
 
-  segment(wordform: string): Analysis[] {
-    const result: Analysis[] = [];
+  segment(wordform: string): MorphologicalAnalysis[] {
+    const result: MorphologicalAnalysis[] = [];
     for (const [pos, segmenter] of this.segmenters) {
       const partialAnalyses = segmenter.segment(wordform);
       for (const partialAnalysis of partialAnalyses) {
         const analysis = new Analysis(
           partialAnalysis.segmentation,
           partialAnalysis.translation,
-          partialAnalysis.morphTag,
+          partialAnalysis.morphTags,
           pos
         );
-        result.push(analysis);
+        console.log([analysis.segmentation, analysis.morphTags].join(' '));
+        result.push(analysis.toMorphologicalAnalysis());
       }
     }
     return result;

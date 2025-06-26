@@ -1,3 +1,5 @@
+import { SelectableLetteredAnalysisOption } from '../../model/analysisOptions';
+
 export function add<TKey, TValue>(map: Map<TKey, Set<TValue>>, key: TKey, value: TValue) {
   let current = map.get(key);
   if (current === undefined) {
@@ -18,4 +20,30 @@ export function removeMacron(s: string) {
 
 export function formIsFragment(form: string): boolean {
   return form.includes('[') || form.includes(']') || form.includes('(-)');
+}
+
+export function makeAnalysisOptions(morphTags: string[]): SelectableLetteredAnalysisOption[] {
+  const analysisOptions: SelectableLetteredAnalysisOption[] = [];
+  let c = 97; // Code von 'a'
+  for (const morphTag of morphTags) {
+    const analysisOption: SelectableLetteredAnalysisOption =
+    {
+      letter: String.fromCodePoint(c),
+      analysis: morphTag,
+      selected: false
+    };
+    c++;
+    analysisOptions.push(analysisOption);
+  }
+  return analysisOptions;
+}
+
+export function groupBy<TSource, TKey, TValue>(array: TSource[], getKey: (elem: TSource) => TKey, getValue: (elem: TSource) => TValue): Map<TKey, Set<TValue>> {
+  const map = new Map<TKey, Set<TValue>>();
+  for (const element of array) {
+    const key = getKey(element);
+    const value = getValue(element);
+    add(map, key, value);
+  }
+  return map;
 }

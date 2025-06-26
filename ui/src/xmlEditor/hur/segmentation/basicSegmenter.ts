@@ -1,5 +1,5 @@
 import { getStemAndGrammaticalMorphemesWithBoundary } from '../splitter';
-import { add, removeMacron } from '../utils';
+import { add, removeMacron, groupBy } from '../utils';
 
 class Stem {
   form: string;
@@ -44,12 +44,12 @@ function preprocessSuffixChain(stem: string): string {
 export class PartialAnalysis {
   segmentation: string;
   translation: string;
-  morphTag: string;
+  morphTags: string[];
 
-  constructor(segmentation: string, translation: string, morphTag: string) {
+  constructor(segmentation: string, translation: string, morphTags: string[]) {
     this.segmentation = segmentation;
     this.translation = translation;
-    this.morphTag = morphTag;
+    this.morphTags = morphTags;
   }
 }
 
@@ -87,13 +87,22 @@ export default class BasicSegmenter {
           this.stems.get(surfaceStem) :
           this.stems.get(removeMacron(surfaceStem));
         if (stems !== undefined) {
-          for (const option of options) {
+          const suffixChains: SuffixChain[] = Array.from(options).map(option => {
+            const [segmentation, morphTag] = option.split('@');
+            return new SuffixChain(segmentation, morphTag);
+          });
+          const grouped: Map<string, Set<string>> = groupBy(
+            suffixChains,
+            (suffixChain: SuffixChain) => suffixChain.segmentation,
+            (suffixChain: SuffixChain) => suffixChain.morphTag
+          );
+          for (const [segmentedSuffixChain, morphTagSet] of grouped) {
+            const morphTags = Array.from(morphTagSet).sort();
             for (const stem of stems) {
               const [underlyingStem, translation] = stem.split('@');
-              const [segmentedSuffixChain, morphTag] = option.split('@');
               const segmentation = underlyingStem + segmentedSuffixChain;
               const result =
-                new PartialAnalysis(segmentation, translation, morphTag);
+                new PartialAnalysis(segmentation, translation, morphTags);
               segmentations.push(result);
             }
           }
