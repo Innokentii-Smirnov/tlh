@@ -7,7 +7,7 @@ const thematicVowel = '([uo](?=ž|ra|nna)|a(?=ne))?';
 
 const noun = new RegExp(
 	nominalRoot + 
-	'((?:n|(?<=r)r|(?<=l)l)(?:[ei](?!$)|a|(?=[aā])))?' + 
+	'((?:n|(?<=r)r|(?<=l)l)(?:[ei]|a|(?=[aā])))?' +
 	'([aā]ž)?' +
 	thematicVowel + 
 	'(|ž|ve|va|(?<=[uū])we|(?<=[uū])wa|ta|da|e|a)' +
