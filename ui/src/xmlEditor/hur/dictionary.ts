@@ -98,7 +98,7 @@ export function basicUpdateHurrianDictionary(
       throw new Error();
     }
     possibilities.add(normalized);
-    segmenter.add(normalized);
+    segmenter.add(transcription, normalized);
   }
 }
 

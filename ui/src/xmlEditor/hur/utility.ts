@@ -33,7 +33,7 @@ export function updateAndValidateDictionary(dictionary: Map<string, Set<string>>
           const normalized = normalize(value, true);
           if (normalized !== null) {
             newSet.add(normalized);
-            segmenter.add(normalized);
+            segmenter.add(key, normalized);
           }
         }
       }
@@ -46,18 +46,25 @@ export function updateAndValidateDictionary(dictionary: Map<string, Set<string>>
           const normalized = normalize(value, true);
           if (normalized !== null) {
             currSet.add(normalized);
-            segmenter.add(normalized);
+            segmenter.add(key, normalized);
           }
         }
       }
     }
   }
-  /*console.log(Array.from(segmenter.segmenters.keys()));
+  console.log(Array.from(segmenter.segmenters.keys()));
   for (const [key, basicSegmenter] of segmenter.segmenters) {
     console.log(key);
     for (const [chain, analyses] of basicSegmenter.suffixChains) {
       console.log(chain);
       console.log(analyses);
     }
-  }*/
+  }
+  for (const [key, basicSegmenter] of segmenter.segmenters) {
+    console.log(key);
+    for (const [chain, analyses] of basicSegmenter.stems) {
+      console.log(chain);
+      console.log(analyses);
+    }
+  }
 }

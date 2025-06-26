@@ -1,5 +1,5 @@
 import { getStemAndGrammaticalMorphemesWithBoundary } from '../splitter';
-import { add } from '../utils';
+import { add, removeMacron } from '../utils';
 
 class Stem {
   form: string;
@@ -57,25 +57,33 @@ export default class BasicSegmenter {
   stems = new Map<string, Set<string>>();
   suffixChains = new Map<string, Set<string>>();
 
-  add(segmentation: string, translation: string, analysis: string) {
-    const [stem, segmentedGrammaticalMorphemes] =
+  add(transcription: string, segmentation: string, translation: string, analysis: string) {
+    const [underlyingStem, underlyingSuffixChain] =
       getStemAndGrammaticalMorphemesWithBoundary(segmentation);
-    if (stem !== '') {
-      const surfaceStem = preprocessStem(stem);
-      const stemObject = new Stem(stem, translation);
-      add(this.stems, surfaceStem, stemObject.toString());
-      const grammaticalMorphemes = preprocessSuffixChain(segmentedGrammaticalMorphemes);
-      const suffixChain = new SuffixChain(segmentedGrammaticalMorphemes, analysis);
-      add(this.suffixChains, grammaticalMorphemes, suffixChain.toString());
+    if (underlyingStem !== '') {
+      const preprocessedStem = preprocessStem(underlyingStem);
+      const preprocessedSuffixChain = preprocessSuffixChain(underlyingSuffixChain);
+      const surfaceStem = transcription.endsWith(preprocessedSuffixChain) ?
+        transcription.substring(0, transcription.length - preprocessedSuffixChain.length) :
+        preprocessedStem;
+      const surfaceSuffixChain = transcription.startsWith(preprocessedStem) ?
+        transcription.substring(preprocessedStem.length) :
+        preprocessedSuffixChain;
+      const stem = new Stem(underlyingStem, translation);
+      add(this.stems, surfaceStem, stem.toString());
+      const suffixChain = new SuffixChain(underlyingSuffixChain, analysis);
+      add(this.suffixChains, surfaceSuffixChain, suffixChain.toString());
     }
   }
 
   segment(wordform: string): PartialAnalysis[] {
     const segmentations: PartialAnalysis[] = [];
     for (const [suffixChain, options] of this.suffixChains) {
-      if (wordform.endsWith(suffixChain)) {
+      if (wordform.endsWith(suffixChain) || removeMacron(wordform).endsWith(suffixChain)) {
         const surfaceStem = wordform.substring(0, wordform.length - suffixChain.length);
-        const stems = this.stems.get(surfaceStem);
+        const stems = this.stems.has(surfaceStem) ?
+          this.stems.get(surfaceStem) :
+          this.stems.get(removeMacron(surfaceStem));
         if (stems !== undefined) {
           for (const option of options) {
             for (const stem of stems) {

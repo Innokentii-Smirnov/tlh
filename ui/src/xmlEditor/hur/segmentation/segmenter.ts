@@ -18,7 +18,7 @@ export class Analysis extends PartialAnalysis {
 class Segmenter {
   segmenters = new Map<string, BasicSegmenter>();
 
-  add(analysis: string) {
+  add(transcription: string, analysis: string) {
     const fields = analysis.split('@').map(field => field.trim());
     const segmentation = fields[0];
     const translation = fields[1];
@@ -30,7 +30,7 @@ class Segmenter {
       segmenter = new BasicSegmenter();
       this.segmenters.set(pos, segmenter);
     }
-    segmenter.add(segmentation, translation, morphTag);
+    segmenter.add(transcription, segmentation, translation, morphTag);
   }
 
   segment(wordform: string): Analysis[] {
