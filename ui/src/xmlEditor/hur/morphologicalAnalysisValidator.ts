@@ -1,3 +1,5 @@
+import { formIsFragment } from '../hur/utils';
+
 const sep = /[-=]/;
 
 function haveMatchingNumberOfMorphemes(segmentation: string, analysis: string) {
@@ -12,6 +14,9 @@ export function isValid(analysis: string): boolean {
   const segmentation = fields[0];
   const gloss = fields[1];
   const morphTag = fields[2];
+  if (formIsFragment(segmentation)) {
+    return false;
+  }
   if (gloss === '' || morphTag === '') {
     return false;
   }

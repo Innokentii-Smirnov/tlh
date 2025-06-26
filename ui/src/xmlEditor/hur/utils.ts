@@ -15,3 +15,7 @@ export function removeMacron(s: string) {
     .replaceAll('ō', 'o')
     .replaceAll('ū', 'u');
 }
+
+export function formIsFragment(form: string): boolean {
+  return form.includes('[') || form.includes(']') || form.includes('(-)');
+}

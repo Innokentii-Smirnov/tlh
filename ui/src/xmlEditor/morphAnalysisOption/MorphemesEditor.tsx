@@ -1,6 +1,7 @@
 import { Spec } from 'immutability-helper';
 import { MorphologicalAnalysis } from '../../model/morphologicalAnalysis';
 import { updateHurrianAnalysis } from '../hur/analysisUpdater';
+import { formIsFragment } from '../hur/utils';
 
 interface IProps {
   segmentation: string,
@@ -74,10 +75,6 @@ function makeSegmentation(morphemes: Morpheme[]): string {
 
 function makeAnalysis(morphemes: Morpheme[]): string {
   return morphemes.slice(1).filter(morpheme => morpheme.kind !== 'fragment').map((morpheme, i) => morpheme.getTag(i)).join('');
-}
-
-function formIsFragment(form: string): boolean {
-  return form.includes('[') || form.includes(']') || form.includes('(-)');
 }
 
 function kindIsFragment(kind: string): boolean {
