@@ -1,4 +1,4 @@
-import { isValid, normalize } from './morphologicalAnalysisValidator';
+import { isValid, normalize, isValidForm } from './morphologicalAnalysisValidator';
 import segmenter from './segmentation/segmenter';
 
 export function convertDictionary(dictionary: Map<string, Set<string>>): { [key: string]: string[] } {
@@ -11,13 +11,15 @@ export function convertDictionary(dictionary: Map<string, Set<string>>): { [key:
 
 export function updateGlossesLexicon(dictionary: Map<string, Set<string>>, object: { [key: string]: string[] }): void {
   for (const [key, values] of Object.entries(object)) {
-    const currSet = dictionary.get(key);
-    if (currSet === undefined) {
-      dictionary.set(key, new Set(values));
-    }
-    else {
-      for (const value of values) {
-        currSet.add(value);
+    if (isValidForm(key)) {
+      const currSet = dictionary.get(key);
+      if (currSet === undefined) {
+        dictionary.set(key, new Set(values));
+      }
+      else {
+        for (const value of values) {
+          currSet.add(value);
+        }
       }
     }
   }

@@ -6,6 +6,13 @@ function haveMatchingNumberOfMorphemes(segmentation: string, analysis: string) {
   return segmentation.split(sep).length === analysis.split(sep).filter(tag => tag !== '.ABS').length + 1;
 }
 
+export function isValidForm(form: string): boolean {
+  if (formIsFragment(form)) {
+    return false;
+  }
+  return true;
+}
+
 export function isValid(analysis: string): boolean {
   const fields: string[] = analysis.split('@').map(field => field.trim());
   if (fields.length !== 5) {
@@ -14,7 +21,7 @@ export function isValid(analysis: string): boolean {
   const segmentation = fields[0];
   const gloss = fields[1];
   const morphTag = fields[2];
-  if (formIsFragment(segmentation)) {
+  if (!isValidForm(segmentation)) {
     return false;
   }
   if (gloss === '' || morphTag === '') {

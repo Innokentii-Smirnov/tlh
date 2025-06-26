@@ -4,6 +4,7 @@ import {MorphologicalAnalysis, readMorphologicalAnalysis,
 import {XmlElementNode} from 'simple_xml';
 import {storeGloss, retrieveGloss} from './glossProvider';
 import {getStem} from './splitter';
+import { isValidForm } from './morphologicalAnalysisValidator';
 
 export function getPos(template: string): string
 {
@@ -49,7 +50,9 @@ export function basicSaveGloss(morphologicalAnalysis: MorphologicalAnalysis): vo
   const gloss = morphologicalAnalysis.translation;
   if (gloss !== '') {
     const stem = getStem(morphologicalAnalysis.referenceWord);
-    const pos = getPos(morphologicalAnalysis.paradigmClass);
-    storeGloss(stem, pos, gloss);
+    if (isValidForm(stem)) {
+      const pos = getPos(morphologicalAnalysis.paradigmClass);
+      storeGloss(stem, pos, gloss);
+    }
   }
 }
