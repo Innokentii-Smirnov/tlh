@@ -33,7 +33,8 @@ const inParentheses = /\(.*\)/g;
 const boundary = /[-=]/g;
 
 function preprocessStem(stem: string): string {
-  return stem.replaceAll(inParentheses, '');
+  return stem.replaceAll(inParentheses, '')
+    .replaceAll('+', '');
 }
 
 function preprocessSuffixChain(stem: string): string {
@@ -59,12 +60,14 @@ export default class BasicSegmenter {
   add(segmentation: string, translation: string, analysis: string) {
     const [stem, segmentedGrammaticalMorphemes] =
       getStemAndGrammaticalMorphemesWithBoundary(segmentation);
-    const surfaceStem = preprocessStem(stem);
-    const stemObject = new Stem(stem, translation);
-    add(this.stems, surfaceStem, stemObject.toString());
-    const grammaticalMorphemes = preprocessSuffixChain(segmentedGrammaticalMorphemes);
-    const suffixChain = new SuffixChain(segmentedGrammaticalMorphemes, analysis);
-    add(this.suffixChains, grammaticalMorphemes, suffixChain.toString());
+    if (stem !== '') {
+      const surfaceStem = preprocessStem(stem);
+      const stemObject = new Stem(stem, translation);
+      add(this.stems, surfaceStem, stemObject.toString());
+      const grammaticalMorphemes = preprocessSuffixChain(segmentedGrammaticalMorphemes);
+      const suffixChain = new SuffixChain(segmentedGrammaticalMorphemes, analysis);
+      add(this.suffixChains, grammaticalMorphemes, suffixChain.toString());
+    }
   }
 
   segment(wordform: string): PartialAnalysis[] {
