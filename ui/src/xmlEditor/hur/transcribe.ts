@@ -54,7 +54,7 @@ function processVowels(word: string): string {
     .replace(/^ú-ú-/, 'ū-')
     .replaceAll('u-ú-', 'ū-')
     .replaceAll(/-ú-[uú]/g, '-ū')
-    .replace(/^ú-u/, 'ū')
+    .replace(/^ú-[uú]/, 'ū')
     .replace(/u-ú$/, 'ū')
     .replaceAll(/u-[uú]/g, 'u')
 
