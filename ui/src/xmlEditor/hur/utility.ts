@@ -52,12 +52,12 @@ export function updateAndValidateDictionary(dictionary: Map<string, Set<string>>
       }
     }
   }
-  console.log(Array.from(segmenter.segmenters.keys()));
+  /*console.log(Array.from(segmenter.segmenters.keys()));
   for (const [key, basicSegmenter] of segmenter.segmenters) {
     console.log(key);
     for (const [chain, analyses] of basicSegmenter.suffixChains) {
       console.log(chain);
       console.log(analyses);
     }
-  }
+  }*/
 }

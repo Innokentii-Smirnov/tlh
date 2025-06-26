@@ -61,7 +61,7 @@ class Morpheme {
   }
   getTag(i: number): string {
     let tag = this.tag;
-    if (i > 0) {
+    if (i > 0 || this.kind === 'zero') {
       tag = kindToBoundary[this.kind] + tag;
     }
     return tag;
