@@ -53,10 +53,10 @@ export function getText(node: XmlElementNode): string {
         case 'sGr':
           parts.push(getText(elementChild) + '-');
           break;
-		case 'del_in':
+        case 'del_in':
           parts.push('[');
           break;
-		case 'del_fin':
+        case 'del_fin':
           parts.push(']');
           break;
       }
