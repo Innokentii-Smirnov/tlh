@@ -19,7 +19,7 @@ export function removeMacron(s: string) {
 }
 
 export function formIsFragment(form: string): boolean {
-  return form.includes('[') || form.includes(']') || form.includes('(-)');
+  return form.includes('[') || form.includes(']') || form.includes('x');
 }
 
 export function makeAnalysisOptions(morphTags: string[]): SelectableLetteredAnalysisOption[] {
