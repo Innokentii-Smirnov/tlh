@@ -25,7 +25,7 @@ function processVowels(word: string): string {
   word = word.replaceAll(/([bdgḫklmnpqrsṣštwyz])([[\]?!]?)e[?!]?(\]?)-(\[?)[?!]?e([[\]?!]?)([bdgḫklmnpqrsṣštwyz])/g,  '$1$2$3e$4$5$6');
   // NB: Für i gilt diese Regel auch vor a (d. h., in Ci-ia -> Cia)
   word = word.replaceAll(/([bdgḫklmnpqrsṣštwyz])([[\]?!]?)i[?!]?(\]?)-(\[?)[?!]?i([[\]?!]?)([abdgḫklmnpqrsṣštwyz])/g,  '$1$2$3i$4$5$6');
-  word = word.replaceAll(/([bdgḫklmnpqrsṣštwyz])([[\]?!]?)u[?!]?(\]?)-(\[?)[?!]?[uú]([[\]?!]?)([bdgḫklmnpqrsṣštwyz])/g,  '$1$2$3u$4$5$6');
+  word = word.replaceAll(/([bdgḫklmnpqrsṣštwyz])([[\]?!]?)[uú][?!]?(\]?)-(\[?)[?!]?[uú]([[\]?!]?)([bdgḫklmnpqrsṣštwyz])/g,  '$1$2$3u$4$5$6');
   
   // neu
   word = word.replaceAll(/([bdgḫklmnpqrsṣštwyz])([[\]?!]?)i[?!]?(\]?)-(\[?)[?!]?e([[\]?!]?)([bdgḫklmnpqrsṣštwyz])/g,  '$1$2$3e$4$5$6');
@@ -38,12 +38,12 @@ function processVowels(word: string): string {
   word = word.replaceAll(/[e|i][?!]?(\]?)-(\[?)e[?!]?(\]?)-(\[?)[?!]?[e|i]/g, '$1$2ē$3$4');
   word = word.replaceAll(/[e|i][?!]?(\]?)-(\[?)i[?!]?(\]?)-(\[?)[?!]?i/g, '$1$2ī$3$4');
   word = word.replaceAll(/[uo][?!]?(\]?)-(\[?)u[?!]?(\]?)-(\[?)[?!]?[uú]/g, '$1$2ō$3$4');
-  word = word.replaceAll(/u[?!]?(\]?)-(\[?)ú[?!]?(\]?)-(\[?)[?!]?[uú]/g, '$1$2ū$3$4');
+  word = word.replaceAll(/[uú][?!]?(\]?)-(\[?)ú[?!]?(\]?)-(\[?)[?!]?[uú]/g, '$1$2ū$3$4');
     
   word = word.replaceAll(/a[?!]?(\]?)-(\[?)[?!]?a/g, '$1ā$2');
   word = word.replaceAll(/e[?!]?(\]?)-(\[?)[?!]?e/g, '$1ē$2');
   word = word.replaceAll(/i[?!]?(\]?)-(\[?)[?!]?i/g, '$1ī$2');
-  word = word.replaceAll(/u[?!]?(\]?)-(\[?)[?!]?u/g, '$1ō$2');
+  word = word.replaceAll(/[uo][?!]?(\]?)-(\[?)[?!]?u/g, '$1ō$2');
   word = word.replaceAll(/[uú][?!]?(\]?)-(\[?)[?!]?[uú]/g, '$1ū$2');
   //neu
   word = word.replaceAll(/^e(\]?)-(\[?)i/g, '$1ē$2');
