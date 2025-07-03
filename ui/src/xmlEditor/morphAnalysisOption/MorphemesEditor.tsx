@@ -62,7 +62,7 @@ class Morpheme {
   }
   getTag(i: number): string {
     let tag = this.tag;
-    if (i > 0 || this.kind === 'zero') {
+    if (i > 0 || this.kind === 'zero' || this.kind === 'enclitic') {
       tag = kindToBoundary[this.kind] + tag;
     }
     return tag;
