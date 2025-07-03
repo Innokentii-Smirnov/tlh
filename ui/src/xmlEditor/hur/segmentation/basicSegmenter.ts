@@ -1,5 +1,6 @@
 import { getStemAndGrammaticalMorphemesWithBoundary } from '../splitter';
 import { add, removeMacron, groupBy } from '../utils';
+import SuffixTrie from './suffixTrie';
 
 class Stem {
   form: string;
@@ -56,6 +57,7 @@ export class PartialAnalysis {
 export default class BasicSegmenter {
   stems = new Map<string, Set<string>>();
   suffixChains = new Map<string, Set<string>>();
+  suffixTrie = new SuffixTrie();
 
   add(transcription: string, segmentation: string, translation: string, morphTags: string[]) {
     const [underlyingStem, underlyingSuffixChain] =
@@ -75,13 +77,17 @@ export default class BasicSegmenter {
         const suffixChain = new SuffixChain(underlyingSuffixChain, morphTag);
         add(this.suffixChains, surfaceSuffixChain, suffixChain.toString());
       }
+      this.suffixTrie.add(surfaceSuffixChain);
     }
   }
 
   segment(wordform: string): PartialAnalysis[] {
     const segmentations: PartialAnalysis[] = [];
-    for (const [suffixChain, options] of this.suffixChains) {
-      if (wordform.endsWith(suffixChain) || removeMacron(wordform).endsWith(suffixChain)) {
+    let candidates: string[] = this.suffixTrie.getAllSuffixes(wordform);
+    candidates = candidates.concat(this.suffixTrie.getAllSuffixes(removeMacron(wordform)));
+    for (const suffixChain of candidates) {
+      const options = this.suffixChains.get(suffixChain);
+      if (options !== undefined) {
         const surfaceStem = wordform.substring(0, wordform.length - suffixChain.length);
         const stems = this.stems.has(surfaceStem) ?
           this.stems.get(surfaceStem) :
