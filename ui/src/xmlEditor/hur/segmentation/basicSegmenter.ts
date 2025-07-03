@@ -117,4 +117,34 @@ export default class BasicSegmenter {
     }
     return segmentations;
   }
+  
+  segmentOov(wordform: string): PartialAnalysis[] {
+    const segmentations: PartialAnalysis[] = [];
+    const suffixChain: string | null = this.suffixTrie.getLongestSuffix(wordform);
+    if (suffixChain !== null && suffixChain !== '') {
+      const options = this.suffixChains.get(suffixChain);
+      if (options !== undefined) {
+        const surfaceStem = wordform.substring(0, wordform.length - suffixChain.length);
+        const suffixChains: SuffixChain[] = Array.from(options).map(option => {
+          const [segmentation, morphTag] = option.split('@');
+          return new SuffixChain(segmentation, morphTag);
+        });
+        const grouped: Map<string, Set<string>> = groupBy(
+          suffixChains,
+          (suffixChain: SuffixChain) => suffixChain.segmentation,
+          (suffixChain: SuffixChain) => suffixChain.morphTag
+        );
+        for (const [segmentedSuffixChain, morphTagSet] of grouped) {
+          const morphTags = Array.from(morphTagSet).sort();
+          const underlyingStem = surfaceStem; 
+          const translation = '';
+          const segmentation = underlyingStem + segmentedSuffixChain;
+          const result =
+            new PartialAnalysis(segmentation, translation, morphTags);
+          segmentations.push(result);
+        }
+      }
+    }
+    return segmentations;
+  }
 }

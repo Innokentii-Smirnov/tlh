@@ -4,6 +4,7 @@ import { MorphologicalAnalysis, SingleMorphologicalAnalysisWithoutEnclitics,
   MultiMorphologicalAnalysisWithoutEnclitics
 } from '../../../model/morphologicalAnalysis';
 import { makeAnalysisOptions } from '../utils';
+import { getStemAndGrammaticalMorphemesWithBoundary } from '../splitter';
 
 export class Analysis extends PartialAnalysis {
   pos: string;
@@ -85,6 +86,24 @@ class Segmenter {
           pos
         );
         result.push(analysis.toMorphologicalAnalysis());
+      }
+    }
+    if (result.length === 0) {
+      for (const [pos, segmenter] of this.segmenters) {
+        const partialAnalyses = segmenter.segmentOov(wordform);
+        for (const partialAnalysis of partialAnalyses) {
+          const segmentation = partialAnalysis.segmentation;
+          const [stem, gram] = getStemAndGrammaticalMorphemesWithBoundary(segmentation);
+          if (stem.length >= 2) {
+            const analysis = new Analysis(
+              partialAnalysis.segmentation,
+              partialAnalysis.translation,
+              partialAnalysis.morphTags,
+              pos
+            );
+            result.push(analysis.toMorphologicalAnalysis());
+          }
+        }
       }
     }
     return result;
