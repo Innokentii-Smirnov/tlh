@@ -9,9 +9,8 @@ import { OxtedExportData } from './OxtedExportData';
 import { makeDownload } from '../downloadHelper';
 import { DocumentEditTypes } from './documentEditTypes';
 import { XmlValidityChecker } from './XmlValidityChecker';
-import { getDictionary, upgradeDictionary } from './hur/dictionary';
-import { getGlosses, upgradeGlosses } from './hur/glossProvider';
-import { setPartsOfSpeech, getPartsOfSpeech } from './hur/partsOfSpeech';
+import { downloadDictionary } from './hur/dictionaryFileManager';
+import { DictionaryUploader } from './hur/DictionaryUploader';
 
 const locStoreKey = 'editorState';
 
@@ -81,17 +80,6 @@ export function StandAloneOXTED({ editorConfig }: IProps): ReactElement {
     setLoadedDocument({ source, filename: file.name });
   };
 
-  const readDict = async (file: File) => {
-    const source = await file.text();
-    const parsed = JSON.parse(source);
-    const {dictionary, glosses} = parsed;
-    upgradeDictionary(dictionary);
-    upgradeGlosses(glosses);
-    if ('partsOfSpeech' in parsed) {
-      setPartsOfSpeech(parsed.partsOfSpeech);
-    }
-  };
-
   function download(rootNode: XmlElementNode): void {
     if (loadedDocument === undefined) {
       return;
@@ -130,16 +118,6 @@ export function StandAloneOXTED({ editorConfig }: IProps): ReactElement {
     makeDownload(writeXml(rootNode), loadedDocument.filename);
   }
 
-  function downloadDictionary()
-  {
-    const dictionary = getDictionary();
-    const glosses = getGlosses();
-    const partsOfSpeech = getPartsOfSpeech();
-    const obj = {partsOfSpeech, dictionary, glosses};
-    const jsonText = JSON.stringify(obj, undefined, '\t');
-    makeDownload(jsonText, 'Dictionary.json');
-  }
-
   function closeFile(): void {
     setLoadedDocument(undefined);
     localStorage.removeItem(locStoreKey);
@@ -161,7 +139,7 @@ export function StandAloneOXTED({ editorConfig }: IProps): ReactElement {
         ) : (
           <div className="container mx-auto">
             <FileLoader accept="text/xml" onLoad={readFile} />
-            <FileLoader accept="application/JSON" onLoad={readDict} text="Wörterbuch hochladen"/>
+            <DictionaryUploader onUpload={() => { /*do nothing*/ }}/>
           </div>
         )}
     </div>

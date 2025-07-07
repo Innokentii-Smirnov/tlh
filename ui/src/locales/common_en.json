@@ -213,5 +213,7 @@
   "close": "Close",
   "startingDocumentState": "Original state",
   "currentDocumentState": "Current state",
-  "password_repeat": "Repeat password"
+  "password_repeat": "Repeat password",
+  "dictionaryViewer": "Dictionary",
+  "uploadDictionary": "Upload dictionary"
 }

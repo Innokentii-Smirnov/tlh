@@ -20,7 +20,8 @@ import {
   transliterationReviewUrl,
   userManagementUrl,
   xmlComparatorUrl,
-  xmlConversionUrl
+  xmlConversionUrl,
+  dictionaryViewerUrl
 } from './urls';
 import {RegisterForm} from './forms/RegisterForm';
 import {Home} from './Home';
@@ -33,6 +34,7 @@ import {DocumentMergerContainer} from './documentMerger/DocumentMergerContainer'
 import {tlhXmlEditorConfig} from './xmlEditor/tlhXmlEditorConfig';
 import {Preferences} from './Preferences';
 import {XmlComparatorContainer} from './xmlComparator/XmlComparatorContainer';
+import {DictionaryViewerContainer} from './xmlEditor/hur/dictionaryViewer/DictionaryViewerContainer';
 import {Rights, XmlReviewType} from './graphql';
 import {ManuscriptData} from './manuscript/ManuscriptData';
 import {UploadPicturesForm} from './manuscript/UploadPicturesForm';
@@ -88,6 +90,8 @@ export const router = createBrowserRouter([
         {path: oxtedUrl, element: <StandAloneOXTED editorConfig={tlhXmlEditorConfig}/>},
 
         {path: xmlComparatorUrl, element: <XmlComparatorContainer/>},
+        
+        {path: dictionaryViewerUrl, element: <DictionaryViewerContainer/>},
 
         {path: preferencesUrl, element: <Preferences/>},
 

@@ -213,5 +213,7 @@
   "close": "Schließen",
   "startingDocumentState": "Ursprunglicher Zustand",
   "currentDocumentState": "Aktueller Zustand",
-  "password_repeat": "Passwort wiederholen"
+  "password_repeat": "Passwort wiederholen",
+  "dictionaryViewer": "Wörterbuch",
+  "uploadDictionary": "Wörterbuch hochladen"
 }

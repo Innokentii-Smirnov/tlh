@@ -1,4 +1,5 @@
 import { SelectableLetteredAnalysisOption } from '../../model/analysisOptions';
+import { MorphologicalAnalysis } from '../../model/morphologicalAnalysis';
 
 export function add<TKey, TValue>(map: Map<TKey, Set<TValue>>, key: TKey, value: TValue) {
   let current = map.get(key);
@@ -46,4 +47,15 @@ export function groupBy<TSource, TKey, TValue>(array: TSource[], getKey: (elem: 
     add(map, key, value);
   }
   return map;
+}
+
+export function getMorphTags(analysis: MorphologicalAnalysis): string[] | null {
+  switch (analysis._type) {
+    case 'SingleMorphAnalysisWithoutEnclitics':
+      return [analysis.analysis];
+    case 'MultiMorphAnalysisWithoutEnclitics':
+      return analysis.analysisOptions.map(({analysis}) => analysis);
+    default:
+      return null;
+  }
 }

@@ -3,7 +3,7 @@ import { getPos } from '../partsOfSpeech';
 import { MorphologicalAnalysis, SingleMorphologicalAnalysisWithoutEnclitics,
   MultiMorphologicalAnalysisWithoutEnclitics
 } from '../../../model/morphologicalAnalysis';
-import { makeAnalysisOptions } from '../utils';
+import { makeAnalysisOptions, getMorphTags } from '../utils';
 import { getStemAndGrammaticalMorphemesWithBoundary } from '../splitter';
 
 export class Analysis extends PartialAnalysis {
@@ -41,17 +41,6 @@ export class Analysis extends PartialAnalysis {
       };
       return ma;
     }
-  }
-}
-
-function getMorphTags(analysis: MorphologicalAnalysis): string[] | null {
-  switch (analysis._type) {
-    case 'SingleMorphAnalysisWithoutEnclitics':
-      return [analysis.analysis];
-    case 'MultiMorphAnalysisWithoutEnclitics':
-      return analysis.analysisOptions.map(({analysis}) => analysis);
-    default:
-      return null;
   }
 }
 

@@ -9,7 +9,7 @@ import { convertDictionary, updateAndValidateDictionary } from './utility';
 import { isValid, normalize } from './morphologicalAnalysisValidator';
 import segmenter from './segmentation/segmenter';
 
-const dictionary: Map<string, Set<string>> = new Map();
+export const dictionary: Map<string, Set<string>> = new Map();
 
 export function annotateHurrianWord(node: XmlElementNode): void {
   const transliteration: string = getText(node);
