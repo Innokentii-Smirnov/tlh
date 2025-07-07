@@ -10,12 +10,14 @@ export function WordformElement({segmentation, translation, morphTags}: IProps):
   return (
     <>
       <pre>&#9;{segmentation}</pre>
-      <pre>&#9;{
-        (morphTags).map((tag: string) =>
-          translation +
-          ((tag.startsWith('=') || tag.startsWith('.') || tag === '') ? '' : '-') +
-          tag).join('<br />')
-      }</pre>
+      {(morphTags).map((tag: string, index: number) => {
+          return (
+            <pre key={index}>&#9;{translation + 
+            ((tag.startsWith('=') || tag.startsWith('.') || tag === '') ? '' : '-') +
+            tag}</pre> 
+          );
+        })
+      }
       <br />
     </>
   );
