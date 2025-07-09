@@ -52,6 +52,7 @@
   "rendered": "Rendered text",
   "xmlView": "XML view",
   "exportXml": "Export XML file",
+  "exportDict": "Export dictionary",
   "documentApproved": "Document approved",
   "backToHome": "Back to home",
   "submitApproval": "Submit approval",

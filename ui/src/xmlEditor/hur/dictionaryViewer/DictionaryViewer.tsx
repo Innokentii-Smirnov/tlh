@@ -3,6 +3,7 @@ import { getStem } from '../splitter';
 import { getPos } from '../partsOfSpeech';
 import { groupBy } from '../utils';
 import { StemViewer, Stem, Entry } from './StemViewer';
+import { DictionaryDownloader } from '../dict/files/DictionaryDownloader';
 
 interface IProps {
   entries: Entry[];
@@ -25,18 +26,25 @@ export function DictionaryViewer({entries}: IProps): JSX.Element {
   const stems = Array.from(grouped.keys()).sort();
   
   return (
-    <div className="mt-2">
-      Click on a stem to see its derivatives and inflected forms. <br /> <br />
-      {stems.map((stem: string, index: number) => {
-        const group = grouped.get(stem);
-        const entries: Entry[] = group === undefined ? [] : Array.from(group);
-        return (
-          <StemViewer
-            stem={new Stem((index + 1).toString() + '.@' + stem)}
-            entries={entries}
-            key={index} />
-        );
-      })}
+    <div className="grid grid-cols-2 gap-2 my-2">
+      <div className="mt-2">
+        Click on a stem to see its derivatives and inflected forms. <br /> <br />
+        {stems.map((stem: string, index: number) => {
+          const group = grouped.get(stem);
+          const entries: Entry[] = group === undefined ? [] : Array.from(group);
+          return (
+            <StemViewer
+              stem={new Stem((index + 1).toString() + '.@' + stem)}
+              entries={entries}
+              key={index} />
+          );
+        })}
+      </div>
+      <div>
+        <div className="position: fixed">
+          <DictionaryDownloader />
+        </div>
+      </div>
     </div>
   );
 }
