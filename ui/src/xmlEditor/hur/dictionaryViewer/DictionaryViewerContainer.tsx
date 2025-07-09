@@ -1,9 +1,10 @@
 import { JSX, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { dictionary } from '../dictionary';
-import { MorphologicalAnalysis, readMorphologicalAnalysis } from '../../../model/morphologicalAnalysis';
+import { readMorphologicalAnalysis } from '../../../model/morphologicalAnalysis';
 import { DictionaryUploader } from '../DictionaryUploader';
-import { Entry, DictionaryViewer } from './DictionaryViewer';
+import { DictionaryViewer } from './DictionaryViewer';
+import { Entry } from './StemViewer';
 import { groupBy } from '../utils';
 
 interface Subentry {
@@ -35,7 +36,7 @@ export function DictionaryViewerContainer(): JSX.Element {
     const morphologicalAnalysis = readMorphologicalAnalysis(1, analysis, []);
     if (morphologicalAnalysis !== undefined) {
       const transcriptions = Array.from(transcriptionSet).sort();
-      entries.push({transcriptions, morphologicalAnalysis});
+      entries.push({transcriptions, analysis, morphologicalAnalysis});
     }
   }
   

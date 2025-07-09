@@ -1,6 +1,10 @@
 import { JSX, useState } from 'react';
 import { StemElement } from './Stem';
 import { WordformElement } from './Wordform';
+import { getMorphTags } from '../utils';
+import { MorphologicalAnalysis } from '../../../model/morphologicalAnalysis';
+import { modifyAnalysis } from '../dict/analysisModifier';
+import update from 'immutability-helper';
 
 export class Stem {
   index: string;
@@ -12,37 +16,52 @@ export class Stem {
   }
 }
 
-export class Wordform {
-  segmentation: string;
-  morphTags: string[];
+export interface Entry {
   transcriptions: string[];
-  constructor(repr: string) {
-    const spl = repr.split('@');
-    this.segmentation = spl[0];
-    this.morphTags = spl[1].split(';');
-    this.transcriptions = spl[2].split(';');
-  }
+  analysis: string;
+  morphologicalAnalysis: MorphologicalAnalysis;
 }
 
 interface IProps {
   stem: Stem;
-  wordforms: Wordform[];
+  entries: Entry[];
 }
 
-export function StemViewer({stem, wordforms}: IProps): JSX.Element {
+function modifyTranslation(value: string) {
+  const setTranslation = (morphologicalAnalysis: MorphologicalAnalysis) => {
+    return update(morphologicalAnalysis, { translation: { $set: value } });
+  };
+  return setTranslation;
+}
+
+export function StemViewer({stem, entries}: IProps): JSX.Element {
   
   const [unfolded, setUnfolded] = useState(false);
+  const [translation, setTranslation] = useState(stem.translation);
   
   return (
     <>
-      {StemElement({...stem, handleClick: () => setUnfolded(!unfolded)})}
+      <StemElement
+        index={stem.index}
+        form={stem.form} 
+        translation={translation}
+        pos={stem.pos}
+        handleClick={() => setUnfolded(!unfolded)} 
+        onTranslationChange={(translation: string) => {
+          setTranslation(translation);
+        }}
+        onTranslationBlur={(translation: string) => {
+          for (const {transcriptions, analysis} of entries) {
+            modifyAnalysis(transcriptions, analysis, modifyTranslation(translation));
+          }
+        }} />
       <br />
-      {unfolded && wordforms.map(
-        (wordform: Wordform, index: number) =>
-          <WordformElement segmentation={wordform.segmentation}
-                           translation={stem.translation}
-                           morphTags={wordform.morphTags}
-                           transcriptions={wordform.transcriptions}
+      {unfolded && entries.map(
+        (entry: Entry, index: number) =>
+          <WordformElement segmentation={entry.morphologicalAnalysis.referenceWord}
+                           translation={translation}
+                           morphTags={getMorphTags(entry.morphologicalAnalysis) || []}
+                           transcriptions={entry.transcriptions}
                            key={index}/>
       )}
     </>
