@@ -5,25 +5,32 @@ import { getPos } from '../partsOfSpeech';
 import { getMorphTags } from '../utils';
 import { groupBy } from '../utils';
 import { StemViewer, Stem, Wordform } from './StemViewer';
+import { modifyAnalysis } from '../dict/analysisModifier';
 
-interface IProps {
-  morphologicalAnalyses: MorphologicalAnalysis[];
+export interface Entry {
+  transcriptions: string[];
+  morphologicalAnalysis: MorphologicalAnalysis;
 }
 
-function keyFunc(morphologicalAnalysis: MorphologicalAnalysis): string {
+interface IProps {
+  entries: Entry[];
+}
+
+function keyFunc({morphologicalAnalysis}: Entry): string {
   return [getStem(morphologicalAnalysis.referenceWord),
           morphologicalAnalysis.translation,
           getPos(morphologicalAnalysis.paradigmClass, morphologicalAnalysis.translation, '')].join('@');
 }
 
-function valueFunc(morphologicalAnalysis: MorphologicalAnalysis): string {
-  return morphologicalAnalysis.referenceWord + '@' + 
-         (getMorphTags(morphologicalAnalysis) || []).join(';');
+function valueFunc({morphologicalAnalysis, transcriptions}: Entry): string {
+  return [morphologicalAnalysis.referenceWord,
+         (getMorphTags(morphologicalAnalysis) || []).join(';'),
+         transcriptions.join(';')].join('@');
 }
 
-export function DictionaryViewer({morphologicalAnalyses}: IProps): JSX.Element {
+export function DictionaryViewer({entries}: IProps): JSX.Element {
   
-  const grouped = groupBy(morphologicalAnalyses, keyFunc, valueFunc);
+  const grouped = groupBy(entries, keyFunc, valueFunc);
   
   const stems = Array.from(grouped.keys()).sort();
   

@@ -4,9 +4,10 @@ interface IProps {
   segmentation: string;
   translation: string;
   morphTags: string[];
+  transcriptions: string[];
 }
 
-export function WordformElement({segmentation, translation, morphTags}: IProps): JSX.Element {
+export function WordformElement({segmentation, translation, morphTags, transcriptions}: IProps): JSX.Element {
   return (
     <>
       <pre>&#9;{segmentation}</pre>
@@ -14,10 +15,11 @@ export function WordformElement({segmentation, translation, morphTags}: IProps):
           return (
             <pre key={index}>&#9;{translation + 
             ((tag.startsWith('=') || tag.startsWith('.') || tag === '') ? '' : '-') +
-            tag}</pre> 
+            tag}</pre>
           );
         })
       }
+      <pre>&#9;({transcriptions.join(', ')})</pre>
       <br />
     </>
   );

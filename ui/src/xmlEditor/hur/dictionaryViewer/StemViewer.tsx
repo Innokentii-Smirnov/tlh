@@ -15,10 +15,12 @@ export class Stem {
 export class Wordform {
   segmentation: string;
   morphTags: string[];
+  transcriptions: string[];
   constructor(repr: string) {
     const spl = repr.split('@');
     this.segmentation = spl[0];
     this.morphTags = spl[1].split(';');
+    this.transcriptions = spl[2].split(';');
   }
 }
 
@@ -40,6 +42,7 @@ export function StemViewer({stem, wordforms}: IProps): JSX.Element {
           <WordformElement segmentation={wordform.segmentation}
                            translation={stem.translation}
                            morphTags={wordform.morphTags}
+                           transcriptions={wordform.transcriptions}
                            key={index}/>
       )}
     </>
