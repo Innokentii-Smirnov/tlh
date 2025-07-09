@@ -1,7 +1,7 @@
-import { getDictionary, upgradeDictionary } from './dictionary';
-import { getGlosses, upgradeGlosses } from './glossProvider';
-import { getPartsOfSpeech, setPartsOfSpeech } from './partsOfSpeech';
-import { makeDownload } from '../../downloadHelper';
+import { getDictionary, upgradeDictionary } from '../../dictionary';
+import { getGlosses, upgradeGlosses } from '../../glossProvider';
+import { getPartsOfSpeech, setPartsOfSpeech } from '../../partsOfSpeech';
+import { makeDownload } from '../../../../downloadHelper';
 
 export function downloadDictionary() {
   const dictionary = getDictionary();

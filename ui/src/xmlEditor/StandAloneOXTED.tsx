@@ -9,8 +9,8 @@ import { OxtedExportData } from './OxtedExportData';
 import { makeDownload } from '../downloadHelper';
 import { DocumentEditTypes } from './documentEditTypes';
 import { XmlValidityChecker } from './XmlValidityChecker';
-import { downloadDictionary } from './hur/dictionaryFileManager';
-import { DictionaryUploader } from './hur/DictionaryUploader';
+import { downloadDictionary } from './hur/dict/files/dictionaryFileManager';
+import { DictionaryUploader } from './hur/dict/files/DictionaryUploader';
 
 const locStoreKey = 'editorState';
 

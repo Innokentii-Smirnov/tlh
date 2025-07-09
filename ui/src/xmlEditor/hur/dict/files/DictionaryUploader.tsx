@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { FileLoader } from '../../forms/FileLoader';
+import { FileLoader } from '../../../../forms/FileLoader';
 import { readDict } from './dictionaryFileManager';
 
 interface IProps {

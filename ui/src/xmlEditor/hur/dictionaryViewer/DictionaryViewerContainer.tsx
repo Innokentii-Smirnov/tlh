@@ -2,7 +2,7 @@ import { JSX, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { dictionary } from '../dictionary';
 import { readMorphologicalAnalysis } from '../../../model/morphologicalAnalysis';
-import { DictionaryUploader } from '../DictionaryUploader';
+import { DictionaryUploader } from '../dict/files/DictionaryUploader';
 import { DictionaryViewer } from './DictionaryViewer';
 import { Entry } from './StemViewer';
 import { groupBy } from '../utils';
