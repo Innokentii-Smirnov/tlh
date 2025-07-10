@@ -1,13 +1,23 @@
 import { JSX } from 'react';
+import { MorphologicalAnalysis } from '../../../model/morphologicalAnalysis';
+import { getMorphTags } from '../utils';
 
-interface IProps {
-  segmentation: string;
-  translation: string;
-  morphTags: string[];
+export interface Entry {
   transcriptions: string[];
+  morphologicalAnalysis: MorphologicalAnalysis;
 }
 
-export function WordformElement({segmentation, translation, morphTags, transcriptions}: IProps): JSX.Element {
+interface IProps {
+  entry: Entry;
+}
+
+export function WordformElement({ entry }: IProps): JSX.Element {
+  
+  const { transcriptions, morphologicalAnalysis } = entry;
+  const segmentation = morphologicalAnalysis.referenceWord;
+  const { translation } = morphologicalAnalysis;
+  const morphTags = getMorphTags(morphologicalAnalysis) || [];
+  
   return (
     <>
       <pre>&#9;{segmentation}</pre>

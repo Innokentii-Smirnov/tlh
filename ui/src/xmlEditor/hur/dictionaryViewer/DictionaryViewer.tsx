@@ -2,7 +2,8 @@ import { JSX } from 'react';
 import { getStem } from '../splitter';
 import { getPos } from '../partsOfSpeech';
 import { groupBy } from '../utils';
-import { StemViewer, Stem, Entry } from './StemViewer';
+import { StemViewer, Stem } from './StemViewer';
+import { Entry } from './Wordform';
 import { DictionaryDownloader } from '../dict/files/DictionaryDownloader';
 
 interface IProps {

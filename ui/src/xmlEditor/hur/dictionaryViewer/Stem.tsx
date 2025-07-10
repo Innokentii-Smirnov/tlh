@@ -7,16 +7,12 @@ interface IProps {
   pos: string;
   handleClick: () => void;
   onFormChange: (newStem: string) => void;
-  onFormBlur: (newStem: string) => void;
   onTranslationChange: (translation: string) => void;
-  onTranslationBlur: (translation: string) => void;
 }
 
 export function StemElement({index, form, translation, pos, handleClick,
                              onFormChange,
-                             onFormBlur,
-                             onTranslationChange,
-                             onTranslationBlur}: IProps): JSX.Element {
+                             onTranslationChange}: IProps): JSX.Element {
   
   return (
     <div className="flex flex-row">
@@ -36,12 +32,10 @@ export function StemElement({index, form, translation, pos, handleClick,
       }
       <input type="text" value={form}
              className="p-2 border-y border-r border-slate-500"
-             onChange={event => onFormChange(event.target.value)}
-             onBlur={event => onFormBlur(event.target.value)} />
+             onChange={event => onFormChange(event.target.value)} />
       <input type="text" value={translation}
              className="p-2 border-y border-r border-slate-500"
-             onChange={event => onTranslationChange(event.target.value)}
-             onBlur={event => onTranslationBlur(event.target.value)} />
+             onChange={event => onTranslationChange(event.target.value)} />
     </div>
   );
 }

@@ -1,7 +1,6 @@
 import { JSX, useState } from 'react';
 import { StemElement } from './Stem';
-import { WordformElement } from './Wordform';
-import { getMorphTags } from '../utils';
+import { Entry, WordformElement } from './Wordform';
 import { MorphologicalAnalysis, writeMorphAnalysisValue }
   from '../../../model/morphologicalAnalysis';
 import { modifyAnalysis } from '../dict/analysisModifier';
@@ -16,11 +15,6 @@ export class Stem {
   constructor(repr: string) {
     [this.index, this.form, this.translation, this.pos] = repr.split('@');
   }
-}
-
-export interface Entry {
-  transcriptions: string[];
-  morphologicalAnalysis: MorphologicalAnalysis;
 }
 
 interface IProps {
@@ -61,12 +55,22 @@ function modifyEntries(entries: Entry[],
   return newEntries;
 }
 
+type StemViewerState = {
+  stemForm: string;
+  translation: string;
+  entries: Entry[];
+}
+
 export function StemViewer({stem, initialEntries}: IProps): JSX.Element {
   
   const [unfolded, setUnfolded] = useState(false);
-  const [stemForm, setStemForm] = useState(stem.form);
-  const [translation, setTranslation] = useState(stem.translation);
-  const [entries, setEntries] = useState(initialEntries);
+  const initialState: StemViewerState = {
+    stemForm: stem.form,
+    translation: stem.translation,
+    entries: initialEntries
+  };
+  const [state, setState] = useState(initialState);
+  const { stemForm, translation, entries } = state;
   
   return (
     <>
@@ -76,26 +80,23 @@ export function StemViewer({stem, initialEntries}: IProps): JSX.Element {
         translation={translation}
         pos={stem.pos}
         handleClick={() => setUnfolded(!unfolded)}
-        onFormChange={(newStem: string) => {
-          setStemForm(newStem);
-        }}
-        onFormBlur={(newStem: string) => {
-          setEntries(modifyEntries(entries, modifyStem(newStem)));
-        }}        
-        onTranslationChange={(translation: string) => {
-          setTranslation(translation);
-        }}
-        onTranslationBlur={(translation: string) => {
-          setEntries(modifyEntries(entries, modifyTranslation(translation)));
+        onFormChange={(value: string) => {
+          setState(update(state,
+            { stemForm: { $set: value },
+              entries: { $set: modifyEntries(entries, modifyStem(value)) } }
+          ));
+        }}       
+        onTranslationChange={(value: string) => {
+          setState(update(state,
+            { translation: { $set: value },
+              entries: { $set: modifyEntries(entries, modifyTranslation(value)) } }
+          ));
         }} />
       <br />
       {unfolded && entries.map(
         (entry: Entry, index: number) =>
-          <WordformElement segmentation={replaceStem(stemForm, entry.morphologicalAnalysis.referenceWord)}
-                           translation={translation}
-                           morphTags={getMorphTags(entry.morphologicalAnalysis) || []}
-                           transcriptions={entry.transcriptions}
-                           key={index}/>
+          <WordformElement entry={entry}
+                           key={index} />
       )}
     </>
   );

@@ -4,7 +4,7 @@ import { dictionary } from '../dictionary';
 import { readMorphologicalAnalysis } from '../../../model/morphologicalAnalysis';
 import { DictionaryUploader } from '../dict/files/DictionaryUploader';
 import { DictionaryViewer } from './DictionaryViewer';
-import { Entry } from './StemViewer';
+import { Entry } from './Wordform';
 import { groupBy } from '../utils';
 
 interface Subentry {
