@@ -29,7 +29,7 @@ export function DictionaryViewer({entries}: IProps): JSX.Element {
   return (
     <div className="grid grid-cols-2 gap-2 my-2">
       <div className="mt-2">
-        Click on a stem to see its derivatives and inflected forms. <br /> <br />
+        Click on the button &quot;&#8744;&quot; or a stem&apos;s number to see its derivatives and inflected forms. <br /> <br />
         {stems.map((stem: string, index: number) => {
           const group = grouped.get(stem);
           const entries: Entry[] = group === undefined ? [] : Array.from(group);

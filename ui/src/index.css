@@ -209,6 +209,10 @@ code {
   width: 5rem;
 }
 
+.unfold-button {
+  width: 3rem;
+}
+
 /*
 .leftList, rightList {
   display: inline;

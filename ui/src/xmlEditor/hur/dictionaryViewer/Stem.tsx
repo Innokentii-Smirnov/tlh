@@ -33,6 +33,8 @@ export function StemElement({index, form, translation, pos, handleClick,
         <PartOfSpeechSelector partOfSpeech={pos}
                               onChange={onPartOfSpeechChange} />
       </div>
+      <button onClick={handleClick}
+              className="p-2 border-y border-r border-slate-500 unfold-button">&#8744;</button>
     </div>
   );
 }
