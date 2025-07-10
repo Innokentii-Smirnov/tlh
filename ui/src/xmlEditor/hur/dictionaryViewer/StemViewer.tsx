@@ -42,6 +42,13 @@ function modifyTranslation(value: string) {
   return setTranslation;
 }
 
+function modifyPartOfSpeech(value: string) {
+  const setPartOfSpeech = (morphologicalAnalysis: MorphologicalAnalysis) => {
+    return update(morphologicalAnalysis, { paradigmClass: { $set: value } });
+  };
+  return setPartOfSpeech;
+}
+
 function modifyEntries(entries: Entry[],
   modification: (ma: MorphologicalAnalysis) => MorphologicalAnalysis): Entry[] {
   const newEntries: Entry[] = [];
@@ -58,6 +65,7 @@ function modifyEntries(entries: Entry[],
 type StemViewerState = {
   stemForm: string;
   translation: string;
+  partOfSpeech: string;
   entries: Entry[];
 }
 
@@ -67,10 +75,11 @@ export function StemViewer({stem, initialEntries}: IProps): JSX.Element {
   const initialState: StemViewerState = {
     stemForm: stem.form,
     translation: stem.translation,
+    partOfSpeech: stem.pos,
     entries: initialEntries
   };
   const [state, setState] = useState(initialState);
-  const { stemForm, translation, entries } = state;
+  const { stemForm, translation, partOfSpeech, entries } = state;
   
   return (
     <>
@@ -78,7 +87,7 @@ export function StemViewer({stem, initialEntries}: IProps): JSX.Element {
         index={stem.index}
         form={stemForm} 
         translation={translation}
-        pos={stem.pos}
+        pos={partOfSpeech}
         handleClick={() => setUnfolded(!unfolded)}
         onFormChange={(value: string) => {
           setState(update(state,
@@ -90,6 +99,12 @@ export function StemViewer({stem, initialEntries}: IProps): JSX.Element {
           setState(update(state,
             { translation: { $set: value },
               entries: { $set: modifyEntries(entries, modifyTranslation(value)) } }
+          ));
+        }}
+        onPartOfSpeechChange={(value: string) => {
+          setState(update(state,
+            { partOfSpeech: { $set: value },
+              entries: { $set: modifyEntries(entries, modifyPartOfSpeech(value)) } }
           ));
         }} />
       <br />

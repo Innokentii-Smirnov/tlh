@@ -1,4 +1,5 @@
 import { JSX } from 'react';
+import { PartOfSpeechSelector } from '../partsOfSpeech/PartOfSpeechSelector';
 
 interface IProps {
   index: string;
@@ -8,34 +9,30 @@ interface IProps {
   handleClick: () => void;
   onFormChange: (newStem: string) => void;
   onTranslationChange: (translation: string) => void;
+  onPartOfSpeechChange: (value: string) => void;
 }
 
 export function StemElement({index, form, translation, pos, handleClick,
                              onFormChange,
-                             onTranslationChange}: IProps): JSX.Element {
+                             onTranslationChange,
+                             onPartOfSpeechChange}: IProps): JSX.Element {
   
   return (
     <div className="flex flex-row">
-      {[index, pos].map((field: string, index: number) => {
-        let style = 'p-2 border-y border-r border-slate-500';
-        if (index === 0) {
-          style += ' border-l';
-        }
-        return (
-          <button onClick={handleClick}
-                className={style}
-                key={index}>
-            {field}
-          </button>
-        );
-       })
-      }
+      <button onClick={handleClick}
+              className="p-2 border-y border-l border-r border-slate-500">
+        {index}
+      </button>
       <input type="text" value={form}
              className="p-2 border-y border-r border-slate-500"
              onChange={event => onFormChange(event.target.value)} />
       <input type="text" value={translation}
              className="p-2 border-y border-r border-slate-500"
              onChange={event => onTranslationChange(event.target.value)} />
+      <div className="p-2 border-y border-r border-slate-500">
+        <PartOfSpeechSelector partOfSpeech={pos}
+                              onChange={onPartOfSpeechChange} />
+      </div>
     </div>
   );
 }
