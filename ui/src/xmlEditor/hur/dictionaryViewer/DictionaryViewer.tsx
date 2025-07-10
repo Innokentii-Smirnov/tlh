@@ -35,7 +35,7 @@ export function DictionaryViewer({entries}: IProps): JSX.Element {
           return (
             <StemViewer
               stem={new Stem((index + 1).toString() + '.@' + stem)}
-              entries={entries}
+              initialEntries={entries}
               key={index} />
           );
         })}

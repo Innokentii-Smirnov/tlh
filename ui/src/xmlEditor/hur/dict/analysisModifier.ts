@@ -3,10 +3,10 @@ import {MorphologicalAnalysis, readMorphologicalAnalysis, writeMorphAnalysisValu
 '../../../model/morphologicalAnalysis';
 
 export function modifyAnalysis(transcriptions: string[], analysis: string,
-  modification: (morphologicalAnalysis: MorphologicalAnalysis) => MorphologicalAnalysis): void {
+  modification: (morphologicalAnalysis: MorphologicalAnalysis) => MorphologicalAnalysis):
+  MorphologicalAnalysis | undefined {
   const morphologicalAnalysis = readMorphologicalAnalysis(1, analysis, []);
-  if (morphologicalAnalysis !== undefined)
-  {
+  if (morphologicalAnalysis !== undefined) {
     const newMorphologicalAnalysis = modification(morphologicalAnalysis);
     const newMorphologicalAnalysisValue = writeMorphAnalysisValue(newMorphologicalAnalysis);
     for (const transcription of transcriptions) {
@@ -19,5 +19,6 @@ export function modifyAnalysis(transcriptions: string[], analysis: string,
         analyses.add(newMorphologicalAnalysisValue);
       }
     }
+    return newMorphologicalAnalysis;
   }
 }

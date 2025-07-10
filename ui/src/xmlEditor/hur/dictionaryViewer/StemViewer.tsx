@@ -1,9 +1,8 @@
 import { JSX, useState } from 'react';
 import { StemElement } from './Stem';
 import { WordformElement } from './Wordform';
-import { makeAnalysisOptions, getMorphTags } from '../utils';
-import { MorphologicalAnalysis, SingleMorphologicalAnalysisWithoutEnclitics,
-  MultiMorphologicalAnalysisWithoutEnclitics, writeMorphAnalysisValue }
+import { getMorphTags } from '../utils';
+import { MorphologicalAnalysis, writeMorphAnalysisValue }
   from '../../../model/morphologicalAnalysis';
 import { modifyAnalysis } from '../dict/analysisModifier';
 import update from 'immutability-helper';
@@ -26,42 +25,11 @@ export interface Entry {
 
 interface IProps {
   stem: Stem;
-  entries: Entry[];
+  initialEntries: Entry[];
 }
 
 function replaceStem(newStem: string, segmentation: string) {
   return newStem + segmentation.substring(findBoundary(segmentation));
-}
-
-function getAnalysis(segmentation: string, translation: string, morphTags: string[], pos: string) {
-  if (morphTags.length == 1) {
-    const morphologicalAnalysis: SingleMorphologicalAnalysisWithoutEnclitics = {
-        _type: 'SingleMorphAnalysisWithoutEnclitics',
-        number: 1,
-        selected: false,
-        encliticsAnalysis: undefined,
-        referenceWord: segmentation,
-        translation: translation,
-        analysis: morphTags[0],
-        paradigmClass: pos,
-        determinative: ''
-    };
-    const analysis = writeMorphAnalysisValue(morphologicalAnalysis);
-    return analysis;
-  } else {
-    const morphologicalAnalysis: MultiMorphologicalAnalysisWithoutEnclitics = {
-        _type: 'MultiMorphAnalysisWithoutEnclitics',
-        number: 1,
-        encliticsAnalysis: undefined,
-        referenceWord: segmentation,
-        translation: translation,
-        analysisOptions: makeAnalysisOptions(morphTags),
-        paradigmClass: pos,
-        determinative: ''
-      };
-    const analysis = writeMorphAnalysisValue(morphologicalAnalysis);
-    return analysis;
-  }
 }
 
 function modifyStem(newStem: string) {
@@ -80,11 +48,12 @@ function modifyTranslation(value: string) {
   return setTranslation;
 }
 
-export function StemViewer({stem, entries}: IProps): JSX.Element {
+export function StemViewer({stem, initialEntries}: IProps): JSX.Element {
   
   const [unfolded, setUnfolded] = useState(false);
   const [stemForm, setStemForm] = useState(stem.form);
   const [translation, setTranslation] = useState(stem.translation);
+  const [entries, setEntries] = useState(initialEntries);
   
   return (
     <>
@@ -98,29 +67,29 @@ export function StemViewer({stem, entries}: IProps): JSX.Element {
           setStemForm(newStem);
         }}
         onFormBlur={(newStem: string) => {
+          const newEntries: Entry[] = [];
           for (const {transcriptions, morphologicalAnalysis} of entries) {
-            const analysis = getAnalysis(
-              morphologicalAnalysis.referenceWord,
-              translation,
-              getMorphTags(morphologicalAnalysis) || [],
-              stem.pos
-            );
-            modifyAnalysis(transcriptions, analysis, modifyStem(newStem));
+            const analysis = writeMorphAnalysisValue(morphologicalAnalysis);
+            const newAnalysis = modifyAnalysis(transcriptions, analysis, modifyStem(newStem));
+            if (newAnalysis !== undefined) {
+              newEntries.push({transcriptions, morphologicalAnalysis: newAnalysis});
+            }
           }
+          setEntries(newEntries);
         }}        
         onTranslationChange={(translation: string) => {
           setTranslation(translation);
         }}
         onTranslationBlur={(translation: string) => {
+          const newEntries: Entry[] = [];
           for (const {transcriptions, morphologicalAnalysis} of entries) {
-            const analysis = getAnalysis(
-              replaceStem(stemForm, morphologicalAnalysis.referenceWord),
-              morphologicalAnalysis.translation,
-              getMorphTags(morphologicalAnalysis) || [],
-              stem.pos
-            );
-            modifyAnalysis(transcriptions, analysis, modifyTranslation(translation));
+            const analysis = writeMorphAnalysisValue(morphologicalAnalysis);
+            const newAnalysis = modifyAnalysis(transcriptions, analysis, modifyTranslation(translation));
+            if (newAnalysis !== undefined) {
+              newEntries.push({transcriptions, morphologicalAnalysis: newAnalysis});
+            }
           }
+          setEntries(newEntries);
         }} />
       <br />
       {unfolded && entries.map(
