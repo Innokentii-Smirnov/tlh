@@ -45,3 +45,13 @@ export function getStemAndGrammaticalMorphemesWithBoundary(segmentation: string)
   const grammaticalMorphemes = segmentation.substring(i);
   return [stem, grammaticalMorphemes];
 }
+
+export function getTranslationAndMorphTag(analysis: string): [string, string] {
+  const i: number = findBoundary(analysis);
+  const translation: string = analysis.substring(0, i);
+  let tag = analysis.substring(i);
+  if (tag.startsWith('-')) {
+    tag = tag.substring(1);
+  }
+  return [translation, tag];
+}

@@ -5,7 +5,7 @@ import { MorphologicalAnalysis, writeMorphAnalysisValue }
   from '../../../model/morphologicalAnalysis';
 import { modifyAnalysis } from '../dict/analysisModifier';
 import update from 'immutability-helper';
-import { findBoundary } from '../splitter';
+import { findBoundary, getTranslationAndMorphTag } from '../splitter';
 
 export class Stem {
   index: string;
@@ -61,6 +61,33 @@ function handleSegmentationInput(entries: Entry[], index: number, value: string)
     { [index]: { morphologicalAnalysis: { referenceWord: { $set: value } } } }
   );
   return newEntries;
+}
+
+function handleAnalysisInput(entries: Entry[], index: number, value: string): Entry[] {
+  const entry = entries[index];
+  const { transcriptions, morphologicalAnalysis } = entry;
+  const analysis = writeMorphAnalysisValue(morphologicalAnalysis);
+  const [translation, morphTag] = getTranslationAndMorphTag(value);
+  switch (morphologicalAnalysis._type) {
+    case 'SingleMorphAnalysisWithoutEnclitics': {
+        const modification = (ma: MorphologicalAnalysis) => update(ma, { 
+          translation: { $set: translation },
+          analysis: { $set: morphTag } 
+        });
+        modifyAnalysis(transcriptions, analysis, modification);
+        const newEntries = update(entries, {
+          [index]: { 
+            morphologicalAnalysis: {
+              translation: { $set: translation },
+              analysis: { $set: morphTag } 
+            } 
+          } 
+        });
+        return newEntries;
+    }
+    default:
+      return entries;
+  }
 }
 
 function modifyEntries(entries: Entry[],
@@ -128,6 +155,11 @@ export function StemViewer({stem, initialEntries}: IProps): JSX.Element {
             handleSegmentationInput={(value: string) =>
               setState(update(state, { entries:
                 { $set: handleSegmentationInput(entries, index, value) }
+              }))
+            }
+            handleAnalysisInput={(value: string) =>
+              setState(update(state, { entries:
+                { $set: handleAnalysisInput(entries, index, value) }
               }))
             } />
       )}

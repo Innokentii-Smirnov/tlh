@@ -10,9 +10,10 @@ export interface Entry {
 interface IProps {
   entry: Entry;
   handleSegmentationInput: (value: string) => void;
+  handleAnalysisInput: (value: string) => void;
 }
 
-export function WordformElement({ entry, handleSegmentationInput }: IProps): JSX.Element {
+export function WordformElement({ entry, handleSegmentationInput, handleAnalysisInput }: IProps): JSX.Element {
   
   const { transcriptions, morphologicalAnalysis } = entry;
   const segmentation = morphologicalAnalysis.referenceWord;
@@ -24,12 +25,13 @@ export function WordformElement({ entry, handleSegmentationInput }: IProps): JSX
       <input value={segmentation}
              onInput={event => handleSegmentationInput(event.currentTarget.value)} />
       {(morphTags).map((tag: string, index: number) => {
+          const gloss = translation + 
+            ((tag.startsWith('=') || tag.startsWith('.') || tag === '') ? '' : '-') +
+            tag;
           return (
-            <label key={index}>
-              {translation + 
-              ((tag.startsWith('=') || tag.startsWith('.') || tag === '') ? '' : '-') +
-              tag}
-            </label>
+            <input value={gloss}
+                   onInput={event => handleAnalysisInput(event.currentTarget.value)}
+                   key={index} />
           );
         })
       }
