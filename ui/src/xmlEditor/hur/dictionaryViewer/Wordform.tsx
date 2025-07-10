@@ -10,7 +10,7 @@ export interface Entry {
 interface IProps {
   entry: Entry;
   handleSegmentationInput: (value: string) => void;
-  handleAnalysisInput: (value: string) => void;
+  handleAnalysisInput: (value: string, optionIndex: number) => void;
 }
 
 export function WordformElement({ entry, handleSegmentationInput, handleAnalysisInput }: IProps): JSX.Element {
@@ -30,7 +30,7 @@ export function WordformElement({ entry, handleSegmentationInput, handleAnalysis
             tag;
           return (
             <input value={gloss}
-                   onInput={event => handleAnalysisInput(event.currentTarget.value)}
+                   onInput={event => handleAnalysisInput(event.currentTarget.value, index)}
                    key={index} />
           );
         })

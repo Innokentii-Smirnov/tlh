@@ -63,9 +63,9 @@ function normalizeMorphTag(morphTag: string, unify: boolean, segmentation: strin
       return normalizeOption(options[0][1].trim());
     }
     else {
-      return '{' + options
+      return '{ ' + options
         .map((pair: string[]) => pair[0] + ' → ' + normalizeOption(pair[1]))
-        .join('}{') +
+        .join('} { ') +
       '}';
     }
   } else {

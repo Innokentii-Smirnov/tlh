@@ -63,7 +63,7 @@ function handleSegmentationInput(entries: Entry[], index: number, value: string)
   return newEntries;
 }
 
-function handleAnalysisInput(entries: Entry[], index: number, value: string): Entry[] {
+function handleAnalysisInput(entries: Entry[], index: number, value: string, optionIndex: number): Entry[] {
   const entry = entries[index];
   const { transcriptions, morphologicalAnalysis } = entry;
   const analysis = writeMorphAnalysisValue(morphologicalAnalysis);
@@ -80,6 +80,22 @@ function handleAnalysisInput(entries: Entry[], index: number, value: string): En
             morphologicalAnalysis: {
               translation: { $set: translation },
               analysis: { $set: morphTag } 
+            } 
+          } 
+        });
+        return newEntries;
+    }
+    case 'MultiMorphAnalysisWithoutEnclitics': {
+        const modification = (ma: MorphologicalAnalysis) => update(ma, { 
+          translation: { $set: translation },
+          analysisOptions: { [optionIndex]: {analysis: { $set: morphTag } } } 
+        });
+        modifyAnalysis(transcriptions, analysis, modification);
+        const newEntries = update(entries, {
+          [index]: { 
+            morphologicalAnalysis: {
+              translation: { $set: translation },
+              analysisOptions: { [optionIndex]: { analysis: { $set: morphTag } } }
             } 
           } 
         });
@@ -157,9 +173,9 @@ export function StemViewer({stem, initialEntries}: IProps): JSX.Element {
                 { $set: handleSegmentationInput(entries, index, value) }
               }))
             }
-            handleAnalysisInput={(value: string) =>
+            handleAnalysisInput={(value: string, optionIndex: number) =>
               setState(update(state, { entries:
-                { $set: handleAnalysisInput(entries, index, value) }
+                { $set: handleAnalysisInput(entries, index, value, optionIndex) }
               }))
             } />
       )}
