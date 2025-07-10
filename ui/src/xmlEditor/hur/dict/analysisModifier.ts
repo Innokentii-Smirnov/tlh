@@ -12,6 +12,9 @@ export function modifyAnalysis(transcriptions: string[], analysis: string,
     for (const transcription of transcriptions) {
       const analyses = dictionary.get(transcription);
       if (analyses !== undefined) {
+        if (!analyses.has(analysis)) {
+          alert('The analysis cannot be deleted: ' + analysis);
+        }
         analyses.delete(analysis);
         analyses.add(newMorphologicalAnalysisValue);
       }

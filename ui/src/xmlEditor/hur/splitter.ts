@@ -1,4 +1,4 @@
-function findBoundary(segmentation: string): number {
+export function findBoundary(segmentation: string): number {
   let i;
   for (i = 0; i < segmentation.length; i++) {
     const char: string = segmentation[i];

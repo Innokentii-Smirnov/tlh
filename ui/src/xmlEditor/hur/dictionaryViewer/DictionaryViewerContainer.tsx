@@ -36,7 +36,7 @@ export function DictionaryViewerContainer(): JSX.Element {
     const morphologicalAnalysis = readMorphologicalAnalysis(1, analysis, []);
     if (morphologicalAnalysis !== undefined) {
       const transcriptions = Array.from(transcriptionSet).sort();
-      entries.push({transcriptions, analysis, morphologicalAnalysis});
+      entries.push({transcriptions, morphologicalAnalysis});
     }
   }
   
