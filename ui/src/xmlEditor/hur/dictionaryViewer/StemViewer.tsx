@@ -48,6 +48,19 @@ function modifyTranslation(value: string) {
   return setTranslation;
 }
 
+function modifyEntries(entries: Entry[],
+  modification: (ma: MorphologicalAnalysis) => MorphologicalAnalysis): Entry[] {
+  const newEntries: Entry[] = [];
+  for (const {transcriptions, morphologicalAnalysis} of entries) {
+    const analysis = writeMorphAnalysisValue(morphologicalAnalysis);
+    const newAnalysis = modifyAnalysis(transcriptions, analysis, modification);
+    if (newAnalysis !== undefined) {
+      newEntries.push({transcriptions, morphologicalAnalysis: newAnalysis});
+    }
+  }
+  return newEntries;
+}
+
 export function StemViewer({stem, initialEntries}: IProps): JSX.Element {
   
   const [unfolded, setUnfolded] = useState(false);
@@ -67,29 +80,13 @@ export function StemViewer({stem, initialEntries}: IProps): JSX.Element {
           setStemForm(newStem);
         }}
         onFormBlur={(newStem: string) => {
-          const newEntries: Entry[] = [];
-          for (const {transcriptions, morphologicalAnalysis} of entries) {
-            const analysis = writeMorphAnalysisValue(morphologicalAnalysis);
-            const newAnalysis = modifyAnalysis(transcriptions, analysis, modifyStem(newStem));
-            if (newAnalysis !== undefined) {
-              newEntries.push({transcriptions, morphologicalAnalysis: newAnalysis});
-            }
-          }
-          setEntries(newEntries);
+          setEntries(modifyEntries(entries, modifyStem(newStem)));
         }}        
         onTranslationChange={(translation: string) => {
           setTranslation(translation);
         }}
         onTranslationBlur={(translation: string) => {
-          const newEntries: Entry[] = [];
-          for (const {transcriptions, morphologicalAnalysis} of entries) {
-            const analysis = writeMorphAnalysisValue(morphologicalAnalysis);
-            const newAnalysis = modifyAnalysis(transcriptions, analysis, modifyTranslation(translation));
-            if (newAnalysis !== undefined) {
-              newEntries.push({transcriptions, morphologicalAnalysis: newAnalysis});
-            }
-          }
-          setEntries(newEntries);
+          setEntries(modifyEntries(entries, modifyTranslation(translation)));
         }} />
       <br />
       {unfolded && entries.map(
