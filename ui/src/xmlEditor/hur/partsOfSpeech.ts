@@ -36,7 +36,7 @@ export function getPos(template: string, morphTag: string | null, translation: s
   }
   if (template === '') {
     if (morphTag === 'CVB' || morphTag === 'INF') {
-      return morphTag;
+      return 'NF';
     }
     if (morphTag !== null) {
       if (morphTag.includes('PRON')) {

@@ -1,6 +1,5 @@
 import { JSX } from 'react';
 import { getStem } from '../splitter';
-import { getPos } from '../partsOfSpeech';
 import { groupBy } from '../utils';
 import { StemViewer, Stem } from './StemViewer';
 import { Entry } from './Wordform';
@@ -13,7 +12,7 @@ interface IProps {
 function keyFunc({morphologicalAnalysis}: Entry): string {
   return [getStem(morphologicalAnalysis.referenceWord),
           morphologicalAnalysis.translation,
-          getPos(morphologicalAnalysis.paradigmClass, morphologicalAnalysis.translation, '')].join('@');
+          morphologicalAnalysis.paradigmClass].join('@');
 }
 
 function valueFunc(entry: Entry): Entry {

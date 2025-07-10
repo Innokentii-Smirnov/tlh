@@ -1,4 +1,5 @@
 import { formIsFragment } from '../hur/utils';
+import { getPos } from './partsOfSpeech';
 
 const sep = /[-=]/;
 
@@ -74,11 +75,15 @@ function normalizeMorphTag(morphTag: string, unify: boolean, segmentation: strin
 export function normalize(analysis: string, unify: boolean): string | null {
   const fields: string[] = analysis.split('@').map(field => field.trim());
   const segmentation = fields[0];
+  const translation = fields[1];
   const morphTag = fields[2];
-  const normalized = normalizeMorphTag(morphTag, unify, segmentation);
-  if (normalized === null) {
+  const pos = fields[3];
+  const normalizedMorphTag = normalizeMorphTag(morphTag, unify, segmentation);
+  if (normalizedMorphTag === null) {
     return null;
   }
-  fields[2] = normalized;
+  fields[2] = normalizedMorphTag;
+  const normalizedPos = getPos(pos, normalizedMorphTag, translation);
+  fields[3] = normalizedPos;
   return fields.join(' @ ');
 }
