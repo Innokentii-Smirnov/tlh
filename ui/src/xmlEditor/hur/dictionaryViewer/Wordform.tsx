@@ -9,9 +9,10 @@ export interface Entry {
 
 interface IProps {
   entry: Entry;
+  handleSegmentationInput: (value: string) => void;
 }
 
-export function WordformElement({ entry }: IProps): JSX.Element {
+export function WordformElement({ entry, handleSegmentationInput }: IProps): JSX.Element {
   
   const { transcriptions, morphologicalAnalysis } = entry;
   const segmentation = morphologicalAnalysis.referenceWord;
@@ -19,18 +20,21 @@ export function WordformElement({ entry }: IProps): JSX.Element {
   const morphTags = getMorphTags(morphologicalAnalysis) || [];
   
   return (
-    <>
-      <pre>&#9;{segmentation}</pre>
+    <pre className="dict-entry">
+      <input value={segmentation}
+             onInput={event => handleSegmentationInput(event.currentTarget.value)} />
       {(morphTags).map((tag: string, index: number) => {
           return (
-            <pre key={index}>&#9;{translation + 
-            ((tag.startsWith('=') || tag.startsWith('.') || tag === '') ? '' : '-') +
-            tag}</pre>
+            <label key={index}>
+              {translation + 
+              ((tag.startsWith('=') || tag.startsWith('.') || tag === '') ? '' : '-') +
+              tag}
+            </label>
           );
         })
       }
-      <pre>&#9;({transcriptions.join(', ')})</pre>
+      <label>({transcriptions.join(', ')})</label>
       <br />
-    </>
+    </pre>
   );
 }

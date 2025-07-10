@@ -213,6 +213,11 @@ code {
   width: 3rem;
 }
 
+.dict-entry {
+  display: grid;
+  margin-left: 2rem;
+}
+
 /*
 .leftList, rightList {
   display: inline;

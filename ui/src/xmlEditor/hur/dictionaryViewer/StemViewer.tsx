@@ -49,6 +49,20 @@ function modifyPartOfSpeech(value: string) {
   return setPartOfSpeech;
 }
 
+function handleSegmentationInput(entries: Entry[], index: number, value: string): Entry[] {
+  const entry = entries[index];
+  const { transcriptions, morphologicalAnalysis } = entry;
+  const analysis = writeMorphAnalysisValue(morphologicalAnalysis);
+  const modification = (ma: MorphologicalAnalysis) => update(ma,
+    { referenceWord: { $set: value } }
+  );
+  modifyAnalysis(transcriptions, analysis, modification);
+  const newEntries = update(entries,
+    { [index]: { morphologicalAnalysis: { referenceWord: { $set: value } } } }
+  );
+  return newEntries;
+}
+
 function modifyEntries(entries: Entry[],
   modification: (ma: MorphologicalAnalysis) => MorphologicalAnalysis): Entry[] {
   const newEntries: Entry[] = [];
@@ -110,8 +124,12 @@ export function StemViewer({stem, initialEntries}: IProps): JSX.Element {
       <br />
       {unfolded && entries.map(
         (entry: Entry, index: number) =>
-          <WordformElement entry={entry}
-                           key={index} />
+          <WordformElement entry={entry} key={index}
+            handleSegmentationInput={(value: string) =>
+              setState(update(state, { entries:
+                { $set: handleSegmentationInput(entries, index, value) }
+              }))
+            } />
       )}
     </>
   );
