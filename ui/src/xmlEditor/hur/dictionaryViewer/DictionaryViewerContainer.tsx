@@ -1,6 +1,5 @@
 import { JSX, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { dictionary } from '../dictionary';
 import { readMorphologicalAnalysis } from '../../../model/morphologicalAnalysis';
 import { DictionaryUploader } from '../dict/files/DictionaryUploader';
 import { DictionaryViewer } from './DictionaryViewer';
@@ -12,7 +11,11 @@ interface Subentry {
   analysis: string;
 }
 
-export function DictionaryViewerContainer(): JSX.Element {
+interface IProps {
+  dictionary: Map<string, Set<string>>;
+}
+
+export function DictionaryViewerContainer({dictionary}: IProps): JSX.Element {
   
   const {t} = useTranslation('common');
   const [loaded, setLoaded] = useState(dictionary.size > 0);

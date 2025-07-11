@@ -47,6 +47,7 @@ import {XmlReview} from './manuscript/review/XmlReview';
 import {DocumentApproval} from './manuscript/DocumentApproval';
 import {ForgotPasswordForm} from './forms/ForgotPasswordForm';
 import {ResetPasswordForm} from './forms/ResetPasswordForm';
+import {dictionary} from './xmlEditor/hur/dictionary';
 
 export const router = createBrowserRouter([
     {
@@ -91,7 +92,7 @@ export const router = createBrowserRouter([
 
         {path: xmlComparatorUrl, element: <XmlComparatorContainer/>},
         
-        {path: dictionaryViewerUrl, element: <DictionaryViewerContainer/>},
+        {path: dictionaryViewerUrl, element: <DictionaryViewerContainer dictionary={dictionary}/>},
 
         {path: preferencesUrl, element: <Preferences/>},
 
