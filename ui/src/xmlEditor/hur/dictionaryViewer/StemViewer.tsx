@@ -1,4 +1,4 @@
-import { JSX, useState, useEffect } from 'react';
+import { JSX, useState } from 'react';
 import { StemElement } from './Stem';
 import { Entry, WordformElement } from './Wordform';
 import { MorphologicalAnalysis, writeMorphAnalysisValue }
@@ -6,7 +6,6 @@ import { MorphologicalAnalysis, writeMorphAnalysisValue }
 import { modifyAnalysis } from '../dict/analysisModifier';
 import update from 'immutability-helper';
 import { findBoundary, getTranslationAndMorphTag } from '../splitter';
-import { countValues } from '../dict/valueCounter';
 
 export class Stem {
   index: string;
@@ -21,8 +20,6 @@ export class Stem {
 interface IProps {
   stem: Stem;
   initialEntries: Entry[];
-  count: number;
-  remove: (newCount: number) => void;
 }
 
 function replaceStem(newStem: string, segmentation: string) {
@@ -129,7 +126,7 @@ type StemViewerState = {
   entries: Entry[];
 }
 
-export function StemViewer({stem, initialEntries, count, remove}: IProps): JSX.Element {
+export function StemViewer({stem, initialEntries}: IProps): JSX.Element {
   
   const [unfolded, setUnfolded] = useState(false);
   const initialState: StemViewerState = {
@@ -140,14 +137,6 @@ export function StemViewer({stem, initialEntries, count, remove}: IProps): JSX.E
   };
   const [state, setState] = useState(initialState);
   const { stemForm, translation, partOfSpeech, entries } = state;
-  
-  useEffect(() => {
-    const newCount = countValues();
-    if (newCount != count) {
-      //alert(`Merge ${count} -> ${newCount}`);
-      remove(newCount);
-    }
-  });
   
   return (
     <>
