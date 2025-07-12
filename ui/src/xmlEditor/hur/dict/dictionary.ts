@@ -21,6 +21,10 @@ export function setGlobalDictionary(newDictionary: Dictionary): void {
   dictionary = newDictionary;
 }
 
+export function getGlobalDictionary(): Dictionary {
+  return dictionary;
+}
+
 export function annotateHurrianWord(node: XmlElementNode): void {
   const transliteration: string = getText(node);
   const transcription: string = makeBoundTranscription(transliteration);

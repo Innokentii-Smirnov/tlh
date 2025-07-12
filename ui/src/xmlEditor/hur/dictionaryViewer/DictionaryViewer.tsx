@@ -1,15 +1,16 @@
 import { JSX, useState, useEffect } from 'react';
 import { getStem } from '../common/splitter';
 import { groupBy } from '../common/utils';
-import { StemViewer, Stem, ModifyAnalysis } from './StemViewer';
+import { StemViewer, Stem } from './StemViewer';
 import { Entry } from './Wordform';
 import { DictionaryDownloader } from '../dict/files/DictionaryDownloader';
 import { ChangesDownloader } from '../changes/ChangesDownloader';
 import { writeMorphAnalysisValue } from '../../../model/morphologicalAnalysis';
+import { SetDictionary } from '../dict/dictionary';
 
 interface IProps {
   entries: Entry[];
-  modifyAnalysis: ModifyAnalysis;
+  setDictionary: SetDictionary;
 }
 
 function keyFunc({morphologicalAnalysis}: Entry): string {
@@ -22,7 +23,7 @@ function valueFunc(entry: Entry): Entry {
   return entry;
 }
 
-export function DictionaryViewer({entries, modifyAnalysis}: IProps): JSX.Element {
+export function DictionaryViewer({entries, setDictionary}: IProps): JSX.Element {
 
   const [unfolded, setUnfolded] = useState(false);
   
@@ -50,7 +51,7 @@ export function DictionaryViewer({entries, modifyAnalysis}: IProps): JSX.Element
               stem={stemObject}
               initialEntries={entries}
               key={key} 
-              modifyAnalysis={modifyAnalysis}
+              setDictionary={setDictionary}
               initialUnfolded={unfolded} />
           );
         })}

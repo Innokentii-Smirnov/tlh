@@ -49,7 +49,7 @@ import {XmlReview} from './manuscript/review/XmlReview';
 import {DocumentApproval} from './manuscript/DocumentApproval';
 import {ForgotPasswordForm} from './forms/ForgotPasswordForm';
 import {ResetPasswordForm} from './forms/ResetPasswordForm';
-import {dictionary} from './xmlEditor/hur/dict/dictionary';
+import {getGlobalDictionary} from './xmlEditor/hur/dict/dictionary';
 import {getChanges} from './xmlEditor/hur/changes/changesAccumulator';
 
 export const router = createBrowserRouter([
@@ -95,7 +95,8 @@ export const router = createBrowserRouter([
 
         {path: xmlComparatorUrl, element: <XmlComparatorContainer/>},
         
-        {path: dictionaryViewerUrl, element: <DictionaryViewerContainer initialDictionary={dictionary}/>},
+        {path: dictionaryViewerUrl,
+         element: <DictionaryViewerContainer getInitialDictionary={getGlobalDictionary}/>},
         
         {path: macroeditorUrl, element: <MacroeditorContainer changes={getChanges()}/>},
 
