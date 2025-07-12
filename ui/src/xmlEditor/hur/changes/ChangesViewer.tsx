@@ -1,10 +1,8 @@
 import { JSX } from 'react';
 import { useTranslation } from 'react-i18next';
 import { readMorphAnalysisValue } from '../morphologicalAnalysis/auxiliary';
-import { MorphologicalAnalysisViewer } from '../morphologicalAnalysis/MorphologicalAnalysisViewer';
-import { SelectableLetteredAnalysisOption } from '../../../model/analysisOptions';
-
-const rightArrow = <>&#10159;</>;
+import { MorphologicalAnalysisComparator }
+  from '../morphologicalAnalysis/MorphologicalAnalysisComparator';
 
 interface IProps {
   changes: Map<string, string>;
@@ -25,34 +23,7 @@ export function ChangesViewer({ changes }: IProps): JSX.Element {
           const target = readMorphAnalysisValue(targetString);
           if (source !== undefined && target !== undefined) {
             return (
-              <div key={index} className="display: table-row">
-                <div className="display: table-cell">
-                  <MorphologicalAnalysisViewer morphologicalAnalysis={source} />
-                </div>
-                <div className="display: table-cell">
-                  {source.referenceWord !== target.referenceWord && rightArrow} <br/>
-                  { source._type === 'SingleMorphAnalysisWithoutEnclitics' ?
-                    (<>
-                      {(target._type === 'SingleMorphAnalysisWithoutEnclitics' &&
-                      source.analysis !== target.analysis) && rightArrow} <br/>
-                    </>) :
-                    (source._type === 'MultiMorphAnalysisWithoutEnclitics' &&
-                    target._type === 'MultiMorphAnalysisWithoutEnclitics') &&
-                    source.analysisOptions.map(
-                      (option: SelectableLetteredAnalysisOption, index: number) =>
-                      (<>
-                        {option.analysis !== target.analysisOptions[index].analysis && rightArrow}
-                        <br/>
-                      </>)
-                    )
-                  }
-                  {source.paradigmClass !== target.paradigmClass && rightArrow} <br/>
-                </div>
-                <div className="display: table-cell">
-                  <MorphologicalAnalysisViewer morphologicalAnalysis={target} />
-                </div>
-                <br/>
-              </div>
+              <MorphologicalAnalysisComparator source={source} target={target} key={index} />
             );
           } else {
             return (
