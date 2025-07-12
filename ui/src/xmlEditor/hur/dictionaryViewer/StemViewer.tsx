@@ -5,6 +5,7 @@ import { MorphologicalAnalysis, writeMorphAnalysisValue }
   from '../../../model/morphologicalAnalysis';
 import update from 'immutability-helper';
 import { findBoundary, getTranslationAndMorphTag } from '../splitter';
+import { changeStem, changePos, changeTranslation } from '../translations/modifyTranslations';
 
 export class Stem {
   index: string;
@@ -208,15 +209,22 @@ export function StemViewer({stem, initialEntries, modifyAnalysis, initialUnfolde
               entries: { $set: modifyLocalEntries(entries, modifyStem(value)) } }
           ));
         }}
-        onFormBlur={handleMultiEntryBlurEvent}        
+        onFormBlur={(value: string) => {
+          changeStem(stem.form, value, partOfSpeech, translation);
+          handleMultiEntryBlurEvent();
+        }}        
         onTranslationChange={(value: string) => {
           setState(update(state,
             { translation: { $set: value },
               entries: { $set: modifyLocalEntries(entries, modifyTranslation(value)) } }
           ));
         }}
-        onTranslationBlur={handleMultiEntryBlurEvent}
+        onTranslationBlur={(value: string) => {
+          changeTranslation(stemForm, partOfSpeech, stem.translation, value);
+          handleMultiEntryBlurEvent();
+        }}
         onPartOfSpeechChange={(value: string) => {
+          changePos(stemForm, stem.pos, value, translation);
           setState(update(state,
             { partOfSpeech: { $set: value },
               entries: { $set: modifyLocalAndGlobalEntries(entries, modifyPartOfSpeech(value), modifyAnalysis) } }

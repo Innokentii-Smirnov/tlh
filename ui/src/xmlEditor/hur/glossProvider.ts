@@ -1,9 +1,9 @@
 import {convertDictionary, updateGlossesLexicon} from './utility';
 
 //Dieses Modul kann Bedeutungen von Stämmen speichern und nachschlagen.
-const glosses: Map<string, Set<string>> = new Map();
+export const glosses: Map<string, Set<string>> = new Map();
 
-function getKey(word: string, pos: string): string
+export function getKey(word: string, pos: string): string
 {
 	return word + ',' + pos;
 }
