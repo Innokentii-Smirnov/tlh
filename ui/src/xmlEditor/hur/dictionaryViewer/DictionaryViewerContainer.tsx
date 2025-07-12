@@ -53,7 +53,9 @@ export function DictionaryViewerContainer({initialDictionary}: IProps): JSX.Elem
     const accumulatedModification = (morphologicalAnalysis: MorphologicalAnalysis) => {
       const newMorphologicalAnalysis = modification(morphologicalAnalysis);
       const target = writeMorphAnalysisValue(newMorphologicalAnalysis);
-      addChange(analysis, target);
+      if (target !== analysis) {
+        addChange(analysis, target);
+      }
       return newMorphologicalAnalysis;
     };
     return modifyAnalysis(transcriptions, analysis, accumulatedModification, setDictionary);
