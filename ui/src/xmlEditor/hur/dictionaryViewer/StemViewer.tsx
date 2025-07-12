@@ -27,6 +27,7 @@ interface IProps {
   stem: Stem;
   initialEntries: Entry[];
   modifyAnalysis: ModifyAnalysis;
+  initialUnfolded: boolean;
 }
 
 function replaceStem(newStem: string, segmentation: string) {
@@ -179,9 +180,9 @@ type StemViewerState = {
   entries: Entry[];
 }
 
-export function StemViewer({stem, initialEntries, modifyAnalysis}: IProps): JSX.Element {
+export function StemViewer({stem, initialEntries, modifyAnalysis, initialUnfolded}: IProps): JSX.Element {
   
-  const [unfolded, setUnfolded] = useState(false);
+  const [unfolded, setUnfolded] = useState(initialUnfolded);
   const initialState: StemViewerState = {
     stemForm: stem.form,
     translation: stem.translation,

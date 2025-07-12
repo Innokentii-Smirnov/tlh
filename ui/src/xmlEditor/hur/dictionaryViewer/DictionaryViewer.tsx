@@ -1,4 +1,4 @@
-import { JSX } from 'react';
+import { JSX, useState, useEffect } from 'react';
 import { getStem } from '../splitter';
 import { groupBy } from '../utils';
 import { StemViewer, Stem, ModifyAnalysis } from './StemViewer';
@@ -22,6 +22,12 @@ function valueFunc(entry: Entry): Entry {
 }
 
 export function DictionaryViewer({entries, modifyAnalysis}: IProps): JSX.Element {
+
+  const [unfolded, setUnfolded] = useState(false);
+  
+  useEffect(() => {
+    setUnfolded(true);
+  });
   
   const grouped = groupBy(entries, keyFunc, valueFunc);
   
@@ -43,7 +49,8 @@ export function DictionaryViewer({entries, modifyAnalysis}: IProps): JSX.Element
               stem={stemObject}
               initialEntries={entries}
               key={key} 
-              modifyAnalysis={modifyAnalysis} />
+              modifyAnalysis={modifyAnalysis}
+              initialUnfolded={unfolded} />
           );
         })}
       </div>
