@@ -1,6 +1,7 @@
 import { JSX, useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { readMorphologicalAnalysis } from '../../../model/morphologicalAnalysis';
+import { MorphologicalAnalysis, readMorphologicalAnalysis, writeMorphAnalysisValue }
+  from '../../../model/morphologicalAnalysis';
 import { DictionaryUploader } from '../dict/files/DictionaryUploader';
 import { DictionaryViewer } from './DictionaryViewer';
 import { Entry } from './Wordform';
@@ -8,6 +9,7 @@ import { groupBy } from '../common/utils';
 import { Dictionary, setGlobalDictionary } from '../dict/dictionary';
 import { modifyAnalysis } from '../dict/analysisModifier';
 import { ModifyAnalysis } from './StemViewer';
+import { addChange } from '../changes/changesAccumulator';
 
 interface Subentry {
   transcription: string;
@@ -47,8 +49,15 @@ export function DictionaryViewerContainer({initialDictionary}: IProps): JSX.Elem
     }
   }
   
-  const boundModifyAnalysis: ModifyAnalysis = (transcriptions, analysis, modification) =>
-    modifyAnalysis(transcriptions, analysis, modification, setDictionary);
+  const boundModifyAnalysis: ModifyAnalysis = (transcriptions, analysis, modification) => {
+    const accumulatedModification = (morphologicalAnalysis: MorphologicalAnalysis) => {
+      const newMorphologicalAnalysis = modification(morphologicalAnalysis);
+      const target = writeMorphAnalysisValue(morphologicalAnalysis);
+      addChange(analysis, target);
+      return newMorphologicalAnalysis;
+    };
+    return modifyAnalysis(transcriptions, analysis, accumulatedModification, setDictionary);
+  };
     
   useEffect(() => {
     setGlobalDictionary(dictionary);
