@@ -21,16 +21,19 @@ export function MorphologicalAnalysisComparator({ source, target }: IProps): JSX
         {source.referenceWord !== target.referenceWord && rightArrow} <br/>
         { source._type === 'SingleMorphAnalysisWithoutEnclitics' ?
           (<>
-            {(target._type === 'SingleMorphAnalysisWithoutEnclitics' &&
-            source.analysis !== target.analysis) && rightArrow} <br/>
+            {target._type === 'SingleMorphAnalysisWithoutEnclitics' &&
+             (source.analysis !== target.analysis ||
+              source.translation !== target.translation) && 
+             rightArrow} <br/>
           </>) :
           (source._type === 'MultiMorphAnalysisWithoutEnclitics' &&
           target._type === 'MultiMorphAnalysisWithoutEnclitics') &&
           source.analysisOptions.map(
             (option: SelectableLetteredAnalysisOption, index: number) =>
             (<>
-              {option.analysis !== target.analysisOptions[index].analysis && rightArrow}
-              <br/>
+              {(option.analysis !== target.analysisOptions[index].analysis ||
+                source.translation !== target.translation) && 
+              rightArrow} <br/>
             </>)
           )
         }
