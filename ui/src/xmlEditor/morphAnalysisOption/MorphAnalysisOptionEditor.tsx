@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { JSX, useState } from 'react';
 import { convertSingleMorphAnalysisToMultiMorphAnalysis } from '../../model/morphologicalAnalysisConverter';
 import update from 'immutability-helper';
-import { updateHurrianAnalysis } from '../hur/analysisUpdater';
+import { updateHurrianAnalysis } from '../hur/translations/analysisUpdater';
 
 interface IProps {
   initialMorphologicalAnalysis: MorphologicalAnalysis;

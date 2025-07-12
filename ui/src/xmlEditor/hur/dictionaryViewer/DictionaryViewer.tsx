@@ -1,6 +1,6 @@
 import { JSX, useState, useEffect } from 'react';
-import { getStem } from '../splitter';
-import { groupBy } from '../utils';
+import { getStem } from '../common/splitter';
+import { groupBy } from '../common/utils';
 import { StemViewer, Stem, ModifyAnalysis } from './StemViewer';
 import { Entry } from './Wordform';
 import { DictionaryDownloader } from '../dict/files/DictionaryDownloader';

@@ -1,9 +1,9 @@
 import { segment } from './segment';
 import { analyze } from './analyze';
-import { MorphologicalAnalysis } from '../../model/morphologicalAnalysis';
-import { SelectableLetteredAnalysisOption } from '../../model/analysisOptions';
-import { getGrammaticalMorphemes } from './splitter';
-import { getPos } from './glossUpdater';
+import { MorphologicalAnalysis } from '../../../model/morphologicalAnalysis';
+import { SelectableLetteredAnalysisOption } from '../../../model/analysisOptions';
+import { getGrammaticalMorphemes } from '../common/splitter';
+import { getPos } from '../translations/glossUpdater';
 
 // Erstellt morphologische Analysen für Wörter, die im Lexicon fehlen.
 // Das unbekannte Wort wird zuerst durch die Funktion "segment" in Morpheme getrennt, möglicherweise auf mehrere verschiedene Weisen.

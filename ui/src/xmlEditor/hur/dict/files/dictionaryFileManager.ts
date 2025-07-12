@@ -1,6 +1,6 @@
-import { getDictionary, upgradeDictionary } from '../../dictionary';
-import { getGlosses, upgradeGlosses } from '../../glossProvider';
-import { getPartsOfSpeech, setPartsOfSpeech } from '../../partsOfSpeech';
+import { getDictionary, upgradeDictionary } from '../dictionary';
+import { getGlosses, upgradeGlosses } from '../../translations/glossProvider';
+import { getPartsOfSpeech, setPartsOfSpeech } from '../../partsOfSpeech/partsOfSpeech';
 import { makeDownload } from '../../../../downloadHelper';
 
 export function downloadDictionary() {

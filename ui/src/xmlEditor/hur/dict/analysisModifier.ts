@@ -1,4 +1,4 @@
-import {Dictionary, SetDictionary} from '../dictionary';
+import {Dictionary, SetDictionary} from './dictionary';
 import {MorphologicalAnalysis, readMorphologicalAnalysis, writeMorphAnalysisValue} from
 '../../../model/morphologicalAnalysis';
 import update, {Spec} from 'immutability-helper';

@@ -1,13 +1,13 @@
 import { XmlElementNode } from 'simple_xml';
-import { getText, getMrps } from './xmlUtilities';
-import { makeBoundTranscription } from './transcribe';
-import { makeStandardAnalyses } from './standardAnalysis';
-import { setGlosses, saveGloss } from './glossUpdater';
+import { getText, getMrps } from '../common/xmlUtilities';
+import { makeBoundTranscription } from '../transduction/transcribe';
+import { makeStandardAnalyses } from '../transduction/standardAnalysis';
+import { setGlosses, saveGloss } from '../translations/glossUpdater';
 import { MorphologicalAnalysis, writeMorphAnalysisValue, readMorphologicalAnalysis }
-  from '../../model/morphologicalAnalysis';
-import { convertDictionary, updateAndValidateDictionary } from './utility';
+  from '../../../model/morphologicalAnalysis';
+import { convertDictionary, updateAndValidateDictionary } from '../common/utility';
 import { isValid, normalize } from './morphologicalAnalysisValidator';
-import segmenter from './segmentation/segmenter';
+import segmenter from '../segmentation/segmenter';
 
 export type Dictionary = Map<string, Set<string>>;
 

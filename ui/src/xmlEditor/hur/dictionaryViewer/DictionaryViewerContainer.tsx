@@ -4,8 +4,8 @@ import { readMorphologicalAnalysis } from '../../../model/morphologicalAnalysis'
 import { DictionaryUploader } from '../dict/files/DictionaryUploader';
 import { DictionaryViewer } from './DictionaryViewer';
 import { Entry } from './Wordform';
-import { groupBy } from '../utils';
-import { Dictionary, setGlobalDictionary } from '../dictionary';
+import { groupBy } from '../common/utils';
+import { Dictionary, setGlobalDictionary } from '../dict/dictionary';
 import { modifyAnalysis } from '../dict/analysisModifier';
 import { ModifyAnalysis } from './StemViewer';
 

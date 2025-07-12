@@ -1,5 +1,5 @@
 import { JSX } from 'react';
-import { getPartsOfSpeech } from '../partsOfSpeech';
+import { getPartsOfSpeech } from './partsOfSpeech';
 
 interface IProps {
   partOfSpeech: string;

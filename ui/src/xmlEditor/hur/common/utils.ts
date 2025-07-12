@@ -1,5 +1,5 @@
-import { SelectableLetteredAnalysisOption } from '../../model/analysisOptions';
-import { MorphologicalAnalysis } from '../../model/morphologicalAnalysis';
+import { SelectableLetteredAnalysisOption } from '../../../model/analysisOptions';
+import { MorphologicalAnalysis } from '../../../model/morphologicalAnalysis';
 
 export function add<TKey, TValue>(map: Map<TKey, Set<TValue>>, key: TKey, value: TValue) {
   let current = map.get(key);

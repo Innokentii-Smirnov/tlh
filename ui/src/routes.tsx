@@ -47,7 +47,7 @@ import {XmlReview} from './manuscript/review/XmlReview';
 import {DocumentApproval} from './manuscript/DocumentApproval';
 import {ForgotPasswordForm} from './forms/ForgotPasswordForm';
 import {ResetPasswordForm} from './forms/ResetPasswordForm';
-import {dictionary} from './xmlEditor/hur/dictionary';
+import {dictionary} from './xmlEditor/hur/dict/dictionary';
 
 export const router = createBrowserRouter([
     {

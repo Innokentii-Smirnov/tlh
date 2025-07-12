@@ -1,4 +1,4 @@
-import { dictionary } from '../dictionary';
+import { dictionary } from '../dict/dictionary';
 
 export function countValues(): number {
   let count = 0;

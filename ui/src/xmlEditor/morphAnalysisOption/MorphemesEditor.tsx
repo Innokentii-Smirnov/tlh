@@ -1,7 +1,7 @@
 import { Spec } from 'immutability-helper';
 import { MorphologicalAnalysis } from '../../model/morphologicalAnalysis';
-import { updateHurrianAnalysis } from '../hur/analysisUpdater';
-import { formIsFragment } from '../hur/utils';
+import { updateHurrianAnalysis } from '../hur/translations/analysisUpdater';
+import { formIsFragment } from '../hur/common/utils';
 
 interface IProps {
   segmentation: string,

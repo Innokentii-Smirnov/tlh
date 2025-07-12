@@ -4,7 +4,7 @@ import { Entry, WordformElement } from './Wordform';
 import { MorphologicalAnalysis, writeMorphAnalysisValue }
   from '../../../model/morphologicalAnalysis';
 import update from 'immutability-helper';
-import { findBoundary, getTranslationAndMorphTag } from '../splitter';
+import { findBoundary, getTranslationAndMorphTag } from '../common/splitter';
 import { changeStem, changePos, changeTranslation } from '../translations/modifyTranslations';
 
 export class Stem {

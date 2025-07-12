@@ -1,6 +1,6 @@
-import { isValid, normalize, isValidForm } from './morphologicalAnalysisValidator';
-import segmenter from './segmentation/segmenter';
-import { readMorphologicalAnalysis } from '../../model/morphologicalAnalysis';
+import { isValid, normalize, isValidForm } from '../dict/morphologicalAnalysisValidator';
+import segmenter from '../segmentation/segmenter';
+import { readMorphologicalAnalysis } from '../../../model/morphologicalAnalysis';
 
 export function convertDictionary(dictionary: Map<string, Set<string>>): { [key: string]: string[] } {
   const object: { [key: string]: string[] } = {};

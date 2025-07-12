@@ -1,5 +1,5 @@
-import { getStemAndGrammaticalMorphemesWithBoundary } from '../splitter';
-import { add, removeMacron, groupBy } from '../utils';
+import { getStemAndGrammaticalMorphemesWithBoundary } from '../common/splitter';
+import { add, removeMacron, groupBy } from '../common/utils';
 import SuffixTrie from './suffixTrie';
 
 class Stem {

@@ -1,5 +1,5 @@
-import { formIsFragment } from '../hur/utils';
-import { getPos } from './partsOfSpeech';
+import { formIsFragment } from '../common/utils';
+import { getPos } from '../partsOfSpeech/partsOfSpeech';
 
 const sep = /[-=]/;
 

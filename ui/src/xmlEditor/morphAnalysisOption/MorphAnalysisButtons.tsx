@@ -7,10 +7,10 @@ import {MultiMorphAnalysisOptionButtons} from './MultiMorphAnalysisOptionButtons
 import classNames from 'classnames';
 import {analysisIsInNumerus, numeri, NumerusOption, stringifyNumerus} from './numerusOption';
 import update from 'immutability-helper';
-import { basicSaveGloss } from '../hur/glossUpdater';
-import { basicUpdateHurrianDictionary } from '../hur/dictionary';
-import { deleteAnalysisFromHurrianDictionary } from '../hur/dictionary';
-import { getPartsOfSpeech, getPos } from '../hur/partsOfSpeech';
+import { basicSaveGloss } from '../hur/translations/glossUpdater';
+import { basicUpdateHurrianDictionary, deleteAnalysisFromHurrianDictionary }
+  from '../hur/dict/dictionary';
+import { getPartsOfSpeech, getPos } from '../hur/partsOfSpeech/partsOfSpeech';
 
 interface IProps extends CanToggleAnalysisSelection {
   morphologicalAnalysis: MorphologicalAnalysis;

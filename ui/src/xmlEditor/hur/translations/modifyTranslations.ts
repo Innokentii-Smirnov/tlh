@@ -1,4 +1,4 @@
-import { getKey, glosses } from '../glossProvider';
+import { getKey, glosses } from './glossProvider';
 
 export function changeStem(oldStem: string, newStem: string, pos: string, translation: string): void {
   const oldKey = getKey(oldStem, pos);

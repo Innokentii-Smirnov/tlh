@@ -11,7 +11,7 @@ import {WordStringChildEditor} from './WordStringChildEditor';
 import {getPriorSibling, getPriorSiblingPath} from '../../nodeIterators';
 import {AOption} from '../../myOption';
 import {fetchCuneiform} from './LineBreakEditor';
-import {annotateHurrianWord} from '../hur/dictionary';
+import {annotateHurrianWord} from '../hur/dict/dictionary';
 
 type States = 'DefaultState' | 'AddMorphology' | 'EditEditingQuestion' | 'EditFootNoteState' | 'EditContent';
 

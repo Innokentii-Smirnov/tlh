@@ -1,6 +1,6 @@
-import { MorphologicalAnalysis } from '../../model/morphologicalAnalysis';
+import { MorphologicalAnalysis } from '../../../model/morphologicalAnalysis';
 import { Spec } from 'immutability-helper';
-import { getStem } from './splitter';
+import { getStem } from '../common/splitter';
 import { getPos } from './glossUpdater';
 import { retrieveGloss } from './glossProvider';
 

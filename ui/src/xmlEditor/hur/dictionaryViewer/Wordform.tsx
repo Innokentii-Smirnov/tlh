@@ -1,6 +1,6 @@
 import { JSX } from 'react';
 import { MorphologicalAnalysis } from '../../../model/morphologicalAnalysis';
-import { getMorphTags } from '../utils';
+import { getMorphTags } from '../common/utils';
 
 export interface Entry {
   transcriptions: string[];

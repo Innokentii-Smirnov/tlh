@@ -1,10 +1,10 @@
 import BasicSegmenter, {PartialAnalysis} from './basicSegmenter';
-import { getPos } from '../partsOfSpeech';
+import { getPos } from '../partsOfSpeech/partsOfSpeech';
 import { MorphologicalAnalysis, SingleMorphologicalAnalysisWithoutEnclitics,
   MultiMorphologicalAnalysisWithoutEnclitics
 } from '../../../model/morphologicalAnalysis';
-import { makeAnalysisOptions, getMorphTags } from '../utils';
-import { getStemAndGrammaticalMorphemesWithBoundary } from '../splitter';
+import { makeAnalysisOptions, getMorphTags } from '../common/utils';
+import { getStemAndGrammaticalMorphemesWithBoundary } from '../common/splitter';
 
 export class Analysis extends PartialAnalysis {
   pos: string;

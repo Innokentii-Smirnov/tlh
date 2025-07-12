@@ -1,10 +1,10 @@
 import {MorphologicalAnalysis, readMorphologicalAnalysis,
 		readMorphologiesFromNode, writeMorphAnalysisValue}
-		from '../../model/morphologicalAnalysis';
+		from '../../../model/morphologicalAnalysis';
 import {XmlElementNode} from 'simple_xml';
 import {storeGloss, retrieveGloss} from './glossProvider';
-import {getStem} from './splitter';
-import { isValidForm } from './morphologicalAnalysisValidator';
+import {getStem} from '../common/splitter';
+import { isValidForm } from '../dict/morphologicalAnalysisValidator';
 
 export function getPos(template: string): string
 {
