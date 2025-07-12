@@ -1,4 +1,4 @@
-import { getChanges } from './changesAccumulator';
+import { getChanges, setChanges } from './changesAccumulator';
 import { makeDownload } from '../../../downloadHelper';
 
 export function downloadChanges(): void {
@@ -9,4 +9,15 @@ export function downloadChanges(): void {
   }
   const tsvText = lines.join('');
   makeDownload(tsvText, 'Changes.tsv');
+}
+
+export async function readChanges(file: File) {
+  const fileText = await file.text();
+  const changes = new Map<string, string>();
+  const lines = fileText.split('\n').map(line => line.trim()).filter(line => line !== '');
+  for (const line of lines) {
+    const [source, target] = line.split('\t');
+    changes.set(source, target);
+  }
+  setChanges(changes);
 }

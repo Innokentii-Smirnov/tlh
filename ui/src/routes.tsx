@@ -21,7 +21,8 @@ import {
   userManagementUrl,
   xmlComparatorUrl,
   xmlConversionUrl,
-  dictionaryViewerUrl
+  dictionaryViewerUrl,
+  macroeditorUrl
 } from './urls';
 import {RegisterForm} from './forms/RegisterForm';
 import {Home} from './Home';
@@ -35,6 +36,7 @@ import {tlhXmlEditorConfig} from './xmlEditor/tlhXmlEditorConfig';
 import {Preferences} from './Preferences';
 import {XmlComparatorContainer} from './xmlComparator/XmlComparatorContainer';
 import {DictionaryViewerContainer} from './xmlEditor/hur/dictionaryViewer/DictionaryViewerContainer';
+import {MacroeditorContainer} from './xmlEditor/hur/macroeditor/MacroeditorContainer';
 import {Rights, XmlReviewType} from './graphql';
 import {ManuscriptData} from './manuscript/ManuscriptData';
 import {UploadPicturesForm} from './manuscript/UploadPicturesForm';
@@ -48,6 +50,7 @@ import {DocumentApproval} from './manuscript/DocumentApproval';
 import {ForgotPasswordForm} from './forms/ForgotPasswordForm';
 import {ResetPasswordForm} from './forms/ResetPasswordForm';
 import {dictionary} from './xmlEditor/hur/dict/dictionary';
+import {getChanges} from './xmlEditor/hur/changes/changesAccumulator';
 
 export const router = createBrowserRouter([
     {
@@ -93,6 +96,8 @@ export const router = createBrowserRouter([
         {path: xmlComparatorUrl, element: <XmlComparatorContainer/>},
         
         {path: dictionaryViewerUrl, element: <DictionaryViewerContainer initialDictionary={dictionary}/>},
+        
+        {path: macroeditorUrl, element: <MacroeditorContainer changes={getChanges()}/>},
 
         {path: preferencesUrl, element: <Preferences/>},
 

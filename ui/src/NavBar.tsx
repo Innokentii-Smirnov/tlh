@@ -11,7 +11,8 @@ import {
   registerUrl,
   userManagementUrl,
   xmlComparatorUrl,
-  dictionaryViewerUrl
+  dictionaryViewerUrl,
+  macroeditorUrl
 } from './urls';
 import {useTranslation} from 'react-i18next';
 import {useDispatch, useSelector} from 'react-redux';
@@ -51,7 +52,8 @@ export function NavBar(): JSX.Element {
       <NavLink className={buttonClasses} to={xmlComparatorUrl}>{t('xmlComparator')}</NavLink>
       <NavLink className={buttonClasses} to={documentMergerUrl}>{t('documentMerger')}</NavLink>
       <NavLink className={buttonClasses} to={dictionaryViewerUrl}>{t('dictionaryViewer')}</NavLink>
-
+      <NavLink className={buttonClasses} to={macroeditorUrl}>{t('macroeditor')}</NavLink>
+      
       <div className="flex-grow"/>
 
       <NavLink className={buttonClasses} to={preferencesUrl}>{t('preferences')}</NavLink>

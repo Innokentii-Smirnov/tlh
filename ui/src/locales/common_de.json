@@ -217,5 +217,8 @@
   "currentDocumentState": "Aktueller Zustand",
   "password_repeat": "Passwort wiederholen",
   "dictionaryViewer": "Wörterbuch",
-  "uploadDictionary": "Wörterbuch hochladen"
+  "uploadDictionary": "Wörterbuch hochladen",
+  "macroeditor": "Makroeditor",
+  "changes": "Änderungen",
+  "uploadChanges": "Änderungen hochladen"
 }

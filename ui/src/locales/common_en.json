@@ -217,5 +217,8 @@
   "currentDocumentState": "Current state",
   "password_repeat": "Repeat password",
   "dictionaryViewer": "Dictionary",
-  "uploadDictionary": "Upload dictionary"
+  "uploadDictionary": "Upload dictionary",
+  "macroeditor": "Macroeditor",
+  "changes": "Changes",
+  "uploadChanges": "Upload changes"
 }

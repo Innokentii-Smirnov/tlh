@@ -20,3 +20,9 @@ export function addChange(source: string, target: string): void {
 export function getChanges(): Map<string, string> {
   return changes;
 }
+
+export function setChanges(newChanges: Map<string, string>): void {
+  for (const [source, target] of newChanges) {
+    changes.set(source, target);
+  }
+}
