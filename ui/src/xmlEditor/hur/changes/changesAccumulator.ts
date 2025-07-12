@@ -26,3 +26,11 @@ export function setChanges(newChanges: Map<string, string>): void {
     changes.set(source, target);
   }
 }
+
+export function applyChanges(text: string): string {
+  for (const [source, target] of changes) {
+    text = text.replaceAll(source, target);
+    text = text.replaceAll(source.replaceAll(' @ ', '@'), target.replaceAll(' @ ', '@'));
+  }
+  return text;
+}

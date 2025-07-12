@@ -220,5 +220,7 @@
   "uploadDictionary": "Upload dictionary",
   "macroeditor": "Macroeditor",
   "changes": "Changes",
-  "uploadChanges": "Upload changes"
+  "uploadChanges": "Upload changes",
+  "textEditor": "Text editor",
+  "uploadText": "Upload text"
 }

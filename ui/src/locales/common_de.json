@@ -220,5 +220,7 @@
   "uploadDictionary": "Wörterbuch hochladen",
   "macroeditor": "Makroeditor",
   "changes": "Änderungen",
-  "uploadChanges": "Änderungen hochladen"
+  "uploadChanges": "Änderungen hochladen",
+  "textEditor": "Texteditor",
+  "uploadText": "Text hochladen"
 }
