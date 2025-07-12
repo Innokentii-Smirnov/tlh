@@ -14,11 +14,18 @@ export function FileLoader({accept, onLoad, text}: IProps): JSX.Element {
   const [loading, setIsLoading] = useState(false);
 
   function handleFile(event: ChangeEvent<HTMLInputElement>): void {
-    if (event.target.files && event.target.files.length > 0) {
+    const files = event.target.files;
+    if (files && files.length > 0) {
       setIsLoading(true);
       
-      for (const file of event.target.files) {
-        onLoad(file);
+      for (let i = 0; i < files.length; i++) {
+        const file = files[i];
+        onLoad(file)
+          .then(() => {
+            if (i === files.length - 1) {
+              setIsLoading(false);
+            }
+          });
       }
     }
   }
