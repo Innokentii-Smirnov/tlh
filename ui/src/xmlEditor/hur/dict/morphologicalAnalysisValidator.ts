@@ -41,21 +41,25 @@ function normalizeOption(option: string): string {
   }
   return option;
 }
-function normalizePairs(pairs: string[], unify: boolean, segmentation: string): string[][] {
+function normalizePairs(pairs: string[], unify: boolean, segmentation: string,
+  ensureMatchingNumberOfMorphemes: boolean): string[][] {
   let result: string[][] = pairs.map((option: string) => option.split('→').map(s => s.trim()));
   if (unify) {
-    result = result.filter((pair: string[]) => pair[1] !== '')
-      .filter(pair => haveMatchingNumberOfMorphemes(segmentation, pair[1]));
+    result = result.filter((pair: string[]) => pair[1] !== '');
+    if (ensureMatchingNumberOfMorphemes) {
+      result = result.filter(pair => haveMatchingNumberOfMorphemes(segmentation, pair[1]));
+    }
   }
   return result;
 }
-function normalizeMorphTag(morphTag: string, unify: boolean, segmentation: string): string | null {
+function normalizeMorphTag(morphTag: string, unify: boolean, segmentation: string,
+  ensureMatchingNumberOfMorphemes: boolean): string | null {
   if (morphTag.startsWith('{') && morphTag.endsWith('}')) {
     const options: string[][] = normalizePairs(morphTag
       .substring(1, morphTag.length - 1)
       .replaceAll(' ', '')
       .replaceAll('\n', '')
-      .split('}{'), unify, segmentation);
+      .split('}{'), unify, segmentation, ensureMatchingNumberOfMorphemes);
     if (options.length === 0) {
       return null;
     }
@@ -72,13 +76,15 @@ function normalizeMorphTag(morphTag: string, unify: boolean, segmentation: strin
     return normalizeOption(morphTag);
   }
 }
-export function normalize(analysis: string, unify: boolean): string | null {
+export function normalize(analysis: string, unify: boolean,
+  ensureMatchingNumberOfMorphemes: boolean): string | null {
   const fields: string[] = analysis.split('@').map(field => field.trim());
   const segmentation = fields[0];
   const translation = fields[1];
   const morphTag = fields[2];
   const pos = fields[3];
-  const normalizedMorphTag = normalizeMorphTag(morphTag, unify, segmentation);
+  const normalizedMorphTag = normalizeMorphTag(morphTag, unify, segmentation,
+    ensureMatchingNumberOfMorphemes);
   if (normalizedMorphTag === null) {
     return null;
   }

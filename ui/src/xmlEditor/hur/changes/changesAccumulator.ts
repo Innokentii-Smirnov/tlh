@@ -34,7 +34,7 @@ export function setChanges(newChanges: Map<string, string>): void {
 const pattern = /(?<=mrp\d+=")[^"]+(?=")/g;
 
 function changeAnalysis(analysis: string): string {
-  const normalized = normalize(analysis, true);
+  const normalized = normalize(analysis, true, false);
   if (normalized !== null) {
     const morphologicalAnalysis = readMorphAnalysisValue(normalized);
     if (morphologicalAnalysis !== undefined) {

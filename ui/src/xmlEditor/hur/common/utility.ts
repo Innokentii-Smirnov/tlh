@@ -33,7 +33,7 @@ export function updateAndValidateDictionary(dictionary: Map<string, Set<string>>
       const newSet: Set<string> = new Set();
       for (const value of values) {
         if (isValid(value)) {
-          const normalized = normalize(value, true);
+          const normalized = normalize(value, true, true);
           if (normalized !== null) {
             newSet.add(normalized);
             const ma = readMorphologicalAnalysis(1, normalized, []);
@@ -49,7 +49,7 @@ export function updateAndValidateDictionary(dictionary: Map<string, Set<string>>
     } else {
       for (const value of values) {
         if (isValid(value)) {
-          const normalized = normalize(value, true);
+          const normalized = normalize(value, true, true);
           if (normalized !== null) {
             currSet.add(normalized);
             const ma = readMorphologicalAnalysis(1, normalized, []);

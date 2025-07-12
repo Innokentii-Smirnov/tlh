@@ -97,7 +97,7 @@ export function basicUpdateHurrianDictionary(
   if (!isValid(value)) {
     return;
   }
-  const normalized = normalize(value, false);
+  const normalized = normalize(value, false, false);
   if (normalized !== null) {
     let possibilities: Set<string> | undefined;
     if (dictionary.has(transcription)) {
