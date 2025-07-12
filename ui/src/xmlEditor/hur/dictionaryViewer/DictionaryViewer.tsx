@@ -4,6 +4,7 @@ import { groupBy } from '../utils';
 import { StemViewer, Stem, ModifyAnalysis } from './StemViewer';
 import { Entry } from './Wordform';
 import { DictionaryDownloader } from '../dict/files/DictionaryDownloader';
+import { writeMorphAnalysisValue } from '../../../model/morphologicalAnalysis';
 
 interface IProps {
   entries: Entry[];
@@ -34,11 +35,14 @@ export function DictionaryViewer({entries, modifyAnalysis}: IProps): JSX.Element
           const group = grouped.get(stem);
           const entries: Entry[] = group === undefined ? [] : Array.from(group);
           const stemObject = new Stem((index + 1).toString() + '.@' + stem);
+          const key = entries
+            .map(entry => writeMorphAnalysisValue(entry.morphologicalAnalysis))
+            .join('|');
           return (
             <StemViewer
               stem={stemObject}
               initialEntries={entries}
-              key={stemObject.toString()} 
+              key={key} 
               modifyAnalysis={modifyAnalysis} />
           );
         })}
