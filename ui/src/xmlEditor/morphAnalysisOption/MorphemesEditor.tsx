@@ -77,14 +77,6 @@ function makeAnalysis(morphemes: Morpheme[]): string {
   return morphemes.slice(1).filter(morpheme => morpheme.kind !== 'fragment').map((morpheme, i) => morpheme.getTag(i)).join('');
 }
 
-function kindIsFragment(kind: string): boolean {
-  return kind === 'fragment';
-}
-
-function morphemeIsFragment(morpheme: Morpheme): boolean {
-  return kindIsFragment(morpheme.kind);
-}
-
 function removeSuffix(suffix: string, s: string) {
   while(s.endsWith(suffix)) {
     s = s.substring(0, s.length - suffix.length);
