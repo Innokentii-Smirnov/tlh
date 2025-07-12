@@ -13,7 +13,8 @@ function findTagBoundary(segmentation: string): number {
   let i;
   for (i = 0; i < segmentation.length; i++) {
     const char: string = segmentation[i];
-    if (char == '-' || char == '=' || char == '.') {
+    if (char == '-' || char == '=' || char == '.' && i < segmentation.length - 1 &&
+      segmentation.substring(i + 1).startsWith('ABS')) {
       break;
     }
   }

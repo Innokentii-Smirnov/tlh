@@ -229,7 +229,7 @@ export function StemViewer({stem, initialEntries, modifyAnalysis}: IProps): JSX.
           );
 
           return (
-              <WordformElement entry={entry} key={index}
+              <WordformElement entry={entry} key={morphAnalysisValue}
               handleSegmentationInput={(value: string) =>
                 setState(update(state, { entries:
                   { $set: handleSegmentationInput(entries, index, value) }
