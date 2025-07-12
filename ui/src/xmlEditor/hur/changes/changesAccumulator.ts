@@ -1,3 +1,7 @@
+import { normalize } from '../dict/morphologicalAnalysisValidator';
+import { readMorphAnalysisValue } from '../morphologicalAnalysis/auxiliary';
+import { writeMorphAnalysisValue } from '../../../model/morphologicalAnalysis';
+
 const changes = new Map<string, string>;
 const sources = new Map<string, Set<string>>;
 
@@ -27,10 +31,24 @@ export function setChanges(newChanges: Map<string, string>): void {
   }
 }
 
-export function applyChanges(text: string): string {
-  for (const [source, target] of changes) {
-    text = text.replaceAll(source, target);
-    text = text.replaceAll(source.replaceAll(' @ ', '@'), target.replaceAll(' @ ', '@'));
+const pattern = /(?<=mrp\d+=")[^"]+(?=")/g;
+
+function changeAnalysis(analysis: string): string {
+  const normalized = normalize(analysis, true);
+  if (normalized !== null) {
+    const morphologicalAnalysis = readMorphAnalysisValue(normalized);
+    if (morphologicalAnalysis !== undefined) {
+      const morphAnalysisValue = writeMorphAnalysisValue(morphologicalAnalysis);
+      const result = changes.get(morphAnalysisValue);
+      if (result !== undefined) {
+        return result;
+      }
+    }
   }
+  return analysis;
+}
+
+export function applyChanges(text: string): string {
+  text = text.replaceAll(pattern, changeAnalysis);
   return text;
 }
