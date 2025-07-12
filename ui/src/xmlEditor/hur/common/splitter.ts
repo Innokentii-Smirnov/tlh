@@ -58,6 +58,12 @@ export function getStemAndGrammaticalMorphemesWithBoundary(segmentation: string)
   return [stem, grammaticalMorphemes];
 }
 
+export function basicGetStem(segmentation: string): string {
+  const i: number = findBoundary(segmentation);
+  const stem: string = segmentation.substring(0, i);
+  return stem;
+}
+
 export function getTranslationAndMorphTag(analysis: string): [string, string] {
   const i: number = findTagBoundary(analysis);
   const translation: string = analysis.substring(0, i);
