@@ -68,7 +68,7 @@ export function DictionaryViewerContainer({initialDictionary}: IProps): JSX.Elem
   return (
     <div className="container mx-auto">
       <h1 className="font-bold text-2xl text-center">{t('dictionaryViewer')}</h1>
-      {!loaded ? <DictionaryUploader onUpload={() => setLoaded(true)}/> :
+      {!loaded ? <DictionaryUploader onUpload={() => setLoaded(true)} /> :
       <DictionaryViewer entries={entries} modifyAnalysis={boundModifyAnalysis} />}
     </div>
   );
