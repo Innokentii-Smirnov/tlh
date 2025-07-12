@@ -1,12 +1,13 @@
 import { JSX } from 'react';
 import { getStem } from '../splitter';
 import { groupBy } from '../utils';
-import { StemViewer, Stem } from './StemViewer';
+import { StemViewer, Stem, ModifyAnalysis } from './StemViewer';
 import { Entry } from './Wordform';
 import { DictionaryDownloader } from '../dict/files/DictionaryDownloader';
 
 interface IProps {
   entries: Entry[];
+  modifyAnalysis: ModifyAnalysis;
 }
 
 function keyFunc({morphologicalAnalysis}: Entry): string {
@@ -19,7 +20,7 @@ function valueFunc(entry: Entry): Entry {
   return entry;
 }
 
-export function DictionaryViewer({entries}: IProps): JSX.Element {
+export function DictionaryViewer({entries, modifyAnalysis}: IProps): JSX.Element {
   
   const grouped = groupBy(entries, keyFunc, valueFunc);
   
@@ -32,11 +33,13 @@ export function DictionaryViewer({entries}: IProps): JSX.Element {
         {stems.map((stem: string, index: number) => {
           const group = grouped.get(stem);
           const entries: Entry[] = group === undefined ? [] : Array.from(group);
+          const stemObject = new Stem((index + 1).toString() + '.@' + stem);
           return (
             <StemViewer
-              stem={new Stem((index + 1).toString() + '.@' + stem)}
+              stem={stemObject}
               initialEntries={entries}
-              key={stem} />
+              key={stemObject.toString()} 
+              modifyAnalysis={modifyAnalysis} />
           );
         })}
       </div>

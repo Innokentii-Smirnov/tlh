@@ -1,10 +1,13 @@
-import { JSX, useState } from 'react';
+import { JSX, useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { readMorphologicalAnalysis } from '../../../model/morphologicalAnalysis';
 import { DictionaryUploader } from '../dict/files/DictionaryUploader';
 import { DictionaryViewer } from './DictionaryViewer';
 import { Entry } from './Wordform';
 import { groupBy } from '../utils';
+import { Dictionary, setGlobalDictionary } from '../dictionary';
+import { modifyAnalysis } from '../dict/analysisModifier';
+import { ModifyAnalysis } from './StemViewer';
 
 interface Subentry {
   transcription: string;
@@ -12,13 +15,14 @@ interface Subentry {
 }
 
 interface IProps {
-  dictionary: Map<string, Set<string>>;
+  initialDictionary: Dictionary;
 }
 
-export function DictionaryViewerContainer({dictionary}: IProps): JSX.Element {
+export function DictionaryViewerContainer({initialDictionary}: IProps): JSX.Element {
   
   const {t} = useTranslation('common');
-  const [loaded, setLoaded] = useState(dictionary.size > 0);
+  const [loaded, setLoaded] = useState(initialDictionary.size > 0);
+  const [dictionary, setDictionary] = useState(initialDictionary);
   
   const subentries: Subentry[] = [];
   
@@ -43,11 +47,18 @@ export function DictionaryViewerContainer({dictionary}: IProps): JSX.Element {
     }
   }
   
+  const boundModifyAnalysis: ModifyAnalysis = (transcriptions, analysis, modification) =>
+    modifyAnalysis(transcriptions, analysis, modification, setDictionary);
+    
+  useEffect(() => {
+    setGlobalDictionary(dictionary);
+  });
+  
   return (
     <div className="container mx-auto">
       <h1 className="font-bold text-2xl text-center">{t('dictionaryViewer')}</h1>
       {!loaded ? <DictionaryUploader onUpload={() => setLoaded(true)}/> :
-      <DictionaryViewer entries={entries} />}
+      <DictionaryViewer entries={entries} modifyAnalysis={boundModifyAnalysis} />}
     </div>
   );
 }

@@ -92,7 +92,7 @@ export const router = createBrowserRouter([
 
         {path: xmlComparatorUrl, element: <XmlComparatorContainer/>},
         
-        {path: dictionaryViewerUrl, element: <DictionaryViewerContainer dictionary={dictionary}/>},
+        {path: dictionaryViewerUrl, element: <DictionaryViewerContainer initialDictionary={dictionary}/>},
 
         {path: preferencesUrl, element: <Preferences/>},
 
