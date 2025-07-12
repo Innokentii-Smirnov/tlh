@@ -4,6 +4,7 @@ import { groupBy } from '../common/utils';
 import { StemViewer, Stem, ModifyAnalysis } from './StemViewer';
 import { Entry } from './Wordform';
 import { DictionaryDownloader } from '../dict/files/DictionaryDownloader';
+import { ChangesDownloader } from '../changes/ChangesDownloader';
 import { writeMorphAnalysisValue } from '../../../model/morphologicalAnalysis';
 
 interface IProps {
@@ -55,8 +56,9 @@ export function DictionaryViewer({entries, modifyAnalysis}: IProps): JSX.Element
         })}
       </div>
       <div>
-        <div className="position: fixed">
+        <div className="button-stack">
           <DictionaryDownloader />
+          <ChangesDownloader />
         </div>
       </div>
     </div>

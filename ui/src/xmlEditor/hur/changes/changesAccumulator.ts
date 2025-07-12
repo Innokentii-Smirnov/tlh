@@ -16,3 +16,7 @@ export function addChange(source: string, target: string): void {
     }
   }
 }
+
+export function getChanges(): Map<string, string> {
+  return changes;
+}

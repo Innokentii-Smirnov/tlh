@@ -52,7 +52,7 @@ export function DictionaryViewerContainer({initialDictionary}: IProps): JSX.Elem
   const boundModifyAnalysis: ModifyAnalysis = (transcriptions, analysis, modification) => {
     const accumulatedModification = (morphologicalAnalysis: MorphologicalAnalysis) => {
       const newMorphologicalAnalysis = modification(morphologicalAnalysis);
-      const target = writeMorphAnalysisValue(morphologicalAnalysis);
+      const target = writeMorphAnalysisValue(newMorphologicalAnalysis);
       addChange(analysis, target);
       return newMorphologicalAnalysis;
     };

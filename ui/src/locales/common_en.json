@@ -53,6 +53,7 @@
   "xmlView": "XML view",
   "exportXml": "Export XML file",
   "exportDict": "Export dictionary",
+  "exportChanges": "Export changes",
   "documentApproved": "Document approved",
   "backToHome": "Back to home",
   "submitApproval": "Submit approval",

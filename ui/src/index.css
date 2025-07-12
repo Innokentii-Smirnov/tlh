@@ -218,6 +218,11 @@ code {
   margin-left: 2rem;
 }
 
+.button-stack {
+  position: fixed;
+  display: grid;
+}
+
 /*
 .leftList, rightList {
   display: inline;
