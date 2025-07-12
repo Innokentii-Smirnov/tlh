@@ -56,34 +56,30 @@ function modifyPartOfSpeech(value: string) {
   return setPartOfSpeech;
 }
 
-function handleSegmentationInput(entries: Entry[], index: number, value: string,
-  modifyAnalysis: ModifyAnalysis): Entry[] {
-  const entry = entries[index];
-  const { transcriptions, morphologicalAnalysis } = entry;
-  const analysis = writeMorphAnalysisValue(morphologicalAnalysis);
-  const modification = (ma: MorphologicalAnalysis) => update(ma,
-    { referenceWord: { $set: value } }
-  );
-  modifyAnalysis(transcriptions, analysis, modification);
+function handleSegmentationInput(entries: Entry[], index: number, value: string): Entry[] {
   const newEntries = update(entries,
     { [index]: { morphologicalAnalysis: { referenceWord: { $set: value } } } }
   );
   return newEntries;
 }
 
-function handleAnalysisInput(entries: Entry[], index: number, value: string,
-  optionIndex: number, modifyAnalysis: ModifyAnalysis): Entry[] {
+function handleSegmentationBlur(entries: Entry[], index: number, value: string,
+  modifyAnalysis: ModifyAnalysis, initialAnalysis: string): void {
   const entry = entries[index];
-  const { transcriptions, morphologicalAnalysis } = entry;
-  const analysis = writeMorphAnalysisValue(morphologicalAnalysis);
+  const { transcriptions } = entry;
+  const modification = (ma: MorphologicalAnalysis) => update(ma,
+    { referenceWord: { $set: value } }
+  );
+  modifyAnalysis(transcriptions, initialAnalysis, modification);
+}
+
+function handleAnalysisInput(entries: Entry[], index: number, value: string,
+  optionIndex: number): Entry[] {
+  const entry = entries[index];
+  const { morphologicalAnalysis } = entry;
   const [translation, morphTag] = getTranslationAndMorphTag(value);
   switch (morphologicalAnalysis._type) {
     case 'SingleMorphAnalysisWithoutEnclitics': {
-        const modification = (ma: MorphologicalAnalysis) => update(ma, { 
-          translation: { $set: translation },
-          analysis: { $set: morphTag } 
-        });
-        modifyAnalysis(transcriptions, analysis, modification);
         const newEntries = update(entries, {
           [index]: { 
             morphologicalAnalysis: {
@@ -95,11 +91,6 @@ function handleAnalysisInput(entries: Entry[], index: number, value: string,
         return newEntries;
     }
     case 'MultiMorphAnalysisWithoutEnclitics': {
-        const modification = (ma: MorphologicalAnalysis) => update(ma, { 
-          translation: { $set: translation },
-          analysisOptions: { [optionIndex]: {analysis: { $set: morphTag } } } 
-        });
-        modifyAnalysis(transcriptions, analysis, modification);
         const newEntries = update(entries, {
           [index]: { 
             morphologicalAnalysis: {
@@ -112,6 +103,31 @@ function handleAnalysisInput(entries: Entry[], index: number, value: string,
     }
     default:
       return entries;
+  }
+}
+
+function handleAnalysisBlur(entries: Entry[], index: number, value: string,
+  optionIndex: number, modifyAnalysis: ModifyAnalysis, initialAnalysis: string): void {
+  const entry = entries[index];
+  const { transcriptions, morphologicalAnalysis } = entry;
+  const [translation, morphTag] = getTranslationAndMorphTag(value);
+  switch (morphologicalAnalysis._type) {
+    case 'SingleMorphAnalysisWithoutEnclitics': {
+        const modification = (ma: MorphologicalAnalysis) => update(ma, { 
+          translation: { $set: translation },
+          analysis: { $set: morphTag } 
+        });
+        modifyAnalysis(transcriptions, initialAnalysis, modification);
+        break;
+    }
+    case 'MultiMorphAnalysisWithoutEnclitics': {
+        const modification = (ma: MorphologicalAnalysis) => update(ma, { 
+          translation: { $set: translation },
+          analysisOptions: { [optionIndex]: {analysis: { $set: morphTag } } } 
+        });
+        modifyAnalysis(transcriptions, initialAnalysis, modification);
+        break;
+    }
   }
 }
 
@@ -175,6 +191,8 @@ export function StemViewer({stem, initialEntries, modifyAnalysis}: IProps): JSX.
   const [state, setState] = useState(initialState);
   const { stemForm, translation, partOfSpeech, entries } = state;
   
+  const handleMultiEntryBlurEvent = () => modifyGlobalEntries(initialEntries, entries, modifyAnalysis);
+  
   return (
     <>
       <StemElement
@@ -189,18 +207,14 @@ export function StemViewer({stem, initialEntries, modifyAnalysis}: IProps): JSX.
               entries: { $set: modifyLocalEntries(entries, modifyStem(value)) } }
           ));
         }}
-        onFormBlur={() => {
-          modifyGlobalEntries(initialEntries, entries, modifyAnalysis);
-        }}        
+        onFormBlur={handleMultiEntryBlurEvent}        
         onTranslationChange={(value: string) => {
           setState(update(state,
             { translation: { $set: value },
               entries: { $set: modifyLocalEntries(entries, modifyTranslation(value)) } }
           ));
         }}
-        onTranslationBlur={() => {
-          modifyGlobalEntries(initialEntries, entries, modifyAnalysis);
-        }}
+        onTranslationBlur={handleMultiEntryBlurEvent}
         onPartOfSpeechChange={(value: string) => {
           setState(update(state,
             { partOfSpeech: { $set: value },
@@ -210,18 +224,29 @@ export function StemViewer({stem, initialEntries, modifyAnalysis}: IProps): JSX.
       <br />
       {unfolded && entries.map(
         (entry: Entry, index: number) => {
-          const morphAnalysisValue = writeMorphAnalysisValue(entry.morphologicalAnalysis);
+          const morphAnalysisValue = writeMorphAnalysisValue(
+            initialEntries[index].morphologicalAnalysis
+          );
+
           return (
-              <WordformElement entry={entry} key={morphAnalysisValue}
+              <WordformElement entry={entry} key={index}
               handleSegmentationInput={(value: string) =>
                 setState(update(state, { entries:
-                  { $set: handleSegmentationInput(entries, index, value, modifyAnalysis) }
+                  { $set: handleSegmentationInput(entries, index, value) }
                 }))
+              }
+              handleSegmentationBlur={(value: string) =>
+                handleSegmentationBlur(entries, index, value, modifyAnalysis,
+                  morphAnalysisValue)
               }
               handleAnalysisInput={(value: string, optionIndex: number) =>
                 setState(update(state, { entries:
-                  { $set: handleAnalysisInput(entries, index, value, optionIndex, modifyAnalysis) }
+                  { $set: handleAnalysisInput(entries, index, value, optionIndex) }
                 }))
+              }
+              handleAnalysisBlur={(value: string, optionIndex: number) =>
+                handleAnalysisBlur(entries, index, value, optionIndex, modifyAnalysis,
+                  morphAnalysisValue)
               } />
             );
           }

@@ -9,6 +9,17 @@ export function findBoundary(segmentation: string): number {
   return i;
 }
 
+function findTagBoundary(segmentation: string): number {
+  let i;
+  for (i = 0; i < segmentation.length; i++) {
+    const char: string = segmentation[i];
+    if (char == '-' || char == '=' || char == '.') {
+      break;
+    }
+  }
+  return i;
+}
+
 export function getStem(segmentation: string): string {
   const i: number = findBoundary(segmentation);
   const stem: string = segmentation.substring(0, i);
@@ -47,7 +58,7 @@ export function getStemAndGrammaticalMorphemesWithBoundary(segmentation: string)
 }
 
 export function getTranslationAndMorphTag(analysis: string): [string, string] {
-  const i: number = findBoundary(analysis);
+  const i: number = findTagBoundary(analysis);
   const translation: string = analysis.substring(0, i);
   let tag = analysis.substring(i);
   if (tag.startsWith('-')) {

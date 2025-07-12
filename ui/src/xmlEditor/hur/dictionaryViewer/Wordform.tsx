@@ -10,10 +10,13 @@ export interface Entry {
 interface IProps {
   entry: Entry;
   handleSegmentationInput: (value: string) => void;
+  handleSegmentationBlur: (value: string) => void;
   handleAnalysisInput: (value: string, optionIndex: number) => void;
+  handleAnalysisBlur: (value: string, optionIndex: number) => void;
 }
 
-export function WordformElement({ entry, handleSegmentationInput, handleAnalysisInput }: IProps): JSX.Element {
+export function WordformElement({ entry, handleSegmentationInput,
+  handleSegmentationBlur, handleAnalysisInput, handleAnalysisBlur }: IProps): JSX.Element {
   
   const { transcriptions, morphologicalAnalysis } = entry;
   const segmentation = morphologicalAnalysis.referenceWord;
@@ -23,7 +26,8 @@ export function WordformElement({ entry, handleSegmentationInput, handleAnalysis
   return (
     <pre className="dict-entry">
       <input value={segmentation}
-             onInput={event => handleSegmentationInput(event.currentTarget.value)} />
+             onInput={event => handleSegmentationInput(event.currentTarget.value)}
+             onBlur={event => handleSegmentationBlur(event.target.value)} />
       {(morphTags).map((tag: string, index: number) => {
           const gloss = translation + 
             ((tag.startsWith('=') || tag.startsWith('.') || tag === '') ? '' : '-') +
@@ -31,6 +35,7 @@ export function WordformElement({ entry, handleSegmentationInput, handleAnalysis
           return (
             <input value={gloss}
                    onInput={event => handleAnalysisInput(event.currentTarget.value, index)}
+                   onBlur={event => handleAnalysisBlur(event.target.value, index)}
                    key={index} />
           );
         })
