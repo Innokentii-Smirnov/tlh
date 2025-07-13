@@ -4,9 +4,10 @@ import { readText } from './textFileManager';
 
 interface IProps {
   onUpload: (fileText: string, fileName: string) => void;
+  cleanUp: () => void;
 }
 
-export function TextUploader({onUpload}: IProps) {
+export function TextUploader({onUpload, cleanUp}: IProps) {
   
   const {t} = useTranslation('common');
   
@@ -15,6 +16,7 @@ export function TextUploader({onUpload}: IProps) {
   };
   
   return (
-    <FileLoader accept="text/xml" onLoad={onLoad} text={t('uploadText')}/>
+    <FileLoader accept="text/xml" onLoad={onLoad} text={t('uploadText')}
+                cleanUp={cleanUp} />
   );
 }

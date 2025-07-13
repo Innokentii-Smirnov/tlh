@@ -223,6 +223,11 @@ code {
   display: grid;
 }
 
+.info-box {
+  display: table-cell;
+  padding: 10px;
+}
+
 /*
 .leftList, rightList {
   display: inline;

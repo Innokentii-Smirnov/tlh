@@ -55,24 +55,30 @@ export function updateSources(newSources: { [key: string]: string[] }): void {
   }
 }
 
-const pattern = /(?<=mrp\d+=")[^"]+(?=")/g;
+const pattern = /(?<=mrp\d+=")[^"]+(?=")|(lnr)="([^"]+)"/g;
 
-function changeAnalysis(analysis: string): string {
-  const normalized = normalize(analysis, true, false);
-  if (normalized !== null) {
-    const morphologicalAnalysis = readMorphAnalysisValue(normalized);
-    if (morphologicalAnalysis !== undefined) {
-      const morphAnalysisValue = writeMorphAnalysisValue(morphologicalAnalysis);
-      const result = changes.get(morphAnalysisValue);
-      if (result !== undefined) {
-        return result;
+export function applyChanges(text: string,
+  onChange: (line: string, initialAnalysis: string, result: string) => void): string {
+  let line = 'unk';
+  const changeAnalysis = (analysis: string, attr: string, lnr: string) => {
+    if (attr === 'lnr') {
+      line = lnr;
+      return analysis;
+    }
+    const normalized = normalize(analysis, true, false);
+    if (normalized !== null) {
+      const morphologicalAnalysis = readMorphAnalysisValue(normalized);
+      if (morphologicalAnalysis !== undefined) {
+        const morphAnalysisValue = writeMorphAnalysisValue(morphologicalAnalysis);
+        const result = changes.get(morphAnalysisValue);
+        if (result !== undefined) {
+          onChange(line, analysis, result);
+          return result;
+        }
       }
     }
-  }
-  return analysis;
-}
-
-export function applyChanges(text: string): string {
+    return analysis;
+  };
   text = text.replaceAll(pattern, changeAnalysis);
   return text;
 }

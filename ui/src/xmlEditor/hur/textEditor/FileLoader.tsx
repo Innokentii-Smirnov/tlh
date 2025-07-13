@@ -5,9 +5,10 @@ interface IProps {
   accept?: string;
   onLoad: (f: File) => Promise<void>;
   text?: string;
+  cleanUp: () => void;
 }
 
-export function FileLoader({accept, onLoad, text}: IProps): JSX.Element {
+export function FileLoader({accept, onLoad, text, cleanUp}: IProps): JSX.Element {
 
   const {t} = useTranslation('common');
   const fileInput = useRef<HTMLInputElement | null>(null);
@@ -32,7 +33,14 @@ export function FileLoader({accept, onLoad, text}: IProps): JSX.Element {
 
   return (
     <>
-      <button type="button" className="p-2 rounded border border-slate-500 w-full" onClick={() => fileInput.current && fileInput.current.click()}
+      <button type="button"
+              className="p-2 rounded border border-slate-500 w-full"
+              onClick={() => {
+                cleanUp();
+                if (fileInput.current) {
+                  fileInput.current.click();
+                }
+              }}
               disabled={loading}>
         {text || t('chooseFile')}
       </button>
