@@ -11,10 +11,12 @@ export function downloadChanges(): void {
   makeDownload(tsvText, 'Changes.tsv');
 }
 
+const lb = /\r\n|\r|\n/;
+
 export async function readChanges(file: File) {
   const fileText = await file.text();
   const changes = new Map<string, string>();
-  const lines = fileText.split('\n').map(line => line.trim()).filter(line => line !== '');
+  const lines = fileText.split(lb).filter(line => line !== '');
   for (const line of lines) {
     const [source, target] = line.split('\t');
     changes.set(source, target);
