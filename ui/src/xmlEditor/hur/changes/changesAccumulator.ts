@@ -27,7 +27,7 @@ export function getChanges(): Map<string, string> {
 
 export function setChanges(newChanges: Map<string, string>): void {
   for (const [source, target] of newChanges) {
-    changes.set(source, target);
+    addChange(source, target);
   }
 }
 
