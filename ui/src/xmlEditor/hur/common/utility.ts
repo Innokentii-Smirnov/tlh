@@ -2,6 +2,14 @@ import { isValid, normalize, isValidForm } from '../dict/morphologicalAnalysisVa
 import segmenter from '../segmentation/segmenter';
 import { readMorphologicalAnalysis } from '../../../model/morphologicalAnalysis';
 
+export function convertMapping(dictionary: Map<string, string>): { [key: string]: string } {
+  const object: { [key: string]: string } = {};
+  for (const [key, value] of dictionary) {
+    object[key] = value;
+  }
+  return object;
+}
+
 export function convertDictionary(dictionary: Map<string, Set<string>>): { [key: string]: string[] } {
   const object: { [key: string]: string[] } = {};
   for (const [key, value] of dictionary) {

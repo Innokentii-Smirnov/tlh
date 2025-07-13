@@ -15,6 +15,6 @@ export function ChangesUploader({onUpload}: IProps) {
   };
   
   return (
-    <FileLoader accept="text/tab-separated-values" onLoad={onLoad} text={t('uploadChanges')}/>
+    <FileLoader accept="application/json" onLoad={onLoad} text={t('uploadChanges')}/>
   );
 }

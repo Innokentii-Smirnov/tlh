@@ -25,6 +25,10 @@ export function getGlobalDictionary(): Dictionary {
   return dictionary;
 }
 
+export function containsAnalysis(dictionary: Dictionary, analysis: string): boolean {
+  return Array.from(dictionary.values()).some(analyses => analyses.has(analysis));
+}
+
 export function annotateHurrianWord(node: XmlElementNode): void {
   const transliteration: string = getText(node);
   const transcription: string = makeBoundTranscription(transliteration);

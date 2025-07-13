@@ -6,7 +6,7 @@ import { MorphologicalAnalysis, writeMorphAnalysisValue }
 import update, { Spec } from 'immutability-helper';
 import { findBoundary, getTranslationAndMorphTag } from '../common/splitter';
 import { changeStem, changePos, changeTranslation } from '../translations/modifyTranslations';
-import { Dictionary, SetDictionary } from '../dict/dictionary';
+import { Dictionary, SetDictionary, containsAnalysis } from '../dict/dictionary';
 import { modifyAnalysis } from '../dict/analysisModifier';
 import { addChange } from '../changes/changesAccumulator';
 
@@ -62,7 +62,8 @@ function handleSegmentationBlur(dictionary: Dictionary,
   initialAnalysis: string): Dictionary {
   const entry = entries[index];
   const { transcriptions, morphologicalAnalysis } = entry;
-  addChange(initialAnalysis, writeMorphAnalysisValue(morphologicalAnalysis));
+  const target = writeMorphAnalysisValue(morphologicalAnalysis);
+  addChange(initialAnalysis, target, containsAnalysis(dictionary, target));
   return modifyAnalysis(dictionary, transcriptions, initialAnalysis, morphologicalAnalysis);
 }
 
@@ -104,7 +105,8 @@ function handleAnalysisBlur(dictionary: Dictionary,
   optionIndex: number, initialAnalysis: string): Dictionary {
   const entry = entries[index];
   const { transcriptions, morphologicalAnalysis } = entry;
-  addChange(initialAnalysis, writeMorphAnalysisValue(morphologicalAnalysis));
+  const target = writeMorphAnalysisValue(morphologicalAnalysis);
+  addChange(initialAnalysis, target, containsAnalysis(dictionary, target));
   return modifyAnalysis(dictionary, transcriptions, initialAnalysis, morphologicalAnalysis);
 }
 
@@ -131,7 +133,7 @@ function modifyGlobalEntries(dictionary: Dictionary, initialEntries: Entry[],
     const currentMorphologicalAnalysis = currentEntry.morphologicalAnalysis;
     const initialAnalysis = writeMorphAnalysisValue(initialMorphologicalAnalysis);
     const currentAnalysis = writeMorphAnalysisValue(currentMorphologicalAnalysis);
-    addChange(initialAnalysis, currentAnalysis);
+    addChange(initialAnalysis, currentAnalysis, containsAnalysis(dictionary, currentAnalysis));
     for (const transcription of transcriptions) {
       const entrySpec = specification.get(transcription);
       if (entrySpec === undefined) {
@@ -163,7 +165,7 @@ function modifyGlobalPartOfSpeech(dictionary: Dictionary, initialEntries: Entry[
     );
     const initialAnalysis = writeMorphAnalysisValue(initialMorphologicalAnalysis);
     const currentAnalysis = writeMorphAnalysisValue(currentMorphologicalAnalysis);
-    addChange(initialAnalysis, currentAnalysis);
+    addChange(initialAnalysis, currentAnalysis, containsAnalysis(dictionary, currentAnalysis));
     for (const transcription of transcriptions) {
       const entrySpec = specification.get(transcription);
       if (entrySpec === undefined) {

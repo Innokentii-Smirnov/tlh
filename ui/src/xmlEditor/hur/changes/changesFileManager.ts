@@ -1,25 +1,19 @@
-import { getChanges, setChanges } from './changesAccumulator';
+import { getChanges, getSources, updateChanges, updateSources } from './changesAccumulator';
+import { convertMapping, convertDictionary } from '../common/utility';
 import { makeDownload } from '../../../downloadHelper';
 
 export function downloadChanges(): void {
-  const changes = getChanges();
-  const lines: string[] = [];
-  for (const [source, target] of changes) {
-    lines.push(source + '\t' + target + '\n');
-  }
-  const tsvText = lines.join('');
-  makeDownload(tsvText, 'Changes.tsv');
+  const changes = convertMapping(getChanges());
+  const sources = convertDictionary(getSources());
+  const obj = {changes, sources};
+  const jsonText = JSON.stringify(obj, undefined, '\t');
+  makeDownload(jsonText, 'Changes.json');
 }
 
-const lb = /\r\n|\r|\n/;
-
 export async function readChanges(file: File) {
-  const fileText = await file.text();
-  const changes = new Map<string, string>();
-  const lines = fileText.split(lb).filter(line => line !== '');
-  for (const line of lines) {
-    const [source, target] = line.split('\t');
-    changes.set(source, target);
-  }
-  setChanges(changes);
+  const source = await file.text();
+  const parsed = JSON.parse(source);
+  const {changes, sources} = parsed;
+  updateChanges(changes);
+  updateSources(sources);
 }
