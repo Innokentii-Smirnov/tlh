@@ -1,6 +1,8 @@
 import { convertDictionary, updateDictionary } from '../common/utility';
 import { add, remove } from '../common/utils';
 import { isValid } from '../dict/morphologicalAnalysisValidator';
+import { writeMorphAnalysisValue } from '../../../model/morphologicalAnalysis';
+import { readMorphAnalysisValue } from '../morphologicalAnalysis/auxiliary';
 
 const sep = ',';
 
@@ -18,14 +20,23 @@ export class Attestation {
 
 const concordance = new Map<string, Set<string>>();
 
+function preprocess(analysis: string): string {
+  const ma = readMorphAnalysisValue(analysis);
+  if (ma === undefined) {
+    return analysis;
+  } else {
+    return writeMorphAnalysisValue(ma);
+  }
+}
+
 export function addAttestation(analysis: string, attestation: Attestation) {
   if (isValid(analysis)) {
-    add(concordance, analysis, attestation.toString());
+    add(concordance, preprocess(analysis), attestation.toString());
   }
 }
 
 export function removeAttestation(analysis: string, attestation: Attestation) {
-  remove(concordance, analysis, attestation.toString());
+  remove(concordance, preprocess(analysis), attestation.toString());
 }
 
 export function getAttestations(analysis: string): Attestation[] {

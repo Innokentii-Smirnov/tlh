@@ -12,7 +12,7 @@ import {getPriorSibling, getPriorSiblingPath} from '../../nodeIterators';
 import {AOption} from '../../myOption';
 import {fetchCuneiform} from './LineBreakEditor';
 import {annotateHurrianWord} from '../hur/dict/dictionary';
-import {Attestation, addAttestation} from '../hur/concordance/concordance';
+import {Attestation, addAttestation, removeAttestation} from '../hur/concordance/concordance';
 import {basicGetText} from '../hur/common/xmlUtilities';
 
 type States = 'DefaultState' | 'AddMorphology' | 'EditEditingQuestion' | 'EditFootNoteState' | 'EditContent';
@@ -47,22 +47,31 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
 
     // Check if selected
     const selected = currentMrp0sel.includes(value);
-    if (!selected && (targetState === undefined || targetState === true)) {
-      const attribute = 'mrp' + morphNumber;
-      const analysis = node.attributes[attribute];
-      if (analysis !== undefined) {
-        const textName: string = AOption.of(findFirstXmlElementByTagName(rootNode, 'AO:TxtPubl'))
-          .map((textElement) => basicGetText(textElement))
-          .get() || '';
+    
+    // Add to or remove from the concordance
+    const attribute = 'mrp' + morphNumber;
+    const analysis = node.attributes[attribute];
+    if (analysis !== undefined) {
+      const textName: string = AOption.of(findFirstXmlElementByTagName(rootNode, 'AO:TxtPubl'))
+        .map((textElement) => basicGetText(textElement))
+        .get() || '';
 
-        const lineNumber: string = AOption.of(getPriorSibling(rootNode, path, 'lb'))
-          .map((lineBreakElement) => lineBreakElement.attributes.lnr)
-          .get() || '';
+      const lineNumber: string = AOption.of(getPriorSibling(rootNode, path, 'lb'))
+        .map((lineBreakElement) => lineBreakElement.attributes.lnr)
+        .get() || '';
         
-        const attestation = new Attestation(textName, lineNumber);
-        addAttestation(analysis, attestation);
+      const attestation = new Attestation(textName, lineNumber);
+      if (selected) {
+        if (targetState === undefined || targetState === false) {
+          removeAttestation(analysis, attestation);
+        }
+      } else {
+        if (targetState === undefined || targetState === true) {
+          addAttestation(analysis, attestation);
+        }
       }
     }
+
 
     if (targetState !== undefined && targetState === selected) {
       // Nothing to do...
