@@ -1,5 +1,6 @@
 import { convertDictionary, updateDictionary } from '../common/utility';
 import { add } from '../common/utils';
+import { isValid } from '../dict/morphologicalAnalysisValidator';
 
 const sep = ',';
 
@@ -18,7 +19,9 @@ export class Attestation {
 const concordance = new Map<string, Set<string>>();
 
 export function addAttestation(analysis: string, attestation: Attestation) {
-  add(concordance, analysis, attestation.toString());
+  if (isValid(analysis)) {
+    add(concordance, analysis, attestation.toString());
+  }
 }
 
 export function getAttestations(analysis: string): Attestation[] {
