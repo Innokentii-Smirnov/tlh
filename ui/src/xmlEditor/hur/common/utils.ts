@@ -19,6 +19,9 @@ export function remove<TKey, TValue>(map: Map<TKey, Set<TValue>>, key: TKey, val
   const current = map.get(key);
   if (current !== undefined) {
     current.delete(value);
+    if (current.size === 0) {
+      map.delete(key);
+    }
   }
 }
 
