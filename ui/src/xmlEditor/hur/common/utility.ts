@@ -1,6 +1,7 @@
 import { isValid, normalize, isValidForm } from '../dict/morphologicalAnalysisValidator';
 import segmenter from '../segmentation/segmenter';
 import { readMorphologicalAnalysis } from '../../../model/morphologicalAnalysis';
+import { addMultiple } from './utils';
 
 export function convertMapping<TValue>(dictionary: Map<string, TValue>): { [key: string]: TValue } {
   const object: { [key: string]: TValue } = {};
@@ -16,6 +17,12 @@ export function convertDictionary(dictionary: Map<string, Set<string>>): { [key:
     object[key] = Array.from(value);
   }
   return object;
+}
+
+export function updateDictionary(dictionary: Map<string, Set<string>>, object: { [key: string]: string[] }): void {
+  for (const [key, values] of Object.entries(object)) {
+    addMultiple(dictionary, key, values);
+  }
 }
 
 export function updateGlossesLexicon(dictionary: Map<string, Set<string>>, object: { [key: string]: string[] }): void {

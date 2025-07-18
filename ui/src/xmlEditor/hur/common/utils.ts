@@ -10,6 +10,17 @@ export function add<TKey, TValue>(map: Map<TKey, Set<TValue>>, key: TKey, value:
   current.add(value);
 }
 
+export function addMultiple<TKey, TValue>(map: Map<TKey, Set<TValue>>, key: TKey, values: TValue[]) {
+  let current = map.get(key);
+  if (current === undefined) {
+    current = new Set<TValue>;
+    map.set(key, current);
+  }
+  for (const value of values) {
+    current.add(value);
+  }
+}
+
 export function removeMacron(s: string) {
   return s
     .replaceAll('ā', 'a')
