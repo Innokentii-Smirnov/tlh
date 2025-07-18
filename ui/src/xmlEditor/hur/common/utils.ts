@@ -15,6 +15,13 @@ export function add<TKey, TValue>(map: Map<TKey, Set<TValue>>, key: TKey, value:
   current.add(value);
 }
 
+export function remove<TKey, TValue>(map: Map<TKey, Set<TValue>>, key: TKey, value: TValue) {
+  const current = map.get(key);
+  if (current !== undefined) {
+    current.delete(value);
+  }
+}
+
 export function addMultiple<TKey, TValue>(map: Map<TKey, Set<TValue>>, key: TKey, values: TValue[]) {
   const current = getValueSet(map, key);
   for (const value of values) {

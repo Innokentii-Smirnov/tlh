@@ -1,5 +1,5 @@
 import { convertDictionary, updateDictionary } from '../common/utility';
-import { add } from '../common/utils';
+import { add, remove } from '../common/utils';
 import { isValid } from '../dict/morphologicalAnalysisValidator';
 
 const sep = ',';
@@ -22,6 +22,10 @@ export function addAttestation(analysis: string, attestation: Attestation) {
   if (isValid(analysis)) {
     add(concordance, analysis, attestation.toString());
   }
+}
+
+export function removeAttestation(analysis: string, attestation: Attestation) {
+  remove(concordance, analysis, attestation.toString());
 }
 
 export function getAttestations(analysis: string): Attestation[] {
