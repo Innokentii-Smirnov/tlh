@@ -1,21 +1,22 @@
 import { SelectableLetteredAnalysisOption } from '../../../model/analysisOptions';
 import { MorphologicalAnalysis } from '../../../model/morphologicalAnalysis';
 
-export function add<TKey, TValue>(map: Map<TKey, Set<TValue>>, key: TKey, value: TValue) {
+function getValueSet<TKey, TValue>(map: Map<TKey, Set<TValue>>, key: TKey): Set<TValue> {
   let current = map.get(key);
   if (current === undefined) {
     current = new Set<TValue>;
     map.set(key, current);
   }
+  return current;
+}
+
+export function add<TKey, TValue>(map: Map<TKey, Set<TValue>>, key: TKey, value: TValue) {
+  const current = getValueSet(map, key);
   current.add(value);
 }
 
 export function addMultiple<TKey, TValue>(map: Map<TKey, Set<TValue>>, key: TKey, values: TValue[]) {
-  let current = map.get(key);
-  if (current === undefined) {
-    current = new Set<TValue>;
-    map.set(key, current);
-  }
+  const current = getValueSet(map, key);
   for (const value of values) {
     current.add(value);
   }
