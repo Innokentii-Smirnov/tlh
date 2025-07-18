@@ -61,13 +61,24 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
         .get() || '';
         
       const attestation = new Attestation(textName, lineNumber);
-      if (selected) {
-        if (targetState === undefined || targetState === false) {
-          removeAttestation(analysis, attestation);
-        }
+      if (!globalUpdateButtonRef) {
+        throw new Error('No global update button passed.');
+      }
+      if (!globalUpdateButtonRef.current) {
+        console.log('The global update button is null.');
       } else {
-        if (targetState === undefined || targetState === true) {
-          addAttestation(analysis, attestation);
+        let listener;
+        if (selected) {
+          if (targetState === undefined || targetState === false) {
+            listener = () => removeAttestation(analysis, attestation);
+          }
+        } else {
+          if (targetState === undefined || targetState === true) {
+            listener = () => addAttestation(analysis, attestation);
+          }
+        }
+        if (listener !== undefined) {
+          globalUpdateButtonRef.current.addEventListener('click', listener);
         }
       }
     }
