@@ -12,6 +12,8 @@ import {getPriorSibling, getPriorSiblingPath} from '../../nodeIterators';
 import {AOption} from '../../myOption';
 import {fetchCuneiform} from './LineBreakEditor';
 import {annotateHurrianWord} from '../hur/dict/dictionary';
+import {Attestation, addAttestation} from '../hur/concordance/concordance';
+import {basicGetText} from '../hur/common/xmlUtilities';
 
 type States = 'DefaultState' | 'AddMorphology' | 'EditEditingQuestion' | 'EditFootNoteState' | 'EditContent';
 
@@ -45,6 +47,22 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
 
     // Check if selected
     const selected = currentMrp0sel.includes(value);
+    if (!selected && (targetState === undefined || targetState === true)) {
+      const attribute = 'mrp' + morphNumber;
+      const analysis = node.attributes[attribute];
+      if (analysis !== undefined) {
+        const textName: string = AOption.of(findFirstXmlElementByTagName(rootNode, 'AO:TxtPubl'))
+          .map((textElement) => basicGetText(textElement))
+          .get() || '';
+
+        const lineNumber: string = AOption.of(getPriorSibling(rootNode, path, 'lb'))
+          .map((lineBreakElement) => lineBreakElement.attributes.lnr)
+          .get() || '';
+        
+        const attestation = new Attestation(textName, lineNumber);
+        addAttestation(analysis, attestation);
+      }
+    }
 
     if (targetState !== undefined && targetState === selected) {
       // Nothing to do...
