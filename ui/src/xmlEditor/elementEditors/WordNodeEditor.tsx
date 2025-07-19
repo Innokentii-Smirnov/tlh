@@ -14,7 +14,7 @@ import {fetchCuneiform} from './LineBreakEditor';
 import {annotateHurrianWord} from '../hur/dict/dictionary';
 import {Attestation, addAttestation, removeAttestation} from '../hur/concordance/concordance';
 import {basicGetText} from '../hur/common/xmlUtilities';
-import {addLineBySingleNodePath} from '../hur/corpus/corpus';
+import {addOrUpdateLineBySingleNodePath} from '../hur/corpus/corpus';
 
 type States = 'DefaultState' | 'AddMorphology' | 'EditEditingQuestion' | 'EditFootNoteState' | 'EditContent';
 
@@ -98,7 +98,7 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
   }
   
   const corpusModifier = () => {
-    addLineBySingleNodePath(attestation, rootNode, path);
+    addOrUpdateLineBySingleNodePath(attestation, rootNode, path);
   };
   useEffect(corpusModifier); 
 

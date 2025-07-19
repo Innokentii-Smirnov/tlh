@@ -1,19 +1,39 @@
 import { updateMapping, convertMapping } from '../common/utility';
 import { Attestation } from '../concordance/concordance';
-import { XmlElementNode } from 'simple_xml';
+import { XmlElementNode, getElementByPath } from 'simple_xml';
 import { Line, makeLine } from './lineConstructor';
-import { findLine } from './lineFinder';
+import { makeWord } from './wordConstructor';
+import { findLine, findLineStart, getParent } from './lineFinder';
 
 const corpus = new Map<string, Line>();
 
-export function addLine(address: Attestation, nodes: XmlElementNode[]) {
+function addLine(address: string, nodes: XmlElementNode[]): void {
   const line = makeLine(nodes);
-  corpus.set(address.toString(), line);
+  corpus.set(address, line);
 }
 
-export function addLineBySingleNodePath(address: Attestation, rootNode: XmlElementNode, path: number[]) {
-  const line = findLine(rootNode, path);
-  addLine(address, line);
+function updateLine(line: Line, position: number, node: XmlElementNode): void {
+  const word = makeWord(node);
+  if (word !== undefined) {
+    line[position] = word;
+  }
+}
+
+export function addOrUpdateLineBySingleNodePath(address: Attestation,
+                                                rootNode: XmlElementNode, path: number[]) {
+  const key = address.toString();
+  const storedLine = corpus.get(key);
+  if (storedLine !== undefined) {
+    const current = path[path.length - 1];
+    const parent = getParent(rootNode, path);
+    const start = findLineStart(current, parent);
+    const position = current - (start + 1);
+    const node = getElementByPath(rootNode, path);
+    updateLine(storedLine, position, node);
+  } else {
+    const nodes = findLine(rootNode, path);
+    addLine(key, nodes);
+  }
 }
 
 export function updateCorpus(object: { [key: string]: Line }) {
