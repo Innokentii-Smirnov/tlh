@@ -32,6 +32,14 @@ export function addMultiple<TKey, TValue>(map: Map<TKey, Set<TValue>>, key: TKey
   }
 }
 
+export function replaceKey<TKey, TValue>(map: Map<TKey, TValue>, oldKey: TKey, newKey: TKey): void {
+  const value = map.get(oldKey);
+  if (value !== undefined) {
+    map.delete(oldKey);
+    map.set(newKey, value);
+  }
+}
+
 export function removeMacron(s: string) {
   return s
     .replaceAll('ā', 'a')

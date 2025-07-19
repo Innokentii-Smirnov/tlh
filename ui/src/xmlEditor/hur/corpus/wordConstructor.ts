@@ -1,7 +1,7 @@
 import { XmlElementNode } from 'simple_xml';
 import { readSelectedMorphology, SelectedMorphAnalysis }
   from '../../../model/selectedMorphologicalAnalysis';
-import { readMorphologiesFromNode } from '../../../model/morphologicalAnalysis';
+import { readMorphologiesFromNode, MorphologicalAnalysis } from '../../../model/morphologicalAnalysis';
 import { isSelected, getFirstSelectedMorphTag } from '../morphologicalAnalysis/auxiliary';
 import { makeGloss } from '../common/auxiliary';
 import { getText } from '../common/xmlUtilities';
@@ -12,19 +12,13 @@ export type Word = {
   gloss: string;
 }
 
-export function makeWord(node: XmlElementNode): Word | undefined {
-  const transliteration = getText(node);
-  const selectedMorphologies: SelectedMorphAnalysis[] = node.attributes.mrp0sel !== undefined
-    ? readSelectedMorphology(node.attributes.mrp0sel)
-    : [];
-  const morphologies = readMorphologiesFromNode(node, selectedMorphologies);
-  const ma = morphologies.find(isSelected);
+function getSegmentationAndGloss(morphologicalAnalysis: MorphologicalAnalysis | undefined): [string, string] {
   let segmentation: string;
   let gloss: string;
-  if (ma !== undefined) {
-    segmentation = ma.referenceWord;
-    const { translation } = ma;
-    const morphTag = getFirstSelectedMorphTag(ma);
+  if (morphologicalAnalysis !== undefined) {
+    segmentation = morphologicalAnalysis.referenceWord;
+    const { translation } = morphologicalAnalysis;
+    const morphTag = getFirstSelectedMorphTag(morphologicalAnalysis);
     if (morphTag !== undefined) {
       gloss = makeGloss(translation, morphTag);
     } else {
@@ -34,6 +28,30 @@ export function makeWord(node: XmlElementNode): Word | undefined {
     segmentation = '';
     gloss = '';
   }
+  return [segmentation, gloss];
+}
+
+export function updateMorphologicalAnalysis(word: Word,
+                                            oldMa: MorphologicalAnalysis | undefined,
+                                            newMa: MorphologicalAnalysis | undefined): Word {
+  const [oldSegmentation, oldGloss] = getSegmentationAndGloss(oldMa);
+  if (word.segmentation === oldSegmentation && word.gloss === oldGloss) {
+    const { transliteration } = word;
+    const [segmentation, gloss] = getSegmentationAndGloss(newMa);
+    return { transliteration, segmentation, gloss };
+  } else {
+    return word;
+  }
+}
+
+export function makeWord(node: XmlElementNode): Word | undefined {
+  const transliteration = getText(node);
+  const selectedMorphologies: SelectedMorphAnalysis[] = node.attributes.mrp0sel !== undefined
+    ? readSelectedMorphology(node.attributes.mrp0sel)
+    : [];
+  const morphologies = readMorphologiesFromNode(node, selectedMorphologies);
+  const morphologicalAnalysis = morphologies.find(isSelected);
+  const [segmentation, gloss] = getSegmentationAndGloss(morphologicalAnalysis);
   const word = { transliteration, segmentation, gloss };
   return word;
 }

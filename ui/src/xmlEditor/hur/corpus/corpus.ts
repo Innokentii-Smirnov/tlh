@@ -1,9 +1,10 @@
 import { updateMapping, convertMapping } from '../common/utility';
-import { Attestation } from '../concordance/concordance';
+import { Attestation, getAttestations } from '../concordance/concordance';
 import { XmlElementNode, getElementByPath } from 'simple_xml';
 import { Line, makeLine } from './lineConstructor';
-import { makeWord } from './wordConstructor';
+import { makeWord, updateMorphologicalAnalysis } from './wordConstructor';
 import { findLine, findLineStart, getParent } from './lineFinder';
+import { readMorphAnalysisValue } from '../morphologicalAnalysis/auxiliary';
 
 const corpus = new Map<string, Line>();
 
@@ -46,4 +47,18 @@ export function getCorpus(): { [key: string]: Line } {
 
 export function getLine(attestation: Attestation): Line {
   return corpus.get(attestation.toString()) || [];
+}
+
+export function replaceMorphologicalAnalysis(oldAnalysis: string, newAnalysis: string): void {
+  const oldMa = readMorphAnalysisValue(oldAnalysis);
+  if (oldMa !== undefined) {
+    const newMa = readMorphAnalysisValue(newAnalysis);
+    for (const attestation of getAttestations(oldMa)) {
+      const line = getLine(attestation);
+      for (let i = 0; i < line.length; i++) {
+        const word = line[i];
+        line[i] = updateMorphologicalAnalysis(word, oldMa, newMa);
+      }
+    }
+  }
 }
