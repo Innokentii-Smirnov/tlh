@@ -224,8 +224,9 @@ code {
 }
 
 .info-box {
+  padding: 15px;
   display: table-cell;
-  padding: 10px;
+  vertical-align: top;
 }
 
 .corpus-line {
@@ -233,7 +234,9 @@ code {
 }
 
 .corpus-word {
+  padding: 15px;
   display: inline-block;
+  vertical-align: top;
 }
 
 .corpus-word-field {

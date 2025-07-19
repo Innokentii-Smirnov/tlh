@@ -1,7 +1,7 @@
 import { convertDictionary, updateDictionary } from '../common/utility';
 import { add, remove } from '../common/utils';
 import { isValid } from '../dict/morphologicalAnalysisValidator';
-import { writeMorphAnalysisValue } from '../../../model/morphologicalAnalysis';
+import { writeMorphAnalysisValue, MorphologicalAnalysis } from '../../../model/morphologicalAnalysis';
 import { readMorphAnalysisValue } from '../morphologicalAnalysis/auxiliary';
 
 const sep = ',';
@@ -39,7 +39,8 @@ export function removeAttestation(analysis: string, attestation: Attestation) {
   remove(concordance, preprocess(analysis), attestation.toString());
 }
 
-export function getAttestations(analysis: string): Attestation[] {
+export function getAttestations(morphologicalAnalysis: MorphologicalAnalysis): Attestation[] {
+  const analysis = writeMorphAnalysisValue(morphologicalAnalysis);
   const current = concordance.get(analysis);
   if (current === undefined) {
     return [];
