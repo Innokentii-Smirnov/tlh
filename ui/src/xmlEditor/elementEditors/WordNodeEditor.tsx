@@ -15,6 +15,7 @@ import {annotateHurrianWord} from '../hur/dict/dictionary';
 import {Attestation, addAttestation, removeAttestation} from '../hur/concordance/concordance';
 import {basicGetText} from '../hur/common/xmlUtilities';
 import {addOrUpdateLineBySingleNodePath} from '../hur/corpus/corpus';
+import {isSelected} from '../hur/morphologicalAnalysis/auxiliary';
 
 type States = 'DefaultState' | 'AddMorphology' | 'EditEditingQuestion' | 'EditFootNoteState' | 'EditContent';
 
@@ -130,9 +131,30 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
   }
 
   function updateMorphology(number: number, newMa: MorphologicalAnalysis): void {
+    const attribute = 'mrp' + number;
+    const oldValue = node.attributes[attribute];
+    
     const value: string = writeMorphAnalysisValue(newMa);
     updateEditedNode({attributes: {[`mrp${number}`]: {$set: value}}});
     setState('DefaultState');
+    
+    if (isSelected(newMa)) {
+      // Remove the old value from and add the new value to the concordance
+      if (!globalUpdateButtonRef) {
+        throw new Error('No global update button passed.');
+      }
+      if (!globalUpdateButtonRef.current) {
+        console.log('The global update button is null.');
+      } else {
+        const concordanceModifier = () => {
+          if (oldValue !== undefined) {
+            removeAttestation(oldValue, attestation);
+          }
+          addAttestation(value, attestation);
+        };
+        globalUpdateButtonRef.current.addEventListener('click', concordanceModifier);
+      }
+    }
   }
 
   function deleteMorphology(number: number): void {
