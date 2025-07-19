@@ -17,11 +17,12 @@ interface IProps {
   handleAnalysisInput: (value: string, optionIndex: number) => void;
   handleAnalysisBlur: (value: string, optionIndex: number) => void;
   initialShowAttestations: boolean;
+  initialMorphologicalAnalysis: MorphologicalAnalysis;
 }
 
 export function WordformElement({ entry, handleSegmentationInput,
   handleSegmentationBlur, handleAnalysisInput, handleAnalysisBlur,
-  initialShowAttestations }: IProps): JSX.Element {
+  initialShowAttestations, initialMorphologicalAnalysis }: IProps): JSX.Element {
   
   const [showAttestations, setShowAttestations] = useState(initialShowAttestations);
   
@@ -30,7 +31,7 @@ export function WordformElement({ entry, handleSegmentationInput,
   const { translation } = morphologicalAnalysis;
   const morphTags = getMorphTags(morphologicalAnalysis) || [];
   
-  const attestations = getAttestations(morphologicalAnalysis);
+  const attestations = getAttestations(initialMorphologicalAnalysis);
   
   return (
     <div>

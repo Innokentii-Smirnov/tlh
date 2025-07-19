@@ -1,6 +1,6 @@
 import { convertDictionary, updateDictionary } from '../common/utility';
 import { add, remove } from '../common/utils';
-import { isValid } from '../dict/morphologicalAnalysisValidator';
+import { isValid, normalize } from '../dict/morphologicalAnalysisValidator';
 import { writeMorphAnalysisValue, MorphologicalAnalysis } from '../../../model/morphologicalAnalysis';
 import { readMorphAnalysisValue } from '../morphologicalAnalysis/auxiliary';
 
@@ -21,6 +21,7 @@ export class Attestation {
 const concordance = new Map<string, Set<string>>();
 
 function preprocess(analysis: string): string {
+  analysis = normalize(analysis, true, false) || analysis;
   const ma = readMorphAnalysisValue(analysis);
   if (ma === undefined) {
     return analysis;
