@@ -1,6 +1,6 @@
 import {XmlEditableNodeIProps} from '../editorConfig';
 import {useTranslation} from 'react-i18next';
-import {JSX, useState} from 'react';
+import {JSX, useState, useEffect} from 'react';
 import {MorphologicalAnalysis, multiMorphAnalysisWithoutEnclitics, readMorphologiesFromNode, writeMorphAnalysisValue} from '../../model/morphologicalAnalysis';
 import {MorphAnalysisOptionContainer} from '../morphAnalysisOption/MorphAnalysisOptionContainer';
 import {findFirstXmlElementByTagName, isXmlElementNode, lastChildNode, xmlElementNode, XmlElementNode} from 'simple_xml';
@@ -41,6 +41,16 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
     : [];
 
   const morphologies: MorphologicalAnalysis[] = readMorphologiesFromNode(node, selectedMorphologies);
+  
+  const textName: string = AOption.of(findFirstXmlElementByTagName(rootNode, 'AO:TxtPubl'))
+    .map((textElement) => basicGetText(textElement))
+    .get() || '';
+
+  const lineNumber: string = AOption.of(getPriorSibling(rootNode, path, 'lb'))
+    .map((lineBreakElement) => lineBreakElement.attributes.lnr)
+    .get() || '';
+    
+  const attestation = new Attestation(textName, lineNumber);
 
   function toggleMorphology(currentMrp0sel: string, morphNumber: number, letter: string | undefined, encLetter: string | undefined, targetState: boolean | undefined): string {
 
@@ -53,22 +63,13 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
     const attribute = 'mrp' + morphNumber;
     const analysis = node.attributes[attribute];
     if (analysis !== undefined) {
-      const textName: string = AOption.of(findFirstXmlElementByTagName(rootNode, 'AO:TxtPubl'))
-        .map((textElement) => basicGetText(textElement))
-        .get() || '';
-
-      const lineNumber: string = AOption.of(getPriorSibling(rootNode, path, 'lb'))
-        .map((lineBreakElement) => lineBreakElement.attributes.lnr)
-        .get() || '';
-        
-      const attestation = new Attestation(textName, lineNumber);
       if (!globalUpdateButtonRef) {
         throw new Error('No global update button passed.');
       }
       if (!globalUpdateButtonRef.current) {
         console.log('The global update button is null.');
       } else {
-        let concordanceModifier, corpusModifier;
+        let concordanceModifier;
         if (selected) {
           if (targetState === undefined || targetState === false) {
             concordanceModifier = () => removeAttestation(analysis, attestation);
@@ -76,16 +77,10 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
         } else {
           if (targetState === undefined || targetState === true) {
             concordanceModifier = () => addAttestation(analysis, attestation);
-            corpusModifier = () => {
-              addLineBySingleNodePath(attestation, rootNode, path);
-            };
           }
         }
         if (concordanceModifier !== undefined) {
           globalUpdateButtonRef.current.addEventListener('click', concordanceModifier);
-        }
-        if (corpusModifier !== undefined) {
-          globalUpdateButtonRef.current.addEventListener('click', corpusModifier);
         }
       }
     }
@@ -101,6 +96,11 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
         : currentMrp0sel + ' ' + value;
     }
   }
+  
+  const corpusModifier = () => {
+    addLineBySingleNodePath(attestation, rootNode, path);
+  };
+  useEffect(corpusModifier); 
 
   const toggleAnalysisSelection = (morphNumber: number, letter: string | undefined, encLetter: string | undefined, targetState: boolean | undefined): void => updateEditedNode({
     attributes: {mrp0sel: (value) => toggleMorphology(value || '', morphNumber, letter, encLetter, targetState)}
