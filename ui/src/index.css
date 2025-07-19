@@ -243,6 +243,10 @@ code {
   display: table-row;
 }
 
+.uneven-columns {
+  grid-template-columns: auto 15rem;
+}
+
 /*
 .leftList, rightList {
   display: inline;

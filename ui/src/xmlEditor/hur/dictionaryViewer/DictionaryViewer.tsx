@@ -36,7 +36,7 @@ export function DictionaryViewer({entries, setDictionary}: IProps): JSX.Element 
   const stems = Array.from(grouped.keys()).sort();
   
   return (
-    <div className="grid grid-cols-2 gap-2 my-2">
+    <div className="grid grid-cols-2 gap-2 my-2 uneven-columns">
       <div className="mt-2">
         Click on the button &quot;&#8744;&quot; or a stem&apos;s number to see its derivatives and inflected forms. <br /> <br />
         {stems.map((stem: string, index: number) => {
