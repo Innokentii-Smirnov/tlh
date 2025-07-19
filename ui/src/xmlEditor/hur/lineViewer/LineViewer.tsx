@@ -1,0 +1,16 @@
+import { JSX } from 'react';
+import { Line } from '../corpus/lineConstructor';
+import { Word } from '../corpus/wordConstructor';
+import { WordViewer } from './WordViewer';
+
+interface IProps {
+  line: Line;
+}
+
+export function LineViewer({ line }: IProps): JSX.Element {
+  return (
+    <div className="corpus-line">
+      {line.map((word: Word) => <WordViewer word={word} />)}
+    </div>
+  );
+}

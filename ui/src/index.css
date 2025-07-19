@@ -228,6 +228,18 @@ code {
   padding: 10px;
 }
 
+.corpus-line {
+  display: block;
+}
+
+.corpus-word {
+  display: inline-block;
+}
+
+.corpus-word-field {
+  display: table-row;
+}
+
 /*
 .leftList, rightList {
   display: inline;
