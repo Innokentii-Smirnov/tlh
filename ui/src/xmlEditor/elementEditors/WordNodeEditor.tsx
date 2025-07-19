@@ -14,6 +14,7 @@ import {fetchCuneiform} from './LineBreakEditor';
 import {annotateHurrianWord} from '../hur/dict/dictionary';
 import {Attestation, addAttestation, removeAttestation} from '../hur/concordance/concordance';
 import {basicGetText} from '../hur/common/xmlUtilities';
+import {addLineBySingleNodePath} from '../hur/corpus/corpus';
 
 type States = 'DefaultState' | 'AddMorphology' | 'EditEditingQuestion' | 'EditFootNoteState' | 'EditContent';
 
@@ -67,18 +68,24 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
       if (!globalUpdateButtonRef.current) {
         console.log('The global update button is null.');
       } else {
-        let listener;
+        let concordanceModifier, corpusModifier;
         if (selected) {
           if (targetState === undefined || targetState === false) {
-            listener = () => removeAttestation(analysis, attestation);
+            concordanceModifier = () => removeAttestation(analysis, attestation);
           }
         } else {
           if (targetState === undefined || targetState === true) {
-            listener = () => addAttestation(analysis, attestation);
+            concordanceModifier = () => addAttestation(analysis, attestation);
+            corpusModifier = () => {
+              addLineBySingleNodePath(attestation, rootNode, path);
+            };
           }
         }
-        if (listener !== undefined) {
-          globalUpdateButtonRef.current.addEventListener('click', listener);
+        if (concordanceModifier !== undefined) {
+          globalUpdateButtonRef.current.addEventListener('click', concordanceModifier);
+        }
+        if (corpusModifier !== undefined) {
+          globalUpdateButtonRef.current.addEventListener('click', corpusModifier);
         }
       }
     }
