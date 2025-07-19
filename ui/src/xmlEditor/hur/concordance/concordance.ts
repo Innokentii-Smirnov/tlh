@@ -46,7 +46,7 @@ export function getAttestations(morphologicalAnalysis: MorphologicalAnalysis): A
   if (current === undefined) {
     return [];
   } else {
-    return Array.from(current).map((repr: string) => {
+    return Array.from(current).sort().map((repr: string) => {
       const [text, line] = repr.split(sep);
       return new Attestation(text, line);
     });
