@@ -254,6 +254,7 @@ export function StemViewer({stem, initialEntries, setDictionary, initialUnfolded
 
           return (
               <WordformElement entry={entry} key={morphAnalysisValue}
+              initialShowAttestations={false}
               handleSegmentationInput={(value: string) =>
                 setState(update(state, { entries:
                   { $set: handleSegmentationInput(entries, index, value) }

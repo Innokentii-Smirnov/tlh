@@ -216,6 +216,7 @@ code {
 .dict-entry {
   display: grid;
   margin-left: 2rem;
+  width: 25rem;
 }
 
 .button-stack {
