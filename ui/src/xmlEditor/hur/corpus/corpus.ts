@@ -43,3 +43,7 @@ export function updateCorpus(object: { [key: string]: Line }) {
 export function getCorpus(): { [key: string]: Line } {
   return convertMapping(corpus);
 }
+
+export function getLine(attestation: Attestation): Line {
+  return corpus.get(attestation.toString()) || [];
+}
