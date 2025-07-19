@@ -11,6 +11,13 @@ export function convertMapping<TValue>(dictionary: Map<string, TValue>): { [key:
   return object;
 }
 
+export function updateMapping<TValue>(dictionary: Map<string, TValue>,
+                                      object: { [key: string]: TValue }): void {
+  for (const [key, value] of Object.entries(object)) {
+    dictionary.set(key, value);
+  }
+}
+
 export function convertDictionary(dictionary: Map<string, Set<string>>): { [key: string]: string[] } {
   const object: { [key: string]: string[] } = {};
   for (const [key, value] of dictionary) {
