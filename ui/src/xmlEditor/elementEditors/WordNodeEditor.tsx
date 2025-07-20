@@ -33,7 +33,8 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
     .get();
 
   const language: string = node.attributes.lg || lineBreakLanguage || textLanguage || 'Hit';
-  if (language === 'Hur') {
+  const isHurrian: boolean = (language === 'Hur');
+  if (isHurrian) {
     annotateHurrianWord(node);
   }
 
@@ -60,28 +61,30 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
     // Check if selected
     const selected = currentMrp0sel.includes(value);
     
-    // Add to or remove from the concordance
-    const attribute = 'mrp' + morphNumber;
-    const analysis = node.attributes[attribute];
-    if (analysis !== undefined) {
-      if (!globalUpdateButtonRef) {
-        throw new Error('No global update button passed.');
-      }
-      if (!globalUpdateButtonRef.current) {
-        console.log('The global update button is null.');
-      } else {
-        let concordanceModifier;
-        if (selected) {
-          if (targetState === undefined || targetState === false) {
-            concordanceModifier = () => removeAttestation(analysis, attestation);
-          }
-        } else {
-          if (targetState === undefined || targetState === true) {
-            concordanceModifier = () => addAttestation(analysis, attestation);
-          }
+    if (isHurrian) {
+      // Add to or remove from the concordance
+      const attribute = 'mrp' + morphNumber;
+      const analysis = node.attributes[attribute];
+      if (analysis !== undefined) {
+        if (!globalUpdateButtonRef) {
+          throw new Error('No global update button passed.');
         }
-        if (concordanceModifier !== undefined) {
-          globalUpdateButtonRef.current.addEventListener('click', concordanceModifier);
+        if (!globalUpdateButtonRef.current) {
+          console.log('The global update button is null.');
+        } else {
+          let concordanceModifier;
+          if (selected) {
+            if (targetState === undefined || targetState === false) {
+              concordanceModifier = () => removeAttestation(analysis, attestation);
+            }
+          } else {
+            if (targetState === undefined || targetState === true) {
+              concordanceModifier = () => addAttestation(analysis, attestation);
+            }
+          }
+          if (concordanceModifier !== undefined) {
+            globalUpdateButtonRef.current.addEventListener('click', concordanceModifier);
+          }
         }
       }
     }
@@ -99,7 +102,10 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
   }
   
   const corpusModifier = () => {
-    addOrUpdateLineBySingleNodePath(attestation, rootNode, path);
+    const lineLanguage: string = lineBreakLanguage || textLanguage || 'Hit';
+    if (isHurrian || lineLanguage === 'Hur') {
+      addOrUpdateLineBySingleNodePath(attestation, rootNode, path);
+    }
   };
   useEffect(corpusModifier); 
 
