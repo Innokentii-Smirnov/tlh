@@ -144,7 +144,7 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
     updateEditedNode({attributes: {[`mrp${number}`]: {$set: value}}});
     setState('DefaultState');
     
-    if (isSelected(newMa)) {
+    if (isHurrian && isSelected(newMa)) {
       // Remove the old value from and add the new value to the concordance
       if (!globalUpdateButtonRef) {
         throw new Error('No global update button passed.');
