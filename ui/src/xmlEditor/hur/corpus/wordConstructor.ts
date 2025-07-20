@@ -44,14 +44,19 @@ export function updateMorphologicalAnalysis(word: Word,
   }
 }
 
+export function makeWordFromMorphologies(transliteration: string,
+                                         morphologies: MorphologicalAnalysis[]): Word {
+  const morphologicalAnalysis = morphologies.find(isSelected);
+  const [segmentation, gloss] = getSegmentationAndGloss(morphologicalAnalysis);
+  const word = { transliteration, segmentation, gloss };
+  return word;
+}
+
 export function makeWord(node: XmlElementNode): Word | undefined {
   const transliteration = getText(node);
   const selectedMorphologies: SelectedMorphAnalysis[] = node.attributes.mrp0sel !== undefined
     ? readSelectedMorphology(node.attributes.mrp0sel)
     : [];
   const morphologies = readMorphologiesFromNode(node, selectedMorphologies);
-  const morphologicalAnalysis = morphologies.find(isSelected);
-  const [segmentation, gloss] = getSegmentationAndGloss(morphologicalAnalysis);
-  const word = { transliteration, segmentation, gloss };
-  return word;
+  return makeWordFromMorphologies(transliteration, morphologies);
 }
