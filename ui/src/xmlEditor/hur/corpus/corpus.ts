@@ -1,5 +1,5 @@
 import { updateMapping, convertMapping } from '../common/utility';
-import { Attestation, getAttestations } from '../concordance/concordance';
+import { Attestation, getAttestations, updateConcordance } from '../concordance/concordance';
 import { XmlElementNode, getElementByPath } from 'simple_xml';
 import { Line, makeLine } from './lineConstructor';
 import { makeWord, updateMorphologicalAnalysis } from './wordConstructor';
@@ -7,6 +7,14 @@ import { findLine, findLineStart, getParent } from './lineFinder';
 import { readMorphAnalysisValue } from '../morphologicalAnalysis/auxiliary';
 
 const corpus = new Map<string, Line>();
+
+fetch('Concordance.json')
+  .then(response => response.json())
+  .then(json => {
+    const {concordance, corpus} = json;
+    updateConcordance(concordance);
+    updateCorpus(corpus);
+  });
 
 function addLine(address: string, nodes: XmlElementNode[]): void {
   const line = makeLine(nodes);
