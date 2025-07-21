@@ -12,12 +12,25 @@ import { addChange } from '../changes/changesAccumulator';
 import { updateConcordanceKey } from '../concordance/concordance';
 import { replaceMorphologicalAnalysis } from '../corpus/corpus';
 
+const xmlFilesUrl = 'http://127.0.0.2:8067';
+
+function updateXmlFiles(origin: string, target: string) {
+  const formData = new FormData();
+  formData.append('old', origin);
+  formData.append('new', target);
+
+  fetch(xmlFilesUrl, {method: 'POST', body: formData}).catch(() => {
+    // do nothing
+  });
+}
+
 function applySideEffects(origin: string, target: string, targetIsExtant: boolean): void {
   addChange(origin, target, targetIsExtant);
   // The corpus should be updated before the concordance
   // Since the old analysis is used to find the lines to update
   replaceMorphologicalAnalysis(origin, target);
   updateConcordanceKey(origin, target);
+  updateXmlFiles(origin, target);
 }
 
 export class Stem {
