@@ -40,13 +40,41 @@ export function removeAttestation(analysis: string, attestation: Attestation) {
   remove(concordance, preprocess(analysis), attestation.toString());
 }
 
+const pattern = /(?<!\d)\d(?!\d)/g;
+
+function padDigits(a: string): string {
+  return a.replaceAll(pattern, digit => '0' + digit);
+}
+
+function compare(a: string, b: string): number {
+  const newA = padDigits(a);
+  const newB = padDigits(b);
+  if (newA < newB) {
+    return -1;
+  } else if (newA > newB) {
+    return 1;
+  } else {
+    return 0;
+  }
+}
+
+export function quickGetAttestations(morphologicalAnalysis: MorphologicalAnalysis): string[] {
+  const analysis = writeMorphAnalysisValue(morphologicalAnalysis);
+  const current = concordance.get(analysis);
+  if (current === undefined) {
+    return [];
+  } else {
+    return Array.from(current);
+  }
+}
+
 export function getAttestations(morphologicalAnalysis: MorphologicalAnalysis): Attestation[] {
   const analysis = writeMorphAnalysisValue(morphologicalAnalysis);
   const current = concordance.get(analysis);
   if (current === undefined) {
     return [];
   } else {
-    return Array.from(current).sort().map((repr: string) => {
+    return Array.from(current).sort(compare).map((repr: string) => {
       const [text, line] = repr.split(sep);
       return new Attestation(text, line);
     });

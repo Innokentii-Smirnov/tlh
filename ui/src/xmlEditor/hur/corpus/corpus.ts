@@ -1,5 +1,5 @@
 import { updateMapping, convertMapping } from '../common/utility';
-import { Attestation, getAttestations, updateConcordance } from '../concordance/concordance';
+import { Attestation, quickGetAttestations, updateConcordance } from '../concordance/concordance';
 import { XmlElementNode, getElementByPath } from 'simple_xml';
 import { Line, makeLine } from './lineConstructor';
 import { makeWord, updateMorphologicalAnalysis } from './wordConstructor';
@@ -61,11 +61,13 @@ export function replaceMorphologicalAnalysis(oldAnalysis: string, newAnalysis: s
   const oldMa = readMorphAnalysisValue(oldAnalysis);
   if (oldMa !== undefined) {
     const newMa = readMorphAnalysisValue(newAnalysis);
-    for (const attestation of getAttestations(oldMa)) {
-      const line = getLine(attestation);
-      for (let i = 0; i < line.length; i++) {
-        const word = line[i];
-        line[i] = updateMorphologicalAnalysis(word, oldMa, newMa);
+    for (const attestation of quickGetAttestations(oldMa)) {
+      const line = corpus.get(attestation);
+      if (line !== undefined) {
+        for (let i = 0; i < line.length; i++) {
+          const word = line[i];
+          line[i] = updateMorphologicalAnalysis(word, oldMa, newMa);
+        }
       }
     }
   }
