@@ -20,10 +20,10 @@ export function WordViewer({ word }: IProps): JSX.Element {
                        isLeftSide={true} />}
       </div>
       <div className="corpus-word-field">
-        {segmentation}
+        &nbsp;{segmentation}
       </div>
       <div className="corpus-word-field">
-        {gloss}
+        &nbsp;{gloss}
       </div>
     </div>
   );
