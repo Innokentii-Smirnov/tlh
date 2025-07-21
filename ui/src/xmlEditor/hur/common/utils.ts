@@ -32,11 +32,19 @@ export function addMultiple<TKey, TValue>(map: Map<TKey, Set<TValue>>, key: TKey
   }
 }
 
-export function replaceKey<TKey, TValue>(map: Map<TKey, TValue>, oldKey: TKey, newKey: TKey): void {
-  const value = map.get(oldKey);
-  if (value !== undefined) {
+export function replaceKey<TKey, TValue>(map: Map<TKey, Set<TValue>>, oldKey: TKey, newKey: TKey): void {
+  const values = map.get(oldKey);
+  if (values !== undefined) {
     map.delete(oldKey);
-    map.set(newKey, value);
+    const oldValues = map.get(newKey);
+    if (oldValues === undefined) {
+      // If no value is assigned to the new key
+      map.set(newKey, values);
+    } else {
+      for (const value of values) {
+        oldValues.add(value);
+      }
+    }
   }
 }
 
