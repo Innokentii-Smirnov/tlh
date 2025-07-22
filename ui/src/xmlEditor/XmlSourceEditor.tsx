@@ -11,6 +11,6 @@ interface IProps {
 
 export function XmlSourceEditor({style, source, onChange}: IProps): ReactElement {
   return (
-    <ReactCodeMirror style={style} extensions={[xml(), EditorView.lineWrapping]} value={source} onChange={onChange}/>
+    <ReactCodeMirror className="xml-source-editor" style={style} extensions={[xml(), EditorView.lineWrapping]} value={source} onChange={onChange}/>
   );
 }

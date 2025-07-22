@@ -331,7 +331,7 @@ export function XmlDocumentEditor({
 
   return state.editorState._type === 'CompareChangesEditorState'
     ? (
-      <div className="container mx-auto">
+      <div className="container mx-auto font-body-ullikumi">
         <button type="button" onClick={toggleDefaultMode} className="my-4 p-2 rounded bg-blue-500 text-white w-full">{t('close')}</button>
         <XmlComparator leftFile={{name: t('startingDocumentState'), baseContent: writeXml(initialNode as XmlElementNode, true)}}
                        rightFile={{name: t('currentDocumentState'), baseContent: writeXml(state.rootNode as XmlElementNode, true)}}/>
