@@ -761,8 +761,8 @@ export function useIndexLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<Inde
           const options = {...defaultOptions, ...baseOptions}
           return Apollo.useLazyQuery<IndexQuery, IndexQueryVariables>(IndexDocument, options);
         }
-export function useIndexSuspenseQuery(baseOptions?: Apollo.SuspenseQueryHookOptions<IndexQuery, IndexQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
+export function useIndexSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<IndexQuery, IndexQueryVariables>) {
+          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
           return Apollo.useSuspenseQuery<IndexQuery, IndexQueryVariables>(IndexDocument, options);
         }
 export type IndexQueryHookResult = ReturnType<typeof useIndexQuery>;
@@ -824,7 +824,7 @@ export const ManuscriptDocument = gql`
  *   },
  * });
  */
-export function useManuscriptQuery(baseOptions: Apollo.QueryHookOptions<ManuscriptQuery, ManuscriptQueryVariables>) {
+export function useManuscriptQuery(baseOptions: Apollo.QueryHookOptions<ManuscriptQuery, ManuscriptQueryVariables> & ({ variables: ManuscriptQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
         const options = {...defaultOptions, ...baseOptions}
         return Apollo.useQuery<ManuscriptQuery, ManuscriptQueryVariables>(ManuscriptDocument, options);
       }
@@ -832,8 +832,8 @@ export function useManuscriptLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions
           const options = {...defaultOptions, ...baseOptions}
           return Apollo.useLazyQuery<ManuscriptQuery, ManuscriptQueryVariables>(ManuscriptDocument, options);
         }
-export function useManuscriptSuspenseQuery(baseOptions?: Apollo.SuspenseQueryHookOptions<ManuscriptQuery, ManuscriptQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
+export function useManuscriptSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<ManuscriptQuery, ManuscriptQueryVariables>) {
+          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
           return Apollo.useSuspenseQuery<ManuscriptQuery, ManuscriptQueryVariables>(ManuscriptDocument, options);
         }
 export type ManuscriptQueryHookResult = ReturnType<typeof useManuscriptQuery>;
@@ -897,7 +897,7 @@ export const UploadPicturesDocument = gql`
  *   },
  * });
  */
-export function useUploadPicturesQuery(baseOptions: Apollo.QueryHookOptions<UploadPicturesQuery, UploadPicturesQueryVariables>) {
+export function useUploadPicturesQuery(baseOptions: Apollo.QueryHookOptions<UploadPicturesQuery, UploadPicturesQueryVariables> & ({ variables: UploadPicturesQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
         const options = {...defaultOptions, ...baseOptions}
         return Apollo.useQuery<UploadPicturesQuery, UploadPicturesQueryVariables>(UploadPicturesDocument, options);
       }
@@ -905,8 +905,8 @@ export function useUploadPicturesLazyQuery(baseOptions?: Apollo.LazyQueryHookOpt
           const options = {...defaultOptions, ...baseOptions}
           return Apollo.useLazyQuery<UploadPicturesQuery, UploadPicturesQueryVariables>(UploadPicturesDocument, options);
         }
-export function useUploadPicturesSuspenseQuery(baseOptions?: Apollo.SuspenseQueryHookOptions<UploadPicturesQuery, UploadPicturesQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
+export function useUploadPicturesSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<UploadPicturesQuery, UploadPicturesQueryVariables>) {
+          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
           return Apollo.useSuspenseQuery<UploadPicturesQuery, UploadPicturesQueryVariables>(UploadPicturesDocument, options);
         }
 export type UploadPicturesQueryHookResult = ReturnType<typeof useUploadPicturesQuery>;
@@ -972,7 +972,7 @@ export const TransliterationInputDocument = gql`
  *   },
  * });
  */
-export function useTransliterationInputQuery(baseOptions: Apollo.QueryHookOptions<TransliterationInputQuery, TransliterationInputQueryVariables>) {
+export function useTransliterationInputQuery(baseOptions: Apollo.QueryHookOptions<TransliterationInputQuery, TransliterationInputQueryVariables> & ({ variables: TransliterationInputQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
         const options = {...defaultOptions, ...baseOptions}
         return Apollo.useQuery<TransliterationInputQuery, TransliterationInputQueryVariables>(TransliterationInputDocument, options);
       }
@@ -980,8 +980,8 @@ export function useTransliterationInputLazyQuery(baseOptions?: Apollo.LazyQueryH
           const options = {...defaultOptions, ...baseOptions}
           return Apollo.useLazyQuery<TransliterationInputQuery, TransliterationInputQueryVariables>(TransliterationInputDocument, options);
         }
-export function useTransliterationInputSuspenseQuery(baseOptions?: Apollo.SuspenseQueryHookOptions<TransliterationInputQuery, TransliterationInputQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
+export function useTransliterationInputSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<TransliterationInputQuery, TransliterationInputQueryVariables>) {
+          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
           return Apollo.useSuspenseQuery<TransliterationInputQuery, TransliterationInputQueryVariables>(TransliterationInputDocument, options);
         }
 export type TransliterationInputQueryHookResult = ReturnType<typeof useTransliterationInputQuery>;
@@ -1047,7 +1047,7 @@ export const ReviewTransliterationDocument = gql`
  *   },
  * });
  */
-export function useReviewTransliterationQuery(baseOptions: Apollo.QueryHookOptions<ReviewTransliterationQuery, ReviewTransliterationQueryVariables>) {
+export function useReviewTransliterationQuery(baseOptions: Apollo.QueryHookOptions<ReviewTransliterationQuery, ReviewTransliterationQueryVariables> & ({ variables: ReviewTransliterationQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
         const options = {...defaultOptions, ...baseOptions}
         return Apollo.useQuery<ReviewTransliterationQuery, ReviewTransliterationQueryVariables>(ReviewTransliterationDocument, options);
       }
@@ -1055,8 +1055,8 @@ export function useReviewTransliterationLazyQuery(baseOptions?: Apollo.LazyQuery
           const options = {...defaultOptions, ...baseOptions}
           return Apollo.useLazyQuery<ReviewTransliterationQuery, ReviewTransliterationQueryVariables>(ReviewTransliterationDocument, options);
         }
-export function useReviewTransliterationSuspenseQuery(baseOptions?: Apollo.SuspenseQueryHookOptions<ReviewTransliterationQuery, ReviewTransliterationQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
+export function useReviewTransliterationSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<ReviewTransliterationQuery, ReviewTransliterationQueryVariables>) {
+          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
           return Apollo.useSuspenseQuery<ReviewTransliterationQuery, ReviewTransliterationQueryVariables>(ReviewTransliterationDocument, options);
         }
 export type ReviewTransliterationQueryHookResult = ReturnType<typeof useReviewTransliterationQuery>;
@@ -1123,7 +1123,7 @@ export const XmlConversionDocument = gql`
  *   },
  * });
  */
-export function useXmlConversionQuery(baseOptions: Apollo.QueryHookOptions<XmlConversionQuery, XmlConversionQueryVariables>) {
+export function useXmlConversionQuery(baseOptions: Apollo.QueryHookOptions<XmlConversionQuery, XmlConversionQueryVariables> & ({ variables: XmlConversionQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
         const options = {...defaultOptions, ...baseOptions}
         return Apollo.useQuery<XmlConversionQuery, XmlConversionQueryVariables>(XmlConversionDocument, options);
       }
@@ -1131,8 +1131,8 @@ export function useXmlConversionLazyQuery(baseOptions?: Apollo.LazyQueryHookOpti
           const options = {...defaultOptions, ...baseOptions}
           return Apollo.useLazyQuery<XmlConversionQuery, XmlConversionQueryVariables>(XmlConversionDocument, options);
         }
-export function useXmlConversionSuspenseQuery(baseOptions?: Apollo.SuspenseQueryHookOptions<XmlConversionQuery, XmlConversionQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
+export function useXmlConversionSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<XmlConversionQuery, XmlConversionQueryVariables>) {
+          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
           return Apollo.useSuspenseQuery<XmlConversionQuery, XmlConversionQueryVariables>(XmlConversionDocument, options);
         }
 export type XmlConversionQueryHookResult = ReturnType<typeof useXmlConversionQuery>;
@@ -1198,7 +1198,7 @@ export const XmlReviewDocument = gql`
  *   },
  * });
  */
-export function useXmlReviewQuery(baseOptions: Apollo.QueryHookOptions<XmlReviewQuery, XmlReviewQueryVariables>) {
+export function useXmlReviewQuery(baseOptions: Apollo.QueryHookOptions<XmlReviewQuery, XmlReviewQueryVariables> & ({ variables: XmlReviewQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
         const options = {...defaultOptions, ...baseOptions}
         return Apollo.useQuery<XmlReviewQuery, XmlReviewQueryVariables>(XmlReviewDocument, options);
       }
@@ -1206,8 +1206,8 @@ export function useXmlReviewLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<
           const options = {...defaultOptions, ...baseOptions}
           return Apollo.useLazyQuery<XmlReviewQuery, XmlReviewQueryVariables>(XmlReviewDocument, options);
         }
-export function useXmlReviewSuspenseQuery(baseOptions?: Apollo.SuspenseQueryHookOptions<XmlReviewQuery, XmlReviewQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
+export function useXmlReviewSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<XmlReviewQuery, XmlReviewQueryVariables>) {
+          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
           return Apollo.useSuspenseQuery<XmlReviewQuery, XmlReviewQueryVariables>(XmlReviewDocument, options);
         }
 export type XmlReviewQueryHookResult = ReturnType<typeof useXmlReviewQuery>;
@@ -1278,7 +1278,7 @@ export const ApprovalDocument = gql`
  *   },
  * });
  */
-export function useApprovalQuery(baseOptions: Apollo.QueryHookOptions<ApprovalQuery, ApprovalQueryVariables>) {
+export function useApprovalQuery(baseOptions: Apollo.QueryHookOptions<ApprovalQuery, ApprovalQueryVariables> & ({ variables: ApprovalQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
         const options = {...defaultOptions, ...baseOptions}
         return Apollo.useQuery<ApprovalQuery, ApprovalQueryVariables>(ApprovalDocument, options);
       }
@@ -1286,8 +1286,8 @@ export function useApprovalLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<A
           const options = {...defaultOptions, ...baseOptions}
           return Apollo.useLazyQuery<ApprovalQuery, ApprovalQueryVariables>(ApprovalDocument, options);
         }
-export function useApprovalSuspenseQuery(baseOptions?: Apollo.SuspenseQueryHookOptions<ApprovalQuery, ApprovalQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
+export function useApprovalSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<ApprovalQuery, ApprovalQueryVariables>) {
+          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
           return Apollo.useSuspenseQuery<ApprovalQuery, ApprovalQueryVariables>(ApprovalDocument, options);
         }
 export type ApprovalQueryHookResult = ReturnType<typeof useApprovalQuery>;
@@ -1360,8 +1360,8 @@ export function usePipelineOverviewLazyQuery(baseOptions?: Apollo.LazyQueryHookO
           const options = {...defaultOptions, ...baseOptions}
           return Apollo.useLazyQuery<PipelineOverviewQuery, PipelineOverviewQueryVariables>(PipelineOverviewDocument, options);
         }
-export function usePipelineOverviewSuspenseQuery(baseOptions?: Apollo.SuspenseQueryHookOptions<PipelineOverviewQuery, PipelineOverviewQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
+export function usePipelineOverviewSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<PipelineOverviewQuery, PipelineOverviewQueryVariables>) {
+          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
           return Apollo.useSuspenseQuery<PipelineOverviewQuery, PipelineOverviewQueryVariables>(PipelineOverviewDocument, options);
         }
 export type PipelineOverviewQueryHookResult = ReturnType<typeof usePipelineOverviewQuery>;
@@ -1639,7 +1639,7 @@ export const UsersOverviewDocument = gql`
  *   },
  * });
  */
-export function useUsersOverviewQuery(baseOptions: Apollo.QueryHookOptions<UsersOverviewQuery, UsersOverviewQueryVariables>) {
+export function useUsersOverviewQuery(baseOptions: Apollo.QueryHookOptions<UsersOverviewQuery, UsersOverviewQueryVariables> & ({ variables: UsersOverviewQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
         const options = {...defaultOptions, ...baseOptions}
         return Apollo.useQuery<UsersOverviewQuery, UsersOverviewQueryVariables>(UsersOverviewDocument, options);
       }
@@ -1647,8 +1647,8 @@ export function useUsersOverviewLazyQuery(baseOptions?: Apollo.LazyQueryHookOpti
           const options = {...defaultOptions, ...baseOptions}
           return Apollo.useLazyQuery<UsersOverviewQuery, UsersOverviewQueryVariables>(UsersOverviewDocument, options);
         }
-export function useUsersOverviewSuspenseQuery(baseOptions?: Apollo.SuspenseQueryHookOptions<UsersOverviewQuery, UsersOverviewQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
+export function useUsersOverviewSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<UsersOverviewQuery, UsersOverviewQueryVariables>) {
+          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
           return Apollo.useSuspenseQuery<UsersOverviewQuery, UsersOverviewQueryVariables>(UsersOverviewDocument, options);
         }
 export type UsersOverviewQueryHookResult = ReturnType<typeof useUsersOverviewQuery>;
