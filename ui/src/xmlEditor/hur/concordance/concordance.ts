@@ -92,3 +92,8 @@ export function updateConcordance(object: { [key: string]: string[] }) {
 export function updateConcordanceKey(oldAnalysis: string, newAnalysis: string): void {
   replaceKey(concordance, oldAnalysis, newAnalysis);
 }
+
+export function inConcordance(ma: MorphologicalAnalysis): boolean {
+  const value = writeMorphAnalysisValue(ma);
+  return concordance.has(value);
+}

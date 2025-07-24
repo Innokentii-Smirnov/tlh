@@ -8,6 +8,8 @@ import { MorphologicalAnalysis, writeMorphAnalysisValue, readMorphologicalAnalys
 import { convertDictionary, updateAndValidateDictionary } from '../common/utility';
 import { isValid, normalize } from './morphologicalAnalysisValidator';
 import segmenter from '../segmentation/segmenter';
+import { readMorphAnalysisValue } from '../morphologicalAnalysis/auxiliary';
+import { inConcordance } from '../concordance/concordance';
 
 export type Dictionary = Map<string, Set<string>>;
 
@@ -135,4 +137,17 @@ export function getDictionary(): { [key: string]: string[] } {
 
 export function upgradeDictionary(object: { [key: string]: string[] }): void {
   updateAndValidateDictionary(dictionary, object);
+}
+
+export function cleanUpDictionary(): void {
+  for (const analyses of dictionary.values()) {
+    for (const analysis of analyses) {
+      const ma = readMorphAnalysisValue(analysis);
+      if (ma !== undefined) {
+        if (!inConcordance(ma)) {
+          analyses.delete(analysis);
+        }
+      }
+    }
+  }
 }

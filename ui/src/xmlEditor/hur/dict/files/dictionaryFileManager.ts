@@ -1,4 +1,4 @@
-import { getDictionary, upgradeDictionary } from '../dictionary';
+import { getDictionary, upgradeDictionary, cleanUpDictionary } from '../dictionary';
 import { getGlosses, upgradeGlosses } from '../../translations/glossProvider';
 import { getPartsOfSpeech, setPartsOfSpeech } from '../../partsOfSpeech/partsOfSpeech';
 import { getConcordance, updateConcordance } from '../../concordance/concordance';
@@ -27,6 +27,7 @@ export async function readDict(file: File) {
   }
   if ('concordance' in parsed) {
     updateConcordance(parsed.concordance);
+    cleanUpDictionary();
   }
   if ('corpus' in parsed) {
     updateCorpus(parsed.corpus);
