@@ -10,6 +10,7 @@ import { isValid, normalize } from './morphologicalAnalysisValidator';
 import segmenter from '../segmentation/segmenter';
 import { readMorphAnalysisValue } from '../morphologicalAnalysis/auxiliary';
 import { inConcordance } from '../concordance/concordance';
+import { upgradeGlosses } from '../translations/glossProvider';
 
 export type Dictionary = Map<string, Set<string>>;
 
@@ -18,6 +19,14 @@ export type ModifyDictionary = (dictionary: Dictionary) => Dictionary;
 export type SetDictionary = (modifyDictionary: ModifyDictionary) => void;
 
 export let dictionary: Dictionary = new Map();
+
+fetch('PrecompiledDictionary.json')
+  .then(response => response.json())
+  .then(json => {
+    const {dictionary, glosses} = json;
+    upgradeDictionary(dictionary);
+    upgradeGlosses(glosses);
+  });
 
 export function setGlobalDictionary(newDictionary: Dictionary): void {
   dictionary = newDictionary;
