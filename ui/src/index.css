@@ -248,6 +248,10 @@ code {
   grid-template-columns: auto 15rem;
 }
 
+.error-mark {
+  font-size: 30px;
+}
+
 /*
 .leftList, rightList {
   display: inline;

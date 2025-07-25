@@ -35,3 +35,14 @@ export function getFirstSelectedMorphTag(morphologicalAnalysis: MorphologicalAna
       return undefined;
   }
 }
+
+export function getMorphTags(analysis: MorphologicalAnalysis): string[] {
+  switch (analysis._type) {
+    case 'SingleMorphAnalysisWithoutEnclitics':
+      return [analysis.analysis];
+    case 'MultiMorphAnalysisWithoutEnclitics':
+      return analysis.analysisOptions.map(({analysis}) => analysis);
+    default:
+      return [];
+  }
+}

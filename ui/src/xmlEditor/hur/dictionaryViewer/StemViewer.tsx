@@ -11,6 +11,10 @@ import { modifyAnalysis } from '../dict/analysisModifier';
 import { addChange } from '../changes/changesAccumulator';
 import { updateConcordanceKey } from '../concordance/concordance';
 import { replaceMorphologicalAnalysis } from '../corpus/corpus';
+import { haveMatchingNumberOfMorphemes } from '../dict/morphologicalAnalysisValidator';
+import { getMorphTags } from '../morphologicalAnalysis/auxiliary';
+
+const errorSymbol = <>&#9876;</>;
 
 function applySideEffects(origin: string, target: string, targetIsExtant: boolean): void {
   addChange(origin, target, targetIsExtant);
@@ -213,82 +217,93 @@ export function StemViewer({stem, initialEntries, setDictionary, initialUnfolded
   const { stemForm, translation, entries } = state;
   const partOfSpeech = stem.pos;
   
+  const isCorrect = entries.every(entry => 
+    getMorphTags(entry.morphologicalAnalysis).every(morphTag =>
+      haveMatchingNumberOfMorphemes(entry.morphologicalAnalysis.referenceWord, morphTag)
+    )
+  );
+  
   return (
-    <>
-      <StemElement
-        index={stem.index}
-        form={stemForm} 
-        translation={translation}
-        pos={partOfSpeech}
-        handleClick={() => setUnfolded(!unfolded)}
-        onFormChange={(value: string) => {
-          setState(update(state,
-            { stemForm: { $set: value },
-              entries: { $set: modifyLocalEntries(entries, modifyStem(value)) } }
-          ));
-        }}
-        onFormBlur={(value: string) => {
-          if (value !== stem.form) {
-            changeStem(stem.form, value, partOfSpeech, translation);
+    <div className="flex flex-row">
+      <div>
+        <StemElement
+          index={stem.index}
+          form={stemForm} 
+          translation={translation}
+          pos={partOfSpeech}
+          handleClick={() => setUnfolded(!unfolded)}
+          onFormChange={(value: string) => {
+            setState(update(state,
+              { stemForm: { $set: value },
+                entries: { $set: modifyLocalEntries(entries, modifyStem(value)) } }
+            ));
+          }}
+          onFormBlur={(value: string) => {
+            if (value !== stem.form) {
+              changeStem(stem.form, value, partOfSpeech, translation);
+              setDictionary((dictionary: Dictionary) => {
+                return modifyGlobalEntries(dictionary, initialEntries, entries);
+              });
+            }
+          }}        
+          onTranslationChange={(value: string) => {
+            setState(update(state,
+              { translation: { $set: value },
+                entries: { $set: modifyLocalEntries(entries, modifyTranslation(value)) } }
+            ));
+          }}
+          onTranslationBlur={(value: string) => {
+            if (value !== stem.translation) {
+              changeTranslation(stemForm, partOfSpeech, stem.translation, value);
+              setDictionary((dictionary: Dictionary) => {
+                return modifyGlobalEntries(dictionary, initialEntries, entries);
+              });
+            }
+          }}
+          onPartOfSpeechChange={(value: string) => {
+            changePos(stemForm, stem.pos, value, translation);
             setDictionary((dictionary: Dictionary) => {
-              return modifyGlobalEntries(dictionary, initialEntries, entries);
+              return modifyGlobalPartOfSpeech(dictionary, initialEntries, value);
             });
-          }
-        }}        
-        onTranslationChange={(value: string) => {
-          setState(update(state,
-            { translation: { $set: value },
-              entries: { $set: modifyLocalEntries(entries, modifyTranslation(value)) } }
-          ));
-        }}
-        onTranslationBlur={(value: string) => {
-          if (value !== stem.translation) {
-            changeTranslation(stemForm, partOfSpeech, stem.translation, value);
-            setDictionary((dictionary: Dictionary) => {
-              return modifyGlobalEntries(dictionary, initialEntries, entries);
-            });
-          }
-        }}
-        onPartOfSpeechChange={(value: string) => {
-          changePos(stemForm, stem.pos, value, translation);
-          setDictionary((dictionary: Dictionary) => {
-            return modifyGlobalPartOfSpeech(dictionary, initialEntries, value);
-          });
-        }} />
-      <br />
-      {unfolded && entries.map(
-        (entry: Entry, index: number) => {
-          const morphAnalysisValue = writeMorphAnalysisValue(
-            initialEntries[index].morphologicalAnalysis
-          );
-
-          return (
-              <WordformElement entry={entry} key={morphAnalysisValue}
-              initialShowAttestations={false}
-              initialMorphologicalAnalysis={initialEntries[index].morphologicalAnalysis}
-              handleSegmentationInput={(value: string) =>
-                setState(update(state, { entries:
-                  { $set: handleSegmentationInput(entries, index, value) }
-                }))
-              }
-              handleSegmentationBlur={(value: string) => {
-                setDictionary((dictionary: Dictionary) =>
-                  handleSegmentationBlur(dictionary, entries, index, value, morphAnalysisValue)
-                ); 
-              }}
-              handleAnalysisInput={(value: string, optionIndex: number) =>
-                setState(update(state, { entries:
-                  { $set: handleAnalysisInput(entries, index, value, optionIndex) }
-                }))
-              }
-              handleAnalysisBlur={(value: string, optionIndex: number) => {
-                setDictionary((dictionary: Dictionary) =>
-                  handleAnalysisBlur(dictionary, entries, index, value, optionIndex, morphAnalysisValue)
-                );
-              }} />
+          }} />
+        <br />
+        {unfolded && entries.map(
+          (entry: Entry, index: number) => {
+            const morphAnalysisValue = writeMorphAnalysisValue(
+              initialEntries[index].morphologicalAnalysis
             );
-          }
-      )}
-    </>
+
+            return (
+                <WordformElement entry={entry} key={morphAnalysisValue}
+                initialShowAttestations={false}
+                initialMorphologicalAnalysis={initialEntries[index].morphologicalAnalysis}
+                handleSegmentationInput={(value: string) =>
+                  setState(update(state, { entries:
+                    { $set: handleSegmentationInput(entries, index, value) }
+                  }))
+                }
+                handleSegmentationBlur={(value: string) => {
+                  setDictionary((dictionary: Dictionary) =>
+                    handleSegmentationBlur(dictionary, entries, index, value, morphAnalysisValue)
+                  ); 
+                }}
+                handleAnalysisInput={(value: string, optionIndex: number) =>
+                  setState(update(state, { entries:
+                    { $set: handleAnalysisInput(entries, index, value, optionIndex) }
+                  }))
+                }
+                handleAnalysisBlur={(value: string, optionIndex: number) => {
+                  setDictionary((dictionary: Dictionary) =>
+                    handleAnalysisBlur(dictionary, entries, index, value, optionIndex, morphAnalysisValue)
+                  );
+                }} />
+              );
+            }
+        )}
+      </div>
+      {!isCorrect &&
+        <div className="p-2 error-mark">{errorSymbol}</div>
+      }
+    </div>
   );
 }

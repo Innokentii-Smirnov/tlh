@@ -4,6 +4,9 @@ import { getMorphTags } from '../common/utils';
 import { getAttestations } from '../concordance/concordance';
 import { getLine } from '../corpus/corpus';
 import { ConcordanceEntryViewer } from '../concordanceEntryViewer/ConcordanceEntryViewer';
+import { haveMatchingNumberOfMorphemes } from '../dict/morphologicalAnalysisValidator';
+
+const errorSymbol = <>&#9876;</>;
 
 export interface Entry {
   transcriptions: string[];
@@ -33,9 +36,13 @@ export function WordformElement({ entry, handleSegmentationInput,
   
   const attestations = getAttestations(initialMorphologicalAnalysis);
   
+  const isCorrect = morphTags.every(morphTag => {
+    return haveMatchingNumberOfMorphemes(segmentation, morphTag);
+  });
+  
   return (
     <div>
-      <div className="flex">
+      <div className="flex flex-row">
         <pre className="dict-entry">
           <input value={segmentation}
                  onInput={event => handleSegmentationInput(event.currentTarget.value)}
@@ -55,9 +62,12 @@ export function WordformElement({ entry, handleSegmentationInput,
           <label>({transcriptions.join(', ')})</label>
           <br />
         </pre>
-        <div className="vertical-align: top">
+        <div className="p-2 vertical-align: top">
           <button onClick={() => setShowAttestations(!showAttestations)}>&#8744;</button>
         </div>
+        {!isCorrect &&
+          <div className="p-2 error-mark">{errorSymbol}</div>
+        }
       </div>
       {showAttestations &&
         <ConcordanceEntryViewer attestations={attestations} getLine={getLine} />}

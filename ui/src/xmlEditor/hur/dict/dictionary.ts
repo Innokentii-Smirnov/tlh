@@ -11,6 +11,7 @@ import segmenter from '../segmentation/segmenter';
 import { readMorphAnalysisValue } from '../morphologicalAnalysis/auxiliary';
 import { inConcordance } from '../concordance/concordance';
 import { upgradeGlosses } from '../translations/glossProvider';
+import { objectToSetValuedMap } from '../common/utils';
 
 export type Dictionary = Map<string, Set<string>>;
 
@@ -23,8 +24,8 @@ export let dictionary: Dictionary = new Map();
 fetch('PrecompiledDictionary.json')
   .then(response => response.json())
   .then(json => {
-    const {dictionary, glosses} = json;
-    upgradeDictionary(dictionary);
+    dictionary = objectToSetValuedMap(json.dictionary);
+    const {glosses} = json;
     upgradeGlosses(glosses);
   });
 
