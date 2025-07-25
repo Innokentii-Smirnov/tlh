@@ -25,6 +25,9 @@ const indeclinable = /\.?(ADV|CONJ|PREP|INTJ).*/;
 
 export function getPos(template: string, morphTag: string | null, translation: string): string
 {
+  if (morphTag !== null && morphTag.includes('=')) {
+    morphTag = morphTag.split('=')[0];
+  }
   if (translation.includes('PRON')) {
     return 'PRON';
   }
