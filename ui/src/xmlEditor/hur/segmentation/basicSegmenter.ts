@@ -83,8 +83,15 @@ export default class BasicSegmenter {
 
   segment(wordform: string): PartialAnalysis[] {
     const segmentations: PartialAnalysis[] = [];
-    let candidates: string[] = this.suffixTrie.getAllSuffixes(wordform);
-    candidates = candidates.concat(this.suffixTrie.getAllSuffixes(removeMacron(wordform)));
+    const candidates: string[] = this.suffixTrie.getAllSuffixes(wordform);
+    const simplified = removeMacron(wordform);
+    if (simplified !== wordform) {
+      for (const newCandidate in this.suffixTrie.getAllSuffixes(simplified)) {
+        if (!candidates.includes(newCandidate)) {
+          candidates.push(newCandidate);
+        }
+      }
+    }
     for (const suffixChain of candidates) {
       const options = this.suffixChains.get(suffixChain);
       if (options !== undefined) {
