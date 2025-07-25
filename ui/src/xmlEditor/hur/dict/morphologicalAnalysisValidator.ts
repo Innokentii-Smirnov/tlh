@@ -1,7 +1,7 @@
 import { formIsFragment } from '../common/utils';
 import { getPos } from '../partsOfSpeech/partsOfSpeech';
 
-const sep = /[-=]/;
+const sep = /(?<!\()-(?!\))|=/;
 
 export function haveMatchingNumberOfMorphemes(segmentation: string, analysis: string) {
   return segmentation.split(sep).length === analysis.split(sep).filter(tag => tag !== '.ABS').length + 1
