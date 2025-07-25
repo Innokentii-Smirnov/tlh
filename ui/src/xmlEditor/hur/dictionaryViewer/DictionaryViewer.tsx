@@ -7,6 +7,7 @@ import { DictionaryDownloader } from '../dict/files/DictionaryDownloader';
 import { ChangesDownloader } from '../changes/ChangesDownloader';
 import { writeMorphAnalysisValue } from '../../../model/morphologicalAnalysis';
 import { SetDictionary } from '../dict/dictionary';
+import { compare } from '../common/comparison';
 
 interface IProps {
   entries: Entry[];
@@ -33,7 +34,7 @@ export function DictionaryViewer({entries, setDictionary}: IProps): JSX.Element 
   
   const grouped = groupBy(entries, keyFunc, valueFunc);
   
-  const stems = Array.from(grouped.keys()).sort();
+  const stems = Array.from(grouped.keys()).sort(compare);
   
   return (
     <div className="grid grid-cols-2 gap-2 my-2 uneven-columns">
