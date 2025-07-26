@@ -1,14 +1,6 @@
 {
 	"dictionary": {
-		"umin": [
-			"omini-[ @ Land @  @ noun @ ",
-			"um-in[ @ u.B. @  @ unclear @ ",
-			"omini-ne @ Land @ { a → ABL/INS} @ noun @ ",
-			"omini-ne-e @ Land @ { a → RELAT.SG-DIR/LOC} @ noun @ ",
-			"omini-ne-[ @ Land @ { a → RELAT.SG} @ verb @ "
-		],
 		"ḫāra(-)": [
-			"ḫār-a[ @ u.B. @  @ unclear @ ",
 			"ḫāri-a @ Weg @ { a → ESS} @ noun @ "
 		],
 		"ibri": [
@@ -16,25 +8,18 @@
 			"evri @ Herr @ .ABS @ noun @ "
 		],
 		"uurġa(-)": [
-			"ūrġ-a[ @ wahr sein @  @ unclear @ ",
 			"ūrġi-a @ wahr @ { a → ESS} @ noun @ ",
 			"ūrġ-a @ wahr sein @ { a → INT} @ verb @ "
 		],
 		"ḫebarri(-)": [
-			"ḫeb+ar+i-ne-[ @ u.B. @ { a → RELAT.SG} @ noun @ ",
 			"ḫeb+ar+i-ne @ u.B. @ { a → ABL/INS} @ noun @ ",
 			"ḫeb+ar+i-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ "
 		],
 		"šīna(-)": [
-			"šīn-a[ @ u.B. @  @ unclear @ ",
 			"šī-na @ Auge @ { a → RELAT.PL.ABS} @ noun @ ",
-			"šī+ni-a @ Auge @ { a → ESS} @ noun @ ",
-			"šī-na-[ @ Auge @ { a → RELAT.PL} @ noun @ "
+			"šī+ni-a @ Auge @ { a → ESS} @ noun @ "
 		],
 		"nave(-)": [
-			"nav-e[ @ weiden @  @ unclear @ ",
-			"nave-[ @ u.B. @  @ noun @ ",
-			"nave-[ @ (Todes-)Schicksal? @  @ noun @ ",
 			"nave @ u.B. @ { a → .ABS} @ noun @ ",
 			"nave @ (Todes-)Schicksal? @ { a → .ABS} @ noun @ "
 		],
@@ -42,24 +27,10 @@
 			"šo-āž-a @ 1PRON @ { a → PL-DAT/ESS} @ PRON @ ",
 			"šo-āž-ve-a @ 1PRON @ { a → PL-GEN-ESS} @ PRON @ ",
 			"šāži-a @ u.B. @ { a → ESS} @ noun @ ",
-			"šāž-a @ u.B. @ { a → INT} @ verb @ ",
-			"šāž-a[ @ u.B. @  @ unclear @ "
+			"šāž-a @ u.B. @ { a → INT} @ verb @ "
 		],
 		"šāduži": [
 			"šād-ož-i @ ersetzen @ { a → PST-ANTIP} @ verb @ "
-		],
-		"nave-x": [
-			"nave-[ @ (Todes-)Schicksal? @  @ noun @ ",
-			"nave-[ @ u.B. @  @ noun @ ",
-			"nav-e[ @ weiden @  @ unclear @ "
-		],
-		"īa": [
-			"īa[ @ u.B. @  @ unclear @ ",
-			"īa-[ @ warum @  @ ADV @ ",
-			"īa-[ @ REL @  @ CONJ @ "
-		],
-		"x-nu-x": [
-			"]nu[ @ u.B. @  @ unclear @ "
 		],
 		"IŠKUR-foda": [
 			"Teššob-oda @ DN @ { a → DIR} @ noun @ "
@@ -67,9 +38,6 @@
 		"īad": [
 			"īa=d @ warum @ { a → =1SG.ABS} @ ADV @ ",
 			"īa=d @ REL @ { a → =1SG.ABS} @ CONJ @ "
-		],
-		"ḫe-x": [
-			"ḫe[ @ u.B. @  @ unclear @ "
 		],
 		"kumminive": [
 			"Kumme-ne-ve @ GN @ RELAT.SG-GEN @ noun @ ",
@@ -80,15 +48,8 @@
 			"talav+o+že @ groß @ { a → .ABS} @ noun @ ",
 			"talav+o+že @ groß @ .ABS @ noun @ "
 		],
-		"lōžu": [
-			"]l-ōž-o @ u.B. @ { a → PST-2A.SG} @ verb @ "
-		],
 		"GIŠ.GIM.MAŠ-fe": [
 			"Kalgamiš-fe @ DN @ { b → GEN} @ noun @ "
-		],
-		"x-taffa": [
-			"]ti-a=ffa @ u.B. @ { a → ESS=2PL.ABS} @ noun @ ",
-			"]t-a=ffa @ u.B. @ { a → INT=2PL.ABS} { b → INT.IMP=2PL.ABS} @ verb @ "
 		],
 		"tōniliffa": [
 			"tōn+ili-f-fa @ u.B. @ { a → 2POSS.SG-DAT} @ noun @ ",
@@ -111,48 +72,20 @@
 		"GIŠ.GIM.MAŠ-uda": [
 			"Kalgamiž-oda @ DN @ { a → DIR} @ noun @ "
 		],
-		"x-fenella": [
-			"]-ve-ne-ž=lla @ u.B. @ { a → GEN-RELAT.SG-ERG=3PL.ABS} @ noun @ ",
-			"]-ve-ne-e=lla @ u.B. @ { a → GEN-RELAT.SG-DIR/LOC=3PL.ABS} @ noun @ ",
-			"]fe-ne-ž=lla @ u.B. @ { a → RELAT.SG-ERG=3PL.ABS} @ noun @ ",
-			"]fe-ne=lla @ u.B. @ { a → ABL/INS=3PL.ABS} @ noun @ ",
-			"]fe-ne-e=lla @ u.B. @ { a → RELAT.SG-DIR/LOC=3PL.ABS} @ noun @ "
-		],
-		"x-li": [
-			"]li @ u.B. @  @ unclear @ "
-		],
 		"taptani": [
 			"tapt+a+ni @ u.B. @ { a → .ABS} @ noun @ ",
 			"tapt-an-i @ u.B. @ { a → an-ANTIP} { b → an-TR.IMP} @ verb @ ",
 			"tap-t-an-i @ u.B. @ { a → t-an-ANTIP} { b → t-an-TR.IMP} @ verb @ "
-		],
-		"x-ōm": [
-			"]-ō-m @ u.B. @ { a → TR.PFV-3A.SG} @ verb @ "
-		],
-		"ḫan": [
-			"]ḫan @ u.B. @ .ABS @ unclear @ ",
-			"]ḫi-a=n @ u.B. @ { a → ESS=3SG.ABS} @ noun @ ",
-			"]ḫi-a=an @ u.B. @ { a → ESS=CON} @ noun @ ",
-			"]ḫ-a=n @ u.B. @ { a → 3A.SG=3SG.ABS} { b → INT=3SG.ABS} @ verb @ ",
-			"]ḫ-a=an @ u.B. @ { a → 3A.SG=CON} { b → INT=CON} @ verb @ "
-		],
-		"lurōm": [
-			"]l-ur-ō-m @ u.B. @ { a → ur-TR.PFV-3A.SG} @ verb @ "
 		],
 		"aveaža": [
 			"ave-až-a @ wer; jeder @ { a → PL-DAT/ESS} @ noun @ ",
 			"ave-až-a @ wer; jeder @ PL-DAT/ESS @ noun @ "
 		],
 		"(-)šōniāža": [
-			"]š+ō+ni-i-āž-a @ u.B. @ { a → 3POSS-PL-DAT/ESS} @ noun @ ",
 			"šō+ni-i-āž-a @ Hand @ { a → 3POSS-PL-DAT/ESS} @ noun @ "
 		],
 		"DINGIR-nāža": [
 			"eni-na-āž-a @ Gott @ { a → RELAT.PL-PL-DAT/ESS} @ noun @ "
-		],
-		"tal": [
-			"]-da=l @ u.B. @ { a → DIR=3PL.ABS} @ noun @ ",
-			"]-da=l @ u.B. @ DIR=3PL.ABS @ noun @ "
 		],
 		"alumai": [
 			"al-u+m+ai @ sprechen @ { a → CVB} @ NF @ "
@@ -162,168 +95,43 @@
 			"kad-i-a @ sagen; sprechen @ { a → TR-3A.SG} @ verb @ "
 		],
 		"x(-)aškaffa": [
-			"]aški-a=ffa @ u.B. @ { a → ESS=2PL.ABS} @ noun @ ",
-			"]ašk-a=ffa @ u.B. @ { a → INT=2PL.ABS} { b → INT.IMP=2PL.ABS} @ verb @ ",
 			"ašk-a=ffa @ fragen?; zur Rede stellen? @ { a → INT=2PL.ABS} { b → INT.IMP=2PL.ABS} @ verb @ ",
 			"aški-a=ffa @ u.B. @ { a → ESS=2PL.ABS} @ noun @ "
-		],
-		"x-ḫa": [
-			"]ḫi-a @ u.B. @ { a → ESS} @ noun @ ",
-			"]ḫ-a @ u.B. @ { a → 3A.SG} { b → INT} @ verb @ "
 		],
 		"uurġāb": [
 			"ūrġ-ā-b @ wahr sein @ { a → INT-b} @ verb @ ",
 			"ūrġ-ā=v @ wahr sein @ { a → INT=2PL.ABS} { b → INT.IMP=2PL.ABS} @ verb @ ",
 			"ūrġi-ā=v @ wahr @ { a → ESS=2PL.ABS} @ noun @ "
 		],
-		"x-umīġa": [
-			"]um+ī+ġe-a @ u.B. @ { a → ESS} @ noun @ ",
-			"]um+īġ+i-a @ u.B. @ { a → ESS} @ noun @ ",
-			"]um-īġ-a @ u.B. @ { a → īġ-3A.SG} { b → īġ-INT} { c → īġ-INT.IMP} @ verb @ "
-		],
-		"x-kā": [
-			"]kā @ u.B. @  @ unclear @ "
-		],
-		"x-x-ša": [
-			"]ša @ u.B. @  @ unclear @ "
-		],
-		"x-na": [
-			"]na @ u.B. @  @ unclear @ "
-		],
-		"šiffui": [
-			"]ši-iffu-we @ u.B. @ { a → 1POSS.SG-GEN} @ noun @ "
-		],
-		"fa": [
-			"]fa @ u.B. @  @ unclear @ ",
-			"ḪAR-va @ u.B. @ { a → DAT} @ verb @ ",
-			"Ḫarvi-a @ DN @ { a → ESS} @ verb @ ",
-			"Ḫurvi-a @ DN @ { a → ESS} @ noun @ ",
-			"]-va @ u.B. @ { a → DAT} @ noun @ ",
-			"]va @ sich freuen; u.B. @  @ unclear @ ",
-			"f[ @ u.B. @  @ unclear @ "
-		],
-		"(-)ki-x-x": [
-			"]ki[ @ u.B. @  @ unclear @ ",
-			"ki[ @ u.B. @  @ unclear @ "
-		],
-		"fal": [
-			"]fa=l @ u.B. @ { a → =3PL.ABS} @ unclear @ "
-		],
-		"(-)faġu": [
-			"]faġu[ @ u.B. @  @ unclear @ ",
-			"faġ-u[ @ zerstören @  @ unclear @ "
-		],
 		"(-)nigassa": [
-			"]nigassi-a @ u.B. @ { a → ESS} @ noun @ ",
 			"nigassi-a @ u.B. @ { a → ESS} @ noun @ "
 		],
-		"(-)ullu-x": [
-			"]ullu[ @ u.B. @  @ unclear @ ",
-			"ull-u[ @ u.B. @  @ unclear @ "
-		],
-		"ta": [
-			"]ta @ u.B. @  @ unclear @ ",
-			"ta[ @ u.B. @  @ unclear @ "
-		],
-		"fama(-)": [
-			"]fama[ @ u.B. @  @ unclear @ ",
-			"]fa=ma @ u.B. @ { a → =CON} @ unclear @ "
-		],
-		"x-ulal": [
-			"]uli-a=l @ u.B. @ { a → ESS=3PL.ABS} @ unclear @ ",
-			"]ul-a=l @ u.B. @ { a → INT=3PL.ABS} @ verb @ "
-		],
-		"la": [
-			"]la @ u.B. @  @ unclear @ "
-		],
-		"ḫažim": [
-			"ḫaž-im[ @ hören @  @ unclear @ ",
-			"ḫaž-im[ @ salben @  @ unclear @ ",
-			"ḫaž-im[ @ u.B. @  @ unclear @ "
-		],
 		"(-)ullaina": [
-			"]ullai-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ ",
 			"ullai-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ "
 		],
-		"ava": [
-			"]ava @ u.B. @  @ unclear @ "
-		],
 		"šužuġe(-)": [
-			"Šužuġe @ GN @ { a → .ABS} @ noun @ ",
-			"Šužuġe-[ @ GN @  @ noun @ "
-		],
-		"tāi": [
-			"]ti-āi @ u.B. @ { a → INS} @ noun @ ",
-			"]t-i-āi @ u.B. @ { a → MOD.ACT-PURP} @ verb @ ",
-			"]tā+i @ u.B. @ { a → .ABS} @ noun @ "
-		],
-		"težā(-)": [
-			"tež-āv[ @ u.B. @  @ unclear @ "
-		],
-		"ruḫḫi": [
-			"]r+o+ḫḫe @ u.B. @ { a → .ABS} @ noun @ "
-		],
-		"ḫažimnī": [
-			"ḫaž-im+nī[ @ hören @  @ noun @ ",
-			"ḫaž-im+nī[ @ salben @  @ noun @ ",
-			"ḫaž-im+nī[ @ u.B. @  @ noun @ "
-		],
-		"x-kamlurri": [
-			"]kamluri-ne @ GN? @ { a → ABL/INS} @ noun @ ",
-			"]kamluri-ne-e @ GN? @ { a → RELAT.SG-DIR/LOC} @ noun @ "
+			"Šužuġe @ GN @ { a → .ABS} @ noun @ "
 		],
 		"ḪUR.SAG-(-)": [
-			"ḪUR.SAG @ Berg @ { a → .ABS} @ noun @ ",
-			"ḪUR.SAG-[ @ Berg @  @ noun @ "
-		],
-		"x-man": [
-			"]ma=an @ u.B. @ { a → =CON} @ unclear @ ",
-			"]=man @ u.B. @ { a → =CON} { b → =PCTL} @ unclear @ "
+			"ḪUR.SAG @ Berg @ { a → .ABS} @ noun @ "
 		],
 		"agivātta": [
 			"ag-i-evā=tta @ aufnehmen; erheben; heraufkommen @ { a → MOD.ACT-POT=1SG.ABS} @ verb @ "
 		],
-		"fuwi": [
-			"]-iffu-we @ u.B. @ { a → 1POSS.SG-GEN} @ noun @ "
-		],
 		"naveni": [
 			"nave-ne-va @ u.B. @ { a → RELAT.SG-DAT} @ noun @ ",
 			"nave-ne-ve @ u.B. @ { a → RELAT.SG-GEN} @ noun @ ",
-			"nave-ne-ve-[ @ u.B. @ { a → RELAT.SG-GEN-[} @ noun @ ",
 			"nave-ne-va @ (Todes-)Schicksal? @ { a → RELAT.SG-DAT} @ noun @ ",
-			"nave-ne-ve @ (Todes-)Schicksal? @ { a → RELAT.SG-GEN} @ noun @ ",
-			"nave-ne-ve-[ @ (Todes-)Schicksal? @ { a → RELAT.SG-GEN} @ noun @ "
-		],
-		"nī": [
-			"nīv[ @ u.B. @  @ unclear @ ",
-			"]nī @ u.B. @  @ unclear @ "
-		],
-		"ša(-)": [
-			"]ša[ @ u.B. @  @ unclear @ ",
-			"]ša @ u.B. @  @ unclear @ "
-		],
-		"ullō": [
-			"Ullō-[ @ PN @  @ noun @ "
-		],
-		"šō-x": [
-			"šōu[ @ u.B. @  @ unclear @ "
+			"nave-ne-ve @ (Todes-)Schicksal? @ { a → RELAT.SG-GEN} @ noun @ "
 		],
 		"šende(-)": [
 			"šinde @ sieben @ { a → .ABS} @ NUM @ ",
-			"šende @ u.B. @ { a → .ABS} @ noun @ ",
-			"šende-[ @ u.B. @  @ noun @ ",
-			"šend-e[ @ u.B. @  @ unclear @ ",
-			"šind-e[ @ sieben @  @ NUM @ "
-		],
-		"ke": [
-			"kē[ @ u.B. @  @ unclear @ "
+			"šende @ u.B. @ { a → .ABS} @ noun @ "
 		],
 		"IŠTAR-ka(-)": [
-			"Šavoška @ DN @ { a → .ABS} @ noun @ ",
-			"Šavoška-[ @ DN @  @ noun @ "
+			"Šavoška @ DN @ { a → .ABS} @ noun @ "
 		],
 		"uwāt(-)": [
-			"uw-āt[ @ u.B. @  @ unclear @ ",
 			"uw-ā=d @ essen @ { a → INT=1SG.ABS} @ verb @ ",
 			"uw-ā=d @ u.B. @ { a → INT=1SG.ABS} @ verb @ "
 		],
@@ -341,19 +149,11 @@
 			"faġi-i-a @ u.B. @ { a → 3POSS.SG-ESS} @ noun @ ",
 			"faġi-i-a @ Kopf @ { a → 3POSS.SG-ESS} @ noun @ ",
 			"faġ-i-a @ u.B. @ { a → TR-3A.SG} @ verb @ ",
-			"faġ-i-a @ zerstören @ { a → TR-3A.SG} @ verb @ ",
-			"faġ-i-a-[ @ zerstören @ { a → TR-3A.SG} @ verb @ "
-		],
-		"tum": [
-			"tum[ @ u.B. @  @ unclear @ "
+			"faġ-i-a @ zerstören @ { a → TR-3A.SG} @ verb @ "
 		],
 		"ḫarri(-)": [
-			"ḫari-ne-[ @ Weg @ { a → RELAT.SG} @ noun @ ",
 			"ḫari-ne @ Weg @ { a → ABL/INS} @ noun @ ",
 			"ḫari-ne-e @ Weg @ { a → RELAT.SG-DIR/LOC} @ noun @ "
-		],
-		"tipḫudenaže-x": [
-			"tipḫ+ude-na-až-e-[ @ u.B. @ { a → RELAT.PL-PL-GEN} @ noun @ "
 		],
 		"agi": [
 			"agi @ u.B. @ { a → .ABS} @ noun @ ",
@@ -363,9 +163,7 @@
 		],
 		"sappi(-)": [
 			"sappi @ u.B. @ { a → .ABS} @ noun @ ",
-			"sappi-[ @ u.B. @  @ noun @ ",
-			"sapp-i @ u.B. @ { a → ANTIP} { b → TR.IMP} @ verb @ ",
-			"sapp-i[ @ u.B. @  @ unclear @ "
+			"sapp-i @ u.B. @ { a → ANTIP} { b → TR.IMP} @ verb @ "
 		],
 		"sūlūde": [
 			"sūl+ūd-e @ lösen @ { a → TR.IMP} { b → ANTIP} @ verb @ ",
@@ -386,21 +184,12 @@
 		"ue": [
 			"ue @ nein? @  @ INTJ @ "
 		],
-		"pu-x": [
-			"pu[ @ u.B. @  @ unclear @ "
-		],
-		"ḫu": [
-			"Ḫu[ @ DN @  @ noun @ ",
-			"ḫu[ @ u.B. @  @ unclear @ "
-		],
 		"fel": [
 			"fe-lla @ 2PRON; 2PRON.SG @ { a → PL.ABS} @ PRON @ ",
 			"fe-ž=l @ 2PRON.SG @ { a → ERG=3SG.ABS} @ PRON @ "
 		],
 		"anni(-)ta(-)": [
-			"anni @ PRON.DEM @ { a → .ABS} @ PRON @ ",
-			"ann-ita[ @ u.B. @  @ unclear @ ",
-			"ta[ @ u.B. @  @ noun @ "
+			"anni @ PRON.DEM @ { a → .ABS} @ PRON @ "
 		],
 		"ḫudenāža": [
 			"Ḫude-na-āž-a @ DN @ { a → RELAT.PL-PL-DAT/ESS} @ noun @ "
@@ -421,9 +210,6 @@
 			"ḫue+ni-i-va=an @ u.B. @ { a → 3POSS.SG-DAT=CON} @ noun @ ",
 			"ḫue+ni-i-va=n @ u.B. @ { a → 3POSS.SG-DAT=3SG.ABS} @ noun @ "
 		],
-		"ḫumaru": [
-			"ḫum+ar+o-[ @ lapislazuli @  @ noun @ "
-		],
 		"tabaštili": [
 			"tab-ašt-i-le @ gießen @ { a → RES-MOD.ACT-1JUSS} @ verb @ ",
 			"tab-ašt-i-le @ u.B. @ { a → RES-MOD.ACT-1JUSS} @ verb @ "
@@ -432,8 +218,7 @@
 			"naḫḫ-i-le @ sich setzen; sitzen; einsetzen @ { a → MOD.ACT-1JUSS} @ verb @ "
 		],
 		"ēnna(-)": [
-			"ēni-na @ Gott @ { a → RELAT.PL.ABS} @ noun @ ",
-			"ēni-na-[ @ Gott @ { a → RELAT.PL} @ noun @ "
+			"ēni-na @ Gott @ { a → RELAT.PL.ABS} @ noun @ "
 		],
 		"nēlaban": [
 			"nēli-a=v=an @ u.B. @ { a → ESS=2PL.ABS=CON} @ noun @ ",
@@ -443,12 +228,8 @@
 			"nēla-b-a=an @ u.B. @ { a → 2POSS.SG-ESS=CON} @ noun @ ",
 			"nēla-b-a=n @ u.B. @ { a → 2POSS.SG-ESS=3SG.ABS} @ noun @ "
 		],
-		"ta-x": [
-			"ta[ @ u.B. @  @ unclear @ "
-		],
 		"foriššanni(-)": [
-			"for+i+šš+a+nni @ u.B. @ { a → .ABS} @ noun @ ",
-			"for+i+šš+a+nni-[ @ u.B. @  @ noun @ "
+			"for+i+šš+a+nni @ u.B. @ { a → .ABS} @ noun @ "
 		],
 		"mānattan": [
 			"mānn-e=tta=an @ sein @ { a → STAT=1SG.ABS=CON} @ verb @ ",
@@ -460,27 +241,11 @@
 			"edi-i-až-a @ Körper; hinsichtlich @ { a → 3POSS.SG-PL-DAT/ESS} @ noun @ "
 		],
 		"ubulla(-)": [
-			"ubuli-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ ",
-			"ubuli-na-[ @ u.B. @ { a → RELAT.PL.ABS} @ noun @ ",
-			"ub-ulla[ @ u.B. @  @ unclear @ "
-		],
-		"kigi-x": [
-			"kig-i[ @ u.B. @  @ unclear @ "
+			"ubuli-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ "
 		],
 		"šurri(-)": [
-			"šuri-ne-[ @ u.B. @ { a → RELAT.SG} @ noun @ ",
 			"šuri-ne @ u.B. @ { a → ABL/INS} @ noun @ ",
-			"šuri-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ ",
-			"šurr-i[ @ eilen @  @ unclear @ ",
-			"šurr-i[ @ u.B. @  @ unclear @ "
-		],
-		"tidar": [
-			"tid-ar[ @ u.B. @  @ unclear @ ",
-			"tid-ar[ @ zählen @  @ unclear @ ",
-			"tid-ar[ @ angreifen @  @ unclear @ "
-		],
-		"ḫar": [
-			"ḫar[ @ u.B. @  @ unclear @ "
+			"šuri-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ "
 		],
 		"ari": [
 			"ari @ das Böse @ .ABS @ noun @ ",
@@ -489,16 +254,8 @@
 			"ar-i @ geben @ { a → TR.IMP} @ verb @ ",
 			"ar-i @ geben @ { a → TR.IMP} { b → ANTIP} @ verb @ "
 		],
-		"ḫaw": [
-			"ḫāu[ @ u.B. @  @ unclear @ ",
-			"ḫā-u[ @ nehmen @  @ unclear @ "
-		],
 		"kunde(-)": [
-			"kunde @ u.B. @ { a → .ABS} @ noun @ ",
-			"kunde-[ @ u.B. @  @ noun @ "
-		],
-		"irrib": [
-			"Irrib[ @ PN @  @ noun @ "
+			"kunde @ u.B. @ { a → .ABS} @ noun @ "
 		],
 		"alumāe(-)": [
 			"al-u+m+āe @ sprechen @ { a → CVB} @ NF @ "
@@ -507,11 +264,7 @@
 			"Ūllu-ž @ PN @ { a → ERG} @ noun @ "
 		],
 		"išten-x": [
-			"ište=nna @ 1PRON.SG @ { a → .ABS=3SG.ABS} @ PRON @ ",
-			"išt-en[ @ u.B. @  @ unclear @ "
-		],
-		"ūllu": [
-			"Ūllu-[ @ PN @  @ noun @ "
+			"ište=nna @ 1PRON.SG @ { a → .ABS=3SG.ABS} @ PRON @ "
 		],
 		"forili": [
 			"for-i-le @ sehen @ { a → MOD.ACT-1JUSS} @ verb @ "
@@ -524,17 +277,8 @@
 			"šarri @ Gottkönig @ { a → .ABS} @ noun @ ",
 			"šarr-i @ u.B. @ { a → ANTIP} @ verb @ "
 		],
-		"na": [
-			"na[ @ u.B. @  @ unclear @ ",
-			"]-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ ",
-			"]na @ u.B. @  @ unclear @ "
-		],
-		"parzi-x": [
-			"parzi-[ @ u.B. @  @ unclear @ "
-		],
 		"kalgamiš(-)": [
-			"Kalgamiš @ DN @ { a → .ABS} @ noun @ ",
-			"Kalgamiš-[ @ DN @  @ noun @ "
+			"Kalgamiš @ DN @ { a → .ABS} @ noun @ "
 		],
 		"ḫattuwa(-)": [
 			"ḫatt-ū-a @ u.B. @ { a → MED-3A.SG} @ verb @ "
@@ -543,12 +287,7 @@
 			"pussi-a @ u.B. @ { a → ESS} @ noun @ ",
 			"puss-a @ u.B. @ { a → INT} @ verb @ "
 		],
-		"mānu": [
-			"mānu-[ @ 3PRON.SG @  @ PRON @ ",
-			"mān-u[ @ u.B. @  @ unclear @ "
-		],
 		"ēnġini(-)": [
-			"ēnġi-ne-[ @ u.B. @ { a → RELAT.SG} @ noun @ ",
 			"ēnġi-ne @ u.B. @ { a → ABL/INS} @ noun @ ",
 			"ēnġi-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ "
 		],
@@ -559,42 +298,22 @@
 		"ūlluž": [
 			"Ūllu-ž @ PN @ { a → ERG} @ noun @ "
 		],
-		"ku": [
-			"ku[ @ u.B. @  @ unclear @ "
-		],
 		"šattum": [
 			"šatt-o-m @ ergreifen @ TR.PFV-3A.SG @ verb @ "
-		],
-		"šu": [
-			"šu[ @ u.B. @  @ unclear @ "
 		],
 		"ḫužurrāža(-)": [
 			"ḫužuri-na-āž-a @ u.B. @ { a → RELAT.PL-PL-DAT/ESS} @ noun @ "
 		],
-		"ḫilimzu": [
-			"ḫilimzu[ @ u.B. @  @ unclear @ "
-		],
 		"kišḫini(-)": [
-			"kišḫi-ne-[ @ Thron @ { a → RELAT.SG} @ noun @ ",
 			"kišḫi-ne @ Thron @ { a → ABL/INS} @ noun @ ",
 			"kišḫi-ne-e @ Thron @ { a → RELAT.SG-DIR/LOC} @ noun @ "
-		],
-		"kun-x": [
-			"kun[ @ u.B. @  @ unclear @ "
 		],
 		"naḫḫab": [
 			"naḫḫ-a-b @ sich setzen; sitzen; einsetzen @ INT-b @ verb @ "
 		],
-		"x-ūllūda(-)": [
-			"]ūll+ūdi-a @ u.B. @ { a → ESS} @ noun @ ",
-			"]ūll-ūd-a @ u.B. @ { a → ūd-3A.SG} { b → ūd-INT} @ verb @ "
-		],
 		"nuruža(-)": [
 			"nur+o+že-a @ u.B. @ { a → ESS} @ noun @ ",
 			"nur-ož-a @ u.B. @ { a → PST-3A.SG} @ verb @ "
-		],
-		"ūl": [
-			"Ūl[ @ PN @  @ noun @ "
 		],
 		"alumāīn": [
 			"al-u+m+āī-n @ sprechen @ { a → CVB-n} @ NF @ ",
@@ -633,19 +352,12 @@
 		"ažaštedō": [
 			"až-ašt-ed-ōw @ u.B. @ { a → RES-FUT-1A.SG} @ verb @ "
 		],
-		"šun-x": [
-			"šun[ @ u.B. @  @ unclear @ "
-		],
 		"kalgamižul": [
 			"Kalgamiž-ož=l @ DN @ { a → ERG=3PL.ABS} @ noun @ ",
 			"Kalgamiž-ož=l @ DN @ ERG=3PL.ABS @ noun @ "
 		],
 		"tivina": [
 			"tive-na @ Wort; Sache @ { a → RELAT.PL.ABS} @ noun @ "
-		],
-		"an": [
-			"an[ @  @  @ unclear @ ",
-			"an[ @ u.B. @  @ unclear @ "
 		],
 		"kadiw": [
 			"kad-i-o @ sagen; sprechen @ { a → TR-2A.SG} @ verb @ "
@@ -654,9 +366,6 @@
 			"tīve-na @ Wort; Sache @ { a → RELAT.PL.ABS} @ noun @ ",
 			"tīve-na @ Wort; Sache @ RELAT.PL.ABS @ noun @ "
 		],
-		"šun": [
-			"šun[ @ u.B. @  @ unclear @ "
-		],
 		"ittūbin": [
 			"ittūbi-n @ u.B. @ { a → ABL/INS} @ noun @ ",
 			"ittūbi=n @ u.B. @ { a → .ABS=3SG.ABS} { b → .ABS=CON} @ noun @ ",
@@ -664,35 +373,19 @@
 			"itt-ō-va-en @ gehen @ { a → MOD.PAT-NEG-3JUSS} @ verb @ "
 		],
 		"urunni-x": [
-			"ur+o+nni @ hinterer; letzterer @ { a → .ABS} @ noun @ ",
-			"ur+o+nni-[ @ hinterer; letzterer @  @ noun @ "
+			"ur+o+nni @ hinterer; letzterer @ { a → .ABS} @ noun @ "
 		],
 		"šukkuttattam": [
 			"šukk+utt-a=tta=m @ u.B. @ { a → INT=1SG.ABS=CON} @ verb @ ",
 			"šukk+utti-a=tta=m @ u.B. @ { a → ESS=1SG.ABS=CON} @ noun @ "
 		],
-		"e": [
-			"e[ @ u.B. @  @ unclear @ ",
-			"ev[ @ u.B. @  @ unclear @ ",
-			"]e @ u.B. @  @ unclear @ "
-		],
 		"šukkuttatta": [
 			"šukk+utt-a=tta @ u.B. @ { a → INT=1SG.ABS} @ verb @ ",
 			"šukk+utti-a=tta @ u.B. @ { a → ESS=1SG.ABS} @ noun @ "
 		],
-		"era-x": [
-			"er-a[ @ u.B. @  @ unclear @ "
-		],
-		"u-x": [
-			"u[ @ u.B. @  @ unclear @ "
-		],
 		"(-)aštim": [
 			"ašti=m @ Frau; Ehefrau @ { a → .ABS=CON} @ noun @ ",
-			"ašti-i=m @ u.B. @ { a → 3POSS.SG.ABS=CON} @ noun @ ",
-			"]-ašt-i=m @ u.B. @ { a → RES-ANTIP=CON} { b → RES-TR.IMP=CON} { c → RES-ANTIP=2SG.ABS} { d → RES-TR.IMP=2SG.ABS} @ verb @ "
-		],
-		"ēšši(-)": [
-			"ēšš-i[ @ u.B. @  @ unclear @ "
+			"ašti-i=m @ u.B. @ { a → 3POSS.SG.ABS=CON} @ noun @ "
 		],
 		"kivožuž": [
 			"kiv+o+že-ož @ u.B. @ { a → EQU} @ noun @ ",
@@ -709,14 +402,8 @@
 			"ind+a+ni-ne-e=m @ u.B. @ { a → RELAT.SG-DIR/LOC=CON} { b → RELAT.SG-DIR/LOC=2SG.ABS} @ noun @ ",
 			"ind-i-anni=m @ u.B @ { a → MOD.ACT-DESID=CON} { b → MOD.ACT-DESID=2SG.ABS} @ verb @ "
 		],
-		"kigla(-)": [
-			"kigl-a[ @ u.B. @  @ unclear @ "
-		],
 		"šāžuda": [
 			"šo-āž-uda @ 1PRON @ { a → PL-DIR} @ PRON @ "
-		],
-		"ḫarža(-)": [
-			"ḫarž-a[ @ u.B. @  @ unclear @ "
 		],
 		"engidal": [
 			"Engida-ž=l @ DN @ { a → ERG=3PL.ABS} @ noun @ "
@@ -724,14 +411,8 @@
 		"tibib": [
 			"tive-b @ Wort; Sache @ { a → 2POSS.SG.ABS} @ noun @ "
 		],
-		"tiži": [
-			"tiž-i[ @ u.B. @  @ unclear @ "
-		],
 		"šeniffi": [
 			"šena-iffe @ Bruder @ { a → 1POSS.SG.ABS} @ noun @ "
-		],
-		"pa": [
-			"pa[ @ u.B. @  @ unclear @ "
 		],
 		"ḫinni": [
 			"ḫenni @ jetzt @  @ ADV @ "
@@ -739,10 +420,6 @@
 		"nūma": [
 			"nūmi-a @ u.B. @ { a → ESS} @ noun @ ",
 			"nūm-a @ u.B. @ INT @ verb @ "
-		],
-		"ši": [
-			"ši[ @ u.B. @  @ unclear @ ",
-			"]ši @ u.B. @  @ unclear @ "
 		],
 		"kāde": [
 			"kāde @ Gerste? @ { a → .ABS} @ noun @ ",
@@ -755,45 +432,17 @@
 			"āšte-ne-va=an @ Frau; Ehefrau @ { a → RELAT.SG-DAT=CON} @ noun @ ",
 			"āšte-ne-va=n @ Frau; Ehefrau @ { a → RELAT.SG-DAT=3SG.ABS} @ noun @ "
 		],
-		"x-x-rivinel": [
-			"]ri-ve-ne-e=l @ u.B. @ { a → GEN-RELAT.SG-DIR/LOC=3PL.ABS} @ noun @ ",
-			"]ri-ve-ne-ž=l @ u.B. @ { a → GEN-RELAT.SG-ERG=3PL.ABS} @ noun @ "
-		],
-		"x-ikku": [
-			"]ikku[ @ u.B. @  @ unclear @ "
-		],
-		"ta(-)": [
-			"]ta @ u.B. @  @ unclear @ ",
-			"]ta[ @ u.B. @  @ unclear @ "
-		],
-		"ni": [
-			"]ni @ u.B. @  @ unclear @ ",
-			"-]ni @ u.B. @  @ unclear @ "
-		],
-		"sa": [
-			"sa[ @ u.B. @  @ unclear @ "
-		],
-		"uwa": [
-			"]uwi-a @ u.B. @ { a → ESS} @ noun @ ",
-			"]-uw-a @ u.B. @ { a → MED-3A.SG} @ verb @ ",
-			"]uwa @ u.B. @ { a → .ABS} @ noun @ "
-		],
 		"pabannaže": [
 			"paba+ni-na-až-e @ Berg @ { a → RELAT.PL-PL-GEN} @ noun @ "
 		],
 		"šurrāže(-)": [
-			"šuri-na-āž-e @ u.B. @ { a → RELAT.PL-PL-GEN} @ noun @ ",
-			"šuri-na-āž-e-[ @ u.B. @ { a → RELAT.PL-PL-GEN} @ noun @ "
+			"šuri-na-āž-e @ u.B. @ { a → RELAT.PL-PL-GEN} @ noun @ "
 		],
 		"ḫuwavain": [
 			"Ḫuwava+i=n @ DN @ { a → .ABS=3SG.ABS} { b → .ABS=CON} @ noun @ "
 		],
 		"urūbi": [
 			"urūbi @ u.B. @ { a → .ABS} @ noun @ "
-		],
-		"a": [
-			"a[ @ u.B. @  @ unclear @ ",
-			"av[ @ u.B. @  @ unclear @ "
 		],
 		"ḫāžerāe": [
 			"ḫāžeri-āe @ Dolch @ { a → INS} @ noun @ "
@@ -810,36 +459,17 @@
 			"saz+ul+di-a @ u.B. @ { a → ESS} @ noun @ ",
 			"saz-ol-d-a @ verköstigen @ { a → ol-PL.A-3A} @ verb @ "
 		],
-		"ḫa": [
-			"ḫav[ @ u.B. @  @ unclear @ ",
-			"ḫa[ @ u.B. @  @ unclear @ "
-		],
 		"tālia": [
 			"tāle-i-a @ Baum; Holz @ { a → 3POSS.SG-ESS} @ noun @ ",
 			"tāl-i-a @ herausziehen @ { a → TR-3A.SG} @ verb @ ",
 			"tāli-i-a @ u.B. @ { a → 3POSS.SG-ESS} @ noun @ "
 		],
 		"ḫirārī-x": [
-			"ḫer+ār+i-ī-[ @ Oberarm? @ { a → 3POSS.SG} @ noun @ ",
 			"ḫer+ār+i-ī @ Oberarm? @ { a → 3POSS.SG.ABS} @ noun @ "
-		],
-		"iš-x": [
-			"iš[ @ u.B. @  @ unclear @ "
-		],
-		"pa ambel(-)": [
-			"Pa[x]ambi-ž=l @ DN @ { a → ERG=3PL.ABS} @ noun @ "
-		],
-		"runne(-)": [
-			"]runi-ne @ u.B. @ { a → ABL/INS} @ noun @ ",
-			"]runi-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ ",
-			"]runi-ne-[ @ u.B. @ { a → RELAT.SG} @ noun @ "
 		],
 		"šīena": [
 			"šīe-na @ Wasser; Fluss @ { a → RELAT.PL.ABS} @ noun @ ",
 			"šīe-na @ Wasser; Fluss @ RELAT.PL.ABS @ noun @ "
-		],
-		"an-x": [
-			"an[ @ u.B. @  @ unclear @ "
 		],
 		"tīda": [
 			"tīdi-a @ u.B. @ { a → ESS} @ noun @ ",
@@ -848,7 +478,6 @@
 			"tīd-a @ u.B. @ { a → INT} @ verb @ "
 		],
 		"eža(-)": [
-			"ež-a[ @ u.B. @  @ unclear @ ",
 			"eže-a @ Erde @ { a → ESS} @ noun @ "
 		],
 		"ḫuwavanivab": [
@@ -877,9 +506,6 @@
 			"subni-ī-a @ u.B. @ { a → 3POSS.SG-ESS} @ noun @ ",
 			"subn-ī-a @ u.B. @ { a → TR-3A.SG} @ verb @ "
 		],
-		"nan": [
-			"nan[ @ u.B. @  @ unclear @ "
-		],
 		"naġmazulel": [
 			"Naġmazuli-ž=l @ DN @ { a → ERG=3PL.ABS} @ noun @ "
 		],
@@ -890,8 +516,7 @@
 			"pēd+ar+i-ož @ Rind @ { a → EQU} @ noun @ "
 		],
 		"avar": [
-			"avari @ Feld @ { a → .ABS} @ noun @ ",
-			"avari-[ @ Feld @  @ noun @ "
+			"avari @ Feld @ { a → .ABS} @ noun @ "
 		],
 		"fogāda": [
 			"fog+ādi-a @ u.B. @ { a → ESS} @ noun @ ",
@@ -904,19 +529,12 @@
 		"šelluġulla": [
 			"šell+o+ġ+o+li-na @ Hausangehöriger? @ { a → RELAT.PL.ABS} @ noun @ "
 		],
-		"foru": [
-			"for-u[ @ sehen @  @ unclear @ "
-		],
 		"pabni": [
 			"pab+ni @ Berg @ { a → .ABS} @ noun @ ",
 			"pab+ni @ Berg @ .ABS @ noun @ "
 		],
 		"DINGIR-ši": [
 			"eni-na-až-e @ Gott @ { a → RELAT.PL-PL-GEN} @ noun @ "
-		],
-		"itta-x": [
-			"itt-a[ @ gehen @  @ unclear @ ",
-			"itt-a[ @ kleiden @  @ unclear @ "
 		],
 		"šumallam": [
 			"šumali-na=m @ u.B. @ { a → RELAT.PL.ABS=CON} @ noun @ "
@@ -928,35 +546,15 @@
 			"Teššob @ DN @ { a → .ABS} @ noun @ ",
 			"Teššob @ DN @ .ABS @ noun @ "
 		],
-		"mān": [
-			"mān[ @ u.B. @  @ unclear @ ",
-			"mā=n @ so @ { a → =3SG.ABS} @ CONJ @ ",
-			"ma=ān @ so @ { a → =CON} @ CONJ @ "
-		],
 		"šimīgae": [
 			"Šimīgae @ DN @ { a → .ABS} @ noun @ "
-		],
-		"kē-x": [
-			"kē[ @ u.B. @  @ unclear @ "
-		],
-		"x-ni": [
-			"]ni @ u.B. @  @ unclear @ ",
-			"]ni @ u.B. @ { a → .ABS} @ noun @ ",
-			"]ni @ u.B. @ RELAT.SG @ unclear @ "
 		],
 		"É-A": [
 			"Ea @ DN @ { a → .ABS} @ noun @ ",
 			"Ea @ DN @ .ABS @ noun @ "
 		],
-		"ma": [
-			"ma[ @ u.B. @  @ unclear @ ",
-			"]ma @ u.B. @  @ unclear @ "
-		],
 		"É-A-ia": [
 			"Aia @ DN @ { a → .ABS} @ noun @ "
-		],
-		"nutḫi": [
-			"]n+u+tḫi @ u.B. @ { a → .ABS} @ noun @ "
 		],
 		"anamma": [
 			"anammi-a @ u.B. @ { a → ESS} @ noun @ ",
@@ -966,12 +564,7 @@
 		"mānuballa": [
 			"mānu-wa=lla @ 3PORN.SG @ { a → DAT=3PL.ABS} @ noun @ "
 		],
-		"a-x": [
-			"a[ @ u.B. @  @ unclear @ "
-		],
 		"si(-)pāib": [
-			"]sipi-āi=v @ u.B. @ { a → INS=2PL.ABS} @ noun @ ",
-			"]si @ u.B. @  @ unclear @ ",
 			"pā-i-b @ bauen @ { a → ANTIP-b} @ verb @ ",
 			"pā-i=v @ bauen @ { a → ANTIP=2PL.ABS} { b → INT.IMP=2PL.ABS} @ verb @ "
 		],
@@ -979,21 +572,13 @@
 			"sukki @ u.B. @ { a → .ABS} @ noun @ ",
 			"sukk-i @ u.B. @ { a → ANTIP} { b → TR.IMP} @ verb @ "
 		],
-		"ḫi": [
-			"ḫi[ @ u.B. @  @ unclear @ "
-		],
-		"x-kunna": [
-			"]k+o+nni-a @ u.B. @ { a → ESS} @ noun @ ",
-			"]-kko=nna @ u.B. @ { a → NEG=3SG.ABS} @ verb @ "
-		],
 		"tāndu": [
 			"tān-d-u @ machen @ { a → d-MED} @ verb @ ",
 			"tān-d-o @ machen @ { a → d-MOD.PAT} { b → d-2A.SG} @ verb @ ",
 			"tān-id-o @ machen @ { a → PL.A-TR.PFV} @ verb @ "
 		],
 		"x-ān": [
-			"=ān @ u.B. @ { a → =CON} @ unclear @ ",
-			"]ā=n @ u.B. @ { a → =3SG.ABS} @ unclear @ "
+			"=ān @ u.B. @ { a → =CON} @ unclear @ "
 		],
 		"agarġu": [
 			"ag+ar+ġ-u @ u.B. @ { a → MED} @ verb @ ",
@@ -1009,32 +594,17 @@
 			"pen-d-o @ u.B. @ { a → d-MOD.PAT} { b → d-2A.SG} @ verb @ ",
 			"pen-id-o @ u.B. @ { a → PL.A-TR.PFV} @ verb @ "
 		],
-		"kiž": [
-			"kiž[ @ u.B. @  @ unclear @ "
-		],
-		"ruštanda": [
-			"]ruštandi-a @ u.B. @ { a → ESS} @ noun @ "
-		],
 		"ālva": [
 			"ālvi-a @ u.B. @ { a → ESS} @ noun @ ",
 			"ālv-a @ u.B. @ { a → INT} @ verb @ ",
 			"ālv-a @ u.B. @ { a → ESS} @ noun @ ",
 			"ālv-a @ u.B. @ INT @ verb @ "
 		],
-		"mādini": [
-			"mādi-ne-[ @ Weisheit @ { a → RELAT.SG} @ noun @ "
-		],
-		"i": [
-			"]i @ u.B. @  @ unclear @ "
-		],
 		"tabakka": [
 			"tabakki-a @ u.B. @ { a → ESS} @ noun @ "
 		],
 		"nānindušša": [
 			"nān-ind-o-eš=nna @ schlagen @ { a → PL.A-MOD.PAT-OPT=3SG.ABS} @ verb @ "
-		],
-		"unzāni": [
-			"]unz+ā+ni @ u.B. @ { a → .ABS} @ noun @ "
 		],
 		"kuruppa": [
 			"kuruppi-a @ u.B. @ { a → ESS} @ noun @ ",
@@ -1054,7 +624,6 @@
 			"šīnunaġi @ u.B. @ { a → .ABS} @ noun @ "
 		],
 		"x(-)aġiga": [
-			"]aġigi-a @ u.B. @ { a → ESS} @ noun @ ",
 			"aġigi-a @ u.B. @ { a → ESS} @ noun @ "
 		],
 		"aga": [
@@ -1070,11 +639,6 @@
 			"nav-an-ed-a @ weiden @ { a → CAUS-FUT-3A.SG} { b → an-FUT-3A.SG} @ verb @ ",
 			"nav-an-ed-a @ u.B. @ { a → an-FUT-3A.SG} @ verb @ "
 		],
-		"x-andi": [
-			"]andi @ u.B. @ { a → .ABS} @ noun @ ",
-			"]and-i @ u.B. @ { a → ANTIP} @ verb @ ",
-			"]an-d-i @ u.B. @ { a → d-ANTIP} @ PRON @ "
-		],
 		"tāna": [
 			"tāni-a @ u.B. @ { a → ESS} @ noun @ ",
 			"tān-a @ machen @ INT @ verb @ "
@@ -1087,14 +651,6 @@
 			"šāli @ u.B. @ .ABS @ noun @ ",
 			"šāl-i @ u.B. @ ANTIP @ verb @ "
 		],
-		"su-x": [
-			"su[ @ u.B. @  @ unclear @ "
-		],
-		"x-anni": [
-			"]a+nni @ u.B. @ { a → .ABS} @ noun @ ",
-			"]ani-ne @ u.B. @ { a → ABL/INS} @ PRON @ ",
-			"]ani-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ "
-		],
 		"ḫōšti": [
 			"ḫōšti @ ein Stein @ { a → .ABS} @ noun @ ",
 			"ḫōšt-i @ u.B. @ { a → ANTIP} @ verb @ ",
@@ -1105,12 +661,8 @@
 			"āġri-a @ Weihrauch @ { a → ESS} @ noun @ "
 		],
 		"suppa(-)": [
-			"supp-a[ @ u.B. @  @ unclear @ ",
 			"suppi-a @ u.B. @ { a → ESS} @ noun @ ",
 			"supp-a @ u.B. @ { a → INT} @ verb @ "
-		],
-		"ibra": [
-			"]ibri-a @ u.B. @ { a → ESS} @ noun @ "
 		],
 		"pāra": [
 			"pāri-a @ u.B. @ { a → ESS} @ noun @ ",
@@ -1120,16 +672,13 @@
 			"āmm+a+nni-ne-va @ u.B. @ { a → RELAT.SG-DAT} @ noun @ "
 		],
 		"(-)tini": [
-			"ti+ni @ Wort @ { a → .ABS} @ noun @ ",
-			"]ti-ne @ u.B. @ { a → ABL/INS} @ noun @ ",
-			"]ti-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ "
+			"ti+ni @ Wort @ { a → .ABS} @ noun @ "
 		],
 		"amanniniba": [
 			"am+a+nni-ne-va @ u.B. @ { a → RELAT.SG-DAT} @ noun @ "
 		],
 		"ḫuwaži(-)": [
 			"ḫuwaži @ u.B. @ { a → .ABS} @ noun @ ",
-			"ḫuwaži-[ @ u.B. @  @ noun @ ",
 			"ḫuw-až-i @ u.B. @ { a → až-ANTIP} { b → až-TR.IMP} @ verb @ "
 		],
 		"tivena": [
@@ -1138,19 +687,10 @@
 			"tive-na @ Wort; Sache @ { a → RELAT.PL.ABS} @ noun @ "
 		],
 		"É-A-pini(-)": [
-			"Ea-ve-ne-[ @ DN @ { a → GEN-RELAT.SG-[} @ noun @ ",
 			"Ea-ve-ne-e @ DN @ { a → GEN-RELAT.SG-DIR/LOC} @ noun @ "
 		],
 		"šāišḫi": [
 			"šā+i+šḫe @ u.B @ { a → .ABS} @ noun @ "
-		],
-		"(-)un-x-x": [
-			"]un[ @ u.B. @  @ unclear @ ",
-			"un[ @ kommen; bringen @  @ unclear @ "
-		],
-		"(-)fo": [
-			"]fo[ @ u.B. @  @ unclear @ ",
-			"fo[ @ u.B. @  @ unclear @ "
 		],
 		"tīvena": [
 			"tīve-na @ Wort; Sache @ RELAT.PL.ABS @ noun @ ",
@@ -1160,29 +700,11 @@
 			"kād-i-a @ sagen; sprechen @ { a → TR-3A.SG} @ verb @ ",
 			"kād-i-a @ sagen; sprechen @ TR-3A.SG @ verb @ "
 		],
-		"fān": [
-			"]fa=ān @ u.B. @ { a → =CON} @ unclear @ ",
-			"]fā=n @ u.B. @ { a → =3SG.ABS} @ unclear @ "
-		],
-		"īš-x": [
-			"īš[ @ u.B. @  @ unclear @ "
-		],
-		"ti": [
-			"]ti @ u.B. @  @ unclear @ "
-		],
 		"tāġi": [
 			"tāġe @ Mann @ { a → .ABS} @ noun @ ",
 			"tāġ-i @ u.B. @ { a → ANTIP} { b → TR.IMP} @ verb @ ",
 			"tāġi @ u.B. @ { a → .ABS} @ noun @ ",
 			"tāġ-i @ u.B. @ { a → ANTIP} @ verb @ "
-		],
-		"ti-x": [
-			"ti[ @ u.B. @  @ unclear @ "
-		],
-		"palanni": [
-			"]pala+nni @ u.B. @ { a → .ABS} @ noun @ ",
-			"]palani-ne @ u.B. @ { a → ABL/INS} @ noun @ ",
-			"]palani-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ "
 		],
 		"ḪUR.SAG": [
 			"ḪUR.SAG @ Berg @  @ noun @ "
@@ -1191,41 +713,19 @@
 			"šatt-ed-aw @ ergreifen @ { a → FUT-1A.SG} @ verb @ "
 		],
 		"(-)ummaženenna": [
-			"]umm+a+že-ne-nna @ u.B. @ { a → RELAT.SG-EQU2} @ noun @ ",
 			"umm+a+že-ne-nna @ u.B. @ { a → RELAT.SG-EQU2} @ noun @ ",
-			"]umm+a+že-ne=nna @ u.B. @ { a → ABL/INS=3SG.ABS} @ noun @ ",
 			"umm+a+že-ne=nna @ u.B. @ { a → ABL/INS=3SG.ABS} @ noun @ ",
-			"]umm+a+že-ne-e=nna @ u.B. @ { a → RELAT.SG-DIR/LOC=3SG.ABS} @ noun @ ",
 			"umm+a+že-ne-e=nna @ u.B. @ { a → RELAT.SG-DIR/LOC=3SG.ABS} @ noun @ "
 		],
 		"(-)ḫōmbibi": [
-			"]ḫōmbi-ve @ u.B. @ { a → GEN} @ noun @ ",
 			"ḫōmbi-ve @ u.B. @ { a → GEN} @ noun @ ",
-			"]ḫōmbi-i-ve @ u.B. @ { a → 3POSS.SG-GEN} @ noun @ ",
 			"ḫōmbi-i-ve @ u.B. @ { a → 3POSS.SG-GEN} @ noun @ "
 		],
-		"ali": [
-			"al-i[ @ u.B. @  @ unclear @ "
-		],
 		"x-eri(-)ulli(-)": [
-			"]eriuli-ne-[ @ u.B. @ { a → RELAT.SG} @ noun @ ",
-			"]eriuli-ne @ u.B. @ { a → ABL/INS} @ noun @ ",
-			"]eriuli-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ ",
-			"]eri @ u.B. @  @ unclear @ ",
-			"ull-i[ @ u.B. @  @ unclear @ ",
-			"oli-ne-[ @ u.B. @ { a → RELAT.SG} @ noun @ ",
 			"oli-ne @ anderer @ { a → ABL/INS} @ noun @ ",
 			"oli-ne-e @ anderer @ { a → RELAT.SG-DIR/LOC} @ noun @ ",
 			"ull-i @ u.B. @ { a → ANTIP} { b → TR.IMP} @ verb @ ",
 			"ul-i-le @ u.B. @ { a → MOD.ACT-1JUSS} @ verb @ "
-		],
-		"um": [
-			"um[ @ u.B. @  @ unclear @ "
-		],
-		"x-ād": [
-			"]-ā=d @ u.B. @ { a → ESS=1SG.ABS} @ noun @ ",
-			"]-ā=d @ u.B. @ { a → INT=1SG:ABS} @ verb @ ",
-			"]ā=d @ u.B. @ { a → =1SG.ABS} @ unclear @ "
 		],
 		"šabluž": [
 			"šavli-ož @ Jahr @ { a → EQU} @ noun @ ",
@@ -1245,40 +745,10 @@
 		"kadiōššina": [
 			"kad-i-ō-šše-na @ sagen; sprechen @ { a → TR-2A.SG-NOM-RELAT.PL.ABS} @ noun @ "
 		],
-		"x-inuwadāi": [
-			"]inuwadi-āi @ u.B. @ { a → INS} @ noun @ ",
-			"]in-o-vade-āi @ u.B. @ { a → PAT-ADJ.NEG-INS} @ noun @ "
-		],
-		"x-šannai": [
-			"]ša+nni-ai @ u.B. @ { a → INS} @ noun @ ",
-			"]š-ann-i-ai @ u.B. @ { a → CAUS-MOD.ACT-PURP} { b → ann-MOD.ACT-PURP} @ verb @ "
-		],
-		"": [
-			"ḫar[ @ u.B. @  @ unclear @ ",
-			"ḫur[ @ u.B. @  @ unclear @ ",
-			"f[ @ u.B. @  @ unclear @ ",
-			"a[ @ u.B. @  @ unclear @ "
-		],
-		"fā": [
-			"fā[ @ u.B. @  @ unclear @ ",
-			"]fā @ u.B. @  @ unclear @ "
-		],
-		"rarra(-)": [
-			"]rari-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ ",
-			"]rari-na-[ @ u.B. @ { a → RELAT.PL} @ noun @ "
-		],
-		"ḫab": [
-			"]ḫi-a=v @ u.B. @ { a → ESS=2PL.ABS} @ noun @ ",
-			"]ḫ-a-b @ u.B. @ { a → INT-b} @ verb @ ",
-			"]ḫ-a=v @ u.B. @ { a → INT=2PL.ABS} { b → INT.IMP=2PL.ABS} @ verb @ "
-		],
 		"kadib": [
 			"kad-i-b @ sagen; sprechen @ { a → ANTIP-b} @ verb @ ",
 			"kadi-b @ u.B. @ { a → 2POSS.SG.ABS} @ noun @ ",
 			"kad-i=v @ sagen; sprechen @ { a → ANTIP=2PL.ABS} { b → TR.IMP=2PL.ABS} @ verb @ "
-		],
-		"eran-x": [
-			"er-an[ @ u.B. @  @ unclear @ "
 		],
 		"pirrib": [
 			"pirr-i-b @ u.B. @ { a → ANTIP-b} @ verb @ ",
@@ -1287,92 +757,39 @@
 			"piri-ne=v @ u.B. @ { a → ABL/INS=2PL.ABS} @ noun @ ",
 			"piri-ne-e=v @ u.B. @ { a → RELAT.SG-DIR/LOC=2PL.ABS} @ noun @ "
 		],
-		"kummini-x": [
-			"Kumme-ne-[ @ GN @ { a → RELAT.SG} @ noun @ "
-		],
 		"alumma": [
 			"al-u+m+ai @ sprechen @ { a → CVB} @ NF @ "
-		],
-		"x-nel": [
-			"]ne-ž=l @ u.B; u.B.; u.B; u.B. @ { a → ERG=3PL.ABS} @ noun @ ",
-			"]-ne-ž=l @ u.B. @ { a → RELAT.SG-ERG=3PL.ABS} @ noun @ "
-		],
-		"inū": [
-			"inū=[ @ wie @  @ CONJ @ ",
-			"inū=[ @ wie @  @ ADV @ "
-		],
-		"x-innam": [
-			"]ini-na=m @ u.B. @ { a → RELAT.PL.ABS=CON} @ noun @ ",
-			"]i+nni-a=m @ u.B. @ { a → ESS=CON} { b → ESS=2SG.ABS} @ noun @ ",
-			"]inn-a=m @ u.B. @ { a → INT=CON} { b → INT=2SG.ABS} { c → INT.IMP=CON} { d → INT.IMP=2SG.ABS} @ verb @ "
-		],
-		"tešše": [
-			"tešše-[ @ erhaben @  @ noun @ ",
-			"tešš-e[ @ erhaben sein? @  @ verb @ "
-		],
-		"x-ne": [
-			"]ne @ u.B. @  @ unclear @ ",
-			"]-ne @ u.B. @ { a → ABL/INS} @ noun @ ",
-			"]-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ "
 		],
 		"šōrra": [
 			"šōri-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ ",
 			"šōrr-a @ u.B. @ INT @ verb @ "
 		],
-		"uwa-x": [
-			"uw-a[ @ u.B. @  @ unclear @ "
-		],
 		"kešḫīda": [
 			"kešḫi-ī-da @ Thron @ { a → 3POSS.SG-DIR} @ noun @ "
 		],
 		"(-)aīn": [
-			"aī=n @ u.B. @ { a → =3SG.ABS} { b → =CON} @ CONJ @ ",
-			"]-aī=n @ u.B. @ { a → INS=3SG.ABS} { b → INS=CON} @ noun @ ",
-			"]-aī-n @ u.B. @ { a → PURP-n} @ verb @ ",
-			"]-aī=n @ u.B. @ { a → PURP=3SG.ABS} { b → PURP=CON} @ verb @ "
-		],
-		"tī": [
-			"tī[ @ u.B. @  @ unclear @ "
+			"aī=n @ u.B. @ { a → =3SG.ABS} { b → =CON} @ CONJ @ "
 		],
 		"x(-)allūrra": [
-			"]allūri-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ ",
 			"allūri-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ ",
 			"allūri-na @ ein Gewand @ { a → RELAT.PL.ABS} @ noun @ "
-		],
-		"umi": [
-			"um-i[ @ u.B. @ .ABS @ unclear @ "
 		],
 		"tarēna": [
 			"tarē-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ "
 		],
 		"pāġi(-)": [
 			"pāġi @ Kopf @ { a → .ABS} @ noun @ ",
-			"pāġi-[ @ Kopf @  @ noun @ ",
 			"pāġi @ u.B. @  @ noun @ ",
-			"pāġi-[ @ u.B. @  @ noun @ ",
 			"pāġ-i @ zerstören @ { a → ANTIP} { b → TR.IMP} @ verb @ ",
-			"pāġ-i[ @ zerstören @  @ unclear @ ",
-			"pāġ-i @ u.B. @ { a → ANTIP} { b → TR.IMP} @ verb @ ",
-			"pāġ-i[ @ u.B. @  @ unclear @ "
+			"pāġ-i @ u.B. @ { a → ANTIP} { b → TR.IMP} @ verb @ "
 		],
 		"(-)mīġi": [
-			"]m+ī+ġe @ u.B. @ { a → .ABS} @ noun @ ",
-			"]mīġi @ u.B. @ { a → .ABS} @ noun @ ",
 			"mīġi @ u.B. @ { a → .ABS} @ noun @ ",
-			"]m-īġ-i @ u.B. @ { a → īġ-ANTIP} { b → īġ-TR.IMP} @ verb @ ",
 			"mīġ-i @ u.B. @ { a → ANTIP} { b → TR.IMP} @ verb @ "
 		],
 		"kīaži": [
 			"kīaže @ Meer @ { a → .ABS} @ noun @ ",
 			"kīaže @ Meer @ .ABS @ noun @ "
-		],
-		"x(-)uštū-x": [
-			"]uštū[ @ u.B. @  @ unclear @ ",
-			"]-ušt-ū[ @ u.B. @ { a → RES} @ verb @ ",
-			"]-ušt-ū-[ @ u.B. @ { a → RES-MED} @ verb @ ",
-			"]-ušt-ū-[ @ u.B. @ { a → RES-TR.PFV} @ verb @ ",
-			"ušt-ū-[ @ herausgehen; fortbringen; erheben; aufstehen @ { a → MED} @ verb @ ",
-			"ušt-ū-[ @ herausgehen; fortbringen; erheben; aufstehen @ { a → TR.PFV} @ verb @ "
 		],
 		"tevena": [
 			"tive-na @ Wort; Sache @ RELAT.PL.ABS @ noun @ ",
@@ -1381,61 +798,27 @@
 		"imbaluridal": [
 			"Imbaluri-da=l @ DN @ { a → DIR=3PL.ABS} @ noun @ "
 		],
-		"x-lō-x tāb": [
-			"]lō[ @ u.B. @  @ unclear @ ",
-			"]t-ā-b @ u.B. @ { a → INT-b} @ verb @ ",
-			"]lō[x]t-ā-b @ u.B. @ { a → INT-b} @ verb @ "
-		],
-		"ulāġ": [
-			"ul-āġ[ @ u.B. @  @ unclear @ "
-		],
-		"iffošša": [
-			"]-iffo-š=nna @ u.B. @ { a → 1POSS.SG-ERG=3SG.ABS} @ noun @ "
-		],
 		"avāštum": [
 			"av-āšt-o-m @ u.B. @ { a → RES-TR.PFV-3A.SG} @ verb @ "
-		],
-		"al": [
-			"]a=l @ u.B. @ { a → =3PL.ABS} @ unclear @ ",
-			"al[ @ u.B. @  @ unclear @ "
 		],
 		"ḫēri": [
 			"ḫēri @ u.B. @ { a → .ABS} @ noun @ ",
 			"ḫēr-i @ u.B. @ ANTIP @ verb @ "
 		],
 		"tīžīvip(-)": [
-			"tīža-īffe @ Herz @ { a → 1POSS.SG.ABS} @ noun @ ",
-			"tīža-iffu-[ @ Herz @ { a → 1POSS.SG} @ noun @ "
-		],
-		"ša": [
-			"]ša @ u.B. @  @ unclear @ ",
-			"ša[ @ u.B. @  @ unclear @ "
+			"tīža-īffe @ Herz @ { a → 1POSS.SG.ABS} @ noun @ "
 		],
 		"ištānīffāl": [
 			"ištāni-īffe-ā=l @ Mitte @ { a → 1POSS.SG-ESS=3PL.ABS} @ noun @ "
 		],
-		"x-andīnīvina": [
-			"]andī-nī-ve-na @ u.B. @ { a → RELAT.SG-GEN-RELAT.PL.ABS} @ noun @ "
-		],
 		"tārēna": [
 			"tārē-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ "
-		],
-		"ḫīb": [
-			"]ḫī-b @ u.B. @ { a → 2POSS.SG.ABS} @ noun @ ",
-			"]ḫ-ī-b @ u.B. @ { a → ANTIP-b} @ verb @ "
 		],
 		"utḫarra": [
 			"utḫari-na @ Zeichen? @ { a → RELAT.PL.ABS} @ noun @ "
 		],
-		"urulāi-x": [
-			"ur-o-l-āi-[ @ existieren @ { a → MOD.PAT-l-PURP} @ verb @ "
-		],
 		"kīaži(-)eni-x": [
-			"kīaže @ Meer @ { a → .ABS} @ noun @ ",
-			"eni-x[ @ Gott @  @ noun @ ",
-			"kīažē-ne-[ @ Meer @ { a → RELAT.SG} @ noun @ ",
-			"kīažē-ne=[ @ Meer @ { a → ABL/INS} @ noun @ ",
-			"kīažē-ne-e=[ @ Meer @ { a → RELAT.SG-DIR/LOC} @ noun @ "
+			"kīaže @ Meer @ { a → .ABS} @ noun @ "
 		],
 		"šērižu": [
 			"Šērižu @ DN @ { a → .ABS} @ noun @ "
@@ -1444,52 +827,16 @@
 			"ēšḫi @ u.B. @ { a → .ABS} @ noun @ ",
 			"ēšḫ-i @ u.B. @ ANTIP @ verb @ "
 		],
-		"ši-x": [
-			"ši[ @ Auge @  @ unclear @ ",
-			"ši-[ @ beobachten @  @ verb @ ",
-			"ši[- @ u.B. @  @ unclear @ ",
-			"ši[ @ u.B. @  @ unclear @ "
-		],
 		"tāra": [
 			"tāri-a @ Feuer @ { a → ESS} @ noun @ ",
 			"tāri-a @ u.B. @ { a → ESS} @ noun @ ",
 			"tār-a @ u.B. @ { a → INT} @ verb @ "
 		],
-		"kēži": [
-			"kēž-i[ @ u.B. @  @ unclear @ "
-		],
-		"uššinim": [
-			"]+o+šše-ne=m @ u.B. @ { a → ABL/INS=CON} { b → ABL/INS=2SG.ABS} @ noun @ ",
-			"]+o+šše-ne-e=m @ u.B. @ { a → RELAT.SG-DIR/LOC=CON} { b → RELAT.SG-DIR/LOC=2SG.ABS} @ noun @ "
-		],
-		"iaža": [
-			"]-i-až-a @ u.B. @ { a → -3POSS-PL-DAT/ESS} @ noun @ ",
-			"]eži-a @ u.B. @ { a → ESS} @ noun @ ",
-			"]ež-a @ u.B. @ { a → INT} @ verb @ "
-		],
-		"pā-x": [
-			"pā[ @ u.B. @  @ unclear @ "
-		],
 		"tūri(-)": [
 			"tūri @ unten; hinab @  @ ADV @ ",
-			"tūri-[ @ Oberseite? @  @ noun @ ",
-			"tūr-i @ hinabgehen @ { a → ANTIP} @ verb @ ",
-			"tūr-i[ @ u.B. @  @ unclear @ ",
-			"tūr-i[ @ hinabgehen @  @ unclear @ "
-		],
-		"(-)i-x": [
-			"]i[ @ u.B. @  @ unclear @ ",
-			"i[ @ u.B. @  @ unclear @ "
-		],
-		"(-)ša(-)": [
-			"]ša[ @ u.B. @  @ unclear @ ",
-			"ša[ @ u.B. @  @ unclear @ ",
-			"]ša @ u.B. @  @ unclear @ "
+			"tūr-i @ hinabgehen @ { a → ANTIP} @ verb @ "
 		],
 		"(-)uwāma": [
-			"]uvi-ā=ma @ u.B. @ { a → ESS=CON} @ noun @ ",
-			"]uv-ā=ma @ u.B. @ { a → INT=CON} @ verb @ ",
-			"]uv-ām-a @ u.B. @ { a → FACT-3A.SG} { b → FACT-INT} @ verb @ ",
 			"uvi-ā=ma @ u.B. @ { a → ESS=CON} @ noun @ ",
 			"uv-ā=ma @ u.B. @ { a → INT=CON} @ verb @ ",
 			"uv-ām-a @ u.B. @ { a → FACT-3A.SG} { b → FACT-INT} @ verb @ "
@@ -1501,6 +848,11 @@
 		],
 		"10-uppa": [
 			"Teššop-pa @ DN @ { a → DAT} @ noun @ "
+		],
+		"fa": [
+			"ḪAR-va @ u.B. @ { a → DAT} @ verb @ ",
+			"Ḫarvi-a @ DN @ { a → ESS} @ verb @ ",
+			"Ḫurvi-a @ DN @ { a → ESS} @ noun @ "
 		],
 		"pagīnīnel": [
 			"pagī-nī-ne=l @ u.B. @ { a → RELAT.SG-ABL/INS=3PL.ABS} @ noun @ ",
@@ -1514,129 +866,33 @@
 		"ḫellibādi": [
 			"ḫill-i-bāde @ mitteilen @ { a → ACT-ADJ.NEG.ABS} @ noun @ "
 		],
-		"ḫī": [
-			"ḫī[ @ u.B. @  @ unclear @ "
-		],
 		"šērāmmi": [
 			"šērāmmi @ Norden @ .ABS @ noun @ ",
 			"šērāmmi @ Norden @ { a → .ABS} @ noun @ "
 		],
-		"fīel": [
-			"fīl[ @ u.B. @  @ unclear @ "
-		],
 		"forīda": [
 			"fōri-ī-da @ Blick @ { a → 3POSS.SG-DIR} @ noun @ "
 		],
-		"tal-x": [
-			"tal[ @ u.B. @  @ unclear @ "
-		],
-		"tiamma": [
-			"]t-i-a-mma @ u.B. @ { a → TR-3A.SG-NEG} @ verb @ ",
-			"]t-i-a=mma @ u.B. @ { a → TR-3A.SG=2SG.ABS} @ verb @ ",
-			"]t-i-a=mma @ u.B. @ { a → 3POSS.SG-ESS=2SG.ABS} { b → 3POSS.SG-ESS=CON} @ noun @ "
-		],
-		"nimā": [
-			"]nimā[ @ u.B. @  @ unclear @ ",
-			"]ni=mā @ u.B. @ { a → =CON} @ unclear @ ",
-			"]-ne=mā @ u.B. @ { a → ABL/INS=CON} @ noun @ ",
-			"]-ne-e=mā @ u.B. @ { a → RELAT.SG-DIR/LOC=CON} @ noun @ ",
-			"]n-i=mā @ u.B. @ { a → ANTIP=CON} @ verb @ "
-		],
-		"ā": [
-			"ā[ @ u.B. @  @ unclear @ "
-		],
 		"kīaži(-)": [
-			"kīaže @ Meer @ { a → .ABS} @ noun @ ",
-			"kīaže-[ @ Meer @  @ noun @ "
-		],
-		"(-)a-x": [
-			"]a[ @ u.B. @  @ unclear @ ",
-			"a[ @ u.B. @  @ unclear @ "
-		],
-		"rīža": [
-			"]rīži-a @ u.B. @ { a → ESS} @ noun @ ",
-			"]r-īž-a @ u.B. @ { a → īž-INT} { b → īž-3A.SG} @ verb @ "
-		],
-		"ḫimella": [
-			"]ḫimi-ž=lla @ DN? @ { a → ERG=3PL.ABS} @ noun @ ",
-			"]ḫimi-i=lla @ u.B. @ { a → 3POSS.SG.ABS=3PL.ABS} @ noun @ "
-		],
-		"x-ivi": [
-			"]ivi @ u.B. @ { a → .ABS} @ noun @ ",
-			"]i-ve @ u.B. @ { b → GEN} @ noun @ ",
-			"]iv-i @ u.B. @ { a → ANTIP} { b → TR.IMP} @ verb @ "
-		],
-		"tam": [
-			"tam[ @ u.B. @  @ unclear @ "
+			"kīaže @ Meer @ { a → .ABS} @ noun @ "
 		],
 		"(-)uži": [
-			"]uži @ u.B. @ { a → .ABS} @ noun @ ",
 			"uži @ Fleisch @ { a → .ABS} @ noun @ ",
-			"]už-i @ u.B. @ { a → ANTIP} { b → TR.IMP} @ verb @ ",
 			"už-i @ u.B. @ { a → ANTIP} { b → TR.IMP} @ verb @ ",
 			"uži @ u.B. @ { a → .ABS} @ noun @ "
 		],
-		"ai": [
-			"]-ai @ u.B. @ { a → INS} @ verb @ ",
-			"]a+i @ u.B. @ { a → } @ noun @ ",
-			"]-ai @ u.B. @ { a → PURP} @ verb @ ",
-			"]-ai @ u.B. @ { a → CVB} @ NF @ ",
-			"ai @ wenn; falls @  @ CONJ @ ",
-			"ai @ wenn @  @ CONJ @ "
-		],
-		"x-uri(-)": [
-			"]uri @ u.B. @ { a → .ABS} @ noun @ ",
-			"]uri[ @ u.B. @  @ unclear @ ",
-			"]ur-i @ u.B. @ { a → ANTIP} { b → TR.IMP} @ verb @ "
-		],
-		"-x-tumā": [
-			"]tumā[ @ u.B. @  @ unclear @ "
-		],
-		"x-i(-)": [
-			"]i @ u.B. @  @ unclear @ ",
-			"]i[ @ u.B. @  @ unclear @ "
-		],
-		"ḫimāi": [
-			"]ḫimi-āi @ u.B. @ { a → INS} @ noun @ ",
-			"]ḫimā+i @ DN? @ { a → .ABS} @ noun @ ",
-			"]ḫ-i+m+āi @ u.B. @ { a → CVB} @ NF @ "
-		],
-		"urra": [
-			"]uri-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ ",
-			"]urr-a @ u.B. @ { a → INT} @ verb @ "
-		],
 		"pišḫīlāva(-)": [
 			"pišḫīlāvi-ā @ u.B. @ { a → ESS} @ noun @ "
-		],
-		"tā": [
-			"]ti-ā @ u.B. @ { a → ESS} @ noun @ ",
-			"]-dā @ u.B. @ { a → DIR} @ noun @ ",
-			"]t-ā @ u.B. @ { a → 3A.SG} { b → INT} @ verb @ "
 		],
 		"nūduža": [
 			"nūd+o+že-a @ u.B. @ { a → ESS} @ noun @ ",
 			"nūd-ož-a @ u.B. @ { a → PST-3A.SG} @ verb @ "
 		],
 		"fori(-)": [
-			"fōri @ Blick @ { a → .ABS} @ noun @ ",
-			"fōri-[ @ Blick @  @ noun @ ",
-			"for-i[ @ sehen @  @ verb @ "
-		],
-		"x-ada(-)": [
-			"]ada[ @ u.B. @  @ unclear @ ",
-			"]adi-a @ so; u.B. @ { a → ESS} @ noun @ ",
-			"]ad-a @ u.B. @ { a → 3A.SG} { b → INT} @ verb @ ",
-			"]-ad-a @ u.B. @ { a → ad-3A.SG} { b → ad-INT} @ verb @ ",
-			"]a-da @ u.B. @ { a → DIR} @ noun @ "
+			"fōri @ Blick @ { a → .ABS} @ noun @ "
 		],
 		"šīnim": [
 			"šīni=m @ weiterhin; wieder; ferner @ { a → =CON} @ ADV @ "
-		],
-		"e-x": [
-			"e[ @ u.B. @  @ unclear @ "
-		],
-		"im": [
-			"]i=m @ u.B. @ { a → =CON} { b → =2SG.ABS} @ unclear @ "
 		],
 		"tarria": [
 			"tarri-i-a @ u.B. @ { a → 3POSS.SG-ESS} @ noun @ ",
@@ -1667,9 +923,6 @@
 		"kumarvenel": [
 			"Kumarve-ne-ž=l @ DN @ { a → RELAT.SG-ERG=3PL.ABS} @ noun @ "
 		],
-		"tapšuwar": [
-			"tapšuwar[ @ DN @  @ noun @ "
-		],
 		"unnu": [
 			"unnu @ nun @  @ ADV @ "
 		],
@@ -1678,9 +931,6 @@
 		],
 		"ḫāni": [
 			"ḫāni @ Kind; Säugling @ { a → .ABS} @ noun @ "
-		],
-		"faḫḫa": [
-			"faḫḫ-a[ @ u.B. @  @ unclear @ "
 		],
 		"tēna": [
 			"tēni-a @ u.B. @ { a → ESS} @ noun @ ",
@@ -1726,9 +976,6 @@
 		"ubuwen": [
 			"ub-o-va-en @ töten @ { a → MOD.PAT-NEG-3JUSS} @ verb @ "
 		],
-		"mūlu": [
-			"mūl-u[ @ u.B. @  @ unclear @ "
-		],
 		"sūwe": [
 			"sūve @ u.B. @ { a → .ABS} @ noun @ "
 		],
@@ -1743,10 +990,6 @@
 		],
 		"ulluliž": [
 			"ull-o-l-ež @ zurückhalten; niederdrücken @ { a → MOD.PAT-l-OPT} @ verb @ "
-		],
-		"unu": [
-			"un-u[ @ kommen; bringen @  @ unclear @ ",
-			"un-u[ @ u.B. @  @ unclear @ "
 		],
 		"agunna": [
 			"ag-o=nna @ erheben; aufnehmen; heraufkommen @ { a → MOD.PAT=3SG.ABS} @ verb @ "
@@ -1779,34 +1022,14 @@
 		"tažmišfa": [
 			"Tažmiš-fa @ DN @ { a → DAT} @ noun @ "
 		],
-		"nibiž": [
-			"nib-iž[ @ u.B. @  @ unclear @ "
-		],
-		"inniž": [
-			"]in-ne-ž @ u.B. @ { a → RELAT.SG-ERG} @ noun @ "
-		],
 		"tažmiš(-)": [
-			"Tažmiž @ DN @ { a → .ABS} @ noun @ ",
-			"Tažmiš-[ @ DN @  @ noun @ "
-		],
-		"(-)ḫara(-)x": [
-			"]ḫara[ @ u.B. @  @ unclear @ "
-		],
-		"riž": [
-			"]ri-ž @ u.B. @ { a → ERG} @ noun @ ",
-			"]ri-ne-ž @ u.B. @ { a → RELAT.SG-ERG} @ noun @ ",
-			"]r-i-ež @ u.B. @ { a → MOD.ACT-OPT} @ verb @ "
+			"Tažmiž @ DN @ { a → .ABS} @ noun @ "
 		],
 		"IŠKUR-(-)": [
-			"Teššob @ DN @ { a → .ABS} @ noun @ ",
-			"Teššob-[ @ DN @  @ noun @ "
+			"Teššob @ DN @ { a → .ABS} @ noun @ "
 		],
 		"(-)ida": [
-			"]i-da @ u.B. @ { a → DIR} @ noun @ ",
-			"]-i-da @ u.B. @ { a → 3POSS.SG-DIR} @ noun @ ",
-			"]idi-a @ u.B. @ { a → ESS} @ noun @ ",
 			"idi-a @ u.B. @ { a → ESS} @ noun @ ",
-			"]id-a @ u.B. @ { a → INT} @ verb @ ",
 			"id-a @ schlagen @ { a → INT} @ verb @ ",
 			"id-a @ u.B. @ { a → INT} @ verb @ "
 		],
@@ -1824,38 +1047,16 @@
 			"fori=ma @ Blick @ { a → .ABS=CON} @ noun @ ",
 			"for-i=ma @ sehen @ ANTIP=CON @ verb @ "
 		],
-		"ḫōvena": [
-			"]ḫōve-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ "
-		],
 		"DINGIR-na": [
 			"eni-na @ Gott @ { a → RELAT.PL.ABS} @ noun @ ",
 			"eni-na @ Gott @ RELAT.PL.ABS @ noun @ "
-		],
-		"IŠKUR-": [
-			"Teššob-[ @ DN @  @ noun @ "
-		],
-		"už": [
-			"]-ož @ u.B. @ { a → EQU} @ noun @ ",
-			"]-o-ež @ u.B. @ { a → MOD.PAT-OPT} @ verb @ "
 		],
 		"tunivadai": [
 			"ton-i-vade-ai @ ausstatten @ { a → ACT-ADJ.NEG-INS} @ verb @ ",
 			"tun-i-vade-ai @ überwinden; vermögen @ { a → ACT-ADJ.NEG-INS} @ verb @ "
 		],
-		"īn-x": [
-			"īn[ @ u.B. @  @ unclear @ "
-		],
-		"x-ḫuž": [
-			"]ḫ-ož @ u.B. @ { a → EQU} @ noun @ ",
-			"]ḫ-o-ež @ u.B. @ { a → MOD.PAT-OPT} @ verb @ "
-		],
 		"ḫavorni": [
 			"ḫavorni @ Himmel @ .ABS @ noun @ "
-		],
-		"x-rāi": [
-			"]ri-āi @ u.B. @ { a → INS} @ noun @ ",
-			"]r-i-āi @ u.B. @ { a → MOD.ACT-PURP} @ verb @ ",
-			"]r-i-l-āi @ u.B. @ { a → MOD.ACT-l-PURP} @ verb @ "
 		],
 		"temmāni": [
 			"temm+ā+ni @ u.B. @ { a → .ABS} @ noun @ ",
@@ -1863,116 +1064,41 @@
 		],
 		"ḫōži(-)x": [
 			"ḫōži @ u.B. @ { a → .ABS} @ noun @ ",
-			"ḫōži-[ @ u.B. @  @ noun @ ",
 			"ḫōž-i @ binden @ { a → ANTIP} @ verb @ ",
-			"ḫōž-i[ @ binden @  @ unclear @ ",
-			"ḫōž-i[ @ u.B. @  @ unclear @ ",
 			"ḫōž-i @ u.B. @ { a → ANTIP} @ verb @ ",
 			"ḫu-ōž-i @ rufen @ { a → PST-ANTIP} @ verb @ "
 		],
 		"tānni": [
 			"tānni @ u.B. @ .ABS @ noun @ ",
 			"tāni-ne @ u.B. @ { a → ABL/INS} @ noun @ ",
-			"tāni-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ ",
-			"tāni-ne-[ @ u.B. @ { a → RELAT.SG} @ noun @ "
+			"tāni-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ "
 		],
 		"ḫežmuži(-)x": [
-			"ḫežm+o+že @ glänzend @ { a → .ABS} @ noun @ ",
-			"ḫežm+o+že-[ @ glänzend @  @ noun @ "
+			"ḫežm+o+že @ glänzend @ { a → .ABS} @ noun @ "
 		],
 		"enutḫa(-)": [
-			"en+u+tḫe-a @ u.B. @ { a → ESS} @ noun @ ",
-			"en+u+tḫ+a[ @ u.B. @  @ noun @ "
-		],
-		"live": [
-			"]li-ve @ u.B. @ { a → GEN} @ noun @ ",
-			"]li-ne-ve @ u.B. @ { a → RELAT.SG-GEN} @ noun @ "
-		],
-		"ša-x": [
-			"šav[ @ u.B. @  @ unclear @ "
+			"en+u+tḫe-a @ u.B. @ { a → ESS} @ noun @ "
 		],
 		"DINGIR-na(-)": [
-			"eni-na @ Gott @ { a → RELAT.PL.ABS} @ noun @ ",
-			"eni-na-[ @ Gott @ { a → RELAT.PL} @ noun @ "
-		],
-		"x-i": [
-			"]i @ u.B. @  @ unclear @ "
+			"eni-na @ Gott @ { a → RELAT.PL.ABS} @ noun @ "
 		],
 		"šēriž": [
 			"Šēri-ž @ DN @ { a → ERG} @ noun @ "
 		],
-		"ažar": [
-			"až-ar[ @ u.B. @  @ unclear @ "
-		],
-		"iāma": [
-			"]-i-ā-ma @ u.B. @ { a → TR-3A.SG-NEG} @ verb @ ",
-			"]-i-ā=ma @ u.B. @ { a → TR-3A.SG=CON} @ verb @ ",
-			"]-i-ā=ma @ u.B. @ { a → 3POSS.SG-ESS=CON} @ noun @ "
-		],
 		"(-)ušta(-)": [
-			"]ušta[ @ u.B. @  @ unclear @ ",
-			"]ušti-a @ u.B. @ { a → ESS} @ noun @ ",
-			"]-ušt-a @ u.B. @ { a → RES-3A.SG} { b → RES-INT} @ verb @ ",
-			"ušt-a @ herausgehen; aufstehen @ { a → INT} @ verb @ ",
-			"ušt-a[ @ herausgehen; aufstehen @  @ unclear @ "
-		],
-		"(-)ia(-)": [
-			"]ia[ @ u.B. @  @ unclear @ ",
-			"ia[ @ u.B. @  @ unclear @ ",
-			"]-i-a @ u.B. @ { a → TR-3A.SG} @ verb @ ",
-			"]-i-a @ u.B. @ { a → 3POSS.SG-ESS} @ noun @ "
-		],
-		"x-ukku": [
-			"]-o-kko @ u.B. @ { a → INT-NEG} @ verb @ "
-		],
-		"fe-x": [
-			"fe[ @ u.B. @  @ unclear @ "
+			"ušt-a @ herausgehen; aufstehen @ { a → INT} @ verb @ "
 		],
 		"šinīenaža(-)": [
 			"šinē-na-až-a @ zwei @ { a → RELAT.PL-PL-DAT/ESS} @ noun @ "
 		],
-		"x-ulliana-x": [
-			"]ulliana[ @ u.B. @  @ noun @ "
-		],
-		"nitta": [
-			"]nitti-a @ u.B. @ { a → ESS} @ noun @ ",
-			"]-ne=tta @ u.B. @ { a → ABL/INS=1SG.ABS} @ noun @ ",
-			"]-ne-e=tta @ u.B. @ { a → RELAT.SG-DIR/LOC=1SG.ABS} @ noun @ ",
-			"]-ne-š=tta @ u.B. @ { a → RELAT.SG-ERG=1SG.ABS} @ noun @ "
-		],
-		"x-riž": [
-			"]ri-ž @ u.B. @ { a → ERG} @ noun @ ",
-			"]ri-ne-ž @ u.B. @ { a → RELAT.SG-ERG} @ noun @ ",
-			"]r-i-ež @ u.B. @ { a → MOD.ACT-OPT} @ verb @ ",
-			"]r-i-l-ež @ u.B. @ { a → MOD.ACT-l-OPT} @ verb @ "
-		],
 		"GU-ri(-)": [
-			"ped+ar+i @ Rind @ { a → .ABS} @ noun @ ",
-			"ped+ar+i-[ @ Rind @  @ noun @ "
-		],
-		"taw": [
-			"]t-aw @ u.B. @ { a → 1A.SG} @ verb @ ",
-			"]-ed-aw @ u.B. @ { a → FUT-1A.SG} @ verb @ "
+			"ped+ar+i @ Rind @ { a → .ABS} @ noun @ "
 		],
 		"forul": [
-			"foroli-le-[ @ Tempel @ { a → RELAT.SG} @ noun @ ",
-			"for-ul[ @ sehen @  @ noun @ ",
 			"foroli-ne @ Tempel @ { a → ABL/INS} @ noun @ ",
 			"foroli-ne-e @ Tempel @ { a → RELAT.SG-DIR/LOC} @ noun @ "
 		],
-		"nab": [
-			"]n-a-b @ u.B. @ { a → INT-b} @ verb @ ",
-			"]na=m @ u.B. @ { a → =CON} @ unclear @ "
-		],
-		"te": [
-			"tev[ @ u.B. @  @ unclear @ ",
-			"te[ @ u.B. @  @ unclear @ "
-		],
-		"rum": [
-			"]r-o-m @ u.B. @ { a → TR.PFV-3A.SG} @ verb @ "
-		],
 		"(-)arna-x": [
-			"]arna[ @ u.B. @  @ unclear @ ",
 			"arni-a @ Sünde @ { a → ESS} @ noun @ "
 		],
 		"šīb": [
@@ -1983,13 +1109,8 @@
 			"až-amm-u @ u.B. @ { a → FACT-MED} @ verb @ ",
 			"až-amm-o @ u.B. @ { a → FACT-2A.SG} { b → FACT-MOD.PAT} @ verb @ "
 		],
-		"ave-x": [
-			"ave-[ @ wer; jeder @  @ noun @ "
-		],
 		"ḫiri(-)": [
 			"ḫiri @ Zeit @ { a → .ABS} @ noun @ ",
-			"ḫiri-[ @ Zeit @  @ noun @ ",
-			"ḫir-i[ @ u.B. @  @ unclear @ ",
 			"ḫir-i @ u.B. @ { a → ANTIP} @ verb @ "
 		],
 		"aluwīb": [
@@ -1997,9 +1118,6 @@
 		],
 		"ḫellib": [
 			"ḫill-i-b @ mitteilen @ { a → ANTIP-b} @ verb @ "
-		],
-		"nā(-)": [
-			"Nav[ @ DN @  @ noun @ "
 		],
 		"IŠKUR-fodal": [
 			"Teššob-oda=l @ DN @ { a → DIR=3PL.ABS} @ noun @ "
@@ -2031,9 +1149,6 @@
 			"ad-ē=ma @ herabkommen?; herabbringen? @ { a → TR.IMP=CON} @ verb @ ",
 			"ad-ē=ma @ u.B. @ { a → TR.IMP=CON} @ verb @ "
 		],
-		"ki-x": [
-			"ki[ @ u.B. @  @ unclear @ "
-		],
 		"šīnimmab": [
 			"šīni=mma=m @ zwei; wieder; weiterhin @ { a → =2SG.ABS=CON} @ ADV @ "
 		],
@@ -2054,8 +1169,7 @@
 			"šarr-a @ u.B. @ { a → INT} @ verb @ "
 		],
 		"fēva-x": [
-			"fē-va @ 2PRON.SG @ { a → DAT} @ PRON @ ",
-			"fēv-a[ @ u.B. @  @ unclear @ "
+			"fē-va @ 2PRON.SG @ { a → DAT} @ PRON @ "
 		],
 		"tivāḫtu": [
 			"tiv-āġ-id-o @ sprechen @ { a → āġ-PL.A-TR.PFV} @ verb @ "
@@ -2067,13 +1181,7 @@
 		],
 		"issi(-)x": [
 			"issi @ u.B. @ { a → .ABS} @ noun @ ",
-			"iss-i @ u.B. @ { a → ANTIP} @ verb @ ",
-			"iss-i[ @ u.B. @  @ unclear @ "
-		],
-		"x-x-ab": [
-			"]-a-b @ u.B. @ { a → INT-b} @ verb @ ",
-			"]a-b @ u.B. @ { a → 2POSS.SG.ABS} @ noun @ ",
-			"]a=m @ u.B. @ { a → =CON} @ unclear @ "
+			"iss-i @ u.B. @ { a → ANTIP} @ verb @ "
 		],
 		"kula": [
 			"kuli-a @ u.B. @ { a → ESS} @ noun @ ",
@@ -2092,49 +1200,11 @@
 			"eže-ne-e @ Erde @ RELAT.SG-DIR/LOC @ noun @ "
 		],
 		"kammira(-)": [
-			"kammiri-a @ u.B. @ { a → ESS} @ noun @ ",
-			"kammira[ @ u.B. @  @ noun @ "
+			"kammiri-a @ u.B. @ { a → ESS} @ noun @ "
 		],
-		"x-fāġa": [
-			"]f+āġ+i-a @ u.B. @ { a → ESS} @ noun @ ",
-			"]f+ā+ġe-a @ u.B. @ { a → ESS} @ verb @ ",
-			"]f-āġ-a @ u.B. @ { a → āġ-3A.SG} { b → āġ-INT} @ verb @ "
-		],
-		"(-)manna(-)": [
-			"]manna[ @ u.B. @  @ unclear @ ",
-			"]mani-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ ",
-			"]mani-na-[ @ u.B. @ { a → RELAT.PL} @ noun @ ",
-			"]m+a+nni-a @ u.B. @ { a → ESS} @ noun @ ",
-			"mann-a[ @ sein @  @ verb @ "
-		],
-		"x-lāma": [
-			"]li-ā=ma @ u.B. @ { a → ESS=CON} @ noun @ ",
-			"]li-nā=ma @ u.B. @ { a → RELAT.PL.ABS=CON} @ noun @ ",
-			"]l-ā=ma @ u.B. @ { a → 3A.SG=CON} { b → INT=CON} @ verb @ ",
-			"]l-ām-a @ u.B. @ { a → FACT-3A.SG} { b → FACT-INT} @ verb @ ",
-			"]lāmi-a @ u.B. @ { a → ESS} @ noun @ "
-		],
-		"ḫō": [
-			"Ḫō[ @ DN @  @ noun @ "
-		],
-		"x-lōġu(-)": [
-			"]lōġu[ @ u.B. @  @ unclear @ ",
-			"]l+ō+ġ+o[ @ u.B. @  @ noun @ ",
-			"]l-ōġ-o @ u.B. @ { a → ōġ-MOD.PAT} { b → ōġ-2A.SG} @ verb @ ",
-			"]l-ōġ-u @ u.B. @ { a → ōġ-MED} @ verb @ ",
-			"]l-ōġ-u[ @ u.B. @ { a → ōġ} @ verb @ "
-		],
-		"fāġa": [
-			"]f+āġ+i-a @ u.B. @ { a → ESS} @ noun @ ",
-			"]f+ā+ġe-a @ u.B. @ { a → ESS} @ noun @ ",
-			"]f-āġ-a @ u.B. @ { a → āġ-3A.SG} { b → āġ-INT} @ verb @ "
-		],
-		"aḫ-x": [
-			"aḫ[ @ u.B. @  @ noun @ "
-		],
-		"(-)fo-x": [
-			"]fo[ @ u.B. @  @ unclear @ ",
-			"fo[ @ u.B. @  @ unclear @ "
+		"umin": [
+			"omini-ne @ Land @ { a → ABL/INS} @ noun @ ",
+			"omini-ne-e @ Land @ { a → RELAT.SG-DIR/LOC} @ noun @ "
 		],
 		"kiaži": [
 			"kiaže @ Meer @ { a → .ABS} @ noun @ "
@@ -2143,25 +1213,18 @@
 			"šīe-a @ Wasser; Fluss @ { a → ESS} @ noun @ ",
 			"šī-i-a @ beobachten @ { a → TR-3A.SG} @ verb @ ",
 			"šī-a @ beobachten @ { a → INT} @ verb @ ",
-			"ši-ī-a @ Auge @ { a → 3POSS.SG-ESS} @ noun @ ",
-			"šīa[ @ u.B. @  @ unclear @ "
+			"ši-ī-a @ Auge @ { a → 3POSS.SG-ESS} @ noun @ "
 		],
 		"ḫupši": [
 			"ḫupši @ u.B. @ .ABS @ noun @ ",
 			"ḫupš-i @ u.B. @ ANTIP @ verb @ "
 		],
 		"ḫišša(-)": [
-			"ḫišš-a[ @ u.B. @  @ unclear @ ",
 			"ḫišši-a @ u.B. @ { a → ESS} @ noun @ ",
 			"ḫišš-a @ u.B. @ { a → INT} @ verb @ "
 		],
 		"ḫammaninuḫḫa(-)": [
 			"ḫammanin+o+ḫḫe-a @ u.B. @ { a → ESS} @ noun @ "
-		],
-		"x-alluġella": [
-			"]all+uġ+i=lla @ u.B. @ { a → .ABS=3PL.ABS} @ noun @ ",
-			"]all+o+ġe=lla @ u.B. @ { a → .ABS=3PL.ABS} @ noun @ ",
-			"]all-uġ-i=lla @ u.B. @ { a → uġ-ANTIP=3PL.ABS} @ verb @ "
 		],
 		"egi": [
 			"egi @ Mitte @ { a → .ABS} @ noun @ ",
@@ -2174,9 +1237,7 @@
 		],
 		"kuwāġi(-)": [
 			"kovāġi @ eine Kopfbedeckung @ { a → .ABS} @ noun @ ",
-			"kovāġi-[ @ eine Kopfbedeckung @  @ noun @ ",
 			"kovāġi @ u.B. @ { a → .ABS} @ noun @ ",
-			"kovāġi-[ @ u.B. @  @ noun @ ",
 			"kov-āġ-i @ u.B. @ { a → āġ-ANTIP} @ verb @ "
 		],
 		"kangalbālla": [
@@ -2184,9 +1245,6 @@
 		],
 		"kumarbi": [
 			"Kumarbi @ DN @ { a → .ABS} @ noun @ "
-		],
-		"kašša-x": [
-			"kašš-a[ @ u.B. @  @ unclear @ "
 		],
 		"nirġudib": [
 			"nirġ-ud-i-b @ u.B. @ { a → ud-ANTIP-b} @ verb @ "
@@ -2209,9 +1267,6 @@
 		"malvāži": [
 			"malvāži @ u.B. @ { a → .ABS} @ noun @ "
 		],
-		"šur": [
-			"šur[ @ u.B. @  @ unclear @ "
-		],
 		"ambaža": [
 			"amb+a+že-a @ Brandopfer @ { a → ESS} @ noun @ "
 		],
@@ -2221,19 +1276,10 @@
 		],
 		"šurra(-)": [
 			"šuri-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ ",
-			"šuri-na-[ @ u.B. @ { a → RELAT.PL} @ noun @ ",
-			"šurr-a @ eilen @ { a → INT} @ verb @ ",
-			"šurr-a[ @ u.B. @  @ unclear @ "
+			"šurr-a @ eilen @ { a → INT} @ verb @ "
 		],
 		"kangalvalla": [
 			"kangalvi-a=lla @ u.B. @ { a → ESS=3PL.ABS} @ noun @ "
-		],
-		"x-arida": [
-			"]ari-da @ u.B. @ { a → DIR} @ noun @ ",
-			"]ari-i-da @ u.B. @ { a → 3POSS.SG-DIR} @ noun @ ",
-			"]ar-ed-a @ u.B. @ { a → FUT-3A.SG} @ verb @ ",
-			"]-ar-ed-a @ u.B. @ { a → ITER-FUT-3A.SG} @ verb @ ",
-			"]aridi-a @ u.B. @ { a → ESS} @ noun @ "
 		],
 		"DINGIR-sarrin": [
 			"en+zari-ne-n @ Götterschaft @ { a → RELAT.SG-ABL/INS} @ noun @ ",
@@ -2243,30 +1289,8 @@
 		"DINGIR]šena": [
 			"eni-na-až-e-na @ Gott @ { a → RELAT.PL-PL-GEN-RELAT.PL.ABS} @ noun @ "
 		],
-		"DINGIR-sa[r": [
-			"en+zari-[ @ Götterschaft @  @ noun @ "
-		],
-		"n]ašše(-)[": [
-			"]n+a+šše @ u.B. @ { a → .ABS} @ noun @ ",
-			"]n+a+šše-[ @ u.B. @  @ noun @ "
-		],
-		"]x-niba": [
-			"]-ne-va @ u.B. @ { a → RELAT.SG-DAT} @ noun @ "
-		],
-		"i-x[": [
-			"I[ @ u.B. @  @ noun @ "
-		],
-		"]x-ša": [
-			"]ša @ u.B. @  @ unclear @ "
-		],
 		"nabiru(-)[": [
-			"Nabiru @ DN @ { a → .ABS} @ noun @ ",
-			"Nabiru-[ @ DN @  @ noun @ "
-		],
-		"u]mmi": [
-			"]-ummi @ u.B. @ { a → INF.ABS} @ NF @ ",
-			"]ummi @ u.B. @ { a → .ABS} @ noun @ ",
-			"]umm-i @ u.B. @ { a → ANTIP} @ verb @ "
+			"Nabiru @ DN @ { a → .ABS} @ noun @ "
 		],
 		"tapti": [
 			"tapti @ u.B. @ { a → .ABS} @ noun @ "
@@ -2274,24 +1298,11 @@
 		"teššena": [
 			"tešše-na @ erhaben @ { a → RELAT.PL.ABS} @ noun @ "
 		],
-		"]x-tiġi": [
-			"]t+i+ġe @ u.B. @ { a → .ABS} @ noun @ "
-		],
 		"DINGIR-nāži": [
 			"eni-na-āž-e @ Gott @ { a → RELAT.PL-PL-GEN} @ noun @ "
 		],
-		"m[a": [
-			"ma[ @ u.B. @ .ABS @ unclear @ "
-		],
-		"n]a": [
-			"]-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ ",
-			"]na @ u.B. @  @ noun @ "
-		],
 		"DINGIR-sarra": [
 			"en+zari-na @ Götterschaft @ { a → RELAT.PL.ABS} @ noun @ "
-		],
-		"ta[": [
-			"ta[ @ u.B. @  @ unclear @ "
 		],
 		"ummanidu": [
 			"umm-an-id-o @ stehen? @ { a → CAUS-PL.A-TR.PFV} { b → an-PL.A-TR.PFV} @ verb @ "
@@ -2300,7 +1311,6 @@
 			"abi-n=am @ Gesicht; vor; wer; jeder @ { a → ABL/INS=CON} @ ADV @ "
 		],
 		"amm[i(-)": [
-			"amm-i[ @ u.B. @  @ unclear @ ",
 			"ammi @ zuvor? @  @ ADV @ "
 		],
 		"[ḫavou]runnibi": [
@@ -2318,12 +1328,6 @@
 			"tešši @ erhaben @ { a → .ABS} @ noun @ ",
 			"tešši @ erhaben @ .ABS @ noun @ "
 		],
-		"ša[r": [
-			"šar[ @ u.B. @  @ unclear @ "
-		],
-		"]x-ma": [
-			"]=ma @ u.B. @ { a → CON} @ noun @ "
-		],
 		"manzōž": [
 			"man-z-ōž @ 3PRON @ { a → PL-ERG} @ PRON @ ",
 			"man-z-ōž @ 3PRON @ PL-ERG @ PRON @ "
@@ -2332,31 +1336,17 @@
 			"ag-id-o @ aufnehmen; erheben; heraufkommen; aufrichten @ { a → PL.A-TR.PFV} @ verb @ ",
 			"ag-id-o @ aufnehmen; heraufkommen; aufrichten @ { a → PL.A-TR.PFV} @ verb @ "
 		],
-		"udaġu[l": [
-			"udaġul[ @ u.B. @  @ unclear @ "
-		],
 		"šōlidu": [
 			"šōl-id-o @ u.B. @ { a → PL.A-TR.PFV} @ verb @ "
 		],
-		"]x-tadanninež": [
-			"]t+ad+a+nni-ne-ž @ u.B. @ { a → RELAT.SG-ERG} @ noun @ "
-		],
 		"anzangiēž": [
 			"anz+angi-īē-ž @ u.B. @ { a → 3POSS.SG-ERG} @ noun @ "
-		],
-		"t]u": [
-			"]-id-o @ u.B. @ { a → PL.A-TR.PFV} @ verb @ "
 		],
 		"ummandu": [
 			"umm-an-id-o @ stehen? @ { a → CAUS-PL.A-TR.PFV} { b → an-PL.A-TR.PFV} @ verb @ "
 		],
 		"šell[a(-)": [
-			"šella[ @ u.B. @  @ unclear @ ",
 			"šelli-a @ Haus @ { a → ESS} @ noun @ "
-		],
-		"t]ōlla": [
-			"]tōli-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ ",
-			"]-id-ō=lla @ u.B. @ { a → PL.A-TR.PFV=3PL.ABS} @ verb @ "
 		],
 		"mana": [
 			"man-a @ 3PRON @ ESS @ PRON @ ",
@@ -2368,19 +1358,14 @@
 			"ummani-a @ Truppe @ { b → ESS} @ noun @ "
 		],
 		"DIN[GIR-": [
-			"eni-na @ Gott @ { a → RELAT.PL.ABS} @ noun @ ",
-			"eni-na-[ @ Gott @ { a → RELAT.PL} @ noun @ "
+			"eni-na @ Gott @ { a → RELAT.PL.ABS} @ noun @ "
 		],
 		"[amm]attenama": [
 			"ammatte-na=ma @ uralt; früherer @ { a → RELAT.PL.ABS=CON} @ noun @ "
 		],
 		"ḫavour[unni(-)": [
 			"ḫavōro+ni-ne @ Himmel @ { a → ABL/INS} @ noun @ ",
-			"ḫavōro+ni-ne-e @ Himmel @ { a → RELAT.SG-DIR/LOC} @ noun @ ",
-			"ḫavōro+ni-ne-[ @ Himmel @ { a → RELAT.SG} @ noun @ "
-		],
-		"a]tti": [
-			"]atti @ u.B. @ { a → .ABS} @ noun @ "
+			"ḫavōro+ni-ne-e @ Himmel @ { a → RELAT.SG-DIR/LOC} @ noun @ "
 		],
 		"ammatti": [
 			"ammatti @ uralt, füherer @ { a → .ABS} @ noun @ "
@@ -2390,9 +1375,6 @@
 		],
 		"mudu[m": [
 			"Mudum @ DN @ { a → .ABS} @ noun @ "
-		],
-		"]undali": [
-			"]undali @ u.B. @ { a → .ABS} @ noun @ "
 		],
 		"šena": [
 			"šena @ Bruder @ .ABS @ noun @ "
@@ -2415,54 +1397,29 @@
 		"šarr[ašši": [
 			"šarr+a+šše @ Königtum @ { a → .ABS} @ noun @ "
 		],
-		"]rumi": [
-			"]rumi @ u.B. @ { a → .ABS} @ noun @ ",
-			"]r-um-i @ u.B. @ { a → um-ANTIP} @ verb @ ",
-			"]r-ummi @ u.B. @ { a → INF.ABS} @ NF @ "
-		],
 		"migummi": [
 			"mig-ummi @ u.B. @ { a → INF.ABS} @ NF @ ",
 			"mig-ummi @ u.B. @ INF.ABS @ NF @ "
 		],
 		"foralli(-)[": [
 			"for+alli @ u.B. @ { a → .ABS} @ noun @ ",
-			"for+ali-ne-[ @ u.B. @ { a → RELAT.SG} @ noun @ ",
 			"for+ali-ne @ u.B. @ { a → ABL/INS} @ noun @ ",
-			"for+ali-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ ",
-			"forallinni-[ @ Opferschauer @  @ noun @ "
+			"for+ali-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ "
 		],
 		"[ōnd]uma": [
 			"ōndo=ma @ nun @ { a → CON} @ ADV @ "
 		],
-		"]ḫi": [
-			"]ḫi @ u.B. @ { a → .ABS} @ noun @ ",
-			"]ḫ-i @ u.B. @ ANTIP @ verb @ ",
-			"]ḫi @  @ .ABS @ noun @ ",
-			"]ḫ-i @  @ ANTIP @ verb @ "
-		],
 		"](-)kuwandaiel": [
-			"]kuwandi-ai=l @ u.B. @ { a → INS=3PL.ABS} @ noun @ ",
 			"kuwandi-ai=l @ u.B. @ { a → INS=3PL.ABS} @ noun @ ",
 			"kuw-and-i-ai=l @ u.B. @ { a → and-MOD.ACT-PURP=3PL.ABS} @ verb @ "
 		],
 		"šarrašši(-)[": [
-			"šarr+a+šše @ Königtum @ { a → .ABS} @ noun @ ",
-			"šarr+a+šše-[ @ Königtum @  @ noun @ "
-		],
-		"p]alda": [
-			"]paldi-a @ u.B. @ { a → ESS} @ noun @ ",
-			"]p-al-d-a @ u.B. @ { a → al-d-3A.SG} { b → al-d-INT} { c → al-PL.A-3A} @ verb @ "
+			"šarr+a+šše @ Königtum @ { a → .ABS} @ noun @ "
 		],
 		"šarraššinin": [
 			"šarr+a+šše-ne-n @ Königtum @ { a → RELAT.SG-ABL/INS} @ noun @ ",
 			"šarr+a+šše-ne=n @ Königtum @ { a → ABL/INS=3SG.ABS} { b → ABL/INS=CON} @ noun @ ",
 			"šarr+a+šše-ne-e=n @ Königtum @ { a → RELAT.SG-DIR/LOC=3SG.ABS} { b → RELAT.SG-DIR/LOC=CON} @ noun @ "
-		],
-		"ši[": [
-			"ši[ @ u.B. @  @ unclear @ "
-		],
-		"]x-kadunuiža(-)[": [
-			"]kadunuiža[ @ u.B. @  @ unclear @ "
 		],
 		"eža": [
 			"eže-a @ Erde @ { a → ESS} @ noun @ "
@@ -2477,34 +1434,14 @@
 		"ume[n(-)": [
 			"omini-ne @ Land @ { a → ABL/INS} @ noun @ ",
 			"omini-ne-e @ Land @ { a → RELAT.SG-DIR/LOC} @ noun @ ",
-			"omini-ne-[ @ Land @ { a → RELAT.SG} @ noun @ ",
 			"om-i-en @ u.B. @ { a → MOD.ACT-3JUSS} @ verb @ "
 		],
-		"mi-x[": [
-			"mi[ @ u.B. @  @ unclear @ "
-		],
 		"agaiašš[i(-)": [
-			"agaia+šše @ u.B. @ { a → .ABS} @ noun @ ",
-			"agaia+šše-[ @ u.B. @  @ noun @ "
-		],
-		"]engešša": [
-			"]engi-š=nna @ u.B. @ { a → ERG=3PL.ABS} @ noun @ ",
-			"]engi-i-š=nna @ u.B. @ { a → 3POSS.SG-ERG=3SG.ABS} @ noun @ "
+			"agaia+šše @ u.B. @ { a → .ABS} @ noun @ "
 		],
 		"]x(-)tarġine[ž": [
-			"]t+ar+ġe-ne-ž @ u.B. @ { a → RELAT.SG-ERG} @ noun @ ",
 			"tarġi-ne-ž @ u.B. @ { a → RELAT.SG-ERG} @ verb @ ",
 			"tar+ġe-ne-ž @ u.B. @ { a → RELAT.SG-ERG} @ noun @ "
-		],
-		"m[i": [
-			"Mi[ @ DN @  @ noun @ "
-		],
-		"a]rri": [
-			"]ari-ne @ u.B. @ { a → ABL/INS} @ noun @ ",
-			"]ari-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ "
-		],
-		"]x-ri": [
-			"]ri @ u.B. @  @ unclear @ "
 		],
 		"šōnid[a(-)": [
 			"šōni-da @ Hand @ { a → DIR} @ noun @ ",
@@ -2513,33 +1450,23 @@
 			"šōn-i-dan @ Hand @ { a → 3POSS.SG-ABL} @ noun @ "
 		],
 		"uruġulz[i(-)": [
-			"ur+uġ+ul+zi @ u.B. @ { a → .ABS} @ noun @ ",
-			"ur+uġ+ul+zi-[ @ u.B. @  @ noun @ "
+			"ur+uġ+ul+zi @ u.B. @ { a → .ABS} @ noun @ "
 		],
 		"šarrinež": [
 			"šarri-ne-ž @ Gottkönig @ RELAT.SG-ERG @ noun @ "
 		],
 		"ḫinnatten[a(-)": [
-			"ḫinnatte-na @ jetziger @ { a → RELAT.PL.ABS} @ noun @ ",
-			"ḫinnatte-na-[ @ jetziger @ { a → RELAT.PL} @ noun @ "
+			"ḫinnatte-na @ jetziger @ { a → RELAT.PL.ABS} @ noun @ "
 		],
 		"É-A-alla": [
 			"Ea-ž=lla @ u.B. @ { a → ERG=3PL.ABS} @ noun @ ",
 			"Ea-a=lla @ u.B. @ { a → ESS=3PL.ABS} @ noun @ "
 		],
-		"šar[": [
-			"šar[ @ u.B. @  @ unclear @ "
-		],
 		"ḫaburni": [
 			"ḫavor+ni @ Himmel @ .ABS @ noun @ "
 		],
 		"DINGIR-sa[rra(-)": [
-			"en+zari-na @ Götterschaft @ { a → RELAT.PL.ABS} @ noun @ ",
-			"en+zari-na-[ @ Götterschaft @ { a → RELAT.PL} @ noun @ "
-		],
-		"]ābni(-)[": [
-			"]āb+ni @ u.B. @ { a → .ABS} @ noun @ ",
-			"]āb+ni-[ @ u.B. @  @ noun @ "
+			"en+zari-na @ Götterschaft @ { a → RELAT.PL.ABS} @ noun @ "
 		],
 		"k]umarvenež": [
 			"Kumarve-ne-ž @ DN @ { a → RELAT.SG-ERG} @ noun @ "
@@ -2547,24 +1474,11 @@
 		"š]attum": [
 			"šatt-o-m @ ergreifen @ { a → TR.PFV-3A.SG} @ verb @ "
 		],
-		"]x-ulmuž": [
-			"]ulmi-ož @ u.B. @ { a → EQU} @ noun @ ",
-			"]ulm-o-ež @ u.B. @ { a → MOD.PAT-OPT} @ verb @ "
-		],
-		"kibi-x-x(-)[": [
-			"kib-i[ @ u.B. @  @ unclear @ "
-		],
-		"t]al": [
-			"]-da=l @ u.B. @ { a → DIR=3PL.ABS} @ noun @ "
-		],
 		"ōšši": [
 			"ōšš-i @ gehen @ { a → ANTIP} { b → TR.IMP} @ verb @ ",
 			"ōšš-i @ u.B. @ { a → ANTIP} { b → TR.IMP} @ verb @ ",
 			"ōšš-i @ gehen @ { a → ANTIP} @ verb @ ",
 			"ōšši @ u.B. @ { a → .ABS} @ noun @ "
-		],
-		"]x-funiva": [
-			"]funi-va @ u.B. @ { a → DAT} @ noun @ "
 		],
 		"ḫāvorunneva": [
 			"ḫāvoro+ni-ne-va @ Himmel @ { a → RELAT.SG-DAT} @ noun @ "
@@ -2576,13 +1490,6 @@
 			"ḫill-i @ mitteilen @ { a → ANTIP} { b → TR.IMP} @ verb @ ",
 			"ḫill-i @ mitteilen @ ANTIP @ verb @ "
 		],
-		"]x-šānnil": [
-			"]š+ā+nni-i=l @ u.B. @ { a → 3POSS.SG.ABS=3PL.ABS} @ noun @ ",
-			"]š+ā+ni-ne=l @ u.B. @ { a → ABL/INS=3PL.ABS} @ noun @ ",
-			"]š+ā+ni-ne-e=l @ u.B. @ { a → RELAT.SG-DIR/LOC=3PL.ABS} @ noun @ ",
-			"]š+ā+ni-ne-ž=l @ u.B. @ { a → RELAT.SG-ERG=3PL.ABS} @ noun @ ",
-			"]]š+ā+nni-ž=l @ u.B. @ { a → ERG=3PL.ABS} @ noun @ "
-		],
 		"ḫāvoužina": [
 			"ḫāv+ō+že-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ "
 		],
@@ -2590,11 +1497,7 @@
 			"ane-ne @ PRON.ANAPH? @ { a → ABl/INS} @ PRON @ ",
 			"ane-ne-e @ PRON.ANAPH? @ { a → RELAT.SG-DIR/LOC} @ PRON @ "
 		],
-		"ki[": [
-			"ki[ @ u.B. @  @ unclear @ "
-		],
 		"upš[i(-)": [
-			"upš-i[ @ u.B. @  @ unclear @ ",
 			"upši @ u.B. @ { a → .ABS} @ noun @ ",
 			"upš-i @ mähen?; ernten? @ { a → ANTIP} { b → TR.IMP} @ verb @ "
 		],
@@ -2604,10 +1507,6 @@
 		"ebri": [
 			"evri @ Herr @ .ABS @ noun @ ",
 			"evri @ Herr @ { a → .ABS} @ noun @ "
-		],
-		"]lili": [
-			"]lili @ u.B. @ { a → .ABS} @ noun @ ",
-			"]l-il-i @ u.B. @ { a → -ANTIP} { b → -TR.IMP} @ verb @ "
 		],
 		"IŠKUR-uffu[ž": [
 			"Teššof-fe-ož @ DN @ { a → GEN-EQU} { b → GEN-ERG} @ noun @ "
@@ -2619,18 +1518,11 @@
 		"ḫižmūža": [
 			"ḫižm+ō+že-a @ glänzend @ { a → ESS} @ noun @ "
 		],
-		"kā[": [
-			"kā[ @ u.B. @ .ABS @ unclear @ ",
-			"kā[ @ u.B. @  @ unclear @ "
-		],
 		"ḫāvourunnīra": [
 			"ḫāvōro+ni-ne-ra @ Himmel @ { a → RELAT.SG-COM} @ noun @ "
 		],
 		"šīrādili": [
 			"šir+ad-i-le @ erzählen @ MOD.ACT-1JUSS @ verb @ "
-		],
-		"fou[": [
-			"fō[ @ u.B. @  @ unclear @ "
 		],
 		"avīn": [
 			"avī-n @ Gesicht; vor @ { a → ABL/INS} @ ADV @ "
@@ -2638,9 +1530,6 @@
 		"āmmīnīn": [
 			"āmmī-nē-n @ zuvor @ { a → RELAT.SG-ABL/INS} @ ADV @ ",
 			"āmmī-n-ī=n @ zuvor @ { a → ABL/INS-EPNTH=3SG.ABS} @ verb @ "
-		],
-		"nu[": [
-			"nu[ @ u.B. @  @ unclear @ "
 		],
 		"urūkku": [
 			"ur-ō-kko @ existieren @ INT-NEG @ verb @ "
@@ -2655,24 +1544,17 @@
 			"āšḫu=n @ oben @ { a → 3SG.ABS} { b → CON} @ ADV @ ",
 			"āšḫu-n @ oben @ { a → ABL/INS} @ ADV @ "
 		],
-		"egi-x[": [
-			"eg-i[ @ u.B. @  @ unclear @ "
-		],
 		"ueruḫḫāl": [
 			"uwer+o+ḫḫe-ā=l @ u.B. @ { a → ESS=3PL.ABS} @ noun @ "
 		],
 		"ḫōlli(-)[": [
 			"ḫōli-ne @ u.B. @ { a → ABL/INS} @ noun @ ",
 			"ḫōli-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ ",
-			"ḫōli-ne-[ @ u.B. @ { a → RELAT.SG} @ noun @ ",
 			"ḫōll-i @ u.B. @ { a → ANTIP} @ verb @ ",
 			"ḫōl+l-i @ u.B. @ { a → ANTIP} @ verb @ "
 		],
 		"sītkūli": [
 			"sītk-ōl-i @ u.B. @ { a → ōl-ANTIP} @ verb @ "
-		],
-		"tam[": [
-			"tam[ @ u.B. @  @ unclear @ "
 		],
 		"pāri": [
 			"pari @ u.B. @ { a → .ABS} @ noun @ ",
@@ -2688,9 +1570,6 @@
 		"parzīga": [
 			"parzīgi-a @ u.B. @ { a → ESS} @ noun @ "
 		],
-		"ḫa-x[": [
-			"ḫa[ @ u.B. @  @ unclear @ "
-		],
 		"āšḫu": [
 			"āšḫu @ oben @  @ ADV @ "
 		],
@@ -2704,9 +1583,6 @@
 		"amāttīna": [
 			"amāttī-na @ uralt; früherer @ { a → RELAT.PL.ABS} @ noun @ "
 		],
-		"igia-x[": [
-			"igi-i-až-[ @ Mitte @ { a → 3POSS-PL} @ noun @ "
-		],
 		"ḫīdūri": [
 			"ḫīd-ūr-i @ u.B. @ { a → ūr-ANTIP} @ verb @ ",
 			"ḫīdūri @ u.B. @ { a → .ABS} @ noun @ "
@@ -2716,9 +1592,6 @@
 			"uri-i-až-a=n @ Fuß @ { a → 3POSS-PL-DAT/ESS=3SG.ABS} @ noun @ ",
 			"uri-i-až-a=an @ u.B. @ { a → 3POSS-PL-DAT/ESS=CON} @ noun @ ",
 			"uri-i-až-a=n @ u.B. @ { a → 3POSS-PL-DAT/ESS=3SG.ABS} @ noun @ "
-		],
-		"t]āl": [
-			"]-dā=l @ u.B. @ { a → DIR=3PL.ABS} @ noun @ "
 		],
 		"tī[vina": [
 			"tīve-na @ Wort; Sache @ { a → RELAT.PL.ABS} @ noun @ ",
@@ -2731,9 +1604,6 @@
 			"adāli-nē-ž=lla @ stark; der Starke @ { a → RELAT.SG-ERG=3PL.ABS} @ noun @ ",
 			"adāli-nē=lla @ stark; der Starke @ { a → ABL/INS=3PL.ABS} @ noun @ ",
 			"adāli-ne-ē=lla @ stark; der Starke @ { a → RELAT.SG-DIR/LOC=3PL.ABS} @ noun @ "
-		],
-		"k[i": [
-			"ki[ @ u.B. @ .ABS @ unclear @ "
 		],
 		"kumarvinīel": [
 			"Kumarve-nē-ž=l @ DN @ { a → RELAT.SG-ERG=3PL.ABS} @ noun @ ",
@@ -2748,77 +1618,34 @@
 		"alumāī[n": [
 			"al-u+m+āī-n @ sprechen @ { a → CVB-n} @ NF @ "
 		],
-		"]x-amma": [
-			"]a=mma @ u.B. @ { a → 2SG.ABS} @ unclear @ "
-		],
-		"šur[": [
-			"šur[ @ u.B. @  @ unclear @ "
-		],
-		"]fa": [
-			"]fa @ u.B. @  @ unclear @ ",
-			"]-va @ u.B. @ { a → DAT} @ verb @ "
-		],
 		"f]ina": [
-			"]-ve-na @ u.B. @ { a → GEN-RELAT.PL.ABS} @ noun @ ",
-			"tive-na @ Wort; Sache @ { a → RELAT.PL.ABS} @ noun @ ",
-			"]-ve-ne-a @ u.B. @ { a → GEN-RELAT.SG-ESS} @ verb @ "
-		],
-		"kīaž[i": [
-			"kīaže-[ @ Meer @  @ noun @ "
+			"tive-na @ Wort; Sache @ { a → RELAT.PL.ABS} @ noun @ "
 		],
 		"avin": [
 			"avi-n @ Gesicht; vor @ { a → ABL/INS} @ ADV @ ",
 			"avi-n @ Gesicht; vor @ { a → ABL/INS} @ noun @ "
 		],
-		"ana[": [
-			"an-a[ @ u.B. @  @ unclear @ "
-		],
-		"]x-na": [
-			"]na @ u.B. @  @ unclear @ ",
-			"]-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ ",
-			"]ni-a @ u.B. @ { a → ESS} @ noun @ "
-		],
 		"uni(-)i[": [
-			"un-ī[ @ kommen; bringen @  @ unclear @ ",
 			"un-i @ kommen; bringen @ { a → ANTIP} { b → TR.IMP} @ verb @ "
 		],
-		"t]ikkunni-x[": [
-			"]t+ikk+o+nni-[ @ u.B. @  @ noun @ "
-		],
 		"(-)ḫ]āri": [
-			"]ḫ+ār+i @ Weg @ { a → .ABS} @ noun @ ",
-			"]ḫ-ār-i @ u.B. @ { a → ITER-ANTIP} { b → ITER-TR.IMP} @ verb @ ",
 			"ḫāri @ u.B. @ { a → .ABS} @ noun @ ",
 			"ḫār-i @ u.B. @ { a → ANTIP} { b → TR.IMP} @ verb @ "
 		],
 		"tīdibā[": [
 			"tīd-i-bāde @ zählen @ { a → ACT-ADJ.NEG.ABS} @ noun @ ",
-			"tīd-i-bāde-[ @ zählen @ { a → ACT-ADJ.NEG} @ noun @ ",
-			"tīd-i-bāde-[ @ angreifen @ { a → ACT-ADJ.NEG} @ noun @ ",
-			"tīd-i-bāde @ u.B. @ { a → ACT-ADJ.NEG.ABS} @ noun @ ",
-			"tīd-i-bāde-[ @ angreifen; u.B.; zählen @ { a → ACT-ADJ.NEG} @ noun @ "
+			"tīd-i-bāde @ u.B. @ { a → ACT-ADJ.NEG.ABS} @ noun @ "
 		],
 		"pīellinīd[a": [
 			"pīlli-nē-da @ Kanal @ { a → RELAT.SG-DIR} @ noun @ "
 		],
 		"](-)ade": [
-			"]ade @ u.B. @ { a → .ABS} @ noun @ ",
 			"ade @ u.B. @ { a → .ABS} @ noun @ ",
 			"ad-e @ herabkommen?; herabbringen?; u.B. @ { a → TR.IMP} @ verb @ "
-		],
-		"šā[": [
-			"šā[ @ u.B. @  @ unclear @ "
-		],
-		"]ni": [
-			"]ni @ u.B. @  @ unclear @ "
 		],
 		"išti": [
 			"ište @ 1PRON.SG @ { a → .ABS} @ PRON @ ",
 			"išt-i @ u.B. @ { a → ANTIP} { b → TR.IMP} @ verb @ "
-		],
-		"šār[u": [
-			"šār-u[ @ u.B @  @ unclear @ ",
-			"šār-u[ @ wünschen @  @ verb @ "
 		],
 		"šōda": [
 			"šō-da @ 1PRON.SG @ { a → DIR} @ PRON @ ",
@@ -2838,103 +1665,48 @@
 			"šār-i @ wünschen @ { a → ANTIP} { b → TR.IMP} @ verb @ ",
 			"šār-i @ u.B @ { a → ANTIP} { b → TR.IMP} @ verb @ ",
 			"išši-b @ u.B. @ { a → 2POSS.SG.ABS} @ noun @ ",
-			"išši-p-[ @ u.B. @ { a → 2POSS.SG} @ noun @ ",
 			"išši-iffe @ u.B. @ { a → 1POSS.SG.ABS} @ noun @ ",
-			"išši-iffu-[ @ u.B. @ { a → 1POSS.SG} @ noun @ ",
-			"išš-ip[ @ u.B. @  @ unclear @ ",
 			"šār+i+šše-b @ Wunsch @ { a → 2POSS.SG.ABS} @ noun @ ",
-			"šār+i+šše-p-[ @ Wunsch @ { a → 2POSS.SG} @ noun @ ",
-			"šār+i+šše-iffe @ Wunsch @ { a → 1POSS.SG.ABS} @ noun @ ",
-			"šār+i+šše-iffu-[ @ Wunsch @ { a → 1POSS.SG} @ noun @ "
+			"šār+i+šše-iffe @ Wunsch @ { a → 1POSS.SG.ABS} @ noun @ "
 		],
 		"šūwux]ullul": [
 			"šūw-ull-o=l @ u.B. @ { a → ull-2A.SG=3PL.ABS} @ verb @ "
 		],
-		"(-)t]iž[": [
-			"]tiž[ @ u.B. @  @ unclear @ ",
-			"tiž[ @ u.B. @  @ unclear @ "
-		],
-		"]līli(-)[": [
-			"]līli @ u.B. @ { a → .ABS} @ noun @ ",
-			"]l-ī-le @ u.B. @ { a → MOD.ACT-1JUSS} @ verb @ ",
-			"]līli[ @ u.B. @  @ unclear @ "
-		],
-		"]x-likki-x[": [
-			"]likki[ @ u.B. @  @ noun @ ",
-			"]l-i-kki=[ @ u.B. @ { a → ANTIP-NEG} @ verb @ "
-		],
-		"]ūkku": [
-			"]-ō-kko @ u.B. @ { a → INT-NEG} @ verb @ "
-		],
 		"šār[i(-)": [
 			"šār-i @ wünschen @ { a → ANTIP} { b → TR.IMP} @ verb @ ",
 			"šār-i @ u.B. @ { a → ANTIP} { b → TR.IMP} @ verb @ ",
-			"šāri @ Wunsch? @ { a → .ABS} @ noun @ ",
-			"šāri-[ @ Wunsch? @  @ noun @ ",
-			"šār-i[ @ wünschen @  @ unclear @ "
-		],
-		"]rilānum": [
-			"]r-il-ān-o-m @ u.B. @ { a → il-ān-TR.PFV-3A.SG} @ verb @ "
+			"šāri @ Wunsch? @ { a → .ABS} @ noun @ "
 		],
 		"KASKAL-(-)[": [
-			"ḫari @ Weg @ { a → .ABS} @ noun @ ",
-			"ḫari-[ @ Weg @  @ noun @ "
+			"ḫari @ Weg @ { a → .ABS} @ noun @ "
 		],
 		"UTU-ki": [
 			"Šimige @ GN @ { a → .ABS} @ noun @ ",
 			"Šimige @ DN @ { a → .ABS} @ noun @ ",
 			"Šimige @ DN @ .ABS @ noun @ "
 		],
-		"]ḫinin": [
-			"]ḫi-ne-n @ u.B. @ { a → RELAT.SG-ABL/INS} @ noun @ ",
-			"]ḫi-ne=n @ u.B. @ { a → ABL/INS=3SG.ABS} { b → ABL/INS=CON} @ noun @ ",
-			"]ḫi-ne-e=n @ u.B. @ { a → RELAT.SG-DIR/LOC=3SG.ABS} { b → RELAT.SG-DIR/LOC=CON} @ noun @ "
-		],
-		"ūš-x[": [
-			"ūš[ @ u.B. @  @ unclear @ "
-		],
-		"]um": [
-			"]-o-m @ u.B. @ { a → TR.PFV-3A.SG} @ verb @ "
-		],
 		"urunnin": [
 			"ur+onni-n @ hinterer; letzter @ { a → ABL/INS} @ noun @ ",
 			"ur+o+nni=n @ hinterer; letzterer @ { a → .ABS=3SG.ABS} { b → .ABS=CON} @ noun @ "
 		],
 		"]ivina": [
-			"]i-ve-na @ u.B. @ { a → GEN-RELAT.PL.ABS} @ noun @ ",
 			"tive-na @ Wort; Sache @ { a → RELAT.PL.ABS} @ noun @ "
 		],
 		"talmell[a": [
 			"talmi=lla @ groß @ { a → .ABS=3PL.ABS} @ noun @ ",
 			"talm-i=lla @ groß sein; groß werden; groß machen @ { a → ANTIP=3PL.ABS} @ verb @ "
 		],
-		"šēr[": [
-			"šēr[ @ u.B. @  @ unclear @ "
-		],
 		"](-)udarriž": [
-			"]ud+ar+i-ne-ž @ u.B. @ { a → RELAT.SG-ERG} @ noun @ ",
 			"ud+ari-ne-ž @ u.B. @ { a → RELAT.SG-ERG} @ noun @ ",
-			"]ud-ar-i-l-ež @ u.B. @ { a → ITER-MOD.ACT-l-OPT} @ verb @ ",
 			"ud-ar-i-l-ež @ u.B. @ { a → ITER-MOD.ACT-l-OPT} @ verb @ "
 		],
 		"pūġu(-)[": [
-			"pūġ-u[ @ tauschen @  @ verb @ ",
 			"pūġ-o @ tauschen @ { a → MOD.PAT} @ verb @ ",
 			"pūġ-u @ tauschen @ { a → MED} @ verb @ "
 		],
-		"]x-ti": [
-			"]ti @ u.B. @ { a → .ABS} @ noun @ ",
-			"]t-i @ u.B. @ { a → ANTIP} { b → TR.IMP} @ verb @ "
-		],
 		"(-)u]škāra": [
-			"]ušk+ār+i-a @ u.B. @ { a → ESS} @ noun @ ",
 			"ušk+ār+i-a @ u.B. @ { a → ESS} @ noun @ ",
-			"]ušk-ār-a @ u.B. @ { a → ITER-3A.SG} { b → ITER-INT} @ verb @ ",
 			"ušk-ār-a @ u.B. @ { a → ITER-3A.SG} { b → ITER-INT} @ verb @ "
-		],
-		"]x-ni(-)[": [
-			"]ni[ @ u.B. @  @ unclear @ ",
-			"]ni @ u.B. @  @ unclear @ "
 		],
 		"ḫārapḫaēm": [
 			"ḫār+a+ġe-ve-aē=m @ u.B. @ { a → GEN-INS=2SG.ABS} @ noun @ "
@@ -2984,13 +1756,6 @@
 			"šikki-na-až-a=n @ Pflock?; Balken? @ { a → RELAT.PL-PL-DAT/ESS=3SG.ABS} @ noun @ ",
 			"šikki-na-až-a=an @ Pflock?; Balken? @ { a → RELAT.PL-PL-DAT/ESS=CON} @ noun @ "
 		],
-		"]nažan": [
-			"]-na-až-a=n @ u.B. @ { a → RELAT.PL-PL-DAT/ESS=3SG.ABS} @ noun @ ",
-			"]-na-až-a=an @ u.B. @ { a → RELAT.PL-PL-DAT/ESS=CON} @ noun @ "
-		],
-		"nā[": [
-			"nā[ @ u.B. @  @ unclear @ "
-		],
 		"šīġāvenažan": [
 			"šēġā-ve-na-až-a=n @ Tor @ { a → GEN-RELAT.PL-PL-DAT/ESS=3SG.ABS} @ noun @ ",
 			"šēġā-ve-na-až-a=an @ Tor @ { a → GEN-RELAT.PL-PL-DAT/ESS=CON} @ noun @ "
@@ -3000,9 +1765,6 @@
 		],
 		"ḫōrdi": [
 			"ḫōrdi @ Fenster? @ { a → .ABS} @ noun @ "
-		],
-		"kum[i": [
-			"Kum[ @ GN @  @ noun @ "
 		],
 		"aruri": [
 			"ar-o-re @ geben @ { a → PAT-PTCP.ABS} @ noun @ "
@@ -3076,28 +1838,17 @@
 			"ḫāni-ie @ Kind; Kleinkind; Säugling @ 3POSS.SG.ABS @ noun @ ",
 			"ḫāni-i-e @ Kind; Kleinkind; Säugling @ { a → 3POSS.SG-DIR} @ noun @ "
 		],
-		"ḫā[": [
-			"ḫā[ @ u.B. @  @ unclear @ "
-		],
 		"mūgižanun": [
 			"Mūgižanun @ GN @ { a → .ABS} @ noun @ "
-		],
-		"]faein": [
-			"]-va-en @ u.B. @ { a → NEG-3JUSS} @ verb @ "
 		],
 		"šiurivain": [
 			"ši-ur-i-va-en @ u.B. @ { a → ur-MOD.ACT-NEG-3JUSS} @ verb @ "
 		],
 		"navuwu(-)[": [
-			"nav-uffu @ u.B. @ { a → 1A.SG.NEG} @ verb @ ",
-			"navuwu-[ @ u.B. @  @ unclear @ "
+			"nav-uffu @ u.B. @ { a → 1A.SG.NEG} @ verb @ "
 		],
 		"IŠTAR-ka": [
 			"Šavoška @ DN @ { a → .ABS} @ noun @ "
-		],
-		"]imma": [
-			"]-i=mma @ u.B. @ { a → TR.IMP=2SG.ABS} @ verb @ ",
-			"]i=mma @ u.B. @ { a → =2SG.ABS} @ unclear @ "
 		],
 		"forivaenima": [
 			"for-i-va-en-i=ma @ sehen @ { a → MOD.ACT-NEG-3JUSS-EPNTH=CON} @ noun @ "
@@ -3126,9 +1877,6 @@
 		"fažab": [
 			"faž-a-b @ eintreten @ INT-b @ verb @ "
 		],
-		"išt[ani": [
-			"ištani-[ @ Inneres @  @ noun @ "
-		],
 		"IŠTAR-kan": [
 			"Šavoška=an @ DN @ { a → .ABS=CON} @ noun @ ",
 			"Šavoška=n @ DN @ { a → .ABS=3SG.ABS} @ noun @ "
@@ -3141,8 +1889,7 @@
 		],
 		"kummini": [
 			"Kumme-ne-e @ GN @ { a → RELAT.SG-DIR/LOC} @ noun @ ",
-			"Kumme-ne @ GN @ { a → ABL/INS} @ noun @ ",
-			"Kumme-ne-[ @ GN @ { a → RELAT.SG} @ noun @ "
+			"Kumme-ne @ GN @ { a → ABL/INS} @ noun @ "
 		],
 		"[š]āvalu": [
 			"šāval-u @ eintreten? @ { a → MED} @ verb @ ",
@@ -3242,22 +1989,12 @@
 			"inū=tta @ wie @ { a → =1SG.ABS} @ CONJ @ ",
 			"inū=tta @ wie @ { a → =1SG.ABS} @ ADV @ "
 		],
-		"a]nna": [
-			"]anna @ u.B. @  @ unclear @ "
-		],
 		"avid[a": [
 			"avi-i-da @ Gesicht; vor @ { a → 3POSS.SG-DIR} @ noun @ "
 		],
-		"š]a": [
-			"]ša @ u.B. @  @ unclear @ "
-		],
 		"ḫīžuda(-)x[": [
 			"ḫīž+ud+i-a @ u.B. @ { a → ESS} @ noun @ ",
-			"ḫīž-ud-a @ u.B. @ { a → ud-3A.SG} { b → ud-INT} @ verb @ ",
-			"ḫīž-ud-a[ @ u.B. @ { a → ud} @ unclear @ "
-		],
-		"]x-ta": [
-			"]ta @ u.B. @  @ unclear @ "
+			"ḫīž-ud-a @ u.B. @ { a → ud-3A.SG} { b → ud-INT} @ verb @ "
 		],
 		"avalġa": [
 			"av+al+ġe-a @ u.B. @ { a → ESS} @ noun @ "
@@ -3265,36 +2002,13 @@
 		"kuma]rvenira": [
 			"Kumarve-ne-ra @ DN @ { a → RELAT.SG-COM} @ noun @ "
 		],
-		"]x-talla": [
-			"]tali-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ ",
-			"]talli-a @ u.B. @ { a → ESS} @ noun @ ",
-			"]ta=lla @ u.B. @ { a → =3PL.ABS} @ unclear @ "
-		],
 		"uraēna": [
 			"uraē-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ "
-		],
-		"]ikkadarra": [
-			"]ikkadari-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ "
-		],
-		"]x-rallaža": [
-			"]rali-na-až-a @ u.B. @ { a → RELAT.PL-PL-DAT/ESS} @ noun @ "
-		],
-		"]x-rinna(-)ti(-)[": [
-			"]rini-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ ",
-			"]r+i+nni-a @ u.B. @ { a → ESS} @ noun @ ",
-			"]ri=nna @ u.B. @ { a → =3SG.ABS} @ unclear @ ",
-			"]r-ne-nna @ u.B. @ { a → RELAT.SG-EQU2} @ noun @ ",
-			"]ri-i-nna @ u.B. @ { a → 3POSS.SG-EQU2} @ noun @ ",
-			"]r-i=nna @ u.B. @ { a → ANTIP=3SG.ABS} { b → TR.IMP=3SG.ABS} @ verb @ ",
-			"]r+i+nn+adi @ u.B. @ { a → .ABS} @ noun @ ",
-			"]r+i+nn+adi-[ @ u.B. @  @ noun @ ",
-			"ti[ @ u.B. @  @ unclear @ "
 		],
 		"aġarri(-)[": [
 			"aġarri @ Weihrauch @ { a → .ABS} @ noun @ ",
 			"aġari-ne @ Weihrauch @ { a → ABL/INS} @ noun @ ",
-			"aġari-ne-e @ Weihrauch @ { a → RELAT.SG-DIR/LOC} @ noun @ ",
-			"aġari-ne-[ @ Weihrauch @ { a → RELAT.SG} @ noun @ "
+			"aġari-ne-e @ Weihrauch @ { a → RELAT.SG-DIR/LOC} @ noun @ "
 		],
 		"tī]vina": [
 			"tīve-na @ Wort; Sache @ { a → RELAT.PL.ABS} @ noun @ "
@@ -3305,11 +2019,6 @@
 		"alu[māīn": [
 			"al-u+m+āī-n @ sprechen @ { a → CVB-n} @ NF @ "
 		],
-		"]īb": [
-			"]ī-b @ u.B. @ { a → 2POSS.SG.ABS} @ noun @ ",
-			"]-ī-b @ u.B. @ { a → ANTIP-b} @ verb @ ",
-			"]-ī=m @ u.B. @ { a → TR.IMP=2SG.ABS} { b → TR.IMP=CON} { c → ANTIP=2SG.ABS} { d → ANTIP=CON} @ verb @ "
-		],
 		"kēbli": [
 			"kēbli @ Jäger @ { a → .ABS} @ noun @ ",
 			"kēb+li @ Jäger @ .ABS @ noun @ "
@@ -3317,11 +2026,9 @@
 		"pīnāni(-)[": [
 			"pīn-ān-i @ hocheben @ { a → ān-TR.IMP} { b → ān-ANTIP} @ verb @ ",
 			"pīn-ān-i @ u.B. @ { a → ān-TR.IMP} { b → ān-ANTIP} @ verb @ ",
-			"pīn+ā+ni @ u.B. @ { a → .ABS} @ noun @ ",
-			"pīn+ān+i-[ @ u.B. @  @ noun @ "
+			"pīn+ā+ni @ u.B. @ { a → .ABS} @ noun @ "
 		],
 		"(-)k]ilīb": [
-			"]kilī-b @ u.B. @ { a → 2POSS.SG.ABS} @ noun @ ",
 			"kilī-b @ u.B. @ { a → 2POSS.SG.ABS} @ noun @ ",
 			"kil-ī-b @ u.B. @ { a → ANTIP-b} @ verb @ ",
 			"kil-ī=m @ u.B. @ { a → TR.IMP=2SG.ABS} { b → TR.IMP=CON} { c → ANTIP=2SG.ABS} { d → ANTIP=CON} @ verb @ "
@@ -3337,8 +2044,7 @@
 			"fōri @ Blick @ .ABS @ noun @ "
 		],
 		"k[ešše(-)": [
-			"Kešše @ PN @ { a → .ABS} @ noun @ ",
-			"Kešše-[ @ PN @  @ noun @ "
+			"Kešše @ PN @ { a → .ABS} @ noun @ "
 		],
 		"nūrbiniž": [
 			"nūrbi-ne-ž @ u.B. @ { a → RELAT.SG-ERG} @ noun @ "
@@ -3347,17 +2053,9 @@
 			"abulgi-i=lla @ u.B. @ { a → 3POSS.ABS=3PL.ABS} @ noun @ ",
 			"abulgili-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ "
 		],
-		"]nīl": [
-			"]-nē-ž=l @ u.B. @ { a → RELAT.SG-ERG=3PL.ABS} @ noun @ "
-		],
 		"URU-tida": [
 			"arde-da @ Stadt @ { a → DIR} @ noun @ ",
 			"arde-i-da @ Stadt @ { a → 3POSS.SG-DIR} @ noun @ "
-		],
-		"]x-pāi": [
-			"]pi-āi @ u.B. @ INS @ noun @ ",
-			"]-ve-āi @ u.B. @ { a → GEN-INS} @ noun @ ",
-			"]p-i-āi @ u.B. @ { a → MOD.ACT-PURP} @ verb @ "
 		],
 		"kādūlāīn": [
 			"kād-ō-l-āī-n @ sagen; sprechen @ { a → MOD.PAT-l-PURP-n} @ verb @ ",
@@ -3365,52 +2063,18 @@
 			"kād-ō-l-āī=n @ sagen; sprechen @ { a → MOD.PAT-l-PURP=3SG.ABS} { b → MOD.PAT-l-PURP=CON} @ verb @ ",
 			"kād-ōl-i-āī=n @ sagen; sprechen @ { a → ōl-MOD.ACT-PURP=3SG.ABS} { b → ōl-MOD.ACT-PURP=CON} @ verb @ "
 		],
-		"a-x[": [
-			"a[ @ u.B. @  @ unclear @ "
-		],
-		"a]rriž": [
-			"]ari-ne-ž @ u.B. @ { a → RELAT.SG-ERG} @ noun @ ",
-			"]ar-i-l-ež @ u.B. @ { a → MODA.ACT-l-OPT} @ verb @ ",
-			"]-ar-i-l-ež @ u.B. @ { a → INTER-MOD.ACT-l-OPT} @ verb @ "
-		],
 		"tūmuštīnā[": [
 			"tūm-ušt-ī=n=ān @ u.B. @ { a → RES-ANTIP=3SG.ABS=CON} @ verb @ ",
 			"tūm-ušt-ī-en=ān @ u.B. @ { a → RES-MOD.ACT-3JUSS=CON} @ verb @ ",
-			"tūm+uštī-nā @ u.B. @ { a → RELAT.PL.ABS} @ noun @ ",
-			"tūm+uštī-nā-[ @ u.B. @ { a → RELAT.PL} @ noun @ "
-		],
-		"]x-lāīn": [
-			"]-l-āī-n @ u.B. @ { a → l-PURP-n} @ verb @ ",
-			"]-l-āī=n @ u.B. @ { a → l-PURP=3SG.ABS} { b → l-PURP=CON} @ verb @ "
+			"tūm+uštī-nā @ u.B. @ { a → RELAT.PL.ABS} @ noun @ "
 		],
 		"tīa": [
 			"tī-i-a @ sprechen @ { a → TR-3A.SG} @ verb @ ",
 			"tīe-a @ Wort; Sache @ { a → ESS} @ noun @ ",
 			"tīe-i-a @ Wort; Sache @ { a → 3POSS.SG-ESS} @ noun @ "
 		],
-		"tī-x[": [
-			"tī[ @ u.B. @  @ unclear @ "
-		],
-		"]ipḫa": [
-			"]i+ġe-va @ u.B. @ { a → DAT} @ noun @ ",
-			"]+i+ġe-ve-a @ u.B. @ { a → GEN-ESS} @ noun @ "
-		],
 		"ke[šše(-)": [
-			"Kešše @ PN @ { a → .ABS} @ noun @ ",
-			"Kešše-[ @ PN @  @ noun @ "
-		],
-		"sel-x[": [
-			"sel[ @ u.B. @  @ unclear @ "
-		],
-		"]rin": [
-			"]rin @ u.B. @  @ unclear @ "
-		],
-		"išt[a": [
-			"išt-a[ @ u.B. @  @ unclear @ "
-		],
-		"]x-amukku": [
-			"]am-o-kko @ u.B. @ { a → INT-NEG} @ verb @ ",
-			"]-am-o-kko @ u.B. @ { a → FACT-INT-NEG} @ verb @ "
+			"Kešše @ PN @ { a → .ABS} @ noun @ "
 		],
 		"kāžukku": [
 			"kāž-o-kko @ u.B. @ { a → INT-NEG} @ verb @ "
@@ -3425,21 +2089,17 @@
 		"šūr[i(-)": [
 			"šūġari-ne @ u.B. @ { a → ABL/INS} @ noun @ ",
 			"šūġari-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ ",
-			"šūġari-ne-[ @ u.B. @ { a → RELAT:SG} @ noun @ ",
 			"šūġuri-ne @ u.B. @ { a → ABL/INS} @ noun @ ",
 			"šūġuri-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ ",
-			"šūġuri-ne-[ @ u.B. @ { a → RELAT.SG} @ noun @ ",
 			"šūmuri-ne @ u.B. @ { a → ABL/INS} @ noun @ ",
-			"šūmuri-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ ",
-			"šūmuri-ne-[ @ u.B. @ { a → RELAT.SG} @ noun @ "
+			"šūmuri-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ "
 		],
 		"šāttūb": [
 			"šatt-ō-m @ ergreifen @ { a → TR.PFV-3A.SG} @ verb @ "
 		],
 		"pīellēnī": [
 			"pīllē-nē-va @ Kanal @ { a → RELAT.SG-DAT} @ noun @ ",
-			"pīllē-nē-ve @ Kanal @ { a → RELAT.SG-GEN} @ noun @ ",
-			"pīllē-nē-ve-[ @ Kanal @ { a → RELAT.SG-GEN} @ noun @ "
+			"pīllē-nē-ve @ Kanal @ { a → RELAT.SG-GEN} @ noun @ "
 		],
 		"fouguġūm": [
 			"fōg-uġ-ō-m @ u.B. @ { a → uġ-TR.PFV-3A.SG} @ verb @ "
@@ -3462,9 +2122,6 @@
 			"ištani=ma @ Inneres @ { a → .ABS=CON} @ noun @ ",
 			"ištani-ī=ma @ Inneres @ { a → 3POSS.SG.ABS=CON} @ noun @ "
 		],
-		"šōr-x[": [
-			"šōr[ @ u.B. @  @ unclear @ "
-		],
 		"šūrnīma": [
 			"šūrnī=ma @ u.B. @ { a → .ABS=CON} @ noun @ ",
 			"šūrni-ī=ma @ u.B. @ { a → 3POSS.SG.ABS=CON} @ noun @ "
@@ -3480,8 +2137,7 @@
 		],
 		"pend[a(-)": [
 			"pend-a @ zurückkehren; zurückbringen @ { a → INT} @ verb @ ",
-			"pend-a-b @ zurückkehren; zurückbringen @ { a → INT-b} @ verb @ ",
-			"pend-a[ @ zurückkehren; zurückbringen @  @ unclear @ "
+			"pend-a-b @ zurückkehren; zurückbringen @ { a → INT-b} @ verb @ "
 		],
 		"IŠTAR-al": [
 			"Šavoška-ž=l @ DN @ { a → ERG=3PL.ABS} @ noun @ "
@@ -3517,11 +2173,6 @@
 		"fāġruwāda": [
 			"fāġr+o+vāde-a @ ungut @ { a → ESS} @ noun @ "
 		],
-		"š[i": [
-			"ši[ @ u.B. @  @ unclear @ ",
-			"ši[ @  @  @ unclear @ ",
-			"ši[ @ u.B. @  @ noun @ "
-		],
 		"ḫāžīdūl": [
 			"ḫāž-īd-ō=l @ hören @ { a → PL.A-TR.PFV=3PL.ABS} @ verb @ "
 		],
@@ -3538,11 +2189,9 @@
 			"tiža-b @ Herz @ { a → 2POSS.SG.ABS} @ noun @ ",
 			"tīž-a-b @ u.B. @ { a → INT-b} @ verb @ "
 		],
-		"ḫi[": [
-			"ḫi[ @ u.B. @  @ unclear @ "
-		],
-		"šēllu[": [
-			"šēll-u[ @ u.B. @  @ unclear @ "
+		"ai": [
+			"ai @ wenn; falls @  @ CONJ @ ",
+			"ai @ wenn @  @ CONJ @ "
 		],
 		"udepšarr[āl": [
 			"Udip.šarrā-ž=l @ PN @ { a → ERG=3PL.ABS} @ noun @ "
@@ -3550,37 +2199,23 @@
 		"kādāšti": [
 			"kād-ašt-i @ sagen; sprechen @ { a → RES-ANTIP} { b → RES-TR.IMP} @ verb @ "
 		],
-		"um[a": [
-			"um-a[ @ u.B. @  @ unclear @ "
-		],
 		"ukku": [
 			"ukku @ u.B. @  @ ADV @ ",
 			"ukk-o @ u.B. @ { a → MOD.PAT} @ verb @ ",
-			"ukk-u @ u.B. @ { a → MED} @ verb @ ",
-			"]-o-kko @ u.B. @ { a → INT-NEG} @ verb @ "
-		],
-		"až[i": [
-			"až-i[ @ u.B. @  @ unclear @ "
+			"ukk-u @ u.B. @ { a → MED} @ verb @ "
 		],
 		"ŠU.GI-už": [
 			"keviri-na-až-ož @ Ältester @ { a → RELAT.PL-PL-ERG} @ noun @ "
-		],
-		"fo[": [
-			"fo[ @ u.B. @  @ unclear @ "
 		],
 		"kešše": [
 			"Kešše @ PN @ { a → .ABS} @ noun @ ",
 			"Kešše @ PN @ .ABS @ noun @ "
 		],
 		"nīġrīvināž[i(-)": [
-			"nīġr-ī-ve-na-āž-e @ u.B. @ { a → 3POSS.SG-GEN-RELAT.PL-PL-GEN} @ noun @ ",
-			"nīġri-ī-ve-na-āž-e-[ @ u.B. @ { a → 3POSS.SG-GEN-RELAT.PL-PL-GEN} @ noun @ "
+			"nīġr-ī-ve-na-āž-e @ u.B. @ { a → 3POSS.SG-GEN-RELAT.PL-PL-GEN} @ noun @ "
 		],
 		"murrīe": [
 			"murri-ī-e @ u.B. @ { a → 3POSS.SG-DIR/LOC} @ noun @ "
-		],
-		"tāl[u": [
-			"tāl-u[ @ herausziehen @  @ unclear @ "
 		],
 		"tālūlīžanna": [
 			"tāl+ūl+ī+že-a=nna @ u.B. @ { a → ESS=3SG.ABS} @ noun @ ",
@@ -3598,9 +2233,6 @@
 			"kēlġēdi-ne @ u.B. @ { a → ABL/INS} @ noun @ ",
 			"kēlġēdi-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ "
 		],
-		"kē[l": [
-			"kēl[ @ u.B. @  @ unclear @ "
-		],
 		"kēvirrām": [
 			"kēviri-nā=m @ Ältester @ { a → RELAT.PL.ABS=CON} @ noun @ "
 		],
@@ -3609,7 +2241,6 @@
 			"sūgētte-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ "
 		],
 		"ḫīell[i(-)": [
-			"ḫīll-i[ @ mitteilen @  @ unclear @ ",
 			"ḫīll-i @ mitteilen @ { a → ANTIP} { b → TR.IMP} @ verb @ "
 		],
 		"pēdāri": [
@@ -3629,27 +2260,12 @@
 		"arūža(-)[": [
 			"ar-ōž-a @ geben @ { a → PST-3A.SG} @ verb @ "
 		],
-		"tīža(-)x(-)ḫa(-)[": [
-			"tīža-v-[ @ Herz @ { a → 2POSS.SG} @ noun @ ",
-			"tīža-v=[ @ Herz @ { a → 2POSS.SG.ABS} @ verb @ ",
-			"]ḫa[ @ u.B. @  @ unclear @ ",
-			"ḫa[ @ u.B. @  @ unclear @ ",
-			"]ḫi-a @ Herz @ { a → ESS} @ noun @ ",
-			"]ḫ-a @ u.B. @ { a → INT} @ verb @ "
-		],
-		"ḫīrā[": [
-			"ḫīr-ā[ @ u.B. @  @ unclear @ "
-		],
 		"](-)apšenaža": [
-			"]apše-na-až-a @ u.B. @ { a → RELAT.PL-PL-DAT/ESS} @ noun @ ",
 			"apše-na-až-a @ Schlange @ { a → RELAT.PL-PL-DAT/ESS} @ noun @ "
 		],
 		"salaštu": [
 			"sal-ašt-o @ u.B. @ { a → RES-MOD.PAT} { b → RES-2A.SG} @ verb @ ",
 			"sal-ašt-u @ u.B. @ { a → RES-MED} @ verb @ "
-		],
-		"]ri": [
-			"]ri @ u.B. @  @ unclear @ "
 		],
 		"nūwarrīvan": [
 			"nūv+ar+i-nē-va=n @ u.B. @ { a → RELAT.SG-DAT=3SG.ABS} @ noun @ ",
@@ -3667,14 +2283,6 @@
 		"ḫāpšī": [
 			"ḫapš-i @ u.B. @ { a → ANTIP} @ verb @ "
 		],
-		"]riva": [
-			"]ri-va @ u.B. @ { a → DAT} @ noun @ ",
-			"]ri-i-va @ u.B. @ { a → 3POSS.SG-DAT} @ noun @ ",
-			"]ri-ne-va @ u.B. @ { a → RELAT.SG-DAT} @ verb @ ",
-			"]r-i-eva @ u.B. @ { a → MOD.ACT-POT} @ verb @ ",
-			"]r-i-l-eva @ u.B. @ { a → MOD.ACT-l-POT} @ verb @ ",
-			"]ri-v-a @ u.B. @ { a → 2POSS.SG-ESS} @ verb @ "
-		],
 		"uwal": [
 			"uwi-a=l @ Brot @ { a → ESS=3PL.ABS} @ noun @ ",
 			"uw-a=l @ essen @ { a → INT=3PL.ABS} @ verb @ "
@@ -3687,33 +2295,20 @@
 		"kīzirriva": [
 			"kīziri-ne-va @ u.B. @ { a → RELAT.SG-DAT} @ noun @ "
 		],
-		"šē-x": [
-			"šē[ @ beobachten; u.B. @  @ unclear @ "
-		],
-		"r]a": [
-			"]ra @ u.B. @  @ unclear @ "
-		],
 		"kīzirženi": [
 			"kīzir+že-ne @ u.B. @ { a → ABL/INS} @ noun @ ",
 			"kīzir+že-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ "
-		],
-		"tu-x[": [
-			"tu[ @ u.B. @  @ unclear @ "
 		],
 		"ŠU.GI-ra": [
 			"keviri-na @ Ältester @ { a → RELAT.PL.ABS} @ noun @ ",
 			"keviri-na-až-ura @ Ältester @ { a → RELAT.PL-PL-COM} @ noun @ "
 		],
 		"udepšar[": [
-			"Udip.šarri @ PN @ { a → .ABS} @ noun @ ",
-			"Udip.šarrri-[ @ PN @  @ noun @ "
+			"Udip.šarri @ PN @ { a → .ABS} @ noun @ "
 		],
 		"nūwarrīvān": [
 			"nūw+ar+i-nē-vā=n @ u.B. @ { a → RELAT.SG-DAT=3SG.ABS} @ noun @ ",
 			"nūw+ar+i-nē-va=ān @ u.B. @ { a → RELAT.SG-DAT=CON} @ noun @ "
-		],
-		"]x-ra": [
-			"]ra @ u.B. @  @ unclear @ "
 		],
 		"agūmālla": [
 			"ag-ō-m-ā=lla @ aufnehmen; erheben; heraufkommen @ { a → TR.PFV-3A.SG-EPNTH=3PL.ABS} @ verb @ "
@@ -3724,20 +2319,9 @@
 			"šēšt-i=n @ u.B. @ { a → ANTIP=3SG.ABS} { b → ANTIP=CON} @ verb @ ",
 			"šēšt-i-en @ u.B. @ { a → MOD.ACT-3JUSS} @ verb @ "
 		],
-		"]x-x-x-ni": [
-			"]ni @ u.B. @  @ unclear @ "
-		],
-		"]x-ḫa": [
-			"]ḫi-a @ u.B. @ { a → ESS} @ noun @ ",
-			"]ḫ-a @ u.B. @ { a → INT} { b → 3A.SG} @ verb @ "
-		],
 		"ḫavōru[nni(-)": [
 			"ḫavōro+ni-ne @ Himmel @ { a → ABL/INS} @ noun @ ",
-			"ḫavōro+ni-ne-e @ Himmel @ { a → RELAT.SG-DIR/LOC} @ noun @ ",
-			"ḫavōro+ni-ne-[ @ Himmel @ { a → RELAT.SG} @ noun @ "
-		],
-		"]riaž": [
-			"]ri-i-až @ u.B. @ { a → 3POSS-PL.ABS} @ noun @ "
+			"ḫavōro+ni-ne-e @ Himmel @ { a → RELAT.SG-DIR/LOC} @ noun @ "
 		],
 		"šavallāži": [
 			"šavali-na-āž-e @ Jahr @ { a → RELAT.PL-PL-GEN} @ noun @ "
@@ -3765,15 +2349,6 @@
 			"pīd-i-a @ u.B. @ { a → TR-3A.SG} @ verb @ ",
 			"pīdi-i-a @ u.B. @ { a → 3POSS.SG-ESS} @ noun @ "
 		],
-		"x-ša": [
-			"]ša @ u.B. @  @ unclear @ "
-		],
-		"](-)e(-)su[": [
-			"]e @ u.B. @  @ unclear @ ",
-			"]esu[ @ u.B. @  @ unclear @ ",
-			"es-u[ @ u.B. @  @ unclear @ ",
-			"su[ @ u.B. @  @ unclear @ "
-		],
 		"nūwannīel": [
 			"nūw+a+ni-nē-ž=l @ u.B. @ { a → RELAT.SG-ERG=3PL.ABS} @ noun @ "
 		],
@@ -3788,8 +2363,7 @@
 		],
 		"ākk[i(-)": [
 			"ākki @ PRON.ALT @ { a → .ABS} @ PRON @ ",
-			"ākk-i @ u.B. @ { a → ANTIP} { b → TR.IMP} @ verb @ ",
-			"ākk-i[ @ u.B. @  @ unclear @ "
+			"ākk-i @ u.B. @ { a → ANTIP} { b → TR.IMP} @ verb @ "
 		],
 		"fāžīva": [
 			"fāži-ī-va @ Mund @ { a → 3POSS.SG-DAT} @ noun @ ",
@@ -3803,9 +2377,6 @@
 			"anz-ī=ma @ u.B. @ { a → ANTIP=CON} { b → TR.IMP=CON} @ verb @ ",
 			"anzi-ī=ma @ u.B. @ { a → 3POSS.SG.ABS=CON} @ noun @ ",
 			"anzī=ma @ u.B. @ { a → .ABS=CON} @ noun @ "
-		],
-		"š]ā": [
-			"]šā @ u.B. @  @ unclear @ "
 		],
 		"izūzi": [
 			"izūzi @ Emmer @ { a → .ABS} @ noun @ ",
@@ -3851,13 +2422,7 @@
 			"oġ+ni @ u.B. @ { a → .ABS} @ noun @ "
 		],
 		"ḫellum[a": [
-			"ḫill-uma[ @ mitteilen @  @ unclear @ ",
 			"ḫill-u+m+ai @ mitteilen @ { a → CVB} @ verb @ "
-		],
-		"]x-ni": [
-			"]ni @ u.B. @  @ unclear @ ",
-			"]-ne @ u.B. @ { a → ABL/INS} @ noun @ ",
-			"]-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ "
 		],
 		"izuziva": [
 			"izuzi-va @ Emmer @ { a → DAT} @ noun @ ",
@@ -3870,12 +2435,6 @@
 			"ḫōž-uw-a @ binden @ { a → MED-3A.SG} @ verb @ ",
 			"ḫōž-uw-a @ u.B. @ { a → MED-3A.SG} @ verb @ "
 		],
-		"s[u": [
-			"su[ @ u.B. @  @ unclear @ "
-		],
-		"]ella": [
-			"]=lla @ u.B. @ { a → =3PL.ABS} @ unclear @ "
-		],
 		"uru": [
 			"or-o @ u.B. @ { a → MOD.PAT} @ verb @ ",
 			"or-u @ u.B. @ { a → MED} @ verb @ "
@@ -3883,13 +2442,7 @@
 		"kīlull[i(-)": [
 			"kīluli-ne @ u.B. @ { a → ABL/INS} @ noun @ ",
 			"kīluli-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ ",
-			"kīluli-ne-[ @ u.B. @ { a → RELAT.SG} @ noun @ ",
 			"kīl-ol-i-le @ u.B. @ { a → ol-MOD.ACT-1JUSS} @ verb @ "
-		],
-		"]ēn": [
-			"]-ēn @ u.B. @ { a → 3JUSS} @ verb @ ",
-			"]ē-n @ u.B. @ { a → ABL/INS} @ noun @ ",
-			"]-ē=n @ u.B. @ { a → DIR/LOC=3SG.ABS} @ noun @ "
 		],
 		"ammen": [
 			"amm-i-en @ errreichen; gelangen lassen @ { a → MOD.ACT-3JUSS} @ verb @ "
@@ -3919,51 +2472,17 @@
 		"mādi[nivi": [
 			"mādi-ne-ve @ Weisheit @ { a → RELAT.SG-GEN} @ noun @ "
 		],
-		"]x-ḫi": [
-			"]ḫi @ u.B. @ { a → .ABS} @ noun @ ",
-			"]ḫ-i @ u.B. @ { a → ANTIP} @ verb @ ",
-			"]ḫi @ u.B. @  @ unclear @ "
-		],
 		"amuwīn": [
 			"am-ō-ēn @ ansehen @ { a → MOD.PAT-3JUSS} @ verb @ "
 		],
-		"]ša": [
-			"]ša @ u.B. @  @ unclear @ "
-		],
-		"ḫā[r": [
-			"ḫār[ @ u.B. @  @ unclear @ "
-		],
-		"]ti(-)[": [
-			"]ti @ u.B. @ { a → .ABS} @ noun @ ",
-			"]t-i @ u.B. @ { a → ANTIP} @ verb @ ",
-			"]ti[ @ u.B. @  @ unclear @ "
-		],
-		"](-)ar[": [
-			"]ar[ @ u.B. @  @ unclear @ ",
-			"ar[ @ u.B. @  @ unclear @ "
-		],
 		"e]nitḫarra(-)[": [
-			"en+i+tḫ+ar+i-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ ",
-			"en+i+tḫ+ar+i-na-[ @ u.B. @ { a → RELAT.PL.ABS} @ noun @ "
-		],
-		"aš]ḫōina": [
-			"aš]ḫō+i=nna @ hinauf @ { a → =3SG.ABS} @ ADV @ "
+			"en+i+tḫ+ar+i-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ "
 		],
 		"ḫaburna": [
 			"ḫavor+ni-a @ Himmel @ { a → ESS} @ noun @ "
 		],
-		"n]aštal": [
-			"]-na-aš-ta=l @ u.B. @ { a → RELAT.PL-PL-DIR=3PL.ABS} @ noun @ "
-		],
 		"k[ādia": [
 			"kād-i-a @ sagen; sprechen @ { a → TR-3A.SG} @ verb @ "
-		],
-		"kizi[": [
-			"kizi[ @ u.B. @  @ noun @ "
-		],
-		"]ḫa": [
-			"]ḫi-a @ u.B. @ ESS @ noun @ ",
-			"]ḫ-a @ u.B. @ { a → INT} { b → IMP.INT} { c → 3A.SG} @ verb @ "
 		],
 		"tūnāin": [
 			"tūn-i-āi-n @ überwältigen; vemögen @ { a → MOD.ACT-PURP-n} @ verb @ ",
@@ -3976,27 +2495,17 @@
 			"ištāni @ in @  @ PREP @ ",
 			"ištāni @ in @  @ POST @ "
 		],
-		"]x-a": [
-			"]a @ u.B. @  @ unclear @ "
-		],
 		"fēžuda": [
 			"fē-ž-uda @ 2PRON @ { a → PL-DIR} @ PRON @ "
 		],
 		"kūgukku": [
 			"kūg-o-kko @ u.B. @ INT-NEG @ verb @ "
 		],
-		"r]iva": [
-			"]ri-ne-va @ u.B. @ { a → RELAT.SG-DAT} @ noun @ ",
-			"]ri-i-va @ u.B. @ { a → 3POSS.SG-DAT} @ noun @ "
-		],
 		"tapšuwarrīe[l": [
 			"Tapšuwari-nē-ž=l @ DN @ { a → RELAT.SG-ERG=3PL.ABS} @ noun @ "
 		],
 		"alumāi[n": [
 			"al-u+m+āi-n @ sprechen @ { a → CVB-n} @ verb @ "
-		],
-		"n]amma": [
-			"]na=mma @ u.B. @ { a → =2SG.ABS} @ unclear @ "
 		],
 		"ḫōmaruḫḫina": [
 			"ḫōm+ar+o+ḫḫe-na @ lapislazuli @ { a → RELAT.PL.ABS} @ noun @ "
@@ -4007,18 +2516,12 @@
 		"tivinām": [
 			"tive-nā=m @ Wort; Sache @ { a → RELAT.PL.ABS=CON} @ noun @ "
 		],
-		"tīvaġ[u": [
-			"tīv-aġ-u[ @ u.B. @ { a → aġ} @ verb @ "
-		],
 		"nudanzaġīvan": [
 			"nudan+z+a+ġe-ī-va=an @ u.B. @ { a → 3POSS.SG-DAT=CON} @ noun @ ",
 			"nudan+z+a+ġe-ī-va=n @ u.B. @ { a → 3POSS.SG-DAT=3SG.ABS} @ noun @ "
 		],
 		"avīd[a": [
 			"avi-ī-da @ Gesicht; vor @ 3POSS.SG-DIR @ noun @ "
-		],
-		"]x-še": [
-			"]še @ u.B. @  @ unclear @ "
 		],
 		"ūpšīb": [
 			"ūpš-ī-b @ mähen?; ernten? @ ANTIP-b @ verb @ "
@@ -4029,22 +2532,8 @@
 		"kiš[ši(-)": [
 			"Kešše @ PN @ { a → .ABS} @ noun @ "
 		],
-		"u]ž": [
-			"]-ož @ u.B. @ { a → EQU} @ noun @ "
-		],
 		"sūlūža": [
 			"sūl-ōž-a @ binden @ { a → PST-3A.SG} @ verb @ "
-		],
-		"āl[": [
-			"āl[ @ u.B. @  @ unclear @ "
-		],
-		"]x-anna": [
-			"]ani-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ ",
-			"]-a=nna @ u.B. @ { a → ESS=3SG.ABS} @ noun @ ",
-			"]+a+nni-a @ u.B. @ { a → ESS} @ noun @ ",
-			"]-a=nna @ u.B. @ { a → 3A.SG=3SG.ABS} { b → INT=3SG.ABS} @ verb @ ",
-			"]ann-a @ u.B. @ { a → INT} @ verb @ ",
-			"]-ann-a @ u.B. @ { a → CAUS-3A.SG} { b → ann-3A.SG} { c → ann-INT} @ verb @ "
 		],
 		"ḫārāpḫāi": [
 			"ḫār+ā+ġe-ve-āi @ u.B. @ { a → GEN-INS} @ noun @ "
@@ -4071,23 +2560,16 @@
 		"ušḫārīda": [
 			"ušḫ+ār+i-ī-da @ u.B. @ { a → 3POSS.SG-DIR} @ noun @ "
 		],
-		"ḫī-x[": [
-			"ḫī[ @ u.B. @  @ unclear @ "
-		],
 		"itta": [
 			"itt-a @ gehen @ { a → INT} @ verb @ "
 		],
 		"awfarr[i(-)": [
 			"auwari-ne @ Feld @ { a → ABL/INS} @ noun @ ",
-			"auwari-ne-e @ Feld @ { a → RELAT.SG-DIR/LOC} @ noun @ ",
-			"auwari-ne-[ @ Feld @ { a → RELAT.SG} @ noun @ "
+			"auwari-ne-e @ Feld @ { a → RELAT.SG-DIR/LOC} @ noun @ "
 		],
 		"ŠÚ.A-ḫini": [
 			"kešḫi-ne @ Thron @ { a → ABL/INS} @ noun @ ",
 			"kešḫi-ne-e @ Thron @ { a → RELAT.SG-DIR/LOC} @ noun @ "
-		],
-		"ḫīl[i": [
-			"ḫīl-i[ @ u.B. @  @ unclear @ "
 		],
 		"ḫīlēšta": [
 			"ḫīlēšti-a @ u.B. @ { a → ESS} @ noun @ ",
@@ -4100,21 +2582,9 @@
 			"šinubi-ne @ u.B. @ { a → ABL/INS} @ noun @ ",
 			"šinubi-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ "
 		],
-		"šā-x[": [
-			"šā[ @ u.B. @  @ unclear @ "
-		],
-		"]x-x-šini(-)[": [
-			"]ši-ne @ u.B. @ { a → ABL/INS} @ noun @ ",
-			"]ši-ne-e @ u.B. @ { a → -RELAT.SG.DIR/LOC} @ noun @ ",
-			"]ši-ne-[ @ u.B. @ { a → RELAT.SG} @ noun @ "
-		],
 		"ištan[i(-)": [
 			"ištani @ Inneres; in @ { a → .ABS} @ noun @ ",
-			"ištani @ Inneres; in @  @ PREP @ ",
-			"ištani-[ @ Inneres @  @ noun @ "
-		],
-		"na[tḫi": [
-			"natḫi-[ @ Bett @  @ noun @ "
+			"ištani @ Inneres; in @  @ PREP @ "
 		],
 		"-ŠU": [
 			"šine @ zwei @ { a → .ABS} @ NUM @ "
@@ -4130,9 +2600,6 @@
 		],
 		"šuškib": [
 			"šušk-i-b @ aufsteigen? @ { a → ANTIP-b} @ verb @ "
-		],
-		"m[ā]ġinen": [
-			"m[ā]ġi-ne-n @ u.B. @ { a → RELAT.SG-ABL/INS} @ noun @ "
 		],
 		"ḫill[ib": [
 			"ḫill-i-b @ mitteilen @ { a → ANTIP-b} @ verb @ "
@@ -4156,8 +2623,7 @@
 			"ušt-a-b @ herausgehen; fortbringen; erheben @ INT-b @ verb @ "
 		],
 		"fudušḫi(-)[": [
-			"fud+o+šḫe @ u.B. @ { a → .ABS} @ noun @ ",
-			"fud+o+šḫe-[ @ u.B. @  @ noun @ "
+			"fud+o+šḫe @ u.B. @ { a → .ABS} @ noun @ "
 		],
 		"kivudu": [
 			"kev-ud-u @ setzen; stellen; legen @ ud-MED @ verb @ ",
@@ -4170,7 +2636,6 @@
 		"faštu(-)[": [
 			"fašt-u @ u.B. @ { a → MED} @ verb @ ",
 			"fašt-o @ u.B. @ MOD.PAT @ verb @ ",
-			"fašt-u[ @ u.B. @  @ unclear @ ",
 			"faš-t-u @ eintreten @ { a → t-MED} @ verb @ ",
 			"faš-t-o @ eintreten @ { a → t-MOD.PAT} @ verb @ "
 		],
@@ -4193,9 +2658,6 @@
 			"ḫāž-o @ salben @ { a → MOD.PAT} @ verb @ ",
 			"ḫāž-u @ salben @ MED @ verb @ ",
 			"ḫāž-o @ salben @ MOD.PAT @ verb @ "
-		],
-		"]x-ḫāe": [
-			"]ḫi-āe @ u.B. @ { a → INS} @ noun @ "
 		],
 		"rāe": [
 			"ḫarri-āe @ u.B. @ { a → INS} @ noun @ ",
@@ -4222,30 +2684,20 @@
 		],
 		"ḫārr[i(-)": [
 			"ḫāri-ne @ Weg @ { a → ABL/INS} @ noun @ ",
-			"ḫāri-ne-e @ Weg @ { a → RELAT.SG-DIR/LOC} @ noun @ ",
-			"ḫāri-ne-[ @ Weg @ { a → RELAT.SG} @ noun @ "
+			"ḫāri-ne-e @ Weg @ { a → RELAT.SG-DIR/LOC} @ noun @ "
 		],
 		"nūdu": [
 			"nūd-u @ u.B. @ MED @ verb @ ",
 			"nūd-o @ u.B. @ { a → MOD.PAT} @ verb @ "
 		],
-		"]x-unni": [
-			"]+o+nni @ u.B. @ { a → .ABS} @ noun @ ",
-			"]uni-ne @ u.B. @ { a → ABL/INS} @ verb @ ",
-			"]uni-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ verb @ "
-		],
 		"agumaīm": [
 			"ag-u+m+aī=m @ aufnehmen; erheben; heraufkommen @ { a → CVB=2SG.ABS} { b → CVB=CON} @ verb @ "
 		],
 		"30-(-)[": [
-			"Kužuġ @ DN @ { a → .ABS} @ noun @ ",
-			"Kužuġ-[ @ DN @  @ noun @ "
+			"Kužuġ @ DN @ { a → .ABS} @ noun @ "
 		],
 		"s]ellindōram": [
 			"sell+ind+ō+re-a=m @ u.B. @ { a → ESS=CON} { b → ESS=2SG.ABS} @ noun @ "
-		],
-		"]i": [
-			"]i @ u.B. @  @ unclear @ "
 		],
 		"UTU-kai": [
 			"Šimiga+i @ DN @ { a → .ABS} @ noun @ "
@@ -4253,50 +2705,30 @@
 		"nuḫḫaže": [
 			"nuḫḫ+a+že @ u.B. @ { a → .ABS} @ noun @ "
 		],
-		"]x-issu": [
-			"]iss-u @ u.B. @ { a → MED} @ verb @ ",
-			"]iss-o @ u.B. @ { a → MOD.PAT} @ verb @ "
-		],
-		"ālba-x[": [
-			"ālb-a[ @ u.B. @  @ unclear @ "
-		],
 		"p]āžanġurāi": [
 			"pāžanġuri-āi @ u.B. @ { a → INS} @ noun @ ",
 			"pāžanġurā+i @ u.B. @ { a → .ABS} @ noun @ "
 		],
-		"tāma[": [
-			"tām-a[ @ u.B. @  @ unclear @ "
-		],
-		"]na": [
-			"]na @ u.B. @  @ unclear @ "
-		],
 		"ḫavorunn[i(-)": [
 			"ḫavoro+ni-ne @ Himmel @ { a → ABL/INS} @ noun @ ",
-			"ḫavoro+ni-ne-e @ Himmel @ { a → RELAT.SG-DIR/LOC} @ noun @ ",
-			"ḫavoro+ni-ne-[ @ Himmel @ { a → RELAT.SG} @ noun @ "
+			"ḫavoro+ni-ne-e @ Himmel @ { a → RELAT.SG-DIR/LOC} @ noun @ "
 		],
 		"ḫav]orni": [
 			"ḫavor+ni @ Himmel @ { a → .ABS} @ noun @ "
 		],
 		"](-)šuġuž": [
-			"]š-uġ-o-ež @ u.B. @ { a → uġ-MOD.PAT-OPT} @ verb @ ",
 			"šuġi-ož @ neu @ { a → EQU} @ noun @ ",
 			"šuġ-o-ež @ erneuern? @ { a → MOD.PAT-OPT} @ verb @ "
 		],
 		"ḫavōrunni(-)[": [
 			"ḫavōro+ni-ne @ Himmel @ { a → ABL/INS} @ noun @ ",
-			"ḫavōro+ni-ne-e @ Himmel @ { a → RELAT.SG-DIR/LOC} @ noun @ ",
-			"ḫavōro+ni-ne-[ @ Himmel @ { a → RELAT.SG} @ noun @ "
+			"ḫavōro+ni-ne-e @ Himmel @ { a → RELAT.SG-DIR/LOC} @ noun @ "
 		],
 		"k]ibli": [
 			"keb+li @ Jäger @ { a → .ABS} @ noun @ "
 		],
 		"mandade[l": [
 			"mand+ade-i=l @ u.B. @ { a → 3POSS.SG.ABS=3PL.ABS} @ noun @ "
-		],
-		"a[": [
-			"a[ @ u.B. @  @ unclear @ ",
-			"a[ @ u.B. @  @ noun @ "
 		],
 		"attanal(-)[": [
 			"atta+ni-a=l @ Vater @ { a → ESS=3PL.ABS} @ noun @ ",
@@ -4305,23 +2737,9 @@
 		"ḫavō]runnibi": [
 			"ḫavōro+ni-ne-ve @ Himmel @ { a → RELAT.SG-GEN} @ noun @ "
 		],
-		"](-)ḫam[a(-)": [
-			"]ḫama[ @ u.B. @  @ unclear @ ",
-			"ḫam-a[ @ u.B. @  @ unclear @ ",
-			"]ḫi-a=ma @ u.B. @ { a → ESS=CON} @ noun @ ",
-			"]ḫ-a=ma @ u.B. @ { a → 3A.SG=CON} { b → INT=CON} @ verb @ "
-		],
 		"[fu]dōž[i(-)": [
 			"fud+ō+že @ u.B. @ { a → .ABS} @ noun @ ",
-			"fud-ōž-i @ u.B. @ { a → PST-ANTIP} @ verb @ ",
-			"fud+ō+že-[ @ u.B. @  @ noun @ "
-		],
-		"šēġa-x[": [
-			"šēġa-[ @ Tor @  @ noun @ ",
-			"šēġ-a[ @ u.B. @  @ unclear @ "
-		],
-		"e[": [
-			"e[ @  @  @ unclear @ "
+			"fud-ōž-i @ u.B. @ { a → PST-ANTIP} @ verb @ "
 		],
 		"ḫēli[štu": [
 			"ḫēl-išt-u @ u.B. @ { a → RES-MED} @ verb @ ",
@@ -4330,21 +2748,6 @@
 		"naḫ[ḫu": [
 			"naḫḫ-u @ sich setzen; sitzen; einsetzen @ { a → MED} @ verb @ ",
 			"naḫḫ-o @ sich setzen; sitzen; einsetzen @ { a → MOD.PAT} @ verb @ "
-		],
-		"x-ki(-)[": [
-			"]ki[ @ u.B. @  @ unclear @ ",
-			"]ki @ u.B. @ { a → .ABS} @ noun @ ",
-			"]k-i @ u.B. @ { a → ANTIP} @ verb @ "
-		],
-		"]x-x-ta(-)[": [
-			"]ta[ @ u.B. @  @ unclear @ ",
-			"]ta @ u.B. @  @ unclear @ "
-		],
-		"i]žna": [
-			"]ižni-a @ u.B. @ { a → ESS} @ noun @ "
-		],
-		"]al": [
-			"]a=l @ u.B. @ { a → =3PL.ABS} @ unclear @ "
 		],
 		"šī[a": [
 			"šīe-a @ Wasser; Fluss @ ESS @ noun @ ",
@@ -4356,32 +2759,8 @@
 		"kīz]irrī[va": [
 			"kīziri-nē-va @ u.B. @ { a → RELAT.SG-DAT} @ noun @ "
 		],
-		"kīz[ir": [
-			"kīzir[ @ u.B. @  @ noun @ "
-		],
 		"kēvi]rra": [
 			"kēviri-na @ Ältester @ { a → RELAT.PL.ABS} @ noun @ "
-		],
-		"[udepšar": [
-			"Udip.šarri-[ @ PN @  @ noun @ "
-		],
-		"]šan": [
-			"]ša=n @ u.B. @ { a → =CON} @ unclear @ ",
-			"]ša=n @ u.B. @ { a → =3SG.ABS} @ unclear @ "
-		],
-		"](-)ḫudō-x[": [
-			"ḫud-ō-[ @  @ { a → TR.PFV} @ verb @ ",
-			"]ḫ-ud-ō-[ @ u.B. @ { a → NEG-TR.PFV} @ verb @ ",
-			"]ḫ+ud+ō+[ @ u.B. @  @ noun @ ",
-			"ḫud+ō+[ @ u.B. @  @ noun @ "
-		],
-		"i]ššanen": [
-			"]išš+a+ni-n @ u.B. @ { a → ABL/INS} @ noun @ ",
-			"]išš+a+ni=n @ u.B. @ { a → .ABS=3SG.ABS} @ noun @ ",
-			"]išš-an-i-en @ u.B. @ { a → an-MOD.ACT-3JUSS} @ verb @ "
-		],
-		"]x-ukku": [
-			"]-o-kko @ u.B. @ { a → INT-NEG} @ verb @ "
 		],
 		"ištani [": [
 			"ištani @ Inneres; in @ { a → .ABS} @ noun @ ",
@@ -4390,46 +2769,20 @@
 		"]ālžialli": [
 			"ālžialli @ Widersprecher? @ { a → .ABS} @ noun @ "
 		],
-		"](-)ḫuma-x-x": [
-			"]ḫuma[ @ u.B. @  @ unclear @ ",
-			"ḫum-a[ @ u.B. @  @ unclear @ "
-		],
-		"ti[": [
-			"ti[ @ u.B. @  @ unclear @ "
-		],
-		"x-en(-)[": [
-			"]en[ @ u.B. @  @ unclear @ ",
-			"]en @ u.B. @  @ unclear @ "
-		],
-		"]uma": [
-			"]-u=ma @ u.B. @ { a → MED=CON} @ verb @ ",
-			"]-o=ma @ u.B. @ { a → MOD.PAT=CON} { b → TR.PFV=CON} @ verb @ "
-		],
 		"NÁlaža": [
 			"namali-na-až-a @ Bett @ { a → RELAT.PL-PL-DAT/ESS} @ noun @ "
-		],
-		"]x-tuž": [
-			"]ti-ož @ u.B. @ { a → EQU} @ noun @ ",
-			"]t-o-ež @ u.B. @ { a → MOD.PAT-OPT} @ noun @ "
 		],
 		"ki[bli]": [
 			"keb+li @ Jäger @ { a → .ABS} @ noun @ "
 		],
 		"](-)fandida": [
-			"fandi-i-da @ rechts; rechte Seite @ { a → 3POSS.SG-DIR} @ noun @ ",
-			"]fandi-i-da @ u.B. @ { a → 3POSS.SG-DIR} @ noun @ "
+			"fandi-i-da @ rechts; rechte Seite @ { a → 3POSS.SG-DIR} @ noun @ "
 		],
 		"](-)ši(-)ira": [
 			"širi-a @ u.B. @ { a → ESS} @ noun @ ",
-			"]ši @ u.B. @  @ unclear @ ",
-			"]širi-a @ u.B. @ { a → ESS} @ noun @ ",
-			"]ši-i-ra @ u.B. @ { a → 3POSS.SG-COM} @ noun @ ",
 			"iri-a @ u.B. @ { a → ESS} @ noun @ ",
 			"ir-a @ u.B. @ { a → INT} @ verb @ ",
 			"šir-a @ entsprechen; genügen; angenehm sein @ { a → INT} @ verb @ "
-		],
-		"]ub": [
-			"]-o-m @ u.B. @ { a → TR.PFV-3A.SG} @ noun @ "
 		],
 		"pendōvalla": [
 			"pend-ūw-a=lla @ zurückkehren; zurückbringen @ { a → MED-3A.SG=3PL.ABS} @ verb @ "
@@ -4437,21 +2790,11 @@
 		"kiššen": [
 			"Kešše=n @ PN @ { a → .ABS=3SG.ABS} { b → .ABS=CON} @ noun @ "
 		],
-		"]ti": [
-			"]ti @ u.B. @  @ unclear @ "
-		],
 		"šendaminni(-)[": [
-			"Šendaminni @ PN @ { a → .ABS} @ noun @ ",
-			"Šendaminni-[ @ PN @  @ noun @ "
+			"Šendaminni @ PN @ { a → .ABS} @ noun @ "
 		],
 		"(-)n]aḫḫa": [
-			"]naḫḫi-a @ u.B. @ { a → ESS} @ noun @ ",
-			"naḫḫ-a @ sich setzen; sitzen; einsetzen @ { a → INT} @ verb @ ",
-			"]n-aḫḫ-a @ u.B. @ { a → aḫḫ-3A.SG} { b → aḫḫ-INT} @ verb @ "
-		],
-		"]x-an": [
-			"]=an @ u.B. @ { a → =CON} @ unclear @ ",
-			"]a=n @ u.B. @ { a → =3SG.ABS} @ unclear @ "
+			"naḫḫ-a @ sich setzen; sitzen; einsetzen @ { a → INT} @ verb @ "
 		],
 		"tapšuwar[rīe]l": [
 			"Tapšuwari-nē-ž=l @ DN @ { a → RELAT.SG-ERG=3PL.ABS} @ noun @ "
@@ -4467,8 +2810,7 @@
 			"kūlī-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ "
 		],
 		"šāvāll[a(-)": [
-			"šāvāli-na @ Jahr @ { a → RELAT.PL.ABS} @ noun @ ",
-			"šāvāli-na-[ @ Jahr @ { a → RELAT.PL} @ noun @ "
+			"šāvāli-na @ Jahr @ { a → RELAT.PL.ABS} @ noun @ "
 		],
 		"tūnimmuššuḫḫa": [
 			"tūn+imm+o+šš+oḫḫe-a @ u.B. @ { a → ESS} @ noun @ "
@@ -4507,21 +2849,9 @@
 		"nūbīnīn": [
 			"nūbī-nē-n @ zehntausend @ { a → RELAT.SG-ABL/INS} @ noun @ "
 		],
-		"fāž[a": [
-			"fāžani-[ @ Monat @  @ noun @ "
-		],
-		"]x-nitta": [
-			"]ni=tta @ u.B. @ { a → =1SG.ABS} @ unclear @ "
-		],
-		"kīž[u": [
-			"kīž-u[ @ u.B. @  @ unclear @ "
-		],
 		"ḫāv[o]runni": [
 			"ḫāvoro+ni-ne @ Himmel @ { a → ABL/INS} @ noun @ ",
 			"ḫāvoro+ni-ne-e @ Himmel @ { a → RELAT.SG-DIR/LOC} @ noun @ "
-		],
-		"šūž[a": [
-			"šūž-a[ @ u.B. @  @ unclear @ "
 		],
 		"keššeniva": [
 			"Kešše-ne-va @ PN @ RELAT.SG-DAT @ noun @ "
@@ -4543,27 +2873,12 @@
 		"alūmāin": [
 			"al-ū+m+āi-n @ sprechen @ { a → CVB-n} @ NF @ "
 		],
-		"si-x-tibi": [
-			"si[x]tibi @ u.B. @ { a → .ABS} @ noun @ ",
-			"si[x]ti-ve @ u.B. @ { a → GEN} @ noun @ ",
-			"si[x]ti-i-ve @ u.B. @ { a → 3POSS.SG-GEN} @ noun @ "
-		],
 		"DINGIR-n[a(-)": [
-			"eni-na @ Gott @ RELAT.PL.ABS @ noun @ ",
-			"eni-na-[ @ Gott @ { a → RELAT.PL} @ noun @ "
-		],
-		"kā[z": [
-			"kāz[ @ u.B. @  @ unclear @ "
-		],
-		"pēdir[": [
-			"pēd-ir[ @ u.B. @  @ unclear @ "
+			"eni-na @ Gott @ RELAT.PL.ABS @ noun @ "
 		],
 		"fāġri": [
 			"faġri @ gut; schön @ { a → .ABS} @ noun @ ",
 			"fāġr-i @ gut sein; gut machen @ { a → ANTIP} @ verb @ "
-		],
-		"š[a": [
-			"ša[ @ u.B. @  @ unclear @ "
 		],
 		"tāgi": [
 			"tāgi @ hell; rein; makellos @ { a → .ABS} @ noun @ "
@@ -4579,9 +2894,6 @@
 		],
 		"keššenīel": [
 			"Kešše-nē-ž=l @ PN @ { a → RELAT.SG-ERG=3PL.ABS} @ noun @ "
-		],
-		"ŠU.GI-n[a": [
-			"keviri-na-[ @ Ältester @ { a → RELAT.PL} @ noun @ "
 		],
 		"ḫōidan": [
 			"ḫō-id-en @ rufen @ { a → PL.A-3JUSS} @ verb @ "
@@ -4604,9 +2916,6 @@
 		"pāttīvorriva": [
 			"pāttīvori-ne-va @ u.B. @ { a → RELAT.SG-DAT} @ noun @ "
 		],
-		"šendame[nni": [
-			"Šendamenni-[ @ PN @  @ noun @ "
-		],
 		"pālī": [
 			"pālī @ falsch @ { a → .ABS} @ noun @ "
 		],
@@ -4626,7 +2935,6 @@
 			"ieni-p-pe-n(e)-e=d @ u.B. @ { a → 2POSS.SG-GEN-RELAT.SG-DIR/LOC=1SG.ABS} @ noun @ "
 		],
 		"idīda[n(-)": [
-			"idīdan[ @ u.B. @  @ noun @ ",
 			"idi-ī-dan @ Körper; in Bezug auf; hinsichtlich @ { a → 3POSS.SG-ABL} @ verb @ "
 		],
 		"arūžu": [
@@ -4640,8 +2948,7 @@
 		],
 		"ēbri": [
 			"ēvri @ Herr @ .ABS @ noun @ ",
-			"ēvri @ Herr @ { a → .ABS} @ noun @ ",
-			"ēvri-[ @ Herr @  @ noun @ "
+			"ēvri @ Herr @ { a → .ABS} @ noun @ "
 		],
 		"arūžušši": [
 			"ar-ōž-o-šše @ geben @ { a → PST-2A.SG-NMLZ.ABS} @ noun @ "
@@ -4649,9 +2956,6 @@
 		"ūšteni": [
 			"ūšte-ne @ u.B. @ { a → ABL/INS} @ noun @ ",
 			"ūšte-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ "
-		],
-		"ni-x[": [
-			"ni[ @ u.B. @  @ unclear @ "
 		],
 		"ubūža": [
 			"ub-ōž-a @ töten @ { a → PST-3A.SG} @ verb @ ",
@@ -4678,19 +2982,12 @@
 		"undūl": [
 			"undō=l @ nun @ { a → =3PL.ABS} @ ADV @ "
 		],
-		"EN--IA--x[": [
-			"evri-iffu-[ @ Herr @ { a → 1POSS.SG} @ noun @ "
-		],
 		"mādillilla": [
 			"mādilli-i=lla @ u.B. @ { a → 3POSS.SG.ABS=3PL.ABS} @ noun @ ",
 			"mādili-ne=lla @ u.B. @ { a → ABL/INS=3PL.ABS} @ noun @ ",
 			"mādili-ne-e=lla @ u.B. @ { a → RELAT.SG-DIR/LOC=3PL.ABS} @ noun @ ",
 			"mādili-ne-ž=lla @ u.B. @ { a → RELAT.SG-ERG=3PL.ABS} @ noun @ ",
 			"mād-il-i-le=lla @ weise sein @ { a → il-MOD.ACT-1JUSS=3PL.ABS} @ verb @ "
-		],
-		"idippī[": [
-			"idi-p-pē-[ @ Körper @ { a → 2POSS.SG-GEN} @ noun @ ",
-			"idi-p-pē-[ @ u.B. @ { a → 2POSS.SG-GEN} @ noun @ "
 		],
 		"šāttīdu": [
 			"šātt-īd-o @ ergreifen @ { a → PL.A-TR.PFV} @ verb @ "
@@ -4721,27 +3018,12 @@
 		"tālāḫḫīb": [
 			"tāl+āḫḫ-ī-b @ herausziehen @ ANTIP-b @ verb @ "
 		],
-		"aw-x[": [
-			"au[ @ u.B. @  @ unclear @ "
-		],
 		"āšti": [
 			"āšti @ Ehefrau; Frau @ .ABS @ noun @ ",
 			"āšti-i @ Ehefrau; Frau @ 3POSS.SG.ABS @ noun @ "
 		],
 		"URU-ḫināžuž": [
 			"arde+ġe-na-āž-ož @ Stadtangehöriger @ { a → RELAT.PL-PL-ERG} @ noun @ "
-		],
-		"]x-andin": [
-			"]andi-n @ u.B. @ { a → ABL/INS} @ noun @ ",
-			"]andi=n @ u.B. @ { a → .ABS=3SG.ABS} { b → .ABS=CON} @ noun @ ",
-			"]and-i=n @ u.B. @ { a → ANTIP=3SG.ABS} { b → ANTIP=CON} @ verb @ ",
-			"]and-i-en @ u.B. @ { a → MOD.ACT-3JUSS} @ verb @ "
-		],
-		"]ulli": [
-			"]uli-ne @ u.B. @ { a → ABL/INS} @ noun @ ",
-			"]uli-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ ",
-			"]ull-i @ u.B. @ { a → ANTIP} @ verb @ ",
-			"]-ol-i-le @ u.B. @ { a → ol-MOD.ACT-1JUSS} @ verb @ "
 		],
 		"šīrna": [
 			"šīrni-a @ Glanz? @ ESS @ noun @ ",
@@ -4751,41 +3033,22 @@
 		"irbīnāža": [
 			"erbī-na-āž-a @ Hund @ { a → RELAT.PL-PL-DAT/ESS} @ noun @ "
 		],
-		"]šeniž": [
-			"]še-ne-ž @ u.B. @ { a → RELAT.SG-ERG} @ noun @ "
-		],
 		"tīžanna": [
 			"tiža=nna @ Herz @ .ABS=3SG.ABS @ noun @ ",
 			"tiža-nna @ Herz @ EQU2 @ noun @ "
 		],
-		"]ara": [
-			"]ari-a @ u.B. @ { a → ESS} @ noun @ ",
-			"]ar-a @ u.B. @ { a → 3A.SG} { b → INT} @ verb @ ",
-			"]-ar-a @ u.B. @ { a → ITER-3A.SG} { b → ITER-INT} @ verb @ "
-		],
 		"āštuḫḫēna": [
 			"āšt+o+ḫḫē-na @ weiblich @ { a → RELAT.PL.ABS} @ noun @ "
-		],
-		"]x-uma": [
-			"]umi-a @ u.B. @ { a → ESS} @ noun @ ",
-			"]-u=ma @ u.B. @ { a → =MED} @ verb @ ",
-			"]-o=ma @ u.B. @ { a → MOD.PAT=CON} { b → 2A.SG=CON} @ verb @ ",
-			"]u=ma @ u.B. @ { a → =CON} @ ADV @ "
 		],
 		"ḫīžāri": [
 			"ḫīž+ār+i @ u.B. @ { a → .ABS} @ noun @ ",
 			"ḫīž-ār-i @ u.B. @ { a → ITER-ANTIP} @ verb @ "
 		],
-		"]x-ai": [
-			"]-ai @ u.B. @ INS @ noun @ ",
-			"]-ai @ u.B. @ { a → PURP} @ verb @ "
-		],
 		"keššenišša": [
 			"Kešše-ne-š=nna @ PN @ { a → RELAT.SG-ERG=3SG.ABS} @ noun @ "
 		],
 		"ki[kkuni(-)": [
-			"kikk+o+ni @ u.B. @ { a → .ABS} @ noun @ ",
-			"kikk+o+ni-[ @ u.B. @  @ noun @ "
+			"kikk+o+ni @ u.B. @ { a → .ABS} @ noun @ "
 		],
 		"kikkunimma": [
 			"kikk+o+ni=mma @ u.B. @ { a → .ABS=2SG.ABS} { b → .ABS=CON} @ noun @ "
@@ -4794,15 +3057,8 @@
 			"anz-u @ u.B. @ { a → MED} @ verb @ ",
 			"anz-o @ u.B. @ { a → MOD.PAT} @ verb @ "
 		],
-		"]x-x-ḫi": [
-			"]ḫi @ u.B. @ { a → .ABS} @ noun @ ",
-			"]ḫ-i @ u.B. @ { a → ANTIP} @ verb @ "
-		],
 		"kikkunima": [
 			"kikk+o+ni=ma @ u.B. @ { a → .ABS=CON} { b → .ABS=2SG.ABS} @ noun @ "
-		],
-		"ḫin-x[": [
-			"ḫin[ @ u.B. @  @ unclear @ "
 		],
 		"udipš]arin": [
 			"Odip.šarri=n @ PN @ { a → .ABS=3SG.ABS} { b → .ABS=CON} @ noun @ ",
@@ -4816,9 +3072,6 @@
 		"keššippan": [
 			"Kešše=ffa=an @ PN @ { a → .ABS=2PL.ABS=CON} @ noun @ "
 		],
-		"ḫabri-x[": [
-			"ḫabr-i[ @ u.B. @  @ unclear @ "
-		],
 		"nāli": [
 			"nāli @ u.B. @ .ABS @ noun @ ",
 			"nāl-i @ u.B. @ { a → ANTIP} { b → TR.IMP} @ verb @ ",
@@ -4827,13 +3080,6 @@
 		"māri": [
 			"māri @ u.B. @ { a → .ABS} @ noun @ ",
 			"mār-i @ u.B. @ { a → ANTIP} { b → TR.IMP} @ verb @ "
-		],
-		"n[a": [
-			"na[ @ u.B. @  @ unclear @ "
-		],
-		"ḫ]a": [
-			"]ḫi-a @ u.B. @ { a → ESS} @ noun @ ",
-			"]ḫ-a @ u.B. @ { a → INT} { b → 3A.SG} @ verb @ "
 		],
 		"kināe": [
 			"kini-āe @ u.B. @ INS @ noun @ ",
@@ -4844,8 +3090,7 @@
 			"Odip.šarri-n @ PN @ { a → ABL/INS} @ noun @ "
 		],
 		"pāžanġōr[i(-)": [
-			"pāžanġōri @ u.B. @ { a → .ABS} @ noun @ ",
-			"pāžanġōri-[ @ u.B. @  @ noun @ "
+			"pāžanġōri @ u.B. @ { a → .ABS} @ noun @ "
 		],
 		"šeġira": [
 			"šeġiri-a @ u.B. @ { a → ESS} @ noun @ "
@@ -4859,12 +3104,6 @@
 			"tāri-ne @ u.B. @ { a → ABL/INS} @ noun @ ",
 			"tāri-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ "
 		],
-		"sa[b": [
-			"sap[ @ u.B. @  @ unclear @ "
-		],
-		"]tera": [
-			"]teri-a @ u.B. @ { a → ESS} @ noun @ "
-		],
 		"tebušḫa": [
 			"tiv+o+šḫe-a @ Rede @ { a → ESS} @ noun @ "
 		],
@@ -4873,9 +3112,6 @@
 			"pūd-o @ zeugen; schaffen @ { a → MOD.PAT} @ verb @ ",
 			"pūd-u @ u.B. @ { a → MED} @ verb @ ",
 			"pūd-o @ u.B. @  @ verb @ "
-		],
-		"udip-x[": [
-			"ud-ip[ @ u.B. @  @ unclear @ "
 		],
 		"k]eššin": [
 			"Kešše=n @ PN @ { a → .ABS=3SG.ABS} { b → .ABS=CON} @ noun @ "
@@ -4894,18 +3130,8 @@
 			"šeġr+oli-i-da @ u.B. @ { a → 3POSS.SG-DIR} @ noun @ ",
 			"šeġr-ol-ed-a @ großzügig sein @ { a → ol-FUT-3A.SG} @ verb @ "
 		],
-		"pi[": [
-			"pi[ @ u.B. @  @ unclear @ "
-		],
-		"šōr[": [
-			"šōr[ @  @  @ unclear @ "
-		],
-		"ištā[n": [
-			"išt-ān[ @ u.B. @  @ unclear @ "
-		],
 		"adirra(-)x[": [
-			"adiri-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ ",
-			"adiri-na-[ @ u.B. @ { a → RELAT.PL} @ noun @ "
+			"adiri-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ "
 		],
 		"tālāl": [
 			"tāle-ā=l @ Baum; Holz @ ESS=3PL.ABS @ noun @ ",
@@ -4928,9 +3154,6 @@
 		],
 		"nātḫa": [
 			"nātḫi-a @ Bett @ ESS @ noun @ "
-		],
-		"pu[n": [
-			"pun[ @ u.B. @  @ unclear @ "
 		],
 		"agūlla": [
 			"agūli-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ ",
@@ -4956,52 +3179,15 @@
 		"ḫōīb": [
 			"ḫō-ī-b @ rufen @ ANTIP-b @ verb @ "
 		],
-		"]x-mina(-)[": [
-			"]mi-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ ",
-			"]mina[ @ u.B. @  @ noun @ "
-		],
-		"sī[": [
-			"sī[ @ u.B. @  @ unclear @ "
-		],
 		"kund[i(-)": [
 			"kundi @ u.B. @ { a → .ABS} @ noun @ ",
-			"kundi-[ @ u.B. @  @ noun @ ",
 			"kund-i @ u.B. @ { a → ANTIP} @ verb @ "
 		],
-		"si-x[": [
-			"si[ @ u.B. @  @ unclear @ "
-		],
-		"uru[": [
-			"Uru[ @ PN @  @ noun @ "
-		],
-		"šē": [
-			"šēv[ @ u.B. @  @ unclear @ ",
-			"šē[- @ u.B. @  @ unclear @ "
-		],
 		"tamri(-)[": [
-			"tamri @ neun @ .ABS @ NUM @ ",
-			"tamri-[ @ neun @  @ NUM @ ",
-			"tamr-i[ @ u.B. @  @ unclear @ "
-		],
-		"elō-x[": [
-			"el-ō[ @ u.B. @  @ unclear @ "
+			"tamri @ neun @ .ABS @ NUM @ "
 		],
 		"ḫāi(-)[": [
-			"ḫā-i @ nehmen @ ANTIP @ verb @ ",
-			"ḫā-i[ @ nehmen @  @ unclear @ ",
-			"ḫāi[ @ u.B. @  @ noun @ "
-		],
-		"il[i": [
-			"il-i[ @ u.B. @  @ unclear @ "
-		],
-		"šī[": [
-			"šī[ @ u.B. @  @ unclear @ "
-		],
-		"āž[": [
-			"āž[ @ u.B. @  @ unclear @ "
-		],
-		"t[u": [
-			"tu[ @ u.B. @  @ unclear @ "
+			"ḫā-i @ nehmen @ ANTIP @ verb @ "
 		],
 		"10-ul": [
 			"Teššob-ož=l @ DN @ { a → ERG=3PL.ABS} @ noun @ "
@@ -5017,9 +3203,6 @@
 			"mūzi-dan @ u.B. @ { a → ABL} @ noun @ ",
 			"mūz-ed-a @ u.B. @ { a → FUT-3A.SG} @ verb @ "
 		],
-		"pa-x[": [
-			"pa[ @ u.B. @  @ unclear @ "
-		],
 		"kešše[n": [
 			"Kešše=n @ PN @ { a → .ABS=3SG.ABS} { b → .ABS=CON} @ noun @ "
 		],
@@ -5030,70 +3213,18 @@
 			"kad-i-a @ sagen; sprechen @ { a → TR-3A.SG} @ verb @ "
 		],
 		"ḫānia(-)[": [
-			"ḫāni-i-a @ Kind; Kleinkind; Säugling @ { a → 3POSS.SG-ESS} @ noun @ ",
-			"ḫāni-i-až-[ @ Kind; Kleinkind; Säugling @ { a → 3POSS-PL} @ noun @ ",
-			"ḫān-i-a[ @ gebären @ { a → 3A.SG} @ verb @ "
-		],
-		"nīnā-x[": [
-			"nīn-ā[ @ u.B. @  @ unclear @ "
-		],
-		"ēttā[": [
-			"ētt-ā[ @ u.B. @  @ unclear @ "
-		],
-		"ḫīžā-x[": [
-			"ḫīž-ā[ @ u.B. @  @ unclear @ "
+			"ḫāni-i-a @ Kind; Kleinkind; Säugling @ { a → 3POSS.SG-ESS} @ noun @ "
 		],
 		"[k]unden[i(-)": [
 			"kunde-ne @ u.B. @ { a → ABL/INS} @ noun @ ",
-			"kunde-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ ",
-			"kunde-ne-[ @ u.B. @ { a → RELAT.SG} @ verb @ "
-		],
-		"urum-x[": [
-			"Urum[ @ PN @  @ noun @ "
-		],
-		"tād[i": [
-			"Tādi[ @ PN @  @ noun @ "
-		],
-		"urum[": [
-			"Urum[ @ PN @  @ noun @ "
+			"kunde-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ "
 		],
 		"ŠU.G[I-(-)": [
-			"keviri-na @ Ältester @ { a → RELAT.PL.ABS} @ noun @ ",
-			"keviri-na-[ @ Ältester @ { a → RELAT.PL} @ noun @ "
-		],
-		"fandī[": [
-			"fandi-ī-[ @ rechts; rechte Seite @ { a → 3POSS.SG} @ noun @ ",
-			"fand-ī=[ @ recht sein; gerecht sein @ { a → ANTIP} @ verb @ "
-		],
-		"šūgu[r": [
-			"šūg-ur[ @ u.B. @  @ unclear @ "
-		],
-		"elami[": [
-			"Elami[ @ PN @  @ noun @ "
+			"keviri-na @ Ältester @ { a → RELAT.PL.ABS} @ noun @ "
 		],
 		"šīenže(-)[": [
 			"šīn+že @ zweiter @ { a → .ABS} @ noun @ ",
-			"šīn+že-[ @ zweiter @  @ noun @ ",
-			"šīnže @ u.B. @ { a → .ABS} @ noun @ ",
-			"šīnže-[ @ u.B. @  @ noun @ "
-		],
-		"ela[mi": [
-			"Elami[ @ PN @  @ noun @ "
-		],
-		"uru[m": [
-			"Urum[ @ PN @  @ noun @ "
-		],
-		"pā[": [
-			"pā[ @ u.B. @  @ unclear @ "
-		],
-		"šu-x[": [
-			"šu[ @ u.B. @  @ unclear @ "
-		],
-		"u[": [
-			"u[ @ u.B. @  @ unclear @ "
-		],
-		"tādī[": [
-			"Tādī[ @ PN @  @ noun @ "
+			"šīnže @ u.B. @ { a → .ABS} @ noun @ "
 		],
 		"šūpta": [
 			"šūpti-a @ u.B. @ { a → ESS} @ noun @ ",
@@ -5101,16 +3232,12 @@
 			"šūp-t-a @ u.B. @ { a → t-INT} @ verb @ "
 		],
 		"šūbulvi(-)[": [
-			"šūbulvi @  @ .ABS @ noun @ ",
-			"šūbulvi-[ @ u.B. @  @ noun @ "
+			"šūbulvi @  @ .ABS @ noun @ "
 		],
 		"āvi": [
 			"avi @ Gesicht; vor @ .ABS @ noun @ ",
 			"avi @ Gesicht; vor @  @ PREP @ ",
 			"avi @ Gesicht; vor @  @ POST @ "
-		],
-		"tē-x[": [
-			"tē[ @ u.B. @  @ unclear @ "
 		],
 		"tīva": [
 			"tīe-va @ Wort; Sache @ DAT @ noun @ ",
@@ -5118,45 +3245,22 @@
 			"tīe-v-a @ Wort; Sache @ { a → 2POSS.SG-ESS} @ noun @ ",
 			"tīv-a @ sprechen @ { a → INT} @ verb @ "
 		],
-		"ari-x[": [
-			"ar-i[ @ u.B. @  @ unclear @ "
-		],
 		"tevin[a": [
 			"tive-na @ Wort; Sache @ { a → RELAT.PL.ABS} @ noun @ "
 		],
-		"]t[al": [
-			"]-da=l @ u.B. @ { a → DIR=3PL.ABS} @ noun @ "
-		],
-		"]al-x[": [
-			"]al[ @ u.B. @  @ unclear @ "
-		],
 		"ālūšti": [
 			"ālu-ūšt-i @ sprechen @ { a → RES-TR.IMP} @ verb @ "
-		],
-		"]x(-)ta(-)[": [
-			"]ta @ u.B. @  @ unclear @ ",
-			"]ta[ @ u.B. @  @ unclear @ ",
-			"ta[ @ u.B. @  @ unclear @ "
 		],
 		"šātti": [
 			"šātt-i @ ergreifen @ { a → TR.IMP} @ verb @ ",
 			"šātti @ 1PRON.PL @ { a → .ABS} @ PRON @ "
 		],
 		"šōni(-)[": [
-			"šō+ni @ Hand @ .ABS @ noun @ ",
-			"šō+ni-[ @ Hand @  @ noun @ "
-		],
-		"]x-šā[": [
-			"]šā[ @ u.B. @  @ unclear @ "
+			"šō+ni @ Hand @ .ABS @ noun @ "
 		],
 		"urivall[a": [
 			"uri-v-a=lla @ Fuß @ { a → 2POSS.SG-ESS=3PL.ABS} @ noun @ ",
 			"uri-v-a=lla @ Fuß @ { a → 2POSS.SG.ABS-EPNTH=3PL.ABS} @ noun @ "
-		],
-		"]x-avāni(-)[": [
-			"]av+ān+i @ u.B. @ { a → .ABS} @ noun @ ",
-			"]av+ā+ni-[ @ u.B. @  @ noun @ ",
-			"]av-ān-i @ u.B. @ { a → ān-TR.IMP} @ verb @ "
 		],
 		"ḫārapḫāīm": [
 			"ḫār+a+ġe-ve-āī=m @ u.B. @ { a → GEN-INS=2SG.ABS} @ noun @ "
@@ -5164,39 +3268,19 @@
 		"pēdū[ġa": [
 			"pēd-ūġ-a @ u.B. @ { a → ūġ-INT.IMP} @ noun @ "
 		],
-		"x-x-pirri": [
-			"]piri-ne @ u.B. @ { a → ABL/INS} @ noun @ ",
-			"]piri-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ "
-		],
 		"ardinin": [
 			"arde-ne-n @ Stadt @ { a → RELAT.SG-ABL/INS} @ noun @ ",
 			"arde-ne=n @ Stadt @ { a → ABL/INS=3SG.ABS} { b → ABL/INS=CON} @ noun @ ",
 			"arde-ne-e=n @ Stadt @ { a → RELAT.SG-DIR/LOC=3SG.ABS} { b → RELAT.SG-DIR/LOC=CON} @ noun @ "
 		],
-		"]uġa": [
-			"]+o+ġe-a @ u.B. @ { a → ESS} @ noun @ ",
-			"]-uġ-a @ u.B. @ { a → uġ-INT} { b → uġ-INT.IMP} { c → uġ-3A.SG} @ verb @ "
-		],
 		"p]ēdūġa": [
 			"pēd-ūġ-a @ u.B. @ { a → ūġ-INT.IMP} { b → ūġ-INT} @ noun @ "
 		],
 		"](-)šininna": [
-			"]ši-ne-nna @ u.B. @ { a → RELAT.SG-EQU2} @ noun @ ",
-			"]ši-ne=nna @ u.B. @ { a → ABL/INS=3SG.ABS} @ noun @ ",
-			"]ši-ne-e=nna @ u.B. @ { a → RELAT.SG-DIR/LOC=3SG.ABS} @ noun @ ",
 			"ši+ni-nna @ Auge @ { a → EQU2} @ noun @ ",
 			"ši+ni=nna @ Auge @ { a → .ABS=3SG.ABS} @ noun @ ",
 			"ši-ne=nna @ Auge @ { a → ABL/INS=3SG.ABS} @ noun @ ",
 			"ši-ne-e=nna @ Auge @ { a → RELAT.SG-DIR/LOC=3SG.ABS} @ noun @ "
-		],
-		"]x-ibru+ūm": [
-			"]ibr-ō-m @ u.B. @ { a → TR.PFV-3A.SG} @ noun @ "
-		],
-		"]inna": [
-			"]i-nna @ u.B. @ { a → EQU2} @ verb @ ",
-			"]ini-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ ",
-			"]i=nna @ u.B. @ { a → =3SG.ABS} @ unclear @ ",
-			"]+i+nni-a @ u.B. @ { a → ESS} @ noun @ "
 		],
 		"nāniž": [
 			"nāni-ž @ u.B. @ { a → ERG} @ noun @ ",
@@ -5207,13 +3291,6 @@
 		],
 		"kurgōrveašša": [
 			"kurgōrvi-i-aš=nna @ u.B. @ { a → 3POSS-PL.ABS=3SG.ABS} @ noun @ "
-		],
-		"š]āi": [
-			"]ši-āi @ u.B. @ { a → INS} @ noun @ ",
-			"]š-i-āi @ u.B. @ { a → MOD.ACT-PURP} @ verb @ "
-		],
-		"]x-taža": [
-			"]taži-a @ u.B. @ { a → ESS} @ noun @ "
 		],
 		"pēġulaballa": [
 			"pēġulabi-a=lla @ u.B. @ { a → ESS=3PL.ABS} @ noun @ ",
@@ -5236,10 +3313,6 @@
 		"šendiššēni": [
 			"šindi+ššē-ne @ siebter @ { a → ABL/INS} @ noun @ ",
 			"šindi+ššē-ne-e @ siebter @ { a → RELAT.SG-DIR/LOC} @ noun @ "
-		],
-		"]x-ḫištu": [
-			"]ḫ-išt-u @ u.B. @ { a → RES-MED} @ verb @ ",
-			"]ḫ-išt-o @ u.B. @ { a → RES-MOD.PAT} @ verb @ "
 		],
 		"talmu": [
 			"talm-u @ groß werden; groß machen @ MED @ verb @ ",
@@ -5270,17 +3343,6 @@
 			"fondur+o+ni-ne=nna @ u.B. @ { a → ABL/INS=3SG.ABS} @ noun @ ",
 			"fondur+o+ni-ne-e=nna @ u.B. @ { a → RELAT.SG-DIR/LOC=3SG.ABS} @ noun @ "
 		],
-		"]x-sīe": [
-			"]si-ī-e @ u.B. @ { a → 3POSS.SG-DIR/LOC} @ noun @ ",
-			"]si-īe @ u.B. @ { a → 3POSS.SG.ABS} @ noun @ ",
-			"]s-ī-e @ u.B. @ { a → MOD.ACT-3JUSS} @ verb @ "
-		],
-		"]ištu": [
-			"]-išt-u @ u.B. @ { a → RES-MED} @ verb @ ",
-			"]-išt-o @ u.B. @ { a → RES-MOD.PAT} @ verb @ ",
-			"]išt-u @ u.B. @ { a → MED} @ verb @ ",
-			"]išt-o @ u.B. @ { a → MOD.PAT} @ verb @ "
-		],
 		"pabāni": [
 			"pabā+ni @ Berg @ { a → .ABS} @ noun @ "
 		],
@@ -5292,22 +3354,12 @@
 			"ašḫō=n=an @ oben @ { a → =3SG.ABS=CON} @ ADV @ ",
 			"ašḫō-n=an @ oben @ { a → ABL/INS=CON} @ noun @ "
 		],
-		"a[pše": [
-			"apše-[ @ Schlange @  @ noun @ "
-		],
-		"]īa": [
-			"]-ī-a @ u.B. @ { a → TR-3A.SG} @ verb @ ",
-			"]i-ī-a @ u.B. @ { a → 3POSS.SG-ESS} @ noun @ "
-		],
 		"sarmadenin": [
 			"Sarmade-ne-n @ GN @ { a → RELAT.SG-ABL/INS} @ noun @ "
 		],
 		"t]ōrinan": [
 			"tōri=n=an @ unten; hinab @ { a → =3SG.ABS=CON} @ ADV @ ",
 			"tōre-n=an @ unten; hinab @ { a → ABL/INS=CON} @ noun @ "
-		],
-		"irv[i": [
-			"ervi-[ @ Hund @  @ noun @ "
 		],
 		"p]abanna": [
 			"paba+ni-na @ Berg @ { a → RELAT.PL.ABS} @ noun @ "
@@ -5323,23 +3375,8 @@
 		"šendurum": [
 			"šend-ur-o-m @ u.B. @ { a → ur-TR.PFV-3A.SG} @ verb @ "
 		],
-		"t]ālla": [
-			"]-dā=lla @ u.B. @ { a → DIR=3PL.ABS} @ noun @ "
-		],
 		"alumā[in": [
 			"al-u+m+āi-n @ sprechen @ { a → CVB-n} @ NF @ "
-		],
-		"t]i": [
-			"]ti @ u.B. @  @ unclear @ ",
-			"]ti @ u.B. @ { a → .ABS} @ noun @ ",
-			"]t-i @ u.B. @ { a → ANTIP} @ verb @ "
-		],
-		"tibi-x[": [
-			"tib-i[ @ u.B. @  @ unclear @ "
-		],
-		"]āndōva": [
-			"]ānd-ūw-a @ u.B. @ { a → MED-3A.SG} @ verb @ ",
-			"]ānd-ō-eva @ u.B. @ { a → MOD.PAT-POT} @ verb @ "
 		],
 		"[t]ārma": [
 			"tārmi-a @ u.B. @ { a → ESS} @ noun @ ",
@@ -5347,16 +3384,10 @@
 			"tārm-a @ u.B. @ { a → INT} @ verb @ ",
 			"šārm-a @ u.B. @ { a → INT} @ verb @ "
 		],
-		"tu[": [
-			"tu[ @ u.B. @  @ unclear @ "
-		],
 		"fōrīman": [
 			"fōri-ī=man @ Blick @ { a → 3POSS.SG.ABS=CON} @ noun @ ",
 			"fōr-ī=man @ sehen @ { a → ANTIP=CON} @ verb @ ",
 			"fōr-ī=m=an @ sehen @ { a → ANTIP=2SG.ABS=CON} @ verb @ "
-		],
-		"t[e": [
-			"te[ @ u.B. @  @ unclear @ "
 		],
 		"šīġāttāma": [
 			"šīġ+ātti-ā=ma @ u.B. @ { a → ESS=CON} @ noun @ ",
@@ -5379,9 +3410,6 @@
 		"kādala": [
 			"kād+ali-a @ u.B. @ { a → ESS} @ noun @ ",
 			"kād-al-a @ sagen; sprechen @ { a → al-INT} { b → al-3A.SG} @ verb @ "
-		],
-		"tē[": [
-			"tē[ @  @  @ unclear @ "
 		],
 		"idiaža": [
 			"idi-i-až-a @ Körper @ { a → 3POSS-PL-DAT/ESS} @ noun @ "
@@ -5411,14 +3439,10 @@
 			"Pēri-ġē-na @ GN @ { a → ADJ-RELAT.PL.ABS} @ noun @ "
 		],
 		"kiverr[a(-)": [
-			"keveri-na @ Ältester @ { a → RELAT.PL.ABS} @ noun @ ",
-			"keveri-na-[ @ Ältester @ { a → RELAT.PL} @ noun @ "
+			"keveri-na @ Ältester @ { a → RELAT.PL.ABS} @ noun @ "
 		],
 		"alušti": [
 			"alu-ušt-i @ sprechen @ { a → RES-TR.IMP} @ verb @ "
-		],
-		"tevivo-x[": [
-			"tive-iffo-x[ @ Wort; Sache @ { a → 1POSS.SG} @ noun @ "
 		],
 		"30-ta": [
 			"Kužuḫ-ta @ DN @ { a → DIR} @ noun @ ",
@@ -5431,7 +3455,6 @@
 			"fē-ž-ūda @ 2PRON @ { a → PL-DIR} @ PRON @ "
 		],
 		"agē[": [
-			"ag-ē[ @ u.B. @  @ noun @ ",
 			"ag-i-ēn @ aufnehmen; erheben; heraufkommen @ { a → MOD.ACT-3JUSS} @ verb @ "
 		],
 		"šuēž": [
@@ -5441,19 +3464,6 @@
 		],
 		"šīwḫa": [
 			"šīuġi-a @ u.B. @ { a → ESS} @ noun @ "
-		],
-		"]ellan-x[": [
-			"]ellan[ @ u.B. @  @ unclear @ "
-		],
-		"]x-aššenella": [
-			"]a+šše-ne=lla @ u.B. @ { a → ABL/INS=3PL.ABS} @ noun @ ",
-			"]a+šše-ne-e=lla @ u.B. @ { a → RELAT.SG-DIR/LOC=3PL.ABS} @ noun @ ",
-			"]a+šše-ne-ž=lla @  @ { a → RELAT.SG-ERG=3PL.ABS} @ noun @ ",
-			"]-a-šše-ne-e=lla @ u.B. @ { a → 3A-NMLZ-RELAT.SG-DIR/LOC=3PL.ABS} { b → INT-NMLZ-RELAT.SG-DIR/LOC=3PL.ABS} @ noun @ ",
-			"]-a-šše-ne-ž=lla @ u.B. @ { a → 3A-NMLZ-RELAT.SG-ERG=3PL.ABS} { b → INT-NMLZ-RELAT.SG-ERG=3PL.ABS} @ noun @ "
-		],
-		"x-tapše": [
-			"]t+apše @ u.B. @ { a → .ABS} @ noun @ "
 		],
 		"kū[md]eniveni": [
 			"kūmde-ne-ve-ne-e @ Turm @ { a → RELAT.SG-GEN-RELAT.SG-DIR/LOC} @ noun @ "
@@ -5477,16 +3487,11 @@
 			"erve-ne-ž @ Hund @ { a → RELAT.SG-ERG} @ noun @ "
 		],
 		"](-)tāržōe": [
-			"]tāržōe @ u.B. @  @ unclear @ ",
 			"tāržōe @ u.B. @  @ unclear @ "
 		],
 		"īštennān": [
 			"īšte=nna=ān @ 1PRON.SG @ { a → .ABS=3SG.ABS=CON} @ PRON @ ",
 			"īšt-i-en=nna=ān @ u.B. @ { a → MOD.ACT-3JUSS=3SG.ABS=CON} @ verb @ "
-		],
-		"]x-ān": [
-			"]=ān @ u.B. @ { a → =CON} @ unclear @ ",
-			"]ā=n @ u.B. @ { a → =3SG.ABS} @ unclear @ "
 		],
 		"kīškūppēnida": [
 			"kīšk+ūpp+ē-ne-da @ u.B. @ { a → RELAT.SG-DIR} @ noun @ "
@@ -5504,8 +3509,7 @@
 		],
 		"pēri(-)x[": [
 			"pēri @ u.B. @ { a → .ABS} @ noun @ ",
-			"pēr-i @ u.B. @ { a → ANTIP} @ verb @ ",
-			"pēr-i[ @ u.B. @  @ unclear @ "
+			"pēr-i @ u.B. @ { a → ANTIP} @ verb @ "
 		],
 		"allīġa": [
 			"all+ī+ġe-a @ u.B. @ ESS @ noun @ ",
@@ -5516,17 +3520,11 @@
 			"šel+o+že-ē-da @ u.B. @ { a → 3POSS.SG-DIR} @ noun @ ",
 			"šel-ož-ēd-a @ u.B. @ { a → ož-FUT-3A.SG} @ verb @ "
 		],
-		"ušta[": [
-			"ušt-a[ @ herausgehen; fortbringen; erheben @  @ unclear @ "
-		],
 		"ḫōrruštāw": [
 			"ḫōrr-ošt-āw @ u.B. @ { a → RES-1A.SG} @ verb @ "
 		],
 		"ārari": [
 			"ārari @ das Böse @ { a → .ABS} @ noun @ "
-		],
-		"s[i": [
-			"si[ @ u.B. @  @ unclear @ "
 		],
 		"šugārdedāwul": [
 			"šug+ārd-ed-āw=l @ vereinen? @ { a → FUT-1A.SG=3PL.ABS} @ verb @ "
@@ -5535,15 +3533,11 @@
 			"keveri-na @ Ältester @ { a → RELAT.PL.ABS} @ noun @ "
 		],
 		"adāž[i(-)": [
-			"adāži @ u.B. @ { a → .ABS} @ noun @ ",
-			"adāži-[ @ u.B. @  @ unclear @ "
+			"adāži @ u.B. @ { a → .ABS} @ noun @ "
 		],
 		"umbōž": [
 			"umbi-ōž @ u.B. @ EQU @ noun @ ",
 			"umb-ō-ež @ u.B. @ { a → MOD.PAT-OPT} @ verb @ "
-		],
-		"ḫāž[i": [
-			"ḫāž-i[ @ u.B. @  @ unclear @ "
 		],
 		"šūm[a]nnel": [
 			"šūm+a+ni-ne=l @ u.B. @ { a → ABL/INS=3PL.ABS} @ noun @ ",
@@ -5587,57 +3581,17 @@
 		"a[lum]āīn": [
 			"al-u+m+āī-n @ sprechen @ { a → CVB-n} @ NF @ "
 		],
-		"]rišši": [
-			"]ri-šši @ u.B. @ { a → 2POSS.PL.ABS} @ noun @ ",
-			"]r+i+šše @ u.B. @ { a → .ABS} @ noun @ ",
-			"]r-i-šše @ u.B. @ { a → ANTIP-NMLZ.ABS} @ noun @ "
-		],
-		"]x-āššu": [
-			"]-āššo @ u.B. @ { a → 2A.PL} @ verb @ "
-		],
-		"s]i": [
-			"]si @ u.B. @ { a → .ABS} @ noun @ ",
-			"]s-i @ u.B. @ { a → ANTIP} { b → TR.IMP} @ verb @ "
-		],
-		"e]l": [
-			"]e=l @ u.B. @ { a → =3PL.ABS} @ unclear @ "
-		],
-		"]adel": [
-			"]ade-i=l @ u.B. @ { a → 3POSS.SG=3PL.ABS} @ noun @ ",
-			"]ad-i=l @ u.B. @ { a → =ANTIP} @ verb @ ",
-			"]-ad-i=l @ u.B. @ { a → ad-ANTIP=3PL.ABS} @ verb @ ",
-			"]a=dil @ u.B. @ { a → =1PL.ABS} @ unclear @ "
-		],
-		"]x-abni": [
-			"]abni @ u.B. @ { a → .ABS} @ noun @ "
-		],
-		"]x-li": [
-			"]li @ u.B. @ { a → .ABS} @ noun @ "
-		],
 		"kādukku": [
 			"kād-o-kko @ sagen; sprechen @ INT-NEG @ verb @ "
-		],
-		"š]īnāža": [
-			"]šī-na-āž-a @ u.B. @ { a → RELAT.PL-PL-DAT/ESS} @ noun @ ",
-			"]-až-ē-na-āž-a @ u.B. @ { a → PL-GEN-RELAT.PL-PL-DAT/ESS} @ noun @ "
 		],
 		"DINGIR-nāž[a": [
 			"eni-na-āž-a @ Gott @ { a → RELAT.PL-PL-DAT/ESS} @ noun @ "
 		],
-		"]x-elġi": [
-			"]elġi @ u.B. @ { a → .ABS} @ noun @ ",
-			"]elġ-i @ u.B. @ { a → ANTIP} @ verb @ "
-		],
 		"tarmānuž": [
 			"tarmāni-ož @ Quelle @ { a → EQU} @ noun @ "
 		],
-		"kulm[u": [
-			"kulm-u[ @ tief? @  @ noun @ "
-		],
 		"](-)ānnīri": [
-			"]ānn+ī+re @ u.B. @ { a → .ABS} @ noun @ ",
 			"ānn+ī+re @ u.B. @ { a → .ABS} @ noun @ ",
-			"]ānn-īr-i @ u.B. @ { a → īr-ANTIP} @ verb @ ",
 			"ānn-īr-i @ u.B. @ { a → īr-ANTIP} @ verb @ "
 		],
 		"ḫōrāmi": [
@@ -5645,26 +3599,15 @@
 			"ḫōr-ām-i @ u.B. @ { a → FACT-ANTIP} @ verb @ "
 		],
 		"](-)alida": [
-			"]ali-da @ u.B. @ { a → DIR} @ noun @ ",
-			"]ali-i-da @ u.B. @ { a → 3POSS.SG-DIR} @ noun @ ",
-			"]al+idi-a @ u.B. @ { a → ESS} @ noun @ ",
 			"ali-da @ u.B. @ { a → DIR} @ noun @ ",
 			"ali-i-da @ u.B. @ { a → 3POSS.SG-DIR} @ noun @ ",
 			"al+idi-a @ u.B. @ { a → ESS} @ noun @ ",
-			"]al-ed-a @ u.B. @ { a → FUT-3A.SG} @ verb @ ",
-			"al-ed-a @ u.B. @ { a → FUT-3A.SG} @ verb @ ",
-			"]-al-ed-a @ u.B. @ { a → al-FUT-3A.SG} @ verb @ "
+			"al-ed-a @ u.B. @ { a → FUT-3A.SG} @ verb @ "
 		],
 		"naptanni(-)[": [
 			"napt+a+nni @ u.B. @ { a → .ABS} @ noun @ ",
-			"napt+a+nni-[ @ u.B. @  @ noun @ ",
 			"napt+a+ni-ne @ u.B. @ { a → ABL/INS} @ noun @ ",
-			"napt+a+ni-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ ",
-			"napt+a+ni-ne-[ @ u.B. @ { a → RELAT.SG} @ noun @ "
-		],
-		"]mi": [
-			"]mi @ u.B. @ { a → .ABS} @ noun @ ",
-			"]m-i @ u.B. @ { a → ANTIP} @ verb @ "
+			"napt+a+ni-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ "
 		],
 		"tūnāḫḫi": [
 			"tūn+āḫḫ+i @ u.B. @ { a → .ABS} @ noun @ ",
@@ -5675,14 +3618,8 @@
 			"tōn+ā+ḫḫe @ u.B. @ { a → .ABS} @ noun @ "
 		],
 		"](-)ulāl": [
-			"]uli-ā=l @ u.B. @ { a → ESS=3PL.ABS} @ noun @ ",
 			"uli-ā=lla @ u.B. @ { a → ESS=3PL.ABS} @ noun @ ",
-			"]ul-ā=l @ u.B. @ { a → INT=3PL.ABS} @ verb @ ",
-			"ul-ā=l @ u.B. @ { a → INT=3PL.ABS} @ verb @ ",
-			"]-ol-ā=l @ u.B. @ { a → ol-3A.SG=3PL.ABS} { b → ol-INT=3PL.ABS} @ verb @ "
-		],
-		"ītḫi-x-x": [
-			"ītḫ-i[ @ u.B. @  @ unclear @ "
+			"ul-ā=l @ u.B. @ { a → INT=3PL.ABS} @ verb @ "
 		],
 		"t]amgāri": [
 			"tamgāri @ Händler @ { a → .ABS} @ noun @ "
@@ -5694,10 +3631,8 @@
 			"Ilāva-a=ān @ GN @ { a → ESS=CON} @ noun @ "
 		],
 		"(-)š]īa": [
-			"]ši-ī-a @ u.B. @ { a → 3POSS.SG-ESS} @ noun @ ",
 			"ši-ī-a @ Auge @ { a → 3POSS.SG-ESS} @ noun @ ",
 			"šīe-a @ Wasser; Fluss @ { a → ESS} @ noun @ ",
-			"]š-ī-a @ u.B. @ { a → TR-3A.SG} @ verb @ ",
 			"ši-ī-a @ beobachten @ { a → TR-3A.SG} @ verb @ ",
 			"šī-a @ beobachten @ { a → INT} @ verb @ ",
 			"ši-ī-a @ u.B. @ { a → TR-3A.SG} @ verb @ ",
@@ -5706,19 +3641,11 @@
 		"awtuwi": [
 			"Audūi @ PN @ { a → .ABS} @ noun @ "
 		],
-		"]marri": [
-			"]mari-ne @ u.B. @ { a → ABL/INS} @ noun @ ",
-			"]mari-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ "
-		],
 		"tiššuḫḫi": [
 			"tišš+o+ḫḫe @ u.B. @ { a → .ABS} @ noun @ "
 		],
 		"ANŠE.KUR.RA-na": [
 			"išši-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ "
-		],
-		"]alla": [
-			"]a=lla @ u.B. @ { a → =3PL.ABS} @ unclear @ ",
-			"]ali-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ "
 		],
 		"šōriniramā[n]": [
 			"šōre-ne-ra=mān @ u.B. @ { a → RELAT.SG-COM=CON} @ noun @ ",
@@ -5752,79 +3679,34 @@
 			"arde-ne-va=man @ Stadt @ { a → RELAT.SG-DAT=CON} @ noun @ ",
 			"arde-ne-va=m=an @ Stadt @ { a → RELAT.SG-DAT=2SG.ABS=CON} @ noun @ "
 		],
-		"]x-iliffāž": [
-			"]ili-iffe-āž @ u.B. @ { a → 1POSS-PL.ABS} @ noun @ "
-		],
 		"aimān": [
 			"ai=mān @ falls; wenn @ { a → =CON} @ CONJ @ ",
 			"ai=m=ān @ falls; wenn @ { a → =2SG.ABS=CON} @ CONJ @ "
-		],
-		"]iwmu": [
-			"]-i-o-mo @ u.B. @ { a → TR-2A.SG-NEG} @ verb @ "
 		],
 		"URU-nivamān": [
 			"arde-ne-va=mān @ Stadt @ { a → RELAT.SG-DAT=CON} @ noun @ ",
 			"arde-ne-va=m=ān @ Stadt @ { a → RELAT.SG-DAT=2SG.ABS=CON} @ noun @ "
 		],
-		"]x-iaffož": [
-			"]-i-affo-ž @ u.B. @ { a → TR-1A.NEG-PL} @ noun @ "
-		],
-		"uridu-x[": [
-			"ur-idu[ @ u.B. @  @ unclear @ ",
-			"ur-ed-o=[ @ wünschen @ { a → FUT-2A.SG} @ verb @ ",
-			"ur-ed-o=[ @ zeigen @ { a → FUT-2A.SG} @ verb @ ",
-			"ur-ed-o=[ @ u.B. @ { a → FUT-2A.SG} @ verb @ ",
-			"ur-id-o=[ @ wünschen @ { a → PL.A-TR.PFV} @ verb @ ",
-			"ur-id-o=[ @ zeigen @ { a → PL.A-TR.PFV} @ verb @ ",
-			"ur-id-o=[ @ u.B. @ { a → PL.A-TR.PFV} @ verb @ "
-		],
-		"URU-ni-x[": [
-			"arde-ne-[ @ Stadt @ { a → RELAT.SG} @ noun @ "
-		],
-		"]li": [
-			"]li @ u.B. @  @ unclear @ "
-		],
-		"]ani": [
-			"]+a+ni @ u.B. @ { a → .ABS} @ noun @ ",
-			"]an-i @ u.B. @ { a → ANTIP} @ verb @ ",
-			"]-ia-ne @ u.B. @ { a → 3POSS.SG-ABL/INS} @ noun @ "
-		],
 		"aziri": [
 			"aziri @ u.B. @ { a → .ABS} @ noun @ ",
 			"assiri @ Gefangener @ { a → .ABS} @ noun @ "
 		],
-		"]x-tanin": [
-			"]t+an+i=n @ u.B. @ { a → .ABS=3SG.ABS} { b → .ABS=CON} @ noun @ ",
-			"]t+a+ni-n @ u.B. @ { a → ABL/INS} @ noun @ "
-		],
 		"agiden": [
 			"ag-id-en @ aufnehmen; heraufkommen; aufrichten @ { a → PL.A-3JUSS} @ verb @ "
-		],
-		"šē[": [
-			"šē[ @  @  @ unclear @ "
 		],
 		"teġri": [
 			"teġri @ u.B. @ { a → .ABS} @ noun @ ",
 			"teġr-i @ u.B. @ { a → ANTIP} @ verb @ "
 		],
-		"pa[": [
-			"pa[ @ u.B. @  @ unclear @ "
-		],
 		"našpa": [
 			"našpi-a @ u.B. @ { a → ESS} @ noun @ ",
 			"našp-a @ u.B. @ { a → INT} @ verb @ "
-		],
-		"ku[": [
-			"ku[ @ u.B. @  @ unclear @ "
 		],
 		"immandena": [
 			"immande-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ "
 		],
 		"anagina": [
 			"anagi-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ "
-		],
-		"šeš-x[": [
-			"šeš[ @ u.B. @  @ unclear @ "
 		],
 		"avida": [
 			"avi-i-da @ Gesicht; vor @ { a → 3POSS.SG-DIR} @ noun @ "
@@ -5847,14 +3729,10 @@
 		"šeġurunnivini": [
 			"šeġuru+ni-ne-ve-ne-e @ Leben @ { a → RELAT.SG-GEN-RELAT.SG-DIR/LOC} @ noun @ "
 		],
-		"š[e": [
-			"še[ @ u.B. @  @ unclear @ "
-		],
 		"talaḫḫidu": [
 			"tal+aḫḫ-id-o @ herausziehen @ PL.A-TR.PFV @ verb @ "
 		],
 		"avi[n(-)": [
-			"avin[ @ u.B. @  @ noun @ ",
 			"avi-n @ vor @ { a → ABL/INS} @ ADV @ "
 		],
 		"agulla": [
@@ -5862,18 +3740,11 @@
 			"ag-o=lla @ aufnehmen; erheben; heraufkommen @ { a → MOD.PAT=3PL.ABS} @ verb @ ",
 			"agoli-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ "
 		],
-		"timi[r": [
-			"timeri-[ @ dunkel @  @ noun @ "
-		],
-		"pudušḫinaža-x[": [
-			"pud+u+šḫi-na-až-a=[ @ u.B. @ { a → RELAT.PL-PL-DAT/ESS} @ noun @ "
-		],
 		"faštu": [
 			"fašt-o @ u.B. @ { a → MOD.PAT} @ verb @ ",
 			"fašt-u @ u.B. @ { a → MED} @ verb @ "
 		],
 		"pudu(-)[": [
-			"pud-u[ @ u.B. @  @ unclear @ ",
 			"pud-o @ u.B. @ MOD.PAT @ verb @ ",
 			"pud-u @ u.B. @ MED @ verb @ "
 		],
@@ -5882,37 +3753,21 @@
 			"pid-uġ-u @ u.B. @ { a → uġ-MED} @ verb @ "
 		],
 		"(-)a]rriva": [
-			"]ari-ne-va @ u.B. @ { a → RELAT.SG-DAT} @ noun @ ",
-			"]ar-i-l-eva @ u.B. @ { a → MOD.ACT-l-POT} @ verb @ ",
 			"ar-i-l-eva @ geben @ { a → MOD.ACT-l-POT} @ verb @ ",
 			"ari-ne-va @ das Böse @ { a → RELAT.SG-DAT} @ noun @ "
 		],
 		"](-)eženi": [
 			"eže-ne @ Erde @ { a → ABL/INS} @ noun @ ",
-			"eže-ne-e @ Erde @ { a → RELAT.SG-DIR/LOC} @ noun @ ",
-			"]eže-ne @ u.B. @ { a → ABL/INS} @ noun @ ",
-			"]eže-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ "
-		],
-		"]u": [
-			"]-u @ u.B. @ { a → MED} @ verb @ ",
-			"]-o @ u.B. @ { a → MOD.PAT} { b → 2A.SG} { c → TR.PFV} @ verb @ ",
-			"]u @ u.B. @  @ ADV @ "
-		],
-		"]x-al": [
-			"]a=l @ u.B. @ { a → =3PL.ABS} @ unclear @ "
+			"eže-ne-e @ Erde @ { a → RELAT.SG-DIR/LOC} @ noun @ "
 		],
 		"k]ibirran": [
 			"keviri-na=an @ Ältester @ { a → .ABS=CON} @ noun @ "
-		],
-		"alōnu[": [
-			"alōnu[ @ u.B. @  @ unclear @ "
 		],
 		"ilamiġōrra-x[": [
 			"Ilamiġōrra @ PN @ { a → .ABS} @ noun @ ",
 			"Ilamiġōrri-a @ PN @ { a → ESS} @ noun @ "
 		],
 		"](-)feri": [
-			"]feri @ u.B. @ { b → .ABS} @ noun @ ",
 			"feri @ u.B. @ { a → .ABS} @ noun @ ",
 			"fer-i @ u.B. @ { a → ANTIP} @ verb @ "
 		],
@@ -5922,11 +3777,6 @@
 			"Ilamiġurri-a=n @ PN @ { a → ESS=3SG.ABS} @ noun @ ",
 			"Ilamiġurri-a=an @ PN @ { a → ESS=CON} @ noun @ "
 		],
-		"ḫ]un": [
-			"]ḫ-o=n @ u.B. @ { a → MOD.PAT=3SG.ABS} @ verb @ ",
-			"]ḫ-u=n @ u.B. @ { a → MED=3SG.ABS} @ verb @ ",
-			"]ḫu-n @ u.B. @ { a → ABL/INS} @ ADV @ "
-		],
 		"inu": [
 			"inu @ wie @  @ ADV @ ",
 			"inu @ wie @  @ CONJ @ "
@@ -5934,103 +3784,27 @@
 		"ḫeēr": [
 			"ḫēr @ u.B. @  @ unclear @ "
 		],
-		"tā[": [
-			"tā[ @ u.B. @  @ unclear @ "
-		],
-		"kundeni-x": [
-			"kunde-ne-[ @ u.B. @ { a → RELAT.SG} @ noun @ "
-		],
 		"pāġida": [
 			"pāġi-i-da @ Kopf @ { a → 3POSS.SG-DIR} @ noun @ ",
 			"pāġ-ed-a @ zerstören @ { a → FUT-3A.SG} @ verb @ "
-		],
-		"agū[": [
-			"ag-ū[ @ aufnehmen; erheben; heraufkommen @  @ unclear @ ",
-			"ag-ū[ @ u.B. @  @ unclear @ "
 		],
 		"k]undeni(-)[ l]a": [
 			"kunde-ne=lla @ u.B. @ { a → ABL/INS=3PL.ABS} @ noun @ ",
 			"kunde-ne-e=lla @ u.B. @ { a → RELAT.SG-DIR/LOC=3PL.ABS} @ noun @ ",
 			"kunde-ne @ u.B. @ { a → ABL/INS} @ noun @ ",
-			"kunde-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ ",
-			"]li-a @ u.B. @ { a → ESS} @ noun @ ",
-			"]l-a @ u.B. @ { a → INT} @ verb @ "
-		],
-		"]ue": [
-			"]-iffu-we @ u.B. @ { a → 1POSS.SG-GEN} @ noun @ ",
-			"]u+e @ u.B. @  @ ADV @ "
-		],
-		"fo-x[": [
-			"fo[ @ u.B. @  @ unclear @ "
+			"kunde-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ "
 		],
 		"(-)f]eri": [
 			"feri-ve @ u.B. @ { a → GEN} @ noun @ ",
-			"fer-ve-[ @ u.B. @ { a → GEN} @ noun @ ",
 			"feri-i-ve @ u.B. @ { a → 3POSS.SG-GEN} @ noun @ ",
-			"feri-i-ve-[ @ u.B. @ { a → GEN-[} @ noun @ ",
 			"feri-va @ u.B. @ { a → DAT} @ noun @ ",
 			"feri-i-va @ u.B. @ { a → 3POSS.SG-DAT} @ noun @ ",
-			"]feri-ve @ u.B. @ { a → GEN} @ noun @ ",
-			"]feri-ve-[ @ u.B. @ { a → GEN} @ noun @ ",
-			"]feri-i-ve @ u.B. @ { a → 3POSS.SG-GEN} @ noun @ ",
-			"]feri-i-ve-[ @ u.B. @ { a → 3POSS.SG-GEN} @ noun @ ",
-			"]feri-va @ u.B. @ { a → DAT} @ noun @ ",
-			"]feri-i-va @ u.B. @ { a → 3POSS.SG-DAT} @ noun @ ",
-			"feri-v-[ @ u.B. @ { a → 2POSS.SG} @ noun @ ",
 			"fer-i-eva @ u.B. @ { a → MOD.ACT-POT} @ verb @ "
 		],
 		"](-)ḫōra(-)[": [
-			"]ḫōra[ @ u.B. @  @ unclear @ ",
-			"ḫōr-a[ @ u.B. @  @ unclear @ ",
 			"ḫōri-a @ Schoß @ { a → ESS} @ noun @ ",
 			"ḫōri-a @ u.B. @ { a → ESS} @ noun @ ",
-			"ḫōr-a @ u.B. @ { a → INT} @ verb @ ",
-			"]ḫōri-a @ u.B. @ { a → ESS} @ noun @ ",
-			"]ḫ-ōr-a @ u.B. @ { a → ōr-3A.SG} { b → ōr-INT} @ verb @ "
-		],
-		"]x-igini(-)[": [
-			"]īgi-ne @ u.B. @ { a → ABL/INS} @ noun @ ",
-			"]īgi-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ ",
-			"]īgi-ne-[ @ u.B. @ { a → RELAT.SG} @ noun @ "
-		],
-		"]una": [
-			"]uni-a @ u.B. @ { a → ESS} @ noun @ ",
-			"]un-a @ u.B. @ { a → INT} { b → 3A.SG} @ verb @ "
-		],
-		"ap-x[": [
-			"ap[ @ u.B. @  @ unclear @ "
-		],
-		"n]īva": [
-			"]-nē-va @ u.B. @ { a → RELAT.SG-DAT} @ noun @ ",
-			"]ni-ī-va @ u.B. @ { a → 3POSS.SG-DAT} @ noun @ "
-		],
-		"pū[": [
-			"pū[ @ u.B. @  @ unclear @ "
-		],
-		"ra": [
-			"]ra @ u.B. @  @ unclear @ "
-		],
-		"x-x-ni(-)": [
-			"]ni @ u.B. @  @ unclear @ ",
-			"]ni[ @ u.B. @  @ unclear @ "
-		],
-		"ḫeža": [
-			"ḫež-a[ @ u.B. @  @ unclear @ "
-		],
-		"minibi": [
-			"]mi-ne-ve @ u.B. @ { a → RELAT.SG-GEN} @ noun @ "
-		],
-		"fena": [
-			"]-ve-na @ u.B. @ { a → GEN-RELAT.PL.ABS} @ noun @ ",
-			"]ve-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ ",
-			"]-ve-na @ u.B. @ GEN-RELAT.PL.ABS @ noun @ ",
-			"]ve-na @ sprechen @ { a → RELAT.PL.ABS} @ noun @ "
-		],
-		"x-ul": [
-			"]u=l @ u.B. @ { a → =3PL.ABS} @ unclear @ "
-		],
-		"nap-x": [
-			"nap[ @ u.B. @  @ unclear @ "
+			"ḫōr-a @ u.B. @ { a → INT} @ verb @ "
 		],
 		"urukkunna": [
 			"ur-o-kko=nna @ existieren @ { a → INT-NEG=3SG.ABS} @ verb @ ",
@@ -6046,36 +3820,13 @@
 			"ur-o-kko @ existieren @ { a → INT-NEG} @ noun @ ",
 			"ur-o-kko @ existieren @ INT-NEG @ noun @ "
 		],
-		"šiāllē": [
-			"]šiāllē @ u.B. @ { a → .ABS} @ noun @ "
-		],
-		"ralva(-)": [
-			"]ralva @ u.B. @  @ noun @ ",
-			"]ralva[ @ u.B. @  @ noun @ "
-		],
 		"fitfa": [
 			"fitfi-a @ u.B. @ { a → ESS} @ noun @ ",
 			"fitf-a @ u.B. @ INT @ verb @ "
 		],
 		"(-)avarōža": [
 			"av-ar-ōž-a @ u.B. @ { a → ITER-PST-3A.SG} @ verb @ ",
-			"]av-ar-ōž-a @ u.B. @ { a → ITER-PST-3A.SG} @ verb @ ",
-			"]av+ar+ō+že-a @ u.B. @ { a → ESS} @ noun @ ",
 			"av+ar+ō+že-a @ u.B. @ { a → ESS} @ noun @ "
-		],
-		"rōž": [
-			"]r-ōž @ u.B. @ { a → EQU} @ noun @ "
-		],
-		"ḫīlli(-)": [
-			"ḫīll-i[ @ mitteilen @  @ unclear @ ",
-			"ḫīll-i[ @ u.B. @  @ unclear @ "
-		],
-		"iwkari": [
-			"]i-ugar-i @ u.B. @ { a → RECIP-ANTIP} @ verb @ ",
-			"]i+ugar+i @ u.B. @ { a → .ABS} @ noun @ "
-		],
-		"piaža": [
-			"]b-i-až-a @ u.B. @ { a → 3POSS.SG-PL-DAT/ESS} @ noun @ "
 		],
 		"širadili": [
 			"šir+ad-i-le @ erzählen @ { a → MOD.ACT-1JUSS} @ verb @ "
@@ -6120,12 +3871,7 @@
 		],
 		"tivi": [
 			"tive @ Wort @ .ABS @ noun @ ",
-			"tive-[ @ Wort; Sache @  @ noun @ ",
-			"tiv-i[ @ sprechen @  @ verb @ ",
 			"tive @ Wort; Sache @ { a → .ABS} @ noun @ "
-		],
-		"tān": [
-			"tān-[ @ machen @  @ unclear @ "
 		],
 		"mādi": [
 			"mādi @ Weisheit @ .ABS @ noun @ ",
@@ -6143,19 +3889,11 @@
 		"pizigarra": [
 			"Pizigarra @ PN @ { a → .ABS} @ noun @ "
 		],
-		"ēbla": [
-			"Ēbla-[ @ GN @  @ noun @ ",
-			"Ēbla @ GN @ { a → .ABS} @ noun @ ",
-			"Ēbla @ GN @ .ABS @ noun @ "
-		],
 		"agidōri": [
 			"ag-id-ō-re @ aufnehmen; erheben; heraufkommen @ { a → PL.A-PAT-PCTP.ABS} @ noun @ "
 		],
 		"pizigarraž": [
 			"Pizigarra-ž @ PN @ { a → ERG} @ noun @ "
-		],
-		"pai": [
-			"pa-i[ @ bauen? @  @ unclear @ "
 		],
 		"nōġaššeni": [
 			"Nōġašše-ne @ GN @ { a → -ABL/INS} @ noun @ ",
@@ -6174,14 +3912,8 @@
 			"ḫūž-i-a @ binden? @ { a → TR-3A.SG} @ verb @ ",
 			"ḫūži-i-a @ u.B. @ { a → 3POSS.SG-ESS} @ noun @ "
 		],
-		"ali-x": [
-			"al-i[ @ u.B. @  @ unclear @ "
-		],
 		"šūgēma": [
 			"šūgē=ma @ u.B. @ { a → .ABS=CON} @ noun @ "
-		],
-		"kia": [
-			"ki[ @ u.B. @  @ unclear @ "
 		],
 		"ižīma": [
 			"ižī=ma @ u.B. @ { a → .ABS=CON} @ noun @ ",
@@ -6202,11 +3934,7 @@
 		"inuma": [
 			"inu=ma @ wie @ { a → =CON} @ CONJ @ "
 		],
-		"āmmum": [
-			"āmm-umv[ @ erreichen; erreichen lassen @  @ unclear @ "
-		],
 		"nēgine(-)": [
-			"nēgi-ne-[ @ u.B. @ { a → RELAT.SG} @ noun @ ",
 			"nēgi-ne @ u.B. @ { a → ABL/INS} @ noun @ ",
 			"nēgi-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ "
 		],
@@ -6214,63 +3942,26 @@
 			"Teššob-oda @ DN @ { a → DIR} @ noun @ "
 		],
 		"erade(-)": [
-			"erade @ Vogel @ { a → .ABS} @ noun @ ",
-			"erade-[ @ Vogel @  @ noun @ "
-		],
-		"x-ib": [
-			"]i-b @ u.B. @ { a → 2POSS.SG.ABS} @ noun @ ",
-			"]-i-b @ u.B. @ { a → ANTIP-b} @ verb @ "
+			"erade @ Vogel @ { a → .ABS} @ noun @ "
 		],
 		"IŠKUR-ubudal": [
 			"Teššob-oda=l @ DN @ { a → DIR=3PL.ABS} @ noun @ "
 		],
-		"pia": [
-			"]pi-i-a @ u.B. @ { a → 3POSS.SG-ESS} @ noun @ ",
-			"]p-i-a @ u.B. @ { a → TR-3A.SG} @ verb @ "
-		],
 		"kummi": [
-			"Kumme-[ @ GN @  @ noun @ ",
 			"Kumme @ GN @ { a → .ABS} @ noun @ "
 		],
-		"innadab": [
-			"]inn-ad-aw @ u.B. @ { a → ad-1A.SG} @ verb @ ",
-			"]inn-ad-a-b @ u.B. @ { a → ad-INT-b} @ verb @ ",
-			"]inn+adi-a=m @ u.B. @ { a → ESS=CON} @ noun @ "
-		],
-		"šā-x(-)x": [
-			"šā[ @ u.B. @  @ unclear @ "
-		],
-		"šā-x": [
-			"šā[ @ u.B. @  @ unclear @ "
-		],
-		"užikki": [
-			"]-ož-i-kki @ u.B. @ { a → PST-ANTIP-NEG} { b → ož-ANTIP-NEG} @ verb @ "
-		],
-		"ḫēnna": [
-			"ḫēnna=[ @ jetzt @  @ ADV @ "
-		],
 		"(-)ažibuwima": [
-			"]aži-iffu-we=ma @ u.B. @ { a → 1POSS.SG-GEN=CON} @ noun @ ",
 			"aži-iffu-we=ma @ u.B. @ { a → 1POSS.SG-GEN=CON} @ noun @ "
 		],
 		"adedi(-)": [
 			"ad-ed-i @ herabkommen?; herabbringen? @ { a → FUT-ANTIP} @ verb @ "
 		],
 		"(-)faġawušši": [
-			"]f-aġ-aw-šše @ u.B. @ { a → aġ-1A.SG-NOM.ABS} @ noun @ ",
 			"faġ-aw-šše @ u.B. @ { a → 1A.SG-NOM.ABS} @ noun @ ",
-			"]f-eġ-aw-šše @ u.B. @ { a → eġ-1A.SG-NOM.ABS} @ noun @ ",
 			"feġ-aw-šše @ u.B. @ { a → 1A.SG-NOM.ABS} @ noun @ "
 		],
 		"pindu": [
 			"pind-uw-a @ zurückkehren; zurückbringen @ { a → MED-3A.SG} @ verb @ "
-		],
-		"lōldōvenna": [
-			"]l-ōl-id-ō-va-en=nna @ u.B. @ { a → ōl-PL.A-MOD.PAT-NEG-3JUSS=3SG.ABS} @ verb @ "
-		],
-		"(-)tiž": [
-			"tiž[ @ u.B. @  @ unclear @ ",
-			"]tiž[ @ u.B. @  @ unclear @ "
 		],
 		"IŠKUR-uffā": [
 			"Teššob-āž @ DN @ { a → ERG} @ noun @ "
@@ -6281,9 +3972,6 @@
 		"šārib": [
 			"šāri-b @ Wunsch @ { a → 2POSS.SG.ABS} @ noun @ ",
 			"šār-i-b @ wünschen @ ANTIP-b @ verb @ "
-		],
-		"šāriu-x": [
-			"šār-i-o-[ @ wünschen @ { a → TR-2A.SG} @ verb @ "
 		],
 		"išḫāra": [
 			"Išḫāra @ DN @ { a → .ABS} @ noun @ "
@@ -6308,9 +3996,6 @@
 		"ēblan": [
 			"Ēbla=n @ GN @ { a → .ABS=3SG.ABS} @ noun @ "
 		],
-		"pā": [
-			"pā[ @ u.B. @  @ unclear @ "
-		],
 		"enudōbin": [
 			"en+ud+ōbi-n @ u.B. @ { a → ABL/INS} @ noun @ ",
 			"en+ud+ōbi=n @ u.B. @ { a → .ABS=3SG.ABS} @ noun @ ",
@@ -6327,9 +4012,6 @@
 		"abiššā": [
 			"abi-š=nnā @ wer; jeder @ { a → ERG=3SG.ABS} @ noun @ "
 		],
-		"enu-x": [
-			"en-u[ @ u.B. @  @ unclear @ "
-		],
 		"išḫaran": [
 			"Išḫara=an @ DN @ { a → .ABS=CON} @ noun @ ",
 			"Išḫara=n @ DN @ { a → .ABS=3SG.ABS} @ noun @ "
@@ -6344,8 +4026,7 @@
 			"ōmmini-na @ Land @ { a → RELAT.PL.ABS} @ noun @ "
 		],
 		"pāġu(-)": [
-			"pāġ-u @ zerstören @ { a → MED} @ verb @ ",
-			"pāġ-u[ @ zerstören @  @ verb @ "
+			"pāġ-u @ zerstören @ { a → MED} @ verb @ "
 		],
 		"suzōnni": [
 			"suss+ō+nni @ u.B. @ .ABS @ noun @ "
@@ -6365,17 +4046,11 @@
 			"tid-i-ā=m @ angreifen @ { a → TR-3A.SG=CON} @ verb @ ",
 			"tidi-i-ā=m @ u.B. @ { a → 3POSS.SG-ESS=CON} @ noun @ "
 		],
-		"sussu": [
-			"suss-o[ @ u.B. @  @ noun @ "
-		],
 		"kīppinež": [
 			"kīppi-ne-ž @ Macht? @ { a → RELAT.SG-ERG} @ noun @ "
 		],
 		"nabnīda": [
 			"nabni-ī-da @ u.B. @ { a → 3POSS.SG-DIR} @ noun @ "
-		],
-		"šu-x": [
-			"šu[ @ u.B. @  @ unclear @ "
 		],
 		"šiwullēm": [
 			"šīūli-ne-ē=m @ u.B. @ { a → RELAT.SG-DIR/LOC=CON} @ noun @ ",
@@ -6386,18 +4061,12 @@
 			"ābē-ne @ Opfergrube? @ { a → ABL/INS} @ noun @ ",
 			"ābē-ne-e @ Opfergrube? @ { a → RELAT.SG-DIR/LOC} @ noun @ "
 		],
-		"pur": [
-			"pur-[ @ u.B. @  @ noun @ "
-		],
 		"taġažīb": [
 			"taġ-až-ī-b @ u.B. @ { a → až-ANTIP-b} @ verb @ "
 		],
 		"šilumōtḫeb": [
 			"šil+um+ō+tḫe=m @ u.B. @ { a → .ABS=CON} @ noun @ ",
 			"šil+um+ō+tḫ-i-b @ u.B. @ { a → ANTIP-b} @ verb @ "
-		],
-		"ki": [
-			"ki[ @ u.B. @  @ unclear @ "
 		],
 		"purrēnni": [
 			"pur+i+rē+nni @ u.B. @ { a → .ABS} @ noun @ "
@@ -6412,10 +4081,6 @@
 		],
 		"ḫažaštili": [
 			"ḫaž-ašt-i-le @ hören @ { a → RES-MOD.ACT-1JUSS} @ verb @ "
-		],
-		"kōli": [
-			"kōl-i[ @ u.B. @  @ unclear @ ",
-			"kōl-i[ @ beseite lassen @  @ unclear @ "
 		],
 		"sussōnni": [
 			"suss+ō+nni @ u.B. @ { a → .ABS} @ noun @ "
@@ -6459,9 +4124,6 @@
 		"fariž": [
 			"faġari-ne-ž @ gut @ { a → RELAT.SG-ERG} @ noun @ "
 		],
-		"purri": [
-			"pur+i+re-[ @ u.B. @  @ noun @ "
-		],
 		"šīlumōtḫeb": [
 			"šīl+um+ō+tḫe=m @ u.B. @ { a → .ABS=CON} @ noun @ ",
 			"šīl+um+ō+tḫ-i-b @ u.B. @ { a → ANTIP-b} @ verb @ "
@@ -6473,28 +4135,6 @@
 		"šalġōla": [
 			"šalġ-ōl-a @ hören auf @ ol-INT.IMP @ verb @ ",
 			"šalġ-ōl-a @ hören auf @ { a → ol-INT.IMP} @ verb @ "
-		],
-		"mada": [
-			"mad-a=[ @ Weisheit @ { a → ESS} @ noun @ "
-		],
-		"(-)tī": [
-			"tī[ @ u.B. @  @ unclear @ ",
-			"]tī[ @ u.B. @  @ unclear @ "
-		],
-		"mōri": [
-			"]m-ō-re @ u.B. @ { a → PAT-PTCP.ABS} @ noun @ "
-		],
-		"ḫili": [
-			"ḫil-i[ @ u.B. @  @ unclear @ "
-		],
-		"ež": [
-			"]e-ž @ u.B. @ { a → ERG} @ noun @ "
-		],
-		"tu": [
-			"]t-o @ u.B. @ { a → MOD.PAT} @ verb @ "
-		],
-		"ḫurma": [
-			"ḫurm-a[ @ u.B. @  @ unclear @ "
 		],
 		"ḫōrmari": [
 			"ḫōrm+ar+i @ u.B. @ { a → .ABS} @ noun @ "
@@ -6511,12 +4151,6 @@
 			"tōrovi @ Feind @ .ABS @ noun @ ",
 			"tōrovi @ Feind @ { a → .ABS} @ noun @ "
 		],
-		"kūri": [
-			"]kūri @ u.B. @ { a → .ABS} @ noun @ "
-		],
-		"ūlmē": [
-			"ūlmē-[ @ Sklavin; Dienerin @  @ noun @ "
-		],
 		"ištanīda": [
 			"ištani-ī-da @ Inneres @ 3POSS.SG-DIR @ noun @ ",
 			"ištani-ī-da @ Inneres @ { a → 3POSS.SG-DIR} @ noun @ "
@@ -6525,18 +4159,8 @@
 			"āllai+i-i-a=an @ Herrin @ { a → 3POSS.SG-ESS=CON} @ noun @ ",
 			"ālla+i-i-a=n @ Herrin @ { a → 3POSS.SG-ESS=3SG.ABS} @ noun @ "
 		],
-		"aš-x": [
-			"aš[ @ u.B. @  @ unclear @ "
-		],
 		"āllaiwta": [
 			"ālla+i-uda @ Herrin @ { a → DIR} @ noun @ "
-		],
-		"x-uru-x": [
-			"]uru[ @ u.B. @  @ unclear @ "
-		],
-		"ulla(-)": [
-			"]ulla[ @ u.B. @  @ unclear @ ",
-			"]u=lla @ u.B. @ { a → =3PL.ABS} @ unclear @ "
 		],
 		"enež": [
 			"eni-ž @ Gott @ ERG @ noun @ ",
@@ -6574,9 +4198,6 @@
 			"kutk-ūd-a @ u.B. @ { a → ūd-3A.SG} @ verb @ ",
 			"kut+kūd-a @ u.B. @ { a → 3A.SG} @ verb @ "
 		],
-		"i-x": [
-			"i[ @ u.B. @  @ unclear @ "
-		],
 		"ḫilde": [
 			"ḫilde @ u.B. @ { a → .ABS} @ noun @ ",
 			"ḫil-id-e @ u.B. @ { a → PL.A-3JUSS} @ verb @ "
@@ -6602,9 +4223,6 @@
 		],
 		"turōvi": [
 			"torōvi @ Feind @ { a → .ABS} @ noun @ "
-		],
-		"nera": [
-			"nera-[ @ Mutter @  @ noun @ "
 		],
 		"farižanna": [
 			"far-iž-a=nna @ einziehen; losgehen @ { a → iž-INT=3SG.ABS} @ verb @ "
@@ -6812,30 +4430,8 @@
 		"tōmva": [
 			"tōmv-a @ u.B. @ INT @ verb @ "
 		],
-		"x-la": [
-			"-]la @ u.B. @  @ unclear @ ",
-			"]la @ u.B. @  @ unclear @ "
-		],
-		"mu": [
-			"]-mu @ u.B. @ { a → NEG} @ verb @ ",
-			"]-mu @ u.B. @ NEG @ verb @ "
-		],
-		"rāza-x": [
-			"-]rāza[- @ u.B. @  @ noun @ "
-		],
-		"ḫū-x": [
-			"-]ḫū[- @ u.B. @  @ unclear @ "
-		],
 		"(-)tāġi": [
-			"tāġe @ Mann @ .ABS @ noun @ ",
-			"tāġ-i[ @ u.B. @  @ verb @ ",
-			"-]tāġi[- @ u.B. @  @ unclear @ ",
-			"tāġe-[ @ u.B. @  @ noun @ "
-		],
-		"rab": [
-			"-]r-a-b @ u.B. @ { a → INT-b} @ verb @ ",
-			"-]r-aw @ u.B. @ { a → 1A.SG} @ verb @ ",
-			"-]ra=v @ u.B. @ { a → =2PL.ABS} @ unclear @ "
+			"tāġe @ Mann @ .ABS @ noun @ "
 		],
 		"idevinež": [
 			"ide-ve-ne-ž @ Körper @ { a → GEN-RELAT.SG-ERG} @ noun @ "
@@ -7496,9 +5092,6 @@
 		"mužunnež": [
 			"muž+u+ni-ne-ž @ Heger? @ RELAT.SG-ERG @ noun @ "
 		],
-		"x-x-ni": [
-			"]ni @ u.B. @  @ noun @ "
-		],
 		"kirarni": [
 			"kir+ar+ni @ u.B. @ { a → .ABS} @ noun @ "
 		],
@@ -7510,12 +5103,6 @@
 		],
 		"nābu": [
 			"nāb-u @ sterben @ MED @ verb @ "
-		],
-		"uġāra-x": [
-			"uġ-ār-[ @ u.B. @ { a → ār} @ noun @ "
-		],
-		"x-ra": [
-			"]ra @ u.B. @  @ unclear @ "
 		],
 		"ḫārunni": [
 			"ḫār+o+nni @ u.B. @ { a → .ABS} @ noun @ ",
@@ -7629,10 +5216,8 @@
 			"pind-i-l-eva-ž @ zurückkommen; zurückschicken @ { a → MOD.ACT-l-POT-ž} @ verb @ "
 		],
 		"falli-x": [
-			"uwalli-[ @ Notlage? @  @ noun @ ",
 			"uwali-ne @ Notlage? @ { a → ABL/INS} @ noun @ ",
-			"uwalli @ Notlage? @ .ABS @ noun @ ",
-			"uwali-ne-[ @ Notlage? @ { a → RELAT.SG} @ noun @ "
+			"uwalli @ Notlage? @ .ABS @ noun @ "
 		],
 		"eġilli⸢fa⸣ašša": [
 			"eġl-i-l-eva-š=nna @ retten @ { a → MOD.ACT-l-POT-ž=3SG.ABS} @ verb @ "
@@ -7848,31 +5433,6 @@
 		"fa⸣suranni": [
 			"faz+ur+a+nni @ wortgewaltiger Redner @ { a → .ABS} @ noun @ "
 		],
-		"x-re": [
-			"]rē @ u.B. @  @ unclear @ "
-		],
-		"x-ki": [
-			"]ki @ u.B. @ .ABS @ unclear @ "
-		],
-		"ib": [
-			"]i-b @ u.B. @ { a → 2SG.POSS.ABS} @ noun @ ",
-			"]-i-b @ u.B. @ { a → INT-b} @ verb @ ",
-			"]-i-b @ u.B. @ ANTIP-b @ verb @ ",
-			"]i-b @ u.B. @ 2SG.POSS.ABS @ noun @ ",
-			"]i=v @ u.B. @ { a → =2PL.ABS} @ unclear @ "
-		],
-		"x-appilinni": [
-			"]app+il+i-nni @ u.B. @ { a → nni.ABS} @ noun @ "
-		],
-		"pu": [
-			"]p-u @ u.B. @ MED @ verb @ "
-		],
-		"x-lilānnimma": [
-			"]-i-l-ānni=mma @ u.B. @ { a → MOD.ACT-l-DESID=2SG.ABS} { b → MOD.ACT-l-DESID=CON} @ verb @ "
-		],
-		"ri": [
-			"]ri @ u.B. @  @ unclear @ "
-		],
 		"šūri": [
 			"šūri @ u.B. @ { a → .ABS} @ noun @ ",
 			"šūr-i @ u.B. @ { a → ANTIP} @ verb @ "
@@ -7883,9 +5443,6 @@
 		],
 		"ēbriž": [
 			"ēvri-ž @ Herr @ ERG @ noun @ "
-		],
-		"x-urinirama": [
-			"]ure-ne-ra=ma @ u.B. @ { a → RELAT.SG-COM=CON} @ noun @ "
 		],
 		"tivivudab": [
 			"tivi-v-uda=m @ Wort @ { a → 2POSS.SG-EPNTH-DIR=CON} @ noun @ "
@@ -8030,6 +5587,10 @@
 			"ārdi=ma @ Stadt @ { a → .ABS=CON} @ noun @ ",
 			"ārdi=ma @ Stadt @ .ABS=CON @ noun @ "
 		],
+		"ēbla": [
+			"Ēbla @ GN @ { a → .ABS} @ noun @ ",
+			"Ēbla @ GN @ .ABS @ noun @ "
+		],
 		"paġedab": [
 			"paġ-ed-aw @ zerstören @ { a → FUT-1A.SG} @ verb @ "
 		],
@@ -8103,25 +5664,15 @@
 		"adaššene": [
 			"ad+a+šše-ne-e @ (Umwallung der) Unterstadt @ { a → RELAT.SG-DIR/LOC} @ noun @ "
 		],
-		"ḫapša": [
-			"ḫapš-a[ @ werfen? @  @ verb @ "
-		],
 		"idi": [
 			"idi @ u.B. @ { a → .ABS} @ noun @ ",
 			"id-i @ schlagen @ ANTIP @ verb @ ",
 			"idi @ Körper @ { a → .ABS} @ noun @ ",
 			"id-i @ u.B. @ { a → ANTIP} @ verb @ "
 		],
-		"pa-x": [
-			"pa[ @ u.B. @  @ unclear @ "
-		],
 		"faġarri(-)": [
-			"faġari-ne-[ @ gut @ { a → RELAT.SG} @ noun @ ",
 			"faġari-ne-e @ gut @ { a → RELAT.SG-DIR/LOC} @ noun @ ",
 			"faġari-ne @ gut @ { a → ABL/INS} @ noun @ "
-		],
-		"iš-x(-)a-x": [
-			"iš[ @ u.B. @  @ unclear @ "
 		],
 		"iži": [
 			"iži @ u.B. @ { a → .ABS} @ noun @ ",
@@ -8130,8 +5681,7 @@
 			"iž-i @ jammern; klagen @ { a → ANTIP} @ verb @ "
 		],
 		"mammōri(-)": [
-			"mamm+ō+re @ u.B. @ { a → .ABS} @ noun @ ",
-			"mamm+ō+re-[ @ u.B. @  @ noun @ "
+			"mamm+ō+re @ u.B. @ { a → .ABS} @ noun @ "
 		],
 		"palia": [
 			"pal-i-a @ wissen; kennen @ { a → TR-3A.SG} @ verb @ "
@@ -8159,6 +5709,10 @@
 		],
 		"passā": [
 			"passi-ā @ u.B. @ { a → ESS} @ noun @ "
+		],
+		"mān": [
+			"mā=n @ so @ { a → =3SG.ABS} @ CONJ @ ",
+			"ma=ān @ so @ { a → =CON} @ CONJ @ "
 		],
 		"ēbrināžōnna": [
 			"ēvre+ni-na-āž-ō-nna @ König @ { a → RELAT.PL-PL-EPNTH-EQU2} @ noun @ "
@@ -8196,8 +5750,7 @@
 			"šīr-a @ genügen; entsprechen @ INT @ verb @ "
 		],
 		"paibibla(-)": [
-			"Paib.Ebla @ PN @ { a → .ABS} @ noun @ ",
-			"Paib.Ebla-[ @ PN @  @ noun @ "
+			"Paib.Ebla @ PN @ { a → .ABS} @ noun @ "
 		],
 		"purranna": [
 			"Purra-nna @ PN @ { a → EQU2} @ noun @ ",
@@ -8207,10 +5760,8 @@
 			"nōv+ar+ē=m @ u.B. @ { a → .ABS=CON} @ noun @ "
 		],
 		"ūmbi(-)": [
-			"ūmbi-[ @ u.B. @  @ noun @ ",
 			"ūmb-i @ u.B. @ { a → ANTIP} @ verb @ ",
-			"ūmbi @ u.B. @ { a → .ABS} @ noun @ ",
-			"ūmb-i[ @ u.B. @  @ unclear @ "
+			"ūmbi @ u.B. @ { a → .ABS} @ noun @ "
 		],
 		"nābima": [
 			"nābi=ma @ (death) fate? @ { a → .ABS=CON} @ noun @ ",
@@ -8222,9 +5773,6 @@
 		"sōbinēra": [
 			"sōbi-nē-ra @ u.B. @ { a → RELAT.PL-COM} @ noun @ "
 		],
-		"su": [
-			"su[ @ u.B. @  @ unclear @ "
-		],
 		"tāženēra": [
 			"tāže-nē-ra @ Geschenk?; Gabe? @ { a → RELAT.PL-COM} @ noun @ "
 		],
@@ -8234,10 +5782,6 @@
 		"sōveni": [
 			"sōve-ne @ u.B. @ { a → ABL/INS} @ noun @ ",
 			"sōve-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ "
-		],
-		"sulō": [
-			"sul-ō[ @ binden @  @ verb @ ",
-			"sul+ōd-[ @ lösen @  @ verb @ "
 		],
 		"kumminivož": [
 			"Kumme-ne-ve-ož @ GN @ { a → RELAT.SG-GEN-ERG} @ noun @ "
@@ -8271,50 +5815,21 @@
 			"Ežeb.Ābu=n @ PN @ { a → .ABS=CON} { b → .ABS=3SG.ABS} @ noun @ "
 		],
 		"ežebābu(-)": [
-			"Ežeb.Ābu @ PN @ { a → .ABS} @ noun @ ",
-			"Ežeb.Ābu-[ @ PN @  @ noun @ "
+			"Ežeb.Ābu @ PN @ { a → .ABS} @ noun @ "
 		],
 		"eževabun": [
 			"Ežeb.Ābu=n @ PN @ { a → .ABS=3SG.ABS} @ noun @ ",
 			"Ežeb.Ābu=n @ PN @ { a → .ABS=CON} @ noun @ "
 		],
-		"rōp(-)": [
-			"]rōp[ @ u.B. @  @ unclear @ ",
-			"]r-ō-m @ u.B. @ { a → TR.PFV-3A.SG} @ verb @ "
-		],
-		"sūzi-x-x-an": [
-			"sūz-i[ @ u.B. @  @ unclear @ "
-		],
-		"kab": [
-			"kab[ @ u.B. @  @ unclear @ "
-		],
 		"tumniam": [
 			"tumni-i-a=m @ vier @ { a → 3POSS.SG-ESS=CON} @ noun @ "
-		],
-		"x-niri": [
-			"]n-i-re @ u.B. @ { a → ACT-PTCP} @ noun @ ",
-			"]niri @ u.B. @  @ noun @ "
 		],
 		"ōlluġaīnna": [
 			"ōll+uġ-i-aī=nna @ niederdrücken; abwischen @ { a → MOD.ACT-PURP=3SG.ABS} @ verb @ "
 		],
-		"x-ti": [
-			"]ti @ u.B. @  @ unclear @ "
-		],
-		"inni": [
-			"]i+nni @ u.B. @ .ABS @ noun @ ",
-			"]ini-ne @ u.B. @ { a → ABL/INS} @ noun @ ",
-			"]ini-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ "
-		],
 		"šōġuri": [
 			"šōġuri @ Leben @ { a → .ABS} @ noun @ ",
 			"šōġuri @ Leben @ .ABS @ noun @ "
-		],
-		"ḫu ni": [
-			"ḫu[x]ni @ u.B. @ ANTIP @ noun @ "
-		],
-		"ḫa-x": [
-			"ḫa[ @ u.B. @  @ unclear @ "
 		],
 		"pendun": [
 			"pend-o=n @ zurückkehren; zurückbringen @ { a → MOD.PAT=3SG.ABS} @ verb @ ",
@@ -8324,14 +5839,8 @@
 		"ēbrīda": [
 			"ēvri-ī-da @ Herr @ { a → 3POSS.SG-DIR} @ noun @ "
 		],
-		"lininibi": [
-			"]l+i+nni-ne-ve @ u.B. @ { a → RELAT.SG-GEN} @ noun @ "
-		],
 		"ḫalminibi": [
 			"ḫal+mi-ne-ve @ Sänger @ { a → RELAT.SG-GEN} @ noun @ "
-		],
-		"ki-x-x-pi": [
-			"ki[xx]-ve @ u.B. @ { a → GEN} @ noun @ "
 		],
 		"ḫižarduġullēbi": [
 			"ḫiž+ar+d+o+ġ+o+li-nē-ve @ u.B. @ { a → RELAT.SG-GEN} @ noun @ "
@@ -8354,9 +5863,6 @@
 		"agirinibi": [
 			"ag-i-re-ne-ve @ aufnehmen; erheben @ { a → ACT-PTCP-RELAT.SG-GEN} @ noun @ "
 		],
-		"nu-x-rā-x": [
-			"nu[ @ u.B. @  @ unclear @ "
-		],
 		"šianeda": [
 			"šia-ne-da @ Wasser?; Fluss? @ { a → RELAT.SG-DIR} @ noun @ "
 		],
@@ -8378,12 +5884,6 @@
 		"abiva": [
 			"abi-i-va @ Gesicht; vor @ { a → 3POSS.SG-DAT} @ noun @ "
 		],
-		"rabinā-x": [
-			"]rabi-nā-[ @ u.B. @ { a → RELAT.PL} @ noun @ "
-		],
-		"tāni(-)": [
-			"]tāni[ @ u.B. @  @ unclear @ "
-		],
 		"auliž": [
 			"aoli-ž @ u.B. @ { a → ERG} @ noun @ "
 		],
@@ -8391,23 +5891,11 @@
 			"ūl+me-ne-ve-ož @ Sklavin; Dienerin @ { a → RELAT.SG-GEN-EQU} @ noun @ ",
 			"ūl+me-ne-ve-ož @ Skalvin; Dienerin @ { a → RELAT.SG-GEN-ERG} @ noun @ "
 		],
-		"ūlmeni": [
-			"ūl+me-ne-[ @ Sklavin; Dienerin @ { a → RELAT.SG} @ noun @ "
-		],
-		"nevož": [
-			"]-ne-ve-ož @ u.B. @ { a → RELAT.SG-GEN-EQU} @ noun @ ",
-			"]-ne-ve-ož @ u.B. @ { a → RELAT.SG-GEN-ERG} @ noun @ "
-		],
 		"nammallāža": [
 			"nammali-na-āž-a @ Bett @ { a → RELAT.PL-PL-DAT/ESS} @ noun @ "
 		],
 		"(-)itkappa": [
-			"]itk-a-b=ma @ u.B. @ { a → INT-b=CON} @ verb @ ",
 			"itk-a-b=ma @ reinigen @ { a → INT-b=CON} @ verb @ "
-		],
-		"urri": [
-			"]uri-ne @ u.B. @ { a → ABL/INS} @ noun @ ",
-			"]uri-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ "
 		],
 		"šimegai": [
 			"Šimegai @ DN @ { a → .ABS} @ noun @ "
@@ -8416,19 +5904,7 @@
 			"faġr+o+že @ gut @ .ABS @ noun @ "
 		],
 		"arri": [
-			"]ari-ne @ u.B. @ { a → ABL/INS} @ noun @ ",
 			"ari-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ "
-		],
-		"x-pi": [
-			"]-ve @ u.B. @ { a → GEN} @ noun @ ",
-			"]pi @ u.B. @  @ unclear @ "
-		],
-		"mā-x": [
-			"mā[ @ u.B. @  @ unclear @ ",
-			"mā[ @ so @  @ unclear @ "
-		],
-		"šatḫamū": [
-			"šatḫamū[ @ u.B. @  @ unclear @ "
 		],
 		"igingališḫenama": [
 			"Igingališ-ḫe-na=ma @ GN @ { a → ADJ-RELAT.PL.ABS=CON} @ noun @ "
@@ -8440,36 +5916,13 @@
 			"tive @ Wort; Sache @  @ noun @ "
 		],
 		"talmašti(-)": [
-			"talm-ašt-i @ groß werden; groß machen @ { a → RES-ANTIP} { b → RES-TR.IMP} @ verb @ ",
-			"talm-ašt-i-[ @ groß werden; groß machen @ { a → RES-MOD.ACT} @ verb @ "
+			"talm-ašt-i @ groß werden; groß machen @ { a → RES-ANTIP} { b → RES-TR.IMP} @ verb @ "
 		],
 		"išten": [
 			"ište=n @ 1PRON.SG @ { a → .ABS=CON} @ PRON @ "
 		],
-		"x-rumalan": [
-			"]rumi-a=l=an @ u.B. @ { a → ESS=3PL.ABS=CON} @ noun @ ",
-			"]rumali-a=an @ u.B. @ { a → ESS=CON} @ noun @ ",
-			"]rumali-a=n @ u.B. @ { a → ESS=3SG.ABS} @ noun @ ",
-			"]r-o-m-a=l=an @ u.B. @ { a → TR.PFV-3A.SG-EPNTH=3PL.ABS=CON} @ verb @ "
-		],
-		"x(-)šat-x": [
-			"]šat[ @ u.B. @  @ unclear @ ",
-			"šat[ @ u.B. @  @ unclear @ "
-		],
 		"talmašti": [
 			"talm-ašt-i @ groß werden; groß machen @ { a → RES-ANTIP} { b → RES-TR.IMP} @ verb @ "
-		],
-		"ewtaid": [
-			"]eudi-ai=d @ u.B. @ { a → INS=1SG.ABS} @ noun @ ",
-			"]e-ud-i-ai=d @ u.B. @ { a → ud-MOD.ACT-PURP=1SG.ABS} { b → NEG-MOD.ACT-PURP=1SG.ABS} @ verb @ "
-		],
-		"ama": [
-			"]-a=ma @ u.B. @ { a → ESS=CON} @ noun @ ",
-			"]ami-a @ u.B. @ { a → ESS} @ noun @ ",
-			"]am-a @ u.B. @ { a → INT} @ verb @ ",
-			"]-am-a @ u.B. @ { a → FACT-3A.SG} { b → FACT-INT} @ verb @ ",
-			"]-a=ma @ u.B. @ { a → 3A.SG=CON} { b → INT=CON} @ verb @ ",
-			"]-a-ma @ u.B. @ { a → 3A.SG-NEG} @ verb @ "
 		],
 		"faġedab": [
 			"faġ-ed-aw @ zerstören @ { a → FUT-1A.SG} @ verb @ "
@@ -8512,29 +5965,10 @@
 		"kivirāžan": [
 			"kiviri-na-āž-a=n @ Ältester @ { a → RELAT.PL-PL-DAT/ESS=3SG.ABS} @ noun @ "
 		],
-		"tu-x": [
-			"tu[ @ u.B. @  @ unclear @ "
-		],
 		"tiba": [
 			"tibi-a @ u.B. @ { a → ESS} @ noun @ ",
 			"tib-a @ u.B. @ INT @ verb @ ",
 			"tive-a @ Wort; Sache @ { a → ESS} @ noun @ "
-		],
-		"kuri-x": [
-			"kur-i[ @ u.B. @  @ unclear @ "
-		],
-		"ne(-)": [
-			"]-ne-ve @ u.B. @ { a → RELAT.SG-GEN} @ noun @ ",
-			"]-ne-va @ u.B. @ { a → REALT.SG-DAT} @ noun @ ",
-			"]nev[ @ u.B. @  @ unclear @ "
-		],
-		"x-li-x": [
-			"]li[ @ u.B. @  @ unclear @ "
-		],
-		"mira": [
-			"]miri-a @ u.B. @ { a → ESS} @ noun @ ",
-			"]mi-ra @ u.B. @ { a → COM} @ noun @ ",
-			"]m-ir-a @ u.B. @ { a → ir-3A.SG} { b → ir-INT} @ verb @ "
 		],
 		"nakkē-x": [
 			"nakk-i-en? @ gewähren; freilassen @ { a → MOD.ACT-3JUSS} @ verb @ "
@@ -8545,34 +5979,20 @@
 		"kirunnā": [
 			"kir-o=nnā @ freilassen @ { a → MOD.PAT=3SG.ABS} @ verb @ "
 		],
-		"x-ten": [
-			"]-id-en @ u.B. @ { a → PL.ERG-3JUSS} @ verb @ ",
-			"]te-n @ u.B. @ { a → ABL/INS} @ noun @ ",
-			"]te=n @ u.B. @ { a → .ABS=3SG.ABS} { b → .ABS=CON} @ noun @ "
-		],
-		"ažē": [
-			"až-ē[ @ u.B. @  @ unclear @ "
-		],
 		"ulme": [
 			"ul+me @ Sklavin; Dienerin @ { a → .ABS} @ noun @ "
-		],
-		"ḫamā": [
-			"ḫam-ā[ @ u.B. @  @ unclear @ "
 		],
 		"kīrunna": [
 			"kīr-o=nna @ freilassen @ { a → MOD.PAT=3SG.ABS} @ verb @ "
 		],
 		"naḫḫuwade(-)": [
-			"naḫḫ+o+vade @ unbesiedelte @ { a → .ABS} @ noun @ ",
-			"naḫḫ+o+vade-[ @ unbesiedelte @  @ noun @ "
+			"naḫḫ+o+vade @ unbesiedelte @ { a → .ABS} @ noun @ "
 		],
 		"kulōbadi(-)": [
-			"kul+ō+badi @ ungenannt? @ { a → .ABS} @ noun @ ",
-			"kul+ō+badi-[ @ ungenannt? @  @ noun @ "
+			"kul+ō+badi @ ungenannt? @ { a → .ABS} @ noun @ "
 		],
 		"šōġuri(-)": [
-			"šōġuri @ Leben @ { a → .ABS} @ noun @ ",
-			"šōġuri-[ @ Leben @  @ noun @ "
+			"šōġuri @ Leben @ { a → .ABS} @ noun @ "
 		],
 		"ūlmi": [
 			"ūl+mi @ Sklavin; Dienerin @ { a → .ABS} @ noun @ "
@@ -8592,17 +6012,8 @@
 			"šōe=ma @ alles; ganz @ { a → .ABS=CON} @ noun @ ",
 			"šō-i=ma @ u.B. @ { a → ANTIP=CON} @ verb @ "
 		],
-		"šōru": [
-			"šōr-u[ @ u.B. @  @ unclear @ "
-		],
 		"ḫūduštum": [
 			"ḫūd-ušt-o-m @ beten; preisen; segnen @ { a → RES-TR.PFV-3A.SG} @ verb @ "
-		],
-		"šimi": [
-			"Šimige-[ @ GN @  @ noun @ "
-		],
-		"ḫūž": [
-			"ḫūž[ @ u.B. @  @ unclear @ "
 		],
 		"ḫullurēva": [
 			"ḫull+o+rē-va @ u.B. @ DAT @ noun @ ",
@@ -8636,35 +6047,15 @@
 		"pendukku": [
 			"pend-o-kko @ zurückkehren; zurückbringen @ { a → INT-NEG} @ verb @ "
 		],
-		"šimigine": [
-			"Šimigr-ne-[ @ DN @ { a → RELAT.SG} @ noun @ "
-		],
 		"šōi": [
 			"šōi @ u.B. @ .ABS @ noun @ ",
 			"šō-i @ füllen @ ANTIP @ verb @ ",
 			"šōe @ alles; ganz @ { a → .ABS} @ noun @ ",
 			"šō-i @ u.B. @ { a → ANTIP} @ verb @ "
 		],
-		"šōr": [
-			"šōr-[ @ u.B. @  @ unclear @ "
-		],
 		"šimiga": [
-			"Šimiga-[ @ DN @  @ noun @ ",
 			"Šimiga @ DN @ { a → .ABS} @ noun @ ",
 			"Šimiga+i @ DN @ { a → .ABS} @ noun @ "
-		],
-		"ḫāža": [
-			"ḫāž-a[ @ hören @  @ unclear @ ",
-			"ḫāž-a[ @ salben @  @ unclear @ "
-		],
-		"udernuž": [
-			"]uder+ni-ož @ u.B. @ { a → EQU} @ noun @ "
-		],
-		"x-sōruž": [
-			"]sōri-ož @ u.B. @ { a → EQU} @ noun @ "
-		],
-		"ḫu-x": [
-			"ḫu[ @ u.B. @  @ unclear @ "
 		],
 		"tiḫḫida": [
 			"tiḫḫ-ed-a @ u.B. @ { a → FUT-3A.SG} @ verb @ ",
@@ -8678,9 +6069,6 @@
 		"niruda": [
 			"nir+ud+i-a @ u.B. @ { a → ESS} @ noun @ ",
 			"nir-ud-a @ u.B. @ { a → ud-INT} { b → ud-3A.SG} @ verb @ "
-		],
-		"x-amdukku": [
-			"]am-d-o-kko @ u.B. @ { a → d-INT-NEG} @ verb @ "
 		],
 		"nēlli": [
 			"nēli-ne @ Honig; u.B. @ { a → ABL/INS} @ noun @ "
@@ -8698,76 +6086,29 @@
 			"ar-ol-ōd-a @ geben @ { a → ol-ōd-3A.SG} @ verb @ ",
 			"ar-ol-ō-d-a @ geben @ { a → ol-MED-PL.A-3A} @ verb @ "
 		],
-		"sēza": [
-			"sēz-a[ @ u.B. @  @ unclear @ "
-		],
-		"ḫiš-x": [
-			"ḫiš[ @ u.B. @  @ unclear @ "
-		],
 		"šukku": [
 			"šukko @ eins @ .ABS @ NUM @ "
 		],
-		"šab": [
-			"šab[ @ u.B. @ .ABS @ unclear @ "
-		],
 		"kirenzene(-)": [
 			"kire+n+ze-ne @ Freilassung @ { a → ABL/INS} @ noun @ ",
-			"kire+n+ze-ne-e @ Freilassung @ { a → RELAT.SG-DIR/LOC} @ noun @ ",
-			"kire+n+ze-ne-[ @ Freilassung @ { a → REALT.SG} @ noun @ "
+			"kire+n+ze-ne-e @ Freilassung @ { a → RELAT.SG-DIR/LOC} @ noun @ "
 		],
 		"ḫīla": [
 			"ḫīli-a @ u.B. @ { a → ESS} @ noun @ ",
 			"ḫīl-a @ u.B. @ INT @ verb @ "
 		],
-		"tumu-x": [
-			"tum-u[ @ u.B. @  @ unclear @ "
-		],
-		"šuḫ-x": [
-			"šuḫ[ @ u.B. @  @ unclear @ "
-		],
 		"futki(-)ḫi": [
 			"fut+ki @ Sohn @ { a → .ABS} @ noun @ ",
-			"fut+ki-ġe @ Sohn @ { a → ADJ.ABS} @ noun @ ",
-			"fut+ki-ġe-[ @ Sohn @ { a → ADJ} @ noun @ "
-		],
-		"tibil": [
-			"tib-il[ @ u.B. @  @ unclear @ "
+			"fut+ki-ġe @ Sohn @ { a → ADJ.ABS} @ noun @ "
 		],
 		"fāzuranni(-)": [
-			"fāz+ur+a+nni @ wortgewaltiger Redner @ { a → .ABS} @ noun @ ",
-			"fāz+ur+a+nni-[ @ wortgewaltiger Redner @  @ noun @ "
-		],
-		"šava": [
-			"šav-a[ @ u.B. @  @ unclear @ "
+			"fāz+ur+a+nni @ wortgewaltiger Redner @ { a → .ABS} @ noun @ "
 		],
 		"sāzalla": [
-			"Sāzalla @ PN @ { a → .ABS} @ noun @ ",
-			"Sāzalla-[ @ PN @  @ noun @ "
-		],
-		"šila": [
-			"šil-a[ @ u.B. @  @ unclear @ "
-		],
-		"aw-x": [
-			"au[ @ u.B. @  @ unclear @ "
-		],
-		"ḫā": [
-			"ḫāv-[ @ u.B. @  @ unclear @ "
-		],
-		"x-e": [
-			"]e @ u.B. @  @ unclear @ "
-		],
-		"neral": [
-			"]-ne-ra=l @ u.B. @ { a → RELAT.SG-COM=3PL.ABS} @ noun @ "
-		],
-		"x-an": [
-			"]=an @ u.B. @ { a → =CON} @ unclear @ ",
-			"]a=n @ sich freuen @ { a → =3SG.ABS} @ unclear @ "
+			"Sāzalla @ PN @ { a → .ABS} @ noun @ "
 		],
 		"mādāppa": [
 			"madi-ā=ffa @ Weisheit @ { a → ESS=2PL.ABS} @ noun @ "
-		],
-		"x-eri": [
-			"]eri @ u.B. @ { a → .ABS} @ noun @ "
 		],
 		"nūrraža": [
 			"nūri-na-až-a @ u.B @ { a → RELAT.PL-PL-DAT/ESS} @ noun @ "
@@ -8779,18 +6120,13 @@
 			"tāni-ne-ž @ u.B. @ { a → RELAT.SG-ERG} @ noun @ "
 		],
 		"āmmē-x": [
-			"āmm-e[ @ erreichen; gelangen lassen @  @ unclear @ ",
 			"āmm-i-ēn @ erreichen; gelangen lassen @ { a → MOD.ACT-3JUSS} @ verb @ "
-		],
-		"ušte": [
-			"ušt-e[ @ herausgehen; fortbringen; erheben @  @ unclear @ "
 		],
 		"šurrād": [
 			"šurr-ā=d @ eilen @ { a → INT=1SG.ABS} @ noun @ "
 		],
 		"ulbine(-)": [
 			"ulvi-ne-e @ anderer @ { a → REALT.SG-DIR/LOC} @ noun @ ",
-			"ulvi-ne-[ @ anderer @ { a → RELAT.SG} @ noun @ ",
 			"ulvi-ne @ anderer @ { a → ABL/INS} @ noun @ "
 		],
 		"šagarriž": [
@@ -8805,18 +6141,6 @@
 		"tavaštub": [
 			"tav-ašt-o-m @ gießen @ { a → RES-TR.PFV-3A.SG} @ verb @ "
 		],
-		"šattō": [
-			"šatt-ō[ @ ergreifen @  @ unclear @ "
-		],
-		"teriġu-x": [
-			"ter-iġ-u[ @ u.B. @ { a → iġ} @ unclear @ "
-		],
-		"kadō-x": [
-			"kad-ō[ @ sagen; sagen; sprechen @  @ unclear @ "
-		],
-		"āmmi": [
-			"āmm-i[ @ erreichen; gelangen lassen @  @ verb @ "
-		],
 		"kirun": [
 			"kir-o=n @ freilassen @ { a → MOD.PAT=3SG.ABS} @ verb @ "
 		],
@@ -8829,24 +6153,14 @@
 		"falli": [
 			"uwalli @ Notlage? @ { a → .ABS} @ noun @ ",
 			"uwali-ne @ Notlage? @ { a → ABL/INS} @ noun @ ",
-			"uwali-ne-e @ Notlage? @ { a → RELAT.SG-DIR/LOC} @ noun @ ",
-			"uwali-ne-[ @ Notlage? @ { a → RELAT.SG} @ noun @ "
+			"uwali-ne-e @ Notlage? @ { a → RELAT.SG-DIR/LOC} @ noun @ "
 		],
 		"ānnu": [
 			"ānnu @ u.B. @  @ ADV @ ",
 			"ānnu @ u.B. @  @ CONJ @ "
 		],
-		"ažanu": [
-			"až-an-u[ @ u.B. @ { a → an} @ unclear @ "
-		],
 		"šūwada": [
 			"šoūwa-da @ Tag @ { a → DIR} @ noun @ "
-		],
-		"IŠKUR-u": [
-			"Teššob-o[ @ DN @  @ noun @ "
-		],
-		"agu": [
-			"ag-u[ @ aufnehmen; erheben; heraufkommen @  @ unclear @ "
 		],
 		"DUB": [
 			"DUB @ Tontafel @ { a → NOM.SG(UNM)} { b → ACC.SG(UNM)} { c → NOM.PL(UNM)} { d → ACC.PL(UNM)} { e → GEN.SG(UNM)} { f → GEN.PL(UNM)} { g → D/L.SG(UNM)} { h → D/L.PL(UNM)} { i → ALL(UNM)} { j → ABL(UNM)} { k → INS(UNM)} { l → VOC.SG(UNM)} { m → VOC.PL(UNM)} @ 29.1.1 @ "
@@ -8854,18 +6168,11 @@
 		"ēblaġeniva": [
 			"Ēbla-ġe-ne-va @ GN @ { a → ADJ-RELAT.SG-DAT} @ noun @ "
 		],
-		"felan": [
-			"fel-an[ @ u.B. @  @ noun @ "
-		],
 		"forida": [
 			"fōri-i-da @ Blick @ { a → 3POSS.SG-DIR} @ noun @ "
 		],
-		"erā": [
-			"er-a[ @ u.B. @  @ unclear @ "
-		],
 		"išḫara(-)": [
-			"Išḫara @ DN @ { a → .ABS} @ noun @ ",
-			"Išḫara-[ @ DN @  @ noun @ "
+			"Išḫara @ DN @ { a → .ABS} @ noun @ "
 		],
 		"ēnnašta": [
 			"ēni-na-aš-ta @ Gott @ { a → RELAT.PL-PL-DIR} @ noun @ "
@@ -8879,8 +6186,7 @@
 		],
 		"sīanne(-)": [
 			"sīani-ne @ u.B. @ { a → ABL/INS} @ noun @ ",
-			"sīani-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ ",
-			"sīani-ne-[ @ u.B. @ { a → RELAT.SG} @ noun @ "
+			"sīani-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ "
 		],
 		"kižarženež": [
 			"kiž+ar+že-ne-ž @ u.B. @ { a → RELAT.SG-ERG} @ noun @ "
@@ -8888,18 +6194,9 @@
 		"IŠKUR-fa": [
 			"Teššob-až @ DN @ { a → ERG} @ noun @ "
 		],
-		"x-urrež": [
-			"]uri-ne-ž @ u.B. @ { a → RELAT.SG-ERG} @ noun @ "
-		],
 		"teai": [
 			"tive-ai @ Wort; Sache @ { a → INS} @ noun @ ",
 			"tei-ai @ viel @ { a → INS} @ ADV @ "
-		],
-		"-x-x-ša": [
-			"]ša @ u.B. @  @ unclear @ "
-		],
-		"nenive": [
-			"]ne-ne-vē @ u.B. @ { a → RELAT.SG-GEN} @ noun @ "
 		],
 		"ḫumbarži": [
 			"ḫomv+ar+ži @ u.B. @ { a → .ABS} @ noun @ ",
@@ -8910,14 +6207,10 @@
 		],
 		"ūlmi(-)": [
 			"ūl+mi @ Sklavin; Dienerin @ { a → .ABS} @ noun @ ",
-			"ūl+mi-[ @ Sklavin; Dienerin @  @ noun @ ",
 			"ūl+mi @ Sklavin; Dienerin @ .ABS @ noun @ "
 		],
 		"ḫumvarži": [
 			"ḫomv+ar+ži @ u.B. @ { a → .ABS} @ noun @ "
-		],
-		"fā-x": [
-			"fā[ @ u.B. @  @ unclear @ "
 		],
 		"ḫaštalli": [
 			"ḫaštalli @ u.B. @ .ABS @ noun @ ",
@@ -8933,15 +6226,7 @@
 			"īpḫe-ne @ Ofen @ { a → ABL/INS} @ noun @ ",
 			"īpḫe-ne-e @ Ofen @ { a → RELAT.SG-DIR/LOC} @ noun @ "
 		],
-		"tūt-x": [
-			"tūt[ @ u.B. @  @ unclear @ "
-		],
-		"(-)uwobue-x": [
-			"]uvobue[ @ u.B. @  @ unclear @ "
-		],
 		"(-)šiab": [
-			"]ši-i-a=v @ u.B. @ { a → 3POSS.SG-ESS=2PL.ABS} @ noun @ ",
-			"]š-i-a=v @ u.B. @ { a → TR-3A.SG=2PL.ABS} @ verb @ ",
 			"ši-i-a=v @ Auge @ { a → 3POSS.SG-ESS=2PL.ABS} @ noun @ ",
 			"ši-i-a=v @ beobachten @ { a → TR-3A.SG=2PL.ABS} @ verb @ ",
 			"ši-a-b @ beobachten @ { a → INT-b} @ verb @ ",
@@ -8949,76 +6234,38 @@
 		],
 		"timerri(-)": [
 			"timeri-ne @ dunkel @ { a → ABL/INS} @ noun @ ",
-			"timeri-ne-e @ dunkel @ { a → RELAT.SG-DIR/LOC} @ noun @ ",
-			"timeri-ne-[ @ dunkel @ { a → RELAT.SG} @ verb @ "
+			"timeri-ne-e @ dunkel @ { a → RELAT.SG-DIR/LOC} @ noun @ "
 		],
 		"pēġi": [
 			"pēġi @ u.B. @ .ABS @ noun @ ",
 			"pēġ-i @ u.B. @ ANTIP @ verb @ ",
 			"pēġ-i @ u.B. @ { a → TR.IMP} @ verb @ "
 		],
-		"(-)ažaḫḫu": [
-			"]až+a+ḫḫ+o[ @ u.B. @  @ noun @ ",
-			"]až+aḫḫ+o[ @ u.B. @  @ noun @ ",
-			"až+a+ḫḫ+o[ @ u.B. @  @ noun @ ",
-			"až+aḫḫ+o[ @ u.B. @  @ noun @ ",
-			"]až-aḫḫ-o-[ @ u.B. @ { a → aḫḫ-TR.PFV} @ verb @ ",
-			"]až-aḫḫ-o-[ @ u.B. @ { a → aḫḫ-MOD.PAT} @ verb @ ",
-			"až-aḫḫ-o-[ @ u.B. @ { a → aḫḫ-TR.PFV} @ verb @ ",
-			"až-aḫḫ-o-[ @ u.B. @ { a → aḫḫ-MOD.PAT} @ verb @ ",
-			"]až-aḫḫ-u-[ @ u.B. @ { a → aḫḫ-MED} @ verb @ ",
-			"až-aḫḫ-u-[ @ u.B. @ { a → aḫḫ-MED} @ verb @ "
-		],
-		"šō": [
-			"šō[ @ u.B. @  @ unclear @ "
-		],
 		"(-)pīda(-)": [
-			"]pīda[ @ u.B. @  @ unclear @ ",
-			"pīd-a[ @ u.B. @  @ unclear @ ",
 			"pīdi-a @ u.B. @ { a → ESS} @ noun @ ",
-			"pīd-a @ u.B. @ { a → INT} @ verb @ ",
-			"]pi-ī-da @ u.B. @ { a → 3POSS.SG-DIR} @ noun @ "
+			"pīd-a @ u.B. @ { a → INT} @ verb @ "
 		],
 		"x-lōlāt(-)": [
-			"]l+ōli=d @ u.B. @ { a → =1SG.ABS} @ noun @ ",
-			"]l+ōli-ā=d @ u.B. @ { a → ESS=1SG.ABS} @ noun @ ",
-			"]lōlāt[ @ u.B. @  @ unclear @ ",
-			"]l-ōl-ā=d @ u.B. @ { a → ōl-3A.SG=1SG.ABS} @ verb @ ",
 			"l-ōl-ā=d @ u.B. @ { a → ōl-INT=1SG.ABS} @ verb @ "
 		],
 		"(-)māda": [
 			"mādi-a @ Weisheit @ { a → ESS} @ noun @ ",
-			"mād-a @ weise sein @ { a → INT} @ verb @ ",
-			"]māda @ u.B. @  @ unclear @ "
-		],
-		"kam": [
-			"kam[ @ u.B. @  @ unclear @ "
+			"mād-a @ weise sein @ { a → INT} @ verb @ "
 		],
 		"šōe": [
 			"šōe @ alle; ganz @ { a → .ABS} @ noun @ ",
 			"šōe @ u.B. @ { a → .ABS} @ noun @ "
-		],
-		"ḫil": [
-			"ḫil[ @ u.B. @ .ABS @ unclear @ "
 		],
 		"(-)šēžila(-)": [
 			"(-)šēžili-ā @ u.B. @ { a → ESS} @ noun @ ",
 			"šēžili-ā @ u.B. @ { a → ESS} @ noun @ ",
 			"šēž-il-ā @ u.B. @ { a → il-3A.SG} { b → il-INT} @ verb @ ",
 			"šēž-i-l-āi @ u.B. @ { a → MOD.ACT-l-PURP} @ verb @ ",
-			"]šēžili-āi @ u.B. @ { a → INS} @ noun @ ",
 			"šēžili-āi @ u.B. @ { a → INS} @ noun @ "
 		],
-		"x-fi": [
-			"]fi @ u.B. @  @ unclear @ "
-		],
 		"(-)adi(-)": [
-			"]adi[ @ u.B. @  @ unclear @ ",
-			"ad-i[ @ herabkommen?; herabbringen? @  @ unclear @ ",
 			"adi @ so @  @ CONJ @ ",
 			"adi @ so @  @ ADV @ ",
-			"]adi @ u.B. @ { a → .ABS} @ noun @ ",
-			"]adi @ u.B. @  @ unclear @ ",
 			"ad-i @ herabkommen?; herabbringen? @ { a → ANTIP} @ verb @ ",
 			"ad-i @ herabkommen?; herabbringen? @ { a → TR.IMP} @ verb @ "
 		],
@@ -9026,29 +6273,8 @@
 			"šoūwa-a @ Tag @ { a → ESS} @ noun @ ",
 			"šoūwa @ Tag @ { a → .ABS} @ noun @ "
 		],
-		"aža": [
-			"]-až-a @ u.B. @ { a → PL-DAT/ESS} @ noun @ ",
-			"]aži-a @ u.B. @ { a → ESS} @ noun @ ",
-			"]až-a @ u.B. @ { a → 3A.SG} { b → INT} @ verb @ "
-		],
-		"kad": [
-			"]kad[ @ u.B. @ .ABS @ unclear @ "
-		],
 		"ēbri(-)": [
-			"ēvri @ Herr @ { a → .ABS} @ noun @ ",
-			"ēvri-[ @ Herr @  @ noun @ "
-		],
-		"nive": [
-			"]-ne-vē @ u.B. @ { a → RELAT.SG-GEN} @ noun @ "
-		],
-		"fo": [
-			"fo[ @ u.B. @  @ unclear @ "
-		],
-		"x-ad": [
-			"]a=d @ u.B. @ { a → =1SG.ABS} @ unclear @ "
-		],
-		"kelgelež": [
-			"kel+gel-ešt-[ @ hochlegen @ { a → RES} @ verb @ "
+			"ēvri @ Herr @ { a → .ABS} @ noun @ "
 		],
 		"allani": [
 			"Allani @ DN @ { a → .ABS} @ noun @ "
@@ -9059,15 +6285,6 @@
 		]
 	},
 	"glosses": {
-		"omini,noun": [
-			"Land"
-		],
-		"um,verb": [
-			"u.B."
-		],
-		"ḫār,verb": [
-			"u.B."
-		],
 		"ḫāri,noun": [
 			"Weg",
 			"u.B."
@@ -9075,16 +6292,13 @@
 		"evri,noun": [
 			"Herr"
 		],
-		"ūrġ,verb": [
-			"wahr sein"
-		],
 		"ūrġi,noun": [
 			"wahr"
 		],
-		"ḫeb+ar+i,noun": [
-			"u.B."
+		"ūrġ,verb": [
+			"wahr sein"
 		],
-		"šīn,verb": [
+		"ḫeb+ar+i,noun": [
 			"u.B."
 		],
 		"šī,noun": [
@@ -9092,10 +6306,6 @@
 		],
 		"šī+ni,noun": [
 			"Auge"
-		],
-		"nav,verb": [
-			"weiden",
-			"u.B."
 		],
 		"nave,noun": [
 			"u.B.",
@@ -9114,12 +6324,12 @@
 		"šād,verb": [
 			"ersetzen"
 		],
+		"Teššob,noun": [
+			"DN"
+		],
 		"īa,verb": [
 			"warum",
 			"REL"
-		],
-		"Teššob,noun": [
-			"DN"
 		],
 		"Kumme,noun": [
 			"GN"
@@ -9182,8 +6392,7 @@
 		],
 		"kad,verb": [
 			"sagen; sprechen",
-			"sagen",
-			"sagen; sagen; sprechen"
+			"sagen"
 		],
 		"ašk,verb": [
 			"fragen?; zur Rede stellen?"
@@ -9191,20 +6400,7 @@
 		"aški,noun": [
 			"u.B."
 		],
-		"faġ,verb": [
-			"zerstören",
-			"u.B."
-		],
 		"nigassi,noun": [
-			"u.B."
-		],
-		"ull,verb": [
-			"u.B.",
-			"zurückhalten; niederdrücken"
-		],
-		"ḫaž,verb": [
-			"hören",
-			"salben",
 			"u.B."
 		],
 		"ullai,noun": [
@@ -9212,14 +6408,6 @@
 		],
 		"Šužuġe,noun": [
 			"GN"
-		],
-		"tež,verb": [
-			"u.B."
-		],
-		"ḫaž,noun": [
-			"hören",
-			"salben",
-			"u.B."
 		],
 		"ḪUR.SAG,noun": [
 			"Berg"
@@ -9231,27 +6419,18 @@
 			"aufnehmen; erheben; heraufkommen; aufrichten",
 			"aufnehmen; heraufkommen; aufrichten"
 		],
-		"Ullō,noun": [
-			"PN"
-		],
 		"šinde,verb": [
 			"sieben"
 		],
 		"šende,noun": [
 			"u.B."
 		],
-		"šend,verb": [
-			"u.B."
-		],
-		"šind,verb": [
-			"sieben"
-		],
 		"Šavoška,noun": [
 			"DN"
 		],
 		"uw,verb": [
-			"u.B.",
-			"essen"
+			"essen",
+			"u.B."
 		],
 		"šāri,noun": [
 			"u.B.",
@@ -9261,18 +6440,19 @@
 		"šār,verb": [
 			"u.B.",
 			"wünschen?",
-			"u.B",
-			"wünschen"
+			"wünschen",
+			"u.B"
 		],
 		"faġi,noun": [
 			"u.B.",
 			"Kopf"
 		],
+		"faġ,verb": [
+			"u.B.",
+			"zerstören"
+		],
 		"ḫari,noun": [
 			"Weg"
-		],
-		"tipḫ+ude,noun": [
-			"u.B."
 		],
 		"agi,noun": [
 			"u.B."
@@ -9321,9 +6501,6 @@
 		"anni,verb": [
 			"PRON.DEM"
 		],
-		"ann,verb": [
-			"u.B."
-		],
 		"Ḫude,noun": [
 			"DN"
 		],
@@ -9341,9 +6518,6 @@
 		],
 		"ḫue+ni,noun": [
 			"u.B."
-		],
-		"ḫum+ar+o,noun": [
-			"lapislazuli"
 		],
 		"tab,verb": [
 			"gießen",
@@ -9385,36 +6559,15 @@
 		"ubuli,noun": [
 			"u.B."
 		],
-		"ub,verb": [
-			"u.B.",
-			"töten"
-		],
-		"kig,verb": [
-			"u.B."
-		],
 		"šuri,noun": [
 			"u.B."
-		],
-		"šurr,verb": [
-			"eilen",
-			"u.B."
-		],
-		"tid,verb": [
-			"u.B.",
-			"zählen",
-			"angreifen",
-			"angreifen; zählen"
 		],
 		"ari,noun": [
 			"das Böse",
 			"u.B."
 		],
 		"ar,verb": [
-			"geben",
-			"u.B."
-		],
-		"ḫā,verb": [
-			"nehmen"
+			"geben"
 		],
 		"kunde,noun": [
 			"u.B."
@@ -9424,9 +6577,6 @@
 		],
 		"ište,verb": [
 			"1PRON.SG"
-		],
-		"išt,verb": [
-			"u.B."
 		],
 		"for,verb": [
 			"sehen"
@@ -9440,9 +6590,6 @@
 		"šari,noun": [
 			"u.B."
 		],
-		"parzi,verb": [
-			"u.B."
-		],
 		"ḫatt,verb": [
 			"u.B."
 		],
@@ -9451,13 +6598,6 @@
 		],
 		"puss,verb": [
 			"u.B."
-		],
-		"mānu,verb": [
-			"3PRON.SG"
-		],
-		"mān,verb": [
-			"u.B.",
-			"PRON.INDF"
 		],
 		"ēnġi,noun": [
 			"u.B."
@@ -9489,8 +6629,7 @@
 		"ḫāž,verb": [
 			"hören; salben",
 			"hören",
-			"salben",
-			"u.B."
+			"salben"
 		],
 		"inu,verb": [
 			"wie"
@@ -9533,15 +6672,8 @@
 		"šukk+utti,noun": [
 			"u.B."
 		],
-		"er,verb": [
-			"u.B.",
-			"gedeihen lassen"
-		],
 		"ašti,noun": [
 			"Frau; Ehefrau",
-			"u.B."
-		],
-		"ēšš,verb": [
 			"u.B."
 		],
 		"kiv+o+že,noun": [
@@ -9568,17 +6700,8 @@
 		"ind,verb": [
 			"u.B"
 		],
-		"kigl,verb": [
-			"u.B."
-		],
-		"ḫarž,verb": [
-			"u.B."
-		],
 		"Engida,noun": [
 			"DN"
-		],
-		"tiž,verb": [
-			"u.B."
 		],
 		"šena,noun": [
 			"Bruder"
@@ -9653,9 +6776,6 @@
 		"tīd,verb": [
 			"angreifen",
 			"zählen",
-			"u.B."
-		],
-		"ež,verb": [
 			"u.B."
 		],
 		"eže,noun": [
@@ -9737,8 +6857,7 @@
 			"so"
 		],
 		"an,verb": [
-			"sich freuen",
-			"u.B."
+			"sich freuen"
 		],
 		"mānu,noun": [
 			"3PORN.SG"
@@ -9774,9 +6893,6 @@
 		"ālv,verb": [
 			"u.B."
 		],
-		"mādi,noun": [
-			"Weisheit"
-		],
 		"tabakki,noun": [
 			"u.B."
 		],
@@ -9790,6 +6906,9 @@
 			"erwidern",
 			"u.B."
 		],
+		"mādi,noun": [
+			"Weisheit"
+		],
 		"šīnunaġi,noun": [
 			"u.B."
 		],
@@ -9800,6 +6919,10 @@
 			"u.B."
 		],
 		"navani,noun": [
+			"u.B."
+		],
+		"nav,verb": [
+			"weiden",
 			"u.B."
 		],
 		"tāni,noun": [
@@ -9830,10 +6953,10 @@
 		"āġri,noun": [
 			"Weihrauch"
 		],
-		"supp,verb": [
+		"suppi,noun": [
 			"u.B."
 		],
-		"suppi,noun": [
+		"supp,verb": [
 			"u.B."
 		],
 		"pāri,noun": [
@@ -9867,8 +6990,7 @@
 		],
 		"tāġe,noun": [
 			"Mann",
-			"Mann; u.B.",
-			"u.B."
+			"Mann; u.B."
 		],
 		"tāġ,verb": [
 			"u.B."
@@ -9880,8 +7002,11 @@
 			"u.B."
 		],
 		"oli,noun": [
-			"u.B.",
 			"anderer"
+		],
+		"ull,verb": [
+			"u.B.",
+			"zurückhalten; niederdrücken"
 		],
 		"ul,verb": [
 			"u.B."
@@ -9912,15 +7037,6 @@
 		],
 		"piri,noun": [
 			"u.B."
-		],
-		"inū,verb": [
-			"wie"
-		],
-		"tešše,noun": [
-			"erhaben"
-		],
-		"tešš,verb": [
-			"erhaben sein?"
 		],
 		"šōri,noun": [
 			"u.B."
@@ -9954,11 +7070,6 @@
 		"kīaže,noun": [
 			"Meer"
 		],
-		"ušt,verb": [
-			"herausgehen; fortbringen; erheben; aufstehen",
-			"herausgehen; aufstehen",
-			"herausgehen; fortbringen; erheben"
-		],
 		"Imbaluri,noun": [
 			"DN"
 		],
@@ -9983,15 +7094,6 @@
 		"utḫari,noun": [
 			"Zeichen?"
 		],
-		"ur,verb": [
-			"existieren",
-			"wünschen",
-			"zeigen",
-			"u.B."
-		],
-		"kīažē,noun": [
-			"Meer"
-		],
 		"Šērižu,noun": [
 			"DN"
 		],
@@ -10008,19 +7110,12 @@
 		"tār,verb": [
 			"u.B."
 		],
-		"kēž,verb": [
-			"u.B."
-		],
 		"tūri,verb": [
 			"unten; hinab",
 			"hinab; unten"
 		],
-		"tūri,noun": [
-			"Oberseite?"
-		],
 		"tūr,verb": [
-			"hinabgehen",
-			"u.B."
+			"hinabgehen"
 		],
 		"uvi,noun": [
 			"u.B."
@@ -10117,9 +7212,6 @@
 			"Kind; Säugling",
 			"Kind; Kleinkind; Säugling"
 		],
-		"faḫḫ,verb": [
-			"u.B."
-		],
 		"tēni,noun": [
 			"u.B."
 		],
@@ -10164,7 +7256,8 @@
 		"ubindi,noun": [
 			"u.B."
 		],
-		"mūl,verb": [
+		"ub,verb": [
+			"töten",
 			"u.B."
 		],
 		"sūve,noun": [
@@ -10175,10 +7268,6 @@
 		],
 		"Ulli.Kummi,noun": [
 			"PN"
-		],
-		"un,verb": [
-			"kommen; bringen",
-			"u.B."
 		],
 		"ever+ni,noun": [
 			"König"
@@ -10197,9 +7286,6 @@
 		],
 		"Tažmiš,noun": [
 			"DN"
-		],
-		"nib,verb": [
-			"u.B."
 		],
 		"Tažmiž,noun": [
 			"DN"
@@ -10271,6 +7357,10 @@
 		"Šēri,noun": [
 			"DN"
 		],
+		"ušt,verb": [
+			"herausgehen; aufstehen",
+			"herausgehen; fortbringen; erheben"
+		],
 		"šinē,noun": [
 			"zwei"
 		],
@@ -10279,9 +7369,6 @@
 		],
 		"foroli,noun": [
 			"Tempel"
-		],
-		"for,noun": [
-			"sehen"
 		],
 		"arni,noun": [
 			"Sünde"
@@ -10322,9 +7409,6 @@
 			"2PRON.SG",
 			"2PRON"
 		],
-		"fēv,verb": [
-			"u.B."
-		],
 		"tiv,verb": [
 			"sprechen"
 		],
@@ -10355,11 +7439,8 @@
 		"kammiri,noun": [
 			"u.B."
 		],
-		"omini,verb": [
+		"omini,noun": [
 			"Land"
-		],
-		"mann,verb": [
-			"sein"
 		],
 		"kiaže,noun": [
 			"Meer"
@@ -10373,10 +7454,10 @@
 		"ḫupš,verb": [
 			"u.B."
 		],
-		"ḫišš,verb": [
+		"ḫišši,noun": [
 			"u.B."
 		],
-		"ḫišši,noun": [
+		"ḫišš,verb": [
 			"u.B."
 		],
 		"ḫammanin+o+ḫḫe,noun": [
@@ -10389,8 +7470,8 @@
 		],
 		"eg,verb": [
 			"rein sein; rein machen",
-			"u.B.",
-			"rein sein; reinigen"
+			"rein sein; reinigen",
+			"u.B."
 		],
 		"kovāġi,noun": [
 			"eine Kopfbedeckung",
@@ -10404,9 +7485,6 @@
 		],
 		"Kumarbi,noun": [
 			"DN"
-		],
-		"kašš,verb": [
-			"u.B."
 		],
 		"nirġ,verb": [
 			"u.B."
@@ -10441,6 +7519,9 @@
 		"kiāžē,verb": [
 			"Meer"
 		],
+		"šurr,verb": [
+			"eilen"
+		],
 		"kangalvi,noun": [
 			"u.B."
 		],
@@ -10456,15 +7537,14 @@
 		"tapti,noun": [
 			"u.B."
 		],
+		"tešše,noun": [
+			"erhaben"
+		],
 		"umm,verb": [
 			"stehen?"
 		],
 		"abi,verb": [
 			"Gesicht; vor; wer; jeder"
-		],
-		"amm,verb": [
-			"u.B.",
-			"errreichen; gelangen lassen"
 		],
 		"ammi,verb": [
 			"zuvor?"
@@ -10533,9 +7613,6 @@
 		"for+ali,noun": [
 			"u.B."
 		],
-		"forallinni,noun": [
-			"Opferschauer"
-		],
 		"kuwandi,noun": [
 			"u.B."
 		],
@@ -10572,9 +7649,6 @@
 		"ḫinnatte,noun": [
 			"jetziger"
 		],
-		"kib,verb": [
-			"u.B."
-		],
 		"ōšš,verb": [
 			"gehen",
 			"u.B."
@@ -10585,12 +7659,11 @@
 		"ane,verb": [
 			"PRON.ANAPH?"
 		],
-		"upš,verb": [
-			"u.B.",
-			"mähen?; ernten?"
-		],
 		"upši,noun": [
 			"u.B."
+		],
+		"upš,verb": [
+			"mähen?; ernten?"
 		],
 		"talāv+o+že,noun": [
 			"groß"
@@ -10616,6 +7689,11 @@
 		],
 		"āmmī,verb": [
 			"zuvor"
+		],
+		"ur,verb": [
+			"existieren",
+			"wünschen",
+			"zeigen"
 		],
 		"pal,verb": [
 			"wissen; kennen"
@@ -10651,9 +7729,6 @@
 		"amāttī,noun": [
 			"uralt; früherer"
 		],
-		"igi,noun": [
-			"Mitte"
-		],
 		"ḫīd,verb": [
 			"u.B."
 		],
@@ -10677,14 +7752,21 @@
 		"avi,noun": [
 			"Gesicht; vor"
 		],
+		"un,verb": [
+			"kommen; bringen"
+		],
+		"ḫār,verb": [
+			"u.B."
+		],
 		"tīd,noun": [
 			"zählen",
-			"angreifen",
-			"u.B.",
-			"angreifen; u.B.; zählen"
+			"u.B."
 		],
 		"pīlli,noun": [
 			"Kanal"
+		],
+		"išt,verb": [
+			"u.B."
 		],
 		"šō,verb": [
 			"1PRON.SG",
@@ -10692,9 +7774,6 @@
 			"u.B."
 		],
 		"išši,noun": [
-			"u.B."
-		],
-		"išš,verb": [
 			"u.B."
 		],
 		"šār+i+šše,noun": [
@@ -10737,8 +7816,7 @@
 		],
 		"pēd,verb": [
 			"drehen; zurückwenden; zurückgeben",
-			"drehen; zurückwenden",
-			"u.B."
+			"drehen; zurückwenden"
 		],
 		"šāval,verb": [
 			"eintreten?"
@@ -10832,8 +7910,8 @@
 		"Mūgižanun,noun": [
 			"GN"
 		],
-		"navuwu,verb": [
-			"u.B."
+		"for,noun": [
+			"sehen"
 		],
 		"eġel,verb": [
 			"retten"
@@ -10849,10 +7927,6 @@
 		],
 		"al+o+bade,noun": [
 			"u.B."
-		],
-		"ištani,noun": [
-			"Inneres",
-			"Inneres; in"
 		],
 		"ever+in+že+p,noun": [
 			"Herrschaft"
@@ -10902,6 +7976,9 @@
 		"šīll,verb": [
 			"u.B."
 		],
+		"inū,verb": [
+			"wie"
+		],
 		"ḫīž+ud+i,noun": [
 			"u.B."
 		],
@@ -10931,9 +8008,6 @@
 			"u.B."
 		],
 		"pīn+ā+ni,noun": [
-			"u.B."
-		],
-		"pīn+ān+i,noun": [
 			"u.B."
 		],
 		"kilī,noun": [
@@ -11003,6 +8077,10 @@
 			"u.B.",
 			"ansehen"
 		],
+		"ištani,noun": [
+			"Inneres",
+			"Inneres; in"
+		],
 		"šūrnī,noun": [
 			"u.B."
 		],
@@ -11045,9 +8123,6 @@
 		"tīž,verb": [
 			"u.B."
 		],
-		"šēll,verb": [
-			"u.B."
-		],
 		"Udip.šarrā,noun": [
 			"PN"
 		],
@@ -11066,9 +8141,6 @@
 		"nīġr,noun": [
 			"u.B."
 		],
-		"nīġri,noun": [
-			"u.B."
-		],
 		"tāl+ūl+ī+že,noun": [
 			"u.B."
 		],
@@ -11082,8 +8154,7 @@
 			"u.B."
 		],
 		"ḫīll,verb": [
-			"mitteilen",
-			"u.B."
+			"mitteilen"
 		],
 		"ped+ār+i,noun": [
 			"Rind"
@@ -11100,12 +8171,6 @@
 		],
 		"irdi,noun": [
 			"Zunge"
-		],
-		"tīža,verb": [
-			"Herz"
-		],
-		"ḫīr,verb": [
-			"u.B."
 		],
 		"sal,verb": [
 			"u.B."
@@ -11133,8 +8198,7 @@
 			"stehen"
 		],
 		"ḫapš,verb": [
-			"u.B.",
-			"werfen?"
+			"u.B."
 		],
 		"uwi,noun": [
 			"Brot"
@@ -11152,9 +8216,6 @@
 			"u.B."
 		],
 		"Udip.šarri,noun": [
-			"PN"
-		],
-		"Udip.šarrri,noun": [
 			"PN"
 		],
 		"nūw+ar+i,noun": [
@@ -11182,9 +8243,6 @@
 			"u.B."
 		],
 		"pīdi,noun": [
-			"u.B."
-		],
-		"es,verb": [
 			"u.B."
 		],
 		"nūw+a+ni,noun": [
@@ -11215,6 +8273,9 @@
 		"šūbī,noun": [
 			"u.B."
 		],
+		"ḫā,verb": [
+			"nehmen"
+		],
 		"pārizi,noun": [
 			"ein halbes Kor"
 		],
@@ -11230,6 +8291,9 @@
 		],
 		"tīr,verb": [
 			"u.B."
+		],
+		"ḫaž,noun": [
+			"hören"
 		],
 		"al+il+an,verb": [
 			"jammern; beklagen; schreien"
@@ -11251,6 +8315,9 @@
 		],
 		"kīl,verb": [
 			"u.B."
+		],
+		"amm,verb": [
+			"errreichen; gelangen lassen"
 		],
 		"āi,verb": [
 			"wenn; falls",
@@ -11320,10 +8387,10 @@
 		"auwari,noun": [
 			"Feld"
 		],
-		"ḫīl,verb": [
+		"ḫīlēšti,noun": [
 			"u.B."
 		],
-		"ḫīlēšti,noun": [
+		"ḫīl,verb": [
 			"u.B."
 		],
 		"kāz,verb": [
@@ -11335,9 +8402,6 @@
 		"ištani,verb": [
 			"Inneres; in",
 			"in"
-		],
-		"natḫi,noun": [
-			"Bett"
 		],
 		"šine,verb": [
 			"zwei"
@@ -11363,6 +8427,9 @@
 		],
 		"keb+li,noun": [
 			"Jäger"
+		],
+		"natḫi,noun": [
+			"Bett"
 		],
 		"fud+o+šḫe,noun": [
 			"u.B."
@@ -11409,16 +8476,10 @@
 		"nuḫḫ+a+že,noun": [
 			"u.B."
 		],
-		"ālb,verb": [
-			"u.B."
-		],
 		"pāžanġuri,noun": [
 			"u.B."
 		],
 		"pāžanġurā+i,noun": [
-			"u.B."
-		],
-		"tām,verb": [
 			"u.B."
 		],
 		"egi,verb": [
@@ -11439,21 +8500,8 @@
 		"att,verb": [
 			"u.B."
 		],
-		"ḫam,verb": [
-			"u.B."
-		],
-		"šēġa,noun": [
-			"Tor"
-		],
-		"šēġ,verb": [
-			"u.B.",
-			"eintreten"
-		],
 		"ālžialli,noun": [
 			"Widersprecher?"
-		],
-		"ḫum,verb": [
-			"u.B."
 		],
 		"namali,noun": [
 			"Bett"
@@ -11512,12 +8560,6 @@
 		"nūbī,noun": [
 			"zehntausend"
 		],
-		"kīž,verb": [
-			"u.B."
-		],
-		"šūž,verb": [
-			"u.B."
-		],
 		"nīvani,noun": [
 			"u.B."
 		],
@@ -11538,6 +8580,12 @@
 		],
 		"fāġr+ā+že,noun": [
 			"gut; schön"
+		],
+		"šēġa,noun": [
+			"Tor"
+		],
+		"šēġ,verb": [
+			"eintreten"
 		],
 		"Šendamennī,noun": [
 			"PN"
@@ -11634,9 +8682,6 @@
 		"šōn,verb": [
 			"u.B."
 		],
-		"ḫabr,verb": [
-			"u.B."
-		],
 		"nāl,verb": [
 			"u.B."
 		],
@@ -11714,15 +8759,6 @@
 		"tamri,verb": [
 			"neun"
 		],
-		"tamr,verb": [
-			"u.B."
-		],
-		"el,verb": [
-			"u.B."
-		],
-		"il,verb": [
-			"u.B."
-		],
 		"iv,verb": [
 			"u.B."
 		],
@@ -11733,24 +8769,6 @@
 			"u.B."
 		],
 		"mūz,verb": [
-			"u.B."
-		],
-		"ḫān,verb": [
-			"gebären"
-		],
-		"nīn,verb": [
-			"u.B."
-		],
-		"ētt,verb": [
-			"u.B."
-		],
-		"kunde,verb": [
-			"u.B."
-		],
-		"fand,verb": [
-			"recht sein; gerecht sein"
-		],
-		"šūg,verb": [
 			"u.B."
 		],
 		"šīn+že,noun": [
@@ -11766,9 +8784,6 @@
 			"u.B."
 		],
 		"šūp,verb": [
-			"u.B."
-		],
-		"šūbulvi,noun": [
 			"u.B."
 		],
 		"ālu,verb": [
@@ -11858,9 +8873,6 @@
 		"tōre,noun": [
 			"unten; hinab"
 		],
-		"ervi,noun": [
-			"Hund"
-		],
 		"pid,verb": [
 			"u.B."
 		],
@@ -11870,7 +8882,7 @@
 		"šarāmmē,noun": [
 			"u.B."
 		],
-		"tib,verb": [
+		"šend,verb": [
 			"u.B."
 		],
 		"tārmi,noun": [
@@ -11926,11 +8938,6 @@
 		],
 		"Kužuḫ,noun": [
 			"DN"
-		],
-		"ag,noun": [
-			"u.B.",
-			"aufnehmen; erheben; heraufkommen",
-			"aufnehmen; erheben"
 		],
 		"šuē,noun": [
 			"alle; ganz"
@@ -12005,9 +9012,6 @@
 		"adāži,noun": [
 			"u.B."
 		],
-		"adāži,verb": [
-			"u.B."
-		],
 		"umbi,noun": [
 			"u.B."
 		],
@@ -12040,9 +9044,6 @@
 		],
 		"tarmāni,noun": [
 			"Quelle"
-		],
-		"kulm,noun": [
-			"tief?"
 		],
 		"ānn+ī+re,noun": [
 			"u.B."
@@ -12081,9 +9082,6 @@
 			"u.B."
 		],
 		"uli,noun": [
-			"u.B."
-		],
-		"ītḫ,verb": [
 			"u.B."
 		],
 		"tamgāri,noun": [
@@ -12173,12 +9171,6 @@
 		"agoli,noun": [
 			"u.B."
 		],
-		"timeri,noun": [
-			"dunkel"
-		],
-		"pud+u+šḫi,noun": [
-			"u.B."
-		],
 		"pud,verb": [
 			"u.B."
 		],
@@ -12199,12 +9191,6 @@
 		],
 		"Ilamiġurri,noun": [
 			"PN"
-		],
-		"fer,noun": [
-			"u.B."
-		],
-		"ḫež,verb": [
-			"u.B."
 		],
 		"ālzialli,noun": [
 			"Widersprecher?"
@@ -12252,13 +9238,14 @@
 		"Pizigarra,noun": [
 			"PN"
 		],
-		"Ēbla,noun": [
-			"GN"
-		],
-		"pa,verb": [
-			"bauen?"
+		"ag,noun": [
+			"aufnehmen; erheben; heraufkommen",
+			"aufnehmen; erheben"
 		],
 		"Nōġašše,noun": [
+			"GN"
+		],
+		"Ēbla,noun": [
 			"GN"
 		],
 		"Nīnuva,noun": [
@@ -12288,15 +9275,8 @@
 		"un+o+šḫe,noun": [
 			"u.B."
 		],
-		"āmm,verb": [
-			"erreichen; erreichen lassen",
-			"erreichen; gelangen lassen"
-		],
 		"nēgi,noun": [
 			"u.B."
-		],
-		"ḫēnna,verb": [
-			"jetzt"
 		],
 		"aži,noun": [
 			"u.B."
@@ -12353,10 +9333,12 @@
 		"ālv,noun": [
 			"u.B."
 		],
-		"tidi,noun": [
-			"u.B."
+		"tid,verb": [
+			"zählen",
+			"angreifen",
+			"angreifen; zählen"
 		],
-		"suss,noun": [
+		"tidi,noun": [
 			"u.B."
 		],
 		"kīppi,noun": [
@@ -12371,9 +9353,6 @@
 		"ābē,noun": [
 			"Opfergrube?"
 		],
-		"pur,noun": [
-			"u.B."
-		],
 		"taġ,verb": [
 			"u.B."
 		],
@@ -12386,9 +9365,8 @@
 		"pur+i+rē+nni,noun": [
 			"u.B."
 		],
-		"kōl,verb": [
-			"u.B.",
-			"beseite lassen"
+		"ḫaž,verb": [
+			"hören"
 		],
 		"mānni,verb": [
 			"3PRON.SG"
@@ -12411,9 +9389,6 @@
 		"faġari,noun": [
 			"gut"
 		],
-		"pur+i+re,noun": [
-			"u.B."
-		],
 		"šīl+um+ō+tḫe,noun": [
 			"u.B."
 		],
@@ -12426,23 +9401,11 @@
 		"šalġ,verb": [
 			"hören auf"
 		],
-		"mad,noun": [
-			"Weisheit"
-		],
-		"ḫil,verb": [
-			"u.B."
-		],
-		"ḫurm,verb": [
-			"u.B."
-		],
 		"ḫōrm+ar+i,noun": [
 			"u.B."
 		],
 		"tōrovi,noun": [
 			"Feind"
-		],
-		"ūlmē,noun": [
-			"Sklavin; Dienerin"
 		],
 		"āllai+i,noun": [
 			"Herrin"
@@ -12452,6 +9415,9 @@
 		],
 		"šid,verb": [
 			"verfluchen"
+		],
+		"kōl,verb": [
+			"beseite lassen"
 		],
 		"tip+šāri,noun": [
 			"Angelegenheit"
@@ -12474,6 +9440,9 @@
 		"ḫilde,noun": [
 			"u.B."
 		],
+		"ḫil,verb": [
+			"u.B."
+		],
 		"piġ,verb": [
 			"u.B."
 		],
@@ -12491,9 +9460,6 @@
 		],
 		"torōvi,noun": [
 			"Feind"
-		],
-		"nera,noun": [
-			"Mutter"
 		],
 		"far,verb": [
 			"einziehen; losgehen"
@@ -12527,6 +9493,9 @@
 		],
 		"šattaġamōri,noun": [
 			"u.B."
+		],
+		"timeri,noun": [
+			"dunkel"
 		],
 		"ḫimz+atḫ+ō+že,noun": [
 			"gegürtet"
@@ -12628,9 +9597,6 @@
 		"tōmv,verb": [
 			"u.B."
 		],
-		",noun": [
-			"u.B."
-		],
 		"ide,noun": [
 			"Körper"
 		],
@@ -12692,6 +9658,10 @@
 		],
 		"ūlvi,noun": [
 			"anderer"
+		],
+		"āmm,verb": [
+			"erreichen; erreichen lassen",
+			"erreichen; gelangen lassen"
 		],
 		"am+ō+mi,noun": [
 			"Botschaft"
@@ -12977,6 +9947,9 @@
 		"tūrī+e,verb": [
 			"hinab"
 		],
+		"tūri,noun": [
+			"Oberseite?"
+		],
 		"šil,verb": [
 			"u.B."
 		],
@@ -13024,9 +9997,6 @@
 		],
 		"nāb,verb": [
 			"sterben"
-		],
-		"uġ,noun": [
-			"u.B."
 		],
 		"ḫār+o+nni,noun": [
 			"u.B."
@@ -13091,10 +10061,10 @@
 		"šibi,noun": [
 			"u.B."
 		],
-		"uwalli,noun": [
+		"uwali,noun": [
 			"Notlage?"
 		],
-		"uwali,noun": [
+		"uwalli,noun": [
 			"Notlage?"
 		],
 		"eġl,verb": [
@@ -13289,6 +10259,9 @@
 		"ḫeli,noun": [
 			"Ruhm"
 		],
+		"er,verb": [
+			"gedeihen lassen"
+		],
 		"abundi,noun": [
 			"Feld"
 		],
@@ -13368,6 +10341,9 @@
 		"mamm+ō+re,noun": [
 			"u.B."
 		],
+		"mān,verb": [
+			"PRON.INDF"
+		],
 		"passi,noun": [
 			"u.B."
 		],
@@ -13398,10 +10374,10 @@
 		"nōv+ar+ē,noun": [
 			"u.B."
 		],
-		"ūmbi,noun": [
+		"ūmb,verb": [
 			"u.B."
 		],
-		"ūmb,verb": [
+		"ūmbi,noun": [
 			"u.B."
 		],
 		"nābi,noun": [
@@ -13412,12 +10388,6 @@
 		],
 		"sōve,noun": [
 			"u.B."
-		],
-		"sul,verb": [
-			"binden"
-		],
-		"sul+ōd,verb": [
-			"lösen"
 		],
 		"kir+mān+ze,verb": [
 			"achtzehnter"
@@ -13430,9 +10400,6 @@
 		],
 		"tānu,verb": [
 			"machbar?"
-		],
-		"sūz,verb": [
-			"u.B."
 		],
 		"tumni,noun": [
 			"vier"
@@ -13508,6 +10475,9 @@
 		"tibi,noun": [
 			"u.B."
 		],
+		"tib,verb": [
+			"u.B."
+		],
 		"Ēblā,noun": [
 			"GN"
 		],
@@ -13565,9 +10535,6 @@
 		"šāre,noun": [
 			"u.B."
 		],
-		"Šimigr,noun": [
-			"DN"
-		],
 		"Šimiga,noun": [
 			"DN"
 		],
@@ -13592,26 +10559,14 @@
 		"ḫiari,noun": [
 			"Gold"
 		],
-		"sēz,verb": [
-			"u.B."
-		],
 		"šukko,verb": [
 			"eins"
 		],
 		"ḫīli,noun": [
 			"u.B."
 		],
-		"tum,verb": [
-			"u.B."
-		],
 		"fāz+ur+a+nni,noun": [
 			"wortgewaltiger Redner"
-		],
-		"šav,verb": [
-			"u.B."
-		],
-		"ḫāv,verb": [
-			"u.B."
 		],
 		"nūri,noun": [
 			"u.B"
@@ -13628,9 +10583,6 @@
 		"kare,noun": [
 			"Vogelfänger?"
 		],
-		"ter,verb": [
-			"u.B."
-		],
 		"ānnu,verb": [
 			"u.B."
 		],
@@ -13639,9 +10591,6 @@
 		],
 		"DUB,verb": [
 			"Tontafel"
-		],
-		"fel,noun": [
-			"u.B."
 		],
 		"ul+mi,noun": [
 			"Sklavin; Dienerin"
@@ -13673,20 +10622,17 @@
 		"īpḫe,noun": [
 			"Ofen"
 		],
-		"timeri,verb": [
-			"dunkel"
-		],
 		"pēġi,noun": [
 			"u.B."
 		],
 		"l,verb": [
 			"u.B."
 		],
-		"šēžili,noun": [
+		",noun": [
 			"u.B."
 		],
-		"kel+gel,verb": [
-			"hochlegen"
+		"šēžili,noun": [
+			"u.B."
 		]
 	}
 }

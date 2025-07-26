@@ -1,14 +1,5 @@
 {
 	"concordance": {
-		"omini-[ @ Land @  @ noun @ ": [
-			"KBo 33.10+, {€1} Vs.? 2′!"
-		],
-		"um-in[ @ u.B. @  @ unclear @ ": [
-			"KBo 33.10+, {€1} Vs.? 2′!"
-		],
-		"ḫār-a[ @ u.B. @  @ unclear @ ": [
-			"KBo 33.10+, {€1} Vs.? 3′!"
-		],
 		"ḫāri-a @ Weg @ { a → ESS} @ noun @ ": [
 			"KBo 33.10+, {€1} Vs.? 3′!",
 			"KBo 32.15,Rs. 5a"
@@ -18,26 +9,17 @@
 			"KBo 33.10+, {€2} Vs. II 3",
 			"KBo 32.15,Rs. 14a"
 		],
-		"ūrġ-a[ @ wahr sein @  @ unclear @ ": [
-			"KBo 33.10+, {€1} Vs.? 5′!"
-		],
 		"ūrġi-a @ wahr @ { a → ESS} @ noun @ ": [
 			"KBo 33.10+, {€1} Vs.? 5′!"
 		],
 		"ūrġ-a @ wahr sein @ { a → INT} @ verb @ ": [
 			"KBo 33.10+, {€1} Vs.? 5′!"
 		],
-		"ḫeb+ar+i-ne-[ @ u.B. @ { a → RELAT.SG} @ noun @ ": [
-			"KBo 33.10+, {€1} Vs.? 6′!"
-		],
 		"ḫeb+ar+i-ne @ u.B. @ { a → ABL/INS} @ noun @ ": [
 			"KBo 33.10+, {€1} Vs.? 6′!"
 		],
 		"ḫeb+ar+i-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ ": [
 			"KBo 33.10+, {€1} Vs.? 6′!"
-		],
-		"šīn-a[ @ u.B. @  @ unclear @ ": [
-			"KBo 33.10+, {€1} Vs.? 7′!"
 		],
 		"šī-na @ Auge @ { a → RELAT.PL.ABS} @ noun @ ": [
 			"KBo 33.10+, {€1} Vs.? 7′!",
@@ -47,21 +29,6 @@
 		"šī+ni-a @ Auge @ { a → ESS} @ noun @ ": [
 			"KBo 33.10+, {€1} Vs.? 7′!",
 			"ABoT 2.18,4′"
-		],
-		"šī-na-[ @ Auge @ { a → RELAT.PL} @ noun @ ": [
-			"KBo 33.10+, {€1} Vs.? 7′!"
-		],
-		"nav-e[ @ weiden @  @ unclear @ ": [
-			"KBo 33.10+, {€1} Vs.? 8′!",
-			"KBo 33.10+, {€1} Vs.? 11′!"
-		],
-		"nave-[ @ u.B. @  @ noun @ ": [
-			"KBo 33.10+, {€1} Vs.? 8′!",
-			"KBo 33.10+, {€1} Vs.? 11′!"
-		],
-		"nave-[ @ (Todes-)Schicksal? @  @ noun @ ": [
-			"KBo 33.10+, {€1} Vs.? 8′!",
-			"KBo 33.10+, {€1} Vs.? 11′!"
 		],
 		"nave @ u.B. @ { a → .ABS} @ noun @ ": [
 			"KBo 33.10+, {€1} Vs.? 8′!"
@@ -81,23 +48,8 @@
 		"šāž-a @ u.B. @ { a → INT} @ verb @ ": [
 			"KBo 33.10+, {€1} Vs.? 9′!"
 		],
-		"šāž-a[ @ u.B. @  @ unclear @ ": [
-			"KBo 33.10+, {€1} Vs.? 9′!"
-		],
 		"šād-ož-i @ ersetzen @ { a → PST-ANTIP} @ verb @ ": [
 			"KBo 33.10+, {€1} Vs.? 10′!"
-		],
-		"īa[ @ u.B. @  @ unclear @ ": [
-			"KBo 33.10+, {€1} Vs.? 12′!"
-		],
-		"īa-[ @ warum @  @ ADV @ ": [
-			"KBo 33.10+, {€1} Vs.? 12′!"
-		],
-		"īa-[ @ REL @  @ CONJ @ ": [
-			"KBo 33.10+, {€1} Vs.? 12′!"
-		],
-		"]nu[ @ u.B. @  @ unclear @ ": [
-			"KBo 33.10+, {€1} Vs.? 13′!"
 		],
 		"Teššob-oda @ DN @ { a → DIR} @ noun @ ": [
 			"KBo 33.10+, {€2} Vs. II 1",
@@ -112,9 +64,6 @@
 		"īa=d @ REL @ { a → =1SG.ABS} @ CONJ @ ": [
 			"KBo 33.10+, {€2} Vs. II 2"
 		],
-		"ḫe[ @ u.B. @  @ unclear @ ": [
-			"KBo 33.10+, {€2} Vs. II 2"
-		],
 		"Kumme-ne-ve @ GN @ RELAT.SG-GEN @ noun @ ": [
 			"KBo 33.10+, {€2} Vs. II 3",
 			"KUB 47.16,5′"
@@ -122,17 +71,8 @@
 		"talav+o+že @ groß @ { a → .ABS} @ noun @ ": [
 			"KBo 33.10+, {€2} Vs. II 3"
 		],
-		"]l-ōž-o @ u.B. @ { a → PST-2A.SG} @ verb @ ": [
-			"KBo 33.10+, {€2} Vs. II 4"
-		],
 		"Kalgamiš-fe @ DN @ { b → GEN} @ noun @ ": [
 			"KBo 33.10+, {€2} Vs. II 4"
-		],
-		"]ti-a=ffa @ u.B. @ { a → ESS=2PL.ABS} @ noun @ ": [
-			"KBo 33.10+, {€2} Vs. II 5"
-		],
-		"]t-a=ffa @ u.B. @ { a → INT=2PL.ABS} { b → INT.IMP=2PL.ABS} @ verb @ ": [
-			"KBo 33.10+, {€2} Vs. II 5"
 		],
 		"tōn+ili-f-fa @ u.B. @ { a → 2POSS.SG-DAT} @ noun @ ": [
 			"KBo 33.10+, {€2} Vs. II 5"
@@ -180,26 +120,6 @@
 		"Kalgamiž-oda @ DN @ { a → DIR} @ noun @ ": [
 			"KBo 33.10+, {€2} Vs. II 8"
 		],
-		"]-ve-ne-ž=lla @ u.B. @ { a → GEN-RELAT.SG-ERG=3PL.ABS} @ noun @ ": [
-			"KBo 33.10+, {€2} Vs. II 9"
-		],
-		"]-ve-ne-e=lla @ u.B. @ { a → GEN-RELAT.SG-DIR/LOC=3PL.ABS} @ noun @ ": [
-			"KBo 33.10+, {€2} Vs. II 9"
-		],
-		"]fe-ne-ž=lla @ u.B. @ { a → RELAT.SG-ERG=3PL.ABS} @ noun @ ": [
-			"KBo 33.10+, {€2} Vs. II 9"
-		],
-		"]fe-ne=lla @ u.B. @ { a → ABL/INS=3PL.ABS} @ noun @ ": [
-			"KBo 33.10+, {€2} Vs. II 9"
-		],
-		"]fe-ne-e=lla @ u.B. @ { a → RELAT.SG-DIR/LOC=3PL.ABS} @ noun @ ": [
-			"KBo 33.10+, {€2} Vs. II 9"
-		],
-		"]li @ u.B. @  @ unclear @ ": [
-			"KBo 33.10+, {€2} Vs. II 10",
-			"KUB 47.16,11′",
-			"KUB 47.8,Vs. II? 1′"
-		],
 		"tapt+a+ni @ u.B. @ { a → .ABS} @ noun @ ": [
 			"KBo 33.10+, {€2+3} Vs. II 11/Vs. 1′"
 		],
@@ -209,32 +129,8 @@
 		"tap-t-an-i @ u.B. @ { a → t-an-ANTIP} { b → t-an-TR.IMP} @ verb @ ": [
 			"KBo 33.10+, {€2+3} Vs. II 11/Vs. 1′"
 		],
-		"]-ō-m @ u.B. @ { a → TR.PFV-3A.SG} @ verb @ ": [
-			"KBo 33.10+, {€3} Vs. 2′"
-		],
-		"]ḫan @ u.B. @ .ABS @ unclear @ ": [
-			"KBo 33.10+, {€3} Vs. 3′"
-		],
-		"]ḫi-a=n @ u.B. @ { a → ESS=3SG.ABS} @ noun @ ": [
-			"KBo 33.10+, {€3} Vs. 3′"
-		],
-		"]ḫi-a=an @ u.B. @ { a → ESS=CON} @ noun @ ": [
-			"KBo 33.10+, {€3} Vs. 3′"
-		],
-		"]ḫ-a=n @ u.B. @ { a → 3A.SG=3SG.ABS} { b → INT=3SG.ABS} @ verb @ ": [
-			"KBo 33.10+, {€3} Vs. 3′"
-		],
-		"]ḫ-a=an @ u.B. @ { a → 3A.SG=CON} { b → INT=CON} @ verb @ ": [
-			"KBo 33.10+, {€3} Vs. 3′"
-		],
-		"]l-ur-ō-m @ u.B. @ { a → ur-TR.PFV-3A.SG} @ verb @ ": [
-			"KBo 33.10+, {€3} Vs. 4′"
-		],
 		"ave-až-a @ wer; jeder @ { a → PL-DAT/ESS} @ noun @ ": [
 			"KBo 33.10+, {€3} Vs. 4′"
-		],
-		"]š+ō+ni-i-āž-a @ u.B. @ { a → 3POSS-PL-DAT/ESS} @ noun @ ": [
-			"KBo 33.10+, {€3} Vs. 5′"
 		],
 		"šō+ni-i-āž-a @ Hand @ { a → 3POSS-PL-DAT/ESS} @ noun @ ": [
 			"KBo 33.10+, {€3} Vs. 5′"
@@ -242,14 +138,6 @@
 		"eni-na-āž-a @ Gott @ { a → RELAT.PL-PL-DAT/ESS} @ noun @ ": [
 			"KBo 33.10+, {€3} Vs. 6′",
 			"KUB 47.6,Vs. II 2"
-		],
-		"]-da=l @ u.B. @ { a → DIR=3PL.ABS} @ noun @ ": [
-			"KBo 33.10+, {€3} Vs. 7′",
-			"KBo 27.216,Vs. II 6",
-			"KUB 47.14,7′",
-			"KUB 47.5+, {€1} Vs. I 6′",
-			"KUB 47.5+, {€3} Vs. II 6",
-			"KUB 47.5+, {€1} Rs. IV 18"
 		],
 		"al-u+m+ai @ sprechen @ { a → CVB} @ NF @ ": [
 			"KBo 33.10+, {€3} Vs. 7′",
@@ -273,25 +161,11 @@
 			"KBo 32.42,9′",
 			"KBo 32.67,Rs.? IV 11′"
 		],
-		"]aški-a=ffa @ u.B. @ { a → ESS=2PL.ABS} @ noun @ ": [
-			"KBo 33.10+, {€3} Vs. 8′"
-		],
-		"]ašk-a=ffa @ u.B. @ { a → INT=2PL.ABS} { b → INT.IMP=2PL.ABS} @ verb @ ": [
-			"KBo 33.10+, {€3} Vs. 8′"
-		],
 		"ašk-a=ffa @ fragen?; zur Rede stellen? @ { a → INT=2PL.ABS} { b → INT.IMP=2PL.ABS} @ verb @ ": [
 			"KBo 33.10+, {€3} Vs. 8′"
 		],
 		"aški-a=ffa @ u.B. @ { a → ESS=2PL.ABS} @ noun @ ": [
 			"KBo 33.10+, {€3} Vs. 8′"
-		],
-		"]ḫi-a @ u.B. @ { a → ESS} @ noun @ ": [
-			"KBo 33.10+, {€3} Vs. 9′",
-			"KBo 27.219+, {€1} Vs. II 1′",
-			"KUB 47.3,7′"
-		],
-		"]ḫ-a @ u.B. @ { a → 3A.SG} { b → INT} @ verb @ ": [
-			"KBo 33.10+, {€3} Vs. 9′"
 		],
 		"ūrġ-ā-b @ wahr sein @ { a → INT-b} @ verb @ ": [
 			"KBo 33.10+, {€3} Vs. 9′"
@@ -302,188 +176,25 @@
 		"ūrġi-ā=v @ wahr @ { a → ESS=2PL.ABS} @ noun @ ": [
 			"KBo 33.10+, {€3} Vs. 9′"
 		],
-		"]um+ī+ġe-a @ u.B. @ { a → ESS} @ noun @ ": [
-			"KBo 33.10+, {€3} Vs. 10′"
-		],
-		"]um+īġ+i-a @ u.B. @ { a → ESS} @ noun @ ": [
-			"KBo 33.10+, {€3} Vs. 10′"
-		],
-		"]um-īġ-a @ u.B. @ { a → īġ-3A.SG} { b → īġ-INT} { c → īġ-INT.IMP} @ verb @ ": [
-			"KBo 33.10+, {€3} Vs. 10′"
-		],
-		"]kā @ u.B. @  @ unclear @ ": [
-			"KBo 33.10+, {€3} Vs. 12′"
-		],
-		"]ša @ u.B. @  @ unclear @ ": [
-			"KBo 33.10+, {€3} Rs. 1′",
-			"KBo 33.10+, {€1} Rs.? 1′",
-			"KBo 33.61a+, {€2} Vs.? (I) 6′",
-			"KBo 33.61a+, {€2} Rs.? 1′",
-			"DAAM 1.14,Vs. 4′",
-			"KUB 47.14,3′",
-			"KBo 27.219+, {€1} Vs. II 5′",
-			"KBo 27.219+, {€5} 9′",
-			"KUB 47.5+, {€1} Rs. IV 11",
-			"KBo 32.68,lk. Kol. 3′"
-		],
-		"]na @ u.B. @  @ unclear @ ": [
-			"KBo 33.10+, {€3} Rs. 2′",
-			"KBo 33.61a+, {€2}Rs.? 8′",
-			"KUB 45.64+, {€1} Vs.? 18′",
-			"VBoT 59,Vs. II 6′",
-			"KBo 35.43,Vs. 10′!",
-			"KUB 52.114+, {€1+2} 2′"
-		],
-		"]ši-iffu-we @ u.B. @ { a → 1POSS.SG-GEN} @ noun @ ": [
-			"KBo 33.10+, {€3} Rs. 3′"
-		],
-		"]fa @ u.B. @  @ unclear @ ": [
-			"KBo 33.10+, {€3} Rs. 4′",
-			"VBoT 59,Vs. II 3′",
-			"FHL 179,2′",
-			"KBo 27.219+, {€3+1+4} Vs. I(?) 2/Vs. II 2/lk. Kol. 2"
-		],
-		"]ki[ @ u.B. @  @ unclear @ ": [
-			"KBo 33.10+, {€3} Rs. 5′",
-			"KBo 53.2,8′"
-		],
-		"ki[ @ u.B. @  @ unclear @ ": [
-			"KBo 33.10+, {€3} Rs. 5′",
-			"KUB 45.64+, {€2+1} Rs.? 8′",
-			"KBo 54.4,3′",
-			"KBo 32.11,Vs. I 12",
-			"KBo 32.12,Vs. I 5"
-		],
-		"]fa=l @ u.B. @ { a → =3PL.ABS} @ unclear @ ": [
-			"KBo 33.10+, {€3} Rs. 6′"
-		],
-		"]faġu[ @ u.B. @  @ unclear @ ": [
-			"KBo 33.10+, {€3} Rs. 7′"
-		],
-		"faġ-u[ @ zerstören @  @ unclear @ ": [
-			"KBo 33.10+, {€3} Rs. 7′"
-		],
-		"]nigassi-a @ u.B. @ { a → ESS} @ noun @ ": [
-			"KBo 33.10+, {€3} Rs. 7′"
-		],
 		"nigassi-a @ u.B. @ { a → ESS} @ noun @ ": [
 			"KBo 33.10+, {€3} Rs. 7′"
-		],
-		"]ullu[ @ u.B. @  @ unclear @ ": [
-			"KBo 33.10+, {€3} Rs. 8′"
-		],
-		"ull-u[ @ u.B. @  @ unclear @ ": [
-			"KBo 33.10+, {€3} Rs. 8′"
-		],
-		"]ta @ u.B. @  @ unclear @ ": [
-			"KBo 33.10+, {€3} Rs. 8′",
-			"KBo 8.144+, {€2} Rs. IV 1′",
-			"KBo 8.144+, {€2+3} Rs. IV 14′/1′",
-			"KUB 47.16,4′",
-			"KUB 45.64+, {€1} Rs.? 16′",
-			"KUB 45.82,Vs. 8′",
-			"KUB 47.14,4′",
-			"KBo 59.226,1′",
-			"KUB 47.5+, {€1+2} Vs. I 8′/1′",
-			"KUB 47.5+, {€3} Rs. III 3″",
-			"KBo 32.63,4′"
-		],
-		"]fama[ @ u.B. @  @ unclear @ ": [
-			"KBo 33.10+, {€3} Rs. 10′"
-		],
-		"]fa=ma @ u.B. @ { a → =CON} @ unclear @ ": [
-			"KBo 33.10+, {€3} Rs. 10′"
-		],
-		"]uli-a=l @ u.B. @ { a → ESS=3PL.ABS} @ unclear @ ": [
-			"KBo 33.10+, {€3+2} Rs. 11′/Rs. III 1′"
-		],
-		"]ul-a=l @ u.B. @ { a → INT=3PL.ABS} @ verb @ ": [
-			"KBo 33.10+, {€3+2} Rs. 11′/Rs. III 1′"
-		],
-		"]la @ u.B. @  @ unclear @ ": [
-			"KBo 33.10+, {€2} Rs. III 2′",
-			"KBo 32.17,Rs. 15a′"
-		],
-		"ḫaž-im[ @ hören @  @ unclear @ ": [
-			"KBo 33.10+, {€2} Rs. III 2′"
-		],
-		"ḫaž-im[ @ salben @  @ unclear @ ": [
-			"KBo 33.10+, {€2} Rs. III 2′"
-		],
-		"ḫaž-im[ @ u.B. @  @ unclear @ ": [
-			"KBo 33.10+, {€2} Rs. III 2′"
-		],
-		"]ullai-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ ": [
-			"KBo 33.10+, {€2} Rs. III 3′"
 		],
 		"ullai-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ ": [
 			"KBo 33.10+, {€2} Rs. III 3′"
 		],
-		"]ava @ u.B. @  @ unclear @ ": [
-			"KBo 33.10+, {€2} Rs. III 4′"
-		],
 		"Šužuġe @ GN @ { a → .ABS} @ noun @ ": [
 			"KBo 33.10+, {€2} Rs. III 4′"
-		],
-		"Šužuġe-[ @ GN @  @ noun @ ": [
-			"KBo 33.10+, {€2} Rs. III 4′"
-		],
-		"]ti-āi @ u.B. @ { a → INS} @ noun @ ": [
-			"KBo 33.10+, {€2} Rs. III 5′"
-		],
-		"]t-i-āi @ u.B. @ { a → MOD.ACT-PURP} @ verb @ ": [
-			"KBo 33.10+, {€2} Rs. III 5′"
-		],
-		"]tā+i @ u.B. @ { a → .ABS} @ noun @ ": [
-			"KBo 33.10+, {€2} Rs. III 5′"
-		],
-		"tež-āv[ @ u.B. @  @ unclear @ ": [
-			"KBo 33.10+, {€2} Rs. III 5′"
-		],
-		"]r+o+ḫḫe @ u.B. @ { a → .ABS} @ noun @ ": [
-			"KBo 33.10+, {€2} Rs. III 6′"
-		],
-		"ḫaž-im+nī[ @ hören @  @ noun @ ": [
-			"KBo 33.10+, {€2} Rs. III 6′"
-		],
-		"ḫaž-im+nī[ @ salben @  @ noun @ ": [
-			"KBo 33.10+, {€2} Rs. III 6′"
-		],
-		"ḫaž-im+nī[ @ u.B. @  @ noun @ ": [
-			"KBo 33.10+, {€2} Rs. III 6′"
-		],
-		"]kamluri-ne @ GN? @ { a → ABL/INS} @ noun @ ": [
-			"KBo 33.10+, {€2} Rs. III 7′"
-		],
-		"]kamluri-ne-e @ GN? @ { a → RELAT.SG-DIR/LOC} @ noun @ ": [
-			"KBo 33.10+, {€2} Rs. III 7′"
 		],
 		"ḪUR.SAG @ Berg @ { a → .ABS} @ noun @ ": [
 			"KBo 33.10+, {€2} Rs. III 7′"
 		],
-		"ḪUR.SAG-[ @ Berg @  @ noun @ ": [
-			"KBo 33.10+, {€2} Rs. III 7′"
-		],
-		"]ma=an @ u.B. @ { a → =CON} @ unclear @ ": [
-			"KBo 33.10+, {€2} Rs. III 8′"
-		],
-		"]=man @ u.B. @ { a → =CON} { b → =PCTL} @ unclear @ ": [
-			"KBo 33.10+, {€2} Rs. III 8′"
-		],
 		"ag-i-evā=tta @ aufnehmen; erheben; heraufkommen @ { a → MOD.ACT-POT=1SG.ABS} @ verb @ ": [
 			"KBo 33.10+, {€2} Rs. III 8′"
-		],
-		"]-iffu-we @ u.B. @ { a → 1POSS.SG-GEN} @ noun @ ": [
-			"KBo 33.10+, {€2} Rs. III 9′",
-			"KUB 52.114+, {€1+2} 7′"
 		],
 		"nave-ne-va @ u.B. @ { a → RELAT.SG-DAT} @ noun @ ": [
 			"KBo 33.10+, {€2} Rs. III 9′"
 		],
 		"nave-ne-ve @ u.B. @ { a → RELAT.SG-GEN} @ noun @ ": [
-			"KBo 33.10+, {€2} Rs. III 9′"
-		],
-		"nave-ne-ve-[ @ u.B. @ { a → RELAT.SG-GEN-[} @ noun @ ": [
 			"KBo 33.10+, {€2} Rs. III 9′"
 		],
 		"nave-ne-va @ (Todes-)Schicksal? @ { a → RELAT.SG-DAT} @ noun @ ": [
@@ -492,50 +203,15 @@
 		"nave-ne-ve @ (Todes-)Schicksal? @ { a → RELAT.SG-GEN} @ noun @ ": [
 			"KBo 33.10+, {€2} Rs. III 9′"
 		],
-		"nave-ne-ve-[ @ (Todes-)Schicksal? @ { a → RELAT.SG-GEN} @ noun @ ": [
-			"KBo 33.10+, {€2} Rs. III 9′"
-		],
-		"nīv[ @ u.B. @  @ unclear @ ": [
-			"KBo 33.10+, {€2} Rs. III 10′"
-		],
-		"]ša[ @ u.B. @  @ unclear @ ": [
-			"KBo 33.10+, {€1} Rs.? 1′",
-			"KBo 33.61a+, {€2} Rs.? 1′"
-		],
-		"Ullō-[ @ PN @  @ noun @ ": [
-			"KBo 33.10+, {€1} Rs.? 2′"
-		],
-		"šōu[ @ u.B. @  @ unclear @ ": [
-			"KBo 33.10+, {€1} Rs.? 3′"
-		],
 		"šinde @ sieben @ { a → .ABS} @ NUM @ ": [
 			"KBo 33.10+, {€1} Rs.? 4′"
 		],
 		"šende @ u.B. @ { a → .ABS} @ noun @ ": [
 			"KBo 33.10+, {€1} Rs.? 4′"
 		],
-		"šende-[ @ u.B. @  @ noun @ ": [
-			"KBo 33.10+, {€1} Rs.? 4′"
-		],
-		"šend-e[ @ u.B. @  @ unclear @ ": [
-			"KBo 33.10+, {€1} Rs.? 4′"
-		],
-		"šind-e[ @ sieben @  @ NUM @ ": [
-			"KBo 33.10+, {€1} Rs.? 4′"
-		],
-		"kē[ @ u.B. @  @ unclear @ ": [
-			"KBo 33.10+, {€1} Rs.? 5′",
-			"KBo 8.144+, {€1} Rs. IV 15′"
-		],
 		"Šavoška @ DN @ { a → .ABS} @ noun @ ": [
 			"KBo 33.10+, {€1} Rs.? 6′",
 			"KBo 12.80+, {€2+3} Vs. I 1′/Vs. I? 2"
-		],
-		"Šavoška-[ @ DN @  @ noun @ ": [
-			"KBo 33.10+, {€1} Rs.? 6′"
-		],
-		"uw-āt[ @ u.B. @  @ unclear @ ": [
-			"KBo 33.10+, {€1} Rs.? 7′"
 		],
 		"uw-ā=d @ essen @ { a → INT=1SG.ABS} @ verb @ ": [
 			"KBo 33.10+, {€1} Rs.? 7′"
@@ -563,23 +239,11 @@
 		"faġ-i-a @ zerstören @ { a → TR-3A.SG} @ verb @ ": [
 			"KBo 33.10+, {€1} Rs.? 9′"
 		],
-		"faġ-i-a-[ @ zerstören @ { a → TR-3A.SG} @ verb @ ": [
-			"KBo 33.10+, {€1} Rs.? 9′"
-		],
-		"tum[ @ u.B. @  @ unclear @ ": [
-			"KBo 51.228+, {€1} Vs. 2′"
-		],
-		"ḫari-ne-[ @ Weg @ { a → RELAT.SG} @ noun @ ": [
-			"KBo 51.228+, {€1} Vs. 3′"
-		],
 		"ḫari-ne @ Weg @ { a → ABL/INS} @ noun @ ": [
 			"KBo 51.228+, {€1} Vs. 3′"
 		],
 		"ḫari-ne-e @ Weg @ { a → RELAT.SG-DIR/LOC} @ noun @ ": [
 			"KBo 51.228+, {€1} Vs. 3′"
-		],
-		"tipḫ+ude-na-až-e-[ @ u.B. @ { a → RELAT.PL-PL-GEN} @ noun @ ": [
-			"KBo 51.228+, {€1} Vs. 4′"
 		],
 		"agi @ u.B. @ { a → .ABS} @ noun @ ": [
 			"KBo 51.228+, {€1} Vs. 5′"
@@ -597,13 +261,7 @@
 		"sappi @ u.B. @ { a → .ABS} @ noun @ ": [
 			"KBo 51.228+, {€1} Vs. 5′"
 		],
-		"sappi-[ @ u.B. @  @ noun @ ": [
-			"KBo 51.228+, {€1} Vs. 5′"
-		],
 		"sapp-i @ u.B. @ { a → ANTIP} { b → TR.IMP} @ verb @ ": [
-			"KBo 51.228+, {€1} Vs. 5′"
-		],
-		"sapp-i[ @ u.B. @  @ unclear @ ": [
 			"KBo 51.228+, {€1} Vs. 5′"
 		],
 		"sūl+ūd-e @ lösen @ { a → TR.IMP} { b → ANTIP} @ verb @ ": [
@@ -639,15 +297,9 @@
 		"ue @ nein? @  @ INTJ @ ": [
 			"KBo 51.228+, {€1} Vs. 8′"
 		],
-		"pu[ @ u.B. @  @ unclear @ ": [
-			"KBo 51.228+, {€1} Vs. 8′"
-		],
 		"ave-až-a @ wer; jeder @ PL-DAT/ESS @ noun @ ": [
 			"KBo 51.228+, {€1} Vs. 9′",
 			"KBo 27.219+, {€1+2} Rs. IV 1′/Rs. 4"
-		],
-		"Ḫu[ @ DN @  @ noun @ ": [
-			"KBo 51.228+, {€1} Vs. 9′"
 		],
 		"fe-lla @ 2PRON; 2PRON.SG @ { a → PL.ABS} @ PRON @ ": [
 			"KBo 51.228+, {€1} Vs. 10′"
@@ -658,12 +310,6 @@
 		"anni @ PRON.DEM @ { a → .ABS} @ PRON @ ": [
 			"KBo 51.228+, {€1} Vs. 10′",
 			"KUB 45.61,Vs. II? 9"
-		],
-		"ann-ita[ @ u.B. @  @ unclear @ ": [
-			"KBo 51.228+, {€1} Vs. 10′"
-		],
-		"ta[ @ u.B. @  @ noun @ ": [
-			"KBo 51.228+, {€1} Vs. 10′"
 		],
 		"Ḫude-na-āž-a @ DN @ { a → RELAT.PL-PL-DAT/ESS} @ noun @ ": [
 			"KBo 51.228+, {€1} Vs. 11′"
@@ -698,9 +344,6 @@
 		"ḫue+ni-i-va=n @ u.B. @ { a → 3POSS.SG-DAT=3SG.ABS} @ noun @ ": [
 			"KBo 51.228+, {€1} Vs. 14′"
 		],
-		"ḫum+ar+o-[ @ lapislazuli @  @ noun @ ": [
-			"KBo 51.228+, {€1} Vs. 14′"
-		],
 		"tab-ašt-i-le @ gießen @ { a → RES-MOD.ACT-1JUSS} @ verb @ ": [
 			"KBo 51.228+, {€1} Vs. 15′"
 		],
@@ -713,9 +356,6 @@
 		"ēni-na @ Gott @ { a → RELAT.PL.ABS} @ noun @ ": [
 			"KBo 51.228+, {€1} Vs. 16′",
 			"KBo 32.13+, {€1} Vs. 25a"
-		],
-		"ēni-na-[ @ Gott @ { a → RELAT.PL} @ noun @ ": [
-			"KBo 51.228+, {€1} Vs. 16′"
 		],
 		"nēli-a=v=an @ u.B. @ { a → ESS=2PL.ABS=CON} @ noun @ ": [
 			"KBo 51.228+, {€1} Vs. 17′"
@@ -735,18 +375,7 @@
 		"nēla-b-a=n @ u.B. @ { a → 2POSS.SG-ESS=3SG.ABS} @ noun @ ": [
 			"KBo 51.228+, {€1} Vs. 17′"
 		],
-		"ta[ @ u.B. @  @ unclear @ ": [
-			"KBo 51.228+, {€1} Vs. 17′",
-			"KBo 19.125,4′",
-			"DAAM 1.14,Vs. 7′",
-			"KUB 47.5+, {€1+2} Vs. I 8′/1′",
-			"KBo 32.11,Vs. I 13",
-			"KBo 32.67,Rs.? IV 6′"
-		],
 		"for+i+šš+a+nni @ u.B. @ { a → .ABS} @ noun @ ": [
-			"KBo 51.228+, {€1} Vs. 18′"
-		],
-		"for+i+šš+a+nni-[ @ u.B. @  @ noun @ ": [
 			"KBo 51.228+, {€1} Vs. 18′"
 		],
 		"mānn-e=tta=an @ sein @ { a → STAT=1SG.ABS=CON} @ verb @ ": [
@@ -767,45 +396,11 @@
 		"ubuli-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ ": [
 			"KBo 51.228+, {€1} Vs. 21′"
 		],
-		"ubuli-na-[ @ u.B. @ { a → RELAT.PL.ABS} @ noun @ ": [
-			"KBo 51.228+, {€1} Vs. 21′"
-		],
-		"ub-ulla[ @ u.B. @  @ unclear @ ": [
-			"KBo 51.228+, {€1} Vs. 21′"
-		],
-		"kig-i[ @ u.B. @  @ unclear @ ": [
-			"KBo 51.228+, {€1} Vs. 22′"
-		],
-		"šuri-ne-[ @ u.B. @ { a → RELAT.SG} @ noun @ ": [
-			"KBo 51.228+, {€1} Rs. 1′"
-		],
 		"šuri-ne @ u.B. @ { a → ABL/INS} @ noun @ ": [
 			"KBo 51.228+, {€1} Rs. 1′"
 		],
 		"šuri-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ ": [
 			"KBo 51.228+, {€1} Rs. 1′"
-		],
-		"šurr-i[ @ eilen @  @ unclear @ ": [
-			"KBo 51.228+, {€1} Rs. 1′"
-		],
-		"šurr-i[ @ u.B. @  @ unclear @ ": [
-			"KBo 51.228+, {€1} Rs. 1′"
-		],
-		"tid-ar[ @ u.B. @  @ unclear @ ": [
-			"KBo 51.228+, {€1} Rs. 2′",
-			"KBo 51.228+, {€1} Rs. 11′"
-		],
-		"tid-ar[ @ zählen @  @ unclear @ ": [
-			"KBo 51.228+, {€1} Rs. 2′",
-			"KBo 51.228+, {€1} Rs. 11′"
-		],
-		"tid-ar[ @ angreifen @  @ unclear @ ": [
-			"KBo 51.228+, {€1} Rs. 2′",
-			"KBo 51.228+, {€1} Rs. 11′"
-		],
-		"ḫar[ @ u.B. @  @ unclear @ ": [
-			"KBo 51.228+, {€1} Rs. 3′",
-			"KUB 47.16,10′"
 		],
 		"ari @ das Böse @ .ABS @ noun @ ": [
 			"KBo 51.228+, {€1} Rs. 4′"
@@ -816,20 +411,8 @@
 		"ari @ u.B. @ { a → .ABS} @ noun @ ": [
 			"KBo 51.228+, {€1} Rs. 4′"
 		],
-		"ḫāu[ @ u.B. @  @ unclear @ ": [
-			"KBo 51.228+, {€1} Rs. 5′"
-		],
-		"ḫā-u[ @ nehmen @  @ unclear @ ": [
-			"KBo 51.228+, {€1} Rs. 5′"
-		],
 		"kunde @ u.B. @ { a → .ABS} @ noun @ ": [
 			"KBo 51.228+, {€1} Rs. 6′"
-		],
-		"kunde-[ @ u.B. @  @ noun @ ": [
-			"KBo 51.228+, {€1} Rs. 6′"
-		],
-		"Irrib[ @ PN @  @ noun @ ": [
-			"KBo 51.228+, {€1} Rs. 7′"
 		],
 		"al-u+m+āe @ sprechen @ { a → CVB} @ NF @ ": [
 			"KBo 51.228+, {€1} Rs. 8′",
@@ -842,12 +425,6 @@
 		],
 		"ište=nna @ 1PRON.SG @ { a → .ABS=3SG.ABS} @ PRON @ ": [
 			"KBo 51.228+, {€1} Rs. 10′"
-		],
-		"išt-en[ @ u.B. @  @ unclear @ ": [
-			"KBo 51.228+, {€1} Rs. 10′"
-		],
-		"Ūllu-[ @ PN @  @ noun @ ": [
-			"KBo 51.228+, {€1} Rs. 12′"
 		],
 		"for-i-le @ sehen @ { a → MOD.ACT-1JUSS} @ verb @ ": [
 			"KBo 51.228+, {€1} Rs. 14′"
@@ -868,19 +445,7 @@
 		"šari-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ ": [
 			"KBo 51.228+, {€1} Rs. 15′"
 		],
-		"na[ @ u.B. @  @ unclear @ ": [
-			"KBo 51.228+, {€1} Rs. 15′",
-			"KBo 33.61a+, {€1} Rs.? 7′",
-			"KUB 47.3,6′"
-		],
-		"parzi-[ @ u.B. @  @ unclear @ ": [
-			"KBo 51.228+, {€1} Rs. 16′"
-		],
 		"Kalgamiš @ DN @ { a → .ABS} @ noun @ ": [
-			"KBo 51.228+, {€1} Rs. 17′",
-			"KBo 8.144+, {€2} Vs. I 21′"
-		],
-		"Kalgamiš-[ @ DN @  @ noun @ ": [
 			"KBo 51.228+, {€1} Rs. 17′",
 			"KBo 8.144+, {€2} Vs. I 21′"
 		],
@@ -892,15 +457,6 @@
 		],
 		"puss-a @ u.B. @ { a → INT} @ verb @ ": [
 			"KBo 51.228+, {€1} Rs. 19′"
-		],
-		"mānu-[ @ 3PRON.SG @  @ PRON @ ": [
-			"KBo 51.228+, {€1} Rs. 20′"
-		],
-		"mān-u[ @ u.B. @  @ unclear @ ": [
-			"KBo 51.228+, {€1} Rs. 20′"
-		],
-		"ēnġi-ne-[ @ u.B. @ { a → RELAT.SG} @ noun @ ": [
-			"KBo 51.228+, {€2} 1′"
 		],
 		"ēnġi-ne @ u.B. @ { a → ABL/INS} @ noun @ ": [
 			"KBo 51.228+, {€2} 1′"
@@ -916,29 +472,12 @@
 		"mur-i-l-āe @ u.B. @ { a → MOD.ACT-l-PURP} @ verb @ ": [
 			"KBo 51.228+, {€2} 2′"
 		],
-		"ku[ @ u.B. @  @ unclear @ ": [
-			"KBo 51.228+, {€2} 3′",
-			"KUB 47.8,Vs. III? 3′"
-		],
 		"šatt-o-m @ ergreifen @ TR.PFV-3A.SG @ verb @ ": [
 			"KBo 51.228+, {€2} 4′",
 			"RS 19.148,2′"
 		],
-		"šu[ @ u.B. @  @ unclear @ ": [
-			"KBo 51.228+, {€2} 4′",
-			"KBo 33.61a+, {€3} 4′",
-			"KUB 47.4,Rs. IV 21‴",
-			"KBo 32.12,Vs. I 3",
-			"KBo 32.214,Vs. I 8′"
-		],
 		"ḫužuri-na-āž-a @ u.B. @ { a → RELAT.PL-PL-DAT/ESS} @ noun @ ": [
 			"KBo 51.228+, {€2} 5′"
-		],
-		"ḫilimzu[ @ u.B. @  @ unclear @ ": [
-			"KBo 51.228+, {€2} 7′"
-		],
-		"kišḫi-ne-[ @ Thron @ { a → RELAT.SG} @ noun @ ": [
-			"KBo 51.228+, {€2} 8′"
 		],
 		"kišḫi-ne @ Thron @ { a → ABL/INS} @ noun @ ": [
 			"KBo 51.228+, {€2} 8′"
@@ -948,9 +487,6 @@
 			"KBo 32.20,Vs. I 6′",
 			"KBo 32.20,Vs. I 18′"
 		],
-		"kun[ @ u.B. @  @ unclear @ ": [
-			"KBo 51.228+, {€2} 9′"
-		],
 		"naḫḫ-a-b @ sich setzen; sitzen; einsetzen @ INT-b @ verb @ ": [
 			"KBo 51.228+, {€3} 2′",
 			"KUB 45.64+, {€1} Vs.? 13′",
@@ -959,20 +495,11 @@
 			"KBo 32.14,Rs. 12a",
 			"KBo 32.14,Rs. 24"
 		],
-		"]ūll+ūdi-a @ u.B. @ { a → ESS} @ noun @ ": [
-			"KBo 51.228+, {€3} 3′"
-		],
-		"]ūll-ūd-a @ u.B. @ { a → ūd-3A.SG} { b → ūd-INT} @ verb @ ": [
-			"KBo 51.228+, {€3} 3′"
-		],
 		"nur+o+že-a @ u.B. @ { a → ESS} @ noun @ ": [
 			"KBo 51.228+, {€4} 2′"
 		],
 		"nur-ož-a @ u.B. @ { a → PST-3A.SG} @ verb @ ": [
 			"KBo 51.228+, {€4} 2′"
-		],
-		"Ūl[ @ PN @  @ noun @ ": [
-			"KBo 51.228+, {€4} 3′"
 		],
 		"al-u+m+āī-n @ sprechen @ { a → CVB-n} @ NF @ ": [
 			"KBo 8.144+, {€1} Vs. I 1′",
@@ -1026,15 +553,8 @@
 		"až-ašt-ed-ōw @ u.B. @ { a → RES-FUT-1A.SG} @ verb @ ": [
 			"KBo 8.144+, {€1} Vs. I 7′"
 		],
-		"šun[ @ u.B. @  @ unclear @ ": [
-			"KBo 8.144+, {€1} Vs. I 7′",
-			"KBo 8.144+, {€1} Vs. I 10′"
-		],
 		"Kalgamiž-ož=l @ DN @ { a → ERG=3PL.ABS} @ noun @ ": [
 			"KBo 8.144+, {€1} Vs. I 8′"
-		],
-		"an[ @  @  @ unclear @ ": [
-			"KBo 8.144+, {€1} Vs. I 9′"
 		],
 		"kad-i-o @ sagen; sprechen @ { a → TR-2A.SG} @ verb @ ": [
 			"KBo 8.144+, {€1} Vs. I 10′"
@@ -1064,23 +584,11 @@
 		"ur+o+nni @ hinterer; letzterer @ { a → .ABS} @ noun @ ": [
 			"KBo 8.144+, {€1} Vs. I 11′"
 		],
-		"ur+o+nni-[ @ hinterer; letzterer @  @ noun @ ": [
-			"KBo 8.144+, {€1} Vs. I 11′"
-		],
 		"šukk+utt-a=tta=m @ u.B. @ { a → INT=1SG.ABS=CON} @ verb @ ": [
 			"KBo 8.144+, {€1} Vs. I 12′"
 		],
 		"šukk+utti-a=tta=m @ u.B. @ { a → ESS=1SG.ABS=CON} @ noun @ ": [
 			"KBo 8.144+, {€1} Vs. I 12′"
-		],
-		"e[ @ u.B. @  @ unclear @ ": [
-			"KBo 8.144+, {€1} Vs. I 12′",
-			"KBo 33.61a+, {€1} Rs.? 14′",
-			"KUB 45.64+, {€1} Rs.? 15′",
-			"KUB 45.82,Vs. 5′",
-			"KBo 32.15,Vs. 15a′",
-			"KBo 32.58,Rs. IV 1",
-			"RS 19.148,4′"
 		],
 		"šukk+utt-a=tta @ u.B. @ { a → INT=1SG.ABS} @ verb @ ": [
 			"KBo 8.144+, {€2+1} Vs. I 13′"
@@ -1088,26 +596,10 @@
 		"šukk+utti-a=tta @ u.B. @ { a → ESS=1SG.ABS} @ noun @ ": [
 			"KBo 8.144+, {€2+1} Vs. I 13′"
 		],
-		"er-a[ @ u.B. @  @ unclear @ ": [
-			"KBo 8.144+, {€2+1} Vs. I 13′",
-			"KBo 32.67,Rs.? IV 3′"
-		],
-		"u[ @ u.B. @  @ unclear @ ": [
-			"KBo 8.144+, {€2+1} Vs. I 14′",
-			"KBo 8.144+, {€2} Vs. I 25′",
-			"KBo 33.61a+, {€1} Rs.? 15′",
-			"KUB 47.4,Rs. IV 22‴"
-		],
 		"ašti=m @ Frau; Ehefrau @ { a → .ABS=CON} @ noun @ ": [
 			"KBo 8.144+, {€2+1} Vs. I 14′"
 		],
 		"ašti-i=m @ u.B. @ { a → 3POSS.SG.ABS=CON} @ noun @ ": [
-			"KBo 8.144+, {€2+1} Vs. I 14′"
-		],
-		"]-ašt-i=m @ u.B. @ { a → RES-ANTIP=CON} { b → RES-TR.IMP=CON} { c → RES-ANTIP=2SG.ABS} { d → RES-TR.IMP=2SG.ABS} @ verb @ ": [
-			"KBo 8.144+, {€2+1} Vs. I 14′"
-		],
-		"ēšš-i[ @ u.B. @  @ unclear @ ": [
 			"KBo 8.144+, {€2+1} Vs. I 14′"
 		],
 		"kiv+o+že-ož @ u.B. @ { a → EQU} @ noun @ ": [
@@ -1137,13 +629,7 @@
 		"ind-i-anni=m @ u.B @ { a → MOD.ACT-DESID=CON} { b → MOD.ACT-DESID=2SG.ABS} @ verb @ ": [
 			"KBo 8.144+, {€2+1} Vs. I 16′"
 		],
-		"kigl-a[ @ u.B. @  @ unclear @ ": [
-			"KBo 8.144+, {€2+1} Vs. I 16′"
-		],
 		"šo-āž-uda @ 1PRON @ { a → PL-DIR} @ PRON @ ": [
-			"KBo 8.144+, {€2+1} Vs. I 17′"
-		],
-		"ḫarž-a[ @ u.B. @  @ unclear @ ": [
 			"KBo 8.144+, {€2+1} Vs. I 17′"
 		],
 		"Engida-ž=l @ DN @ { a → ERG=3PL.ABS} @ noun @ ": [
@@ -1153,18 +639,8 @@
 		"tive-b @ Wort; Sache @ { a → 2POSS.SG.ABS} @ noun @ ": [
 			"KBo 8.144+, {€2} Vs. I 20′"
 		],
-		"tiž-i[ @ u.B. @  @ unclear @ ": [
-			"KBo 8.144+, {€2} Vs. I 20′"
-		],
 		"šena-iffe @ Bruder @ { a → 1POSS.SG.ABS} @ noun @ ": [
 			"KBo 8.144+, {€2} Vs. I 22′"
-		],
-		"pa[ @ u.B. @  @ unclear @ ": [
-			"KBo 8.144+, {€2} Vs. I 22′",
-			"KUB 47.4,Vs. I 4″",
-			"KUB 47.5+, {€1} Rs. III 14′",
-			"KUB 47.8,Vs. III? 2′",
-			"KBo 32.19,Vs. 50a"
 		],
 		"ḫenni @ jetzt @  @ ADV @ ": [
 			"KBo 8.144+, {€2} Vs. I 23′",
@@ -1173,24 +649,11 @@
 			"KUB 45.64+, {€1} Vs.? 11′",
 			"KBo 32.15,Vs. 4a′"
 		],
-		"ev[ @ u.B. @  @ unclear @ ": [
-			"KBo 8.144+, {€2} Vs. I 23′"
-		],
 		"nūmi-a @ u.B. @ { a → ESS} @ noun @ ": [
 			"KBo 8.144+, {€2} Vs. I 24′"
 		],
 		"nūm-a @ u.B. @ INT @ verb @ ": [
 			"KBo 8.144+, {€2} Vs. I 24′"
-		],
-		"ši[ @ u.B. @  @ unclear @ ": [
-			"KBo 8.144+, {€2} Vs. I 24′",
-			"KBo 8.144+, {€1+3} Rs. IV 4′/7′",
-			"DAAM 1.14,Rs. 4′",
-			"DAAM 1.14,Rs. 17′",
-			"KBo 27.219+, {€1} Vs. I 12",
-			"KUB 47.5+, {€1} Vs. I 2′",
-			"KBo 32.19,Rs. 22a′",
-			"KBo 32.31+, {€2} Rs. IV 14′"
 		],
 		"kāde @ Gerste? @ { a → .ABS} @ noun @ ": [
 			"KBo 8.144+, {€2} Vs. I 25′"
@@ -1201,57 +664,11 @@
 		"šūni-b @ Hand @ { a → 2POSS.SG.ABS} @ noun @ ": [
 			"KBo 8.144+, {€2} Vs. I 26′"
 		],
-		"an[ @ u.B. @  @ unclear @ ": [
-			"KBo 8.144+, {€2} Vs. I 26′",
-			"KBo 8.144+, {€2} Rs. IV 3′",
-			"KBo 8.144+, {€1+3} Rs. IV 1′/4′"
-		],
 		"āšte-ne-va=an @ Frau; Ehefrau @ { a → RELAT.SG-DAT=CON} @ noun @ ": [
 			"KBo 8.144+, {€2} Vs. I 27′"
 		],
 		"āšte-ne-va=n @ Frau; Ehefrau @ { a → RELAT.SG-DAT=3SG.ABS} @ noun @ ": [
 			"KBo 8.144+, {€2} Vs. I 27′"
-		],
-		"]ri-ve-ne-e=l @ u.B. @ { a → GEN-RELAT.SG-DIR/LOC=3PL.ABS} @ noun @ ": [
-			"KBo 8.144+, {€2} Vs. I 29′"
-		],
-		"]ri-ve-ne-ž=l @ u.B. @ { a → GEN-RELAT.SG-ERG=3PL.ABS} @ noun @ ": [
-			"KBo 8.144+, {€2} Vs. I 29′"
-		],
-		"]ikku[ @ u.B. @  @ unclear @ ": [
-			"KBo 8.144+, {€2} Vs. I 30′"
-		],
-		"]ta[ @ u.B. @  @ unclear @ ": [
-			"KBo 8.144+, {€2} Rs. IV 1′",
-			"KBo 8.144+, {€2+3} Rs. IV 14′/1′",
-			"KBo 59.226,1′",
-			"KUB 47.5+, {€1+2} Vs. I 8′/1′"
-		],
-		"]ni @ u.B. @  @ unclear @ ": [
-			"KBo 8.144+, {€2} Rs. IV 2′",
-			"KBo 8.144+, {€1} Rs. IV 16′",
-			"VBoT 59,Vs. II 11′",
-			"VBoT 59,Rs. III 14′",
-			"KBo 27.219+, {€3+1} Vs. I(?) 10/Vs. II 10",
-			"KBo 27.219+, {€5+1} 2′/Rs. III 14′",
-			"KBo 35.43,Vs. 15′!",
-			"KBo 59.226,5′",
-			"KUB 47.5+, {€1+3} Vs. II 5′/Vs. II 11′",
-			"KUB 47.5+, {€3} Rs. III 5‴",
-			"KUB 47.5+, {€1} Rs. IV 19",
-			"KBo 32.100,1′"
-		],
-		"sa[ @ u.B. @  @ unclear @ ": [
-			"KBo 8.144+, {€2} Rs. IV 2′"
-		],
-		"]uwi-a @ u.B. @ { a → ESS} @ noun @ ": [
-			"KBo 8.144+, {€2} Rs. IV 3′"
-		],
-		"]-uw-a @ u.B. @ { a → MED-3A.SG} @ verb @ ": [
-			"KBo 8.144+, {€2} Rs. IV 3′"
-		],
-		"]uwa @ u.B. @ { a → .ABS} @ noun @ ": [
-			"KBo 8.144+, {€2} Rs. IV 3′"
 		],
 		"paba+ni-na-až-e @ Berg @ { a → RELAT.PL-PL-GEN} @ noun @ ": [
 			"KBo 8.144+, {€2} Rs. IV 4′"
@@ -1259,35 +676,11 @@
 		"šuri-na-āž-e @ u.B. @ { a → RELAT.PL-PL-GEN} @ noun @ ": [
 			"KBo 8.144+, {€2} Rs. IV 5′"
 		],
-		"šuri-na-āž-e-[ @ u.B. @ { a → RELAT.PL-PL-GEN} @ noun @ ": [
-			"KBo 8.144+, {€2} Rs. IV 5′"
-		],
 		"Ḫuwava+i=n @ DN @ { a → .ABS=3SG.ABS} { b → .ABS=CON} @ noun @ ": [
 			"KBo 8.144+, {€2} Rs. IV 6′"
 		],
 		"urūbi @ u.B. @ { a → .ABS} @ noun @ ": [
 			"KBo 8.144+, {€2} Rs. IV 7′"
-		],
-		"a[ @ u.B. @  @ unclear @ ": [
-			"KBo 8.144+, {€2} Rs. IV 7′",
-			"KUB 47.10,3′",
-			"KUB 47.10,17′",
-			"KBo 33.61a+, {€2} Rs.? 3′",
-			"KBo 33.61a+, {€2} Rs.? 4′",
-			"KBo 33.61a+, {€1+2} Rs.? 2′/Rs.? 12′",
-			"ABoT 2.18,7′",
-			"KBo 27.219+, {€1} Vs. I 17″",
-			"KBo 35.43,Vs. 6′",
-			"KBo 35.43,Vs. 14′!",
-			"KBo 71.80,3′",
-			"KUB 47.4,Vs. I 26′",
-			"KUB 47.5+, {€1} Rs. IV 4",
-			"KUB 47.5+, {€1} Rs. IV 12",
-			"KUB 47.8,Rs. IV? 3",
-			"KBo 32.11,Vs. I 10",
-			"KBo 32.12,Rs. IV 8′",
-			"KBo 32.50,10′",
-			"KBo 32.93,1′"
 		],
 		"ḫāžeri-āe @ Dolch @ { a → INS} @ noun @ ": [
 			"KBo 8.144+, {€2} Rs. IV 8′"
@@ -1310,10 +703,6 @@
 		"saz-ol-d-a @ verköstigen @ { a → ol-PL.A-3A} @ verb @ ": [
 			"KBo 8.144+, {€2} Rs. IV 11′"
 		],
-		"ḫav[ @ u.B. @  @ unclear @ ": [
-			"KBo 8.144+, {€2} Rs. IV 11′",
-			"KUB 45.61,Vs. II? 10"
-		],
 		"tāle-i-a @ Baum; Holz @ { a → 3POSS.SG-ESS} @ noun @ ": [
 			"KBo 8.144+, {€2} Rs. IV 12′"
 		],
@@ -1323,28 +712,8 @@
 		"tāli-i-a @ u.B. @ { a → 3POSS.SG-ESS} @ noun @ ": [
 			"KBo 8.144+, {€2} Rs. IV 12′"
 		],
-		"ḫer+ār+i-ī-[ @ Oberarm? @ { a → 3POSS.SG} @ noun @ ": [
-			"KBo 8.144+, {€2} Rs. IV 13′"
-		],
 		"ḫer+ār+i-ī @ Oberarm? @ { a → 3POSS.SG.ABS} @ noun @ ": [
 			"KBo 8.144+, {€2} Rs. IV 13′"
-		],
-		"iš[ @ u.B. @  @ unclear @ ": [
-			"KBo 8.144+, {€2+3} Rs. IV 14′/1′",
-			"KUB 45.64+, {€1} Vs.? 21′",
-			"KBo 32.19,Rs. 21a′"
-		],
-		"Pa[x]ambi-ž=l @ DN @ { a → ERG=3PL.ABS} @ noun @ ": [
-			"KBo 8.144+, {€2+3} Rs. IV 15′/2′"
-		],
-		"]runi-ne @ u.B. @ { a → ABL/INS} @ noun @ ": [
-			"KBo 8.144+, {€2+3} Rs. IV 16′/3′"
-		],
-		"]runi-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ ": [
-			"KBo 8.144+, {€2+3} Rs. IV 16′/3′"
-		],
-		"]runi-ne-[ @ u.B. @ { a → RELAT.SG} @ noun @ ": [
-			"KBo 8.144+, {€2+3} Rs. IV 16′/3′"
 		],
 		"šīe-na @ Wasser; Fluss @ { a → RELAT.PL.ABS} @ noun @ ": [
 			"KBo 8.144+, {€1+3} Rs. IV 1′/4′"
@@ -1359,9 +728,6 @@
 			"KBo 8.144+, {€1+3} Rs. IV 2′/5′"
 		],
 		"tīd-a @ u.B. @ { a → INT} @ verb @ ": [
-			"KBo 8.144+, {€1+3} Rs. IV 2′/5′"
-		],
-		"ež-a[ @ u.B. @  @ unclear @ ": [
 			"KBo 8.144+, {€1+3} Rs. IV 2′/5′"
 		],
 		"eže-a @ Erde @ { a → ESS} @ noun @ ": [
@@ -1403,9 +769,6 @@
 		"subn-ī-a @ u.B. @ { a → TR-3A.SG} @ verb @ ": [
 			"KBo 8.144+, {€1+3} Rs. IV 5′/8′"
 		],
-		"nan[ @ u.B. @  @ unclear @ ": [
-			"KBo 8.144+, {€1+3} Rs. IV 5′/8′"
-		],
 		"Naġmazuli-ž=l @ DN @ { a → ERG=3PL.ABS} @ noun @ ": [
 			"KBo 8.144+, {€1} Rs. IV 6′"
 		],
@@ -1426,9 +789,6 @@
 		"avari @ Feld @ { a → .ABS} @ noun @ ": [
 			"KBo 8.144+, {€1} Rs. IV 8′"
 		],
-		"avari-[ @ Feld @  @ noun @ ": [
-			"KBo 8.144+, {€1} Rs. IV 8′"
-		],
 		"fog+ādi-a @ u.B. @ { a → ESS} @ noun @ ": [
 			"KBo 8.144+, {€1} Rs. IV 9′"
 		],
@@ -1441,19 +801,10 @@
 		"šell+o+ġ+o+li-na @ Hausangehöriger? @ { a → RELAT.PL.ABS} @ noun @ ": [
 			"KBo 8.144+, {€1} Rs. IV 10′"
 		],
-		"for-u[ @ sehen @  @ unclear @ ": [
-			"KBo 8.144+, {€1} Rs. IV 10′"
-		],
 		"pab+ni @ Berg @ { a → .ABS} @ noun @ ": [
 			"KBo 8.144+, {€1} Rs. IV 11′"
 		],
 		"eni-na-až-e @ Gott @ { a → RELAT.PL-PL-GEN} @ noun @ ": [
-			"KBo 8.144+, {€1} Rs. IV 11′"
-		],
-		"itt-a[ @ gehen @  @ unclear @ ": [
-			"KBo 8.144+, {€1} Rs. IV 11′"
-		],
-		"itt-a[ @ kleiden @  @ unclear @ ": [
 			"KBo 8.144+, {€1} Rs. IV 11′"
 		],
 		"šumali-na=m @ u.B. @ { a → RELAT.PL.ABS=CON} @ noun @ ": [
@@ -1489,25 +840,15 @@
 			"KBo 32.15,Rs. 14a",
 			"RS 19.148,4′"
 		],
-		"mān[ @ u.B. @  @ unclear @ ": [
-			"KBo 8.144+, {€1} Rs. IV 14′",
-			"KUB 45.64+, {€1} Vs.? 18′"
-		],
 		"Šimīgae @ DN @ { a → .ABS} @ noun @ ": [
 			"KBo 8.144+, {€1} Rs. IV 15′"
 		],
 		"Ea @ DN @ { a → .ABS} @ noun @ ": [
 			"KBo 8.144+, {€1} Rs. IV 16′"
 		],
-		"ma[ @ u.B. @  @ unclear @ ": [
-			"KBo 8.144+, {€1} Rs. IV 16′"
-		],
 		"Aia @ DN @ { a → .ABS} @ noun @ ": [
 			"KUB 47.10,1′",
 			"KUB 47.10,10′"
-		],
-		"]n+u+tḫi @ u.B. @ { a → .ABS} @ noun @ ": [
-			"KUB 47.10,2′"
 		],
 		"anammi-a @ u.B. @ { a → ESS} @ noun @ ": [
 			"KUB 47.10,2′"
@@ -1521,12 +862,6 @@
 		"mānu-wa=lla @ 3PORN.SG @ { a → DAT=3PL.ABS} @ noun @ ": [
 			"KUB 47.10,3′"
 		],
-		"]sipi-āi=v @ u.B. @ { a → INS=2PL.ABS} @ noun @ ": [
-			"KUB 47.10,4′"
-		],
-		"]si @ u.B. @  @ unclear @ ": [
-			"KUB 47.10,4′"
-		],
 		"pā-i-b @ bauen @ { a → ANTIP-b} @ verb @ ": [
 			"KUB 47.10,4′"
 		],
@@ -1539,16 +874,6 @@
 		"sukk-i @ u.B. @ { a → ANTIP} { b → TR.IMP} @ verb @ ": [
 			"KUB 47.10,4′"
 		],
-		"ḫi[ @ u.B. @  @ unclear @ ": [
-			"KUB 47.10,4′",
-			"KBo 27.219+, {€1} Vs. I 3″"
-		],
-		"]k+o+nni-a @ u.B. @ { a → ESS} @ noun @ ": [
-			"KUB 47.10,5′"
-		],
-		"]-kko=nna @ u.B. @ { a → NEG=3SG.ABS} @ verb @ ": [
-			"KUB 47.10,5′"
-		],
 		"tān-d-u @ machen @ { a → d-MED} @ verb @ ": [
 			"KUB 47.10,5′"
 		],
@@ -1560,10 +885,6 @@
 		],
 		"=ān @ u.B. @ { a → =CON} @ unclear @ ": [
 			"KUB 47.10,6′"
-		],
-		"]ā=n @ u.B. @ { a → =3SG.ABS} @ unclear @ ": [
-			"KUB 47.10,6′",
-			"KUB 47.5+, {€1} Rs. IV 5"
 		],
 		"ag+ar+ġ-u @ u.B. @ { a → MED} @ verb @ ": [
 			"KUB 47.10,6′"
@@ -1595,12 +916,6 @@
 		"pen-id-o @ u.B. @ { a → PL.A-TR.PFV} @ verb @ ": [
 			"KUB 47.10,6′"
 		],
-		"kiž[ @ u.B. @  @ unclear @ ": [
-			"KUB 47.10,6′"
-		],
-		"]ruštandi-a @ u.B. @ { a → ESS} @ noun @ ": [
-			"KUB 47.10,7′"
-		],
 		"ālvi-a @ u.B. @ { a → ESS} @ noun @ ": [
 			"KUB 47.10,7′"
 		],
@@ -1610,24 +925,11 @@
 		"Ea @ DN @ .ABS @ noun @ ": [
 			"KUB 47.10,7′"
 		],
-		"mādi-ne-[ @ Weisheit @ { a → RELAT.SG} @ noun @ ": [
-			"KUB 47.10,7′"
-		],
-		"]i @ u.B. @  @ unclear @ ": [
-			"KUB 47.10,8′",
-			"KBo 33.61a+, {€1} Rs.? 10′",
-			"KUB 45.64+, {€1} Vs.? 14′",
-			"KBo 35.43,Vs. 6′",
-			"KUB 47.5+, {€1} Rs. IV 16"
-		],
 		"tabakki-a @ u.B. @ { a → ESS} @ noun @ ": [
 			"KUB 47.10,8′"
 		],
 		"nān-ind-o-eš=nna @ schlagen @ { a → PL.A-MOD.PAT-OPT=3SG.ABS} @ verb @ ": [
 			"KUB 47.10,8′",
-			"KUB 47.10,9′"
-		],
-		"]unz+ā+ni @ u.B. @ { a → .ABS} @ noun @ ": [
 			"KUB 47.10,9′"
 		],
 		"kuruppi-a @ u.B. @ { a → ESS} @ noun @ ": [
@@ -1639,25 +941,12 @@
 		"kur-upp-a @ u.B. @ { a → upp-INT} { b → upp-3A.SG} @ verb @ ": [
 			"KUB 47.10,9′"
 		],
-		"ḫu[ @ u.B. @  @ unclear @ ": [
-			"KUB 47.10,9′",
-			"KBo 32.31+, {€1} Rs. IV 3′"
-		],
 		"mādi-ne-ve @ Weisheit @ { a → RELAT.SG-GEN} @ noun @ ": [
 			"KUB 47.10,10′",
 			"KBo 27.219+, {€5} 7′"
 		],
 		"šīnunaġi @ u.B. @ { a → .ABS} @ noun @ ": [
 			"KUB 47.10,10′"
-		],
-		"ḫa[ @ u.B. @  @ unclear @ ": [
-			"KUB 47.10,10′",
-			"KUB 45.63,Vs. I 10",
-			"KBo 27.219+, {€1+2} Vs. I 21″/Vs. 1′",
-			"KBo 32.20,Rs. IV 6′"
-		],
-		"]aġigi-a @ u.B. @ { a → ESS} @ noun @ ": [
-			"KUB 47.10,11′"
 		],
 		"aġigi-a @ u.B. @ { a → ESS} @ noun @ ": [
 			"KUB 47.10,11′"
@@ -1683,15 +972,6 @@
 		"nav-an-ed-a @ u.B. @ { a → an-FUT-3A.SG} @ verb @ ": [
 			"KUB 47.10,11′"
 		],
-		"]andi @ u.B. @ { a → .ABS} @ noun @ ": [
-			"KUB 47.10,12′"
-		],
-		"]and-i @ u.B. @ { a → ANTIP} @ verb @ ": [
-			"KUB 47.10,12′"
-		],
-		"]an-d-i @ u.B. @ { a → d-ANTIP} @ PRON @ ": [
-			"KUB 47.10,12′"
-		],
 		"tāni-a @ u.B. @ { a → ESS} @ noun @ ": [
 			"KUB 47.10,12′"
 		],
@@ -1714,21 +994,6 @@
 		"šāl-i @ u.B. @ ANTIP @ verb @ ": [
 			"KUB 47.10,12′"
 		],
-		"su[ @ u.B. @  @ unclear @ ": [
-			"KUB 47.10,12′",
-			"KBo 27.219+, {€1} Rs. III 2′",
-			"KBo 27.219+, {€5+1} 3′/Rs. III 15′",
-			"KBo 32.20,Vs. I 8′"
-		],
-		"]a+nni @ u.B. @ { a → .ABS} @ noun @ ": [
-			"KUB 47.10,13′"
-		],
-		"]ani-ne @ u.B. @ { a → ABL/INS} @ PRON @ ": [
-			"KUB 47.10,13′"
-		],
-		"]ani-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ ": [
-			"KUB 47.10,13′"
-		],
 		"ḫōšti @ ein Stein @ { a → .ABS} @ noun @ ": [
 			"KUB 47.10,13′"
 		],
@@ -1744,17 +1009,11 @@
 		"āġri-a @ Weihrauch @ { a → ESS} @ noun @ ": [
 			"KUB 47.10,13′"
 		],
-		"supp-a[ @ u.B. @  @ unclear @ ": [
-			"KUB 47.10,13′"
-		],
 		"suppi-a @ u.B. @ { a → ESS} @ noun @ ": [
 			"KUB 47.10,13′"
 		],
 		"supp-a @ u.B. @ { a → INT} @ verb @ ": [
 			"KUB 47.10,13′"
-		],
-		"]ibri-a @ u.B. @ { a → ESS} @ noun @ ": [
-			"KUB 47.10,14′"
 		],
 		"pāri-a @ u.B. @ { a → ESS} @ noun @ ": [
 			"KUB 47.10,14′"
@@ -1768,19 +1027,10 @@
 		"ti+ni @ Wort @ { a → .ABS} @ noun @ ": [
 			"KUB 47.10,15′"
 		],
-		"]ti-ne @ u.B. @ { a → ABL/INS} @ noun @ ": [
-			"KUB 47.10,15′"
-		],
-		"]ti-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ ": [
-			"KUB 47.10,15′"
-		],
 		"am+a+nni-ne-va @ u.B. @ { a → RELAT.SG-DAT} @ noun @ ": [
 			"KUB 47.10,15′"
 		],
 		"ḫuwaži @ u.B. @ { a → .ABS} @ noun @ ": [
-			"KUB 47.10,15′"
-		],
-		"ḫuwaži-[ @ u.B. @  @ noun @ ": [
 			"KUB 47.10,15′"
 		],
 		"ḫuw-až-i @ u.B. @ { a → až-ANTIP} { b → až-TR.IMP} @ verb @ ": [
@@ -1791,37 +1041,11 @@
 			"KBo 19.125,2′",
 			"KBo 33.61a+, {€2} Vs.? (I) 2′"
 		],
-		"Ea-ve-ne-[ @ DN @ { a → GEN-RELAT.SG-[} @ noun @ ": [
-			"KUB 47.10,16′"
-		],
 		"Ea-ve-ne-e @ DN @ { a → GEN-RELAT.SG-DIR/LOC} @ noun @ ": [
 			"KUB 47.10,16′"
 		],
-		"]e @ u.B. @  @ unclear @ ": [
-			"KUB 47.10,17′",
-			"KBo 33.61a+, {€3+2} 3′/Vs.? (I) 11′",
-			"KBo 27.219+, {€1} Rs. III 2′",
-			"KBo 32.46,1a′"
-		],
 		"šā+i+šḫe @ u.B @ { a → .ABS} @ noun @ ": [
 			"KUB 47.10,17′"
-		],
-		"]un[ @ u.B. @  @ unclear @ ": [
-			"KUB 47.10,18′"
-		],
-		"un[ @ kommen; bringen @  @ unclear @ ": [
-			"KUB 47.10,18′"
-		],
-		"]fo[ @ u.B. @  @ unclear @ ": [
-			"KUB 47.15,1′",
-			"KUB 45.82,Vs. 1′"
-		],
-		"fo[ @ u.B. @  @ unclear @ ": [
-			"KUB 47.15,1′",
-			"KUB 45.82,Vs. 1′",
-			"KBo 27.219+, {€1} Vs. I 9″",
-			"KUB 52.114+, {€1+2} 7′",
-			"KBo 32.94,9′"
 		],
 		"tīve-na @ Wort; Sache @ RELAT.PL.ABS @ noun @ ": [
 			"KUB 47.15,2′",
@@ -1848,23 +1072,6 @@
 			"KBo 27.219+, {€3+6} Rs. 2′/4′",
 			"KUB 47.2,Vs. I 5"
 		],
-		"]fa=ān @ u.B. @ { a → =CON} @ unclear @ ": [
-			"KUB 47.15,4′"
-		],
-		"]fā=n @ u.B. @ { a → =3SG.ABS} @ unclear @ ": [
-			"KUB 47.15,4′"
-		],
-		"īš[ @ u.B. @  @ unclear @ ": [
-			"KUB 47.15,4′"
-		],
-		"]ti @ u.B. @  @ unclear @ ": [
-			"KUB 47.15,5′",
-			"KUB 27.40+, {€2} 2′",
-			"KUB 47.5+, {€3} Vs. II 14′",
-			"KBo 32.20,Rs. IV 5′",
-			"KBo 32.23,7′",
-			"KBo 32.88,3′"
-		],
 		"tāġe @ Mann @ { a → .ABS} @ noun @ ": [
 			"KUB 47.15,5′",
 			"DAAM 1.14,Vs. 3′",
@@ -1873,78 +1080,26 @@
 		"tāġ-i @ u.B. @ { a → ANTIP} { b → TR.IMP} @ verb @ ": [
 			"KUB 47.15,5′"
 		],
-		"ti[ @ u.B. @  @ unclear @ ": [
-			"KUB 47.15,5′",
-			"KUB 47.14,11′",
-			"KBo 71.80,8′",
-			"KUB 47.5+, {€1+2} Vs. I 8′/1′"
-		],
-		"]pala+nni @ u.B. @ { a → .ABS} @ noun @ ": [
-			"KUB 47.15,6′"
-		],
-		"]palani-ne @ u.B. @ { a → ABL/INS} @ noun @ ": [
-			"KUB 47.15,6′"
-		],
-		"]palani-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ ": [
-			"KUB 47.15,6′"
-		],
 		"ḪUR.SAG @ Berg @  @ noun @ ": [
 			"KUB 47.15,6′"
 		],
 		"šatt-ed-aw @ ergreifen @ { a → FUT-1A.SG} @ verb @ ": [
 			"KUB 47.15,7′"
 		],
-		"]umm+a+že-ne-nna @ u.B. @ { a → RELAT.SG-EQU2} @ noun @ ": [
-			"KUB 47.15,8′"
-		],
 		"umm+a+že-ne-nna @ u.B. @ { a → RELAT.SG-EQU2} @ noun @ ": [
-			"KUB 47.15,8′"
-		],
-		"]umm+a+že-ne=nna @ u.B. @ { a → ABL/INS=3SG.ABS} @ noun @ ": [
 			"KUB 47.15,8′"
 		],
 		"umm+a+že-ne=nna @ u.B. @ { a → ABL/INS=3SG.ABS} @ noun @ ": [
 			"KUB 47.15,8′"
 		],
-		"]umm+a+že-ne-e=nna @ u.B. @ { a → RELAT.SG-DIR/LOC=3SG.ABS} @ noun @ ": [
-			"KUB 47.15,8′"
-		],
 		"umm+a+že-ne-e=nna @ u.B. @ { a → RELAT.SG-DIR/LOC=3SG.ABS} @ noun @ ": [
 			"KUB 47.15,8′"
-		],
-		"]ḫōmbi-ve @ u.B. @ { a → GEN} @ noun @ ": [
-			"KUB 47.15,9′"
 		],
 		"ḫōmbi-ve @ u.B. @ { a → GEN} @ noun @ ": [
 			"KUB 47.15,9′"
 		],
-		"]ḫōmbi-i-ve @ u.B. @ { a → 3POSS.SG-GEN} @ noun @ ": [
-			"KUB 47.15,9′"
-		],
 		"ḫōmbi-i-ve @ u.B. @ { a → 3POSS.SG-GEN} @ noun @ ": [
 			"KUB 47.15,9′"
-		],
-		"al-i[ @ u.B. @  @ unclear @ ": [
-			"KUB 47.15,9′",
-			"KBo 32.11,Vs. I 11"
-		],
-		"]eriuli-ne-[ @ u.B. @ { a → RELAT.SG} @ noun @ ": [
-			"KUB 47.15,10′"
-		],
-		"]eriuli-ne @ u.B. @ { a → ABL/INS} @ noun @ ": [
-			"KUB 47.15,10′"
-		],
-		"]eriuli-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ ": [
-			"KUB 47.15,10′"
-		],
-		"]eri @ u.B. @  @ unclear @ ": [
-			"KUB 47.15,10′"
-		],
-		"ull-i[ @ u.B. @  @ unclear @ ": [
-			"KUB 47.15,10′"
-		],
-		"oli-ne-[ @ u.B. @ { a → RELAT.SG} @ noun @ ": [
-			"KUB 47.15,10′"
 		],
 		"oli-ne @ anderer @ { a → ABL/INS} @ noun @ ": [
 			"KUB 47.15,10′"
@@ -1957,18 +1112,6 @@
 		],
 		"ul-i-le @ u.B. @ { a → MOD.ACT-1JUSS} @ verb @ ": [
 			"KUB 47.15,10′"
-		],
-		"um[ @ u.B. @  @ unclear @ ": [
-			"KUB 47.15,11′"
-		],
-		"]-ā=d @ u.B. @ { a → ESS=1SG.ABS} @ noun @ ": [
-			"KUB 47.16,2′"
-		],
-		"]-ā=d @ u.B. @ { a → INT=1SG:ABS} @ verb @ ": [
-			"KUB 47.16,2′"
-		],
-		"]ā=d @ u.B. @ { a → =1SG.ABS} @ unclear @ ": [
-			"KUB 47.16,2′"
 		],
 		"šavli-ož @ Jahr @ { a → EQU} @ noun @ ": [
 			"KUB 47.16,3′"
@@ -1991,56 +1134,14 @@
 			"KUB 47.16,5′",
 			"KBo 54.4,5′"
 		],
-		"]-da=l @ u.B. @ DIR=3PL.ABS @ noun @ ": [
-			"KUB 47.16,6′"
-		],
 		"al-u+m+ai @ sprechen @ { b → CVB} @ NF @ ": [
 			"KUB 47.16,6′"
 		],
 		"Kumme-nī-ve @ GN @ { a → RELAT.SG-GEN} @ noun @ ": [
 			"KUB 47.16,7′"
 		],
-		"]-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ ": [
-			"KUB 47.16,8′",
-			"DAAM 1.14,Vs. 7′",
-			"KBo 27.219+, {€3} 1′"
-		],
 		"kad-i-ō-šše-na @ sagen; sprechen @ { a → TR-2A.SG-NOM-RELAT.PL.ABS} @ noun @ ": [
 			"KUB 47.16,8′"
-		],
-		"]inuwadi-āi @ u.B. @ { a → INS} @ noun @ ": [
-			"KUB 47.16,9′"
-		],
-		"]in-o-vade-āi @ u.B. @ { a → PAT-ADJ.NEG-INS} @ noun @ ": [
-			"KUB 47.16,9′"
-		],
-		"]ša+nni-ai @ u.B. @ { a → INS} @ noun @ ": [
-			"KUB 47.16,10′"
-		],
-		"]š-ann-i-ai @ u.B. @ { a → CAUS-MOD.ACT-PURP} { b → ann-MOD.ACT-PURP} @ verb @ ": [
-			"KUB 47.16,10′"
-		],
-		"ḫur[ @ u.B. @  @ unclear @ ": [
-			"KUB 47.16,10′"
-		],
-		"fā[ @ u.B. @  @ unclear @ ": [
-			"KUB 47.16,11′",
-			"KBo 32.80,2′"
-		],
-		"]rari-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ ": [
-			"KUB 47.16,13′"
-		],
-		"]rari-na-[ @ u.B. @ { a → RELAT.PL} @ noun @ ": [
-			"KUB 47.16,13′"
-		],
-		"]ḫi-a=v @ u.B. @ { a → ESS=2PL.ABS} @ noun @ ": [
-			"KUB 47.16,14′"
-		],
-		"]ḫ-a-b @ u.B. @ { a → INT-b} @ verb @ ": [
-			"KUB 47.16,14′"
-		],
-		"]ḫ-a=v @ u.B. @ { a → INT=2PL.ABS} { b → INT.IMP=2PL.ABS} @ verb @ ": [
-			"KUB 47.16,14′"
 		],
 		"kad-i-b @ sagen; sprechen @ { a → ANTIP-b} @ verb @ ": [
 			"TC-4F05h,Vs.? II oder III 1′"
@@ -2050,9 +1151,6 @@
 		],
 		"kad-i=v @ sagen; sprechen @ { a → ANTIP=2PL.ABS} { b → TR.IMP=2PL.ABS} @ verb @ ": [
 			"TC-4F05h,Vs.? II oder III 1′"
-		],
-		"er-an[ @ u.B. @  @ unclear @ ": [
-			"TC-4F05h,Vs.? II oder III 2′"
 		],
 		"pirr-i-b @ u.B. @ { a → ANTIP-b} @ verb @ ": [
 			"TC-4F05h,Vs.? II oder III 3′"
@@ -2069,50 +1167,8 @@
 		"piri-ne-e=v @ u.B. @ { a → RELAT.SG-DIR/LOC=2PL.ABS} @ noun @ ": [
 			"TC-4F05h,Vs.? II oder III 3′"
 		],
-		"Kumme-ne-[ @ GN @ { a → RELAT.SG} @ noun @ ": [
-			"TC-4F05h,Vs.? II oder III 4′",
-			"KBo 32.209,12′"
-		],
 		"Kalgamiž-ož=l @ DN @ ERG=3PL.ABS @ noun @ ": [
 			"TC-4F05h,Vs.? II oder III 5′"
-		],
-		"]ne-ž=l @ u.B; u.B.; u.B; u.B. @ { a → ERG=3PL.ABS} @ noun @ ": [
-			"KBo 19.125,2′"
-		],
-		"]-ne-ž=l @ u.B. @ { a → RELAT.SG-ERG=3PL.ABS} @ noun @ ": [
-			"KBo 19.125,2′"
-		],
-		"inū=[ @ wie @  @ CONJ @ ": [
-			"KBo 19.125,3′"
-		],
-		"inū=[ @ wie @  @ ADV @ ": [
-			"KBo 19.125,3′"
-		],
-		"]ini-na=m @ u.B. @ { a → RELAT.PL.ABS=CON} @ noun @ ": [
-			"KBo 19.125,4′"
-		],
-		"]i+nni-a=m @ u.B. @ { a → ESS=CON} { b → ESS=2SG.ABS} @ noun @ ": [
-			"KBo 19.125,4′"
-		],
-		"]inn-a=m @ u.B. @ { a → INT=CON} { b → INT=2SG.ABS} { c → INT.IMP=CON} { d → INT.IMP=2SG.ABS} @ verb @ ": [
-			"KBo 19.125,4′"
-		],
-		"tešše-[ @ erhaben @  @ noun @ ": [
-			"KBo 19.125,5′"
-		],
-		"tešš-e[ @ erhaben sein? @  @ verb @ ": [
-			"KBo 19.125,5′"
-		],
-		"]ne @ u.B. @  @ unclear @ ": [
-			"KBo 33.61a+, {€1} Vs.? 1′"
-		],
-		"]-ne @ u.B. @ { a → ABL/INS} @ noun @ ": [
-			"KBo 33.61a+, {€1} Vs.? 1′",
-			"KUB 47.5+, {€1+3} Vs. II 5′/Vs. II 11′"
-		],
-		"]-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ ": [
-			"KBo 33.61a+, {€1} Vs.? 1′",
-			"KUB 47.5+, {€1+3} Vs. II 5′/Vs. II 11′"
 		],
 		"šōri-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ ": [
 			"KBo 33.61a+, {€1} Vs.? 2′"
@@ -2120,26 +1176,10 @@
 		"šōrr-a @ u.B. @ INT @ verb @ ": [
 			"KBo 33.61a+, {€1} Vs.? 2′"
 		],
-		"uw-a[ @ u.B. @  @ unclear @ ": [
-			"KBo 33.61a+, {€1} Vs.? 2′"
-		],
-		"]ši @ u.B. @  @ unclear @ ": [
-			"KBo 33.61a+, {€1} Vs.? 3′",
-			"KUB 27.40+, {€1} 5′"
-		],
 		"kešḫi-ī-da @ Thron @ { a → 3POSS.SG-DIR} @ noun @ ": [
 			"KBo 33.61a+, {€1} Vs.? 3′"
 		],
 		"aī=n @ u.B. @ { a → =3SG.ABS} { b → =CON} @ CONJ @ ": [
-			"KBo 33.61a+, {€1} Vs.? 4′"
-		],
-		"]-aī=n @ u.B. @ { a → INS=3SG.ABS} { b → INS=CON} @ noun @ ": [
-			"KBo 33.61a+, {€1} Vs.? 4′"
-		],
-		"]-aī-n @ u.B. @ { a → PURP-n} @ verb @ ": [
-			"KBo 33.61a+, {€1} Vs.? 4′"
-		],
-		"]-aī=n @ u.B. @ { a → PURP=3SG.ABS} { b → PURP=CON} @ verb @ ": [
 			"KBo 33.61a+, {€1} Vs.? 4′"
 		],
 		"šāri-a @ Wunsch? @ ESS @ noun @ ": [
@@ -2148,21 +1188,10 @@
 		"šār-a @ wünschen? @ INT @ verb @ ": [
 			"KBo 33.61a+, {€1} Vs.? 4′"
 		],
-		"tī[ @ u.B. @  @ unclear @ ": [
-			"KBo 33.61a+, {€1} Vs.? 4′",
-			"ABoT 2.18,9′",
-			"KBo 32.12,Vs. I 20"
-		],
-		"]allūri-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ ": [
-			"KBo 33.61a+, {€1} Vs.? 5′"
-		],
 		"allūri-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ ": [
 			"KBo 33.61a+, {€1} Vs.? 5′"
 		],
 		"allūri-na @ ein Gewand @ { a → RELAT.PL.ABS} @ noun @ ": [
-			"KBo 33.61a+, {€1} Vs.? 5′"
-		],
-		"um-i[ @ u.B. @ .ABS @ unclear @ ": [
 			"KBo 33.61a+, {€1} Vs.? 5′"
 		],
 		"tarē-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ ": [
@@ -2171,37 +1200,16 @@
 		"pāġi @ Kopf @ { a → .ABS} @ noun @ ": [
 			"KBo 33.61a+, {€1} Vs.? 6′"
 		],
-		"pāġi-[ @ Kopf @  @ noun @ ": [
-			"KBo 33.61a+, {€1} Vs.? 6′"
-		],
 		"pāġi @ u.B. @  @ noun @ ": [
-			"KBo 33.61a+, {€1} Vs.? 6′"
-		],
-		"pāġi-[ @ u.B. @  @ noun @ ": [
 			"KBo 33.61a+, {€1} Vs.? 6′"
 		],
 		"pāġ-i @ zerstören @ { a → ANTIP} { b → TR.IMP} @ verb @ ": [
 			"KBo 33.61a+, {€1} Vs.? 6′"
 		],
-		"pāġ-i[ @ zerstören @  @ unclear @ ": [
-			"KBo 33.61a+, {€1} Vs.? 6′"
-		],
 		"pāġ-i @ u.B. @ { a → ANTIP} { b → TR.IMP} @ verb @ ": [
 			"KBo 33.61a+, {€1} Vs.? 6′"
 		],
-		"pāġ-i[ @ u.B. @  @ unclear @ ": [
-			"KBo 33.61a+, {€1} Vs.? 6′"
-		],
-		"]m+ī+ġe @ u.B. @ { a → .ABS} @ noun @ ": [
-			"KBo 33.61a+, {€1} Vs.? 7′"
-		],
-		"]mīġi @ u.B. @ { a → .ABS} @ noun @ ": [
-			"KBo 33.61a+, {€1} Vs.? 7′"
-		],
 		"mīġi @ u.B. @ { a → .ABS} @ noun @ ": [
-			"KBo 33.61a+, {€1} Vs.? 7′"
-		],
-		"]m-īġ-i @ u.B. @ { a → īġ-ANTIP} { b → īġ-TR.IMP} @ verb @ ": [
 			"KBo 33.61a+, {€1} Vs.? 7′"
 		],
 		"mīġ-i @ u.B. @ { a → ANTIP} { b → TR.IMP} @ verb @ ": [
@@ -2213,49 +1221,11 @@
 			"KBo 33.61a+, {€1+2} Rs.? 2′/Rs.? 12′",
 			"KUB 45.63,Vs. I 3"
 		],
-		"]uštū[ @ u.B. @  @ unclear @ ": [
-			"KBo 33.61a+, {€1} Vs.? 8′"
-		],
-		"]-ušt-ū[ @ u.B. @ { a → RES} @ verb @ ": [
-			"KBo 33.61a+, {€1} Vs.? 8′"
-		],
-		"]-ušt-ū-[ @ u.B. @ { a → RES-MED} @ verb @ ": [
-			"KBo 33.61a+, {€1} Vs.? 8′"
-		],
-		"]-ušt-ū-[ @ u.B. @ { a → RES-TR.PFV} @ verb @ ": [
-			"KBo 33.61a+, {€1} Vs.? 8′"
-		],
-		"ušt-ū-[ @ herausgehen; fortbringen; erheben; aufstehen @ { a → MED} @ verb @ ": [
-			"KBo 33.61a+, {€1} Vs.? 8′"
-		],
-		"ušt-ū-[ @ herausgehen; fortbringen; erheben; aufstehen @ { a → TR.PFV} @ verb @ ": [
-			"KBo 33.61a+, {€1} Vs.? 8′"
-		],
 		"Imbaluri-da=l @ DN @ { a → DIR=3PL.ABS} @ noun @ ": [
 			"KBo 33.61a+, {€2} Vs.? (I) 2′"
 		],
-		"]lō[ @ u.B. @  @ unclear @ ": [
-			"KBo 33.61a+, {€2} Vs.? (I) 3′"
-		],
-		"]t-ā-b @ u.B. @ { a → INT-b} @ verb @ ": [
-			"KBo 33.61a+, {€2} Vs.? (I) 3′"
-		],
-		"]lō[x]t-ā-b @ u.B. @ { a → INT-b} @ verb @ ": [
-			"KBo 33.61a+, {€2} Vs.? (I) 3′"
-		],
-		"ul-āġ[ @ u.B. @  @ unclear @ ": [
-			"KBo 33.61a+, {€2} Vs.? (I) 3′"
-		],
-		"]-iffo-š=nna @ u.B. @ { a → 1POSS.SG-ERG=3SG.ABS} @ noun @ ": [
-			"KBo 33.61a+, {€2} Vs.? (I) 4′"
-		],
 		"av-āšt-o-m @ u.B. @ { a → RES-TR.PFV-3A.SG} @ verb @ ": [
 			"KBo 33.61a+, {€2} Vs.? (I) 4′"
-		],
-		"]a=l @ u.B. @ { a → =3PL.ABS} @ unclear @ ": [
-			"KBo 33.61a+, {€2} Vs.? (I) 5′",
-			"KBo 59.226,3′",
-			"KUB 47.8,Rs. V? 7!"
 		],
 		"ḫēri @ u.B. @ { a → .ABS} @ noun @ ": [
 			"KBo 33.61a+, {€2} Vs.? (I) 5′"
@@ -2266,41 +1236,14 @@
 		"tīža-īffe @ Herz @ { a → 1POSS.SG.ABS} @ noun @ ": [
 			"KBo 33.61a+, {€2} Vs.? (I) 5′"
 		],
-		"tīža-iffu-[ @ Herz @ { a → 1POSS.SG} @ noun @ ": [
-			"KBo 33.61a+, {€2} Vs.? (I) 5′"
-		],
 		"ištāni-īffe-ā=l @ Mitte @ { a → 1POSS.SG-ESS=3PL.ABS} @ noun @ ": [
 			"KBo 33.61a+, {€2} Vs.? (I) 6′"
-		],
-		"]andī-nī-ve-na @ u.B. @ { a → RELAT.SG-GEN-RELAT.PL.ABS} @ noun @ ": [
-			"KBo 33.61a+, {€2} Vs.? (I) 7′"
 		],
 		"tārē-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ ": [
 			"KBo 33.61a+, {€2} Vs.? (I) 7′"
 		],
-		"]ḫī-b @ u.B. @ { a → 2POSS.SG.ABS} @ noun @ ": [
-			"KBo 33.61a+, {€2} Vs.? (I) 8′"
-		],
-		"]ḫ-ī-b @ u.B. @ { a → ANTIP-b} @ verb @ ": [
-			"KBo 33.61a+, {€2} Vs.? (I) 8′"
-		],
 		"utḫari-na @ Zeichen? @ { a → RELAT.PL.ABS} @ noun @ ": [
 			"KBo 33.61a+, {€2} Vs.? (I) 8′"
-		],
-		"ur-o-l-āi-[ @ existieren @ { a → MOD.PAT-l-PURP} @ verb @ ": [
-			"KBo 33.61a+, {€2} Vs.? (I) 8′"
-		],
-		"eni-x[ @ Gott @  @ noun @ ": [
-			"KBo 33.61a+, {€3+2} 1′/Vs.? (I) 9′"
-		],
-		"kīažē-ne-[ @ Meer @ { a → RELAT.SG} @ noun @ ": [
-			"KBo 33.61a+, {€3+2} 1′/Vs.? (I) 9′"
-		],
-		"kīažē-ne=[ @ Meer @ { a → ABL/INS} @ noun @ ": [
-			"KBo 33.61a+, {€3+2} 1′/Vs.? (I) 9′"
-		],
-		"kīažē-ne-e=[ @ Meer @ { a → RELAT.SG-DIR/LOC} @ noun @ ": [
-			"KBo 33.61a+, {€3+2} 1′/Vs.? (I) 9′"
 		],
 		"Šērižu @ DN @ { a → .ABS} @ noun @ ": [
 			"KBo 33.61a+, {€3+2} 2′/Vs.? (I) 10′"
@@ -2309,9 +1252,6 @@
 			"KBo 33.61a+, {€3+2} 2′/Vs.? (I) 10′"
 		],
 		"ēšḫ-i @ u.B. @ ANTIP @ verb @ ": [
-			"KBo 33.61a+, {€3+2} 2′/Vs.? (I) 10′"
-		],
-		"ši[ @ Auge @  @ unclear @ ": [
 			"KBo 33.61a+, {€3+2} 2′/Vs.? (I) 10′"
 		],
 		"tāri-a @ Feuer @ { a → ESS} @ noun @ ": [
@@ -2323,69 +1263,11 @@
 		"tār-a @ u.B. @ { a → INT} @ verb @ ": [
 			"KBo 33.61a+, {€3+2} 3′/Vs.? (I) 11′"
 		],
-		"kēž-i[ @ u.B. @  @ unclear @ ": [
-			"KBo 33.61a+, {€3+2} 3′/Vs.? (I) 11′"
-		],
-		"]+o+šše-ne=m @ u.B. @ { a → ABL/INS=CON} { b → ABL/INS=2SG.ABS} @ noun @ ": [
-			"KBo 33.61a+, {€3} 4′"
-		],
-		"]+o+šše-ne-e=m @ u.B. @ { a → RELAT.SG-DIR/LOC=CON} { b → RELAT.SG-DIR/LOC=2SG.ABS} @ noun @ ": [
-			"KBo 33.61a+, {€3} 4′"
-		],
-		"]-i-až-a @ u.B. @ { a → -3POSS-PL-DAT/ESS} @ noun @ ": [
-			"KBo 33.61a+, {€3} 5′"
-		],
-		"]eži-a @ u.B. @ { a → ESS} @ noun @ ": [
-			"KBo 33.61a+, {€3} 5′"
-		],
-		"]ež-a @ u.B. @ { a → INT} @ verb @ ": [
-			"KBo 33.61a+, {€3} 5′"
-		],
-		"pā[ @ u.B. @  @ unclear @ ": [
-			"KBo 33.61a+, {€3} 5′",
-			"KBo 33.61a+, {€2} Rs.? 5′",
-			"KUB 47.4,Rs. IV 20‴",
-			"KBo 32.11,Rs. IV 17′",
-			"KBo 32.12,Vs. I 11"
-		],
 		"tūri @ unten; hinab @  @ ADV @ ": [
-			"KBo 33.61a+, {€3} 6′"
-		],
-		"tūri-[ @ Oberseite? @  @ noun @ ": [
 			"KBo 33.61a+, {€3} 6′"
 		],
 		"tūr-i @ hinabgehen @ { a → ANTIP} @ verb @ ": [
 			"KBo 33.61a+, {€3} 6′"
-		],
-		"tūr-i[ @ u.B. @  @ unclear @ ": [
-			"KBo 33.61a+, {€3} 6′"
-		],
-		"tūr-i[ @ hinabgehen @  @ unclear @ ": [
-			"KBo 33.61a+, {€3} 6′"
-		],
-		"]i[ @ u.B. @  @ unclear @ ": [
-			"KBo 33.61a+, {€3} 7′",
-			"KBo 33.61a+, {€1} Rs.? 10′"
-		],
-		"i[ @ u.B. @  @ unclear @ ": [
-			"KBo 33.61a+, {€3} 7′",
-			"KBo 32.12,Rs. IV 16′"
-		],
-		"ša[ @ u.B. @  @ unclear @ ": [
-			"KBo 33.61a+, {€2} Rs.? 1′",
-			"KUB 45.61,Vs. II? 1",
-			"KUB 45.61,Vs. II? 11",
-			"KUB 47.2,3′",
-			"KBo 32.50,5′"
-		],
-		"]uvi-ā=ma @ u.B. @ { a → ESS=CON} @ noun @ ": [
-			"KBo 33.61a+, {€2} Rs.? 2′"
-		],
-		"]uv-ā=ma @ u.B. @ { a → INT=CON} @ verb @ ": [
-			"KBo 33.61a+, {€2} Rs.? 2′"
-		],
-		"]uv-ām-a @ u.B. @ { a → FACT-3A.SG} { b → FACT-INT} @ verb @ ": [
-			"KBo 33.61a+, {€2} Rs.? 2′"
 		],
 		"uvi-ā=ma @ u.B. @ { a → ESS=CON} @ noun @ ": [
 			"KBo 33.61a+, {€2} Rs.? 2′"
@@ -2447,65 +1329,14 @@
 		"ḫill-i-bāde @ mitteilen @ { a → ACT-ADJ.NEG.ABS} @ noun @ ": [
 			"KBo 33.61a+, {€2} Rs.? 6′"
 		],
-		"ḫī[ @ u.B. @  @ unclear @ ": [
-			"KBo 33.61a+, {€2} Rs.? 6′",
-			"KBo 27.219+, {€1} Rs. IV 9′",
-			"KUB 47.4,Rs. IV 18‴"
-		],
 		"šērāmmi @ Norden @ .ABS @ noun @ ": [
 			"KBo 33.61a+, {€2} Rs.? 7′"
 		],
 		"šērāmmi @ Norden @ { a → .ABS} @ noun @ ": [
 			"KBo 33.61a+, {€2} Rs.? 7′"
 		],
-		"fīl[ @ u.B. @  @ unclear @ ": [
-			"KBo 33.61a+, {€2} Rs.? 7′"
-		],
-		"]-va @ u.B. @ { a → DAT} @ noun @ ": [
-			"KBo 33.61a+, {€2}Rs.? 8′"
-		],
-		"]va @ sich freuen; u.B. @  @ unclear @ ": [
-			"KBo 33.61a+, {€2}Rs.? 8′"
-		],
 		"fōri-ī-da @ Blick @ { a → 3POSS.SG-DIR} @ noun @ ": [
 			"KBo 33.61a+, {€2}Rs.? 8′"
-		],
-		"tal[ @ u.B. @  @ unclear @ ": [
-			"KBo 33.61a+, {€2}Rs.? 8′"
-		],
-		"]t-i-a-mma @ u.B. @ { a → TR-3A.SG-NEG} @ verb @ ": [
-			"KBo 33.61a+, {€2} Rs.? 9′"
-		],
-		"]t-i-a=mma @ u.B. @ { a → TR-3A.SG=2SG.ABS} @ verb @ ": [
-			"KBo 33.61a+, {€2} Rs.? 9′"
-		],
-		"]t-i-a=mma @ u.B. @ { a → 3POSS.SG-ESS=2SG.ABS} { b → 3POSS.SG-ESS=CON} @ noun @ ": [
-			"KBo 33.61a+, {€2} Rs.? 9′"
-		],
-		"]nimā[ @ u.B. @  @ unclear @ ": [
-			"KBo 33.61a+, {€2} Rs.? 10′"
-		],
-		"ā[ @ u.B. @  @ unclear @ ": [
-			"KBo 33.61a+, {€1+2} Rs.? 1′/Rs.? 11′"
-		],
-		"kīaže-[ @ Meer @  @ noun @ ": [
-			"KBo 33.61a+, {€1+2} Rs.? 2′/Rs.? 12′",
-			"VBoT 59,Vs. II 4′"
-		],
-		"]a[ @ u.B. @  @ unclear @ ": [
-			"KBo 33.61a+, {€1+2} Rs.? 2′/Rs.? 12′"
-		],
-		"]rīži-a @ u.B. @ { a → ESS} @ noun @ ": [
-			"KBo 33.61a+, {€1} Rs.? 3′"
-		],
-		"]r-īž-a @ u.B. @ { a → īž-INT} { b → īž-3A.SG} @ verb @ ": [
-			"KBo 33.61a+, {€1} Rs.? 3′"
-		],
-		"]ḫimi-ž=lla @ DN? @ { a → ERG=3PL.ABS} @ noun @ ": [
-			"KBo 33.61a+, {€1} Rs.? 4′"
-		],
-		"]ḫimi-i=lla @ u.B. @ { a → 3POSS.SG.ABS=3PL.ABS} @ noun @ ": [
-			"KBo 33.61a+, {€1} Rs.? 4′"
 		],
 		"kād-i-a @ sagen; sprechen @ TR-3A.SG @ verb @ ": [
 			"KBo 33.61a+, {€1} Rs.? 5′",
@@ -2518,26 +1349,7 @@
 			"KUB 47.5+, {€1} Vs. I 7′",
 			"KUB 47.5+, {€3} Vs. II 6"
 		],
-		"]ivi @ u.B. @ { a → .ABS} @ noun @ ": [
-			"KBo 33.61a+, {€1} Rs.? 6′"
-		],
-		"]i-ve @ u.B. @ { b → GEN} @ noun @ ": [
-			"KBo 33.61a+, {€1} Rs.? 6′"
-		],
-		"]iv-i @ u.B. @ { a → ANTIP} { b → TR.IMP} @ verb @ ": [
-			"KBo 33.61a+, {€1} Rs.? 6′"
-		],
-		"tam[ @ u.B. @  @ unclear @ ": [
-			"KBo 33.61a+, {€1} Rs.? 6′",
-			"KUB 45.63,Vs. I 8"
-		],
-		"]uži @ u.B. @ { a → .ABS} @ noun @ ": [
-			"KBo 33.61a+, {€1} Rs.? 7′"
-		],
 		"uži @ Fleisch @ { a → .ABS} @ noun @ ": [
-			"KBo 33.61a+, {€1} Rs.? 7′"
-		],
-		"]už-i @ u.B. @ { a → ANTIP} { b → TR.IMP} @ verb @ ": [
 			"KBo 33.61a+, {€1} Rs.? 7′"
 		],
 		"už-i @ u.B. @ { a → ANTIP} { b → TR.IMP} @ verb @ ": [
@@ -2546,60 +1358,8 @@
 		"uži @ u.B. @ { a → .ABS} @ noun @ ": [
 			"KBo 33.61a+, {€1} Rs.? 7′"
 		],
-		"]-ai @ u.B. @ { a → INS} @ verb @ ": [
-			"KBo 33.61a+, {€1} Rs.? 8′"
-		],
-		"]a+i @ u.B. @ { a → } @ noun @ ": [
-			"KBo 33.61a+, {€1} Rs.? 8′"
-		],
-		"]-ai @ u.B. @ { a → PURP} @ verb @ ": [
-			"KBo 33.61a+, {€1} Rs.? 8′",
-			"KUB 47.2,lk. Rd. lk. Kol. 8"
-		],
-		"]-ai @ u.B. @ { a → CVB} @ NF @ ": [
-			"KBo 33.61a+, {€1} Rs.? 8′"
-		],
-		"av[ @ u.B. @  @ unclear @ ": [
-			"KBo 33.61a+, {€1} Rs.? 8′"
-		],
-		"]uri @ u.B. @ { a → .ABS} @ noun @ ": [
-			"KBo 33.61a+, {€1} Rs.? 9′"
-		],
-		"]uri[ @ u.B. @  @ unclear @ ": [
-			"KBo 33.61a+, {€1} Rs.? 9′"
-		],
-		"]ur-i @ u.B. @ { a → ANTIP} { b → TR.IMP} @ verb @ ": [
-			"KBo 33.61a+, {€1} Rs.? 9′"
-		],
-		"]tumā[ @ u.B. @  @ unclear @ ": [
-			"KBo 33.61a+, {€1} Rs.? 9′"
-		],
-		"]ḫimi-āi @ u.B. @ { a → INS} @ noun @ ": [
-			"KBo 33.61a+, {€1} Rs.? 10′"
-		],
-		"]ḫimā+i @ DN? @ { a → .ABS} @ noun @ ": [
-			"KBo 33.61a+, {€1} Rs.? 10′"
-		],
-		"]ḫ-i+m+āi @ u.B. @ { a → CVB} @ NF @ ": [
-			"KBo 33.61a+, {€1} Rs.? 10′"
-		],
-		"]uri-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ ": [
-			"KBo 33.61a+, {€1} Rs.? 11′"
-		],
-		"]urr-a @ u.B. @ { a → INT} @ verb @ ": [
-			"KBo 33.61a+, {€1} Rs.? 11′"
-		],
 		"pišḫīlāvi-ā @ u.B. @ { a → ESS} @ noun @ ": [
 			"KBo 33.61a+, {€1} Rs.? 11′"
-		],
-		"]ti-ā @ u.B. @ { a → ESS} @ noun @ ": [
-			"KBo 33.61a+, {€1} Rs.? 12′"
-		],
-		"]-dā @ u.B. @ { a → DIR} @ noun @ ": [
-			"KBo 33.61a+, {€1} Rs.? 12′"
-		],
-		"]t-ā @ u.B. @ { a → 3A.SG} { b → INT} @ verb @ ": [
-			"KBo 33.61a+, {€1} Rs.? 12′"
 		],
 		"nūd+o+že-a @ u.B. @ { a → ESS} @ noun @ ": [
 			"KBo 33.61a+, {€1} Rs.? 12′"
@@ -2611,32 +1371,8 @@
 			"KBo 33.61a+, {€1} Rs.? 12′",
 			"ABoT 2.18,4′"
 		],
-		"fōri-[ @ Blick @  @ noun @ ": [
-			"KBo 33.61a+, {€1} Rs.? 12′"
-		],
-		"for-i[ @ sehen @  @ verb @ ": [
-			"KBo 33.61a+, {€1} Rs.? 12′"
-		],
-		"]ada[ @ u.B. @  @ unclear @ ": [
-			"KBo 33.61a+, {€1} Rs.? 13′"
-		],
-		"]adi-a @ so; u.B. @ { a → ESS} @ noun @ ": [
-			"KBo 33.61a+, {€1} Rs.? 13′"
-		],
-		"]ad-a @ u.B. @ { a → 3A.SG} { b → INT} @ verb @ ": [
-			"KBo 33.61a+, {€1} Rs.? 13′"
-		],
-		"]-ad-a @ u.B. @ { a → ad-3A.SG} { b → ad-INT} @ verb @ ": [
-			"KBo 33.61a+, {€1} Rs.? 13′"
-		],
-		"]a-da @ u.B. @ { a → DIR} @ noun @ ": [
-			"KBo 33.61a+, {€1} Rs.? 13′"
-		],
 		"šīni=m @ weiterhin; wieder; ferner @ { a → =CON} @ ADV @ ": [
 			"KBo 33.61a+, {€1} Rs.? 14′"
-		],
-		"]i=m @ u.B. @ { a → =CON} { b → =2SG.ABS} @ unclear @ ": [
-			"KBo 33.61a+, {€1} Rs.? 15′"
 		],
 		"tarri-i-a @ u.B. @ { a → 3POSS.SG-ESS} @ noun @ ": [
 			"KUB 45.61,Vs. II? 1"
@@ -2675,16 +1411,10 @@
 		"tive-na @ Wort; Sache @ { a → REALT.PL.ABS} @ noun @ ": [
 			"KUB 45.61,Vs. II? 8"
 		],
-		"tapšuwar[ @ DN @  @ noun @ ": [
-			"KUB 45.61,Vs. II? 8"
-		],
 		"unnu @ nun @  @ ADV @ ": [
 			"KUB 45.61,Vs. II? 9"
 		],
 		"ḫāni @ Kind; Säugling @ { a → .ABS} @ noun @ ": [
-			"KUB 45.61,Vs. II? 9"
-		],
-		"faḫḫ-a[ @ u.B. @  @ unclear @ ": [
 			"KUB 45.61,Vs. II? 9"
 		],
 		"tēni-a @ u.B. @ { a → ESS} @ noun @ ": [
@@ -2751,9 +1481,6 @@
 		"ub-o-va-en @ töten @ { a → MOD.PAT-NEG-3JUSS} @ verb @ ": [
 			"KUB 45.61,Vs. II? 13"
 		],
-		"mūl-u[ @ u.B. @  @ unclear @ ": [
-			"KUB 45.61,Vs. II? 13"
-		],
 		"sūve @ u.B. @ { a → .ABS} @ noun @ ": [
 			"KUB 45.61,Vs. II? 14"
 		],
@@ -2767,12 +1494,6 @@
 			"KUB 45.61,Vs. II? 15"
 		],
 		"ull-o-l-ež @ zurückhalten; niederdrücken @ { a → MOD.PAT-l-OPT} @ verb @ ": [
-			"KUB 45.61,Vs. II? 15"
-		],
-		"un-u[ @ kommen; bringen @  @ unclear @ ": [
-			"KUB 45.61,Vs. II? 15"
-		],
-		"un-u[ @ u.B. @  @ unclear @ ": [
 			"KUB 45.61,Vs. II? 15"
 		],
 		"ag-o=nna @ erheben; aufnehmen; heraufkommen @ { a → MOD.PAT=3SG.ABS} @ verb @ ": [
@@ -2811,51 +1532,10 @@
 		"Tažmiš-fa @ DN @ { a → DAT} @ noun @ ": [
 			"KUB 45.61,Vs. II? 19"
 		],
-		"nib-iž[ @ u.B. @  @ unclear @ ": [
-			"KUB 45.61,Vs. II? 19"
-		],
-		"]in-ne-ž @ u.B. @ { a → RELAT.SG-ERG} @ noun @ ": [
-			"KUB 45.61,Vs. II? 20"
-		],
 		"Tažmiž @ DN @ { a → .ABS} @ noun @ ": [
 			"KUB 45.61,Vs. II? 20"
 		],
-		"Tažmiš-[ @ DN @  @ noun @ ": [
-			"KUB 45.61,Vs. II? 20"
-		],
-		"]ḫara[ @ u.B. @  @ unclear @ ": [
-			"KUB 45.64+, {€1} Vs.? 1′"
-		],
-		"]ri-ž @ u.B. @ { a → ERG} @ noun @ ": [
-			"KUB 45.64+, {€1} Vs.? 2′",
-			"KUB 45.64+, {€1} Vs.? 22′"
-		],
-		"]ri-ne-ž @ u.B. @ { a → RELAT.SG-ERG} @ noun @ ": [
-			"KUB 45.64+, {€1} Vs.? 2′",
-			"KUB 45.64+, {€1} Vs.? 22′"
-		],
-		"]r-i-ež @ u.B. @ { a → MOD.ACT-OPT} @ verb @ ": [
-			"KUB 45.64+, {€1} Vs.? 2′",
-			"KUB 45.64+, {€1} Vs.? 22′"
-		],
-		"Teššob-[ @ DN @  @ noun @ ": [
-			"KUB 45.64+, {€1} Vs.? 2′",
-			"KUB 45.64+, {€1} Vs.? 5′",
-			"KUB 45.64+, {€1} Vs.? 6′"
-		],
-		"]i-da @ u.B. @ { a → DIR} @ noun @ ": [
-			"KUB 45.64+, {€1} Vs.? 3′"
-		],
-		"]-i-da @ u.B. @ { a → 3POSS.SG-DIR} @ noun @ ": [
-			"KUB 45.64+, {€1} Vs.? 3′"
-		],
-		"]idi-a @ u.B. @ { a → ESS} @ noun @ ": [
-			"KUB 45.64+, {€1} Vs.? 3′"
-		],
 		"idi-a @ u.B. @ { a → ESS} @ noun @ ": [
-			"KUB 45.64+, {€1} Vs.? 3′"
-		],
-		"]id-a @ u.B. @ { a → INT} @ verb @ ": [
 			"KUB 45.64+, {€1} Vs.? 3′"
 		],
 		"id-a @ schlagen @ { a → INT} @ verb @ ": [
@@ -2884,30 +1564,17 @@
 		"iža-a @ jenseits @ { a → ESS} @ noun @ ": [
 			"KUB 45.64+, {€1} Vs.? 4′"
 		],
-		"]nī @ u.B. @  @ unclear @ ": [
-			"KUB 45.64+, {€1} Vs.? 5′"
-		],
 		"fori=ma @ Blick @ { a → .ABS=CON} @ noun @ ": [
 			"KUB 45.64+, {€1} Vs.? 5′"
 		],
 		"for-i=ma @ sehen @ ANTIP=CON @ verb @ ": [
 			"KUB 45.64+, {€1} Vs.? 5′"
 		],
-		"]ḫōve-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ ": [
-			"KUB 45.64+, {€1} Vs.? 6′"
-		],
 		"eni-na @ Gott @ { a → RELAT.PL.ABS} @ noun @ ": [
 			"KUB 45.64+, {€1} Vs.? 6′",
 			"KUB 45.64+, {€1} Vs.? 13′",
 			"DAAM 1.14,Vs. 16′",
 			"DAAM 1.14,Vs. 17′"
-		],
-		"]-ož @ u.B. @ { a → EQU} @ noun @ ": [
-			"KUB 45.64+, {€1} Vs.? 7′",
-			"KBo 27.219+, {€1+2} Rs. IV 3′/Rs. 6!"
-		],
-		"]-o-ež @ u.B. @ { a → MOD.PAT-OPT} @ verb @ ": [
-			"KUB 45.64+, {€1} Vs.? 7′"
 		],
 		"ton-i-vade-ai @ ausstatten @ { a → ACT-ADJ.NEG-INS} @ verb @ ": [
 			"KUB 45.64+, {€1} Vs.? 7′",
@@ -2917,26 +1584,8 @@
 			"KUB 45.64+, {€1} Vs.? 7′",
 			"KUB 45.64+, {€1} Vs.? 8′"
 		],
-		"īn[ @ u.B. @  @ unclear @ ": [
-			"KUB 45.64+, {€1} Vs.? 7′"
-		],
-		"]ḫ-ož @ u.B. @ { a → EQU} @ noun @ ": [
-			"KUB 45.64+, {€1} Vs.? 8′"
-		],
-		"]ḫ-o-ež @ u.B. @ { a → MOD.PAT-OPT} @ verb @ ": [
-			"KUB 45.64+, {€1} Vs.? 8′"
-		],
 		"ḫavorni @ Himmel @ .ABS @ noun @ ": [
 			"KUB 45.64+, {€1} Vs.? 8′"
-		],
-		"]ri-āi @ u.B. @ { a → INS} @ noun @ ": [
-			"KUB 45.64+, {€1} Vs.? 9′"
-		],
-		"]r-i-āi @ u.B. @ { a → MOD.ACT-PURP} @ verb @ ": [
-			"KUB 45.64+, {€1} Vs.? 9′"
-		],
-		"]r-i-l-āi @ u.B. @ { a → MOD.ACT-l-PURP} @ verb @ ": [
-			"KUB 45.64+, {€1} Vs.? 9′"
 		],
 		"temm+ā+ni @ u.B. @ { a → .ABS} @ noun @ ": [
 			"KUB 45.64+, {€1} Vs.? 9′"
@@ -2947,16 +1596,7 @@
 		"ḫōži @ u.B. @ { a → .ABS} @ noun @ ": [
 			"KUB 45.64+, {€1} Vs.? 9′"
 		],
-		"ḫōži-[ @ u.B. @  @ noun @ ": [
-			"KUB 45.64+, {€1} Vs.? 9′"
-		],
 		"ḫōž-i @ binden @ { a → ANTIP} @ verb @ ": [
-			"KUB 45.64+, {€1} Vs.? 9′"
-		],
-		"ḫōž-i[ @ binden @  @ unclear @ ": [
-			"KUB 45.64+, {€1} Vs.? 9′"
-		],
-		"ḫōž-i[ @ u.B. @  @ unclear @ ": [
 			"KUB 45.64+, {€1} Vs.? 9′"
 		],
 		"ḫōž-i @ u.B. @ { a → ANTIP} @ verb @ ": [
@@ -2980,20 +1620,8 @@
 		"ḫežm+o+že @ glänzend @ { a → .ABS} @ noun @ ": [
 			"KUB 45.64+, {€1} Vs.? 10′"
 		],
-		"ḫežm+o+že-[ @ glänzend @  @ noun @ ": [
-			"KUB 45.64+, {€1} Vs.? 10′"
-		],
 		"en+u+tḫe-a @ u.B. @ { a → ESS} @ noun @ ": [
 			"KUB 45.64+, {€1} Vs.? 11′"
-		],
-		"en+u+tḫ+a[ @ u.B. @  @ noun @ ": [
-			"KUB 45.64+, {€1} Vs.? 11′"
-		],
-		"]li-ve @ u.B. @ { a → GEN} @ noun @ ": [
-			"KUB 45.64+, {€1} Vs.? 12′"
-		],
-		"]li-ne-ve @ u.B. @ { a → RELAT.SG-GEN} @ noun @ ": [
-			"KUB 45.64+, {€1} Vs.? 12′"
 		],
 		"eni-na @ Gott @ RELAT.PL.ABS @ noun @ ": [
 			"KUB 45.64+, {€1} Vs.? 12′",
@@ -3005,105 +1633,20 @@
 			"KUB 47.2,Vs. I 16",
 			"KUB 47.6,Vs. II 8"
 		],
-		"šav[ @ u.B. @  @ unclear @ ": [
-			"KUB 45.64+, {€1} Vs.? 12′"
-		],
-		"eni-na-[ @ Gott @ { a → RELAT.PL} @ noun @ ": [
-			"KUB 45.64+, {€1} Vs.? 13′",
-			"DAAM 1.14,Vs. 16′",
-			"KUB 47.2,Vs. I 16"
-		],
 		"Šēri-ž @ DN @ { a → ERG} @ noun @ ": [
 			"KUB 45.64+, {€1} Vs.? 14′",
 			"KUB 45.64+, {€1} Vs.? 16′"
 		],
-		"až-ar[ @ u.B. @  @ unclear @ ": [
-			"KUB 45.64+, {€1} Vs.? 14′"
-		],
-		"]-i-ā-ma @ u.B. @ { a → TR-3A.SG-NEG} @ verb @ ": [
-			"KUB 45.64+, {€1} Vs.? 15′"
-		],
-		"]-i-ā=ma @ u.B. @ { a → TR-3A.SG=CON} @ verb @ ": [
-			"KUB 45.64+, {€1} Vs.? 15′"
-		],
-		"]-i-ā=ma @ u.B. @ { a → 3POSS.SG-ESS=CON} @ noun @ ": [
-			"KUB 45.64+, {€1} Vs.? 15′"
-		],
-		"]ušta[ @ u.B. @  @ unclear @ ": [
-			"KUB 45.64+, {€1} Vs.? 15′"
-		],
-		"]ušti-a @ u.B. @ { a → ESS} @ noun @ ": [
-			"KUB 45.64+, {€1} Vs.? 15′"
-		],
-		"]-ušt-a @ u.B. @ { a → RES-3A.SG} { b → RES-INT} @ verb @ ": [
-			"KUB 45.64+, {€1} Vs.? 15′"
-		],
 		"ušt-a @ herausgehen; aufstehen @ { a → INT} @ verb @ ": [
 			"KUB 45.64+, {€1} Vs.? 15′"
 		],
-		"ušt-a[ @ herausgehen; aufstehen @  @ unclear @ ": [
-			"KUB 45.64+, {€1} Vs.? 15′"
-		],
-		"]ia[ @ u.B. @  @ unclear @ ": [
-			"KUB 45.64+, {€1} Vs.? 16′"
-		],
-		"ia[ @ u.B. @  @ unclear @ ": [
-			"KUB 45.64+, {€1} Vs.? 16′"
-		],
-		"]-i-a @ u.B. @ { a → TR-3A.SG} @ verb @ ": [
-			"KUB 45.64+, {€1} Vs.? 16′"
-		],
-		"]-i-a @ u.B. @ { a → 3POSS.SG-ESS} @ noun @ ": [
-			"KUB 45.64+, {€1} Vs.? 16′"
-		],
-		"]-o-kko @ u.B. @ { a → INT-NEG} @ verb @ ": [
-			"KUB 45.64+, {€1} Vs.? 17′",
-			"KBo 71.80,6′",
-			"KBo 32.16,Vs. 8a"
-		],
-		"fe[ @ u.B. @  @ unclear @ ": [
-			"KUB 45.64+, {€1} Vs.? 17′"
-		],
 		"šinē-na-až-a @ zwei @ { a → RELAT.PL-PL-DAT/ESS} @ noun @ ": [
 			"KUB 45.64+, {€1} Vs.? 19′"
-		],
-		"]ulliana[ @ u.B. @  @ noun @ ": [
-			"KUB 45.64+, {€1} Vs.? 20′"
-		],
-		"]nitti-a @ u.B. @ { a → ESS} @ noun @ ": [
-			"KUB 45.64+, {€1} Vs.? 21′"
-		],
-		"]-ne=tta @ u.B. @ { a → ABL/INS=1SG.ABS} @ noun @ ": [
-			"KUB 45.64+, {€1} Vs.? 21′"
-		],
-		"]-ne-e=tta @ u.B. @ { a → RELAT.SG-DIR/LOC=1SG.ABS} @ noun @ ": [
-			"KUB 45.64+, {€1} Vs.? 21′"
-		],
-		"]-ne-š=tta @ u.B. @ { a → RELAT.SG-ERG=1SG.ABS} @ noun @ ": [
-			"KUB 45.64+, {€1} Vs.? 21′"
-		],
-		"]r-i-l-ež @ u.B. @ { a → MOD.ACT-l-OPT} @ verb @ ": [
-			"KUB 45.64+, {€1} Vs.? 22′"
 		],
 		"ped+ar+i @ Rind @ { a → .ABS} @ noun @ ": [
 			"KUB 45.64+, {€1} Vs.? 22′",
 			"KBo 32.13+, {€1} Vs. 15a",
 			"KBo 32.13+, {€1} Vs. 16a"
-		],
-		"ped+ar+i-[ @ Rind @  @ noun @ ": [
-			"KUB 45.64+, {€1} Vs.? 22′"
-		],
-		"]t-aw @ u.B. @ { a → 1A.SG} @ verb @ ": [
-			"KUB 45.64+, {€1} Vs.? 23′"
-		],
-		"]-ed-aw @ u.B. @ { a → FUT-1A.SG} @ verb @ ": [
-			"KUB 45.64+, {€1} Vs.? 23′"
-		],
-		"foroli-le-[ @ Tempel @ { a → RELAT.SG} @ noun @ ": [
-			"KUB 45.64+, {€1} Vs.? 23′"
-		],
-		"for-ul[ @ sehen @  @ noun @ ": [
-			"KUB 45.64+, {€1} Vs.? 23′"
 		],
 		"foroli-ne @ Tempel @ { a → ABL/INS} @ noun @ ": [
 			"KUB 45.64+, {€1} Vs.? 23′"
@@ -3111,32 +1654,8 @@
 		"foroli-ne-e @ Tempel @ { a → RELAT.SG-DIR/LOC} @ noun @ ": [
 			"KUB 45.64+, {€1} Vs.? 23′"
 		],
-		"]n-a-b @ u.B. @ { a → INT-b} @ verb @ ": [
-			"KUB 45.64+, {€1} Vs.? 24′"
-		],
-		"]na=m @ u.B. @ { a → =CON} @ unclear @ ": [
-			"KUB 45.64+, {€1} Vs.? 24′"
-		],
-		"tev[ @ u.B. @  @ unclear @ ": [
-			"KUB 45.64+, {€1} Vs.? 24′"
-		],
-		"]r-o-m @ u.B. @ { a → TR.PFV-3A.SG} @ verb @ ": [
-			"KUB 45.64+, {€1} Vs.? 25′"
-		],
-		"te[ @ u.B. @  @ unclear @ ": [
-			"KUB 45.64+, {€1} Vs.? 25′",
-			"KUB 47.5+, {€1} Rs. III 4′",
-			"KUB 47.5+, {€1} Rs. IV 5"
-		],
-		"]arna[ @ u.B. @  @ unclear @ ": [
-			"KUB 45.64+, {€1} Rs.? 1′"
-		],
 		"arni-a @ Sünde @ { a → ESS} @ noun @ ": [
 			"KUB 45.64+, {€1} Rs.? 1′"
-		],
-		"]fā @ u.B. @  @ unclear @ ": [
-			"KUB 45.64+, {€1} Rs.? 2′",
-			"KUB 45.64+, {€1} Rs.? 3′"
 		],
 		"šī-b @ Auge @ { a → 2POSS.SG.ABS} @ noun @ ": [
 			"KUB 45.64+, {€1} Rs.? 2′",
@@ -3152,16 +1671,7 @@
 		"až-amm-o @ u.B. @ { a → FACT-2A.SG} { b → FACT-MOD.PAT} @ verb @ ": [
 			"KUB 45.64+, {€1} Rs.? 3′"
 		],
-		"ave-[ @ wer; jeder @  @ noun @ ": [
-			"KUB 45.64+, {€1} Rs.? 3′"
-		],
 		"ḫiri @ Zeit @ { a → .ABS} @ noun @ ": [
-			"KUB 45.64+, {€1} Rs.? 4′"
-		],
-		"ḫiri-[ @ Zeit @  @ noun @ ": [
-			"KUB 45.64+, {€1} Rs.? 4′"
-		],
-		"ḫir-i[ @ u.B. @  @ unclear @ ": [
 			"KUB 45.64+, {€1} Rs.? 4′"
 		],
 		"ḫir-i @ u.B. @ { a → ANTIP} @ verb @ ": [
@@ -3174,9 +1684,6 @@
 			"KUB 45.64+, {€2+1} Rs.? 5′",
 			"KBo 27.219+, {€1+7} Rs. IV 3″/4′",
 			"KBo 27.219+, {€1+7} Rs. IV 4″/5′"
-		],
-		"Nav[ @ DN @  @ noun @ ": [
-			"KUB 45.64+, {€2+1} Rs.? 5′"
 		],
 		"Teššob-oda=l @ DN @ { a → DIR=3PL.ABS} @ noun @ ": [
 			"KUB 45.64+, {€2+1} Rs.? 6′",
@@ -3238,9 +1745,6 @@
 		"fē-va @ 2PRON.SG @ { a → DAT} @ PRON @ ": [
 			"KUB 45.64+, {€2+1} Rs.? 10′"
 		],
-		"fēv-a[ @ u.B. @  @ unclear @ ": [
-			"KUB 45.64+, {€2+1} Rs.? 10′"
-		],
 		"tiv-āġ-id-o @ sprechen @ { a → āġ-PL.A-TR.PFV} @ verb @ ": [
 			"KUB 45.64+, {€2+1} Rs.? 11′"
 		],
@@ -3258,18 +1762,6 @@
 		],
 		"iss-i @ u.B. @ { a → ANTIP} @ verb @ ": [
 			"KUB 45.64+, {€2+1} Rs.? 11′"
-		],
-		"iss-i[ @ u.B. @  @ unclear @ ": [
-			"KUB 45.64+, {€2+1} Rs.? 11′"
-		],
-		"]-a-b @ u.B. @ { a → INT-b} @ verb @ ": [
-			"KUB 45.64+, {€2+1} Rs.? 12′"
-		],
-		"]a-b @ u.B. @ { a → 2POSS.SG.ABS} @ noun @ ": [
-			"KUB 45.64+, {€2+1} Rs.? 12′"
-		],
-		"]a=m @ u.B. @ { a → =CON} @ unclear @ ": [
-			"KUB 45.64+, {€2+1} Rs.? 12′"
 		],
 		"kuli-a @ u.B. @ { a → ESS} @ noun @ ": [
 			"KUB 45.64+, {€2+1} Rs.? 12′"
@@ -3292,20 +1784,6 @@
 		"kammiri-a @ u.B. @ { a → ESS} @ noun @ ": [
 			"KUB 45.64+, {€1} Rs.? 13′"
 		],
-		"kammira[ @ u.B. @  @ noun @ ": [
-			"KUB 45.64+, {€1} Rs.? 13′"
-		],
-		"]f+āġ+i-a @ u.B. @ { a → ESS} @ noun @ ": [
-			"KUB 45.64+, {€1} Rs.? 13′",
-			"KUB 45.64+, {€1} Rs.? 15′"
-		],
-		"]f+ā+ġe-a @ u.B. @ { a → ESS} @ verb @ ": [
-			"KUB 45.64+, {€1} Rs.? 13′"
-		],
-		"]f-āġ-a @ u.B. @ { a → āġ-3A.SG} { b → āġ-INT} @ verb @ ": [
-			"KUB 45.64+, {€1} Rs.? 13′",
-			"KUB 45.64+, {€1} Rs.? 15′"
-		],
 		"omini-ne @ Land @ { a → ABL/INS} @ noun @ ": [
 			"KUB 45.64+, {€1} Rs.? 13′",
 			"DAAM 1.14,Rs. 7′"
@@ -3313,63 +1791,6 @@
 		"omini-ne-e @ Land @ { a → RELAT.SG-DIR/LOC} @ noun @ ": [
 			"KUB 45.64+, {€1} Rs.? 13′",
 			"DAAM 1.14,Rs. 7′"
-		],
-		"omini-ne-[ @ Land @ { a → RELAT.SG} @ verb @ ": [
-			"KUB 45.64+, {€1} Rs.? 13′"
-		],
-		"]manna[ @ u.B. @  @ unclear @ ": [
-			"KUB 45.64+, {€1} Rs.? 14′"
-		],
-		"]mani-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ ": [
-			"KUB 45.64+, {€1} Rs.? 14′"
-		],
-		"]mani-na-[ @ u.B. @ { a → RELAT.PL} @ noun @ ": [
-			"KUB 45.64+, {€1} Rs.? 14′"
-		],
-		"]m+a+nni-a @ u.B. @ { a → ESS} @ noun @ ": [
-			"KUB 45.64+, {€1} Rs.? 14′"
-		],
-		"mann-a[ @ sein @  @ verb @ ": [
-			"KUB 45.64+, {€1} Rs.? 14′"
-		],
-		"]li-ā=ma @ u.B. @ { a → ESS=CON} @ noun @ ": [
-			"KUB 45.64+, {€1} Rs.? 14′"
-		],
-		"]li-nā=ma @ u.B. @ { a → RELAT.PL.ABS=CON} @ noun @ ": [
-			"KUB 45.64+, {€1} Rs.? 14′"
-		],
-		"]l-ā=ma @ u.B. @ { a → 3A.SG=CON} { b → INT=CON} @ verb @ ": [
-			"KUB 45.64+, {€1} Rs.? 14′"
-		],
-		"]l-ām-a @ u.B. @ { a → FACT-3A.SG} { b → FACT-INT} @ verb @ ": [
-			"KUB 45.64+, {€1} Rs.? 14′"
-		],
-		"]lāmi-a @ u.B. @ { a → ESS} @ noun @ ": [
-			"KUB 45.64+, {€1} Rs.? 14′"
-		],
-		"Ḫō[ @ DN @  @ noun @ ": [
-			"KUB 45.64+, {€1} Rs.? 14′"
-		],
-		"]lōġu[ @ u.B. @  @ unclear @ ": [
-			"KUB 45.64+, {€1} Rs.? 15′"
-		],
-		"]l+ō+ġ+o[ @ u.B. @  @ noun @ ": [
-			"KUB 45.64+, {€1} Rs.? 15′"
-		],
-		"]l-ōġ-o @ u.B. @ { a → ōġ-MOD.PAT} { b → ōġ-2A.SG} @ verb @ ": [
-			"KUB 45.64+, {€1} Rs.? 15′"
-		],
-		"]l-ōġ-u @ u.B. @ { a → ōġ-MED} @ verb @ ": [
-			"KUB 45.64+, {€1} Rs.? 15′"
-		],
-		"]l-ōġ-u[ @ u.B. @ { a → ōġ} @ verb @ ": [
-			"KUB 45.64+, {€1} Rs.? 15′"
-		],
-		"]f+ā+ġe-a @ u.B. @ { a → ESS} @ noun @ ": [
-			"KUB 45.64+, {€1} Rs.? 15′"
-		],
-		"aḫ[ @ u.B. @  @ noun @ ": [
-			"KUB 45.64+, {€1} Rs.? 16′"
 		],
 		"kiaže @ Meer @ { a → .ABS} @ noun @ ": [
 			"KUB 45.82,Vs. 2′",
@@ -3385,16 +1806,10 @@
 			"KUB 45.82,Vs. 2′",
 			"KUB 47.6,Vs. II 10"
 		],
-		"šīa[ @ u.B. @  @ unclear @ ": [
-			"KUB 45.82,Vs. 2′"
-		],
 		"ḫupši @ u.B. @ .ABS @ noun @ ": [
 			"KUB 45.82,Vs. 3′"
 		],
 		"ḫupš-i @ u.B. @ ANTIP @ verb @ ": [
-			"KUB 45.82,Vs. 3′"
-		],
-		"ḫišš-a[ @ u.B. @  @ unclear @ ": [
 			"KUB 45.82,Vs. 3′"
 		],
 		"ḫišši-a @ u.B. @ { a → ESS} @ noun @ ": [
@@ -3405,15 +1820,6 @@
 		],
 		"ḫammanin+o+ḫḫe-a @ u.B. @ { a → ESS} @ noun @ ": [
 			"KUB 45.82,Vs. 4′"
-		],
-		"]all+uġ+i=lla @ u.B. @ { a → .ABS=3PL.ABS} @ noun @ ": [
-			"KUB 45.82,Vs. 5′"
-		],
-		"]all+o+ġe=lla @ u.B. @ { a → .ABS=3PL.ABS} @ noun @ ": [
-			"KUB 45.82,Vs. 5′"
-		],
-		"]all-uġ-i=lla @ u.B. @ { a → uġ-ANTIP=3PL.ABS} @ verb @ ": [
-			"KUB 45.82,Vs. 5′"
 		],
 		"egi @ Mitte @ { a → .ABS} @ noun @ ": [
 			"KUB 45.82,Vs. 6′"
@@ -3427,13 +1833,7 @@
 		"kovāġi @ eine Kopfbedeckung @ { a → .ABS} @ noun @ ": [
 			"KUB 45.82,Vs. 6′"
 		],
-		"kovāġi-[ @ eine Kopfbedeckung @  @ noun @ ": [
-			"KUB 45.82,Vs. 6′"
-		],
 		"kovāġi @ u.B. @ { a → .ABS} @ noun @ ": [
-			"KUB 45.82,Vs. 6′"
-		],
-		"kovāġi-[ @ u.B. @  @ noun @ ": [
 			"KUB 45.82,Vs. 6′"
 		],
 		"kov-āġ-i @ u.B. @ { a → āġ-ANTIP} @ verb @ ": [
@@ -3443,9 +1843,6 @@
 			"KUB 45.82,Vs. 7′"
 		],
 		"Kumarbi @ DN @ { a → .ABS} @ noun @ ": [
-			"KUB 45.82,Vs. 8′"
-		],
-		"kašš-a[ @ u.B. @  @ unclear @ ": [
 			"KUB 45.82,Vs. 8′"
 		],
 		"nirġ-ud-i-b @ u.B. @ { a → ud-ANTIP-b} @ verb @ ": [
@@ -3498,11 +1895,6 @@
 			"KBo 27.219+, {€1} Rs. III 6′",
 			"KUB 47.8,Rs. V? 3"
 		],
-		"šur[ @ u.B. @  @ unclear @ ": [
-			"KUB 45.82,Vs. 11′",
-			"VBoT 59,Vs. II 2′",
-			"KBo 32.42,13′"
-		],
 		"amb+a+že-a @ Brandopfer @ { a → ESS} @ noun @ ": [
 			"KUB 45.82,Vs. 12′"
 		],
@@ -3515,32 +1907,11 @@
 		"šuri-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ ": [
 			"KUB 45.82,Vs. 12′"
 		],
-		"šuri-na-[ @ u.B. @ { a → RELAT.PL} @ noun @ ": [
-			"KUB 45.82,Vs. 12′"
-		],
 		"šurr-a @ eilen @ { a → INT} @ verb @ ": [
-			"KUB 45.82,Vs. 12′"
-		],
-		"šurr-a[ @ u.B. @  @ unclear @ ": [
 			"KUB 45.82,Vs. 12′"
 		],
 		"kangalvi-a=lla @ u.B. @ { a → ESS=3PL.ABS} @ noun @ ": [
 			"KUB 45.82,Vs. 13′"
-		],
-		"]ari-da @ u.B. @ { a → DIR} @ noun @ ": [
-			"KUB 45.82,Vs. 14′"
-		],
-		"]ari-i-da @ u.B. @ { a → 3POSS.SG-DIR} @ noun @ ": [
-			"KUB 45.82,Vs. 14′"
-		],
-		"]ar-ed-a @ u.B. @ { a → FUT-3A.SG} @ verb @ ": [
-			"KUB 45.82,Vs. 14′"
-		],
-		"]-ar-ed-a @ u.B. @ { a → ITER-FUT-3A.SG} @ verb @ ": [
-			"KUB 45.82,Vs. 14′"
-		],
-		"]aridi-a @ u.B. @ { a → ESS} @ noun @ ": [
-			"KUB 45.82,Vs. 14′"
 		],
 		"en+zari-ne-n @ Götterschaft @ { a → RELAT.SG-ABL/INS} @ noun @ ": [
 			"DAAM 1.14,Vs. 1″"
@@ -3554,41 +1925,14 @@
 		"eni-na-až-e-na @ Gott @ { a → RELAT.PL-PL-GEN-RELAT.PL.ABS} @ noun @ ": [
 			"DAAM 1.14,Vs. 2″"
 		],
-		"en+zari-[ @ Götterschaft @  @ noun @ ": [
-			"DAAM 1.14,Vs. 2″"
-		],
-		"]n+a+šše @ u.B. @ { a → .ABS} @ noun @ ": [
-			"DAAM 1.14,Vs. 1′"
-		],
-		"]n+a+šše-[ @ u.B. @  @ noun @ ": [
-			"DAAM 1.14,Vs. 1′"
-		],
-		"]-ne-va @ u.B. @ { a → RELAT.SG-DAT} @ noun @ ": [
-			"DAAM 1.14,Vs. 2′"
-		],
 		"tāġi @ u.B. @ { a → .ABS} @ noun @ ": [
 			"DAAM 1.14,Vs. 3′"
 		],
 		"tāġ-i @ u.B. @ { a → ANTIP} @ verb @ ": [
 			"DAAM 1.14,Vs. 3′"
 		],
-		"I[ @ u.B. @  @ noun @ ": [
-			"DAAM 1.14,Vs. 3′"
-		],
 		"Nabiru @ DN @ { a → .ABS} @ noun @ ": [
 			"DAAM 1.14,Vs. 4′"
-		],
-		"Nabiru-[ @ DN @  @ noun @ ": [
-			"DAAM 1.14,Vs. 4′"
-		],
-		"]-ummi @ u.B. @ { a → INF.ABS} @ NF @ ": [
-			"DAAM 1.14,Vs. 5′"
-		],
-		"]ummi @ u.B. @ { a → .ABS} @ noun @ ": [
-			"DAAM 1.14,Vs. 5′"
-		],
-		"]umm-i @ u.B. @ { a → ANTIP} @ verb @ ": [
-			"DAAM 1.14,Vs. 5′"
 		],
 		"tapti @ u.B. @ { a → .ABS} @ noun @ ": [
 			"DAAM 1.14,Vs. 5′"
@@ -3596,13 +1940,7 @@
 		"tešše-na @ erhaben @ { a → RELAT.PL.ABS} @ noun @ ": [
 			"DAAM 1.14,Vs. 5′"
 		],
-		"]t+i+ġe @ u.B. @ { a → .ABS} @ noun @ ": [
-			"DAAM 1.14,Vs. 6′"
-		],
 		"eni-na-āž-e @ Gott @ { a → RELAT.PL-PL-GEN} @ noun @ ": [
-			"DAAM 1.14,Vs. 6′"
-		],
-		"ma[ @ u.B. @ .ABS @ unclear @ ": [
 			"DAAM 1.14,Vs. 6′"
 		],
 		"en+zari-na @ Götterschaft @ { a → RELAT.PL.ABS} @ noun @ ": [
@@ -3615,9 +1953,6 @@
 			"DAAM 1.14,Vs. 15′"
 		],
 		"abi-n=am @ Gesicht; vor; wer; jeder @ { a → ABL/INS=CON} @ ADV @ ": [
-			"DAAM 1.14,Vs. 8′"
-		],
-		"amm-i[ @ u.B. @  @ unclear @ ": [
 			"DAAM 1.14,Vs. 8′"
 		],
 		"ammi @ zuvor? @  @ ADV @ ": [
@@ -3642,14 +1977,6 @@
 		"tešši @ erhaben @ { a → .ABS} @ noun @ ": [
 			"DAAM 1.14,Vs. 10′"
 		],
-		"šar[ @ u.B. @  @ unclear @ ": [
-			"DAAM 1.14,Vs. 10′",
-			"DAAM 1.14,Rs. 19′"
-		],
-		"]=ma @ u.B. @ { a → CON} @ noun @ ": [
-			"DAAM 1.14,Vs. 11′",
-			"DAAM 1.14,Vs. 12′"
-		],
 		"man-z-ōž @ 3PRON @ { a → PL-ERG} @ PRON @ ": [
 			"DAAM 1.14,Vs. 11′",
 			"DAAM 1.14,Vs. 12′",
@@ -3659,35 +1986,15 @@
 		"ag-id-o @ aufnehmen; erheben; heraufkommen; aufrichten @ { a → PL.A-TR.PFV} @ verb @ ": [
 			"DAAM 1.14,Vs. 11′"
 		],
-		"udaġul[ @ u.B. @  @ unclear @ ": [
-			"DAAM 1.14,Vs. 11′"
-		],
 		"šōl-id-o @ u.B. @ { a → PL.A-TR.PFV} @ verb @ ": [
 			"DAAM 1.14,Vs. 12′"
-		],
-		"]t+ad+a+nni-ne-ž @ u.B. @ { a → RELAT.SG-ERG} @ noun @ ": [
-			"DAAM 1.14,Vs. 13′"
 		],
 		"anz+angi-īē-ž @ u.B. @ { a → 3POSS.SG-ERG} @ noun @ ": [
 			"DAAM 1.14,Vs. 13′"
 		],
-		"]-id-o @ u.B. @ { a → PL.A-TR.PFV} @ verb @ ": [
-			"DAAM 1.14,Vs. 14′",
-			"DAAM 1.14,Vs. 15′"
-		],
-		"šella[ @ u.B. @  @ unclear @ ": [
-			"DAAM 1.14,Vs. 14′",
-			"DAAM 1.14,Vs. 15′"
-		],
 		"šelli-a @ Haus @ { a → ESS} @ noun @ ": [
 			"DAAM 1.14,Vs. 14′",
 			"DAAM 1.14,Vs. 15′"
-		],
-		"]tōli-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ ": [
-			"DAAM 1.14,Vs. 16′"
-		],
-		"]-id-ō=lla @ u.B. @ { a → PL.A-TR.PFV=3PL.ABS} @ verb @ ": [
-			"DAAM 1.14,Vs. 16′"
 		],
 		"man-a @ 3PRON @ ESS @ PRON @ ": [
 			"DAAM 1.14,Vs. 16′"
@@ -3725,14 +2032,6 @@
 			"KBo 27.219+, {€1} Vs. II 1′",
 			"KBo 35.43,Vs. 12′!"
 		],
-		"ḫavōro+ni-ne-[ @ Himmel @ { a → RELAT.SG} @ noun @ ": [
-			"DAAM 1.14,Vs. 17′",
-			"KBo 27.219+, {€1} Vs. II 1′",
-			"KBo 35.43,Vs. 12′!"
-		],
-		"]atti @ u.B. @ { a → .ABS} @ noun @ ": [
-			"DAAM 1.14,Vs. 18′"
-		],
 		"Teššob @ DN @ .ABS @ noun @ ": [
 			"DAAM 1.14,Vs. 18′",
 			"KBo 12.80+, {€2+3} Vs. I 6′/Vs. I? 7",
@@ -3754,9 +2053,6 @@
 		"Mudum @ DN @ { a → .ABS} @ noun @ ": [
 			"DAAM 1.14,Vs. 18′"
 		],
-		"]undali @ u.B. @ { a → .ABS} @ noun @ ": [
-			"DAAM 1.14,Vs. 19′"
-		],
 		"šena @ Bruder @ .ABS @ noun @ ": [
 			"DAAM 1.14,Vs. 19′"
 		],
@@ -3774,22 +2070,10 @@
 		"ēvr+i+šše @ Herrschaft @ { a → .ABS} @ noun @ ": [
 			"DAAM 1.14,Vs. 20′"
 		],
-		"]rumi @ u.B. @ { a → .ABS} @ noun @ ": [
-			"DAAM 1.14,Vs. 21′"
-		],
-		"]r-um-i @ u.B. @ { a → um-ANTIP} @ verb @ ": [
-			"DAAM 1.14,Vs. 21′"
-		],
-		"]r-ummi @ u.B. @ { a → INF.ABS} @ NF @ ": [
-			"DAAM 1.14,Vs. 21′"
-		],
 		"mig-ummi @ u.B. @ { a → INF.ABS} @ NF @ ": [
 			"DAAM 1.14,Vs. 21′"
 		],
 		"for+alli @ u.B. @ { a → .ABS} @ noun @ ": [
-			"DAAM 1.14,Vs. 21′"
-		],
-		"for+ali-ne-[ @ u.B. @ { a → RELAT.SG} @ noun @ ": [
 			"DAAM 1.14,Vs. 21′"
 		],
 		"for+ali-ne @ u.B. @ { a → ABL/INS} @ noun @ ": [
@@ -3798,34 +2082,11 @@
 		"for+ali-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ ": [
 			"DAAM 1.14,Vs. 21′"
 		],
-		"forallinni-[ @ Opferschauer @  @ noun @ ": [
-			"DAAM 1.14,Vs. 21′"
-		],
-		"]ḫi @ u.B. @ { a → .ABS} @ noun @ ": [
-			"DAAM 1.14,Rs. 1′",
-			"KBo 27.219+, {€5} 8′",
-			"KUB 47.3,4′"
-		],
-		"]ḫ-i @ u.B. @ ANTIP @ verb @ ": [
-			"DAAM 1.14,Rs. 1′"
-		],
-		"]kuwandi-ai=l @ u.B. @ { a → INS=3PL.ABS} @ noun @ ": [
-			"DAAM 1.14,Rs. 2′"
-		],
 		"kuwandi-ai=l @ u.B. @ { a → INS=3PL.ABS} @ noun @ ": [
 			"DAAM 1.14,Rs. 2′"
 		],
 		"kuw-and-i-ai=l @ u.B. @ { a → and-MOD.ACT-PURP=3PL.ABS} @ verb @ ": [
 			"DAAM 1.14,Rs. 2′"
-		],
-		"šarr+a+šše-[ @ Königtum @  @ noun @ ": [
-			"DAAM 1.14,Rs. 2′"
-		],
-		"]paldi-a @ u.B. @ { a → ESS} @ noun @ ": [
-			"DAAM 1.14,Rs. 3′"
-		],
-		"]p-al-d-a @ u.B. @ { a → al-d-3A.SG} { b → al-d-INT} { c → al-PL.A-3A} @ verb @ ": [
-			"DAAM 1.14,Rs. 3′"
 		],
 		"šarr+a+šše-ne-n @ Königtum @ { a → RELAT.SG-ABL/INS} @ noun @ ": [
 			"DAAM 1.14,Rs. 3′"
@@ -3838,9 +2099,6 @@
 		],
 		"pab+ni @ Berg @ .ABS @ noun @ ": [
 			"DAAM 1.14,Rs. 4′"
-		],
-		"]kadunuiža[ @ u.B. @  @ unclear @ ": [
-			"DAAM 1.14,Rs. 5′"
 		],
 		"ḫavor+ni-a @ Himmel @ { a → ESS} @ noun @ ": [
 			"DAAM 1.14,Rs. 6′",
@@ -3856,55 +2114,20 @@
 			"DAAM 1.14,Rs. 12′",
 			"DAAM 1.14,Rs. 13′"
 		],
-		"omini-ne-[ @ Land @ { a → RELAT.SG} @ noun @ ": [
-			"DAAM 1.14,Rs. 7′"
-		],
 		"om-i-en @ u.B. @ { a → MOD.ACT-3JUSS} @ verb @ ": [
 			"DAAM 1.14,Rs. 7′"
 		],
 		"mig-ummi @ u.B. @ INF.ABS @ NF @ ": [
 			"DAAM 1.14,Rs. 8′"
 		],
-		"mi[ @ u.B. @  @ unclear @ ": [
-			"DAAM 1.14,Rs. 8′"
-		],
 		"agaia+šše @ u.B. @ { a → .ABS} @ noun @ ": [
 			"DAAM 1.14,Rs. 9′"
-		],
-		"agaia+šše-[ @ u.B. @  @ noun @ ": [
-			"DAAM 1.14,Rs. 9′"
-		],
-		"]engi-š=nna @ u.B. @ { a → ERG=3PL.ABS} @ noun @ ": [
-			"DAAM 1.14,Rs. 10′"
-		],
-		"]engi-i-š=nna @ u.B. @ { a → 3POSS.SG-ERG=3SG.ABS} @ noun @ ": [
-			"DAAM 1.14,Rs. 10′"
-		],
-		"]t+ar+ġe-ne-ž @ u.B. @ { a → RELAT.SG-ERG} @ noun @ ": [
-			"DAAM 1.14,Rs. 11′"
 		],
 		"tarġi-ne-ž @ u.B. @ { a → RELAT.SG-ERG} @ verb @ ": [
 			"DAAM 1.14,Rs. 11′"
 		],
 		"tar+ġe-ne-ž @ u.B. @ { a → RELAT.SG-ERG} @ noun @ ": [
 			"DAAM 1.14,Rs. 11′"
-		],
-		"Mi[ @ DN @  @ noun @ ": [
-			"DAAM 1.14,Rs. 12′"
-		],
-		"]ari-ne @ u.B. @ { a → ABL/INS} @ noun @ ": [
-			"DAAM 1.14,Rs. 13′",
-			"KBo 32.209,12′"
-		],
-		"]ari-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ ": [
-			"DAAM 1.14,Rs. 13′"
-		],
-		"]ri @ u.B. @  @ unclear @ ": [
-			"DAAM 1.14,Rs. 14′",
-			"KBo 27.219+, {€3+1+4} Vs. I(?) 1/Vs. II 1/lk. Kol. 1",
-			"KBo 27.219+, {€3+1} Vs. I(?) 9/Vs. II 9",
-			"KBo 35.43,Vs. 2′",
-			"KBo 32.17,Rs. 11a′"
 		],
 		"šōni-da @ Hand @ { a → DIR} @ noun @ ": [
 			"DAAM 1.14,Rs. 14′"
@@ -3918,25 +2141,13 @@
 		"šōn-i-dan @ Hand @ { a → 3POSS.SG-ABL} @ noun @ ": [
 			"DAAM 1.14,Rs. 14′"
 		],
-		"]ḫi @  @ .ABS @ noun @ ": [
-			"DAAM 1.14,Rs. 15′"
-		],
-		"]ḫ-i @  @ ANTIP @ verb @ ": [
-			"DAAM 1.14,Rs. 15′"
-		],
 		"ur+uġ+ul+zi @ u.B. @ { a → .ABS} @ noun @ ": [
-			"DAAM 1.14,Rs. 15′"
-		],
-		"ur+uġ+ul+zi-[ @ u.B. @  @ noun @ ": [
 			"DAAM 1.14,Rs. 15′"
 		],
 		"šarri-ne-ž @ Gottkönig @ RELAT.SG-ERG @ noun @ ": [
 			"DAAM 1.14,Rs. 17′"
 		],
 		"ḫinnatte-na @ jetziger @ { a → RELAT.PL.ABS} @ noun @ ": [
-			"DAAM 1.14,Rs. 18′"
-		],
-		"ḫinnatte-na-[ @ jetziger @ { a → RELAT.PL} @ noun @ ": [
 			"DAAM 1.14,Rs. 18′"
 		],
 		"Ea-ž=lla @ u.B. @ { a → ERG=3PL.ABS} @ noun @ ": [
@@ -3948,30 +2159,12 @@
 		"ḫavor+ni @ Himmel @ .ABS @ noun @ ": [
 			"DAAM 1.14,Rs. 20′"
 		],
-		"en+zari-na-[ @ Götterschaft @ { a → RELAT.PL} @ noun @ ": [
-			"DAAM 1.14,Rs. 20′"
-		],
-		"]āb+ni @ u.B. @ { a → .ABS} @ noun @ ": [
-			"KBo 27.216,Vs. II 1"
-		],
-		"]āb+ni-[ @ u.B. @  @ noun @ ": [
-			"KBo 27.216,Vs. II 1"
-		],
 		"Kumarve-ne-ž @ DN @ { a → RELAT.SG-ERG} @ noun @ ": [
 			"KBo 27.216,Vs. II 3"
 		],
 		"šatt-o-m @ ergreifen @ { a → TR.PFV-3A.SG} @ verb @ ": [
 			"KBo 27.216,Vs. II 3",
 			"KBo 32.15,Vs. 2a′"
-		],
-		"]ulmi-ož @ u.B. @ { a → EQU} @ noun @ ": [
-			"KBo 27.216,Vs. II 4"
-		],
-		"]ulm-o-ež @ u.B. @ { a → MOD.PAT-OPT} @ verb @ ": [
-			"KBo 27.216,Vs. II 4"
-		],
-		"kib-i[ @ u.B. @  @ unclear @ ": [
-			"KBo 27.216,Vs. II 4"
 		],
 		"eže-ne-e @ Erde @ RELAT.SG-DIR/LOC @ noun @ ": [
 			"KBo 27.216,Vs. II 7",
@@ -3985,29 +2178,11 @@
 		"ōšš-i @ u.B. @ { a → ANTIP} { b → TR.IMP} @ verb @ ": [
 			"KBo 27.216,Vs. II 7"
 		],
-		"]funi-va @ u.B. @ { a → DAT} @ noun @ ": [
-			"KBo 27.216,Vs. II 8"
-		],
 		"ḫāvoro+ni-ne-va @ Himmel @ { a → RELAT.SG-DAT} @ noun @ ": [
 			"KBo 27.216,Vs. II 8"
 		],
 		"ḫill-i @ mitteilen @ { a → ANTIP} { b → TR.IMP} @ verb @ ": [
 			"KBo 27.216,Rs. III 2′!"
-		],
-		"]š+ā+nni-i=l @ u.B. @ { a → 3POSS.SG.ABS=3PL.ABS} @ noun @ ": [
-			"KBo 27.216,Rs. III 3′!"
-		],
-		"]š+ā+ni-ne=l @ u.B. @ { a → ABL/INS=3PL.ABS} @ noun @ ": [
-			"KBo 27.216,Rs. III 3′!"
-		],
-		"]š+ā+ni-ne-e=l @ u.B. @ { a → RELAT.SG-DIR/LOC=3PL.ABS} @ noun @ ": [
-			"KBo 27.216,Rs. III 3′!"
-		],
-		"]š+ā+ni-ne-ž=l @ u.B. @ { a → RELAT.SG-ERG=3PL.ABS} @ noun @ ": [
-			"KBo 27.216,Rs. III 3′!"
-		],
-		"]]š+ā+nni-ž=l @ u.B. @ { a → ERG=3PL.ABS} @ noun @ ": [
-			"KBo 27.216,Rs. III 3′!"
 		],
 		"ḫāv+ō+že-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ ": [
 			"KBo 27.216,Rs. III 3′!"
@@ -4018,9 +2193,6 @@
 		"ane-ne-e @ PRON.ANAPH? @ { a → RELAT.SG-DIR/LOC} @ PRON @ ": [
 			"KBo 54.4,3′"
 		],
-		"upš-i[ @ u.B. @  @ unclear @ ": [
-			"KBo 54.4,4′"
-		],
 		"upši @ u.B. @ { a → .ABS} @ noun @ ": [
 			"KBo 54.4,4′"
 		],
@@ -4029,12 +2201,6 @@
 		],
 		"talāv+o+že @ groß @ { a → .ABS} @ noun @ ": [
 			"KBo 54.4,5′"
-		],
-		"]lili @ u.B. @ { a → .ABS} @ noun @ ": [
-			"KBo 54.4,6′"
-		],
-		"]l-il-i @ u.B. @ { a → -ANTIP} { b → -TR.IMP} @ verb @ ": [
-			"KBo 54.4,6′"
 		],
 		"Teššof-fe-ož @ DN @ { a → GEN-EQU} { b → GEN-ERG} @ noun @ ": [
 			"KBo 54.4,7′"
@@ -4048,16 +2214,10 @@
 		"ḫižm+ō+že-a @ glänzend @ { a → ESS} @ noun @ ": [
 			"KUB 45.63,Vs. I 1"
 		],
-		"kā[ @ u.B. @ .ABS @ unclear @ ": [
-			"KUB 45.63,Vs. I 1"
-		],
 		"ḫāvōro+ni-ne-ra @ Himmel @ { a → RELAT.SG-COM} @ noun @ ": [
 			"KUB 45.63,Vs. I 2"
 		],
 		"šir+ad-i-le @ erzählen @ MOD.ACT-1JUSS @ verb @ ": [
-			"KUB 45.63,Vs. I 3"
-		],
-		"fō[ @ u.B. @  @ unclear @ ": [
 			"KUB 45.63,Vs. I 3"
 		],
 		"avī-n @ Gesicht; vor @ { a → ABL/INS} @ ADV @ ": [
@@ -4068,10 +2228,6 @@
 		],
 		"āmmī-n-ī=n @ zuvor @ { a → ABL/INS-EPNTH=3SG.ABS} @ verb @ ": [
 			"KUB 45.63,Vs. I 4"
-		],
-		"nu[ @ u.B. @  @ unclear @ ": [
-			"KUB 45.63,Vs. I 4",
-			"KBo 32.20,Rs. IV 12′"
 		],
 		"ur-ō-kko @ existieren @ INT-NEG @ verb @ ": [
 			"KUB 45.63,Vs. I 5"
@@ -4091,9 +2247,6 @@
 			"KUB 45.63,Vs. I 6",
 			"KUB 45.63,Vs. I 10"
 		],
-		"eg-i[ @ u.B. @  @ unclear @ ": [
-			"KUB 45.63,Vs. I 6"
-		],
 		"uwer+o+ḫḫe-ā=l @ u.B. @ { a → ESS=3PL.ABS} @ noun @ ": [
 			"KUB 45.63,Vs. I 7"
 		],
@@ -4101,9 +2254,6 @@
 			"KUB 45.63,Vs. I 7"
 		],
 		"ḫōli-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ ": [
-			"KUB 45.63,Vs. I 7"
-		],
-		"ḫōli-ne-[ @ u.B. @ { a → RELAT.SG} @ noun @ ": [
 			"KUB 45.63,Vs. I 7"
 		],
 		"ḫōll-i @ u.B. @ { a → ANTIP} @ verb @ ": [
@@ -4153,9 +2303,6 @@
 		"amāttī-na @ uralt; früherer @ { a → RELAT.PL.ABS} @ noun @ ": [
 			"KUB 45.63,Vs. I 12"
 		],
-		"igi-i-až-[ @ Mitte @ { a → 3POSS-PL} @ noun @ ": [
-			"KUB 45.63,Vs. I 12"
-		],
 		"ḫīd-ūr-i @ u.B. @ { a → ūr-ANTIP} @ verb @ ": [
 			"KUB 45.63,Vs. I 13"
 		],
@@ -4174,12 +2321,6 @@
 		"uri-i-až-a=n @ u.B. @ { a → 3POSS-PL-DAT/ESS=3SG.ABS} @ noun @ ": [
 			"KUB 45.63,Vs. I 13"
 		],
-		"]ni @ u.B. @ { a → .ABS} @ noun @ ": [
-			"KUB 45.63,Vs. I 14"
-		],
-		"]-dā=l @ u.B. @ { a → DIR=3PL.ABS} @ noun @ ": [
-			"KUB 45.63,Rs. IV 2′"
-		],
 		"nīġr+i+a+že-ī=l @ u.B. @ { a → 3POSS.SG.ABS=3PL.ABS} @ noun @ ": [
 			"KUB 45.63,Rs. IV 3′"
 		],
@@ -4192,9 +2333,6 @@
 		"adāli-ne-ē=lla @ stark; der Starke @ { a → RELAT.SG-DIR/LOC=3PL.ABS} @ noun @ ": [
 			"KUB 45.63,Rs. IV 4′"
 		],
-		"ki[ @ u.B. @ .ABS @ unclear @ ": [
-			"KUB 45.63,Rs. IV 4′"
-		],
 		"Kumarve-nē-ž=l @ DN @ { a → RELAT.SG-ERG=3PL.ABS} @ noun @ ": [
 			"KUB 45.63,Rs. IV 5′"
 		],
@@ -4202,36 +2340,14 @@
 			"KUB 45.63,Rs. IV 6′",
 			"KUB 47.2,Vs. I 5"
 		],
-		"]a=mma @ u.B. @ { a → 2SG.ABS} @ unclear @ ": [
-			"VBoT 59,Vs. II 2′"
-		],
-		"]-ve-na @ u.B. @ { a → GEN-RELAT.PL.ABS} @ noun @ ": [
-			"VBoT 59,Vs. II 4′",
-			"KBo 32.103g,1′"
-		],
 		"avi-n @ Gesicht; vor @ { a → ABL/INS} @ ADV @ ": [
 			"VBoT 59,Vs. II 5′"
 		],
 		"avi-n @ Gesicht; vor @ { a → ABL/INS} @ noun @ ": [
 			"VBoT 59,Vs. II 5′"
 		],
-		"an-a[ @ u.B. @  @ unclear @ ": [
-			"VBoT 59,Vs. II 5′"
-		],
-		"un-ī[ @ kommen; bringen @  @ unclear @ ": [
-			"VBoT 59,Vs. II 6′"
-		],
 		"un-i @ kommen; bringen @ { a → ANTIP} { b → TR.IMP} @ verb @ ": [
 			"VBoT 59,Vs. II 6′"
-		],
-		"]t+ikk+o+nni-[ @ u.B. @  @ noun @ ": [
-			"VBoT 59,Vs. II 7′"
-		],
-		"]ḫ+ār+i @ Weg @ { a → .ABS} @ noun @ ": [
-			"VBoT 59,Vs. II 8′"
-		],
-		"]ḫ-ār-i @ u.B. @ { a → ITER-ANTIP} { b → ITER-TR.IMP} @ verb @ ": [
-			"VBoT 59,Vs. II 8′"
 		],
 		"ḫāri @ u.B. @ { a → .ABS} @ noun @ ": [
 			"VBoT 59,Vs. II 8′"
@@ -4242,23 +2358,11 @@
 		"tīd-i-bāde @ zählen @ { a → ACT-ADJ.NEG.ABS} @ noun @ ": [
 			"VBoT 59,Vs. II 8′"
 		],
-		"tīd-i-bāde-[ @ zählen @ { a → ACT-ADJ.NEG} @ noun @ ": [
-			"VBoT 59,Vs. II 8′"
-		],
-		"tīd-i-bāde-[ @ angreifen @ { a → ACT-ADJ.NEG} @ noun @ ": [
-			"VBoT 59,Vs. II 8′"
-		],
 		"tīd-i-bāde @ u.B. @ { a → ACT-ADJ.NEG.ABS} @ noun @ ": [
-			"VBoT 59,Vs. II 8′"
-		],
-		"tīd-i-bāde-[ @ angreifen; u.B.; zählen @ { a → ACT-ADJ.NEG} @ noun @ ": [
 			"VBoT 59,Vs. II 8′"
 		],
 		"pīlli-nē-da @ Kanal @ { a → RELAT.SG-DIR} @ noun @ ": [
 			"VBoT 59,Vs. II 9′"
-		],
-		"]ade @ u.B. @ { a → .ABS} @ noun @ ": [
-			"VBoT 59,Vs. II 10′"
 		],
 		"ade @ u.B. @ { a → .ABS} @ noun @ ": [
 			"VBoT 59,Vs. II 10′"
@@ -4270,23 +2374,11 @@
 			"VBoT 59,Vs. II 10′",
 			"VBoT 59,Rs. III 9′"
 		],
-		"šā[ @ u.B. @  @ unclear @ ": [
-			"VBoT 59,Vs. II 10′",
-			"KBo 27.219+, {€1} Rs. IV 14′",
-			"KBo 32.11,Rs. IV 5′",
-			"KBo 32.11,Rs. IV 6′"
-		],
 		"ište @ 1PRON.SG @ { a → .ABS} @ PRON @ ": [
 			"VBoT 59,Vs. II 11′",
 			"KBo 32.11,Rs. IV 6′"
 		],
 		"išt-i @ u.B. @ { a → ANTIP} { b → TR.IMP} @ verb @ ": [
-			"VBoT 59,Vs. II 11′"
-		],
-		"šār-u[ @ u.B @  @ unclear @ ": [
-			"VBoT 59,Vs. II 11′"
-		],
-		"šār-u[ @ wünschen @  @ verb @ ": [
 			"VBoT 59,Vs. II 11′"
 		],
 		"šō-da @ 1PRON.SG @ { a → DIR} @ PRON @ ": [
@@ -4323,97 +2415,26 @@
 		"išši-b @ u.B. @ { a → 2POSS.SG.ABS} @ noun @ ": [
 			"VBoT 59,Vs. II 13′"
 		],
-		"išši-p-[ @ u.B. @ { a → 2POSS.SG} @ noun @ ": [
-			"VBoT 59,Vs. II 13′"
-		],
 		"išši-iffe @ u.B. @ { a → 1POSS.SG.ABS} @ noun @ ": [
-			"VBoT 59,Vs. II 13′"
-		],
-		"išši-iffu-[ @ u.B. @ { a → 1POSS.SG} @ noun @ ": [
-			"VBoT 59,Vs. II 13′"
-		],
-		"išš-ip[ @ u.B. @  @ unclear @ ": [
 			"VBoT 59,Vs. II 13′"
 		],
 		"šār+i+šše-b @ Wunsch @ { a → 2POSS.SG.ABS} @ noun @ ": [
 			"VBoT 59,Vs. II 13′"
 		],
-		"šār+i+šše-p-[ @ Wunsch @ { a → 2POSS.SG} @ noun @ ": [
-			"VBoT 59,Vs. II 13′"
-		],
 		"šār+i+šše-iffe @ Wunsch @ { a → 1POSS.SG.ABS} @ noun @ ": [
-			"VBoT 59,Vs. II 13′"
-		],
-		"šār+i+šše-iffu-[ @ Wunsch @ { a → 1POSS.SG} @ noun @ ": [
 			"VBoT 59,Vs. II 13′"
 		],
 		"šūw-ull-o=l @ u.B. @ { a → ull-2A.SG=3PL.ABS} @ verb @ ": [
 			"VBoT 59,Vs. II 14′"
 		],
-		"]tiž[ @ u.B. @  @ unclear @ ": [
-			"VBoT 59,Vs. II 15′",
-			"KBo 32.11,Rs. IV 11′"
-		],
-		"tiž[ @ u.B. @  @ unclear @ ": [
-			"VBoT 59,Vs. II 15′",
-			"KBo 32.11,Rs. IV 11′"
-		],
-		"]līli @ u.B. @ { a → .ABS} @ noun @ ": [
-			"VBoT 59,Rs. III 1′"
-		],
-		"]l-ī-le @ u.B. @ { a → MOD.ACT-1JUSS} @ verb @ ": [
-			"VBoT 59,Rs. III 1′"
-		],
-		"]līli[ @ u.B. @  @ unclear @ ": [
-			"VBoT 59,Rs. III 1′"
-		],
-		"]likki[ @ u.B. @  @ noun @ ": [
-			"VBoT 59,Rs. III 2′"
-		],
-		"]l-i-kki=[ @ u.B. @ { a → ANTIP-NEG} @ verb @ ": [
-			"VBoT 59,Rs. III 2′"
-		],
-		"]-ō-kko @ u.B. @ { a → INT-NEG} @ verb @ ": [
-			"VBoT 59,Rs. III 3′"
-		],
 		"šār-i @ u.B. @ { a → ANTIP} { b → TR.IMP} @ verb @ ": [
 			"VBoT 59,Rs. III 3′"
-		],
-		"šāri-[ @ Wunsch? @  @ noun @ ": [
-			"VBoT 59,Rs. III 3′"
-		],
-		"šār-i[ @ wünschen @  @ unclear @ ": [
-			"VBoT 59,Rs. III 3′"
-		],
-		"]r-il-ān-o-m @ u.B. @ { a → il-ān-TR.PFV-3A.SG} @ verb @ ": [
-			"VBoT 59,Rs. III 4′"
 		],
 		"ḫari @ Weg @ { a → .ABS} @ noun @ ": [
 			"VBoT 59,Rs. III 4′"
 		],
-		"ḫari-[ @ Weg @  @ noun @ ": [
-			"VBoT 59,Rs. III 4′"
-		],
-		"]-ve-ne-a @ u.B. @ { a → GEN-RELAT.SG-ESS} @ verb @ ": [
-			"VBoT 59,Rs. III 5′"
-		],
 		"Šimige @ GN @ { a → .ABS} @ noun @ ": [
 			"VBoT 59,Rs. III 5′"
-		],
-		"]ḫi-ne-n @ u.B. @ { a → RELAT.SG-ABL/INS} @ noun @ ": [
-			"VBoT 59,Rs. III 6′"
-		],
-		"]ḫi-ne=n @ u.B. @ { a → ABL/INS=3SG.ABS} { b → ABL/INS=CON} @ noun @ ": [
-			"VBoT 59,Rs. III 6′"
-		],
-		"]ḫi-ne-e=n @ u.B. @ { a → RELAT.SG-DIR/LOC=3SG.ABS} { b → RELAT.SG-DIR/LOC=CON} @ noun @ ": [
-			"VBoT 59,Rs. III 6′"
-		],
-		"ūš[ @ u.B. @  @ unclear @ ": [
-			"VBoT 59,Rs. III 6′"
-		],
-		"]-o-m @ u.B. @ { a → TR.PFV-3A.SG} @ verb @ ": [
-			"VBoT 59,Rs. III 7′"
 		],
 		"ur+onni-n @ hinterer; letzter @ { a → ABL/INS} @ noun @ ": [
 			"VBoT 59,Rs. III 7′"
@@ -4421,32 +2442,17 @@
 		"ur+o+nni=n @ hinterer; letzterer @ { a → .ABS=3SG.ABS} { b → .ABS=CON} @ noun @ ": [
 			"VBoT 59,Rs. III 7′"
 		],
-		"]i-ve-na @ u.B. @ { a → GEN-RELAT.PL.ABS} @ noun @ ": [
-			"VBoT 59,Rs. III 8′"
-		],
 		"talmi=lla @ groß @ { a → .ABS=3PL.ABS} @ noun @ ": [
 			"VBoT 59,Rs. III 8′"
 		],
 		"talm-i=lla @ groß sein; groß werden; groß machen @ { a → ANTIP=3PL.ABS} @ verb @ ": [
 			"VBoT 59,Rs. III 8′"
 		],
-		"šēr[ @ u.B. @  @ unclear @ ": [
-			"VBoT 59,Rs. III 9′"
-		],
-		"]ud+ar+i-ne-ž @ u.B. @ { a → RELAT.SG-ERG} @ noun @ ": [
-			"VBoT 59,Rs. III 10′"
-		],
 		"ud+ari-ne-ž @ u.B. @ { a → RELAT.SG-ERG} @ noun @ ": [
-			"VBoT 59,Rs. III 10′"
-		],
-		"]ud-ar-i-l-ež @ u.B. @ { a → ITER-MOD.ACT-l-OPT} @ verb @ ": [
 			"VBoT 59,Rs. III 10′"
 		],
 		"ud-ar-i-l-ež @ u.B. @ { a → ITER-MOD.ACT-l-OPT} @ verb @ ": [
 			"VBoT 59,Rs. III 10′"
-		],
-		"pūġ-u[ @ tauschen @  @ verb @ ": [
-			"VBoT 59,Rs. III 11′"
 		],
 		"pūġ-o @ tauschen @ { a → MOD.PAT} @ verb @ ": [
 			"VBoT 59,Rs. III 11′"
@@ -4454,30 +2460,11 @@
 		"pūġ-u @ tauschen @ { a → MED} @ verb @ ": [
 			"VBoT 59,Rs. III 11′"
 		],
-		"]ti @ u.B. @ { a → .ABS} @ noun @ ": [
-			"VBoT 59,Rs. III 12′",
-			"KBo 27.219+, {€5} 10′",
-			"KUB 47.6,8′"
-		],
-		"]t-i @ u.B. @ { a → ANTIP} { b → TR.IMP} @ verb @ ": [
-			"VBoT 59,Rs. III 12′"
-		],
-		"]ušk+ār+i-a @ u.B. @ { a → ESS} @ noun @ ": [
-			"VBoT 59,Rs. III 13′"
-		],
 		"ušk+ār+i-a @ u.B. @ { a → ESS} @ noun @ ": [
-			"VBoT 59,Rs. III 13′"
-		],
-		"]ušk-ār-a @ u.B. @ { a → ITER-3A.SG} { b → ITER-INT} @ verb @ ": [
 			"VBoT 59,Rs. III 13′"
 		],
 		"ušk-ār-a @ u.B. @ { a → ITER-3A.SG} { b → ITER-INT} @ verb @ ": [
 			"VBoT 59,Rs. III 13′"
-		],
-		"]ni[ @ u.B. @  @ unclear @ ": [
-			"VBoT 59,Rs. III 14′",
-			"KUB 47.5+, {€1} Rs. IV 19",
-			"KBo 32.100,1′"
 		],
 		"ḫār+a+ġe-ve-aē=m @ u.B. @ { a → GEN-INS=2SG.ABS} @ noun @ ": [
 			"KBo 12.80+, {€2+1} Rs. IV 1′/11′"
@@ -4541,15 +2528,6 @@
 		"šikki-na-až-a=an @ Pflock?; Balken? @ { a → RELAT.PL-PL-DAT/ESS=CON} @ noun @ ": [
 			"KBo 12.80+, {€2+1+3} Rs. IV 5′/15′/Rs. IV? 1′"
 		],
-		"]-na-až-a=n @ u.B. @ { a → RELAT.PL-PL-DAT/ESS=3SG.ABS} @ noun @ ": [
-			"KBo 12.80+, {€2+1+3} Rs. IV 5′/15′/Rs. IV? 1′"
-		],
-		"]-na-až-a=an @ u.B. @ { a → RELAT.PL-PL-DAT/ESS=CON} @ noun @ ": [
-			"KBo 12.80+, {€2+1+3} Rs. IV 5′/15′/Rs. IV? 1′"
-		],
-		"nā[ @ u.B. @  @ unclear @ ": [
-			"KBo 12.80+, {€2+1+3} Rs. IV 5′/15′/Rs. IV? 1′"
-		],
 		"šēġā-ve-na-až-a=n @ Tor @ { a → GEN-RELAT.PL-PL-DAT/ESS=3SG.ABS} @ noun @ ": [
 			"KBo 12.80+, {€2+3} Rs. IV 6′/Rs. IV? 2′"
 		],
@@ -4560,9 +2538,6 @@
 			"KBo 12.80+, {€2+3} Rs. IV 6′/Rs. IV? 2′"
 		],
 		"ḫōrdi @ Fenster? @ { a → .ABS} @ noun @ ": [
-			"KBo 12.80+, {€2+3} Rs. IV 7′/Rs. IV? 3′"
-		],
-		"Kum[ @ GN @  @ noun @ ": [
 			"KBo 12.80+, {€2+3} Rs. IV 7′/Rs. IV? 3′"
 		],
 		"ar-o-re @ geben @ { a → PAT-PTCP.ABS} @ noun @ ": [
@@ -4576,9 +2551,6 @@
 			"KBo 12.80+, {€2+3} Rs. IV 8′/Rs. IV? 4′"
 		],
 		"ud-ušt-ol-o=m @ u.B. @ { a → RES-ol-2A.SG=CON} @ verb @ ": [
-			"KBo 12.80+, {€2+3} Rs. IV 8′/Rs. IV? 4′"
-		],
-		"]na @ u.B. @  @ noun @ ": [
 			"KBo 12.80+, {€2+3} Rs. IV 8′/Rs. IV? 4′"
 		],
 		"Ninuwa-va @ GN @ DAT @ noun @ ": [
@@ -4651,26 +2623,14 @@
 			"KBo 12.80+, {€2+3} Rs. IV 14′/Rs. IV? 10′",
 			"KBo 12.80+, {€2+3} Vs. I 2′/Vs. I? 3"
 		],
-		"ḫā[ @ u.B. @  @ unclear @ ": [
-			"KBo 12.80+, {€2+3} Rs. IV 15′/Rs. IV? 11′"
-		],
 		"Mūgižanun @ GN @ { a → .ABS} @ noun @ ": [
 			"KBo 12.80+, {€2+3} Rs. IV 15′/Rs. IV? 11′"
-		],
-		"]-va-en @ u.B. @ { a → NEG-3JUSS} @ verb @ ": [
-			"KBo 12.80+, {€3} Vs. I? 1"
 		],
 		"ši-ur-i-va-en @ u.B. @ { a → ur-MOD.ACT-NEG-3JUSS} @ verb @ ": [
 			"KBo 12.80+, {€3} Vs. I? 1"
 		],
 		"nav-uffu @ u.B. @ { a → 1A.SG.NEG} @ verb @ ": [
 			"KBo 12.80+, {€3} Vs. I? 1"
-		],
-		"navuwu-[ @ u.B. @  @ unclear @ ": [
-			"KBo 12.80+, {€3} Vs. I? 1"
-		],
-		"]-i=mma @ u.B. @ { a → TR.IMP=2SG.ABS} @ verb @ ": [
-			"KBo 12.80+, {€2+3} Vs. I 1′/Vs. I? 2"
 		],
 		"for-i-va-en-i=ma @ sehen @ { a → MOD.ACT-NEG-3JUSS-EPNTH=CON} @ noun @ ": [
 			"KBo 12.80+, {€2+3} Vs. I 1′/Vs. I? 2"
@@ -4707,10 +2667,6 @@
 		],
 		"faž-a-b @ eintreten @ INT-b @ verb @ ": [
 			"KBo 12.80+, {€2+3} Vs. I 3′/Vs. I? 4"
-		],
-		"ištani-[ @ Inneres @  @ noun @ ": [
-			"KBo 12.80+, {€2+3} Vs. I 3′/Vs. I? 4",
-			"KBo 27.219+, {€3} 1′"
 		],
 		"Šavoška=an @ DN @ { a → .ABS=CON} @ noun @ ": [
 			"KBo 12.80+, {€2+3} Vs. I 4′/Vs. I? 5",
@@ -4848,9 +2804,6 @@
 		"inū=tta @ wie @ { a → =1SG.ABS} @ ADV @ ": [
 			"KBo 12.80+, {€2} Vs. I 15′"
 		],
-		"]anna @ u.B. @  @ unclear @ ": [
-			"KUB 47.14,2′"
-		],
 		"avi-i-da @ Gesicht; vor @ { a → 3POSS.SG-DIR} @ noun @ ": [
 			"KUB 47.14,2′",
 			"KUB 47.8,Rs. IV? 1",
@@ -4862,56 +2815,14 @@
 		"ḫīž-ud-a @ u.B. @ { a → ud-3A.SG} { b → ud-INT} @ verb @ ": [
 			"KUB 47.14,3′"
 		],
-		"ḫīž-ud-a[ @ u.B. @ { a → ud} @ unclear @ ": [
-			"KUB 47.14,3′"
-		],
 		"av+al+ġe-a @ u.B. @ { a → ESS} @ noun @ ": [
 			"KUB 47.14,4′"
 		],
 		"naḫḫ-a @ sich setzen; sitzen; einsetzen @ INT @ verb @ ": [
 			"KUB 47.14,5′"
 		],
-		"]tali-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ ": [
-			"KUB 47.14,8′"
-		],
-		"]talli-a @ u.B. @ { a → ESS} @ noun @ ": [
-			"KUB 47.14,8′"
-		],
-		"]ta=lla @ u.B. @ { a → =3PL.ABS} @ unclear @ ": [
-			"KUB 47.14,8′"
-		],
 		"uraē-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ ": [
 			"KUB 47.14,8′"
-		],
-		"]ikkadari-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ ": [
-			"KUB 47.14,9′"
-		],
-		"]rali-na-až-a @ u.B. @ { a → RELAT.PL-PL-DAT/ESS} @ noun @ ": [
-			"KUB 47.14,10′"
-		],
-		"]rini-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ ": [
-			"KUB 47.14,11′"
-		],
-		"]r+i+nni-a @ u.B. @ { a → ESS} @ noun @ ": [
-			"KUB 47.14,11′"
-		],
-		"]ri=nna @ u.B. @ { a → =3SG.ABS} @ unclear @ ": [
-			"KUB 47.14,11′"
-		],
-		"]r-ne-nna @ u.B. @ { a → RELAT.SG-EQU2} @ noun @ ": [
-			"KUB 47.14,11′"
-		],
-		"]ri-i-nna @ u.B. @ { a → 3POSS.SG-EQU2} @ noun @ ": [
-			"KUB 47.14,11′"
-		],
-		"]r-i=nna @ u.B. @ { a → ANTIP=3SG.ABS} { b → TR.IMP=3SG.ABS} @ verb @ ": [
-			"KUB 47.14,11′"
-		],
-		"]r+i+nn+adi @ u.B. @ { a → .ABS} @ noun @ ": [
-			"KUB 47.14,11′"
-		],
-		"]r+i+nn+adi-[ @ u.B. @  @ noun @ ": [
-			"KUB 47.14,11′"
 		],
 		"aġarri @ Weihrauch @ { a → .ABS} @ noun @ ": [
 			"KUB 47.14,12′"
@@ -4922,21 +2833,9 @@
 		"aġari-ne-e @ Weihrauch @ { a → RELAT.SG-DIR/LOC} @ noun @ ": [
 			"KUB 47.14,12′"
 		],
-		"aġari-ne-[ @ Weihrauch @ { a → RELAT.SG} @ noun @ ": [
-			"KUB 47.14,12′"
-		],
 		"Kešše-ne-da=l @ PN @ { a → RELAT.SG-DIR=3PL.ABS} @ noun @ ": [
 			"ABoT 2.18,2′",
 			"KBo 27.219+, {€1} Rs. III 3′"
-		],
-		"]ī-b @ u.B. @ { a → 2POSS.SG.ABS} @ noun @ ": [
-			"ABoT 2.18,3′"
-		],
-		"]-ī-b @ u.B. @ { a → ANTIP-b} @ verb @ ": [
-			"ABoT 2.18,3′"
-		],
-		"]-ī=m @ u.B. @ { a → TR.IMP=2SG.ABS} { b → TR.IMP=CON} { c → ANTIP=2SG.ABS} { d → ANTIP=CON} @ verb @ ": [
-			"ABoT 2.18,3′"
 		],
 		"kēbli @ Jäger @ { a → .ABS} @ noun @ ": [
 			"ABoT 2.18,3′"
@@ -4949,12 +2848,6 @@
 		],
 		"pīn+ā+ni @ u.B. @ { a → .ABS} @ noun @ ": [
 			"ABoT 2.18,3′"
-		],
-		"pīn+ān+i-[ @ u.B. @  @ noun @ ": [
-			"ABoT 2.18,3′"
-		],
-		"]kilī-b @ u.B. @ { a → 2POSS.SG.ABS} @ noun @ ": [
-			"ABoT 2.18,4′"
 		],
 		"kilī-b @ u.B. @ { a → 2POSS.SG.ABS} @ noun @ ": [
 			"ABoT 2.18,4′"
@@ -4977,11 +2870,6 @@
 			"KBo 27.219+, {€1+2} Rs. IV 3′/Rs. 6!",
 			"KBo 27.219+, {€1+7} Rs. IV 5″/6′"
 		],
-		"Kešše-[ @ PN @  @ noun @ ": [
-			"ABoT 2.18,4′",
-			"FHL 179,1′",
-			"KBo 27.219+, {€1} Vs. I 9"
-		],
 		"nūrbi-ne-ž @ u.B. @ { a → RELAT.SG-ERG} @ noun @ ": [
 			"ABoT 2.18,5′"
 		],
@@ -4991,27 +2879,11 @@
 		"abulgili-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ ": [
 			"ABoT 2.18,5′"
 		],
-		"]-nē-ž=l @ u.B. @ { a → RELAT.SG-ERG=3PL.ABS} @ noun @ ": [
-			"ABoT 2.18,6′"
-		],
 		"arde-da @ Stadt @ { a → DIR} @ noun @ ": [
 			"ABoT 2.18,6′"
 		],
 		"arde-i-da @ Stadt @ { a → 3POSS.SG-DIR} @ noun @ ": [
 			"ABoT 2.18,6′"
-		],
-		"f[ @ u.B. @  @ unclear @ ": [
-			"ABoT 2.18,6′",
-			"KBo 32.31+, {€2} Vs. I 10"
-		],
-		"]pi-āi @ u.B. @ INS @ noun @ ": [
-			"ABoT 2.18,7′"
-		],
-		"]-ve-āi @ u.B. @ { a → GEN-INS} @ noun @ ": [
-			"ABoT 2.18,7′"
-		],
-		"]p-i-āi @ u.B. @ { a → MOD.ACT-PURP} @ verb @ ": [
-			"ABoT 2.18,7′"
 		],
 		"kād-ō-l-āī-n @ sagen; sprechen @ { a → MOD.PAT-l-PURP-n} @ verb @ ": [
 			"ABoT 2.18,7′"
@@ -5025,15 +2897,6 @@
 		"kād-ōl-i-āī=n @ sagen; sprechen @ { a → ōl-MOD.ACT-PURP=3SG.ABS} { b → ōl-MOD.ACT-PURP=CON} @ verb @ ": [
 			"ABoT 2.18,7′"
 		],
-		"]ari-ne-ž @ u.B. @ { a → RELAT.SG-ERG} @ noun @ ": [
-			"ABoT 2.18,8′"
-		],
-		"]ar-i-l-ež @ u.B. @ { a → MODA.ACT-l-OPT} @ verb @ ": [
-			"ABoT 2.18,8′"
-		],
-		"]-ar-i-l-ež @ u.B. @ { a → INTER-MOD.ACT-l-OPT} @ verb @ ": [
-			"ABoT 2.18,8′"
-		],
 		"tūm-ušt-ī=n=ān @ u.B. @ { a → RES-ANTIP=3SG.ABS=CON} @ verb @ ": [
 			"ABoT 2.18,8′"
 		],
@@ -5043,15 +2906,6 @@
 		"tūm+uštī-nā @ u.B. @ { a → RELAT.PL.ABS} @ noun @ ": [
 			"ABoT 2.18,8′"
 		],
-		"tūm+uštī-nā-[ @ u.B. @ { a → RELAT.PL} @ noun @ ": [
-			"ABoT 2.18,8′"
-		],
-		"]-l-āī-n @ u.B. @ { a → l-PURP-n} @ verb @ ": [
-			"ABoT 2.18,9′"
-		],
-		"]-l-āī=n @ u.B. @ { a → l-PURP=3SG.ABS} { b → l-PURP=CON} @ verb @ ": [
-			"ABoT 2.18,9′"
-		],
 		"tī-i-a @ sprechen @ { a → TR-3A.SG} @ verb @ ": [
 			"ABoT 2.18,9′"
 		],
@@ -5060,28 +2914,6 @@
 		],
 		"tīe-i-a @ Wort; Sache @ { a → 3POSS.SG-ESS} @ noun @ ": [
 			"ABoT 2.18,9′"
-		],
-		"]i+ġe-va @ u.B. @ { a → DAT} @ noun @ ": [
-			"FHL 179,1′"
-		],
-		"]+i+ġe-ve-a @ u.B. @ { a → GEN-ESS} @ noun @ ": [
-			"FHL 179,1′"
-		],
-		"sel[ @ u.B. @  @ unclear @ ": [
-			"FHL 179,2′"
-		],
-		"]rin @ u.B. @  @ unclear @ ": [
-			"FHL 179,3′"
-		],
-		"išt-a[ @ u.B. @  @ unclear @ ": [
-			"FHL 179,3′",
-			"KBo 27.219+, {€1} Vs. I 6"
-		],
-		"]am-o-kko @ u.B. @ { a → INT-NEG} @ verb @ ": [
-			"KBo 27.219+, {€1} Vs. I 1"
-		],
-		"]-am-o-kko @ u.B. @ { a → FACT-INT-NEG} @ verb @ ": [
-			"KBo 27.219+, {€1} Vs. I 1"
 		],
 		"kāž-o-kko @ u.B. @ { a → INT-NEG} @ verb @ ": [
 			"KBo 27.219+, {€1} Vs. I 1"
@@ -5095,25 +2927,16 @@
 		"šūġari-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ ": [
 			"KBo 27.219+, {€1} Vs. I 2"
 		],
-		"šūġari-ne-[ @ u.B. @ { a → RELAT:SG} @ noun @ ": [
-			"KBo 27.219+, {€1} Vs. I 2"
-		],
 		"šūġuri-ne @ u.B. @ { a → ABL/INS} @ noun @ ": [
 			"KBo 27.219+, {€1} Vs. I 2"
 		],
 		"šūġuri-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ ": [
 			"KBo 27.219+, {€1} Vs. I 2"
 		],
-		"šūġuri-ne-[ @ u.B. @ { a → RELAT.SG} @ noun @ ": [
-			"KBo 27.219+, {€1} Vs. I 2"
-		],
 		"šūmuri-ne @ u.B. @ { a → ABL/INS} @ noun @ ": [
 			"KBo 27.219+, {€1} Vs. I 2"
 		],
 		"šūmuri-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ ": [
-			"KBo 27.219+, {€1} Vs. I 2"
-		],
-		"šūmuri-ne-[ @ u.B. @ { a → RELAT.SG} @ noun @ ": [
 			"KBo 27.219+, {€1} Vs. I 2"
 		],
 		"šatt-ō-m @ ergreifen @ { a → TR.PFV-3A.SG} @ verb @ ": [
@@ -5123,9 +2946,6 @@
 			"KBo 27.219+, {€1} Vs. I 3"
 		],
 		"pīllē-nē-ve @ Kanal @ { a → RELAT.SG-GEN} @ noun @ ": [
-			"KBo 27.219+, {€1} Vs. I 3"
-		],
-		"pīllē-nē-ve-[ @ Kanal @ { a → RELAT.SG-GEN} @ noun @ ": [
 			"KBo 27.219+, {€1} Vs. I 3"
 		],
 		"fōg-uġ-ō-m @ u.B. @ { a → uġ-TR.PFV-3A.SG} @ verb @ ": [
@@ -5161,9 +2981,6 @@
 		"ištani-ī=ma @ Inneres @ { a → 3POSS.SG.ABS=CON} @ noun @ ": [
 			"KBo 27.219+, {€1} Vs. I 5"
 		],
-		"šōr[ @ u.B. @  @ unclear @ ": [
-			"KBo 27.219+, {€1} Vs. I 5"
-		],
 		"šūrnī=ma @ u.B. @ { a → .ABS=CON} @ noun @ ": [
 			"KBo 27.219+, {€1} Vs. I 6"
 		],
@@ -5184,9 +3001,6 @@
 			"KBo 27.219+, {€1} Vs. I 7"
 		],
 		"pend-a-b @ zurückkehren; zurückbringen @ { a → INT-b} @ verb @ ": [
-			"KBo 27.219+, {€1} Vs. I 7"
-		],
-		"pend-a[ @ zurückkehren; zurückbringen @  @ unclear @ ": [
 			"KBo 27.219+, {€1} Vs. I 7"
 		],
 		"taržē-na-aš-ta=l @ u.B. @ { a → RELAT.PL-PL-DIR=3PL.ABS} @ noun @ ": [
@@ -5253,17 +3067,11 @@
 		"ai @ wenn; falls @  @ CONJ @ ": [
 			"KBo 27.219+, {€1} Vs. I 4″"
 		],
-		"šēll-u[ @ u.B. @  @ unclear @ ": [
-			"KBo 27.219+, {€1} Vs. I 4″"
-		],
 		"Udip.šarrā-ž=l @ PN @ { a → ERG=3PL.ABS} @ noun @ ": [
 			"KBo 27.219+, {€1} Vs. I 5″",
 			"KBo 27.219+, {€1} Vs. I 14″"
 		],
 		"kād-ašt-i @ sagen; sprechen @ { a → RES-ANTIP} { b → RES-TR.IMP} @ verb @ ": [
-			"KBo 27.219+, {€1} Vs. I 7″"
-		],
-		"um-a[ @ u.B. @  @ unclear @ ": [
 			"KBo 27.219+, {€1} Vs. I 7″"
 		],
 		"ukku @ u.B. @  @ ADV @ ": [
@@ -5273,9 +3081,6 @@
 			"KBo 27.219+, {€1} Vs. I 8″"
 		],
 		"ukk-u @ u.B. @ { a → MED} @ verb @ ": [
-			"KBo 27.219+, {€1} Vs. I 8″"
-		],
-		"až-i[ @ u.B. @  @ unclear @ ": [
 			"KBo 27.219+, {€1} Vs. I 8″"
 		],
 		"keviri-na-až-ož @ Ältester @ { a → RELAT.PL-PL-ERG} @ noun @ ": [
@@ -5290,13 +3095,7 @@
 		"nīġr-ī-ve-na-āž-e @ u.B. @ { a → 3POSS.SG-GEN-RELAT.PL-PL-GEN} @ noun @ ": [
 			"KBo 27.219+, {€1} Vs. I 11″"
 		],
-		"nīġri-ī-ve-na-āž-e-[ @ u.B. @ { a → 3POSS.SG-GEN-RELAT.PL-PL-GEN} @ noun @ ": [
-			"KBo 27.219+, {€1} Vs. I 11″"
-		],
 		"murri-ī-e @ u.B. @ { a → 3POSS.SG-DIR/LOC} @ noun @ ": [
-			"KBo 27.219+, {€1} Vs. I 12″"
-		],
-		"tāl-u[ @ herausziehen @  @ unclear @ ": [
 			"KBo 27.219+, {€1} Vs. I 12″"
 		],
 		"tāl+ūl+ī+že-a=nna @ u.B. @ { a → ESS=3SG.ABS} @ noun @ ": [
@@ -5311,9 +3110,6 @@
 		"kēlġēdi-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ ": [
 			"KBo 27.219+, {€1} Vs. I 16″"
 		],
-		"kēl[ @ u.B. @  @ unclear @ ": [
-			"KBo 27.219+, {€1} Vs. I 16″"
-		],
 		"kēviri-nā=m @ Ältester @ { a → RELAT.PL.ABS=CON} @ noun @ ": [
 			"KBo 27.219+, {€1} Vs. I 17″"
 		],
@@ -5322,10 +3118,6 @@
 		],
 		"sūgētte-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ ": [
 			"KBo 27.219+, {€1} Vs. I 18″"
-		],
-		"ḫīll-i[ @ mitteilen @  @ unclear @ ": [
-			"KBo 27.219+, {€1} Vs. I 18″",
-			"KBo 32.109,4′"
 		],
 		"ḫīll-i @ mitteilen @ { a → ANTIP} { b → TR.IMP} @ verb @ ": [
 			"KBo 27.219+, {€1} Vs. I 18″"
@@ -5350,27 +3142,6 @@
 		],
 		"ar-ōž-a @ geben @ { a → PST-3A.SG} @ verb @ ": [
 			"KBo 27.219+, {€1} Vs. I 20″"
-		],
-		"tīža-v-[ @ Herz @ { a → 2POSS.SG} @ noun @ ": [
-			"KBo 27.219+, {€1+2} Vs. I 21″/Vs. 1′"
-		],
-		"tīža-v=[ @ Herz @ { a → 2POSS.SG.ABS} @ verb @ ": [
-			"KBo 27.219+, {€1+2} Vs. I 21″/Vs. 1′"
-		],
-		"]ḫa[ @ u.B. @  @ unclear @ ": [
-			"KBo 27.219+, {€1+2} Vs. I 21″/Vs. 1′"
-		],
-		"]ḫi-a @ Herz @ { a → ESS} @ noun @ ": [
-			"KBo 27.219+, {€1+2} Vs. I 21″/Vs. 1′"
-		],
-		"]ḫ-a @ u.B. @ { a → INT} @ verb @ ": [
-			"KBo 27.219+, {€1+2} Vs. I 21″/Vs. 1′"
-		],
-		"ḫīr-ā[ @ u.B. @  @ unclear @ ": [
-			"KBo 27.219+, {€1+2} Vs. I 22″/Vs. 2′"
-		],
-		"]apše-na-až-a @ u.B. @ { a → RELAT.PL-PL-DAT/ESS} @ noun @ ": [
-			"KBo 27.219+, {€1+2} Vs. I 22″/Vs. 2′"
 		],
 		"apše-na-až-a @ Schlange @ { a → RELAT.PL-PL-DAT/ESS} @ noun @ ": [
 			"KBo 27.219+, {€1+2} Vs. I 22″/Vs. 2′"
@@ -5397,9 +3168,6 @@
 		"karg-ān-i @ u.B. @ { a → ān-ANTIP} @ noun @ ": [
 			"KBo 27.219+, {€3+1+4} Vs. I(?) 1/Vs. II 1/lk. Kol. 1"
 		],
-		"]-va @ u.B. @ { a → DAT} @ verb @ ": [
-			"KBo 27.219+, {€3+1+4} Vs. I(?) 2/Vs. II 2/lk. Kol. 2"
-		],
 		"ūmm+um+a+šše-ne-va @ u.B. @ { a → RELAT.SG-DAT} @ noun @ ": [
 			"KBo 27.219+, {€3+1+4} Vs. I(?) 2/Vs. II 2/lk. Kol. 2"
 		],
@@ -5411,25 +3179,6 @@
 		],
 		"ḫapš-i @ u.B. @ { a → ANTIP} @ verb @ ": [
 			"KBo 27.219+, {€3+1+4} Vs. I(?) 2/Vs. II 2/lk. Kol. 2"
-		],
-		"]ri-va @ u.B. @ { a → DAT} @ noun @ ": [
-			"KBo 27.219+, {€3+1+4} Vs. I(?) 3/Vs. II 3/lk. Kol. 3"
-		],
-		"]ri-i-va @ u.B. @ { a → 3POSS.SG-DAT} @ noun @ ": [
-			"KBo 27.219+, {€3+1+4} Vs. I(?) 3/Vs. II 3/lk. Kol. 3",
-			"KBo 27.219+, {€3+6} Rs. 6′/8′"
-		],
-		"]ri-ne-va @ u.B. @ { a → RELAT.SG-DAT} @ verb @ ": [
-			"KBo 27.219+, {€3+1+4} Vs. I(?) 3/Vs. II 3/lk. Kol. 3"
-		],
-		"]r-i-eva @ u.B. @ { a → MOD.ACT-POT} @ verb @ ": [
-			"KBo 27.219+, {€3+1+4} Vs. I(?) 3/Vs. II 3/lk. Kol. 3"
-		],
-		"]r-i-l-eva @ u.B. @ { a → MOD.ACT-l-POT} @ verb @ ": [
-			"KBo 27.219+, {€3+1+4} Vs. I(?) 3/Vs. II 3/lk. Kol. 3"
-		],
-		"]ri-v-a @ u.B. @ { a → 2POSS.SG-ESS} @ verb @ ": [
-			"KBo 27.219+, {€3+1+4} Vs. I(?) 3/Vs. II 3/lk. Kol. 3"
 		],
 		"uwi-a=l @ Brot @ { a → ESS=3PL.ABS} @ noun @ ": [
 			"KBo 27.219+, {€3+1+4} Vs. I(?) 3/Vs. II 3/lk. Kol. 3"
@@ -5457,27 +3206,11 @@
 		"kīziri-ne-va @ u.B. @ { a → RELAT.SG-DAT} @ noun @ ": [
 			"KBo 27.219+, {€3+1+4} Vs. I(?) 4/Vs. II 4/lk. Kol. 4"
 		],
-		"šē[ @ beobachten; u.B. @  @ unclear @ ": [
-			"KBo 27.219+, {€3+1+4} Vs. I(?) 4/Vs. II 4/lk. Kol. 4"
-		],
-		"]ra @ u.B. @  @ unclear @ ": [
-			"KBo 27.219+, {€3+1} Vs. I(?) 5/Vs. II 5",
-			"KBo 27.219+, {€3+1} Vs. I(?) 8/Vs. II 8",
-			"KUB 47.8,Rs. V? 4",
-			"KBo 32.10,Rs. 3a′",
-			"KBo 32.15,Vs. 1a′"
-		],
 		"kīzir+že-ne @ u.B. @ { a → ABL/INS} @ noun @ ": [
 			"KBo 27.219+, {€3+1} Vs. I(?) 5/Vs. II 5"
 		],
 		"kīzir+že-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ ": [
 			"KBo 27.219+, {€3+1} Vs. I(?) 5/Vs. II 5"
-		],
-		"tu[ @ u.B. @  @ unclear @ ": [
-			"KBo 27.219+, {€3+1} Vs. I(?) 5/Vs. II 5",
-			"KUB 47.4,Vs. I 25′",
-			"KUB 47.5+, {€1} Rs. III 3′",
-			"KBo 32.214,Vs. I 10′"
 		],
 		"keviri-na @ Ältester @ { a → RELAT.PL.ABS} @ noun @ ": [
 			"KBo 27.219+, {€3+1} Vs. I(?) 6/Vs. II 6",
@@ -5487,9 +3220,6 @@
 			"KBo 27.219+, {€3+1} Vs. I(?) 6/Vs. II 6"
 		],
 		"Udip.šarri @ PN @ { a → .ABS} @ noun @ ": [
-			"KBo 27.219+, {€3+1} Vs. I(?) 6/Vs. II 6"
-		],
-		"Udip.šarrri-[ @ PN @  @ noun @ ": [
 			"KBo 27.219+, {€3+1} Vs. I(?) 6/Vs. II 6"
 		],
 		"nūw+ar+i-nē-vā=n @ u.B. @ { a → RELAT.SG-DAT=3SG.ABS} @ noun @ ": [
@@ -5512,13 +3242,6 @@
 		],
 		"šēšt-i-en @ u.B. @ { a → MOD.ACT-3JUSS} @ verb @ ": [
 			"KBo 27.219+, {€3+1} Vs. I(?) 9/Vs. II 9"
-		],
-		"]ḫ-a @ u.B. @ { a → INT} { b → 3A.SG} @ verb @ ": [
-			"KBo 27.219+, {€1} Vs. II 1′",
-			"KUB 47.3,7′"
-		],
-		"]ri-i-až @ u.B. @ { a → 3POSS-PL.ABS} @ noun @ ": [
-			"KBo 27.219+, {€1} Vs. II 2′"
 		],
 		"šavali-na-āž-e @ Jahr @ { a → RELAT.PL-PL-GEN} @ noun @ ": [
 			"KBo 27.219+, {€1} Vs. II 2′"
@@ -5558,12 +3281,6 @@
 		"pīdi-i-a @ u.B. @ { a → 3POSS.SG-ESS} @ noun @ ": [
 			"KBo 27.219+, {€1} Vs. II 4′"
 		],
-		"]esu[ @ u.B. @  @ unclear @ ": [
-			"KBo 27.219+, {€1} Rs. III 2′"
-		],
-		"es-u[ @ u.B. @  @ unclear @ ": [
-			"KBo 27.219+, {€1} Rs. III 2′"
-		],
 		"nūw+a+ni-nē-ž=l @ u.B. @ { a → RELAT.SG-ERG=3PL.ABS} @ noun @ ": [
 			"KBo 27.219+, {€1} Rs. III 3′"
 		],
@@ -5576,9 +3293,6 @@
 			"KBo 32.14,Vs. 37a"
 		],
 		"ākk-i @ u.B. @ { a → ANTIP} { b → TR.IMP} @ verb @ ": [
-			"KBo 27.219+, {€1} Rs. III 4′"
-		],
-		"ākk-i[ @ u.B. @  @ unclear @ ": [
 			"KBo 27.219+, {€1} Rs. III 4′"
 		],
 		"fāži-ī-va @ Mund @ { a → 3POSS.SG-DAT} @ noun @ ": [
@@ -5600,9 +3314,6 @@
 			"KBo 27.219+, {€1} Rs. III 5′"
 		],
 		"anzī=ma @ u.B. @ { a → .ABS=CON} @ noun @ ": [
-			"KBo 27.219+, {€1} Rs. III 5′"
-		],
-		"]šā @ u.B. @  @ unclear @ ": [
 			"KBo 27.219+, {€1} Rs. III 5′"
 		],
 		"izūzi @ Emmer @ { a → .ABS} @ noun @ ": [
@@ -5654,9 +3365,6 @@
 		"oġ+ni @ u.B. @ { a → .ABS} @ noun @ ": [
 			"KBo 27.219+, {€1} Rs. III 12′"
 		],
-		"ḫill-uma[ @ mitteilen @  @ unclear @ ": [
-			"KBo 27.219+, {€5+1} 1′/Rs. III 13′"
-		],
 		"ḫill-u+m+ai @ mitteilen @ { a → CVB} @ verb @ ": [
 			"KBo 27.219+, {€5+1} 1′/Rs. III 13′"
 		],
@@ -5675,9 +3383,6 @@
 		"ḫōž-uw-a @ u.B. @ { a → MED-3A.SG} @ verb @ ": [
 			"KBo 27.219+, {€5+1} 3′/Rs. III 15′"
 		],
-		"]=lla @ u.B. @ { a → =3PL.ABS} @ unclear @ ": [
-			"KBo 27.219+, {€5} 4′"
-		],
 		"or-o @ u.B. @ { a → MOD.PAT} @ verb @ ": [
 			"KBo 27.219+, {€5} 4′"
 		],
@@ -5690,20 +3395,8 @@
 		"kīluli-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ ": [
 			"KBo 27.219+, {€5} 4′"
 		],
-		"kīluli-ne-[ @ u.B. @ { a → RELAT.SG} @ noun @ ": [
-			"KBo 27.219+, {€5} 4′"
-		],
 		"kīl-ol-i-le @ u.B. @ { a → ol-MOD.ACT-1JUSS} @ verb @ ": [
 			"KBo 27.219+, {€5} 4′"
-		],
-		"]-ēn @ u.B. @ { a → 3JUSS} @ verb @ ": [
-			"KBo 27.219+, {€5} 5′"
-		],
-		"]ē-n @ u.B. @ { a → ABL/INS} @ noun @ ": [
-			"KBo 27.219+, {€5} 5′"
-		],
-		"]-ē=n @ u.B. @ { a → DIR/LOC=3SG.ABS} @ noun @ ": [
-			"KBo 27.219+, {€5} 5′"
 		],
 		"amm-i-en @ errreichen; gelangen lassen @ { a → MOD.ACT-3JUSS} @ verb @ ": [
 			"KBo 27.219+, {€5} 5′"
@@ -5736,54 +3429,16 @@
 		"Aia=n @ DN @ { a → .ABS=3SG.ABS} @ noun @ ": [
 			"KBo 27.219+, {€5} 7′"
 		],
-		"]ḫ-i @ u.B. @ { a → ANTIP} @ verb @ ": [
-			"KBo 27.219+, {€5} 8′",
-			"KUB 47.3,4′"
-		],
 		"am-ō-ēn @ ansehen @ { a → MOD.PAT-3JUSS} @ verb @ ": [
 			"KBo 27.219+, {€5} 8′"
-		],
-		"ḫār[ @ u.B. @  @ unclear @ ": [
-			"KBo 27.219+, {€5} 9′"
-		],
-		"]t-i @ u.B. @ { a → ANTIP} @ verb @ ": [
-			"KBo 27.219+, {€5} 10′",
-			"KUB 47.6,8′"
-		],
-		"]ti[ @ u.B. @  @ unclear @ ": [
-			"KBo 27.219+, {€5} 10′"
-		],
-		"]ar[ @ u.B. @  @ unclear @ ": [
-			"KBo 27.219+, {€6} 1′"
-		],
-		"ar[ @ u.B. @  @ unclear @ ": [
-			"KBo 27.219+, {€6} 1′"
 		],
 		"en+i+tḫ+ar+i-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ ": [
 			"KBo 27.219+, {€6} 2′",
 			"KUB 47.5+, {€3} Vs. II 8"
 		],
-		"en+i+tḫ+ar+i-na-[ @ u.B. @ { a → RELAT.PL.ABS} @ noun @ ": [
-			"KBo 27.219+, {€6} 2′"
-		],
-		"aš]ḫō+i=nna @ hinauf @ { a → =3SG.ABS} @ ADV @ ": [
-			"KBo 27.219+, {€3+6} Rs. 1′/3′"
-		],
-		"]-na-aš-ta=l @ u.B. @ { a → RELAT.PL-PL-DIR=3PL.ABS} @ noun @ ": [
-			"KBo 27.219+, {€3+6} Rs. 2′/4′"
-		],
 		"Kešše @ PN @ .ABS @ noun @ ": [
 			"KBo 27.219+, {€3+6} Rs. 3′/5′",
 			"KUB 47.6,8′"
-		],
-		"kizi[ @ u.B. @  @ noun @ ": [
-			"KBo 27.219+, {€3+6} Rs. 3′/5′"
-		],
-		"]ḫi-a @ u.B. @ ESS @ noun @ ": [
-			"KBo 27.219+, {€3+6} Rs. 4′/6′"
-		],
-		"]ḫ-a @ u.B. @ { a → INT} { b → IMP.INT} { c → 3A.SG} @ verb @ ": [
-			"KBo 27.219+, {€3+6} Rs. 4′/6′"
 		],
 		"tūn-i-āi-n @ überwältigen; vemögen @ { a → MOD.ACT-PURP-n} @ verb @ ": [
 			"KBo 27.219+, {€3+6} Rs. 4′/6′"
@@ -5805,17 +3460,11 @@
 			"KBo 27.219+, {€3+6} Rs. 4′/6′",
 			"KUB 47.5+, {€1} Rs. III 18′"
 		],
-		"]a @ u.B. @  @ unclear @ ": [
-			"KBo 27.219+, {€3+6} Rs. 5′/7′"
-		],
 		"fē-ž-uda @ 2PRON @ { a → PL-DIR} @ PRON @ ": [
 			"KBo 27.219+, {€3+6} Rs. 5′/7′"
 		],
 		"kūg-o-kko @ u.B. @ INT-NEG @ verb @ ": [
 			"KBo 27.219+, {€3+6} Rs. 5′/7′"
-		],
-		"]ri-ne-va @ u.B. @ { a → RELAT.SG-DAT} @ noun @ ": [
-			"KBo 27.219+, {€3+6} Rs. 6′/8′"
 		],
 		"Tapšuwari-nē-ž=l @ DN @ { a → RELAT.SG-ERG=3PL.ABS} @ noun @ ": [
 			"KBo 27.219+, {€3+6} Rs. 6′/8′",
@@ -5823,9 +3472,6 @@
 		],
 		"al-u+m+āi-n @ sprechen @ { a → CVB-n} @ verb @ ": [
 			"KBo 27.219+, {€3} Rs. 7′"
-		],
-		"]na=mma @ u.B. @ { a → =2SG.ABS} @ unclear @ ": [
-			"KBo 27.219+, {€2} Rs. 1"
 		],
 		"ḫōm+ar+o+ḫḫe-na @ lapislazuli @ { a → RELAT.PL.ABS} @ noun @ ": [
 			"KBo 27.219+, {€2} Rs. 2"
@@ -5836,9 +3482,6 @@
 		"tive-nā=m @ Wort; Sache @ { a → RELAT.PL.ABS=CON} @ noun @ ": [
 			"KBo 27.219+, {€1+2} Rs. IV 1′/Rs. 4"
 		],
-		"tīv-aġ-u[ @ u.B. @ { a → aġ} @ verb @ ": [
-			"KBo 27.219+, {€1+2} Rs. IV 1′/Rs. 4"
-		],
 		"nudan+z+a+ġe-ī-va=an @ u.B. @ { a → 3POSS.SG-DAT=CON} @ noun @ ": [
 			"KBo 27.219+, {€1+2} Rs. IV 2′/Rs. 5"
 		],
@@ -5846,9 +3489,6 @@
 			"KBo 27.219+, {€1+2} Rs. IV 2′/Rs. 5"
 		],
 		"avi-ī-da @ Gesicht; vor @ 3POSS.SG-DIR @ noun @ ": [
-			"KBo 27.219+, {€1+2} Rs. IV 2′/Rs. 5"
-		],
-		"]še @ u.B. @  @ unclear @ ": [
 			"KBo 27.219+, {€1+2} Rs. IV 2′/Rs. 5"
 		],
 		"ūpš-ī-b @ mähen?; ernten? @ ANTIP-b @ verb @ ": [
@@ -5861,27 +3501,6 @@
 			"KBo 27.219+, {€1+2} Rs. IV 4′/Rs. 7!"
 		],
 		"sūl-ōž-a @ binden @ { a → PST-3A.SG} @ verb @ ": [
-			"KBo 27.219+, {€1+2} Rs. IV 4′/Rs. 7!"
-		],
-		"āl[ @ u.B. @  @ unclear @ ": [
-			"KBo 27.219+, {€1+2} Rs. IV 4′/Rs. 7!"
-		],
-		"]ani-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ ": [
-			"KBo 27.219+, {€1+2} Rs. IV 4′/Rs. 7!"
-		],
-		"]-a=nna @ u.B. @ { a → ESS=3SG.ABS} @ noun @ ": [
-			"KBo 27.219+, {€1+2} Rs. IV 4′/Rs. 7!"
-		],
-		"]+a+nni-a @ u.B. @ { a → ESS} @ noun @ ": [
-			"KBo 27.219+, {€1+2} Rs. IV 4′/Rs. 7!"
-		],
-		"]-a=nna @ u.B. @ { a → 3A.SG=3SG.ABS} { b → INT=3SG.ABS} @ verb @ ": [
-			"KBo 27.219+, {€1+2} Rs. IV 4′/Rs. 7!"
-		],
-		"]ann-a @ u.B. @ { a → INT} @ verb @ ": [
-			"KBo 27.219+, {€1+2} Rs. IV 4′/Rs. 7!"
-		],
-		"]-ann-a @ u.B. @ { a → CAUS-3A.SG} { b → ann-3A.SG} { c → ann-INT} @ verb @ ": [
 			"KBo 27.219+, {€1+2} Rs. IV 4′/Rs. 7!"
 		],
 		"ḫār+ā+ġe-ve-āi @ u.B. @ { a → GEN-INS} @ noun @ ": [
@@ -5930,16 +3549,10 @@
 		"auwari-ne-e @ Feld @ { a → RELAT.SG-DIR/LOC} @ noun @ ": [
 			"KBo 27.219+, {€1} Rs. IV 10′"
 		],
-		"auwari-ne-[ @ Feld @ { a → RELAT.SG} @ noun @ ": [
-			"KBo 27.219+, {€1} Rs. IV 10′"
-		],
 		"kešḫi-ne @ Thron @ { a → ABL/INS} @ noun @ ": [
 			"KBo 27.219+, {€1} Rs. IV 11′"
 		],
 		"kešḫi-ne-e @ Thron @ { a → RELAT.SG-DIR/LOC} @ noun @ ": [
-			"KBo 27.219+, {€1} Rs. IV 11′"
-		],
-		"ḫīl-i[ @ u.B. @  @ unclear @ ": [
 			"KBo 27.219+, {€1} Rs. IV 11′"
 		],
 		"ḫīlēšti-a @ u.B. @ { a → ESS} @ noun @ ": [
@@ -5957,18 +3570,6 @@
 		"šinubi-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ ": [
 			"KBo 27.219+, {€1} Rs. IV 14′"
 		],
-		"]ši-ne @ u.B. @ { a → ABL/INS} @ noun @ ": [
-			"KBo 27.219+, {€1} Rs. IV 15′"
-		],
-		"]ši-ne-e @ u.B. @ { a → -RELAT.SG.DIR/LOC} @ noun @ ": [
-			"KBo 27.219+, {€1} Rs. IV 15′"
-		],
-		"]ši-ne-[ @ u.B. @ { a → RELAT.SG} @ noun @ ": [
-			"KBo 27.219+, {€1} Rs. IV 15′"
-		],
-		"]ni-a @ u.B. @ { a → ESS} @ noun @ ": [
-			"KBo 27.219+, {€3} 1′"
-		],
 		"ištani @ Inneres; in @ { a → .ABS} @ noun @ ": [
 			"KBo 27.219+, {€3} 1′",
 			"KBo 71.80,6′"
@@ -5977,9 +3578,6 @@
 			"KBo 27.219+, {€3} 1′",
 			"KBo 71.80,6′",
 			"KBo 32.214,Vs. I 9′"
-		],
-		"natḫi-[ @ Bett @  @ noun @ ": [
-			"KBo 27.219+, {€1+7} Rs. IV 1″/2′"
 		],
 		"šine @ zwei @ { a → .ABS} @ NUM @ ": [
 			"KBo 27.219+, {€1+7} Rs. IV 1″/2′"
@@ -5999,9 +3597,6 @@
 		],
 		"šušk-i-b @ aufsteigen? @ { a → ANTIP-b} @ verb @ ": [
 			"KBo 27.219+, {€1+7} Rs. IV 2″/3′",
-			"KBo 27.219+, {€1+7} Rs. IV 3″/4′"
-		],
-		"m[ā]ġi-ne-n @ u.B. @ { a → RELAT.SG-ABL/INS} @ noun @ ": [
 			"KBo 27.219+, {€1+7} Rs. IV 3″/4′"
 		],
 		"erade @ Vogel @ { a → .ABS} @ noun @ ": [
@@ -6027,9 +3622,6 @@
 			"KBo 27.219+, {€1+7} Rs. IV 6″/7′"
 		],
 		"fud+o+šḫe @ u.B. @ { a → .ABS} @ noun @ ": [
-			"KBo 27.219+, {€1+7} Rs. IV 6″/7′"
-		],
-		"fud+o+šḫe-[ @ u.B. @  @ noun @ ": [
 			"KBo 27.219+, {€1+7} Rs. IV 6″/7′"
 		],
 		"šie-a @ Wasser; Fluss @ ESS @ noun @ ": [
@@ -6058,9 +3650,6 @@
 			"KUB 47.8,Rs. IV? 8"
 		],
 		"fašt-o @ u.B. @ MOD.PAT @ verb @ ": [
-			"KBo 27.219+, {€1+7} Rs. IV 7″/8′"
-		],
-		"fašt-u[ @ u.B. @  @ unclear @ ": [
 			"KBo 27.219+, {€1+7} Rs. IV 7″/8′"
 		],
 		"faš-t-u @ eintreten @ { a → t-MED} @ verb @ ": [
@@ -6092,9 +3681,6 @@
 			"KBo 27.219+, {€1+7} Rs. IV 9″/10′"
 		],
 		"ḫāž-o @ salben @ { a → MOD.PAT} @ verb @ ": [
-			"KBo 27.219+, {€1+7} Rs. IV 9″/10′"
-		],
-		"]ḫi-āe @ u.B. @ { a → INS} @ noun @ ": [
 			"KBo 27.219+, {€1+7} Rs. IV 9″/10′"
 		],
 		"ḫarri-āe @ u.B. @ { a → INS} @ noun @ ": [
@@ -6139,31 +3725,13 @@
 		"ōšši @ u.B. @ { a → .ABS} @ noun @ ": [
 			"KBo 35.43,Vs. 2′"
 		],
-		"ḫāri-ne-[ @ Weg @ { a → RELAT.SG} @ noun @ ": [
-			"KBo 35.43,Vs. 2′"
-		],
-		"]i=mma @ u.B. @ { a → =2SG.ABS} @ unclear @ ": [
-			"KBo 35.43,Vs. 3′"
-		],
 		"nūd-u @ u.B. @ MED @ verb @ ": [
 			"KBo 35.43,Vs. 3′"
 		],
 		"nūd-o @ u.B. @ { a → MOD.PAT} @ verb @ ": [
 			"KBo 35.43,Vs. 3′"
 		],
-		"]+o+nni @ u.B. @ { a → .ABS} @ noun @ ": [
-			"KBo 35.43,Vs. 4′"
-		],
-		"]uni-ne @ u.B. @ { a → ABL/INS} @ verb @ ": [
-			"KBo 35.43,Vs. 4′"
-		],
-		"]uni-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ verb @ ": [
-			"KBo 35.43,Vs. 4′"
-		],
 		"ag-u+m+aī=m @ aufnehmen; erheben; heraufkommen @ { a → CVB=2SG.ABS} { b → CVB=CON} @ verb @ ": [
-			"KBo 35.43,Vs. 4′"
-		],
-		"Kužuġ-[ @ DN @  @ noun @ ": [
 			"KBo 35.43,Vs. 4′"
 		],
 		"sell+ind+ō+re-a=m @ u.B. @ { a → ESS=CON} { b → ESS=2SG.ABS} @ noun @ ": [
@@ -6176,28 +3744,16 @@
 		"nuḫḫ+a+že @ u.B. @ { a → .ABS} @ noun @ ": [
 			"KBo 35.43,Vs. 6′"
 		],
-		"]iss-u @ u.B. @ { a → MED} @ verb @ ": [
-			"KBo 35.43,Vs. 7′"
-		],
-		"]iss-o @ u.B. @ { a → MOD.PAT} @ verb @ ": [
-			"KBo 35.43,Vs. 7′"
-		],
 		"Kužuġ @ DN @ .ABS @ noun @ ": [
 			"KBo 35.43,Vs. 7′",
 			"KUB 27.40+, {€1} 5′",
 			"KUB 47.4,Vs. I 4″",
 			"KUB 47.5+, {€1} Vs. I 6′"
 		],
-		"ālb-a[ @ u.B. @  @ unclear @ ": [
-			"KBo 35.43,Vs. 7′"
-		],
 		"pāžanġuri-āi @ u.B. @ { a → INS} @ noun @ ": [
 			"KBo 35.43,Vs. 8′"
 		],
 		"pāžanġurā+i @ u.B. @ { a → .ABS} @ noun @ ": [
-			"KBo 35.43,Vs. 8′"
-		],
-		"tām-a[ @ u.B. @  @ unclear @ ": [
 			"KBo 35.43,Vs. 8′"
 		],
 		"egi @ Inneres, innere @ .ABS @ noun @ ": [
@@ -6218,14 +3774,8 @@
 		"ḫavoro+ni-ne-e @ Himmel @ { a → RELAT.SG-DIR/LOC} @ noun @ ": [
 			"KBo 35.43,Vs. 10′!"
 		],
-		"ḫavoro+ni-ne-[ @ Himmel @ { a → RELAT.SG} @ noun @ ": [
-			"KBo 35.43,Vs. 10′!"
-		],
 		"ḫavor+ni @ Himmel @ { a → .ABS} @ noun @ ": [
 			"KBo 35.43,Vs. 11′!"
-		],
-		"]š-uġ-o-ež @ u.B. @ { a → uġ-MOD.PAT-OPT} @ verb @ ": [
-			"KBo 35.43,Vs. 12′!"
 		],
 		"šuġi-ož @ neu @ { a → EQU} @ noun @ ": [
 			"KBo 35.43,Vs. 12′!"
@@ -6249,32 +3799,11 @@
 		"att-an-a=l @ u.B. @ { a → an-3A.SG=3PL.ABS} { b → an-INT=3PL.ABS} @ verb @ ": [
 			"KBo 35.43,Vs. 15′!"
 		],
-		"]ḫama[ @ u.B. @  @ unclear @ ": [
-			"KBo 35.43,Vs. 17′!"
-		],
-		"ḫam-a[ @ u.B. @  @ unclear @ ": [
-			"KBo 35.43,Vs. 17′!"
-		],
-		"]ḫi-a=ma @ u.B. @ { a → ESS=CON} @ noun @ ": [
-			"KBo 35.43,Vs. 17′!"
-		],
-		"]ḫ-a=ma @ u.B. @ { a → 3A.SG=CON} { b → INT=CON} @ verb @ ": [
-			"KBo 35.43,Vs. 17′!"
-		],
 		"fud+ō+že @ u.B. @ { a → .ABS} @ noun @ ": [
 			"KBo 53.2,2′"
 		],
 		"fud-ōž-i @ u.B. @ { a → PST-ANTIP} @ verb @ ": [
 			"KBo 53.2,2′"
-		],
-		"fud+ō+že-[ @ u.B. @  @ noun @ ": [
-			"KBo 53.2,2′"
-		],
-		"šēġa-[ @ Tor @  @ noun @ ": [
-			"KBo 53.2,3′"
-		],
-		"šēġ-a[ @ u.B. @  @ unclear @ ": [
-			"KBo 53.2,3′"
 		],
 		"ḫāž-u @ salben @ MED @ verb @ ": [
 			"KBo 53.2,4′"
@@ -6282,104 +3811,26 @@
 		"ḫāž-o @ salben @ MOD.PAT @ verb @ ": [
 			"KBo 53.2,4′"
 		],
-		"e[ @  @  @ unclear @ ": [
-			"KBo 53.2,4′"
-		],
-		"]ki @ u.B. @ { a → .ABS} @ noun @ ": [
-			"KBo 53.2,8′"
-		],
-		"]k-i @ u.B. @ { a → ANTIP} @ verb @ ": [
-			"KBo 53.2,8′"
-		],
-		"]ižni-a @ u.B. @ { a → ESS} @ noun @ ": [
-			"KBo 59.226,2′"
-		],
 		"šīe-a @ Wasser; Fluss @ ESS @ noun @ ": [
 			"KBo 59.226,3′"
 		],
 		"kīziri-nē-va @ u.B. @ { a → RELAT.SG-DAT} @ noun @ ": [
 			"KBo 59.226,4′"
 		],
-		"kīzir[ @ u.B. @  @ noun @ ": [
-			"KBo 59.226,5′"
-		],
 		"kēviri-na @ Ältester @ { a → RELAT.PL.ABS} @ noun @ ": [
 			"KBo 59.226,6′"
-		],
-		"Udip.šarri-[ @ PN @  @ noun @ ": [
-			"KBo 59.226,6′"
-		],
-		"]ša=n @ u.B. @ { a → =CON} @ unclear @ ": [
-			"KBo 71.80,3′"
-		],
-		"]ša=n @ u.B. @ { a → =3SG.ABS} @ unclear @ ": [
-			"KBo 71.80,3′"
-		],
-		"ḫud-ō-[ @  @ { a → TR.PFV} @ verb @ ": [
-			"KBo 71.80,4′"
-		],
-		"]ḫ-ud-ō-[ @ u.B. @ { a → NEG-TR.PFV} @ verb @ ": [
-			"KBo 71.80,4′"
-		],
-		"]ḫ+ud+ō+[ @ u.B. @  @ noun @ ": [
-			"KBo 71.80,4′"
-		],
-		"ḫud+ō+[ @ u.B. @  @ noun @ ": [
-			"KBo 71.80,4′"
-		],
-		"]išš+a+ni-n @ u.B. @ { a → ABL/INS} @ noun @ ": [
-			"KBo 71.80,5′"
-		],
-		"]išš+a+ni=n @ u.B. @ { a → .ABS=3SG.ABS} @ noun @ ": [
-			"KBo 71.80,5′"
-		],
-		"]išš-an-i-en @ u.B. @ { a → an-MOD.ACT-3JUSS} @ verb @ ": [
-			"KBo 71.80,5′"
 		],
 		"ālžialli @ Widersprecher? @ { a → .ABS} @ noun @ ": [
 			"KBo 71.80,7′",
 			"KUB 47.5+, {€1} Rs. IV 13"
 		],
-		"]ḫuma[ @ u.B. @  @ unclear @ ": [
-			"KBo 71.80,8′"
-		],
-		"ḫum-a[ @ u.B. @  @ unclear @ ": [
-			"KBo 71.80,8′"
-		],
-		"]en[ @ u.B. @  @ unclear @ ": [
-			"KBo 71.80,9′"
-		],
-		"]en @ u.B. @  @ unclear @ ": [
-			"KBo 71.80,9′"
-		],
-		"]-u=ma @ u.B. @ { a → MED=CON} @ verb @ ": [
-			"KUB 27.40+, {€1} 1′"
-		],
-		"]-o=ma @ u.B. @ { a → MOD.PAT=CON} { b → TR.PFV=CON} @ verb @ ": [
-			"KUB 27.40+, {€1} 1′"
-		],
 		"namali-na-až-a @ Bett @ { a → RELAT.PL-PL-DAT/ESS} @ noun @ ": [
 			"KUB 27.40+, {€1} 2′"
-		],
-		"]ti-ož @ u.B. @ { a → EQU} @ noun @ ": [
-			"KUB 27.40+, {€1} 3′"
-		],
-		"]t-o-ež @ u.B. @ { a → MOD.PAT-OPT} @ noun @ ": [
-			"KUB 27.40+, {€1} 3′"
 		],
 		"fandi-i-da @ rechts; rechte Seite @ { a → 3POSS.SG-DIR} @ noun @ ": [
 			"KUB 27.40+, {€1} 4′"
 		],
-		"]fandi-i-da @ u.B. @ { a → 3POSS.SG-DIR} @ noun @ ": [
-			"KUB 27.40+, {€1} 4′"
-		],
 		"širi-a @ u.B. @ { a → ESS} @ noun @ ": [
-			"KUB 27.40+, {€1} 5′"
-		],
-		"]širi-a @ u.B. @ { a → ESS} @ noun @ ": [
-			"KUB 27.40+, {€1} 5′"
-		],
-		"]ši-i-ra @ u.B. @ { a → 3POSS.SG-COM} @ noun @ ": [
 			"KUB 27.40+, {€1} 5′"
 		],
 		"iri-a @ u.B. @ { a → ESS} @ noun @ ": [
@@ -6391,30 +3842,11 @@
 		"šir-a @ entsprechen; genügen; angenehm sein @ { a → INT} @ verb @ ": [
 			"KUB 27.40+, {€1} 5′"
 		],
-		"]-o-m @ u.B. @ { a → TR.PFV-3A.SG} @ noun @ ": [
-			"KUB 27.40+, {€1} 6′"
-		],
 		"pend-ūw-a=lla @ zurückkehren; zurückbringen @ { a → MED-3A.SG=3PL.ABS} @ verb @ ": [
 			"KUB 27.40+, {€1} 6′"
 		],
 		"Šendaminni @ PN @ { a → .ABS} @ noun @ ": [
 			"KUB 27.40+, {€2} 2′"
-		],
-		"Šendaminni-[ @ PN @  @ noun @ ": [
-			"KUB 27.40+, {€2} 2′"
-		],
-		"]naḫḫi-a @ u.B. @ { a → ESS} @ noun @ ": [
-			"KUB 27.40+, {€2} 3′"
-		],
-		"]n-aḫḫ-a @ u.B. @ { a → aḫḫ-3A.SG} { b → aḫḫ-INT} @ verb @ ": [
-			"KUB 27.40+, {€2} 3′"
-		],
-		"]=an @ u.B. @ { a → =CON} @ unclear @ ": [
-			"KUB 27.40+, {€2} 5′",
-			"KBo 32.50,1′"
-		],
-		"]a=n @ u.B. @ { a → =3SG.ABS} @ unclear @ ": [
-			"KUB 27.40+, {€2} 5′"
 		],
 		"Kužuġ-uda=l @ DN @ { a → DIR=3PL.ABS} @ noun @ ": [
 			"KUB 47.2,Vs. I 1"
@@ -6429,9 +3861,6 @@
 			"KUB 47.2,Vs. I 2"
 		],
 		"šāvāli-na @ Jahr @ { a → RELAT.PL.ABS} @ noun @ ": [
-			"KUB 47.2,Vs. I 2"
-		],
-		"šāvāli-na-[ @ Jahr @ { a → RELAT.PL} @ noun @ ": [
 			"KUB 47.2,Vs. I 2"
 		],
 		"tūn+imm+o+šš+oḫḫe-a @ u.B. @ { a → ESS} @ noun @ ": [
@@ -6470,22 +3899,10 @@
 		"nūbī-nē-n @ zehntausend @ { a → RELAT.SG-ABL/INS} @ noun @ ": [
 			"KUB 47.2,Vs. I 8"
 		],
-		"fāžani-[ @ Monat @  @ noun @ ": [
-			"KUB 47.2,Vs. I 8"
-		],
-		"]ni=tta @ u.B. @ { a → =1SG.ABS} @ unclear @ ": [
-			"KUB 47.2,Vs. I 9"
-		],
-		"kīž-u[ @ u.B. @  @ unclear @ ": [
-			"KUB 47.2,Vs. I 9"
-		],
 		"ḫāvoro+ni-ne @ Himmel @ { a → ABL/INS} @ noun @ ": [
 			"KUB 47.2,Vs. I 10"
 		],
 		"ḫāvoro+ni-ne-e @ Himmel @ { a → RELAT.SG-DIR/LOC} @ noun @ ": [
-			"KUB 47.2,Vs. I 10"
-		],
-		"šūž-a[ @ u.B. @  @ unclear @ ": [
 			"KUB 47.2,Vs. I 10"
 		],
 		"Kumarve-nē-ž=l @ DN @ RELAT.SG-ERG=3PL.ABS @ noun @ ": [
@@ -6508,21 +3925,6 @@
 		],
 		"al-ū+m+āi-n @ sprechen @ { a → CVB-n} @ NF @ ": [
 			"KUB 47.2,Vs. I 15"
-		],
-		"si[x]tibi @ u.B. @ { a → .ABS} @ noun @ ": [
-			"KUB 47.2,Vs. I 16"
-		],
-		"si[x]ti-ve @ u.B. @ { a → GEN} @ noun @ ": [
-			"KUB 47.2,Vs. I 16"
-		],
-		"si[x]ti-i-ve @ u.B. @ { a → 3POSS.SG-GEN} @ noun @ ": [
-			"KUB 47.2,Vs. I 16"
-		],
-		"kāz[ @ u.B. @  @ unclear @ ": [
-			"KUB 47.2,1′"
-		],
-		"pēd-ir[ @ u.B. @  @ unclear @ ": [
-			"KUB 47.2,2′"
 		],
 		"faġri @ gut; schön @ { a → .ABS} @ noun @ ": [
 			"KUB 47.2,3′"
@@ -6554,10 +3956,6 @@
 		"šī-i-a @ Auge @ 3POSS.SG-ESS @ noun @ ": [
 			"KUB 47.2,5′"
 		],
-		"keviri-na-[ @ Ältester @ { a → RELAT.PL} @ noun @ ": [
-			"KUB 47.2,6′",
-			"KUB 47.4,Rs. IV 5″"
-		],
 		"ḫō-id-en @ rufen @ { a → PL.A-3JUSS} @ verb @ ": [
 			"KUB 47.2,7′"
 		],
@@ -6583,9 +3981,6 @@
 		"pāttīvori-ne-va @ u.B. @ { a → RELAT.SG-DAT} @ noun @ ": [
 			"KUB 47.2,9′"
 		],
-		"Šendamenni-[ @ PN @  @ noun @ ": [
-			"KUB 47.2,10′"
-		],
 		"pālī @ falsch @ { a → .ABS} @ noun @ ": [
 			"KUB 47.2,11′"
 		],
@@ -6602,9 +3997,6 @@
 			"KUB 47.2,12′"
 		],
 		"ieni-p-pe-n(e)-e=d @ u.B. @ { a → 2POSS.SG-GEN-RELAT.SG-DIR/LOC=1SG.ABS} @ noun @ ": [
-			"KUB 47.2,12′"
-		],
-		"idīdan[ @ u.B. @  @ noun @ ": [
 			"KUB 47.2,12′"
 		],
 		"idi-ī-dan @ Körper; in Bezug auf; hinsichtlich @ { a → 3POSS.SG-ABL} @ verb @ ": [
@@ -6632,9 +4024,6 @@
 			"KUB 47.2,14′"
 		],
 		"šō-da @ 1PRON.SG @ DIR @ PRON @ ": [
-			"KUB 47.2,14′"
-		],
-		"ni[ @ u.B. @  @ unclear @ ": [
 			"KUB 47.2,14′"
 		],
 		"ub-ōž-a @ töten @ { a → PST-3A.SG} @ verb @ ": [
@@ -6673,9 +4062,6 @@
 		"undō=l @ nun @ { a → =3PL.ABS} @ ADV @ ": [
 			"KUB 47.2,17′"
 		],
-		"evri-iffu-[ @ Herr @ { a → 1POSS.SG} @ noun @ ": [
-			"KUB 47.2,17′"
-		],
 		"mādilli-i=lla @ u.B. @ { a → 3POSS.SG.ABS=3PL.ABS} @ noun @ ": [
 			"KUB 47.2,18′"
 		],
@@ -6689,12 +4075,6 @@
 			"KUB 47.2,18′"
 		],
 		"mād-il-i-le=lla @ weise sein @ { a → il-MOD.ACT-1JUSS=3PL.ABS} @ verb @ ": [
-			"KUB 47.2,18′"
-		],
-		"idi-p-pē-[ @ Körper @ { a → 2POSS.SG-GEN} @ noun @ ": [
-			"KUB 47.2,18′"
-		],
-		"idi-p-pē-[ @ u.B. @ { a → 2POSS.SG-GEN} @ noun @ ": [
 			"KUB 47.2,18′"
 		],
 		"šātt-īd-o @ ergreifen @ { a → PL.A-TR.PFV} @ verb @ ": [
@@ -6728,18 +4108,11 @@
 		"nāli-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ ": [
 			"KUB 47.2,20′"
 		],
-		"ši[ @  @  @ unclear @ ": [
-			"KUB 47.2,20′"
-		],
 		"arde-ne @ Stadt @ { a → ABL/INS} @ noun @ ": [
 			"KUB 47.2,21′"
 		],
 		"tāl+āḫḫ-ī-b @ herausziehen @ ANTIP-b @ verb @ ": [
 			"KUB 47.2,21′"
-		],
-		"au[ @ u.B. @  @ unclear @ ": [
-			"KUB 47.2,21a′",
-			"KBo 32.42,12′"
 		],
 		"āšti @ Ehefrau; Frau @ .ABS @ noun @ ": [
 			"KUB 47.2,lk. Rd. lk. Kol. 1"
@@ -6749,30 +4122,6 @@
 		],
 		"arde+ġe-na-āž-ož @ Stadtangehöriger @ { a → RELAT.PL-PL-ERG} @ noun @ ": [
 			"KUB 47.2,lk. Rd. lk. Kol. 1"
-		],
-		"]andi-n @ u.B. @ { a → ABL/INS} @ noun @ ": [
-			"KUB 47.2,lk. Rd. lk. Kol. 2"
-		],
-		"]andi=n @ u.B. @ { a → .ABS=3SG.ABS} { b → .ABS=CON} @ noun @ ": [
-			"KUB 47.2,lk. Rd. lk. Kol. 2"
-		],
-		"]and-i=n @ u.B. @ { a → ANTIP=3SG.ABS} { b → ANTIP=CON} @ verb @ ": [
-			"KUB 47.2,lk. Rd. lk. Kol. 2"
-		],
-		"]and-i-en @ u.B. @ { a → MOD.ACT-3JUSS} @ verb @ ": [
-			"KUB 47.2,lk. Rd. lk. Kol. 2"
-		],
-		"]uli-ne @ u.B. @ { a → ABL/INS} @ noun @ ": [
-			"KUB 47.2,lk. Rd. lk. Kol. 3"
-		],
-		"]uli-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ ": [
-			"KUB 47.2,lk. Rd. lk. Kol. 3"
-		],
-		"]ull-i @ u.B. @ { a → ANTIP} @ verb @ ": [
-			"KUB 47.2,lk. Rd. lk. Kol. 3"
-		],
-		"]-ol-i-le @ u.B. @ { a → ol-MOD.ACT-1JUSS} @ verb @ ": [
-			"KUB 47.2,lk. Rd. lk. Kol. 3"
 		],
 		"šīrni-a @ Glanz? @ ESS @ noun @ ": [
 			"KUB 47.2,lk. Rd. lk. Kol. 3"
@@ -6786,38 +4135,14 @@
 		"erbī-na-āž-a @ Hund @ { a → RELAT.PL-PL-DAT/ESS} @ noun @ ": [
 			"KUB 47.2,lk. Rd. lk. Kol. 4"
 		],
-		"]še-ne-ž @ u.B. @ { a → RELAT.SG-ERG} @ noun @ ": [
-			"KUB 47.2,lk. Rd. lk. Kol. 5"
-		],
 		"tiža=nna @ Herz @ .ABS=3SG.ABS @ noun @ ": [
 			"KUB 47.2,lk. Rd. lk. Kol. 5"
 		],
 		"tiža-nna @ Herz @ EQU2 @ noun @ ": [
 			"KUB 47.2,lk. Rd. lk. Kol. 5"
 		],
-		"]ari-a @ u.B. @ { a → ESS} @ noun @ ": [
-			"KUB 47.2,lk. Rd. lk. Kol. 6"
-		],
-		"]ar-a @ u.B. @ { a → 3A.SG} { b → INT} @ verb @ ": [
-			"KUB 47.2,lk. Rd. lk. Kol. 6"
-		],
-		"]-ar-a @ u.B. @ { a → ITER-3A.SG} { b → ITER-INT} @ verb @ ": [
-			"KUB 47.2,lk. Rd. lk. Kol. 6"
-		],
 		"āšt+o+ḫḫē-na @ weiblich @ { a → RELAT.PL.ABS} @ noun @ ": [
 			"KUB 47.2,lk. Rd. lk. Kol. 6"
-		],
-		"]umi-a @ u.B. @ { a → ESS} @ noun @ ": [
-			"KUB 47.2,lk. Rd. lk. Kol. 7"
-		],
-		"]-u=ma @ u.B. @ { a → =MED} @ verb @ ": [
-			"KUB 47.2,lk. Rd. lk. Kol. 7"
-		],
-		"]-o=ma @ u.B. @ { a → MOD.PAT=CON} { b → 2A.SG=CON} @ verb @ ": [
-			"KUB 47.2,lk. Rd. lk. Kol. 7"
-		],
-		"]u=ma @ u.B. @ { a → =CON} @ ADV @ ": [
-			"KUB 47.2,lk. Rd. lk. Kol. 7"
 		],
 		"ḫīž+ār+i @ u.B. @ { a → .ABS} @ noun @ ": [
 			"KUB 47.2,lk. Rd. lk. Kol. 7"
@@ -6825,16 +4150,10 @@
 		"ḫīž-ār-i @ u.B. @ { a → ITER-ANTIP} @ verb @ ": [
 			"KUB 47.2,lk. Rd. lk. Kol. 7"
 		],
-		"]-ai @ u.B. @ INS @ noun @ ": [
-			"KUB 47.2,lk. Rd. lk. Kol. 8"
-		],
 		"Kešše-ne-š=nna @ PN @ { a → RELAT.SG-ERG=3SG.ABS} @ noun @ ": [
 			"KUB 47.2,lk. Rd. lk. Kol. 8"
 		],
 		"kikk+o+ni @ u.B. @ { a → .ABS} @ noun @ ": [
-			"KUB 47.3,1′"
-		],
-		"kikk+o+ni-[ @ u.B. @  @ noun @ ": [
 			"KUB 47.3,1′"
 		],
 		"kikk+o+ni=mma @ u.B. @ { a → .ABS=2SG.ABS} { b → .ABS=CON} @ noun @ ": [
@@ -6849,9 +4168,6 @@
 			"KUB 47.3,4′"
 		],
 		"kikk+o+ni=ma @ u.B. @ { a → .ABS=CON} { b → .ABS=2SG.ABS} @ noun @ ": [
-			"KUB 47.3,4′"
-		],
-		"ḫin[ @ u.B. @  @ unclear @ ": [
 			"KUB 47.3,4′"
 		],
 		"Odip.šarri=n @ PN @ { a → .ABS=3SG.ABS} { b → .ABS=CON} @ noun @ ": [
@@ -6877,9 +4193,6 @@
 			"KUB 47.3,5′",
 			"KUB 47.3,6′"
 		],
-		"ḫabr-i[ @ u.B. @  @ unclear @ ": [
-			"KUB 47.3,5′"
-		],
 		"nāli @ u.B. @ .ABS @ noun @ ": [
 			"KUB 47.3,6′"
 		],
@@ -6901,9 +4214,6 @@
 		"pāžanġōri @ u.B. @ { a → .ABS} @ noun @ ": [
 			"KUB 47.3,7′"
 		],
-		"pāžanġōri-[ @ u.B. @  @ noun @ ": [
-			"KUB 47.3,7′"
-		],
 		"šeġiri-a @ u.B. @ { a → ESS} @ noun @ ": [
 			"KUB 47.3,8′"
 		],
@@ -6921,12 +4231,6 @@
 		],
 		"tāri-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ ": [
 			"KUB 47.3,8′"
-		],
-		"sap[ @ u.B. @  @ unclear @ ": [
-			"KUB 47.3,8′"
-		],
-		"]teri-a @ u.B. @ { a → ESS} @ noun @ ": [
-			"KUB 47.3,9′"
 		],
 		"ad-e @ herabkommen?; herabbringen? @ TR.IMP @ verb @ ": [
 			"KUB 47.3,9′",
@@ -6948,9 +4252,6 @@
 		"pūd-o @ u.B. @  @ verb @ ": [
 			"KUB 47.3,9′"
 		],
-		"ud-ip[ @ u.B. @  @ unclear @ ": [
-			"KUB 47.3,9′"
-		],
 		"atta+i-p-pe-na-āž-a @ Vater @ { a → 2POSS.SG-GEN-RELAT.PL-PL-DAT/LOC} @ noun @ ": [
 			"KUB 47.3,10′"
 		],
@@ -6970,23 +4271,10 @@
 		"šeġr-ol-ed-a @ großzügig sein @ { a → ol-FUT-3A.SG} @ verb @ ": [
 			"KUB 47.3,11′"
 		],
-		"pi[ @ u.B. @  @ unclear @ ": [
-			"KUB 47.3,11′",
-			"KUB 52.114+, {€1} 9′"
-		],
 		"šelli @ Haus @ .ABS @ noun @ ": [
 			"KUB 47.3,12′"
 		],
-		"šōr[ @  @  @ unclear @ ": [
-			"KUB 47.4,Vs. I 2′"
-		],
-		"išt-ān[ @ u.B. @  @ unclear @ ": [
-			"KUB 47.4,Vs. I 3′"
-		],
 		"adiri-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ ": [
-			"KUB 47.4,Vs. I 4′"
-		],
-		"adiri-na-[ @ u.B. @ { a → RELAT.PL} @ noun @ ": [
 			"KUB 47.4,Vs. I 4′"
 		],
 		"tāle-ā=l @ Baum; Holz @ ESS=3PL.ABS @ noun @ ": [
@@ -7029,9 +4317,6 @@
 		"nātḫi-a @ Bett @ ESS @ noun @ ": [
 			"KUB 47.4,Vs. I 8′"
 		],
-		"pun[ @ u.B. @  @ unclear @ ": [
-			"KUB 47.4,Vs. I 8′"
-		],
 		"agūli-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ ": [
 			"KUB 47.4,Vs. I 9′"
 		],
@@ -7071,57 +4356,11 @@
 		"ḫō-ī-b @ rufen @ ANTIP-b @ verb @ ": [
 			"KUB 47.4,Vs. I 12′"
 		],
-		"]mi-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ ": [
-			"KUB 47.4,Vs. I 13′"
-		],
-		"]mina[ @ u.B. @  @ noun @ ": [
-			"KUB 47.4,Vs. I 13′"
-		],
-		"sī[ @ u.B. @  @ unclear @ ": [
-			"KUB 47.4,Vs. I 14′"
-		],
-		"kundi-[ @ u.B. @  @ noun @ ": [
-			"KUB 47.4,Vs. I 15′"
-		],
-		"si[ @ u.B. @  @ unclear @ ": [
-			"KUB 47.4,Vs. I 16′",
-			"KUB 47.5+, {€1} Rs. IV 9"
-		],
-		"Uru[ @ PN @  @ noun @ ": [
-			"KUB 47.4,Vs. I 17′"
-		],
-		"šēv[ @ u.B. @  @ unclear @ ": [
-			"KUB 47.4,Vs. I 18′"
-		],
 		"tamri @ neun @ .ABS @ NUM @ ": [
 			"KUB 47.4,Vs. I 19′"
 		],
-		"tamri-[ @ neun @  @ NUM @ ": [
-			"KUB 47.4,Vs. I 19′"
-		],
-		"tamr-i[ @ u.B. @  @ unclear @ ": [
-			"KUB 47.4,Vs. I 19′"
-		],
-		"el-ō[ @ u.B. @  @ unclear @ ": [
-			"KUB 47.4,Vs. I 20′"
-		],
 		"ḫā-i @ nehmen @ ANTIP @ verb @ ": [
 			"KUB 47.4,Vs. I 21′"
-		],
-		"ḫā-i[ @ nehmen @  @ unclear @ ": [
-			"KUB 47.4,Vs. I 21′"
-		],
-		"ḫāi[ @ u.B. @  @ noun @ ": [
-			"KUB 47.4,Vs. I 21′"
-		],
-		"il-i[ @ u.B. @  @ unclear @ ": [
-			"KUB 47.4,Vs. I 22′"
-		],
-		"šī[ @ u.B. @  @ unclear @ ": [
-			"KUB 47.4,Vs. I 23′"
-		],
-		"āž[ @ u.B. @  @ unclear @ ": [
-			"KUB 47.4,Vs. I 24′"
 		],
 		"Teššob-ož=l @ DN @ { a → ERG=3PL.ABS} @ noun @ ": [
 			"KUB 47.4,Vs. I 1″"
@@ -7153,21 +4392,6 @@
 		"ḫāni-i-a @ Kind; Kleinkind; Säugling @ { a → 3POSS.SG-ESS} @ noun @ ": [
 			"KUB 47.4,Rs. IV 5′"
 		],
-		"ḫāni-i-až-[ @ Kind; Kleinkind; Säugling @ { a → 3POSS-PL} @ noun @ ": [
-			"KUB 47.4,Rs. IV 5′"
-		],
-		"ḫān-i-a[ @ gebären @ { a → 3A.SG} @ verb @ ": [
-			"KUB 47.4,Rs. IV 5′"
-		],
-		"nīn-ā[ @ u.B. @  @ unclear @ ": [
-			"KUB 47.4,Rs. IV 6′"
-		],
-		"ētt-ā[ @ u.B. @  @ unclear @ ": [
-			"KUB 47.4,Rs. IV 7′"
-		],
-		"ḫīž-ā[ @ u.B. @  @ unclear @ ": [
-			"KUB 47.4,Rs. IV 8′"
-		],
 		"kunde-ne @ u.B. @ { a → ABL/INS} @ noun @ ": [
 			"KUB 47.4,Rs. IV 1″",
 			"KUB 52.114+, {€1+2} 6′"
@@ -7176,44 +4400,11 @@
 			"KUB 47.4,Rs. IV 1″",
 			"KUB 52.114+, {€1+2} 6′"
 		],
-		"kunde-ne-[ @ u.B. @ { a → RELAT.SG} @ verb @ ": [
-			"KUB 47.4,Rs. IV 1″"
-		],
-		"Urum[ @ PN @  @ noun @ ": [
-			"KUB 47.4,Rs. IV 2″",
-			"KUB 47.4,Rs. IV 4″",
-			"KUB 47.4,Rs. IV 19‴"
-		],
-		"Tādi[ @ PN @  @ noun @ ": [
-			"KUB 47.4,Rs. IV 3″"
-		],
-		"fandi-ī-[ @ rechts; rechte Seite @ { a → 3POSS.SG} @ noun @ ": [
-			"KUB 47.4,Rs. IV 6″"
-		],
-		"fand-ī=[ @ recht sein; gerecht sein @ { a → ANTIP} @ verb @ ": [
-			"KUB 47.4,Rs. IV 6″"
-		],
-		"šūg-ur[ @ u.B. @  @ unclear @ ": [
-			"KUB 47.4,Rs. IV 7″"
-		],
-		"Elami[ @ PN @  @ noun @ ": [
-			"KUB 47.4,Rs. IV 8″",
-			"KUB 47.4,Rs. IV 10″"
-		],
 		"šīn+že @ zweiter @ { a → .ABS} @ noun @ ": [
-			"KUB 47.4,Rs. IV 9″"
-		],
-		"šīn+že-[ @ zweiter @  @ noun @ ": [
 			"KUB 47.4,Rs. IV 9″"
 		],
 		"šīnže @ u.B. @ { a → .ABS} @ noun @ ": [
 			"KUB 47.4,Rs. IV 9″"
-		],
-		"šīnže-[ @ u.B. @  @ noun @ ": [
-			"KUB 47.4,Rs. IV 9″"
-		],
-		"Tādī[ @ PN @  @ noun @ ": [
-			"KUB 47.5+, {€1} Vs. I 1′"
 		],
 		"šūpti-a @ u.B. @ { a → ESS} @ noun @ ": [
 			"KUB 47.5+, {€1} Vs. I 2′"
@@ -7227,13 +4418,7 @@
 		"šūbulvi @  @ .ABS @ noun @ ": [
 			"KUB 47.5+, {€1} Vs. I 3′"
 		],
-		"šūbulvi-[ @ u.B. @  @ noun @ ": [
-			"KUB 47.5+, {€1} Vs. I 3′"
-		],
 		"avi @ Gesicht; vor @ .ABS @ noun @ ": [
-			"KUB 47.5+, {€1} Vs. I 4′"
-		],
-		"tē[ @ u.B. @  @ unclear @ ": [
 			"KUB 47.5+, {€1} Vs. I 4′"
 		],
 		"tīe-va @ Wort; Sache @ DAT @ noun @ ": [
@@ -7248,22 +4433,10 @@
 		"tīv-a @ sprechen @ { a → INT} @ verb @ ": [
 			"KUB 47.5+, {€1} Vs. I 5′"
 		],
-		"ar-i[ @ u.B. @  @ unclear @ ": [
-			"KUB 47.5+, {€1} Vs. I 5′"
-		],
-		"]al[ @ u.B. @  @ unclear @ ": [
-			"KUB 47.5+, {€1} Vs. I 7′"
-		],
 		"ālu-ūšt-i @ sprechen @ { a → RES-TR.IMP} @ verb @ ": [
 			"KUB 47.5+, {€1+2} Vs. I 8′/1′"
 		],
 		"šātt-i @ ergreifen @ { a → TR.IMP} @ verb @ ": [
-			"KUB 47.5+, {€1+2} Vs. I 9′/2′"
-		],
-		"šō+ni-[ @ Hand @  @ noun @ ": [
-			"KUB 47.5+, {€1+2} Vs. I 9′/2′"
-		],
-		"]šā[ @ u.B. @  @ unclear @ ": [
 			"KUB 47.5+, {€1+2} Vs. I 9′/2′"
 		],
 		"uri-v-a=lla @ Fuß @ { a → 2POSS.SG-ESS=3PL.ABS} @ noun @ ": [
@@ -7272,26 +4445,11 @@
 		"uri-v-a=lla @ Fuß @ { a → 2POSS.SG.ABS-EPNTH=3PL.ABS} @ noun @ ": [
 			"KUB 47.5+, {€1+2} Vs. I 10′/3′"
 		],
-		"]av+ān+i @ u.B. @ { a → .ABS} @ noun @ ": [
-			"KUB 47.5+, {€1+2} Vs. I 10′/3′"
-		],
-		"]av+ā+ni-[ @ u.B. @  @ noun @ ": [
-			"KUB 47.5+, {€1+2} Vs. I 10′/3′"
-		],
-		"]av-ān-i @ u.B. @ { a → ān-TR.IMP} @ verb @ ": [
-			"KUB 47.5+, {€1+2} Vs. I 10′/3′"
-		],
 		"ḫār+a+ġe-ve-āī=m @ u.B. @ { a → GEN-INS=2SG.ABS} @ noun @ ": [
 			"KUB 47.5+, {€1+2} Vs. I 11′/4′"
 		],
 		"pēd-ūġ-a @ u.B. @ { a → ūġ-INT.IMP} @ noun @ ": [
 			"KUB 47.5+, {€1+2} Vs. I 11′/4′"
-		],
-		"]piri-ne @ u.B. @ { a → ABL/INS} @ noun @ ": [
-			"KUB 47.5+, {€1+2} Vs. I 12′/5′"
-		],
-		"]piri-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ ": [
-			"KUB 47.5+, {€1+2} Vs. I 12′/5′"
 		],
 		"arde-ne-n @ Stadt @ { a → RELAT.SG-ABL/INS} @ noun @ ": [
 			"KUB 47.5+, {€1+2} Vs. I 12′/5′"
@@ -7302,23 +4460,8 @@
 		"arde-ne-e=n @ Stadt @ { a → RELAT.SG-DIR/LOC=3SG.ABS} { b → RELAT.SG-DIR/LOC=CON} @ noun @ ": [
 			"KUB 47.5+, {€1+2} Vs. I 12′/5′"
 		],
-		"]+o+ġe-a @ u.B. @ { a → ESS} @ noun @ ": [
-			"KUB 47.5+, {€3} Vs. II 1"
-		],
-		"]-uġ-a @ u.B. @ { a → uġ-INT} { b → uġ-INT.IMP} { c → uġ-3A.SG} @ verb @ ": [
-			"KUB 47.5+, {€3} Vs. II 1"
-		],
 		"pēd-ūġ-a @ u.B. @ { a → ūġ-INT.IMP} { b → ūġ-INT} @ noun @ ": [
 			"KUB 47.5+, {€3} Vs. II 2"
-		],
-		"]ši-ne-nna @ u.B. @ { a → RELAT.SG-EQU2} @ noun @ ": [
-			"KUB 47.5+, {€3} Vs. II 3"
-		],
-		"]ši-ne=nna @ u.B. @ { a → ABL/INS=3SG.ABS} @ noun @ ": [
-			"KUB 47.5+, {€3} Vs. II 3"
-		],
-		"]ši-ne-e=nna @ u.B. @ { a → RELAT.SG-DIR/LOC=3SG.ABS} @ noun @ ": [
-			"KUB 47.5+, {€3} Vs. II 3"
 		],
 		"ši+ni-nna @ Auge @ { a → EQU2} @ noun @ ": [
 			"KUB 47.5+, {€3} Vs. II 3"
@@ -7332,21 +4475,6 @@
 		"ši-ne-e=nna @ Auge @ { a → RELAT.SG-DIR/LOC=3SG.ABS} @ noun @ ": [
 			"KUB 47.5+, {€3} Vs. II 3"
 		],
-		"]ibr-ō-m @ u.B. @ { a → TR.PFV-3A.SG} @ noun @ ": [
-			"KUB 47.5+, {€3} Vs. II 4"
-		],
-		"]i-nna @ u.B. @ { a → EQU2} @ verb @ ": [
-			"KUB 47.5+, {€3} Vs. II 7"
-		],
-		"]ini-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ ": [
-			"KUB 47.5+, {€3} Vs. II 7"
-		],
-		"]i=nna @ u.B. @ { a → =3SG.ABS} @ unclear @ ": [
-			"KUB 47.5+, {€3} Vs. II 7"
-		],
-		"]+i+nni-a @ u.B. @ { a → ESS} @ noun @ ": [
-			"KUB 47.5+, {€3} Vs. II 7"
-		],
 		"nāni-ž @ u.B. @ { a → ERG} @ noun @ ": [
 			"KUB 47.5+, {€3} Vs. II 7"
 		],
@@ -7355,15 +4483,6 @@
 		],
 		"kurgōrvi-i-aš=nna @ u.B. @ { a → 3POSS-PL.ABS=3SG.ABS} @ noun @ ": [
 			"KUB 47.5+, {€3} Vs. II 9"
-		],
-		"]ši-āi @ u.B. @ { a → INS} @ noun @ ": [
-			"KUB 47.5+, {€3} Vs. II 11"
-		],
-		"]š-i-āi @ u.B. @ { a → MOD.ACT-PURP} @ verb @ ": [
-			"KUB 47.5+, {€3} Vs. II 11"
-		],
-		"]taži-a @ u.B. @ { a → ESS} @ noun @ ": [
-			"KUB 47.5+, {€3} Vs. II 2′"
 		],
 		"pēġulabi-a=lla @ u.B. @ { a → ESS=3PL.ABS} @ noun @ ": [
 			"KUB 47.5+, {€3} Vs. II 2′"
@@ -7398,12 +4517,6 @@
 		"šindi+ššē-ne-e @ siebter @ { a → RELAT.SG-DIR/LOC} @ noun @ ": [
 			"KUB 47.5+, {€3} Vs. II 4′"
 		],
-		"]ḫ-išt-u @ u.B. @ { a → RES-MED} @ verb @ ": [
-			"KUB 47.5+, {€3} Vs. II 5′"
-		],
-		"]ḫ-išt-o @ u.B. @ { a → RES-MOD.PAT} @ verb @ ": [
-			"KUB 47.5+, {€3} Vs. II 5′"
-		],
 		"talm-u @ groß werden; groß machen @ MED @ verb @ ": [
 			"KUB 47.5+, {€3} Vs. II 5′"
 		],
@@ -7415,9 +4528,6 @@
 		],
 		"tel-o @ vermehren @ { a → MOD.PAT} @ verb @ ": [
 			"KUB 47.5+, {€3} Vs. II 5′"
-		],
-		"]ḫi @ u.B. @  @ unclear @ ": [
-			"KUB 47.5+, {€3} Vs. II 6′"
 		],
 		"ērni @ u.B. @ { a → .ABS} @ noun @ ": [
 			"KUB 47.5+, {€3} Vs. II 6′"
@@ -7459,27 +4569,6 @@
 		"ērni @ u.B. @ { a → .ABS} @ verb @ ": [
 			"KUB 47.5+, {€1+3} Vs. II 1′/Vs. II 7′"
 		],
-		"]si-ī-e @ u.B. @ { a → 3POSS.SG-DIR/LOC} @ noun @ ": [
-			"KUB 47.5+, {€1+3} Vs. II 2′/Vs. II 8′"
-		],
-		"]si-īe @ u.B. @ { a → 3POSS.SG.ABS} @ noun @ ": [
-			"KUB 47.5+, {€1+3} Vs. II 2′/Vs. II 8′"
-		],
-		"]s-ī-e @ u.B. @ { a → MOD.ACT-3JUSS} @ verb @ ": [
-			"KUB 47.5+, {€1+3} Vs. II 2′/Vs. II 8′"
-		],
-		"]-išt-u @ u.B. @ { a → RES-MED} @ verb @ ": [
-			"KUB 47.5+, {€1+3} Vs. II 2′/Vs. II 8′"
-		],
-		"]-išt-o @ u.B. @ { a → RES-MOD.PAT} @ verb @ ": [
-			"KUB 47.5+, {€1+3} Vs. II 2′/Vs. II 8′"
-		],
-		"]išt-u @ u.B. @ { a → MED} @ verb @ ": [
-			"KUB 47.5+, {€1+3} Vs. II 2′/Vs. II 8′"
-		],
-		"]išt-o @ u.B. @ { a → MOD.PAT} @ verb @ ": [
-			"KUB 47.5+, {€1+3} Vs. II 2′/Vs. II 8′"
-		],
 		"pabā+ni @ Berg @ { a → .ABS} @ noun @ ": [
 			"KUB 47.5+, {€1+3} Vs. II 2′/Vs. II 8′",
 			"KBo 32.14,Vs. 8a"
@@ -7497,15 +4586,6 @@
 			"KUB 47.5+, {€1+3} Vs. II 3′/Vs. II 9′",
 			"KUB 47.5+, {€1} Rs. IV 3"
 		],
-		"apše-[ @ Schlange @  @ noun @ ": [
-			"KUB 47.5+, {€1+3} Vs. II 3′/Vs. II 9′"
-		],
-		"]-ī-a @ u.B. @ { a → TR-3A.SG} @ verb @ ": [
-			"KUB 47.5+, {€1+3} Vs. II 3′/Vs. II 9′"
-		],
-		"]i-ī-a @ u.B. @ { a → 3POSS.SG-ESS} @ noun @ ": [
-			"KUB 47.5+, {€1+3} Vs. II 3′/Vs. II 9′"
-		],
 		"Sarmade-ne-n @ GN @ { a → RELAT.SG-ABL/INS} @ noun @ ": [
 			"KUB 47.5+, {€1+3} Vs. II 3′/Vs. II 9′"
 		],
@@ -7513,9 +4593,6 @@
 			"KUB 47.5+, {€1+3} Vs. II 4′/Vs. II 10′"
 		],
 		"tōre-n=an @ unten; hinab @ { a → ABL/INS=CON} @ noun @ ": [
-			"KUB 47.5+, {€1+3} Vs. II 4′/Vs. II 10′"
-		],
-		"ervi-[ @ Hund @  @ noun @ ": [
 			"KUB 47.5+, {€1+3} Vs. II 4′/Vs. II 10′"
 		],
 		"paba+ni-na @ Berg @ { a → RELAT.PL.ABS} @ noun @ ": [
@@ -7535,18 +4612,6 @@
 		],
 		"šend-ur-o-m @ u.B. @ { a → ur-TR.PFV-3A.SG} @ verb @ ": [
 			"KUB 47.5+, {€3} Vs. II 12′"
-		],
-		"]-dā=lla @ u.B. @ { a → DIR=3PL.ABS} @ noun @ ": [
-			"KUB 47.5+, {€3} Vs. II 13′"
-		],
-		"tib-i[ @ u.B. @  @ unclear @ ": [
-			"KUB 47.5+, {€3} Vs. II 14′"
-		],
-		"]ānd-ūw-a @ u.B. @ { a → MED-3A.SG} @ verb @ ": [
-			"KUB 47.5+, {€1} Rs. III 2′"
-		],
-		"]ānd-ō-eva @ u.B. @ { a → MOD.PAT-POT} @ verb @ ": [
-			"KUB 47.5+, {€1} Rs. III 2′"
 		],
 		"tārmi-a @ u.B. @ { a → ESS} @ noun @ ": [
 			"KUB 47.5+, {€1} Rs. III 3′"
@@ -7605,9 +4670,6 @@
 		"kād-al-a @ sagen; sprechen @ { a → al-INT} { b → al-3A.SG} @ verb @ ": [
 			"KUB 47.5+, {€1+4} Rs. III 7′/1′"
 		],
-		"tē[ @  @  @ unclear @ ": [
-			"KUB 47.5+, {€1+4} Rs. III 7′/1′"
-		],
 		"idi-i-až-a @ Körper @ { a → 3POSS-PL-DAT/ESS} @ noun @ ": [
 			"KUB 47.5+, {€1+4} Rs. III 8′/2′"
 		],
@@ -7640,13 +4702,7 @@
 			"KUB 47.5+, {€1} Rs. IV 10",
 			"KUB 47.5+, {€1} Rs. IV 12"
 		],
-		"keveri-na-[ @ Ältester @ { a → RELAT.PL} @ noun @ ": [
-			"KUB 47.5+, {€1+4} Rs. III 11′/5′"
-		],
 		"alu-ušt-i @ sprechen @ { a → RES-TR.IMP} @ verb @ ": [
-			"KUB 47.5+, {€1+4} Rs. III 12′/6′"
-		],
-		"tive-iffo-x[ @ Wort; Sache @ { a → 1POSS.SG} @ noun @ ": [
 			"KUB 47.5+, {€1+4} Rs. III 12′/6′"
 		],
 		"Kužuḫ-ta @ DN @ { a → DIR} @ noun @ ": [
@@ -7667,9 +4723,6 @@
 		"ḫāni-i-e @ Kind; Kleinkind; Säugling @ { a → 3POSS.SG-DIR} @ noun @ ": [
 			"KUB 47.5+, {€1} Rs. III 15′"
 		],
-		"ag-ē[ @ u.B. @  @ noun @ ": [
-			"KUB 47.5+, {€1} Rs. III 15′"
-		],
 		"ag-i-ēn @ aufnehmen; erheben; heraufkommen @ { a → MOD.ACT-3JUSS} @ verb @ ": [
 			"KUB 47.5+, {€1} Rs. III 15′"
 		],
@@ -7682,43 +4735,13 @@
 		"šu-i-ēž @ u.B. @ { a → MOD.ACT-OPT} @ verb @ ": [
 			"KUB 47.5+, {€1} Rs. III 16′"
 		],
-		"ši[ @ u.B. @  @ noun @ ": [
-			"KUB 47.5+, {€1} Rs. III 16′"
-		],
 		"šīuġi-a @ u.B. @ { a → ESS} @ noun @ ": [
 			"KUB 47.5+, {€1} Rs. III 17′"
 		],
 		"ištāni @ in @  @ POST @ ": [
 			"KUB 47.5+, {€1} Rs. III 18′"
 		],
-		"a[ @ u.B. @  @ noun @ ": [
-			"KUB 47.5+, {€1} Rs. III 18′"
-		],
-		"]ellan[ @ u.B. @  @ unclear @ ": [
-			"KUB 47.5+, {€1} Rs. III 19′"
-		],
-		"]a+šše-ne=lla @ u.B. @ { a → ABL/INS=3PL.ABS} @ noun @ ": [
-			"KUB 47.5+, {€3} Rs. III 4‴"
-		],
-		"]a+šše-ne-e=lla @ u.B. @ { a → RELAT.SG-DIR/LOC=3PL.ABS} @ noun @ ": [
-			"KUB 47.5+, {€3} Rs. III 4‴"
-		],
-		"]a+šše-ne-ž=lla @  @ { a → RELAT.SG-ERG=3PL.ABS} @ noun @ ": [
-			"KUB 47.5+, {€3} Rs. III 4‴"
-		],
-		"]-a-šše-ne-e=lla @ u.B. @ { a → 3A-NMLZ-RELAT.SG-DIR/LOC=3PL.ABS} { b → INT-NMLZ-RELAT.SG-DIR/LOC=3PL.ABS} @ noun @ ": [
-			"KUB 47.5+, {€3} Rs. III 4‴"
-		],
-		"]-a-šše-ne-ž=lla @ u.B. @ { a → 3A-NMLZ-RELAT.SG-ERG=3PL.ABS} { b → INT-NMLZ-RELAT.SG-ERG=3PL.ABS} @ noun @ ": [
-			"KUB 47.5+, {€3} Rs. III 4‴"
-		],
-		"]t+apše @ u.B. @ { a → .ABS} @ noun @ ": [
-			"KUB 47.5+, {€1} Rs. IV 1"
-		],
 		"kūmde-ne-ve-ne-e @ Turm @ { a → RELAT.SG-GEN-RELAT.SG-DIR/LOC} @ noun @ ": [
-			"KUB 47.5+, {€1} Rs. IV 1"
-		],
-		"kā[ @ u.B. @  @ unclear @ ": [
 			"KUB 47.5+, {€1} Rs. IV 1"
 		],
 		"erādi @ Vogel @ .ABS @ noun @ ": [
@@ -7739,9 +4762,6 @@
 		"erve-ne-ž @ Hund @ { a → RELAT.SG-ERG} @ noun @ ": [
 			"KUB 47.5+, {€1} Rs. IV 4"
 		],
-		"]tāržōe @ u.B. @  @ unclear @ ": [
-			"KUB 47.5+, {€1} Rs. IV 4"
-		],
 		"tāržōe @ u.B. @  @ unclear @ ": [
 			"KUB 47.5+, {€1} Rs. IV 4"
 		],
@@ -7749,9 +4769,6 @@
 			"KUB 47.5+, {€1} Rs. IV 5"
 		],
 		"īšt-i-en=nna=ān @ u.B. @ { a → MOD.ACT-3JUSS=3SG.ABS=CON} @ verb @ ": [
-			"KUB 47.5+, {€1} Rs. IV 5"
-		],
-		"]=ān @ u.B. @ { a → =CON} @ unclear @ ": [
 			"KUB 47.5+, {€1} Rs. IV 5"
 		],
 		"kīšk+ūpp+ē-ne-da @ u.B. @ { a → RELAT.SG-DIR} @ noun @ ": [
@@ -7778,9 +4795,6 @@
 		"pēr-i @ u.B. @ { a → ANTIP} @ verb @ ": [
 			"KUB 47.5+, {€1} Rs. IV 7"
 		],
-		"pēr-i[ @ u.B. @  @ unclear @ ": [
-			"KUB 47.5+, {€1} Rs. IV 7"
-		],
 		"all+ī+ġe-a @ u.B. @ ESS @ noun @ ": [
 			"KUB 47.5+, {€1} Rs. IV 8"
 		],
@@ -7796,9 +4810,6 @@
 		"šel-ož-ēd-a @ u.B. @ { a → ož-FUT-3A.SG} @ verb @ ": [
 			"KUB 47.5+, {€1} Rs. IV 8"
 		],
-		"ušt-a[ @ herausgehen; fortbringen; erheben @  @ unclear @ ": [
-			"KUB 47.5+, {€1} Rs. IV 8"
-		],
 		"ḫōrr-ošt-āw @ u.B. @ { a → RES-1A.SG} @ verb @ ": [
 			"KUB 47.5+, {€1} Rs. IV 9"
 		],
@@ -7811,16 +4822,10 @@
 		"adāži @ u.B. @ { a → .ABS} @ noun @ ": [
 			"KUB 47.5+, {€1} Rs. IV 11"
 		],
-		"adāži-[ @ u.B. @  @ unclear @ ": [
-			"KUB 47.5+, {€1} Rs. IV 11"
-		],
 		"umbi-ōž @ u.B. @ EQU @ noun @ ": [
 			"KUB 47.5+, {€1} Rs. IV 11"
 		],
 		"umb-ō-ež @ u.B. @ { a → MOD.PAT-OPT} @ verb @ ": [
-			"KUB 47.5+, {€1} Rs. IV 11"
-		],
-		"ḫāž-i[ @ u.B. @  @ unclear @ ": [
 			"KUB 47.5+, {€1} Rs. IV 11"
 		],
 		"šūm+a+ni-ne=l @ u.B. @ { a → ABL/INS=3PL.ABS} @ noun @ ": [
@@ -7862,75 +4867,14 @@
 		"Ilāmiġōrra-ž=l @ PN @ { a → ERG=3PL.ABS} @ noun @ ": [
 			"KUB 47.5+, {€1} Rs. IV 17"
 		],
-		"]ri-šši @ u.B. @ { a → 2POSS.PL.ABS} @ noun @ ": [
-			"KUB 47.5+, {€1} Rs. IV 19"
-		],
-		"]r+i+šše @ u.B. @ { a → .ABS} @ noun @ ": [
-			"KUB 47.5+, {€1} Rs. IV 19"
-		],
-		"]r-i-šše @ u.B. @ { a → ANTIP-NMLZ.ABS} @ noun @ ": [
-			"KUB 47.5+, {€1} Rs. IV 19"
-		],
-		"]-āššo @ u.B. @ { a → 2A.PL} @ verb @ ": [
-			"KUB 47.5+, {€1} Rs. IV 20"
-		],
-		"]si @ u.B. @ { a → .ABS} @ noun @ ": [
-			"KUB 47.5+, {€1} Rs. IV 21"
-		],
-		"]s-i @ u.B. @ { a → ANTIP} { b → TR.IMP} @ verb @ ": [
-			"KUB 47.5+, {€1} Rs. IV 21"
-		],
-		"]e=l @ u.B. @ { a → =3PL.ABS} @ unclear @ ": [
-			"KUB 47.5+, {€1} Rs. IV 22"
-		],
-		"]ade-i=l @ u.B. @ { a → 3POSS.SG=3PL.ABS} @ noun @ ": [
-			"KUB 47.5+, {€1} Rs. IV 24"
-		],
-		"]ad-i=l @ u.B. @ { a → =ANTIP} @ verb @ ": [
-			"KUB 47.5+, {€1} Rs. IV 24"
-		],
-		"]-ad-i=l @ u.B. @ { a → ad-ANTIP=3PL.ABS} @ verb @ ": [
-			"KUB 47.5+, {€1} Rs. IV 24"
-		],
-		"]a=dil @ u.B. @ { a → =1PL.ABS} @ unclear @ ": [
-			"KUB 47.5+, {€1} Rs. IV 24"
-		],
-		"]abni @ u.B. @ { a → .ABS} @ noun @ ": [
-			"KUB 47.5+, {€1} Rs. IV 28"
-		],
-		"]li @ u.B. @ { a → .ABS} @ noun @ ": [
-			"KUB 47.6,Vs. II 1",
-			"KUB 47.6,Vs. II 3"
-		],
 		"kād-o-kko @ sagen; sprechen @ INT-NEG @ verb @ ": [
 			"KUB 47.6,Vs. II 1",
 			"KUB 47.6,Vs. II 3"
 		],
-		"]šī-na-āž-a @ u.B. @ { a → RELAT.PL-PL-DAT/ESS} @ noun @ ": [
-			"KUB 47.6,Vs. II 2"
-		],
-		"]-až-ē-na-āž-a @ u.B. @ { a → PL-GEN-RELAT.PL-PL-DAT/ESS} @ noun @ ": [
-			"KUB 47.6,Vs. II 2"
-		],
-		"]elġi @ u.B. @ { a → .ABS} @ noun @ ": [
-			"KUB 47.6,Vs. II 4"
-		],
-		"]elġ-i @ u.B. @ { a → ANTIP} @ verb @ ": [
-			"KUB 47.6,Vs. II 4"
-		],
 		"tarmāni-ož @ Quelle @ { a → EQU} @ noun @ ": [
 			"KUB 47.6,Vs. II 4"
 		],
-		"kulm-u[ @ tief? @  @ noun @ ": [
-			"KUB 47.6,Vs. II 4"
-		],
-		"]ānn+ī+re @ u.B. @ { a → .ABS} @ noun @ ": [
-			"KUB 47.6,Vs. II 5"
-		],
 		"ānn+ī+re @ u.B. @ { a → .ABS} @ noun @ ": [
-			"KUB 47.6,Vs. II 5"
-		],
-		"]ānn-īr-i @ u.B. @ { a → īr-ANTIP} @ verb @ ": [
 			"KUB 47.6,Vs. II 5"
 		],
 		"ānn-īr-i @ u.B. @ { a → īr-ANTIP} @ verb @ ": [
@@ -7942,15 +4886,6 @@
 		"ḫōr-ām-i @ u.B. @ { a → FACT-ANTIP} @ verb @ ": [
 			"KUB 47.6,Vs. II 5"
 		],
-		"]ali-da @ u.B. @ { a → DIR} @ noun @ ": [
-			"KUB 47.6,Vs. II 6"
-		],
-		"]ali-i-da @ u.B. @ { a → 3POSS.SG-DIR} @ noun @ ": [
-			"KUB 47.6,Vs. II 6"
-		],
-		"]al+idi-a @ u.B. @ { a → ESS} @ noun @ ": [
-			"KUB 47.6,Vs. II 6"
-		],
 		"ali-da @ u.B. @ { a → DIR} @ noun @ ": [
 			"KUB 47.6,Vs. II 6"
 		],
@@ -7960,19 +4895,10 @@
 		"al+idi-a @ u.B. @ { a → ESS} @ noun @ ": [
 			"KUB 47.6,Vs. II 6"
 		],
-		"]al-ed-a @ u.B. @ { a → FUT-3A.SG} @ verb @ ": [
-			"KUB 47.6,Vs. II 6"
-		],
 		"al-ed-a @ u.B. @ { a → FUT-3A.SG} @ verb @ ": [
 			"KUB 47.6,Vs. II 6"
 		],
-		"]-al-ed-a @ u.B. @ { a → al-FUT-3A.SG} @ verb @ ": [
-			"KUB 47.6,Vs. II 6"
-		],
 		"napt+a+nni @ u.B. @ { a → .ABS} @ noun @ ": [
-			"KUB 47.6,Vs. II 6"
-		],
-		"napt+a+nni-[ @ u.B. @  @ noun @ ": [
 			"KUB 47.6,Vs. II 6"
 		],
 		"napt+a+ni-ne @ u.B. @ { a → ABL/INS} @ noun @ ": [
@@ -7980,15 +4906,6 @@
 		],
 		"napt+a+ni-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ ": [
 			"KUB 47.6,Vs. II 6"
-		],
-		"napt+a+ni-ne-[ @ u.B. @ { a → RELAT.SG} @ noun @ ": [
-			"KUB 47.6,Vs. II 6"
-		],
-		"]mi @ u.B. @ { a → .ABS} @ noun @ ": [
-			"KUB 47.6,Vs. II 7"
-		],
-		"]m-i @ u.B. @ { a → ANTIP} @ verb @ ": [
-			"KUB 47.6,Vs. II 7"
 		],
 		"tūn+āḫḫ+i @ u.B. @ { a → .ABS} @ noun @ ": [
 			"KUB 47.6,Vs. II 7"
@@ -8008,22 +4925,10 @@
 		"tōn+ā+ḫḫe @ u.B. @ { a → .ABS} @ noun @ ": [
 			"KUB 47.6,Vs. II 7"
 		],
-		"]uli-ā=l @ u.B. @ { a → ESS=3PL.ABS} @ noun @ ": [
-			"KUB 47.6,Vs. II 8"
-		],
 		"uli-ā=lla @ u.B. @ { a → ESS=3PL.ABS} @ noun @ ": [
 			"KUB 47.6,Vs. II 8"
 		],
-		"]ul-ā=l @ u.B. @ { a → INT=3PL.ABS} @ verb @ ": [
-			"KUB 47.6,Vs. II 8"
-		],
 		"ul-ā=l @ u.B. @ { a → INT=3PL.ABS} @ verb @ ": [
-			"KUB 47.6,Vs. II 8"
-		],
-		"]-ol-ā=l @ u.B. @ { a → ol-3A.SG=3PL.ABS} { b → ol-INT=3PL.ABS} @ verb @ ": [
-			"KUB 47.6,Vs. II 8"
-		],
-		"ītḫ-i[ @ u.B. @  @ unclear @ ": [
 			"KUB 47.6,Vs. II 8"
 		],
 		"tamgāri @ Händler @ { a → .ABS} @ noun @ ": [
@@ -8041,12 +4946,6 @@
 		"Ilāva-a=ān @ GN @ { a → ESS=CON} @ noun @ ": [
 			"KUB 47.6,Vs. II 9"
 		],
-		"]ši-ī-a @ u.B. @ { a → 3POSS.SG-ESS} @ noun @ ": [
-			"KUB 47.6,Vs. II 10"
-		],
-		"]š-ī-a @ u.B. @ { a → TR-3A.SG} @ verb @ ": [
-			"KUB 47.6,Vs. II 10"
-		],
 		"ši-ī-a @ u.B. @ { a → TR-3A.SG} @ verb @ ": [
 			"KUB 47.6,Vs. II 10"
 		],
@@ -8059,23 +4958,11 @@
 		"tešši @ erhaben @ .ABS @ noun @ ": [
 			"KUB 47.6,Vs. II 10"
 		],
-		"]mari-ne @ u.B. @ { a → ABL/INS} @ noun @ ": [
-			"KUB 47.6,Vs. II 11"
-		],
-		"]mari-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ ": [
-			"KUB 47.6,Vs. II 11"
-		],
 		"tišš+o+ḫḫe @ u.B. @ { a → .ABS} @ noun @ ": [
 			"KUB 47.6,Vs. II 11"
 		],
 		"išši-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ ": [
 			"KUB 47.6,Vs. II 12"
-		],
-		"]a=lla @ u.B. @ { a → =3PL.ABS} @ unclear @ ": [
-			"KUB 47.6,2′"
-		],
-		"]ali-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ ": [
-			"KUB 47.6,2′"
 		],
 		"šōre-ne-ra=mān @ u.B. @ { a → RELAT.SG-COM=CON} @ noun @ ": [
 			"KUB 47.6,2′"
@@ -8143,17 +5030,11 @@
 		"arde-ne-va=m=an @ Stadt @ { a → RELAT.SG-DAT=2SG.ABS=CON} @ noun @ ": [
 			"KUB 47.6,4′"
 		],
-		"]ili-iffe-āž @ u.B. @ { a → 1POSS-PL.ABS} @ noun @ ": [
-			"KUB 47.6,5′"
-		],
 		"ai=mān @ falls; wenn @ { a → =CON} @ CONJ @ ": [
 			"KUB 47.6,5′"
 		],
 		"ai=m=ān @ falls; wenn @ { a → =2SG.ABS=CON} @ CONJ @ ": [
 			"KUB 47.6,5′"
-		],
-		"]-i-o-mo @ u.B. @ { a → TR-2A.SG-NEG} @ verb @ ": [
-			"KUB 47.6,6′"
 		],
 		"arde-ne-va=mān @ Stadt @ { a → RELAT.SG-DAT=CON} @ noun @ ": [
 			"KUB 47.6,6′"
@@ -8161,59 +5042,14 @@
 		"arde-ne-va=m=ān @ Stadt @ { a → RELAT.SG-DAT=2SG.ABS=CON} @ noun @ ": [
 			"KUB 47.6,6′"
 		],
-		"]-i-affo-ž @ u.B. @ { a → TR-1A.NEG-PL} @ noun @ ": [
-			"KUB 47.6,7′"
-		],
-		"ur-idu[ @ u.B. @  @ unclear @ ": [
-			"KUB 47.6,7′"
-		],
-		"ur-ed-o=[ @ wünschen @ { a → FUT-2A.SG} @ verb @ ": [
-			"KUB 47.6,7′"
-		],
-		"ur-ed-o=[ @ zeigen @ { a → FUT-2A.SG} @ verb @ ": [
-			"KUB 47.6,7′"
-		],
-		"ur-ed-o=[ @ u.B. @ { a → FUT-2A.SG} @ verb @ ": [
-			"KUB 47.6,7′"
-		],
-		"ur-id-o=[ @ wünschen @ { a → PL.A-TR.PFV} @ verb @ ": [
-			"KUB 47.6,7′"
-		],
-		"ur-id-o=[ @ zeigen @ { a → PL.A-TR.PFV} @ verb @ ": [
-			"KUB 47.6,7′"
-		],
-		"ur-id-o=[ @ u.B. @ { a → PL.A-TR.PFV} @ verb @ ": [
-			"KUB 47.6,7′"
-		],
-		"arde-ne-[ @ Stadt @ { a → RELAT.SG} @ noun @ ": [
-			"KUB 47.6,8′"
-		],
-		"]+a+ni @ u.B. @ { a → .ABS} @ noun @ ": [
-			"KUB 47.8,Vs. II? 2′"
-		],
-		"]an-i @ u.B. @ { a → ANTIP} @ verb @ ": [
-			"KUB 47.8,Vs. II? 2′"
-		],
-		"]-ia-ne @ u.B. @ { a → 3POSS.SG-ABL/INS} @ noun @ ": [
-			"KUB 47.8,Vs. II? 2′"
-		],
 		"aziri @ u.B. @ { a → .ABS} @ noun @ ": [
 			"KUB 47.8,Vs. II? 2′"
 		],
 		"assiri @ Gefangener @ { a → .ABS} @ noun @ ": [
 			"KUB 47.8,Vs. II? 2′"
 		],
-		"]t+an+i=n @ u.B. @ { a → .ABS=3SG.ABS} { b → .ABS=CON} @ noun @ ": [
-			"KUB 47.8,Vs. II? 3′"
-		],
-		"]t+a+ni-n @ u.B. @ { a → ABL/INS} @ noun @ ": [
-			"KUB 47.8,Vs. II? 3′"
-		],
 		"ag-id-en @ aufnehmen; heraufkommen; aufrichten @ { a → PL.A-3JUSS} @ verb @ ": [
 			"KUB 47.8,Vs. II? 3′"
-		],
-		"šē[ @  @  @ unclear @ ": [
-			"KUB 47.8,Vs. III? 1′"
 		],
 		"teġri @ u.B. @ { a → .ABS} @ noun @ ": [
 			"KUB 47.8,Vs. III? 2′"
@@ -8231,9 +5067,6 @@
 			"KUB 47.8,Vs. III? 4′"
 		],
 		"anagi-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ ": [
-			"KUB 47.8,Vs. III? 5′"
-		],
-		"šeš[ @ u.B. @  @ unclear @ ": [
 			"KUB 47.8,Vs. III? 5′"
 		],
 		"šeġuru+ni-ne-va @ Leben @ { a → RELAT.SG-DAT} @ noun @ ": [
@@ -8260,13 +5093,7 @@
 		"šeġuru+ni-ne-ve-ne-e @ Leben @ { a → RELAT.SG-GEN-RELAT.SG-DIR/LOC} @ noun @ ": [
 			"KUB 47.8,Rs. IV? 4"
 		],
-		"še[ @ u.B. @  @ unclear @ ": [
-			"KUB 47.8,Rs. IV? 4"
-		],
 		"tal+aḫḫ-id-o @ herausziehen @ PL.A-TR.PFV @ verb @ ": [
-			"KUB 47.8,Rs. IV? 5"
-		],
-		"avin[ @ u.B. @  @ noun @ ": [
 			"KUB 47.8,Rs. IV? 5"
 		],
 		"avi-n @ vor @ { a → ABL/INS} @ ADV @ ": [
@@ -8281,16 +5108,7 @@
 		"agoli-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ ": [
 			"KUB 47.8,Rs. IV? 6"
 		],
-		"timeri-[ @ dunkel @  @ noun @ ": [
-			"KUB 47.8,Rs. IV? 6"
-		],
-		"pud+u+šḫi-na-až-a=[ @ u.B. @ { a → RELAT.PL-PL-DAT/ESS} @ noun @ ": [
-			"KUB 47.8,Rs. IV? 7"
-		],
 		"fašt-o @ u.B. @ { a → MOD.PAT} @ verb @ ": [
-			"KUB 47.8,Rs. IV? 8"
-		],
-		"pud-u[ @ u.B. @  @ unclear @ ": [
 			"KUB 47.8,Rs. IV? 8"
 		],
 		"pud-o @ u.B. @ MOD.PAT @ verb @ ": [
@@ -8305,37 +5123,13 @@
 		"pid-uġ-u @ u.B. @ { a → uġ-MED} @ verb @ ": [
 			"KUB 47.8,Rs. IV? 9"
 		],
-		"]ari-ne-va @ u.B. @ { a → RELAT.SG-DAT} @ noun @ ": [
-			"KUB 47.8,Rs. V? 1"
-		],
-		"]ar-i-l-eva @ u.B. @ { a → MOD.ACT-l-POT} @ verb @ ": [
-			"KUB 47.8,Rs. V? 1"
-		],
 		"ar-i-l-eva @ geben @ { a → MOD.ACT-l-POT} @ verb @ ": [
 			"KUB 47.8,Rs. V? 1"
 		],
 		"ari-ne-va @ das Böse @ { a → RELAT.SG-DAT} @ noun @ ": [
 			"KUB 47.8,Rs. V? 1"
 		],
-		"]eže-ne @ u.B. @ { a → ABL/INS} @ noun @ ": [
-			"KUB 47.8,Rs. V? 3"
-		],
-		"]eže-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ ": [
-			"KUB 47.8,Rs. V? 3"
-		],
-		"]-u @ u.B. @ { a → MED} @ verb @ ": [
-			"KUB 47.8,Rs. V? 6"
-		],
-		"]-o @ u.B. @ { a → MOD.PAT} { b → 2A.SG} { c → TR.PFV} @ verb @ ": [
-			"KUB 47.8,Rs. V? 6"
-		],
-		"]u @ u.B. @  @ ADV @ ": [
-			"KUB 47.8,Rs. V? 6"
-		],
 		"keviri-na=an @ Ältester @ { a → .ABS=CON} @ noun @ ": [
-			"KUB 52.114+, {€1+2} 1′"
-		],
-		"alōnu[ @ u.B. @  @ unclear @ ": [
 			"KUB 52.114+, {€1+2} 1′"
 		],
 		"Ilamiġōrra @ PN @ { a → .ABS} @ noun @ ": [
@@ -8343,9 +5137,6 @@
 		],
 		"Ilamiġōrri-a @ PN @ { a → ESS} @ noun @ ": [
 			"KUB 52.114+, {€1+2} 2′"
-		],
-		"]feri @ u.B. @ { b → .ABS} @ noun @ ": [
-			"KUB 52.114+, {€1+2} 3′"
 		],
 		"feri @ u.B. @ { a → .ABS} @ noun @ ": [
 			"KUB 52.114+, {€1+2} 3′"
@@ -8365,15 +5156,6 @@
 		"Ilamiġurri-a=an @ PN @ { a → ESS=CON} @ noun @ ": [
 			"KUB 52.114+, {€1+2} 3′"
 		],
-		"]ḫ-o=n @ u.B. @ { a → MOD.PAT=3SG.ABS} @ verb @ ": [
-			"KUB 52.114+, {€1+2} 4′"
-		],
-		"]ḫ-u=n @ u.B. @ { a → MED=3SG.ABS} @ verb @ ": [
-			"KUB 52.114+, {€1+2} 4′"
-		],
-		"]ḫu-n @ u.B. @ { a → ABL/INS} @ ADV @ ": [
-			"KUB 52.114+, {€1+2} 4′"
-		],
 		"inu @ wie @  @ ADV @ ": [
 			"KUB 52.114+, {€1+2} 4′"
 		],
@@ -8383,22 +5165,10 @@
 		"ḫēr @ u.B. @  @ unclear @ ": [
 			"KUB 52.114+, {€1+2} 4′"
 		],
-		"tā[ @ u.B. @  @ unclear @ ": [
-			"KUB 52.114+, {€1+2} 4′"
-		],
-		"kunde-ne-[ @ u.B. @ { a → RELAT.SG} @ noun @ ": [
-			"KUB 52.114+, {€1+2} 5′"
-		],
 		"pāġi-i-da @ Kopf @ { a → 3POSS.SG-DIR} @ noun @ ": [
 			"KUB 52.114+, {€1+2} 5′"
 		],
 		"pāġ-ed-a @ zerstören @ { a → FUT-3A.SG} @ verb @ ": [
-			"KUB 52.114+, {€1+2} 5′"
-		],
-		"ag-ū[ @ aufnehmen; erheben; heraufkommen @  @ unclear @ ": [
-			"KUB 52.114+, {€1+2} 5′"
-		],
-		"ag-ū[ @ u.B. @  @ unclear @ ": [
 			"KUB 52.114+, {€1+2} 5′"
 		],
 		"kunde-ne=lla @ u.B. @ { a → ABL/INS=3PL.ABS} @ noun @ ": [
@@ -8407,25 +5177,10 @@
 		"kunde-ne-e=lla @ u.B. @ { a → RELAT.SG-DIR/LOC=3PL.ABS} @ noun @ ": [
 			"KUB 52.114+, {€1+2} 6′"
 		],
-		"]li-a @ u.B. @ { a → ESS} @ noun @ ": [
-			"KUB 52.114+, {€1+2} 6′"
-		],
-		"]l-a @ u.B. @ { a → INT} @ verb @ ": [
-			"KUB 52.114+, {€1+2} 6′"
-		],
-		"]u+e @ u.B. @  @ ADV @ ": [
-			"KUB 52.114+, {€1+2} 7′"
-		],
 		"feri-ve @ u.B. @ { a → GEN} @ noun @ ": [
 			"KUB 52.114+, {€1} 8′"
 		],
-		"fer-ve-[ @ u.B. @ { a → GEN} @ noun @ ": [
-			"KUB 52.114+, {€1} 8′"
-		],
 		"feri-i-ve @ u.B. @ { a → 3POSS.SG-GEN} @ noun @ ": [
-			"KUB 52.114+, {€1} 8′"
-		],
-		"feri-i-ve-[ @ u.B. @ { a → GEN-[} @ noun @ ": [
 			"KUB 52.114+, {€1} 8′"
 		],
 		"feri-va @ u.B. @ { a → DAT} @ noun @ ": [
@@ -8434,35 +5189,8 @@
 		"feri-i-va @ u.B. @ { a → 3POSS.SG-DAT} @ noun @ ": [
 			"KUB 52.114+, {€1} 8′"
 		],
-		"]feri-ve @ u.B. @ { a → GEN} @ noun @ ": [
-			"KUB 52.114+, {€1} 8′"
-		],
-		"]feri-ve-[ @ u.B. @ { a → GEN} @ noun @ ": [
-			"KUB 52.114+, {€1} 8′"
-		],
-		"]feri-i-ve @ u.B. @ { a → 3POSS.SG-GEN} @ noun @ ": [
-			"KUB 52.114+, {€1} 8′"
-		],
-		"]feri-i-ve-[ @ u.B. @ { a → 3POSS.SG-GEN} @ noun @ ": [
-			"KUB 52.114+, {€1} 8′"
-		],
-		"]feri-va @ u.B. @ { a → DAT} @ noun @ ": [
-			"KUB 52.114+, {€1} 8′"
-		],
-		"]feri-i-va @ u.B. @ { a → 3POSS.SG-DAT} @ noun @ ": [
-			"KUB 52.114+, {€1} 8′"
-		],
-		"feri-v-[ @ u.B. @ { a → 2POSS.SG} @ noun @ ": [
-			"KUB 52.114+, {€1} 8′"
-		],
 		"fer-i-eva @ u.B. @ { a → MOD.ACT-POT} @ verb @ ": [
 			"KUB 52.114+, {€1} 8′"
-		],
-		"]ḫōra[ @ u.B. @  @ unclear @ ": [
-			"KUB 52.115,1′"
-		],
-		"ḫōr-a[ @ u.B. @  @ unclear @ ": [
-			"KUB 52.115,1′"
 		],
 		"ḫōri-a @ Schoß @ { a → ESS} @ noun @ ": [
 			"KUB 52.115,1′"
@@ -8472,54 +5200,6 @@
 		],
 		"ḫōr-a @ u.B. @ { a → INT} @ verb @ ": [
 			"KUB 52.115,1′"
-		],
-		"]ḫōri-a @ u.B. @ { a → ESS} @ noun @ ": [
-			"KUB 52.115,1′"
-		],
-		"]ḫ-ōr-a @ u.B. @ { a → ōr-3A.SG} { b → ōr-INT} @ verb @ ": [
-			"KUB 52.115,1′"
-		],
-		"]īgi-ne @ u.B. @ { a → ABL/INS} @ noun @ ": [
-			"KUB 52.115,2′"
-		],
-		"]īgi-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ ": [
-			"KUB 52.115,2′"
-		],
-		"]īgi-ne-[ @ u.B. @ { a → RELAT.SG} @ noun @ ": [
-			"KUB 52.115,2′"
-		],
-		"]uni-a @ u.B. @ { a → ESS} @ noun @ ": [
-			"KUB 52.115,3′"
-		],
-		"]un-a @ u.B. @ { a → INT} { b → 3A.SG} @ verb @ ": [
-			"KUB 52.115,3′"
-		],
-		"ap[ @ u.B. @  @ unclear @ ": [
-			"KUB 52.115,3′"
-		],
-		"]-nē-va @ u.B. @ { a → RELAT.SG-DAT} @ noun @ ": [
-			"KUB 52.115,4′"
-		],
-		"]ni-ī-va @ u.B. @ { a → 3POSS.SG-DAT} @ noun @ ": [
-			"KUB 52.115,4′"
-		],
-		"pū[ @ u.B. @  @ unclear @ ": [
-			"KUB 52.115,4′"
-		],
-		"ḫež-a[ @ u.B. @  @ unclear @ ": [
-			"KBo 32.100,2′"
-		],
-		"]mi-ne-ve @ u.B. @ { a → RELAT.SG-GEN} @ noun @ ": [
-			"KBo 32.100,3′"
-		],
-		"]ve-na @ u.B. @ { a → RELAT.PL.ABS} @ noun @ ": [
-			"KBo 32.103g,1′"
-		],
-		"]u=l @ u.B. @ { a → =3PL.ABS} @ unclear @ ": [
-			"KBo 32.103p,lk. Kol. 1′"
-		],
-		"nap[ @ u.B. @  @ unclear @ ": [
-			"KBo 32.103p,lk. Kol. 3′"
 		],
 		"ur-o-kko=nna @ existieren @ { a → INT-NEG=3SG.ABS} @ verb @ ": [
 			"KBo 32.107,1′"
@@ -8534,15 +5214,6 @@
 		"ur-o-kko @ existieren @ { a → INT-NEG} @ noun @ ": [
 			"KBo 32.107,2′"
 		],
-		"]šiāllē @ u.B. @ { a → .ABS} @ noun @ ": [
-			"KBo 32.107,3′"
-		],
-		"]ralva @ u.B. @  @ noun @ ": [
-			"KBo 32.109,1′"
-		],
-		"]ralva[ @ u.B. @  @ noun @ ": [
-			"KBo 32.109,1′"
-		],
 		"fitfi-a @ u.B. @ { a → ESS} @ noun @ ": [
 			"KBo 32.109,2′"
 		],
@@ -8552,26 +5223,8 @@
 		"av-ar-ōž-a @ u.B. @ { a → ITER-PST-3A.SG} @ verb @ ": [
 			"KBo 32.109,3′"
 		],
-		"]av-ar-ōž-a @ u.B. @ { a → ITER-PST-3A.SG} @ verb @ ": [
-			"KBo 32.109,3′"
-		],
-		"]av+ar+ō+že-a @ u.B. @ { a → ESS} @ noun @ ": [
-			"KBo 32.109,3′"
-		],
 		"av+ar+ō+že-a @ u.B. @ { a → ESS} @ noun @ ": [
 			"KBo 32.109,3′"
-		],
-		"]r-ōž @ u.B. @ { a → EQU} @ noun @ ": [
-			"KBo 32.109,4′"
-		],
-		"ḫīll-i[ @ u.B. @  @ unclear @ ": [
-			"KBo 32.109,4′"
-		],
-		"]i-ugar-i @ u.B. @ { a → RECIP-ANTIP} @ verb @ ": [
-			"KBo 32.109,5′"
-		],
-		"]i+ugar+i @ u.B. @ { a → .ABS} @ noun @ ": [
-			"KBo 32.109,5′"
 		],
 		"šāri-a @ Wunsch @ { a → ESS} @ noun @ ": [
 			"KBo 32.109,5′"
@@ -8584,9 +5237,6 @@
 		],
 		"šār-a @ u.B. @ { a → INT} @ verb @ ": [
 			"KBo 32.109,5′"
-		],
-		"]b-i-až-a @ u.B. @ { a → 3POSS.SG-PL-DAT/ESS} @ noun @ ": [
-			"KBo 32.109,6′"
 		],
 		"šir+ad-i-le @ erzählen @ { a → MOD.ACT-1JUSS} @ verb @ ": [
 			"KBo 32.11,Vs. I 1"
@@ -8639,9 +5289,6 @@
 		"tive @ Wort @ .ABS @ noun @ ": [
 			"KBo 32.11,Vs. I 5"
 		],
-		"tān-[ @ machen @  @ unclear @ ": [
-			"KBo 32.11,Vs. I 5"
-		],
 		"mādi @ Weisheit @ .ABS @ noun @ ": [
 			"KBo 32.11,Vs. I 6"
 		],
@@ -8659,17 +5306,10 @@
 			"KBo 32.11,Vs. I 7",
 			"KBo 32.11,Vs. I 10"
 		],
-		"Ēbla-[ @ GN @  @ noun @ ": [
-			"KBo 32.11,Vs. I 7",
-			"KBo 32.15,Rs. 19a"
-		],
 		"ag-id-ō-re @ aufnehmen; erheben; heraufkommen @ { a → PL.A-PAT-PCTP.ABS} @ noun @ ": [
 			"KBo 32.11,Vs. I 8"
 		],
 		"Pizigarra-ž @ PN @ { a → ERG} @ noun @ ": [
-			"KBo 32.11,Vs. I 8"
-		],
-		"pa-i[ @ bauen? @  @ unclear @ ": [
 			"KBo 32.11,Vs. I 8"
 		],
 		"Nōġašše-ne @ GN @ { a → -ABL/INS} @ noun @ ": [
@@ -8725,60 +5365,14 @@
 		"inu=ma @ wie @ { a → =CON} @ CONJ @ ": [
 			"KBo 32.11,Vs. I 15"
 		],
-		"āmm-umv[ @ erreichen; erreichen lassen @  @ unclear @ ": [
-			"KBo 32.11,Vs. I 15"
-		],
-		"nēgi-ne-[ @ u.B. @ { a → RELAT.SG} @ noun @ ": [
-			"KBo 32.11,Vs. I 16"
-		],
 		"nēgi-ne @ u.B. @ { a → ABL/INS} @ noun @ ": [
 			"KBo 32.11,Vs. I 16"
 		],
 		"nēgi-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ ": [
 			"KBo 32.11,Vs. I 16"
 		],
-		"erade-[ @ Vogel @  @ noun @ ": [
-			"KBo 32.11,Vs. I 19"
-		],
-		"]i-b @ u.B. @ { a → 2POSS.SG.ABS} @ noun @ ": [
-			"KBo 32.11,Rs. IV 2′"
-		],
-		"]-i-b @ u.B. @ { a → ANTIP-b} @ verb @ ": [
-			"KBo 32.11,Rs. IV 2′"
-		],
-		"]pi-i-a @ u.B. @ { a → 3POSS.SG-ESS} @ noun @ ": [
-			"KBo 32.11,Rs. IV 4′"
-		],
-		"]p-i-a @ u.B. @ { a → TR-3A.SG} @ verb @ ": [
-			"KBo 32.11,Rs. IV 4′"
-		],
-		"Kumme-[ @ GN @  @ noun @ ": [
-			"KBo 32.11,Rs. IV 4′"
-		],
 		"Kumme @ GN @ { a → .ABS} @ noun @ ": [
 			"KBo 32.11,Rs. IV 4′"
-		],
-		"]inn-ad-aw @ u.B. @ { a → ad-1A.SG} @ verb @ ": [
-			"KBo 32.11,Rs. IV 5′"
-		],
-		"]inn-ad-a-b @ u.B. @ { a → ad-INT-b} @ verb @ ": [
-			"KBo 32.11,Rs. IV 5′"
-		],
-		"]inn+adi-a=m @ u.B. @ { a → ESS=CON} @ noun @ ": [
-			"KBo 32.11,Rs. IV 5′"
-		],
-		"]ma @ u.B. @  @ unclear @ ": [
-			"KBo 32.11,Rs. IV 6′",
-			"KBo 32.20,Rs. IV 4′"
-		],
-		"]-ož-i-kki @ u.B. @ { a → PST-ANTIP-NEG} { b → ož-ANTIP-NEG} @ verb @ ": [
-			"KBo 32.11,Rs. IV 7′"
-		],
-		"ḫēnna=[ @ jetzt @  @ ADV @ ": [
-			"KBo 32.11,Rs. IV 7′"
-		],
-		"]aži-iffu-we=ma @ u.B. @ { a → 1POSS.SG-GEN=CON} @ noun @ ": [
-			"KBo 32.11,Rs. IV 8′"
 		],
 		"aži-iffu-we=ma @ u.B. @ { a → 1POSS.SG-GEN=CON} @ noun @ ": [
 			"KBo 32.11,Rs. IV 8′"
@@ -8786,13 +5380,7 @@
 		"ad-ed-i @ herabkommen?; herabbringen? @ { a → FUT-ANTIP} @ verb @ ": [
 			"KBo 32.11,Rs. IV 8′"
 		],
-		"]f-aġ-aw-šše @ u.B. @ { a → aġ-1A.SG-NOM.ABS} @ noun @ ": [
-			"KBo 32.11,Rs. IV 9′"
-		],
 		"faġ-aw-šše @ u.B. @ { a → 1A.SG-NOM.ABS} @ noun @ ": [
-			"KBo 32.11,Rs. IV 9′"
-		],
-		"]f-eġ-aw-šše @ u.B. @ { a → eġ-1A.SG-NOM.ABS} @ noun @ ": [
 			"KBo 32.11,Rs. IV 9′"
 		],
 		"feġ-aw-šše @ u.B. @ { a → 1A.SG-NOM.ABS} @ noun @ ": [
@@ -8800,9 +5388,6 @@
 		],
 		"pind-uw-a @ zurückkehren; zurückbringen @ { a → MED-3A.SG} @ verb @ ": [
 			"KBo 32.11,Rs. IV 9′"
-		],
-		"]l-ōl-id-ō-va-en=nna @ u.B. @ { a → ōl-PL.A-MOD.PAT-NEG-3JUSS=3SG.ABS} @ verb @ ": [
-			"KBo 32.11,Rs. IV 10′"
 		],
 		"Teššob-āž @ DN @ { a → ERG} @ noun @ ": [
 			"KBo 32.11,Rs. IV 12′"
@@ -8813,9 +5398,6 @@
 		"šāri-b @ Wunsch @ { a → 2POSS.SG.ABS} @ noun @ ": [
 			"KBo 32.11,Rs. IV 13′",
 			"KBo 32.11,Rs. IV 14′"
-		],
-		"šār-i-o-[ @ wünschen @ { a → TR-2A.SG} @ verb @ ": [
-			"KBo 32.11,Rs. IV 13′"
 		],
 		"Išḫāra @ DN @ { a → .ABS} @ noun @ ": [
 			"KBo 32.11,Rs. IV 14′"
@@ -8865,9 +5447,6 @@
 		"abi-š=nnā @ wer; jeder @ { a → ERG=3SG.ABS} @ noun @ ": [
 			"KBo 32.11,Rs. IV 19′"
 		],
-		"en-u[ @ u.B. @  @ unclear @ ": [
-			"KBo 32.11,Rs. IV 19′"
-		],
 		"Išḫara=an @ DN @ { a → .ABS=CON} @ noun @ ": [
 			"KBo 32.11,Rs. IV 20′"
 		],
@@ -8884,9 +5463,6 @@
 			"KBo 32.11,Rs. IV 21′"
 		],
 		"pāġ-u @ zerstören @ { a → MED} @ verb @ ": [
-			"KBo 32.11,Rs. IV 21′"
-		],
-		"pāġ-u[ @ zerstören @  @ verb @ ": [
 			"KBo 32.11,Rs. IV 21′"
 		],
 		"suss+ō+nni @ u.B. @ .ABS @ noun @ ": [
@@ -8921,9 +5497,6 @@
 		"tidi-i-ā=m @ u.B. @ { a → 3POSS.SG-ESS=CON} @ noun @ ": [
 			"KBo 32.12,Vs. I 2"
 		],
-		"suss-o[ @ u.B. @  @ noun @ ": [
-			"KBo 32.12,Vs. I 2"
-		],
 		"kīppi-ne-ž @ Macht? @ { a → RELAT.SG-ERG} @ noun @ ": [
 			"KBo 32.12,Vs. I 3"
 		],
@@ -8950,9 +5523,6 @@
 		"ābē-ne-e @ Opfergrube? @ { a → RELAT.SG-DIR/LOC} @ noun @ ": [
 			"KBo 32.12,Vs. I 4",
 			"KBo 32.12,Vs. I 15"
-		],
-		"pur-[ @ u.B. @  @ noun @ ": [
-			"KBo 32.12,Vs. I 4"
 		],
 		"taġ-až-ī-b @ u.B. @ { a → až-ANTIP-b} @ verb @ ": [
 			"KBo 32.12,Vs. I 5",
@@ -8985,12 +5555,6 @@
 			"KBo 32.12,Vs. I 8"
 		],
 		"ḫaž-ašt-i-le @ hören @ { a → RES-MOD.ACT-1JUSS} @ verb @ ": [
-			"KBo 32.12,Vs. I 8"
-		],
-		"kōl-i[ @ u.B. @  @ unclear @ ": [
-			"KBo 32.12,Vs. I 8"
-		],
-		"kōl-i[ @ beseite lassen @  @ unclear @ ": [
 			"KBo 32.12,Vs. I 8"
 		],
 		"suss+ō+nni @ u.B. @ { a → .ABS} @ noun @ ": [
@@ -9046,9 +5610,6 @@
 		"faġari-ne-ž @ gut @ { a → RELAT.SG-ERG} @ noun @ ": [
 			"KBo 32.12,Vs. I 14"
 		],
-		"pur+i+re-[ @ u.B. @  @ noun @ ": [
-			"KBo 32.12,Vs. I 15"
-		],
 		"šīl+um+ō+tḫe=m @ u.B. @ { a → .ABS=CON} @ noun @ ": [
 			"KBo 32.12,Vs. I 16"
 		],
@@ -9062,27 +5623,6 @@
 			"KBo 32.12,Vs. I 19",
 			"KBo 32.12,Rs. IV 22′",
 			"KBo 32.50,3′"
-		],
-		"mad-a=[ @ Weisheit @ { a → ESS} @ noun @ ": [
-			"KBo 32.12,Vs. I 19"
-		],
-		"]tī[ @ u.B. @  @ unclear @ ": [
-			"KBo 32.12,Vs. I 20"
-		],
-		"]m-ō-re @ u.B. @ { a → PAT-PTCP.ABS} @ noun @ ": [
-			"KBo 32.12,Rs. IV 2′"
-		],
-		"ḫil-i[ @ u.B. @  @ unclear @ ": [
-			"KBo 32.12,Rs. IV 2′"
-		],
-		"]e-ž @ u.B. @ { a → ERG} @ noun @ ": [
-			"KBo 32.12,Rs. IV 3′"
-		],
-		"]t-o @ u.B. @ { a → MOD.PAT} @ verb @ ": [
-			"KBo 32.12,Rs. IV 4′"
-		],
-		"ḫurm-a[ @ u.B. @  @ unclear @ ": [
-			"KBo 32.12,Rs. IV 4′"
 		],
 		"ḫōrm+ar+i @ u.B. @ { a → .ABS} @ noun @ ": [
 			"KBo 32.12,Rs. IV 5′"
@@ -9104,12 +5644,6 @@
 		"tōrovi @ Feind @ .ABS @ noun @ ": [
 			"KBo 32.12,Rs. IV 6′"
 		],
-		"]kūri @ u.B. @ { a → .ABS} @ noun @ ": [
-			"KBo 32.12,Rs. IV 7′"
-		],
-		"ūlmē-[ @ Sklavin; Dienerin @  @ noun @ ": [
-			"KBo 32.12,Rs. IV 7′"
-		],
 		"ištani-ī-da @ Inneres @ 3POSS.SG-DIR @ noun @ ": [
 			"KBo 32.12,Rs. IV 8′",
 			"KBo 32.50,7′"
@@ -9120,23 +5654,8 @@
 		"ālla+i-i-a=n @ Herrin @ { a → 3POSS.SG-ESS=3SG.ABS} @ noun @ ": [
 			"KBo 32.12,Rs. IV 9′"
 		],
-		"aš[ @ u.B. @  @ unclear @ ": [
-			"KBo 32.12,Rs. IV 9′"
-		],
 		"ālla+i-uda @ Herrin @ { a → DIR} @ noun @ ": [
 			"KBo 32.12,Rs. IV 10′"
-		],
-		"]uru[ @ u.B. @  @ unclear @ ": [
-			"KBo 32.12,Rs. IV 11′"
-		],
-		"]ulla[ @ u.B. @  @ unclear @ ": [
-			"KBo 32.12,Rs. IV 12′"
-		],
-		"]u=lla @ u.B. @ { a → =3PL.ABS} @ unclear @ ": [
-			"KBo 32.12,Rs. IV 12′"
-		],
-		"al[ @ u.B. @  @ unclear @ ": [
-			"KBo 32.12,Rs. IV 13′"
 		],
 		"eni-ž @ Gott @ ERG @ noun @ ": [
 			"KBo 32.12,Rs. IV 13′"
@@ -9216,9 +5735,6 @@
 			"KBo 32.12,Rs. IV 19′"
 		],
 		"torōvi @ Feind @ { a → .ABS} @ noun @ ": [
-			"KBo 32.12,Rs. IV 19′"
-		],
-		"nera-[ @ Mutter @  @ noun @ ": [
 			"KBo 32.12,Rs. IV 19′"
 		],
 		"far-iž-a=nna @ einziehen; losgehen @ { a → iž-INT=3SG.ABS} @ verb @ ": [
@@ -9429,58 +5945,9 @@
 		"tōmv-a @ u.B. @ INT @ verb @ ": [
 			"KBo 32.13+, {€1} Vs. 30a"
 		],
-		"-]la @ u.B. @  @ unclear @ ": [
-			"KBo 32.13+, {€1} Vs. 31a"
-		],
-		"-]ni @ u.B. @  @ unclear @ ": [
-			"KBo 32.13+, {€3} 2a′",
-			"KBo 32.13+, {€1} Rs. 10a′"
-		],
-		"]-mu @ u.B. @ { a → NEG} @ verb @ ": [
-			"KBo 32.13+, {€3} 3a′"
-		],
-		"]-mu @ u.B. @ NEG @ verb @ ": [
-			"KBo 32.13+, {€3} 4a′"
-		],
-		"-]rāza[- @ u.B. @  @ noun @ ": [
-			"KBo 32.13+, {€1} Rs. 1a′"
-		],
-		"-]ḫū[- @ u.B. @  @ unclear @ ": [
-			"KBo 32.13+, {€1} Rs. 2a′"
-		],
 		"tāġe @ Mann @ .ABS @ noun @ ": [
 			"KBo 32.13+, {€1} Rs. 3a′",
 			"KBo 32.13+, {€1} Rs. 4a′"
-		],
-		"tāġ-i[ @ u.B. @  @ verb @ ": [
-			"KBo 32.13+, {€1} Rs. 3a′",
-			"KBo 32.13+, {€1} Rs. 4a′"
-		],
-		"-]tāġi[- @ u.B. @  @ unclear @ ": [
-			"KBo 32.13+, {€1} Rs. 3a′",
-			"KBo 32.13+, {€1} Rs. 4a′"
-		],
-		"tāġe-[ @ u.B. @  @ noun @ ": [
-			"KBo 32.13+, {€1} Rs. 3a′",
-			"KBo 32.13+, {€1} Rs. 4a′"
-		],
-		"šē[- @ u.B. @  @ unclear @ ": [
-			"KBo 32.13+, {€1} Rs. 4a′"
-		],
-		"ši-[ @ beobachten @  @ verb @ ": [
-			"KBo 32.13+, {€1} Rs. 5a′"
-		],
-		"ši[- @ u.B. @  @ unclear @ ": [
-			"KBo 32.13+, {€1} Rs. 5a′"
-		],
-		"-]r-a-b @ u.B. @ { a → INT-b} @ verb @ ": [
-			"KBo 32.13+, {€1} Rs. 8a′"
-		],
-		"-]r-aw @ u.B. @ { a → 1A.SG} @ verb @ ": [
-			"KBo 32.13+, {€1} Rs. 8a′"
-		],
-		"-]ra=v @ u.B. @ { a → =2PL.ABS} @ unclear @ ": [
-			"KBo 32.13+, {€1} Rs. 8a′"
 		],
 		"nāli @ Rehbock @ { a → .ABS} @ noun @ ": [
 			"KBo 32.14,Vs. 1a",
@@ -10385,9 +6852,6 @@
 		"muž+u+ni-ne-ž @ Heger? @ RELAT.SG-ERG @ noun @ ": [
 			"KBo 32.14,Rs. 61"
 		],
-		"]ni @ u.B. @  @ noun @ ": [
-			"KBo 32.14,Rs. 61"
-		],
 		"kir+ar+ni @ u.B. @ { a → .ABS} @ noun @ ": [
 			"KBo 32.14,Rs. 61"
 		],
@@ -10398,9 +6862,6 @@
 			"KBo 32.14,u. Rd. 63"
 		],
 		"nāb-u @ sterben @ MED @ verb @ ": [
-			"KBo 32.14,u. Rd. 65"
-		],
-		"uġ-ār-[ @ u.B. @ { a → ār} @ noun @ ": [
 			"KBo 32.14,u. Rd. 65"
 		],
 		"ḫār+o+nni @ u.B. @ { a → .ABS} @ noun @ ": [
@@ -10511,19 +6972,12 @@
 		"pind-i-l-eva-ž @ zurückkommen; zurückschicken @ { a → MOD.ACT-l-POT-ž} @ verb @ ": [
 			"KBo 32.15,Vs. 16a′"
 		],
-		"uwalli-[ @ Notlage? @  @ noun @ ": [
-			"KBo 32.15,Vs. 16a′"
-		],
 		"uwali-ne @ Notlage? @ { a → ABL/INS} @ noun @ ": [
 			"KBo 32.15,Vs. 16a′",
 			"KBo 32.58,Rs. IV 2"
 		],
 		"uwalli @ Notlage? @ .ABS @ noun @ ": [
 			"KBo 32.15,Vs. 16a′"
-		],
-		"uwali-ne-[ @ Notlage? @ { a → RELAT.SG} @ noun @ ": [
-			"KBo 32.15,Vs. 16a′",
-			"KBo 32.58,Rs. IV 2"
 		],
 		"eġl-i-l-eva-š=nna @ retten @ { a → MOD.ACT-l-POT-ž=3SG.ABS} @ verb @ ": [
 			"KBo 32.15,Vs. 18a′"
@@ -10755,29 +7209,8 @@
 			"KBo 32.16,Vs. 6a",
 			"KBo 32.16,Vs. 7a"
 		],
-		"]rē @ u.B. @  @ unclear @ ": [
-			"KBo 32.16,Vs. 14a"
-		],
 		"ḫav+ū+ži @ u.B. @ { a → .ABS} @ noun @ ": [
 			"KBo 32.16,Vs. 15a"
-		],
-		"]ki @ u.B. @ .ABS @ unclear @ ": [
-			"KBo 32.17,Rs. 3a′"
-		],
-		"]i-b @ u.B. @ { a → 2SG.POSS.ABS} @ noun @ ": [
-			"KBo 32.17,Rs. 4a′"
-		],
-		"]-i-b @ u.B. @ { a → INT-b} @ verb @ ": [
-			"KBo 32.17,Rs. 4a′"
-		],
-		"]app+il+i-nni @ u.B. @ { a → nni.ABS} @ noun @ ": [
-			"KBo 32.17,Rs. 5a′"
-		],
-		"]p-u @ u.B. @ MED @ verb @ ": [
-			"KBo 32.17,Rs. 6a′"
-		],
-		"]-i-l-ānni=mma @ u.B. @ { a → MOD.ACT-l-DESID=2SG.ABS} { b → MOD.ACT-l-DESID=CON} @ verb @ ": [
-			"KBo 32.17,Rs. 8a′"
 		],
 		"Kummi-ne-ve @ GN @ RELAT.SG-GEN @ noun @ ": [
 			"KBo 32.17,Rs. 10a′"
@@ -10799,9 +7232,6 @@
 			"KBo 32.19,Rs. 25a′",
 			"KBo 32.20,Vs. I 10′",
 			"KBo 32.20,Rs. IV 12′"
-		],
-		"]ure-ne-ra=ma @ u.B. @ { a → RELAT.SG-COM=CON} @ noun @ ": [
-			"KBo 32.17,Rs. 13a′"
 		],
 		"tivi-v-uda=m @ Wort @ { a → 2POSS.SG-EPNTH-DIR=CON} @ noun @ ": [
 			"KBo 32.17,Rs. 14a′"
@@ -11037,15 +7467,6 @@
 		"ad+a+šše-ne-e @ (Umwallung der) Unterstadt @ { a → RELAT.SG-DIR/LOC} @ noun @ ": [
 			"KBo 32.19,Vs. 39a"
 		],
-		"ḫapš-a[ @ werfen? @  @ verb @ ": [
-			"KBo 32.19,Vs. 39a"
-		],
-		"tive-[ @ Wort; Sache @  @ noun @ ": [
-			"KBo 32.19,Vs. 48a"
-		],
-		"tiv-i[ @ sprechen @  @ verb @ ": [
-			"KBo 32.19,Vs. 48a"
-		],
 		"tive @ Wort; Sache @ { a → .ABS} @ noun @ ": [
 			"KBo 32.19,Vs. 48a"
 		],
@@ -11062,9 +7483,6 @@
 		"id-i @ u.B. @ { a → ANTIP} @ verb @ ": [
 			"KBo 32.19,Vs. 49a",
 			"KBo 32.20,Rs. IV 3′"
-		],
-		"faġari-ne-[ @ gut @ { a → RELAT.SG} @ noun @ ": [
-			"KBo 32.19,Vs. 51a"
 		],
 		"faġari-ne-e @ gut @ { a → RELAT.SG-DIR/LOC} @ noun @ ": [
 			"KBo 32.19,Vs. 51a"
@@ -11084,9 +7502,6 @@
 			"KBo 32.20,Rs. IV 13′"
 		],
 		"mamm+ō+re @ u.B. @ { a → .ABS} @ noun @ ": [
-			"KBo 32.19,Rs. 24a′"
-		],
-		"mamm+ō+re-[ @ u.B. @  @ noun @ ": [
 			"KBo 32.19,Rs. 24a′"
 		],
 		"pal-i-a @ wissen; kennen @ { a → TR-3A.SG} @ verb @ ": [
@@ -11251,10 +7666,6 @@
 			"KBo 32.20,Vs. I 5′",
 			"KBo 32.20,Vs. I 11′"
 		],
-		"Paib.Ebla-[ @ PN @  @ noun @ ": [
-			"KBo 32.20,Vs. I 5′",
-			"KBo 32.20,Vs. I 11′"
-		],
 		"šarr-i @ u.B. @ { a → ANTIP} @ verb @ ": [
 			"KBo 32.20,Vs. I 6′",
 			"KBo 32.20,Vs. I 18′"
@@ -11268,19 +7679,11 @@
 		"nōv+ar+ē=m @ u.B. @ { a → .ABS=CON} @ noun @ ": [
 			"KBo 32.20,Vs. I 7′"
 		],
-		"ūmbi-[ @ u.B. @  @ noun @ ": [
-			"KBo 32.20,Vs. I 7′",
-			"KBo 32.20,Vs. I 19′"
-		],
 		"ūmb-i @ u.B. @ { a → ANTIP} @ verb @ ": [
 			"KBo 32.20,Vs. I 7′",
 			"KBo 32.20,Vs. I 19′"
 		],
 		"ūmbi @ u.B. @ { a → .ABS} @ noun @ ": [
-			"KBo 32.20,Vs. I 7′",
-			"KBo 32.20,Vs. I 19′"
-		],
-		"ūmb-i[ @ u.B. @  @ unclear @ ": [
 			"KBo 32.20,Vs. I 7′",
 			"KBo 32.20,Vs. I 19′"
 		],
@@ -11305,12 +7708,6 @@
 		"sōve-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ ": [
 			"KBo 32.20,Vs. I 9′"
 		],
-		"sul-ō[ @ binden @  @ verb @ ": [
-			"KBo 32.20,Vs. I 9′"
-		],
-		"sul+ōd-[ @ lösen @  @ verb @ ": [
-			"KBo 32.20,Vs. I 9′"
-		],
 		"Kumme-ne-ve-ož @ GN @ { a → RELAT.SG-GEN-ERG} @ noun @ ": [
 			"KBo 32.20,Vs. I 10′"
 		],
@@ -11332,10 +7729,6 @@
 		"tun-ō-m @ überwinden; vemögen @ { a → TR.PFV-3A.SG} @ verb @ ": [
 			"KBo 32.20,Vs. I 12′"
 		],
-		"ēvri-[ @ Herr @  @ noun @ ": [
-			"KBo 32.20,Vs. I 12′",
-			"KBo 32.94,3′"
-		],
 		"Ežeb.Ābu-š=nna @ PN @ { a → ERG=3SG.ABS} @ noun @ ": [
 			"KBo 32.20,Vs. I 13′"
 		],
@@ -11351,47 +7744,17 @@
 		"Ežeb.Ābu @ PN @ { a → .ABS} @ noun @ ": [
 			"KBo 32.20,Vs. I 17′"
 		],
-		"Ežeb.Ābu-[ @ PN @  @ noun @ ": [
-			"KBo 32.20,Vs. I 17′"
-		],
 		"Ežeb.Ābu=n @ PN @ { a → .ABS=3SG.ABS} @ noun @ ": [
 			"KBo 32.20,Vs. I 18′"
 		],
 		"Ežeb.Ābu=n @ PN @ { a → .ABS=CON} @ noun @ ": [
 			"KBo 32.20,Vs. I 18′"
 		],
-		"]rōp[ @ u.B. @  @ unclear @ ": [
-			"KBo 32.20,Rs. IV 1′"
-		],
-		"]r-ō-m @ u.B. @ { a → TR.PFV-3A.SG} @ verb @ ": [
-			"KBo 32.20,Rs. IV 1′"
-		],
-		"sūz-i[ @ u.B. @  @ unclear @ ": [
-			"KBo 32.20,Rs. IV 3′"
-		],
-		"kab[ @ u.B. @  @ unclear @ ": [
-			"KBo 32.20,Rs. IV 3′"
-		],
 		"tumni-i-a=m @ vier @ { a → 3POSS.SG-ESS=CON} @ noun @ ": [
 			"KBo 32.20,Rs. IV 4′"
 		],
-		"]n-i-re @ u.B. @ { a → ACT-PTCP} @ noun @ ": [
-			"KBo 32.20,Rs. IV 5′"
-		],
-		"]niri @ u.B. @  @ noun @ ": [
-			"KBo 32.20,Rs. IV 5′"
-		],
 		"ōll+uġ-i-aī=nna @ niederdrücken; abwischen @ { a → MOD.ACT-PURP=3SG.ABS} @ verb @ ": [
 			"KBo 32.20,Rs. IV 5′"
-		],
-		"]i+nni @ u.B. @ .ABS @ noun @ ": [
-			"KBo 32.20,Rs. IV 6′"
-		],
-		"]ini-ne @ u.B. @ { a → ABL/INS} @ noun @ ": [
-			"KBo 32.20,Rs. IV 6′"
-		],
-		"]ini-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ ": [
-			"KBo 32.20,Rs. IV 6′"
 		],
 		"šīe @ Wasser; Fluss @ { a → .ABS} @ noun @ ": [
 			"KBo 32.20,Rs. IV 6′"
@@ -11400,22 +7763,13 @@
 			"KBo 32.20,Rs. IV 6′",
 			"KBo 32.25,Vs.? I 7′"
 		],
-		"ḫu[x]ni @ u.B. @ ANTIP @ noun @ ": [
-			"KBo 32.20,Rs. IV 6′"
-		],
 		"pend-o=n @ zurückkehren; zurückbringen @ { a → MOD.PAT=3SG.ABS} @ verb @ ": [
 			"KBo 32.20,Rs. IV 7′"
 		],
 		"ēvri-ī-da @ Herr @ { a → 3POSS.SG-DIR} @ noun @ ": [
 			"KBo 32.20,Rs. IV 7′"
 		],
-		"]l+i+nni-ne-ve @ u.B. @ { a → RELAT.SG-GEN} @ noun @ ": [
-			"KBo 32.20,Rs. IV 9′"
-		],
 		"ḫal+mi-ne-ve @ Sänger @ { a → RELAT.SG-GEN} @ noun @ ": [
-			"KBo 32.20,Rs. IV 9′"
-		],
-		"ki[xx]-ve @ u.B. @ { a → GEN} @ noun @ ": [
 			"KBo 32.20,Rs. IV 9′"
 		],
 		"ḫiž+ar+d+o+ġ+o+li-nē-ve @ u.B. @ { a → RELAT.SG-GEN} @ noun @ ": [
@@ -11496,12 +7850,6 @@
 		"ūmm-ēġ-a @ stehen @ { a → ēġ-INT} @ verb @ ": [
 			"KBo 32.20,Rs. IV 21′"
 		],
-		"]rabi-nā-[ @ u.B. @ { a → RELAT.PL} @ noun @ ": [
-			"KBo 32.20,Rs. IV 22′"
-		],
-		"]tāni[ @ u.B. @  @ unclear @ ": [
-			"KBo 32.20,Rs. IV 23′"
-		],
 		"aoli-ž @ u.B. @ { a → ERG} @ noun @ ": [
 			"KBo 32.209,2′",
 			"KBo 32.209,3′"
@@ -11512,40 +7860,14 @@
 		"ūl+me-ne-ve-ož @ Skalvin; Dienerin @ { a → RELAT.SG-GEN-ERG} @ noun @ ": [
 			"KBo 32.209,2′"
 		],
-		"ūl+me-ne-[ @ Sklavin; Dienerin @ { a → RELAT.SG} @ noun @ ": [
-			"KBo 32.209,3′"
-		],
-		"]-ne-ve-ož @ u.B. @ { a → RELAT.SG-GEN-EQU} @ noun @ ": [
-			"KBo 32.209,4′"
-		],
-		"]-ne-ve-ož @ u.B. @ { a → RELAT.SG-GEN-ERG} @ noun @ ": [
-			"KBo 32.209,4′"
-		],
 		"nammali-na-āž-a @ Bett @ { a → RELAT.PL-PL-DAT/ESS} @ noun @ ": [
 			"KBo 32.209,5′"
-		],
-		"]itk-a-b=ma @ u.B. @ { a → INT-b=CON} @ verb @ ": [
-			"KBo 32.209,6′"
 		],
 		"itk-a-b=ma @ reinigen @ { a → INT-b=CON} @ verb @ ": [
 			"KBo 32.209,6′"
 		],
-		"]uri-ne @ u.B. @ { a → ABL/INS} @ noun @ ": [
-			"KBo 32.209,8′"
-		],
-		"]uri-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ ": [
-			"KBo 32.209,8′"
-		],
 		"Šimegai @ DN @ { a → .ABS} @ noun @ ": [
 			"KBo 32.209,8′"
-		],
-		"]-i-b @ u.B. @ ANTIP-b @ verb @ ": [
-			"KBo 32.209,9′",
-			"KBo 32.83,1′"
-		],
-		"]i-b @ u.B. @ 2SG.POSS.ABS @ noun @ ": [
-			"KBo 32.209,9′",
-			"KBo 32.83,1′"
 		],
 		"erādi @ Vogel @ { a → .ABS} @ noun @ ": [
 			"KBo 32.209,9′"
@@ -11559,23 +7881,11 @@
 		"Kumme-ne @ GN @ { a → ABL/INS} @ noun @ ": [
 			"KBo 32.209,12′"
 		],
-		"]-ve @ u.B. @ { a → GEN} @ noun @ ": [
-			"KBo 32.209,13′"
-		],
-		"]pi @ u.B. @  @ unclear @ ": [
-			"KBo 32.209,13′"
-		],
 		"mādi @ Weisheit @ { a → .ABS} @ noun @ ": [
 			"KBo 32.209,13′"
 		],
 		"mād-i @ weise sein @ ANTIP @ verb @ ": [
 			"KBo 32.209,13′"
-		],
-		"mā[ @ u.B. @  @ unclear @ ": [
-			"KBo 32.209,13′"
-		],
-		"šatḫamū[ @ u.B. @  @ unclear @ ": [
-			"KBo 32.209,14′"
 		],
 		"Igingališ-ḫe-na=ma @ GN @ { a → ADJ-RELAT.PL.ABS=CON} @ noun @ ": [
 			"KBo 32.21,Vs. I 1′"
@@ -11594,65 +7904,14 @@
 			"KBo 32.210,lk. Kol. 2′",
 			"KBo 32.212,lk. Kol. 4′"
 		],
-		"talm-ašt-i-[ @ groß werden; groß machen @ { a → RES-MOD.ACT} @ verb @ ": [
-			"KBo 32.210,lk. Kol. 2′"
-		],
 		"ište=n @ 1PRON.SG @ { a → .ABS=CON} @ PRON @ ": [
 			"KBo 32.210,lk. Kol. 3′"
-		],
-		"]rumi-a=l=an @ u.B. @ { a → ESS=3PL.ABS=CON} @ noun @ ": [
-			"KBo 32.210,lk. Kol. 4′"
-		],
-		"]rumali-a=an @ u.B. @ { a → ESS=CON} @ noun @ ": [
-			"KBo 32.210,lk. Kol. 4′"
-		],
-		"]rumali-a=n @ u.B. @ { a → ESS=3SG.ABS} @ noun @ ": [
-			"KBo 32.210,lk. Kol. 4′"
-		],
-		"]r-o-m-a=l=an @ u.B. @ { a → TR.PFV-3A.SG-EPNTH=3PL.ABS=CON} @ verb @ ": [
-			"KBo 32.210,lk. Kol. 4′"
-		],
-		"]šat[ @ u.B. @  @ unclear @ ": [
-			"KBo 32.212,lk. Kol. 2′"
-		],
-		"šat[ @ u.B. @  @ unclear @ ": [
-			"KBo 32.212,lk. Kol. 2′"
 		],
 		"ḫāigali-ne @ Palast @ { a → ABL/INS} @ noun @ ": [
 			"KBo 32.212,lk. Kol. 3′"
 		],
 		"ḫāigali-ne-e @ Palast @ { a → RELAT.SG-DIR/LOC} @ noun @ ": [
 			"KBo 32.212,lk. Kol. 3′"
-		],
-		"]eudi-ai=d @ u.B. @ { a → INS=1SG.ABS} @ noun @ ": [
-			"KBo 32.212,lk. Kol. 5′"
-		],
-		"]e-ud-i-ai=d @ u.B. @ { a → ud-MOD.ACT-PURP=1SG.ABS} { b → NEG-MOD.ACT-PURP=1SG.ABS} @ verb @ ": [
-			"KBo 32.212,lk. Kol. 5′"
-		],
-		"]-ve-na @ u.B. @ GEN-RELAT.PL.ABS @ noun @ ": [
-			"KBo 32.212,lk. Kol. 6′"
-		],
-		"]ve-na @ sprechen @ { a → RELAT.PL.ABS} @ noun @ ": [
-			"KBo 32.212,lk. Kol. 6′"
-		],
-		"]-a=ma @ u.B. @ { a → ESS=CON} @ noun @ ": [
-			"KBo 32.212,lk. Kol. 7′"
-		],
-		"]ami-a @ u.B. @ { a → ESS} @ noun @ ": [
-			"KBo 32.212,lk. Kol. 7′"
-		],
-		"]am-a @ u.B. @ { a → INT} @ verb @ ": [
-			"KBo 32.212,lk. Kol. 7′"
-		],
-		"]-am-a @ u.B. @ { a → FACT-3A.SG} { b → FACT-INT} @ verb @ ": [
-			"KBo 32.212,lk. Kol. 7′"
-		],
-		"]-a=ma @ u.B. @ { a → 3A.SG=CON} { b → INT=CON} @ verb @ ": [
-			"KBo 32.212,lk. Kol. 7′"
-		],
-		"]-a-ma @ u.B. @ { a → 3A.SG-NEG} @ verb @ ": [
-			"KBo 32.212,lk. Kol. 7′"
 		],
 		"ārdi=ma @ Stadt @ .ABS=CON @ noun @ ": [
 			"KBo 32.214,Vs. I 1′"
@@ -11715,30 +7974,6 @@
 		"tive-a @ Wort; Sache @ { a → ESS} @ noun @ ": [
 			"KBo 32.214,Vs. I 11′"
 		],
-		"kur-i[ @ u.B. @  @ unclear @ ": [
-			"KBo 32.214,Vs. I 11′"
-		],
-		"]-ne-ve @ u.B. @ { a → RELAT.SG-GEN} @ noun @ ": [
-			"KBo 32.214,Rs. IV 1"
-		],
-		"]-ne-va @ u.B. @ { a → REALT.SG-DAT} @ noun @ ": [
-			"KBo 32.214,Rs. IV 1"
-		],
-		"]nev[ @ u.B. @  @ unclear @ ": [
-			"KBo 32.214,Rs. IV 1"
-		],
-		"]li[ @ u.B. @  @ unclear @ ": [
-			"KBo 32.214,Rs. IV 2"
-		],
-		"]miri-a @ u.B. @ { a → ESS} @ noun @ ": [
-			"KBo 32.214,Rs. IV 3"
-		],
-		"]mi-ra @ u.B. @ { a → COM} @ noun @ ": [
-			"KBo 32.214,Rs. IV 3"
-		],
-		"]m-ir-a @ u.B. @ { a → ir-3A.SG} { b → ir-INT} @ verb @ ": [
-			"KBo 32.214,Rs. IV 3"
-		],
 		"nakk-i-en? @ gewähren; freilassen @ { a → MOD.ACT-3JUSS} @ verb @ ": [
 			"KBo 32.23,2′",
 			"KBo 32.23,4′"
@@ -11755,35 +7990,8 @@
 		"pura+mmi-b @ Sklave; Diener @ 2POSS.SG.ABS @ noun @ ": [
 			"KBo 32.23,5′"
 		],
-		"]-id-en @ u.B. @ { a → PL.ERG-3JUSS} @ verb @ ": [
-			"KBo 32.23,6′"
-		],
-		"]te-n @ u.B. @ { a → ABL/INS} @ noun @ ": [
-			"KBo 32.23,6′"
-		],
-		"]te=n @ u.B. @ { a → .ABS=3SG.ABS} { b → .ABS=CON} @ noun @ ": [
-			"KBo 32.23,6′"
-		],
-		"až-ē[ @ u.B. @  @ unclear @ ": [
-			"KBo 32.23,6′"
-		],
 		"ul+me @ Sklavin; Dienerin @ { a → .ABS} @ noun @ ": [
 			"KBo 32.23,7′"
-		],
-		"]ni=mā @ u.B. @ { a → =CON} @ unclear @ ": [
-			"KBo 32.23,8′"
-		],
-		"]-ne=mā @ u.B. @ { a → ABL/INS=CON} @ noun @ ": [
-			"KBo 32.23,8′"
-		],
-		"]-ne-e=mā @ u.B. @ { a → RELAT.SG-DIR/LOC=CON} @ noun @ ": [
-			"KBo 32.23,8′"
-		],
-		"]n-i=mā @ u.B. @ { a → ANTIP=CON} @ verb @ ": [
-			"KBo 32.23,8′"
-		],
-		"ḫam-ā[ @ u.B. @  @ unclear @ ": [
-			"KBo 32.23,8′"
 		],
 		"kīr-o=nna @ freilassen @ { a → MOD.PAT=3SG.ABS} @ verb @ ": [
 			"KBo 32.25,Vs.? I 4′"
@@ -11791,17 +7999,8 @@
 		"naḫḫ+o+vade @ unbesiedelte @ { a → .ABS} @ noun @ ": [
 			"KBo 32.25,Vs.? I 5′"
 		],
-		"naḫḫ+o+vade-[ @ unbesiedelte @  @ noun @ ": [
-			"KBo 32.25,Vs.? I 5′"
-		],
 		"kul+ō+badi @ ungenannt? @ { a → .ABS} @ noun @ ": [
 			"KBo 32.25,Vs.? I 6′"
-		],
-		"kul+ō+badi-[ @ ungenannt? @  @ noun @ ": [
-			"KBo 32.25,Vs.? I 6′"
-		],
-		"šōġuri-[ @ Leben @  @ noun @ ": [
-			"KBo 32.25,Vs.? I 7′"
 		],
 		"pend-o=n @ zurückkehren; zurückbringen @ MOD.PAT=3SG.ABS @ noun @ ": [
 			"KBo 32.25,Vs.? I 8′"
@@ -11841,17 +8040,8 @@
 		"šō-i=ma @ u.B. @ { a → ANTIP=CON} @ verb @ ": [
 			"KBo 32.31+, {€2} Vs. I 1"
 		],
-		"šōr-u[ @ u.B. @  @ unclear @ ": [
-			"KBo 32.31+, {€2} Vs. I 1"
-		],
 		"ḫūd-ušt-o-m @ beten; preisen; segnen @ { a → RES-TR.PFV-3A.SG} @ verb @ ": [
 			"KBo 32.31+, {€2} Vs. I 2"
-		],
-		"Šimige-[ @ GN @  @ noun @ ": [
-			"KBo 32.31+, {€2} Vs. I 3"
-		],
-		"ḫūž[ @ u.B. @  @ unclear @ ": [
-			"KBo 32.31+, {€2} Vs. I 5"
 		],
 		"ḫull+o+rē-va @ u.B. @ DAT @ noun @ ": [
 			"KBo 32.31+, {€2} Vs. I 6"
@@ -11902,9 +8092,6 @@
 		"pend-o-kko @ zurückkehren; zurückbringen @ { a → INT-NEG} @ verb @ ": [
 			"KBo 32.31+, {€2} Vs. I 12"
 		],
-		"Šimigr-ne-[ @ DN @ { a → RELAT.SG} @ noun @ ": [
-			"KBo 32.31+, {€2} Vs. I 13"
-		],
 		"šōi @ u.B. @ .ABS @ noun @ ": [
 			"KBo 32.31+, {€2} Vs. I 14"
 		],
@@ -11917,29 +8104,8 @@
 		"šō-i @ u.B. @ { a → ANTIP} @ verb @ ": [
 			"KBo 32.31+, {€2} Vs. I 14"
 		],
-		"šōr-[ @ u.B. @  @ unclear @ ": [
-			"KBo 32.31+, {€2} Vs. I 14"
-		],
-		"Šimiga-[ @ DN @  @ noun @ ": [
-			"KBo 32.31+, {€2} Vs. I 15"
-		],
 		"Šimiga @ DN @ { a → .ABS} @ noun @ ": [
 			"KBo 32.31+, {€2} Vs. I 15"
-		],
-		"]ni @ u.B. @ RELAT.SG @ unclear @ ": [
-			"KBo 32.31+, {€1} Rs. IV 1′"
-		],
-		"ḫāž-a[ @ hören @  @ unclear @ ": [
-			"KBo 32.31+, {€1} Rs. IV 1′"
-		],
-		"ḫāž-a[ @ salben @  @ unclear @ ": [
-			"KBo 32.31+, {€1} Rs. IV 1′"
-		],
-		"]uder+ni-ož @ u.B. @ { a → EQU} @ noun @ ": [
-			"KBo 32.31+, {€1} Rs. IV 2′"
-		],
-		"]sōri-ož @ u.B. @ { a → EQU} @ noun @ ": [
-			"KBo 32.31+, {€1} Rs. IV 3′"
 		],
 		"tiḫḫ-ed-a @ u.B. @ { a → FUT-3A.SG} @ verb @ ": [
 			"KBo 32.31+, {€1} Rs. IV 4′",
@@ -11965,9 +8131,6 @@
 		"nir-ud-a @ u.B. @ { a → ud-INT} { b → ud-3A.SG} @ verb @ ": [
 			"KBo 32.31+, {€1} Rs. IV 5′"
 		],
-		"]am-d-o-kko @ u.B. @ { a → d-INT-NEG} @ verb @ ": [
-			"KBo 32.31+, {€1} Rs. IV 5′"
-		],
 		"nēli-ne @ Honig; u.B. @ { a → ABL/INS} @ noun @ ": [
 			"KBo 32.31+, {€1} Rs. IV 6′"
 		],
@@ -11983,16 +8146,7 @@
 		"ar-ol-ō-d-a @ geben @ { a → ol-MED-PL.A-3A} @ verb @ ": [
 			"KBo 32.31+, {€2+1} Rs. IV 8′"
 		],
-		"sēz-a[ @ u.B. @  @ unclear @ ": [
-			"KBo 32.31+, {€2+1} Rs. IV 9′"
-		],
-		"ḫiš[ @ u.B. @  @ unclear @ ": [
-			"KBo 32.31+, {€2+1} Rs. IV 9′"
-		],
 		"šukko @ eins @ .ABS @ NUM @ ": [
-			"KBo 32.31+, {€2} Rs. IV 12′"
-		],
-		"šab[ @ u.B. @ .ABS @ unclear @ ": [
 			"KBo 32.31+, {€2} Rs. IV 12′"
 		],
 		"kire+n+ze-ne @ Freilassung @ { a → ABL/INS} @ noun @ ": [
@@ -12001,20 +8155,11 @@
 		"kire+n+ze-ne-e @ Freilassung @ { a → RELAT.SG-DIR/LOC} @ noun @ ": [
 			"KBo 32.31+, {€2} Rs. IV 13′"
 		],
-		"kire+n+ze-ne-[ @ Freilassung @ { a → REALT.SG} @ noun @ ": [
-			"KBo 32.31+, {€2} Rs. IV 13′"
-		],
 		"ḫīli-a @ u.B. @ { a → ESS} @ noun @ ": [
 			"KBo 32.31+, {€2} Rs. IV 14′"
 		],
 		"ḫīl-a @ u.B. @ INT @ verb @ ": [
 			"KBo 32.31+, {€2} Rs. IV 14′"
-		],
-		"tum-u[ @ u.B. @  @ unclear @ ": [
-			"KBo 32.31+, {€2} Rs. IV 15′"
-		],
-		"šuḫ[ @ u.B. @  @ unclear @ ": [
-			"KBo 32.31+, {€2} Rs. IV 16′"
 		],
 		"fut+ki @ Sohn @ { a → .ABS} @ noun @ ": [
 			"KBo 32.42,3′"
@@ -12022,45 +8167,15 @@
 		"fut+ki-ġe @ Sohn @ { a → ADJ.ABS} @ noun @ ": [
 			"KBo 32.42,3′"
 		],
-		"fut+ki-ġe-[ @ Sohn @ { a → ADJ} @ noun @ ": [
-			"KBo 32.42,3′"
-		],
-		"tib-il[ @ u.B. @  @ unclear @ ": [
-			"KBo 32.42,4′"
-		],
 		"fāz+ur+a+nni @ wortgewaltiger Redner @ { a → .ABS} @ noun @ ": [
 			"KBo 32.42,5′"
-		],
-		"fāz+ur+a+nni-[ @ wortgewaltiger Redner @  @ noun @ ": [
-			"KBo 32.42,5′"
-		],
-		"šav-a[ @ u.B. @  @ unclear @ ": [
-			"KBo 32.42,6′"
 		],
 		"Sāzalla @ PN @ { a → .ABS} @ noun @ ": [
 			"KBo 32.42,8′"
 		],
-		"Sāzalla-[ @ PN @  @ noun @ ": [
-			"KBo 32.42,8′"
-		],
-		"šil-a[ @ u.B. @  @ unclear @ ": [
-			"KBo 32.42,10′"
-		],
-		"ḫāv-[ @ u.B. @  @ unclear @ ": [
-			"KBo 32.42,14′"
-		],
-		"]-ne-ra=l @ u.B. @ { a → RELAT.SG-COM=3PL.ABS} @ noun @ ": [
-			"KBo 32.46,2a′"
-		],
-		"]a=n @ sich freuen @ { a → =3SG.ABS} @ unclear @ ": [
-			"KBo 32.50,1′"
-		],
 		"am+ō+mi-ā=v @ Botschaft @ ESS=2PL.ABS @ noun @ ": [
 			"KBo 32.50,3′",
 			"KBo 32.88,7′"
-		],
-		"]eri @ u.B. @ { a → .ABS} @ noun @ ": [
-			"KBo 32.50,4′"
 		],
 		"nūri-na-až-a @ u.B @ { a → RELAT.PL-PL-DAT/ESS} @ noun @ ": [
 			"KBo 32.50,4′"
@@ -12071,22 +8186,13 @@
 		"tāni-ne-ž @ u.B. @ { a → RELAT.SG-ERG} @ noun @ ": [
 			"KBo 32.50,6′"
 		],
-		"āmm-e[ @ erreichen; gelangen lassen @  @ unclear @ ": [
-			"KBo 32.50,6′"
-		],
 		"āmm-i-ēn @ erreichen; gelangen lassen @ { a → MOD.ACT-3JUSS} @ verb @ ": [
 			"KBo 32.50,6′"
-		],
-		"ušt-e[ @ herausgehen; fortbringen; erheben @  @ unclear @ ": [
-			"KBo 32.50,7′"
 		],
 		"šurr-ā=d @ eilen @ { a → INT=1SG.ABS} @ noun @ ": [
 			"KBo 32.50,8′"
 		],
 		"ulvi-ne-e @ anderer @ { a → REALT.SG-DIR/LOC} @ noun @ ": [
-			"KBo 32.50,8′"
-		],
-		"ulvi-ne-[ @ anderer @ { a → RELAT.SG} @ noun @ ": [
 			"KBo 32.50,8′"
 		],
 		"ulvi-ne @ anderer @ { a → ABL/INS} @ noun @ ": [
@@ -12103,21 +8209,6 @@
 		],
 		"tav-ašt-o-m @ gießen @ { a → RES-TR.PFV-3A.SG} @ verb @ ": [
 			"KBo 32.50,12′"
-		],
-		"šatt-ō[ @ ergreifen @  @ unclear @ ": [
-			"KBo 32.50,13′"
-		],
-		"tāni-ne-[ @ u.B. @ { a → RELAT.SG} @ noun @ ": [
-			"KBo 32.50,14′"
-		],
-		"ter-iġ-u[ @ u.B. @ { a → iġ} @ unclear @ ": [
-			"KBo 32.50,15′"
-		],
-		"kad-ō[ @ sagen; sagen; sprechen @  @ unclear @ ": [
-			"KBo 32.50,16′"
-		],
-		"āmm-i[ @ erreichen; gelangen lassen @  @ verb @ ": [
-			"KBo 32.50,18′"
 		],
 		"kir-o=n @ freilassen @ { a → MOD.PAT=3SG.ABS} @ verb @ ": [
 			"KBo 32.53,2′"
@@ -12176,18 +8267,9 @@
 		"ānnu @ u.B. @  @ CONJ @ ": [
 			"KBo 32.62,Vs. I 1"
 		],
-		"až-an-u[ @ u.B. @ { a → an} @ unclear @ ": [
-			"KBo 32.62,Vs. I 1"
-		],
 		"šoūwa-da @ Tag @ { a → DIR} @ noun @ ": [
 			"KBo 32.62,Vs. I 2",
 			"KBo 32.62,Vs. I 3"
-		],
-		"Teššob-o[ @ DN @  @ noun @ ": [
-			"KBo 32.62,Vs. I 2"
-		],
-		"ag-u[ @ aufnehmen; erheben; heraufkommen @  @ unclear @ ": [
-			"KBo 32.62,Vs. I 7"
 		],
 		"DUB @ Tontafel @ { a → NOM.SG(UNM)} { b → ACC.SG(UNM)} { c → NOM.PL(UNM)} { d → ACC.PL(UNM)} { e → GEN.SG(UNM)} { f → GEN.PL(UNM)} { g → D/L.SG(UNM)} { h → D/L.PL(UNM)} { i → ALL(UNM)} { j → ABL(UNM)} { k → INS(UNM)} { l → VOC.SG(UNM)} { m → VOC.PL(UNM)} @ 29.1.1 @ ": [
 			"KBo 32.62,Rs. 1′"
@@ -12195,14 +8277,8 @@
 		"Ēbla-ġe-ne-va @ GN @ { a → ADJ-RELAT.SG-DAT} @ noun @ ": [
 			"KBo 32.63,3′"
 		],
-		"fel-an[ @ u.B. @  @ noun @ ": [
-			"KBo 32.63,4′"
-		],
 		"fōri-i-da @ Blick @ { a → 3POSS.SG-DIR} @ noun @ ": [
 			"KBo 32.63,5′"
-		],
-		"Išḫara-[ @ DN @  @ noun @ ": [
-			"KBo 32.67,Rs.? IV 4′"
 		],
 		"ēni-na-aš-ta @ Gott @ { a → RELAT.PL-PL-DIR} @ noun @ ": [
 			"KBo 32.67,Rs.? IV 5′"
@@ -12222,14 +8298,8 @@
 		"sīani-ne-e @ u.B. @ { a → RELAT.SG-DIR/LOC} @ noun @ ": [
 			"KBo 32.67,Rs.? IV 8′"
 		],
-		"sīani-ne-[ @ u.B. @ { a → RELAT.SG} @ noun @ ": [
-			"KBo 32.67,Rs.? IV 8′"
-		],
 		"kiž+ar+že-ne-ž @ u.B. @ { a → RELAT.SG-ERG} @ noun @ ": [
 			"KBo 32.67,Rs.? IV 9′"
-		],
-		"]uri-ne-ž @ u.B. @ { a → RELAT.SG-ERG} @ noun @ ": [
-			"KBo 32.68,lk. Kol. 1′"
 		],
 		"tive-ai @ Wort; Sache @ { a → INS} @ noun @ ": [
 			"KBo 32.68,lk. Kol. 2′"
@@ -12237,19 +8307,12 @@
 		"tei-ai @ viel @ { a → INS} @ ADV @ ": [
 			"KBo 32.68,lk. Kol. 2′"
 		],
-		"]ne-ne-vē @ u.B. @ { a → RELAT.SG-GEN} @ noun @ ": [
-			"KBo 32.70,1′"
-		],
 		"ḫomv+ar+ži @ u.B. @ { a → .ABS} @ noun @ ": [
 			"KBo 32.70,2′",
 			"KBo 32.70,4′"
 		],
 		"nakk-i-ēn @ gewähren; freilassen @ { a → MOD.ACT-3JUSS} @ verb @ ": [
 			"KBo 32.70,3′"
-		],
-		"ūl+mi-[ @ Sklavin; Dienerin @  @ noun @ ": [
-			"KBo 32.70,3′",
-			"KBo 32.94,8′"
 		],
 		"ḫenz-ā @ schulden? @ INT @ verb @ ": [
 			"KBo 32.79,2′"
@@ -12278,9 +8341,6 @@
 		"ābri @ u.B. @ .ABS @ noun @ ": [
 			"KBo 32.80,4′"
 		],
-		"mā[ @ so @  @ unclear @ ": [
-			"KBo 32.80,4′"
-		],
 		"ērd-o-kko @ u.B. @ { a → INT-NEG} @ verb @ ": [
 			"KBo 32.80,5′"
 		],
@@ -12295,21 +8355,6 @@
 		],
 		"īpḫe-ne-e @ Ofen @ { a → RELAT.SG-DIR/LOC} @ noun @ ": [
 			"KBo 32.80,6′"
-		],
-		"tūt[ @ u.B. @  @ unclear @ ": [
-			"KBo 32.80,8′"
-		],
-		"]i=v @ u.B. @ { a → =2PL.ABS} @ unclear @ ": [
-			"KBo 32.83,1′"
-		],
-		"]uvobue[ @ u.B. @  @ unclear @ ": [
-			"KBo 32.83,2′"
-		],
-		"]ši-i-a=v @ u.B. @ { a → 3POSS.SG-ESS=2PL.ABS} @ noun @ ": [
-			"KBo 32.83,3′"
-		],
-		"]š-i-a=v @ u.B. @ { a → TR-3A.SG=2PL.ABS} @ verb @ ": [
-			"KBo 32.83,3′"
 		],
 		"ši-i-a=v @ Auge @ { a → 3POSS.SG-ESS=2PL.ABS} @ noun @ ": [
 			"KBo 32.83,3′"
@@ -12329,9 +8374,6 @@
 		"timeri-ne-e @ dunkel @ { a → RELAT.SG-DIR/LOC} @ noun @ ": [
 			"KBo 32.83,4′"
 		],
-		"timeri-ne-[ @ dunkel @ { a → RELAT.SG} @ verb @ ": [
-			"KBo 32.83,4′"
-		],
 		"pēġi @ u.B. @ .ABS @ noun @ ": [
 			"KBo 32.83,5′"
 		],
@@ -12341,65 +8383,11 @@
 		"pēġ-i @ u.B. @ { a → TR.IMP} @ verb @ ": [
 			"KBo 32.83,5′"
 		],
-		"]až+a+ḫḫ+o[ @ u.B. @  @ noun @ ": [
-			"KBo 32.88,2′"
-		],
-		"]až+aḫḫ+o[ @ u.B. @  @ noun @ ": [
-			"KBo 32.88,2′"
-		],
-		"až+a+ḫḫ+o[ @ u.B. @  @ noun @ ": [
-			"KBo 32.88,2′"
-		],
-		"až+aḫḫ+o[ @ u.B. @  @ noun @ ": [
-			"KBo 32.88,2′"
-		],
-		"]až-aḫḫ-o-[ @ u.B. @ { a → aḫḫ-TR.PFV} @ verb @ ": [
-			"KBo 32.88,2′"
-		],
-		"]až-aḫḫ-o-[ @ u.B. @ { a → aḫḫ-MOD.PAT} @ verb @ ": [
-			"KBo 32.88,2′"
-		],
-		"až-aḫḫ-o-[ @ u.B. @ { a → aḫḫ-TR.PFV} @ verb @ ": [
-			"KBo 32.88,2′"
-		],
-		"až-aḫḫ-o-[ @ u.B. @ { a → aḫḫ-MOD.PAT} @ verb @ ": [
-			"KBo 32.88,2′"
-		],
-		"]až-aḫḫ-u-[ @ u.B. @ { a → aḫḫ-MED} @ verb @ ": [
-			"KBo 32.88,2′"
-		],
-		"až-aḫḫ-u-[ @ u.B. @ { a → aḫḫ-MED} @ verb @ ": [
-			"KBo 32.88,2′"
-		],
-		"šō[ @ u.B. @  @ unclear @ ": [
-			"KBo 32.88,3′"
-		],
-		"]pīda[ @ u.B. @  @ unclear @ ": [
-			"KBo 32.88,4′"
-		],
-		"pīd-a[ @ u.B. @  @ unclear @ ": [
-			"KBo 32.88,4′"
-		],
 		"pīdi-a @ u.B. @ { a → ESS} @ noun @ ": [
 			"KBo 32.88,4′"
 		],
 		"pīd-a @ u.B. @ { a → INT} @ verb @ ": [
 			"KBo 32.88,4′"
-		],
-		"]pi-ī-da @ u.B. @ { a → 3POSS.SG-DIR} @ noun @ ": [
-			"KBo 32.88,4′"
-		],
-		"]l+ōli=d @ u.B. @ { a → =1SG.ABS} @ noun @ ": [
-			"KBo 32.88,5′"
-		],
-		"]l+ōli-ā=d @ u.B. @ { a → ESS=1SG.ABS} @ noun @ ": [
-			"KBo 32.88,5′"
-		],
-		"]lōlāt[ @ u.B. @  @ unclear @ ": [
-			"KBo 32.88,5′"
-		],
-		"]l-ōl-ā=d @ u.B. @ { a → ōl-3A.SG=1SG.ABS} @ verb @ ": [
-			"KBo 32.88,5′"
 		],
 		"l-ōl-ā=d @ u.B. @ { a → ōl-INT=1SG.ABS} @ verb @ ": [
 			"KBo 32.88,5′"
@@ -12410,19 +8398,10 @@
 		"mād-a @ weise sein @ { a → INT} @ verb @ ": [
 			"KBo 32.89,Rs. 1"
 		],
-		"]māda @ u.B. @  @ unclear @ ": [
-			"KBo 32.89,Rs. 1"
-		],
-		"kam[ @ u.B. @  @ unclear @ ": [
-			"KBo 32.89,Rs. 1"
-		],
 		"šōe @ alle; ganz @ { a → .ABS} @ noun @ ": [
 			"KBo 32.89,Rs. 2"
 		],
 		"šōe @ u.B. @ { a → .ABS} @ noun @ ": [
-			"KBo 32.89,Rs. 2"
-		],
-		"ḫil[ @ u.B. @ .ABS @ unclear @ ": [
 			"KBo 32.89,Rs. 2"
 		],
 		"(-)šēžili-ā @ u.B. @ { a → ESS} @ noun @ ": [
@@ -12437,28 +8416,10 @@
 		"šēž-i-l-āi @ u.B. @ { a → MOD.ACT-l-PURP} @ verb @ ": [
 			"KBo 32.91,lk. Kol. 3′"
 		],
-		"]šēžili-āi @ u.B. @ { a → INS} @ noun @ ": [
-			"KBo 32.91,lk. Kol. 3′"
-		],
 		"šēžili-āi @ u.B. @ { a → INS} @ noun @ ": [
 			"KBo 32.91,lk. Kol. 3′"
 		],
-		"]fi @ u.B. @  @ unclear @ ": [
-			"KBo 32.91,lk. Kol. 5′"
-		],
-		"]adi[ @ u.B. @  @ unclear @ ": [
-			"KBo 32.93,2′"
-		],
-		"ad-i[ @ herabkommen?; herabbringen? @  @ unclear @ ": [
-			"KBo 32.93,2′"
-		],
 		"adi @ so @  @ ADV @ ": [
-			"KBo 32.93,2′"
-		],
-		"]adi @ u.B. @ { a → .ABS} @ noun @ ": [
-			"KBo 32.93,2′"
-		],
-		"]adi @ u.B. @  @ unclear @ ": [
 			"KBo 32.93,2′"
 		],
 		"ad-i @ herabkommen?; herabbringen? @ { a → ANTIP} @ verb @ ": [
@@ -12473,33 +8434,12 @@
 		"šoūwa @ Tag @ { a → .ABS} @ noun @ ": [
 			"KBo 32.93,4′"
 		],
-		"]-až-a @ u.B. @ { a → PL-DAT/ESS} @ noun @ ": [
-			"KBo 32.93,5′"
-		],
-		"]aži-a @ u.B. @ { a → ESS} @ noun @ ": [
-			"KBo 32.93,5′"
-		],
-		"]až-a @ u.B. @ { a → 3A.SG} { b → INT} @ verb @ ": [
-			"KBo 32.93,5′"
-		],
-		"]kad[ @ u.B. @ .ABS @ unclear @ ": [
-			"KBo 32.94,2′"
-		],
-		"]-ne-vē @ u.B. @ { a → RELAT.SG-GEN} @ noun @ ": [
-			"KBo 32.94,6′"
-		],
 		"ḫomv+ar+ži @ u.B. @ .ABS @ noun @ ": [
 			"KBo 32.94,7′",
 			"KBo 32.94,9′"
 		],
 		"ūl+mi @ Sklavin; Dienerin @ .ABS @ noun @ ": [
 			"KBo 32.94,8′"
-		],
-		"]a=d @ u.B. @ { a → =1SG.ABS} @ unclear @ ": [
-			"RS 19.148,1′"
-		],
-		"kel+gel-ešt-[ @ hochlegen @ { a → RES} @ verb @ ": [
-			"RS 19.148,3′"
 		],
 		"Allani @ DN @ { a → .ABS} @ noun @ ": [
 			"RS 19.148,4′"
