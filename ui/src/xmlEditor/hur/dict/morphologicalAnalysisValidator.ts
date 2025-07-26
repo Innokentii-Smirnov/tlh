@@ -3,10 +3,14 @@ import { getPos } from '../partsOfSpeech/partsOfSpeech';
 
 const sep = /(?<!\()-(?!\))|=/;
 
-export function haveMatchingNumberOfMorphemes(segmentation: string, analysis: string) {
+function haveMatchingNumberOfMorphemes(segmentation: string, analysis: string) {
   return segmentation.split(sep).length === analysis.split(sep).filter(tag => tag !== '.ABS').length + 1
       || segmentation.split(sep).length === analysis.split(sep).filter(tag => tag !== '.ABS').length
       && (analysis.startsWith('=') || analysis === '');
+}
+
+export function areCorrect(segmentation: string, morphTag: string): boolean {
+  return !morphTag.startsWith('-') && haveMatchingNumberOfMorphemes(segmentation, morphTag); 
 }
 
 export function isValidForm(form: string): boolean {

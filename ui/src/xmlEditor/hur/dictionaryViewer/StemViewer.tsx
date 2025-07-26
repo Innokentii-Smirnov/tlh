@@ -11,7 +11,7 @@ import { modifyAnalysis } from '../dict/analysisModifier';
 import { addChange } from '../changes/changesAccumulator';
 import { updateConcordanceKey } from '../concordance/concordance';
 import { replaceMorphologicalAnalysis } from '../corpus/corpus';
-import { haveMatchingNumberOfMorphemes } from '../dict/morphologicalAnalysisValidator';
+import { areCorrect } from '../dict/morphologicalAnalysisValidator';
 import { getMorphTags } from '../morphologicalAnalysis/auxiliary';
 
 const errorSymbol = <>&#9876;</>;
@@ -219,7 +219,7 @@ export function StemViewer({stem, initialEntries, setDictionary, initialUnfolded
   
   const isCorrect = entries.every(entry => 
     getMorphTags(entry.morphologicalAnalysis).every(morphTag =>
-      haveMatchingNumberOfMorphemes(entry.morphologicalAnalysis.referenceWord, morphTag)
+      areCorrect(entry.morphologicalAnalysis.referenceWord, morphTag)
     )
   );
   

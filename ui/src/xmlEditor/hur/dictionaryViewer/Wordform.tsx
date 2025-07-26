@@ -4,7 +4,7 @@ import { getMorphTags } from '../common/utils';
 import { getAttestations } from '../concordance/concordance';
 import { getLine } from '../corpus/corpus';
 import { ConcordanceEntryViewer } from '../concordanceEntryViewer/ConcordanceEntryViewer';
-import { haveMatchingNumberOfMorphemes } from '../dict/morphologicalAnalysisValidator';
+import { areCorrect } from '../dict/morphologicalAnalysisValidator';
 
 const errorSymbol = <>&#9876;</>;
 
@@ -37,7 +37,7 @@ export function WordformElement({ entry, handleSegmentationInput,
   const attestations = getAttestations(initialMorphologicalAnalysis);
   
   const isCorrect = morphTags.every(morphTag => {
-    return haveMatchingNumberOfMorphemes(segmentation, morphTag);
+    return areCorrect(segmentation, morphTag);
   });
   
   return (
