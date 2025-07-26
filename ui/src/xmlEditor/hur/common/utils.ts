@@ -13,6 +13,17 @@ export function objectToSetValuedMap<TValue>(object: {[key: string]: TValue[]}):
   return map;
 }
 
+export function updateSetValuedMapWithOverride<TValue>(map: Map<string, Set<TValue>>,
+                                               object: {[key: string]: TValue[]}): void {
+  for (const [key, values] of Object.entries(object)) {
+    const collection = new Set<TValue>();
+    for (const value of values) {
+      collection.add(value);
+    }
+    map.set(key, collection);
+  }
+}
+
 function getValueSet<TKey, TValue>(map: Map<TKey, Set<TValue>>, key: TKey): Set<TValue> {
   let current = map.get(key);
   if (current === undefined) {

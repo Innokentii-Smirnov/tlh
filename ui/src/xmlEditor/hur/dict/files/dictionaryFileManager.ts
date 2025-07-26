@@ -19,16 +19,17 @@ export function downloadDictionary() {
 export async function readDict(file: File) {
   const source = await file.text();
   const parsed = JSON.parse(source);
-  const {dictionary, glosses} = parsed;
-  upgradeDictionary(dictionary);
-  upgradeGlosses(glosses);
+  let {dictionary} = parsed;
+  const {glosses} = parsed;
   if ('partsOfSpeech' in parsed) {
     setPartsOfSpeech(parsed.partsOfSpeech);
   }
   if ('concordance' in parsed) {
     updateConcordance(parsed.concordance);
-    cleanUpDictionary();
+    dictionary = cleanUpDictionary(dictionary);
   }
+  upgradeDictionary(dictionary);
+  upgradeGlosses(glosses);
   if ('corpus' in parsed) {
     updateCorpus(parsed.corpus);
   }

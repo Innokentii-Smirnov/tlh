@@ -5,13 +5,13 @@ import { makeStandardAnalyses } from '../transduction/standardAnalysis';
 import { setGlosses, saveGloss } from '../translations/glossUpdater';
 import { MorphologicalAnalysis, writeMorphAnalysisValue, readMorphologicalAnalysis }
   from '../../../model/morphologicalAnalysis';
-import { convertDictionary, updateAndValidateDictionary } from '../common/utility';
+import { convertDictionary } from '../common/utility';
 import { isValid, normalize } from './morphologicalAnalysisValidator';
 import segmenter from '../segmentation/segmenter';
 import { readMorphAnalysisValue } from '../morphologicalAnalysis/auxiliary';
 import { inConcordance } from '../concordance/concordance';
 import { upgradeGlosses } from '../translations/glossProvider';
-import { objectToSetValuedMap } from '../common/utils';
+import { updateSetValuedMapWithOverride } from '../common/utils';
 
 export type Dictionary = Map<string, Set<string>>;
 
@@ -24,7 +24,7 @@ export let dictionary: Dictionary = new Map();
 fetch('PrecompiledDictionary.json')
   .then(response => response.json())
   .then(json => {
-    dictionary = objectToSetValuedMap(json.dictionary);
+    updateSetValuedMapWithOverride(dictionary, json.dictionary);
     const {glosses} = json;
     upgradeGlosses(glosses);
   });
@@ -146,18 +146,33 @@ export function getDictionary(): { [key: string]: string[] } {
 }
 
 export function upgradeDictionary(object: { [key: string]: string[] }): void {
-  updateAndValidateDictionary(dictionary, object);
+  updateSetValuedMapWithOverride(dictionary, object);
+  updateSegmenter();
 }
 
-export function cleanUpDictionary(): void {
-  for (const analyses of dictionary.values()) {
+function updateSegmenter(): void {
+  for (const [transcription, analyses] of dictionary.entries()) {
     for (const analysis of analyses) {
-      const ma = readMorphAnalysisValue(analysis);
-      if (ma !== undefined) {
-        if (!inConcordance(ma)) {
-          analyses.delete(analysis);
+      if (isValid(analysis)) {
+        const morphologicalAnalysis = readMorphAnalysisValue(analysis);
+        if (morphologicalAnalysis !== undefined) {
+          segmenter.add(transcription, morphologicalAnalysis);
         }
       }
     }
   }
+}
+
+export function cleanUpDictionary(object: { [key: string]: string[] }): { [key: string]: string[] } {
+  const newObject: { [key: string]: string[] } = {};
+  for (const [key, values] of Object.entries(object)) {
+    const newValues = values.filter(analysis => {
+      const ma = readMorphAnalysisValue(analysis);
+      return ma !== undefined && inConcordance(ma);
+    });
+    if (newValues.length > 0) {
+      newObject[key] = newValues;
+    }
+  }
+  return newObject;
 }
