@@ -20,6 +20,8 @@ export function isValidForm(form: string): boolean {
   return true;
 }
 
+const inflecting = new Set<string>(['noun', 'verb', 'PRON', 'NF']);
+
 export function isValid(analysis: string): boolean {
   const fields: string[] = analysis.split('@').map(field => field.trim());
   if (fields.length !== 5) {
@@ -28,10 +30,11 @@ export function isValid(analysis: string): boolean {
   const segmentation = fields[0];
   const gloss = fields[1];
   const morphTag = fields[2];
+  const pos = fields[3];
   if (!isValidForm(segmentation)) {
     return false;
   }
-  if (gloss === '' || morphTag === '') {
+  if (gloss === '' || morphTag === '' && inflecting.has(pos)) {
     return false;
   }
   if (!(morphTag.startsWith('{') && morphTag.endsWith('}'))) {
