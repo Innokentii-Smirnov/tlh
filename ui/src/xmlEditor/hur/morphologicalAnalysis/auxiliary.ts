@@ -1,4 +1,7 @@
-import { MorphologicalAnalysis, readMorphologicalAnalysis } from '../../../model/morphologicalAnalysis';
+import { MorphologicalAnalysis, readMorphologicalAnalysis,
+         SingleMorphologicalAnalysisWithoutEnclitics,
+         MultiMorphologicalAnalysisWithoutEnclitics }
+  from '../../../model/morphologicalAnalysis';
 
 export function readMorphAnalysisValue(value: string): MorphologicalAnalysis | undefined {
   return readMorphologicalAnalysis(1, value, []);
@@ -44,5 +47,32 @@ export function getMorphTags(analysis: MorphologicalAnalysis): string[] {
       return analysis.analysisOptions.map(({analysis}) => analysis);
     default:
       return [];
+  }
+}
+
+function convertToSingle(multi: MultiMorphologicalAnalysisWithoutEnclitics): 
+  SingleMorphologicalAnalysisWithoutEnclitics {
+  const { number, referenceWord, translation, paradigmClass, determinative, encliticsAnalysis } = multi;
+  const analysisOption = multi.analysisOptions[0];
+  const { analysis, selected } = analysisOption;
+  const single: SingleMorphologicalAnalysisWithoutEnclitics = {
+    _type: 'SingleMorphAnalysisWithoutEnclitics',
+    number,
+    referenceWord,
+    translation,
+    analysis,
+    paradigmClass,
+    determinative,
+    encliticsAnalysis,
+    selected
+  };
+  return single;
+}
+
+export function convertToSingleIfAppropriate(ma: MorphologicalAnalysis): MorphologicalAnalysis {
+  if (ma._type === 'MultiMorphAnalysisWithoutEnclitics' && ma.analysisOptions.length === 1) {
+    return convertToSingle(ma);
+  } else {
+    return ma;
   }
 }
