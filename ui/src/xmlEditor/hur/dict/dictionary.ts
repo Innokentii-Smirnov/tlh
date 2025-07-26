@@ -64,8 +64,10 @@ export function annotateHurrianWord(node: XmlElementNode): void {
     if (mrps.size === 0) {
       let i = 1;
       for (const analysis of possibilities) {
-        node.attributes['mrp' + i.toString()] = analysis;
-        i++;
+        if (isValid(analysis)) {
+          node.attributes['mrp' + i.toString()] = analysis;
+          i++;
+        }
       }
     }
   } else {

@@ -35,7 +35,7 @@ export function isValid(analysis: string): boolean {
     return false;
   }
   if (!(morphTag.startsWith('{') && morphTag.endsWith('}'))) {
-    if (!haveMatchingNumberOfMorphemes(segmentation, morphTag)) {
+    if (!areCorrect(segmentation, morphTag)) {
       return false;
     }
   }
