@@ -6,6 +6,10 @@ const changes = new Map<string, string>();
 const sources = new Map<string, Set<string>>();
 
 export function addChange(origin: string, target: string, targetIsExtant: boolean): void {
+  // Stop if no actual change
+  if (target === origin) {
+    return;
+  }
   // We will now have to store the sources of the target
   let targetSources = sources.get(target);
   if (targetSources === undefined) {
