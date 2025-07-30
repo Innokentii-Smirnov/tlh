@@ -10,7 +10,6 @@ import { isValid, normalize } from './morphologicalAnalysisValidator';
 import segmenter from '../segmentation/segmenter';
 import { readMorphAnalysisValue } from '../morphologicalAnalysis/auxiliary';
 import { inConcordance } from '../concordance/concordance';
-import { upgradeGlosses } from '../translations/glossProvider';
 import { updateSetValuedMapWithOverride } from '../common/utils';
 
 export type Dictionary = Map<string, Set<string>>;

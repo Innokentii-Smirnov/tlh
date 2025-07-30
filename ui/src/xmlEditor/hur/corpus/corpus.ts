@@ -1,5 +1,5 @@
 import { updateMapping, convertMapping } from '../common/utility';
-import { Attestation, quickGetAttestations, updateConcordance } from '../concordance/concordance';
+import { Attestation, quickGetAttestations } from '../concordance/concordance';
 import { XmlElementNode, getElementByPath } from 'simple_xml';
 import { Line, makeLine } from './lineConstructor';
 import { makeWord, updateMorphologicalAnalysis } from './wordConstructor';
