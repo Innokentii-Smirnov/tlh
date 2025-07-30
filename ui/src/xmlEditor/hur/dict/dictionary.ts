@@ -21,13 +21,13 @@ export type SetDictionary = (modifyDictionary: ModifyDictionary) => void;
 
 export let dictionary: Dictionary = new Map();
 
-fetch('PrecompiledDictionary.json')
+/*fetch('PrecompiledDictionary.json')
   .then(response => response.json())
   .then(json => {
     updateSetValuedMapWithOverride(dictionary, json.dictionary);
     const {glosses} = json;
     upgradeGlosses(glosses);
-  });
+  });*/
 
 export function setGlobalDictionary(newDictionary: Dictionary): void {
   dictionary = newDictionary;
