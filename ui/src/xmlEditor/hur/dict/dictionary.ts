@@ -11,6 +11,8 @@ import segmenter from '../segmentation/segmenter';
 import { readMorphAnalysisValue } from '../morphologicalAnalysis/auxiliary';
 import { inConcordance } from '../concordance/concordance';
 import { updateSetValuedMapWithOverride } from '../common/utils';
+import { loadSetValuedMapFromLocalStorage, locallyStoreSetValuedMap }
+  from '../dictLocalStorage/localStorageUtils';
 
 export type Dictionary = Map<string, Set<string>>;
 
@@ -18,7 +20,11 @@ export type ModifyDictionary = (dictionary: Dictionary) => Dictionary;
 
 export type SetDictionary = (modifyDictionary: ModifyDictionary) => void;
 
-export let dictionary: Dictionary = new Map();
+const localStorageKey = 'HurrianDictionary';
+export let dictionary: Dictionary = loadSetValuedMapFromLocalStorage(localStorageKey);
+export function locallyStoreHurrianDictionary(): void {
+  locallyStoreSetValuedMap(dictionary, localStorageKey);
+}
 
 /*fetch('PrecompiledDictionary.json')
   .then(response => response.json())

@@ -1,9 +1,20 @@
 import { normalize } from '../dict/morphologicalAnalysisValidator';
 import { readMorphAnalysisValue } from '../morphologicalAnalysis/auxiliary';
 import { writeMorphAnalysisValue } from '../../../model/morphologicalAnalysis';
+import { loadSetValuedMapFromLocalStorage, locallyStoreSetValuedMap,
+         loadMapFromLocalStorage, locallyStoreMap } from '../dictLocalStorage/localStorageUtils';
 
-const changes = new Map<string, string>();
-const sources = new Map<string, Set<string>>();
+const changesLocalStorageKey = 'HurrianDictionaryChanges';
+const changes: Map<string, string> = loadMapFromLocalStorage(changesLocalStorageKey);
+export function locallyStoreHurrianDictionaryChanges(): void {
+  locallyStoreMap(changes, changesLocalStorageKey);
+}
+
+const sourcesLocalStorageKey = 'HurrianMorphologicalAnalysisSources';
+const sources: Map<string, Set<string>> = loadSetValuedMapFromLocalStorage(sourcesLocalStorageKey);
+export function locallyStoreHurrianMorphologicalAnalysisSources(): void {
+  locallyStoreSetValuedMap(sources, sourcesLocalStorageKey);
+}
 
 function addChangeWithIdentityCheck(origin: string, target: string): void {
   if (target !== origin) {

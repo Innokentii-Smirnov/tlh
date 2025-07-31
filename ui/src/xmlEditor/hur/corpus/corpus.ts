@@ -5,8 +5,13 @@ import { Line, makeLine } from './lineConstructor';
 import { makeWord, updateMorphologicalAnalysis } from './wordConstructor';
 import { findLine, findLineStart, getParent } from './lineFinder';
 import { readMorphAnalysisValue } from '../morphologicalAnalysis/auxiliary';
+import { loadMapFromLocalStorage, locallyStoreMap } from '../dictLocalStorage/localStorageUtils';
 
-const corpus = new Map<string, Line>();
+const localStorageKey = 'HurrianCorpus';
+const corpus: Map<string, Line> = loadMapFromLocalStorage(localStorageKey);
+export function locallyStoreHurrianCorpus(): void {
+  locallyStoreMap(corpus, localStorageKey);
+}
 
 /*fetch('Concordance.json')
   .then(response => response.json())

@@ -1,6 +1,14 @@
 import { SelectableLetteredAnalysisOption } from '../../../model/analysisOptions';
 import { MorphologicalAnalysis } from '../../../model/morphologicalAnalysis';
 
+export function objectToMap<TValue>(object: {[key: string]: TValue}): Map<string, TValue> {
+  const map = new Map<string, TValue>();
+  for (const [key, value] of Object.entries(object)) {
+    map.set(key, value);
+  }
+  return map;
+}
+
 export function objectToSetValuedMap<TValue>(object: {[key: string]: TValue[]}): Map<string, Set<TValue>> {
   const map = new Map<string, Set<TValue>>();
   for (const [key, values] of Object.entries(object)) {

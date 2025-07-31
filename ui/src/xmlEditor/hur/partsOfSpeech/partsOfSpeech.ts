@@ -1,16 +1,24 @@
-let partsOfSpeech: string[] = [
+import { loadArrayFromLocalStorage, locallyStoreArray } from '../dictLocalStorage/localStorageUtils';
+
+const defaultPartsOfSpeech: string[] = [
   'ADV',
   'CONJ',
   'PREP',
+  'POST',
   'INTJ',
   'NUM',
   'PRON',
-  'INF',
-  'CVB',
+  'NF',
   'noun',
   'verb',
   'unclear'
 ];
+
+const localStorageKey = 'HurrianPartsOfSpeech';
+let partsOfSpeech: string[] = loadArrayFromLocalStorage(localStorageKey, defaultPartsOfSpeech);
+export function locallyStoreHurrianPartsOfSpeech(): void {
+  locallyStoreArray(partsOfSpeech, localStorageKey);
+}
 
 export function getPartsOfSpeech(): string[] {
   return partsOfSpeech;
