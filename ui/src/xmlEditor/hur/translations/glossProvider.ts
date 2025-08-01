@@ -9,6 +9,26 @@ export function locallyStoreHurrianStemTranslations(): void {
   locallyStoreSetValuedMap(glosses, localStorageKey);
 }
 
+const translationWordSeparator = '; ';
+const meaningUnknown = 'u.B.';
+
+function normalizeTranslationLexicon(): void {
+  for (const [key, oldValueSet] of glosses) {
+    const newValueSet = new Set<string>();
+    for (const value of oldValueSet) {
+      for (const translationWord of value.split(translationWordSeparator)) {
+        newValueSet.add(translationWord);
+      }
+    }
+    if (newValueSet.size > 1) {
+      newValueSet.delete(meaningUnknown);
+    }    
+    glosses.set(key, newValueSet);
+  }
+}
+
+normalizeTranslationLexicon();
+
 export function getKey(word: string, pos: string): string
 {
 	return word + ',' + pos;
@@ -61,4 +81,5 @@ export function getGlosses(): {[key: string]: string[]}
 export function upgradeGlosses(object: {[key: string]: string[]}): void
 {
   updateGlossesLexicon(glosses, object);
+  normalizeTranslationLexicon();
 }
