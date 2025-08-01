@@ -34,25 +34,16 @@ export function getKey(word: string, pos: string): string
 	return word + ',' + pos;
 }
 
-export function storeGloss(word: string, pos: string, gloss: string)
-{
+export function storeGloss(word: string, pos: string, gloss: string): void {
 	const key: string = getKey(word, pos);
-	let current: Set<string>;
-	if (glosses.has(key))
-	{
-		const value = glosses.get(key);
-		if (value === undefined)
-		{
-			throw new Error();
-		}
-		current = value;
-	}
-	else
-	{
-		current = new Set();
+	let current: Set<string> | undefined = glosses.get(key);
+  if (current === undefined) {
+    current = new Set<string>();
 		glosses.set(key, current);
-	}
-	current.add(gloss);
+  }
+  for (const translationWord of gloss.split(translationWordSeparator)) {
+    current.add(translationWord);
+  }
 }
 
 export function retrieveGloss(word: string, pos: string): Set<string> | null
