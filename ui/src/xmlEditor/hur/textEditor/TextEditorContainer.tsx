@@ -8,8 +8,13 @@ import update from 'immutability-helper';
 import { TextEditor } from './TextEditor';
 import { Replacement } from '../replacement/replacement';
 import { removeSuffix } from '../common/auxiliary';
+import { ChangesListClearer } from './ChangesListClearer';
 
-export function TextEditorContainer(): JSX.Element {
+interface IProps {
+  clearChanges: () => void;
+}
+
+export function TextEditorContainer({ clearChanges }: IProps): JSX.Element {
 
   const {t} = useTranslation('common');
   
@@ -36,6 +41,7 @@ export function TextEditorContainer(): JSX.Element {
           downloadText(applyChanges(text, boundOnChange), fileName);
         }}
         cleanUp={() => setReplacements([])} />
+      <ChangesListClearer clearChanges={clearChanges} />
       <TextEditor replacements={replacements} />
     </div>
   );

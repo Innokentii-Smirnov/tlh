@@ -222,5 +222,6 @@
   "changes": "Changes",
   "uploadChanges": "Upload changes",
   "textEditor": "Text editor",
-  "uploadText": "Upload text"
+  "uploadText": "Upload text",
+  "clearChangesList": "Clear changes list"
 }

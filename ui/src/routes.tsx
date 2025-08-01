@@ -98,7 +98,7 @@ export const router = createBrowserRouter([
         {path: dictionaryViewerUrl,
          element: <DictionaryViewerContainer getInitialDictionary={getGlobalDictionary}/>},
         
-        {path: macroeditorUrl, element: <MacroeditorContainer changes={getChanges()}/>},
+        {path: macroeditorUrl, element: <MacroeditorContainer getChanges={getChanges}/>},
 
         {path: preferencesUrl, element: <Preferences/>},
 

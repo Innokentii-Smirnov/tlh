@@ -5,15 +5,22 @@ import { loadSetValuedMapFromLocalStorage, locallyStoreSetValuedMap,
          loadMapFromLocalStorage, locallyStoreMap } from '../dictLocalStorage/localStorageUtils';
 
 const changesLocalStorageKey = 'HurrianDictionaryChanges';
-const changes: Map<string, string> = loadMapFromLocalStorage(changesLocalStorageKey);
+let changes: Map<string, string> = loadMapFromLocalStorage(changesLocalStorageKey);
 export function locallyStoreHurrianDictionaryChanges(): void {
   locallyStoreMap(changes, changesLocalStorageKey);
 }
 
 const sourcesLocalStorageKey = 'HurrianMorphologicalAnalysisSources';
-const sources: Map<string, Set<string>> = loadSetValuedMapFromLocalStorage(sourcesLocalStorageKey);
+let sources: Map<string, Set<string>> = loadSetValuedMapFromLocalStorage(sourcesLocalStorageKey);
 export function locallyStoreHurrianMorphologicalAnalysisSources(): void {
   locallyStoreSetValuedMap(sources, sourcesLocalStorageKey);
+}
+
+export function restartChangesAccumulation(): void {
+  changes = new Map<string, string>();
+  localStorage.removeItem(changesLocalStorageKey);
+  sources = new Map<string, Set<string>>();
+  localStorage.removeItem(sourcesLocalStorageKey);
 }
 
 function addChangeWithIdentityCheck(origin: string, target: string): void {
