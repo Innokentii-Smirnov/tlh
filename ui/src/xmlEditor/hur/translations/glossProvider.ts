@@ -9,7 +9,7 @@ export function locallyStoreHurrianStemTranslations(): void {
   locallyStoreSetValuedMap(glosses, localStorageKey);
 }
 
-const translationWordSeparator = '; ';
+export const translationWordSeparator = '; ';
 const meaningUnknown = 'u.B.';
 
 function normalizeTranslationLexicon(): void {
