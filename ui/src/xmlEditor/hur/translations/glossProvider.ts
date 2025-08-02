@@ -9,8 +9,16 @@ export function locallyStoreHurrianStemTranslations(): void {
   locallyStoreSetValuedMap(glosses, localStorageKey);
 }
 
-export const translationWordSeparator = '; ';
+const translationWordSeparator = '; ';
 const meaningUnknown = 'u.B.';
+
+export function joinTranslationWords(translationWords: string[]): string {
+  return translationWords.sort().join(translationWordSeparator);
+}
+
+export function splitTranslationIntoWords(translation: string): string[] {
+  return translation.split(translationWordSeparator).sort();
+}
 
 function normalizeTranslationLexicon(): void {
   for (const [key, oldValueSet] of glosses) {

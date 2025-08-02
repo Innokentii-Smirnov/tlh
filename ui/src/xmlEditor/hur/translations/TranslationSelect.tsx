@@ -1,4 +1,4 @@
-import {JSX} from 'react';
+import {JSX, ChangeEvent} from 'react';
 import {retrieveGloss} from './glossProvider';
 
 interface IProps {
@@ -9,7 +9,10 @@ interface IProps {
 }
 
 export function TranslationSelect({stem, partOfSpeech, selectedTranslations, handleChange}: IProps): JSX.Element {
-  const optionSet = new Set<string>(selectedTranslations);
+  const optionSet = new Set<string>();
+  for (const selectedTranslation of selectedTranslations) {
+    optionSet.add(selectedTranslation);
+  }
   const storedOptions = retrieveGloss(stem, partOfSpeech);
   if (storedOptions !== null) {
     for (const option of storedOptions) {
@@ -17,10 +20,15 @@ export function TranslationSelect({stem, partOfSpeech, selectedTranslations, han
     }
   }
   const options = Array.from(optionSet).sort();
+  const handleTranlationsChange = (event: ChangeEvent<HTMLSelectElement>) => {
+    const newTranslations = Array.from(event.target.selectedOptions)
+      .map((option: HTMLOptionElement) => option.value);
+    handleChange(newTranslations);
+  };
   return (
     <select multiple
             value={selectedTranslations}
-            onChange={(event) => handleChange([event.target.value])}>
+            onChange={handleTranlationsChange}>
       {options.map((translation: string) =>
         <option value={translation} key={translation}>{translation}</option>)
       }

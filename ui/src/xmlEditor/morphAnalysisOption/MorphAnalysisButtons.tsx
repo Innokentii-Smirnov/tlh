@@ -11,9 +11,8 @@ import { basicSaveGloss } from '../hur/translations/glossUpdater';
 import { basicUpdateHurrianDictionary, deleteAnalysisFromHurrianDictionary }
   from '../hur/dict/dictionary';
 import { getPartsOfSpeech, getPos } from '../hur/partsOfSpeech/partsOfSpeech';
-import {TranslationSelect} from '../hur/translations/TranslationSelect';
+import {TranslationEditor} from '../hur/translations/TranslationEditor';
 import {getStem} from '../hur/common/splitter';
-import {translationWordSeparator} from '../hur/translations/glossProvider';
 
 interface IProps extends CanToggleAnalysisSelection {
   morphologicalAnalysis: MorphologicalAnalysis;
@@ -30,6 +29,10 @@ export function MorphAnalysisOptionButtons({morphologicalAnalysis, toggleAnalysi
   const {t} = useTranslation('common');
   const [isReduced, setIsReduced] = useState(false);
   const [lastNumerusSelected, setLastNumerusSelected] = useState<NumerusOption>();
+
+  const setTranslation = (value: string): void => {
+    updateMorphology(update(morphologicalAnalysis, { translation: { $set: value } }));
+  };
 
   const setParadigmClass = (value: string): void => {
     updateMorphology(update(morphologicalAnalysis, { paradigmClass: { $set: value } }));
@@ -139,8 +142,8 @@ export function MorphAnalysisOptionButtons({morphologicalAnalysis, toggleAnalysi
     }
   }
   
-  const handleTranslationChange = (newTranslations: string[]) => {
-    return newTranslations.sort().join(translationWordSeparator);
+  const handleTranslationChange = (newTranslation: string) => {
+    setTranslation(newTranslation);
   };
 
   return (
@@ -154,10 +157,14 @@ export function MorphAnalysisOptionButtons({morphologicalAnalysis, toggleAnalysi
 
         <div className="flex-grow p-2 border-l border-y border-slate-500 bg-gray-100">
           <span className="text-red-600">
-            <TranslationSelect stem={getStem(referenceWord)} 
+          {
+            hurrian ?
+            <TranslationEditor stem={getStem(referenceWord)} 
                                partOfSpeech={paradigmClass}
-                               selectedTranslations={translation.split(translationWordSeparator)}
-                               handleChange={handleTranslationChange} />
+                               translation={translation}
+                               handleChange={handleTranslationChange} /> :
+            translation
+          }
           </span>&nbsp;({referenceWord},&nbsp;
           {hurrian ? 'Wortart' : t('paradigmClass')}:&nbsp;
             <span className="text-red-600">
