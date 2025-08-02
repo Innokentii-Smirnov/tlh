@@ -8,6 +8,8 @@ interface IProps {
   handleChange: (newTranslations: string[]) => void;
 }
 
+const maxDisplayedOptionsCount = 5;
+
 export function TranslationSelect({stem, partOfSpeech, selectedTranslations, handleChange}: IProps): JSX.Element {
   const optionSet = new Set<string>();
   for (const selectedTranslation of selectedTranslations) {
@@ -25,10 +27,12 @@ export function TranslationSelect({stem, partOfSpeech, selectedTranslations, han
       .map((option: HTMLOptionElement) => option.value);
     handleChange(newTranslations);
   };
+  const size = Math.min(options.length, maxDisplayedOptionsCount);
   return (
     <select multiple
             value={selectedTranslations}
-            onChange={handleTranlationsChange}>
+            onChange={handleTranlationsChange}
+            size={size}>
       {options.map((translation: string) =>
         <option value={translation} key={translation}>{translation}</option>)
       }
