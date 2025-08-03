@@ -1,4 +1,4 @@
-import {ReactElement, useEffect, useState} from 'react';
+import {ReactElement, useEffect, useState, useRef} from 'react';
 import {isXmlElementNode, XmlElementNode, XmlNode} from 'simple_xml';
 import {XmlEditorConfig, XmlSingleEditableNodeConfig} from './editorConfig';
 import {useTranslation} from 'react-i18next';
@@ -118,6 +118,7 @@ export function XmlDocumentEditor({
     changed: false,
     rightSideFontSize: 100
   });
+  const globalUpdateButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     state.changed && autoSave && autoSave(state.rootNode);
@@ -237,8 +238,9 @@ export function XmlDocumentEditor({
       <NodeEditorRightSide key={path.join('.')} rootNode={state.rootNode as XmlElementNode} originalNode={node} changed={changed}
                            deleteNode={() => deleteNode(path)} applyUpdates={() => applyUpdates()}
                            cancelSelection={() => setState((state) => update(state, {editorState: {$set: defaultRightSideState}}))}
-                           jumpElement={(forward) => jumpEditableNodes(node.tagName, forward)} fontSizeSelectorProps={fontSizeSelectorProps}>
-        {config.edit({node, path, updateEditedNode, updateAttribute, setKeyHandlingEnabled, rootNode: state.rootNode as XmlElementNode, updateOtherNode})}
+                           jumpElement={(forward) => jumpEditableNodes(node.tagName, forward)} fontSizeSelectorProps={fontSizeSelectorProps}
+                           globalUpdateButtonRef={globalUpdateButtonRef}>
+        {config.edit({node, path, updateEditedNode, updateAttribute, setKeyHandlingEnabled, rootNode: state.rootNode as XmlElementNode, updateOtherNode, globalUpdateButtonRef})}
       </NodeEditorRightSide>
     );
   }

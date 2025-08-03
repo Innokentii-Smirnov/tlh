@@ -1,8 +1,9 @@
 import { segment } from './segment';
 import { analyze } from './analyze';
-import { MorphologicalAnalysis } from '../../model/morphologicalAnalysis';
-import { SelectableLetteredAnalysisOption } from '../../model/analysisOptions';
-import { getGrammaticalMorphemes } from './splitter';
+import { MorphologicalAnalysis } from '../../../model/morphologicalAnalysis';
+import { SelectableLetteredAnalysisOption } from '../../../model/analysisOptions';
+import { getGrammaticalMorphemes } from '../common/splitter';
+import { getPos } from '../translations/glossUpdater';
 
 function postprocessSegmentation(segmentation: string): string {
   if (segmentation.endsWith('-')) {
@@ -32,7 +33,7 @@ export function makeStandardAnalyses(transcription: string): MorphologicalAnalys
           referenceWord: segmentation,
           translation: '',
           analysis: tags[0],
-          paradigmClass: pos,
+          paradigmClass: getPos(pos),
           determinative: '',
           _type: 'SingleMorphAnalysisWithoutEnclitics',
           encliticsAnalysis: undefined,
@@ -57,7 +58,7 @@ export function makeStandardAnalyses(transcription: string): MorphologicalAnalys
           referenceWord: segmentation,
           translation: '',
           analysisOptions,
-          paradigmClass: pos,
+          paradigmClass: getPos(pos),
           determinative: '',
           _type: 'MultiMorphAnalysisWithoutEnclitics',
           encliticsAnalysis: undefined
@@ -70,7 +71,7 @@ export function makeStandardAnalyses(transcription: string): MorphologicalAnalys
         referenceWord: segmentation,
         translation: '',
         analysis: '',
-        paradigmClass: pos,
+        paradigmClass: getPos(pos),
         determinative: '',
         _type: 'SingleMorphAnalysisWithoutEnclitics',
         encliticsAnalysis: undefined,

@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { JSX, useState } from 'react';
 import { convertSingleMorphAnalysisToMultiMorphAnalysis } from '../../model/morphologicalAnalysisConverter';
 import update from 'immutability-helper';
-import { updateHurrianAnalysis } from '../hur/analysisUpdater';
+import { updateHurrianAnalysis } from '../hur/translations/analysisUpdater';
 
 interface IProps {
   initialMorphologicalAnalysis: MorphologicalAnalysis;
@@ -36,7 +36,7 @@ export function MorphAnalysisOptionEditor({ initialMorphologicalAnalysis, onSubm
 
   const setTranslation = (value: string): void => setMorphAnalysis((ma) => update(ma, { translation: { $set: value } }));
   const setReferenceWord = hurrian
-    ? (value: string): void => setMorphAnalysis((ma) => update(ma, updateHurrianAnalysis(ma, value)))
+    ? (value: string): void => setMorphAnalysis((ma) => update(ma, updateHurrianAnalysis(value, ma.paradigmClass)))
     : (value: string): void => setMorphAnalysis((ma) => update(ma, { referenceWord: { $set: value } }));
   const setDeterminativ = (value: string): void => setMorphAnalysis((ma) => update(ma, { determinative: { $set: value } }));
   const setParadigmClass = (value: string): void => setMorphAnalysis((ma) => update(ma, { paradigmClass: { $set: value } }));

@@ -1,0 +1,70 @@
+import { JSX, useState, useEffect } from 'react';
+import { getStem } from '../common/splitter';
+import { groupBy } from '../common/utils';
+import { StemViewer, Stem } from './StemViewer';
+import { Entry } from './Wordform';
+import { DictionaryDownloader } from '../dict/files/DictionaryDownloader';
+import { ChangesDownloader } from '../changes/ChangesDownloader';
+import { writeMorphAnalysisValue } from '../../../model/morphologicalAnalysis';
+import { SetDictionary } from '../dict/dictionary';
+import { compare } from '../common/comparison';
+
+interface IProps {
+  entries: Entry[];
+  setDictionary: SetDictionary;
+}
+
+function keyFunc({morphologicalAnalysis}: Entry): string {
+  return [getStem(morphologicalAnalysis.referenceWord),
+          morphologicalAnalysis.translation,
+          morphologicalAnalysis.paradigmClass].join('@');
+}
+
+function valueFunc(entry: Entry): Entry {
+  return entry;
+}
+
+export function DictionaryViewer({entries, setDictionary}: IProps): JSX.Element {
+
+  const [unfolded, setUnfolded] = useState(false);
+  
+  useEffect(() => {
+    setUnfolded(true);
+  });
+  
+  const grouped = groupBy(entries, keyFunc, valueFunc);
+  
+  const stems = Array.from(grouped.keys()).sort(compare);
+  
+  return (
+    <div className="grid grid-cols-2 gap-2 my-2 uneven-columns">
+      <div className="mt-2">
+        Click on the button &quot;&#8744;&quot; or a stem&apos;s number to see its derivatives and inflected forms. <br /> 
+        Click on a similar button next to a word to see its attestations. <br />
+        <br />
+        {stems.map((stem: string, index: number) => {
+          const group = grouped.get(stem);
+          const entries: Entry[] = group === undefined ? [] : Array.from(group);
+          const stemObject = new Stem((index + 1).toString() + '.@' + stem);
+          const key = entries
+            .map(entry => writeMorphAnalysisValue(entry.morphologicalAnalysis))
+            .join('|');
+          return (
+            <StemViewer
+              stem={stemObject}
+              initialEntries={entries}
+              key={key} 
+              setDictionary={setDictionary}
+              initialUnfolded={unfolded} />
+          );
+        })}
+      </div>
+      <div>
+        <div className="button-stack">
+          <DictionaryDownloader />
+          <ChangesDownloader />
+        </div>
+      </div>
+    </div>
+  );
+}

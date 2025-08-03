@@ -27,6 +27,20 @@ function substitution(vowel: string): string {
     return vowel;
 }
 
+export function basicGetText(node: XmlElementNode): string {
+  const parts: string[] = [];
+  for (const child of node.children) {
+    if (isXmlTextNode(child)) {
+      const textChild: XmlTextNode = child as XmlTextNode;
+      if (textChild.textContent !== undefined) {
+        parts.push(textChild.textContent);
+      }
+    }
+  }
+  const result: string = parts.join('');
+  return result;
+}
+
 export function getText(node: XmlElementNode): string {
   const parts: string[] = [];
 
@@ -52,6 +66,12 @@ export function getText(node: XmlElementNode): string {
           break;
         case 'sGr':
           parts.push(getText(elementChild) + '-');
+          break;
+        case 'del_in':
+          parts.push('[');
+          break;
+        case 'del_fin':
+          parts.push(']');
           break;
       }
     }

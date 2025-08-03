@@ -1,24 +1,85 @@
-import {JSX, useState} from 'react';
+import {JSX, useState, useEffect, RefObject} from 'react';
 import {useTranslation} from 'react-i18next';
 import {SingleMorphAnalysisOptionButton} from './SingleMorphAnalysisOptionButton';
-import {isSingleMorphologicalAnalysis, MorphologicalAnalysis, MultiMorphologicalAnalysis} from '../../model/morphologicalAnalysis';
+import {isSingleMorphologicalAnalysis, MorphologicalAnalysis, MultiMorphologicalAnalysis, writeMorphAnalysisValue} from '../../model/morphologicalAnalysis';
 import {CanToggleAnalysisSelection} from './MorphAnalysisOptionContainer';
 import {MultiMorphAnalysisOptionButtons} from './MultiMorphAnalysisOptionButtons';
 import classNames from 'classnames';
 import {analysisIsInNumerus, numeri, NumerusOption, stringifyNumerus} from './numerusOption';
+import update from 'immutability-helper';
+import { basicSaveGloss } from '../hur/translations/glossUpdater';
+import { basicUpdateHurrianDictionary, deleteAnalysisFromHurrianDictionary }
+  from '../hur/dict/dictionary';
+import { getPartsOfSpeech, getPos } from '../hur/partsOfSpeech/partsOfSpeech';
+import {TranslationEditor} from '../hur/translations/TranslationEditor';
+import {getStem} from '../hur/common/splitter';
 
 interface IProps extends CanToggleAnalysisSelection {
   morphologicalAnalysis: MorphologicalAnalysis;
   enableEditMode: () => void;
+  updateMorphology: (ma: MorphologicalAnalysis) => void;
+  hurrian: boolean;
+  globalUpdateButtonRef?: RefObject<HTMLButtonElement>;
+  transcription: string;
+  deleteMorphology: (ma: MorphologicalAnalysis) => void;
 }
 
-export function MorphAnalysisOptionButtons({morphologicalAnalysis, toggleAnalysisSelection, enableEditMode}: IProps): JSX.Element {
+export function MorphAnalysisOptionButtons({morphologicalAnalysis, toggleAnalysisSelection, enableEditMode, updateMorphology, hurrian, globalUpdateButtonRef, transcription, deleteMorphology}: IProps): JSX.Element {
 
   const {t} = useTranslation('common');
   const [isReduced, setIsReduced] = useState(false);
   const [lastNumerusSelected, setLastNumerusSelected] = useState<NumerusOption>();
 
+  const setTranslation = (value: string): void => {
+    updateMorphology(update(morphologicalAnalysis, { translation: { $set: value } }));
+  };
+
+  const setParadigmClass = (value: string): void => {
+    updateMorphology(update(morphologicalAnalysis, { paradigmClass: { $set: value } }));
+  };
+
   const {number, translation, referenceWord, paradigmClass, determinative} = morphologicalAnalysis;
+  let actualParadigmClass: string = paradigmClass;
+
+  if (hurrian) {
+    const newParadigmClass = getPos(paradigmClass, getSomeMorphTag(morphologicalAnalysis), translation);
+    if (newParadigmClass !== paradigmClass) {
+      setParadigmClass(newParadigmClass);
+      actualParadigmClass = newParadigmClass;
+    }
+
+    const updateDictionary = () => {
+      const value: string = writeMorphAnalysisValue(
+        update(morphologicalAnalysis, { paradigmClass: { $set: actualParadigmClass } })
+      );
+      basicUpdateHurrianDictionary(transcription, value);
+    };
+
+    const updateLexicon = () => {
+      basicSaveGloss(morphologicalAnalysis);
+    };
+
+    useEffect(() => {
+      if (!globalUpdateButtonRef) {
+        throw new Error('No global update button passed.');
+      }
+      if (!globalUpdateButtonRef.current) {
+        console.log('The global update button is null.');
+      } else {
+        globalUpdateButtonRef.current.addEventListener('click', updateLexicon);
+        globalUpdateButtonRef.current.addEventListener('click', updateDictionary);
+        return () => {
+          if (!globalUpdateButtonRef.current) {
+            console.log('The global update button is null.');
+          } else {
+            globalUpdateButtonRef.current.removeEventListener('click', updateLexicon);
+            globalUpdateButtonRef.current.removeEventListener('click', updateDictionary);
+          }
+        };
+      }
+    });
+  }
+
   const isSingleAnalysisOption = isSingleMorphologicalAnalysis(morphologicalAnalysis);
 
   function selectAll(ma: MultiMorphologicalAnalysis, numerus: NumerusOption): void {
@@ -33,6 +94,58 @@ export function MorphAnalysisOptionButtons({morphologicalAnalysis, toggleAnalysi
     });
   }
 
+  function isSelected(morphologicalAnalysis: MorphologicalAnalysis) {
+    switch (morphologicalAnalysis._type) {
+      case 'SingleMorphAnalysisWithoutEnclitics':
+        return morphologicalAnalysis.selected;
+      case 'SingleMorphAnalysisWithSingleEnclitics':
+        return morphologicalAnalysis.selected;
+      case 'SingleMorphAnalysisWithMultiEnclitics':
+        return morphologicalAnalysis.encliticsAnalysis.analysisOptions.some(({selected}) => selected);
+      case 'MultiMorphAnalysisWithoutEnclitics':
+        return morphologicalAnalysis.analysisOptions.some(({selected}) => selected);
+      case 'MultiMorphAnalysisWithSingleEnclitics':
+        return morphologicalAnalysis.analysisOptions.some(({selected}) => selected);
+      case 'MultiMorphAnalysisWithMultiEnclitics':
+        return morphologicalAnalysis.selectedAnalysisCombinations.length > 0;
+    }
+  }
+
+  const deleteNodeMorphology = () => {
+    if (isSelected(morphologicalAnalysis)) {
+      alert('You should unselect the analysis before deletion.');
+    }
+    else {
+      deleteMorphology(morphologicalAnalysis);
+    }
+  };
+
+  const deleteNodeAndDictionaryMorphology = () => {
+    if (isSelected(morphologicalAnalysis)) {
+      alert('You should unselect the analysis before deletion.');
+    }
+    else {
+      deleteMorphology(morphologicalAnalysis);
+      const value: string = writeMorphAnalysisValue(morphologicalAnalysis);
+      deleteAnalysisFromHurrianDictionary(transcription, value);
+    }
+  };
+
+  function getSomeMorphTag(morphAnalysis: MorphologicalAnalysis): string | null {
+    switch (morphAnalysis._type) {
+      case 'SingleMorphAnalysisWithoutEnclitics':
+        return morphAnalysis.analysis;
+      case 'MultiMorphAnalysisWithoutEnclitics':
+        return morphAnalysis.analysisOptions[0].analysis;
+      default:
+        return null;
+    }
+  }
+  
+  const handleTranslationChange = (newTranslation: string) => {
+    setTranslation(newTranslation);
+  };
+
   return (
     <div className="mt-2">
       <div className="flex flex-row">
@@ -43,8 +156,32 @@ export function MorphAnalysisOptionButtons({morphologicalAnalysis, toggleAnalysi
         <span className="p-2 border-l border-y border-slate-500">{number}</span>
 
         <div className="flex-grow p-2 border-l border-y border-slate-500 bg-gray-100">
-          <span className="text-red-600">{translation}</span>&nbsp;({referenceWord},&nbsp;
-          {t('paradigmClass')}:&nbsp;<span className="text-red-600">{paradigmClass}</span>
+          <span className="text-red-600">
+          {
+            hurrian ?
+            <TranslationEditor stem={getStem(referenceWord)} 
+                               partOfSpeech={paradigmClass}
+                               translation={translation}
+                               handleChange={handleTranslationChange} /> :
+            translation
+          }
+          </span>&nbsp;({referenceWord},&nbsp;
+          {hurrian ? 'Wortart' : t('paradigmClass')}:&nbsp;
+            <span className="text-red-600">
+            {
+              hurrian ?
+              <select
+                defaultValue={actualParadigmClass}
+                onChange={(event) => {
+                  setParadigmClass(event.target.value);
+                }}>
+                {getPartsOfSpeech().map((partOfSpeech: string) => {
+                  return (<option key={partOfSpeech} value={partOfSpeech}>{partOfSpeech}</option>);
+                })}
+              </select> :
+              paradigmClass
+            }
+            </span>
           {determinative && <span>, {t('determinative')}:&nbsp;<span className="text-red-600">{determinative}</span></span>})&nbsp;
         </div>
 
@@ -56,7 +193,20 @@ export function MorphAnalysisOptionButtons({morphologicalAnalysis, toggleAnalysi
             </button>)}
         </>}
 
-        <button type="button" className="p-2 rounded-r border border-slate-500" onClick={enableEditMode}
+        <button type="button" className="p-2 rounded-r border border-slate-500"
+                onClick={deleteNodeMorphology}
+                title={'Delete for this only'}>
+        &#9960;
+        </button>
+
+        <button type="button" className="p-2 rounded-r border border-slate-500"
+                onClick={deleteNodeAndDictionaryMorphology}
+                title={'Delete morphological analysis'}>
+        &#10754;
+        </button>
+
+        <button type="button" className="p-2 rounded-r border border-slate-500"
+                onClick={enableEditMode}
                 title={t('editMorphologicalAnalyses') || 'editMorphologicalAnalyses'}>
           &#x2699;
         </button>
@@ -65,9 +215,13 @@ export function MorphAnalysisOptionButtons({morphologicalAnalysis, toggleAnalysi
       {!isReduced && <div className="mt-2">
         {isSingleAnalysisOption
           ? <SingleMorphAnalysisOptionButton morphAnalysis={morphologicalAnalysis}
-                                             toggleAnalysisSelection={(encLetter) => toggleAnalysisSelection(undefined, encLetter, undefined)}/>
+                                             toggleAnalysisSelection={(encLetter) => toggleAnalysisSelection(undefined, encLetter, undefined)}
+                                             hurrian={hurrian}
+                                             updateMorphology={updateMorphology}/>
           : <MultiMorphAnalysisOptionButtons morphAnalysis={morphologicalAnalysis}
-                                             toggleAnalysisSelection={(letter, encLetter) => toggleAnalysisSelection(letter, encLetter, undefined)}/>}
+                                             toggleAnalysisSelection={(letter, encLetter) => toggleAnalysisSelection(letter, encLetter, undefined)}
+                                             hurrian={hurrian}
+                                             updateMorphology={updateMorphology}/>}
 
       </div>}
     </div>

@@ -56,12 +56,12 @@ export interface MultiMorphologicalAnalysisWithoutEnclitics extends IMultiMorpho
   encliticsAnalysis: undefined;
 }
 
-export function multiMorphAnalysisWithoutEnclitics(number: number): MultiMorphologicalAnalysisWithoutEnclitics {
+export function multiMorphAnalysisWithoutEnclitics(number: number, referenceWord: string): MultiMorphologicalAnalysisWithoutEnclitics {
   return {
     _type: 'MultiMorphAnalysisWithoutEnclitics',
     number,
     translation: '',
-    referenceWord: '',
+    referenceWord: referenceWord,
     analysisOptions: [],
     encliticsAnalysis: undefined,
     determinative: undefined,

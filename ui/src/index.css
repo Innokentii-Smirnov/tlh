@@ -186,6 +186,72 @@ code {
   width: 3rem;
 }
 
+.segmentation-box {
+  padding: 15px;
+  display: block;
+}
+
+.morpheme-box {
+  padding: 15px;
+  border: solid black 2px;
+  border-radius: 10 px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.field-box {
+  white-space: pre-line;
+  padding: 1px;
+  display: table-row;
+}
+
+.morpheme-input {
+  width: 5rem;
+}
+
+.unfold-button {
+  width: 3rem;
+}
+
+.dict-entry {
+  display: grid;
+  margin-left: 2rem;
+  width: 25rem;
+}
+
+.button-stack {
+  position: fixed;
+  display: grid;
+}
+
+.info-box {
+  padding: 15px;
+  display: table-cell;
+  vertical-align: top;
+}
+
+.corpus-line {
+  display: block;
+}
+
+.corpus-word {
+  padding: 15px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.corpus-word-field {
+  display: table-row;
+}
+
+.uneven-columns {
+  grid-template-columns: auto 15rem;
+}
+
+.error-mark {
+  font-size: 30px;
+}
+
 /*
 .leftList, rightList {
   display: inline;

@@ -1,5 +1,5 @@
 import {XmlElementNode, XmlNode, XmlReadConfig, XmlWriteConfig} from 'simple_xml';
-import {JSX, ReactElement} from 'react';
+import {JSX, ReactElement, RefObject} from 'react';
 import {InsertablePositions} from './insertablePositions';
 import {Spec} from 'immutability-helper';
 import {DisplayReplacement} from './editorConfig/displayReplacement';
@@ -23,6 +23,7 @@ export interface XmlEditableNodeIProps<T extends string = string, A extends stri
   setKeyHandlingEnabled: (enabled: boolean) => void;
   rootNode: XmlElementNode;
   updateOtherNode: (path: number[], spec: Spec<XmlNode>) => void;
+  globalUpdateButtonRef?: RefObject<HTMLButtonElement>;
 }
 
 export interface XmlSingleNodeConfig<T extends string = string, A extends string = string> {
