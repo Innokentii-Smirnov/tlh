@@ -1,4 +1,4 @@
-import { getKey, glosses } from './glossProvider';
+import { getKey, glosses, splitTranslationIntoWords } from './glossProvider';
 
 export function changeStem(oldStem: string, newStem: string, pos: string, translation: string): void {
   const oldKey = getKey(oldStem, pos);
@@ -13,14 +13,23 @@ export function changePos(stem: string, oldPos: string, newPos: string, translat
 }
 
 function changeKey(oldKey: string, newKey: string, translation: string): void {
-  let current = glosses.get(oldKey);
-  if (current === undefined) {
-    current = new Set<string>();
-    current.add(translation);
-  } else if (current.has(translation)) {
-    glosses.delete(oldKey);
+  const translationWords = splitTranslationIntoWords(translation);
+  const oldTranslationWordSet = glosses.get(oldKey);
+  const newTranslationWordSet = new Set<string>();
+  if (oldTranslationWordSet !== undefined) {
+    for (const translationWord of translationWords) {
+      oldTranslationWordSet.delete(translationWord);
+    }
+    if (oldTranslationWordSet.size === 0) {
+      glosses.delete(oldKey);
+    }
   }
-  glosses.set(newKey, current);
+  for (const translationWord of translationWords) {
+    newTranslationWordSet.add(translationWord);
+  }
+  if (!(newTranslationWordSet.size === 0)) {
+    glosses.set(newKey, newTranslationWordSet);
+  }
 }
 
 export function changeTranslation(stem: string, pos: string, oldTranslation: string, newTranslation: string): void {
@@ -30,7 +39,13 @@ export function changeTranslation(stem: string, pos: string, oldTranslation: str
     current = new Set<string>();
     glosses.set(key, current);
   } else {
-    current.delete(oldTranslation);
+    const oldTranslationWords = splitTranslationIntoWords(oldTranslation);
+    for (const oldTranslationWord of oldTranslationWords) {
+      current.delete(oldTranslationWord);
+    }
   }
-  current.add(newTranslation);
+  const newTranslationWords = splitTranslationIntoWords(newTranslation);
+  for (const newTranslationWord of newTranslationWords) {
+    current.add(newTranslationWord);
+  }
 }
