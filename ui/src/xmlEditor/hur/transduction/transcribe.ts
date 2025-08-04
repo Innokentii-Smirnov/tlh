@@ -88,7 +88,7 @@ export function makeBoundTranscription(word: string): string {
   word = removeAuxiliarySymbols(word);
   word = removeDiacritics(word);
   word = processVowels(word);
-  word = word.replaceAll(/(?<![x(A-UW-ZŠ\d])-(?![)xA-UW-ZŠ])/g, '');
+  word = word.replaceAll(/(?<![x(\p{Lu}\d])-(?![)\p{Lu}])/gu, '');
   word = processConsonants(word);
   return word;
 }
