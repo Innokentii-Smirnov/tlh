@@ -10,9 +10,8 @@ import { isValid, normalize } from './morphologicalAnalysisValidator';
 import segmenter from '../segmentation/segmenter';
 import { readMorphAnalysisValue } from '../morphologicalAnalysis/auxiliary';
 import { inConcordance } from '../concordance/concordance';
-import { updateSetValuedMapWithOverride } from '../common/utils';
-import { loadSetValuedMapFromLocalStorage, locallyStoreSetValuedMap }
-  from '../dictLocalStorage/localStorageUtils';
+import { objectToSetValuedMap, updateSetValuedMapWithOverride } from '../common/utils';
+import { locallyStoreSetValuedMap } from '../dictLocalStorage/localStorageUtils';
 
 export type Dictionary = Map<string, Set<string>>;
 
@@ -20,13 +19,23 @@ export type ModifyDictionary = (dictionary: Dictionary) => Dictionary;
 
 export type SetDictionary = (modifyDictionary: ModifyDictionary) => void;
 
+function initializeDictionary(locStorKey: string): Dictionary {
+  const locallyStoredDictionary = localStorage.getItem(locStorKey);
+  if (locallyStoredDictionary === null) {
+    return new Map();
+  } else {
+    const dictObject: { [key: string]: string[] } = JSON.parse(locallyStoredDictionary);
+    const dict = objectToSetValuedMap(cleanUpDictionary(dictObject));
+    updateSegmenter(dict);
+    return dict;
+  }
+}
+
 const localStorageKey = 'HurrianDictionary';
-export let dictionary: Dictionary = loadSetValuedMapFromLocalStorage(localStorageKey);
+export let dictionary: Dictionary = initializeDictionary(localStorageKey);
 export function locallyStoreHurrianDictionary(): void {
   locallyStoreSetValuedMap(dictionary, localStorageKey);
 }
-
-updateSegmenter();
 
 /*fetch('PrecompiledDictionary.json')
   .then(response => response.json())
@@ -156,11 +165,11 @@ export function getDictionary(): { [key: string]: string[] } {
 
 export function upgradeDictionary(object: { [key: string]: string[] }): void {
   updateSetValuedMapWithOverride(dictionary, object);
-  updateSegmenter();
+  updateSegmenter(dictionary);
 }
 
-function updateSegmenter(): void {
-  for (const [transcription, analyses] of dictionary.entries()) {
+function updateSegmenter(dict: Dictionary): void {
+  for (const [transcription, analyses] of dict.entries()) {
     for (const analysis of analyses) {
       if (isValid(analysis)) {
         const morphologicalAnalysis = readMorphAnalysisValue(analysis);
