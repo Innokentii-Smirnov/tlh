@@ -10,7 +10,7 @@ import { isValid, normalize } from './morphologicalAnalysisValidator';
 import segmenter from '../segmentation/segmenter';
 import { readMorphAnalysisValue } from '../morphologicalAnalysis/auxiliary';
 import { inConcordance } from '../concordance/concordance';
-import { objectToSetValuedMap, updateSetValuedMapWithOverride } from '../common/utils';
+import { objectToSetValuedMap, updateSetValuedMapWithOverride, formIsFragment } from '../common/utils';
 import { locallyStoreSetValuedMap } from '../dictLocalStorage/localStorageUtils';
 
 export type Dictionary = Map<string, Set<string>>;
@@ -170,11 +170,13 @@ export function upgradeDictionary(object: { [key: string]: string[] }): void {
 
 function updateSegmenter(dict: Dictionary): void {
   for (const [transcription, analyses] of dict.entries()) {
-    for (const analysis of analyses) {
-      if (isValid(analysis)) {
-        const morphologicalAnalysis = readMorphAnalysisValue(analysis);
-        if (morphologicalAnalysis !== undefined) {
-          segmenter.add(transcription, morphologicalAnalysis);
+    if (!formIsFragment(transcription)) {
+      for (const analysis of analyses) {
+        if (isValid(analysis)) {
+          const morphologicalAnalysis = readMorphAnalysisValue(analysis);
+          if (morphologicalAnalysis !== undefined) {
+            segmenter.add(transcription, morphologicalAnalysis);
+          }
         }
       }
     }
