@@ -33,7 +33,7 @@ for (const pos of partsOfSpeech) {
 
   const segmentedGrammaticalMorphemes: string = suffixes + enclitics + '$';
 
-  expr[pos] = new RegExp(segmentedGrammaticalMorphemes);
+  expr[pos] = new RegExp(segmentedGrammaticalMorphemes, 'u');
 }
 
 function expand(array: Seq[]): string[][] {

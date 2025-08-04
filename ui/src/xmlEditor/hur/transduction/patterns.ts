@@ -12,7 +12,8 @@ const noun = new RegExp(
 	thematicVowel + 
 	'(|ž|ve|va|(?<=[uū])we|(?<=[uū])wa|ta|da|e|a)' +
 	'(?:(ne|na)(aš)?(u)?(ž|ve|va|ta|da|e|a)?)?' + 
-	enclitics
+	enclitics,
+  'u'
 );
 
 const modal = new RegExp(
@@ -20,14 +21,16 @@ const modal = new RegExp(
 	'([ie])' +
 	'(l)' + 
 	'([aā]nni|[aā][iī])' + 
-	enclitics
+	enclitics,
+  'u'
 );
 
 const voice = new RegExp(
 	verbalRoot +
 	'([aeō]št)?' +
 	'([uiīa])(b)?' +
-	enclitics
+	enclitics,
+  'u'
 );
 
 const aspect = new RegExp(
@@ -35,7 +38,8 @@ const aspect = new RegExp(
 	'([aeō]št)?' +
 	'([uoō])' +
 	'(m)' +
-	enclitics
+	enclitics,
+  'u'
 );
 
 export const patterns: {[key: string]: RegExp} = {noun, modal, voice, aspect};
