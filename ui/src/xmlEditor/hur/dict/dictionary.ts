@@ -26,6 +26,8 @@ export function locallyStoreHurrianDictionary(): void {
   locallyStoreSetValuedMap(dictionary, localStorageKey);
 }
 
+updateSegmenter();
+
 /*fetch('PrecompiledDictionary.json')
   .then(response => response.json())
   .then(json => {
