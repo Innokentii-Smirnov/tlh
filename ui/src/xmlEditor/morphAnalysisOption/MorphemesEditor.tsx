@@ -11,7 +11,7 @@ interface IProps {
   paradigmClass: string;
 }
 
-const formSep = /((?<!\(|\p{Lu})-|(?<!\p{Lu})-(?!\))|=| )/u;
+const formSep = /((?<!\()-|-(?!\))|=| )/u;
 const glossSep = /((?<!\()-|-(?!\))|=| |(?<!=[123](?:SG|PL))\.(?=ABS)|^\.)/;
 const stemFragmentGloss = '?';
 
