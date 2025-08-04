@@ -42,6 +42,12 @@ function preprocessSuffixChain(stem: string): string {
   return stem.replaceAll(inParentheses, '').replaceAll(boundary, '');
 }
 
+function joinStemAndSuffixChain(stem: string, suffixChain: string): string {
+  const joined = stem + suffixChain;
+  // This occurs after Sumerographic stems
+  return joined.replaceAll('--', '-');
+}
+
 export class PartialAnalysis {
   segmentation: string;
   translation: string;
@@ -113,7 +119,7 @@ export default class BasicSegmenter {
             const morphTags = Array.from(morphTagSet).sort();
             for (const stem of stems) {
               const [underlyingStem, translation] = stem.split('@');
-              const segmentation = underlyingStem + segmentedSuffixChain;
+              const segmentation = joinStemAndSuffixChain(underlyingStem, segmentedSuffixChain);
               const result =
                 new PartialAnalysis(segmentation, translation, morphTags);
               segmentations.push(result);
@@ -145,7 +151,7 @@ export default class BasicSegmenter {
           const morphTags = Array.from(morphTagSet).sort();
           const underlyingStem = surfaceStem; 
           const translation = '';
-          const segmentation = underlyingStem + segmentedSuffixChain;
+          const segmentation = joinStemAndSuffixChain(underlyingStem, segmentedSuffixChain);
           const result =
             new PartialAnalysis(segmentation, translation, morphTags);
           segmentations.push(result);
