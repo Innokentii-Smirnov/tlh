@@ -11,14 +11,25 @@ interface IProps {
   paradigmClass: string;
 }
 
-export const sep = /((?<!\()-|-(?!\))|=| |(?<!=[123](?:SG|PL))\.(?=ABS)|^\.)/;
+const formSep = /((?<!\(|\p{Lu})-|(?<!\p{Lu})-(?!\))|=| )/u;
+const glossSep = /((?<!\()-|-(?!\))|=| |(?<!=[123](?:SG|PL))\.(?=ABS)|^\.)/;
 const stemFragmentGloss = '?';
 
 const prestemBoundary = ' ';
 
-function split(segmentation: string): [string, string][] {
+export function splitSegmentation(segmentation: string): [string, string][] {
   const morphemes: [string, string][] = [];
-  const spl = segmentation.split(sep);
+  const spl = segmentation.split(formSep);
+  morphemes.push([spl[0], prestemBoundary]);
+  for (let i = 1; i < spl.length; i += 2) {
+    morphemes.push([spl[i + 1], spl[i]]);
+  }
+  return morphemes;
+}
+
+function splitAnalysis(analysis: string): [string, string][] {
+  const morphemes: [string, string][] = [];
+  const spl = analysis.split(glossSep);
   morphemes.push([spl[0], prestemBoundary]);
   for (let i = 1; i < spl.length; i += 2) {
     morphemes.push([spl[i + 1], spl[i]]);
@@ -85,10 +96,10 @@ function removeSuffix(suffix: string, s: string) {
 }
 
 function buildMorphemes(segmentation: string, translation: string, analysis: string): Morpheme[] {
-  const forms: [string, string][] = split(segmentation);
+  const forms: [string, string][] = splitSegmentation(segmentation);
   analysis = removeSuffix('-', analysis);
   const tags: [string, string][] = analysis === '' ? []
-    : split(analysis);
+    : splitAnalysis(analysis);
   const morphemes: Morpheme[] = [];
   let j = tags.length - 1;
   for (let i = forms.length - 1; i >= 0; i--) {

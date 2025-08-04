@@ -1,11 +1,14 @@
 import { formIsFragment } from '../common/utils';
 import { getPos } from '../partsOfSpeech/partsOfSpeech';
+import { splitSegmentation } from '../../morphAnalysisOption/MorphemesEditor';
 
 const sep = /(?<!\()-(?!\))|=/;
 
 function haveMatchingNumberOfMorphemes(segmentation: string, analysis: string) {
-  return segmentation.split(sep).length === analysis.split(sep).filter(tag => tag !== '.ABS').length + 1
-      || segmentation.split(sep).length === analysis.split(sep).filter(tag => tag !== '.ABS').length
+  const segmentationLength = splitSegmentation(segmentation).length;
+  const analysisLength = analysis.split(sep).filter(tag => tag !== '.ABS').length;
+  return segmentationLength === analysisLength + 1
+      || segmentationLength === analysisLength
       && (analysis.startsWith('=') || analysis === '');
 }
 
