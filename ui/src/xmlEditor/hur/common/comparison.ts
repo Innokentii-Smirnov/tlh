@@ -1,5 +1,9 @@
 import { removeMacron } from './utils';
 
+function preprocessLetter(letter: string): string {
+  return removeMacron(letter).toLowerCase();
+}
+
 const lang = 'lv';
 const latvianCompare = new Intl.Collator(lang).compare;
 function compareLetter(a: string, b: string): number {
@@ -11,9 +15,10 @@ function compareLetter(a: string, b: string): number {
     return latvianCompare(a, b);
   }
 }
+
 export function compare(a: string, b: string): number {
-  a = removeMacron(a);
-  b = removeMacron(b);
+  a = preprocessLetter(a);
+  b = preprocessLetter(b);
   for (let i = 0; i < Math.min(a.length, b.length); i++) {
     const comparisonResult = compareLetter(a[i], b[i]);
     if (comparisonResult === 0) {

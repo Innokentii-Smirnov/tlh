@@ -79,13 +79,18 @@ export function replaceKey<TKey, TValue>(map: Map<TKey, Set<TValue>>, oldKey: TK
   }
 }
 
-export function removeMacron(s: string) {
+export function removeMacron(s: string): string {
   return s
     .replaceAll('ā', 'a')
     .replaceAll('ē', 'e')
     .replaceAll('ī', 'i')
     .replaceAll('ō', 'o')
-    .replaceAll('ū', 'u');
+    .replaceAll('ū', 'u')
+    .replaceAll('Ā', 'A')
+    .replaceAll('Ē', 'E')
+    .replaceAll('Ī', 'I')
+    .replaceAll('Ō', 'O')
+    .replaceAll('Ū', 'U');
 }
 
 export function formIsFragment(form: string): boolean {
