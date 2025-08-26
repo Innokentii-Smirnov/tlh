@@ -9,8 +9,16 @@ import { loadMapFromLocalStorage, locallyStoreMap } from '../dictLocalStorage/lo
 
 const localStorageKey = 'HurrianCorpus';
 const corpus: Map<string, Line> = loadMapFromLocalStorage(localStorageKey);
+cleanUpCorpus();
 export function locallyStoreHurrianCorpus(): void {
   locallyStoreMap(corpus, localStorageKey);
+}
+
+function cleanUpCorpus(): void {
+  for (const [key, line] of corpus.entries()) {
+    const newLine = line.filter(word => word !== null);
+    corpus.set(key, newLine);
+  }
 }
 
 /*fetch('Concordance.json')
@@ -52,9 +60,11 @@ export function addOrUpdateLineBySingleNodePath(address: Attestation,
 
 export function updateCorpus(object: { [key: string]: Line }) {
   updateMapping(corpus, object);
+  cleanUpCorpus();
 }
 
 export function getCorpus(): { [key: string]: Line } {
+  cleanUpCorpus();
   return convertMapping(corpus);
 }
 

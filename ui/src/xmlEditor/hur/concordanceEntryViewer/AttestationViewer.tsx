@@ -16,7 +16,7 @@ export function AttestationViewer({ attestation, words }: IProps): JSX.Element {
       <div className="info-box">{text}<br/>{getCTH(text)}</div>
       <div className="info-box">{line}</div>
       <div className="display: table-cell">
-        <LineViewer line={words} />
+        <LineViewer line={words.filter(word => word !== null)} />
       </div>
     </div>
   );
