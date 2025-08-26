@@ -209,7 +209,7 @@ type StemViewerState = {
 export function StemViewer({stem, initialEntries, setDictionary, initialUnfolded,
                             allUnfolded}: IProps): JSX.Element {
   
-  const [unfolded, setUnfolded] = useState(initialUnfolded || allUnfolded);
+  const [unfolded, setUnfolded] = useState(initialUnfolded);
   const initialState: StemViewerState = {
     stemForm: stem.form,
     translation: stem.translation,
@@ -269,7 +269,7 @@ export function StemViewer({stem, initialEntries, setDictionary, initialUnfolded
             });
           }} />
         <br />
-        {unfolded && entries.map(
+        {(unfolded || allUnfolded) && entries.map(
           (entry: Entry, index: number) => {
             const morphAnalysisValue = writeMorphAnalysisValue(
               initialEntries[index].morphologicalAnalysis
