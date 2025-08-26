@@ -223,5 +223,7 @@
   "uploadChanges": "Änderungen hochladen",
   "textEditor": "Texteditor",
   "uploadText": "Text hochladen",
-  "clearChangesList": "Liste der Änderungen leeren"
+  "clearChangesList": "Liste der Änderungen leeren",
+  "unfoldAll": "Alle aufklappen",
+  "foldAll": "Alle zuklappen"
 }

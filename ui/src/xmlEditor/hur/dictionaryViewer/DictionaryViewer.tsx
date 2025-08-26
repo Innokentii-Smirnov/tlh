@@ -8,6 +8,8 @@ import { ChangesDownloader } from '../changes/ChangesDownloader';
 import { writeMorphAnalysisValue } from '../../../model/morphologicalAnalysis';
 import { SetDictionary } from '../dict/dictionary';
 import { compare } from '../common/comparison';
+import { blueButtonClasses } from '../../../defaultDesign';
+import { useTranslation } from 'react-i18next';
 
 interface IProps {
   entries: Entry[];
@@ -25,8 +27,12 @@ function valueFunc(entry: Entry): Entry {
 }
 
 export function DictionaryViewer({entries, setDictionary}: IProps): JSX.Element {
-
+  
+  const {t} = useTranslation('common');
+  
   const [unfolded, setUnfolded] = useState(false);
+  const [allUnfolded, setAllUnfolded] = useState(false);
+  const toggleAllUnfolded = () => setAllUnfolded((value: boolean) => !value);
   
   useEffect(() => {
     setUnfolded(true);
@@ -55,7 +61,8 @@ export function DictionaryViewer({entries, setDictionary}: IProps): JSX.Element 
               initialEntries={entries}
               key={key} 
               setDictionary={setDictionary}
-              initialUnfolded={unfolded} />
+              initialUnfolded={unfolded}
+              allUnfolded={allUnfolded} />
           );
         })}
       </div>
@@ -63,6 +70,9 @@ export function DictionaryViewer({entries, setDictionary}: IProps): JSX.Element 
         <div className="button-stack">
           <DictionaryDownloader />
           <ChangesDownloader />
+          <button type="button" className={blueButtonClasses} onClick={toggleAllUnfolded}>
+            {allUnfolded ? t('foldAll') : t('unfoldAll')}
+          </button>
         </div>
       </div>
     </div>

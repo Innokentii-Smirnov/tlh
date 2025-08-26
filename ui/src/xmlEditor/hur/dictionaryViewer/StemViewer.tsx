@@ -42,6 +42,7 @@ interface IProps {
   initialEntries: Entry[];
   setDictionary: SetDictionary;
   initialUnfolded: boolean;
+  allUnfolded: boolean;
 }
 
 function replaceStem(newStem: string, segmentation: string) {
@@ -205,9 +206,10 @@ type StemViewerState = {
   entries: Entry[];
 }
 
-export function StemViewer({stem, initialEntries, setDictionary, initialUnfolded}: IProps): JSX.Element {
+export function StemViewer({stem, initialEntries, setDictionary, initialUnfolded,
+                            allUnfolded}: IProps): JSX.Element {
   
-  const [unfolded, setUnfolded] = useState(initialUnfolded);
+  const [unfolded, setUnfolded] = useState(initialUnfolded || allUnfolded);
   const initialState: StemViewerState = {
     stemForm: stem.form,
     translation: stem.translation,
@@ -275,7 +277,7 @@ export function StemViewer({stem, initialEntries, setDictionary, initialUnfolded
 
             return (
                 <WordformElement entry={entry} key={morphAnalysisValue}
-                initialShowAttestations={false}
+                initialShowAttestations={allUnfolded}
                 initialMorphologicalAnalysis={initialEntries[index].morphologicalAnalysis}
                 handleSegmentationInput={(value: string) =>
                   setState(update(state, { entries:

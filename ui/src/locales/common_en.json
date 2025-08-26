@@ -223,5 +223,7 @@
   "uploadChanges": "Upload changes",
   "textEditor": "Text editor",
   "uploadText": "Upload text",
-  "clearChangesList": "Clear changes list"
+  "clearChangesList": "Clear changes list",
+  "unfoldAll": "Unfold all",
+  "foldAll": "Fold all"
 }
