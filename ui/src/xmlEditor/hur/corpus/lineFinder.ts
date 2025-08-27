@@ -1,5 +1,11 @@
 import { XmlElementNode, isXmlElementNode, getElementByPath } from 'simple_xml';
 
+const tagNames = ['w', 'wsep'];
+
+function isLineElement(child: XmlElementNode): boolean {
+  return tagNames.some(tagName => child.tagName === tagName);
+}
+
 // Returns the position in parent.children of the closest line break on the left
 // if it is present, else -1
 export function findLineStart(current: number, parent: XmlElementNode): number {
@@ -7,7 +13,7 @@ export function findLineStart(current: number, parent: XmlElementNode): number {
   while (start >= 0) {
     const child = parent.children[start];
     if (isXmlElementNode(child)) {
-      if (child.tagName === 'w') {
+      if (isLineElement(child)) {
         start--;
       } else {
         break;
@@ -24,7 +30,7 @@ function findLineEnd(current: number, parent: XmlElementNode): number {
   while (end < parent.children.length) {
     const child = parent.children[end];
     if (isXmlElementNode(child)) {
-      if (child.tagName === 'w') {
+      if (isLineElement(child)) {
         end++;
       } else {
         break;

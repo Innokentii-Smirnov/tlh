@@ -12,6 +12,8 @@ export type Word = {
   gloss: string;
 }
 
+const errorTransliteration = 'ERROR';
+
 function getSegmentationAndGloss(morphologicalAnalysis: MorphologicalAnalysis | undefined): [string, string] {
   let segmentation: string;
   let gloss: string;
@@ -52,11 +54,29 @@ export function makeWordFromMorphologies(transliteration: string,
   return word;
 }
 
-export function makeWord(node: XmlElementNode): Word | undefined {
-  const transliteration = getText(node);
-  const selectedMorphologies: SelectedMorphAnalysis[] = node.attributes.mrp0sel !== undefined
-    ? readSelectedMorphology(node.attributes.mrp0sel)
-    : [];
-  const morphologies = readMorphologiesFromNode(node, selectedMorphologies);
-  return makeWordFromMorphologies(transliteration, morphologies);
+export function makeWord(node: XmlElementNode): Word {
+  switch (node.tagName) {
+    case 'w': {
+      const transliteration = getText(node);
+      const selectedMorphologies: SelectedMorphAnalysis[] = node.attributes.mrp0sel !== undefined
+        ? readSelectedMorphology(node.attributes.mrp0sel)
+        : [];
+      const morphologies = readMorphologiesFromNode(node, selectedMorphologies);
+      return makeWordFromMorphologies(transliteration, morphologies);
+    }
+    case 'wsep': {
+      return {
+        transliteration: node.attributes.c || errorTransliteration,
+        segmentation: '',
+        gloss: ''
+      };
+    }
+    default: {
+      return {
+        transliteration: errorTransliteration,
+        segmentation: '',
+        gloss: ''
+      };
+    }
+  }
 }
