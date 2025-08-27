@@ -12,8 +12,6 @@ export type Word = {
   gloss: string;
 }
 
-const errorTransliteration = 'ERROR';
-
 function getSegmentationAndGloss(morphologicalAnalysis: MorphologicalAnalysis | undefined): [string, string] {
   let segmentation: string;
   let gloss: string;
@@ -66,14 +64,21 @@ export function makeWord(node: XmlElementNode): Word {
     }
     case 'wsep': {
       return {
-        transliteration: node.attributes.c || errorTransliteration,
+        transliteration: node.attributes.c || node.tagName.toUpperCase(),
+        segmentation: '',
+        gloss: ''
+      };
+    }
+    case 'gap': {
+      return {
+        transliteration: node.attributes.c || node.tagName.toUpperCase(),
         segmentation: '',
         gloss: ''
       };
     }
     default: {
       return {
-        transliteration: errorTransliteration,
+        transliteration: node.tagName.toUpperCase(),
         segmentation: '',
         gloss: ''
       };

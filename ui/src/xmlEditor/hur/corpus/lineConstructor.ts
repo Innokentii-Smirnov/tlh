@@ -7,9 +7,7 @@ export function makeLine(nodes: XmlElementNode[]): Line {
   const line: Line = [];
   for (const node of nodes) {
     const word = makeWord(node);
-    if (word !== undefined) {
-      line.push(word);
-    }
+    line.push(word);
   }
   return line;
 }

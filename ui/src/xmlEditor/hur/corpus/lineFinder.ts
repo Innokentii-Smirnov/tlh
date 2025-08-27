@@ -1,6 +1,6 @@
 import { XmlElementNode, isXmlElementNode, getElementByPath } from 'simple_xml';
 
-const tagNames = ['w', 'wsep'];
+const tagNames = ['w', 'wsep', 'clb', 'gap', 'note'];
 
 function isLineElement(child: XmlElementNode): boolean {
   return tagNames.some(tagName => child.tagName === tagName);
