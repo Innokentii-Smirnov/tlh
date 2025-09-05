@@ -58,7 +58,6 @@
     "typescript": "^4.9.5"
   },
   "scripts": {
-    "prestart": "npm run graphql-generate",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
