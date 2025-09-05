@@ -5,7 +5,6 @@ COPY package*.json ./
 RUN npm install
 COPY . .
 RUN npm run build
-RUN echo "FallbackResource index.html" >build/.htaccess
 
 # Production Stage
 FROM nginx:stable-alpine AS production
