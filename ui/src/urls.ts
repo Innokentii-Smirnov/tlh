@@ -1,10 +1,10 @@
-const baseServerUrl = process.env.NODE_ENV !== 'development'
+const baseServerUrl = /*process.env.NODE_ENV !== 'development'
   ? `/tlh_editor/${process.env.REACT_APP_VERSION}`
-  : 'http://localhost:8066';
+  :*/ 'http://localhost:8066';
 
-export const baseUrl = process.env.NODE_ENV !== 'development'
+export const baseUrl = /*process.env.NODE_ENV !== 'development'
   ? `${baseServerUrl}/public`
-  : '';
+  :*/ '';
 
 export const apolloUri = `${baseServerUrl}/graphql.php`;
 
