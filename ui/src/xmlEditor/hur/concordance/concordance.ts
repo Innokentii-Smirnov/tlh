@@ -5,6 +5,7 @@ import { writeMorphAnalysisValue, MorphologicalAnalysis } from '../../../model/m
 import { readMorphAnalysisValue } from '../morphologicalAnalysis/auxiliary';
 import { loadSetValuedMapFromLocalStorage, locallyStoreSetValuedMap }
   from '../dictLocalStorage/localStorageUtils';
+import { hasMultipleOccurences } from '../corpus/corpus';
 
 const sep = ',';
 
@@ -43,7 +44,10 @@ export function addAttestation(analysis: string, attestation: Attestation) {
 }
 
 export function removeAttestation(analysis: string, attestation: Attestation) {
-  remove(concordance, preprocess(analysis), attestation.toString());
+  const address = attestation.toString();
+  if (!hasMultipleOccurences(analysis, address)) {
+    remove(concordance, preprocess(analysis), address);
+  }
 }
 
 const pattern = /(?<!\d)\d(?!\d)/g;

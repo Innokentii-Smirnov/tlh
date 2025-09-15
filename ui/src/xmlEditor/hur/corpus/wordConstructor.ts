@@ -85,3 +85,9 @@ export function makeWord(node: XmlElementNode): Word {
     }
   }
 }
+
+export function hasGivenAnalysis(word: Word, gloss: string, morphologicalAnalysis: MorphologicalAnalysis): boolean {
+  const hasGivenSegmentation = word.segmentation === morphologicalAnalysis.referenceWord;
+  const hasGivenGloss = word.gloss === gloss;
+  return hasGivenSegmentation && hasGivenGloss;
+}
