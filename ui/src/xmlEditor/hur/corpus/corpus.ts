@@ -46,7 +46,8 @@ export function addOrUpdateLineBySingleNodePath(address: Attestation,
                                                 rootNode: XmlElementNode, path: number[]) {
   const key = address.toString();
   const storedLine = corpus.get(key);
-  if (storedLine !== undefined) {
+  const nodes = findLine(rootNode, path);
+  if (storedLine !== undefined && storedLine.length === nodes.length) {
     const current = path[path.length - 1];
     const parent = getParent(rootNode, path);
     const start = findLineStart(current, parent);
@@ -54,7 +55,6 @@ export function addOrUpdateLineBySingleNodePath(address: Attestation,
     const node = getElementByPath(rootNode, path);
     updateLine(storedLine, position, node);
   } else {
-    const nodes = findLine(rootNode, path);
     addLine(key, nodes);
   }
 }
