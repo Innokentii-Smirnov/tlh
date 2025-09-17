@@ -14,6 +14,8 @@ import { objectToSetValuedMap, updateSetValuedMapWithOverride, formIsFragment, r
 import { locallyStoreSetValuedMap } from '../dictLocalStorage/localStorageUtils';
 import { getHurrianLexicalDatabaseUrl } from '../../../urls';
 import { upgradeGlosses } from '../translations/glossProvider';
+import { updateConcordance } from '../concordance/concordance';
+import { updateCorpus } from '../corpus/corpus';
 
 export type Dictionary = Map<string, Set<string>>;
 
@@ -43,8 +45,10 @@ fetch(getHurrianLexicalDatabaseUrl)
   .then(response => response.json())
   .then(json => {
     updateSetValuedMapWithOverride(dictionary, json.dictionary);
-    const {glosses} = json;
+    const {glosses, concordance, corpus} = json;
     upgradeGlosses(glosses);
+    updateConcordance(concordance);
+    updateCorpus(corpus);
   });
 
 export function setGlobalDictionary(newDictionary: Dictionary): void {
