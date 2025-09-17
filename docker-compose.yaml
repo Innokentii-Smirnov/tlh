@@ -17,3 +17,13 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=abcd
       - MYSQL_DATABASE=hpm
+  hurrian_lexical_database:
+    build:
+      context: ./LexicalDatabase
+    image: tlh/lexical_database
+    volumes:
+      - type: bind
+        source: ./LexicalDatabase/data
+        target: /data/data
+    ports:
+      - "127.0.0.1:8080:8080"
