@@ -12,6 +12,8 @@ import { readMorphAnalysisValue } from '../morphologicalAnalysis/auxiliary';
 import { inConcordance } from '../concordance/concordance';
 import { objectToSetValuedMap, updateSetValuedMapWithOverride, formIsFragment } from '../common/utils';
 import { locallyStoreSetValuedMap } from '../dictLocalStorage/localStorageUtils';
+import { getHurrianLexicalDatabaseUrl } from '../../../urls';
+import { upgradeGlosses } from '../translations/glossProvider';
 
 export type Dictionary = Map<string, Set<string>>;
 
@@ -37,13 +39,13 @@ export function locallyStoreHurrianDictionary(): void {
   locallyStoreSetValuedMap(dictionary, localStorageKey);
 }
 
-/*fetch('PrecompiledDictionary.json')
+fetch(getHurrianLexicalDatabaseUrl)
   .then(response => response.json())
   .then(json => {
     updateSetValuedMapWithOverride(dictionary, json.dictionary);
     const {glosses} = json;
     upgradeGlosses(glosses);
-  });*/
+  });
 
 export function setGlobalDictionary(newDictionary: Dictionary): void {
   dictionary = newDictionary;
