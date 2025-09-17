@@ -55,6 +55,24 @@ export const secondXmlReviewUrl = 'secondXmlReview';
 
 export const approveDocumentUrl = 'approveDocument';
 
+const hurrianLexicalDatabaseUrl = process.env.NODE_ENV !== 'development'
+  ? 'http://hurrian_lexical_database:8080'
+  : 'http://localhost:8080';
+
+export const getHurrianLexicalDatabaseUrl = hurrianLexicalDatabaseUrl;
+
+export const replaceMorphologicalAnalysisUrl =
+  `${hurrianLexicalDatabaseUrl}/replaceMorphologicalAnalysis`;
+
+export const replaceTranslationUrl =
+  `${hurrianLexicalDatabaseUrl}/replaceTranslation`;
+
+export const replaceStemUrl =
+  `${hurrianLexicalDatabaseUrl}/replaceStem`;
+
+export const replacePosUrl =
+  `${hurrianLexicalDatabaseUrl}/replacePos`;
+
 // Foreign urls
 
 const tlhAnalyzerBaseUrl = process.env.NODE_ENV === 'development'
