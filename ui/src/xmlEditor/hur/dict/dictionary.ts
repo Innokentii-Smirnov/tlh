@@ -10,7 +10,7 @@ import { isValid, normalize } from './morphologicalAnalysisValidator';
 import segmenter from '../segmentation/segmenter';
 import { readMorphAnalysisValue } from '../morphologicalAnalysis/auxiliary';
 import { inConcordance } from '../concordance/concordance';
-import { objectToSetValuedMap, updateSetValuedMapWithOverride, formIsFragment } from '../common/utils';
+import { /*objectToSetValuedMap,*/  updateSetValuedMapWithOverride, formIsFragment } from '../common/utils';
 import { locallyStoreSetValuedMap } from '../dictLocalStorage/localStorageUtils';
 import { getHurrianLexicalDatabaseUrl } from '../../../urls';
 import { upgradeGlosses } from '../translations/glossProvider';
@@ -23,7 +23,7 @@ export type ModifyDictionary = (dictionary: Dictionary) => Dictionary;
 
 export type SetDictionary = (modifyDictionary: ModifyDictionary) => void;
 
-function initializeDictionary(locStorKey: string): Dictionary {
+/*function initializeDictionary(locStorKey: string): Dictionary {
   const locallyStoredDictionary = localStorage.getItem(locStorKey);
   if (locallyStoredDictionary === null) {
     return new Map();
@@ -33,10 +33,10 @@ function initializeDictionary(locStorKey: string): Dictionary {
     updateSegmenter(dict);
     return dict;
   }
-}
+}*/
 
 const localStorageKey = 'HurrianDictionary';
-export let dictionary: Dictionary = initializeDictionary(localStorageKey);
+export let dictionary: Dictionary = new Map(); //initializeDictionary(localStorageKey);
 export function locallyStoreHurrianDictionary(): void {
   locallyStoreSetValuedMap(dictionary, localStorageKey);
 }

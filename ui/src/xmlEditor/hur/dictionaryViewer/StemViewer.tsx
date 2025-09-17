@@ -13,15 +13,23 @@ import { updateConcordanceKey } from '../concordance/concordance';
 import { replaceMorphologicalAnalysis } from '../corpus/corpus';
 import { areCorrect } from '../dict/morphologicalAnalysisValidator';
 import { getMorphTags } from '../morphologicalAnalysis/auxiliary';
+import { replaceMorphologicalAnalysisUrl } from '../../../urls';
 
 const errorSymbol = <>&#9876;</>;
 
-function applySideEffects(origin: string, target: string, targetIsExtant: boolean): void {
+function applySideEffects(transcriptions: string[], origin: string, target: string, targetIsExtant: boolean): void {
   addChange(origin, target, targetIsExtant);
   // The corpus should be updated before the concordance
   // Since the old analysis is used to find the lines to update
   replaceMorphologicalAnalysis(origin, target);
   updateConcordanceKey(origin, target);
+  const request = new Request(replaceMorphologicalAnalysisUrl, {
+    method: 'POST',
+    headers: new Headers({'Content-Type': 'application/json'}),
+    body: JSON.stringify({transcriptions, origin, target}),
+    credentials: 'omit'
+  });
+  fetch(request);
 }
 
 export class Stem {
@@ -78,7 +86,7 @@ function handleSegmentationBlur(dictionary: Dictionary,
   const entry = entries[index];
   const { transcriptions, morphologicalAnalysis } = entry;
   const target = writeMorphAnalysisValue(morphologicalAnalysis);
-  applySideEffects(initialAnalysis, target, containsAnalysis(dictionary, target));
+  applySideEffects(transcriptions, initialAnalysis, target, containsAnalysis(dictionary, target));
   return modifyAnalysis(dictionary, transcriptions, initialAnalysis, morphologicalAnalysis);
 }
 
@@ -121,7 +129,7 @@ function handleAnalysisBlur(dictionary: Dictionary,
   const entry = entries[index];
   const { transcriptions, morphologicalAnalysis } = entry;
   const target = writeMorphAnalysisValue(morphologicalAnalysis);
-  applySideEffects(initialAnalysis, target, containsAnalysis(dictionary, target));
+  applySideEffects(transcriptions, initialAnalysis, target, containsAnalysis(dictionary, target));
   return modifyAnalysis(dictionary, transcriptions, initialAnalysis, morphologicalAnalysis);
 }
 
@@ -148,7 +156,7 @@ function modifyGlobalEntries(dictionary: Dictionary, initialEntries: Entry[],
     const currentMorphologicalAnalysis = currentEntry.morphologicalAnalysis;
     const initialAnalysis = writeMorphAnalysisValue(initialMorphologicalAnalysis);
     const currentAnalysis = writeMorphAnalysisValue(currentMorphologicalAnalysis);
-    applySideEffects(initialAnalysis, currentAnalysis, containsAnalysis(dictionary, currentAnalysis));
+    applySideEffects(transcriptions, initialAnalysis, currentAnalysis, containsAnalysis(dictionary, currentAnalysis));
     for (const transcription of transcriptions) {
       const entrySpec = specification.get(transcription);
       if (entrySpec === undefined) {
@@ -180,7 +188,7 @@ function modifyGlobalPartOfSpeech(dictionary: Dictionary, initialEntries: Entry[
     );
     const initialAnalysis = writeMorphAnalysisValue(initialMorphologicalAnalysis);
     const currentAnalysis = writeMorphAnalysisValue(currentMorphologicalAnalysis);
-    applySideEffects(initialAnalysis, currentAnalysis, containsAnalysis(dictionary, currentAnalysis));
+    applySideEffects(transcriptions, initialAnalysis, currentAnalysis, containsAnalysis(dictionary, currentAnalysis));
     for (const transcription of transcriptions) {
       const entrySpec = specification.get(transcription);
       if (entrySpec === undefined) {
