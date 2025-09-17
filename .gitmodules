@@ -1,0 +1,3 @@
+[submodule "LexicalDatabase"]
+	path = LexicalDatabase
+	url = https://github.com/Innokentii-Smirnov/LexicalDatabase.git
