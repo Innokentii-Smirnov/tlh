@@ -144,3 +144,13 @@ export function makeGlossFromMorphologicalAnalysis(morphologicalAnalysis: Morpho
   const tag = hasValidTag ? morphTags[0] : errorTag;
   return makeGloss(translation, tag);
 }
+
+export function postJSON(url: string, data: {[key: string]: string | string[]}): void {
+  const request = new Request(url, {
+    method: 'POST',
+    headers: new Headers({'Content-Type': 'application/json'}),
+    body: JSON.stringify(data),
+    credentials: 'omit'
+  });
+  fetch(request);
+}
