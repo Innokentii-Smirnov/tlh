@@ -6,7 +6,8 @@ import { makeWord, updateMorphologicalAnalysis, hasGivenAnalysis } from './wordC
 import { findLine, findLineStart, getParent } from './lineFinder';
 import { readMorphAnalysisValue } from '../morphologicalAnalysis/auxiliary';
 import { /*loadMapFromLocalStorage,*/ locallyStoreMap } from '../dictLocalStorage/localStorageUtils';
-import { makeGlossFromMorphologicalAnalysis } from '../common/utils';
+import { makeGlossFromMorphologicalAnalysis, postJSON } from '../common/utils';
+import { addLineUrl, updateLineUrl } from '../../../urls';
 
 const localStorageKey = 'HurrianCorpus';
 const corpus: Map<string, Line> = new Map(); //loadMapFromLocalStorage(localStorageKey);
@@ -30,16 +31,18 @@ function cleanUpCorpus(): void {
     updateCorpus(corpus);
   });*/
 
-function addLine(address: string, nodes: XmlElementNode[]): void {
+function addLine(attestation: string, nodes: XmlElementNode[]): void {
   const line = makeLine(nodes);
-  corpus.set(address, line);
+  corpus.set(attestation, line);
+  postJSON(addLineUrl, {attestation, line});
 }
 
-function updateLine(line: Line, position: number, node: XmlElementNode): void {
+function updateLine(attestation: string, line: Line, position: number, node: XmlElementNode): void {
   const word = makeWord(node);
   if (word !== undefined) {
     line[position] = word;
   }
+  postJSON(updateLineUrl, {attestation, position, word});
 }
 
 export function addOrUpdateLineBySingleNodePath(address: Attestation,
@@ -53,7 +56,7 @@ export function addOrUpdateLineBySingleNodePath(address: Attestation,
     const start = findLineStart(current, parent);
     const position = current - (start + 1);
     const node = getElementByPath(rootNode, path);
-    updateLine(storedLine, position, node);
+    updateLine(key, storedLine, position, node);
   } else {
     addLine(key, nodes);
   }

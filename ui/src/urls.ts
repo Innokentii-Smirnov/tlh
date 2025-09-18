@@ -73,6 +73,18 @@ export const replaceStemUrl =
 export const replacePosUrl =
   `${hurrianLexicalDatabaseUrl}/replacePos`;
 
+export const addAttestationUrl =
+  `${hurrianLexicalDatabaseUrl}/addAttestation`;
+
+export const removeAttestationUrl =
+  `${hurrianLexicalDatabaseUrl}/removeAttestation`;
+
+export const addLineUrl =
+  `${hurrianLexicalDatabaseUrl}/addLine`;
+
+export const updateLineUrl =
+  `${hurrianLexicalDatabaseUrl}/updateLine`;
+
 // Foreign urls
 
 const tlhAnalyzerBaseUrl = process.env.NODE_ENV === 'development'
