@@ -14,6 +14,7 @@ import { replaceMorphologicalAnalysis } from '../corpus/corpus';
 import { areCorrect } from '../dict/morphologicalAnalysisValidator';
 import { getMorphTags } from '../morphologicalAnalysis/auxiliary';
 import { replaceMorphologicalAnalysisUrl } from '../../../urls';
+import { postJSON } from '../common/utils';
 
 const errorSymbol = <>&#9876;</>;
 
@@ -23,13 +24,7 @@ function applySideEffects(transcriptions: string[], origin: string, target: stri
   // Since the old analysis is used to find the lines to update
   replaceMorphologicalAnalysis(origin, target);
   updateConcordanceKey(origin, target);
-  const request = new Request(replaceMorphologicalAnalysisUrl, {
-    method: 'POST',
-    headers: new Headers({'Content-Type': 'application/json'}),
-    body: JSON.stringify({transcriptions, origin, target}),
-    credentials: 'omit'
-  });
-  fetch(request);
+  postJSON(replaceMorphologicalAnalysisUrl, {transcriptions, origin, target});
 }
 
 export class Stem {
