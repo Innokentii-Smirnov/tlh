@@ -1,5 +1,5 @@
 import { convertDictionary } from '../common/utility';
-import { add, remove, replaceKey, updateSetValuedMapWithOverride } from '../common/utils';
+import { add, remove, replaceKey, updateSetValuedMapWithOverride, postJSON } from '../common/utils';
 import { isValid, normalize } from '../dict/morphologicalAnalysisValidator';
 import { writeMorphAnalysisValue, MorphologicalAnalysis } from '../../../model/morphologicalAnalysis';
 import { readMorphAnalysisValue } from '../morphologicalAnalysis/auxiliary';
@@ -8,6 +8,7 @@ import { /*loadSetValuedMapFromLocalStorage,*/ locallyStoreSetValuedMap }
 import { hasMultipleOccurences } from '../corpus/corpus';
 import { addMorphologicalAnalysis } from '../dict/dictionaryUpdater';
 import { deleteAnalysisFromHurrianDictionary } from '../dict/dictionary';
+import { addAttestationUrl, removeAttestationUrl } from '../../../urls';
 
 const sep = ',';
 
@@ -39,10 +40,12 @@ function preprocess(analysis: string): string {
   }
 }
 
-export function addAttestation(transcription: string, analysis: string, attestation: Attestation) {
-  if (isValid(analysis)) {
-    addMorphologicalAnalysis(transcription, analysis);
-    add(concordance, preprocess(analysis), attestation.toString());
+export function addAttestation(rawAnalysis: string, attestationObject: Attestation) {
+  if (isValid(rawAnalysis)) {
+    const attestation = attestationObject.toString();
+    const analysis = preprocess(rawAnalysis);
+    add(concordance, analysis, attestation);
+    postJSON(addAttestationUrl, {analysis, attestation});
   }
 }
 
@@ -54,6 +57,7 @@ export function removeAttestation(transcription: string, analysis: string, attes
     if (!concordance.has(preprocessedAnalysis)) {
       deleteAnalysisFromHurrianDictionary(transcription, preprocessedAnalysis);
     }
+    postJSON(removeAttestationUrl, {analysis, attestation});
   }
 }
 
