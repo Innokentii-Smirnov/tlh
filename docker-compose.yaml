@@ -17,6 +17,12 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=abcd
       - MYSQL_DATABASE=hpm
+  oxted:
+    build:
+      context: ./ui
+    image: tlh/xml_editor
+    ports:
+      - "127.0.0.1:3000:80"
   hurrian_lexical_database:
     build:
       context: ./LexicalDatabase
@@ -25,5 +31,7 @@ services:
       - type: bind
         source: ./LexicalDatabase/data
         target: /data/data
+    expose:
+      - "8080"
     ports:
       - "127.0.0.1:8080:8080"
