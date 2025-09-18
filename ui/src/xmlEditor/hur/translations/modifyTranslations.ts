@@ -1,15 +1,19 @@
 import { getKey, glosses, splitTranslationIntoWords } from './glossProvider';
+import { postJSON } from '../common/utils';
+import { replaceStemUrl, replacePosUrl, replaceTranslationUrl } from '../../../urls';
 
 export function changeStem(oldStem: string, newStem: string, pos: string, translation: string): void {
   const oldKey = getKey(oldStem, pos);
   const newKey = getKey(newStem, pos);
   changeKey(oldKey, newKey, translation);
+  postJSON(replaceStemUrl, {oldStem, newStem, pos, translation});
 }
 
 export function changePos(stem: string, oldPos: string, newPos: string, translation: string): void {
   const oldKey = getKey(stem, oldPos);
   const newKey = getKey(stem, newPos);
   changeKey(oldKey, newKey, translation);
+  postJSON(replacePosUrl, {stem, oldPos, newPos, translation});
 }
 
 function changeKey(oldKey: string, newKey: string, translation: string): void {
@@ -48,4 +52,5 @@ export function changeTranslation(stem: string, pos: string, oldTranslation: str
   for (const newTranslationWord of newTranslationWords) {
     current.add(newTranslationWord);
   }
+  postJSON(replaceTranslationUrl, {stem, pos, oldTranslation, newTranslation});
 }
