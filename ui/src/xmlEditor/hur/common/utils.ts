@@ -145,7 +145,7 @@ export function makeGlossFromMorphologicalAnalysis(morphologicalAnalysis: Morpho
   return makeGloss(translation, tag);
 }
 
-export function postJSON(url: string, data: {[key: string]: string | string[]}): void {
+export function postJSON(url: string, data: {[key: string]: string | string[] | number | object}): void {
   const request = new Request(url, {
     method: 'POST',
     headers: new Headers({'Content-Type': 'application/json'}),
