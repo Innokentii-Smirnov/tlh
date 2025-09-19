@@ -61,6 +61,9 @@ const hurrianLexicalDatabaseUrl = process.env.NODE_ENV !== 'development'
 
 export const getHurrianLexicalDatabaseUrl = hurrianLexicalDatabaseUrl;
 
+export const uploadLexicalDatabaseUrl =
+  `${hurrianLexicalDatabaseUrl}/uploadLexicalDatabase`;
+
 export const replaceMorphologicalAnalysisUrl =
   `${hurrianLexicalDatabaseUrl}/replaceMorphologicalAnalysis`;
 

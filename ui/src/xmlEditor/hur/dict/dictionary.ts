@@ -12,10 +12,11 @@ import { readMorphAnalysisValue } from '../morphologicalAnalysis/auxiliary';
 import { inConcordance } from '../concordance/concordance';
 import { objectToSetValuedMap, updateSetValuedMapWithOverride, formIsFragment, remove } from '../common/utils';
 import { locallyStoreSetValuedMap } from '../dictLocalStorage/localStorageUtils';
-import { getHurrianLexicalDatabaseUrl } from '../../../urls';
-import { upgradeGlosses, loadStemTranslationsFromLocalStorage } from '../translations/glossProvider';
-import { updateConcordance, loadConcordanceFromLocalStorage } from '../concordance/concordance';
-import { updateCorpus, loadCorpusFromLocalStorage } from '../corpus/corpus';
+import { getHurrianLexicalDatabaseUrl, uploadLexicalDatabaseUrl } from '../../../urls';
+import { upgradeGlosses, loadStemTranslationsFromLocalStorage, getGlosses } from '../translations/glossProvider';
+import { updateConcordance, loadConcordanceFromLocalStorage, getConcordance } from '../concordance/concordance';
+import { updateCorpus, loadCorpusFromLocalStorage, getCorpus } from '../corpus/corpus';
+import { postJSON } from '../common/utils';
 
 export type Dictionary = Map<string, Set<string>>;
 
@@ -74,7 +75,16 @@ fetch(getHurrianLexicalDatabaseUrl)
       updateCorpus(corpus);
       updateSegmenter(dictionary);
     } else {
+      console.log('Sending the lexical database to the server.');
       loadLexicalDatabaseFromLocalStorage();
+      const glosses = getGlosses();
+      const concordance = getConcordance();
+      const corpus = getCorpus();
+      const obj = {
+        dictionary: getDictionary(),
+        glosses, concordance, corpus
+      };
+      postJSON(uploadLexicalDatabaseUrl, obj);
     }
   })
   .catch(err => {
