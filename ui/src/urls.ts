@@ -55,9 +55,7 @@ export const secondXmlReviewUrl = 'secondXmlReview';
 
 export const approveDocumentUrl = 'approveDocument';
 
-const hurrianLexicalDatabaseUrl = process.env.NODE_ENV !== 'development'
-  ? 'http://hurrian_lexical_database:8080'
-  : 'http://localhost:8080';
+const hurrianLexicalDatabaseUrl = 'http://localhost:8080';
 
 export const getHurrianLexicalDatabaseUrl = hurrianLexicalDatabaseUrl;
 
