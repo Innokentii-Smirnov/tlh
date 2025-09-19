@@ -3,7 +3,7 @@ import { add, remove, replaceKey, updateSetValuedMapWithOverride, postJSON } fro
 import { isValid, normalize } from '../dict/morphologicalAnalysisValidator';
 import { writeMorphAnalysisValue, MorphologicalAnalysis } from '../../../model/morphologicalAnalysis';
 import { readMorphAnalysisValue } from '../morphologicalAnalysis/auxiliary';
-import { /*loadSetValuedMapFromLocalStorage,*/ locallyStoreSetValuedMap }
+import { loadSetValuedMapFromLocalStorage, locallyStoreSetValuedMap }
   from '../dictLocalStorage/localStorageUtils';
 import { hasMultipleOccurences } from '../corpus/corpus';
 import { addMorphologicalAnalysis } from '../dict/dictionaryUpdater';
@@ -25,9 +25,14 @@ export class Attestation {
 }
 
 const localStorageKey = 'HurrianConcordance';
-const concordance: Map<string, Set<string>> = new Map(); //loadSetValuedMapFromLocalStorage(localStorageKey);
+let concordance: Map<string, Set<string>> = new Map();
+
 export function locallyStoreHurrianConcordance(): void {
   locallyStoreSetValuedMap(concordance, localStorageKey);
+}
+
+export function loadConcordanceFromLocalStorage(): void {
+  concordance = loadSetValuedMapFromLocalStorage(localStorageKey);
 }
 
 function preprocess(analysis: string): string {

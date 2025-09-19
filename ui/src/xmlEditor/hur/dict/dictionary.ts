@@ -13,9 +13,9 @@ import { inConcordance } from '../concordance/concordance';
 import { objectToSetValuedMap, updateSetValuedMapWithOverride, formIsFragment, remove } from '../common/utils';
 import { locallyStoreSetValuedMap } from '../dictLocalStorage/localStorageUtils';
 import { getHurrianLexicalDatabaseUrl } from '../../../urls';
-import { upgradeGlosses } from '../translations/glossProvider';
-import { updateConcordance } from '../concordance/concordance';
-import { updateCorpus } from '../corpus/corpus';
+import { upgradeGlosses, loadStemTranslationsFromLocalStorage } from '../translations/glossProvider';
+import { updateConcordance, loadConcordanceFromLocalStorage } from '../concordance/concordance';
+import { updateCorpus, loadCorpusFromLocalStorage } from '../corpus/corpus';
 
 export type Dictionary = Map<string, Set<string>>;
 
@@ -23,7 +23,7 @@ export type ModifyDictionary = (dictionary: Dictionary) => Dictionary;
 
 export type SetDictionary = (modifyDictionary: ModifyDictionary) => void;
 
-/*function initializeDictionary(locStorKey: string): Dictionary {
+function initializeDictionary(locStorKey: string): Dictionary {
   const locallyStoredDictionary = localStorage.getItem(locStorKey);
   if (locallyStoredDictionary === null) {
     return new Map();
@@ -33,22 +33,53 @@ export type SetDictionary = (modifyDictionary: ModifyDictionary) => void;
     updateSegmenter(dict);
     return dict;
   }
-}*/
+}
 
 const localStorageKey = 'HurrianDictionary';
-export let dictionary: Dictionary = new Map(); //initializeDictionary(localStorageKey);
+export let dictionary: Dictionary = new Map();
+
+function loadHurrianDictionaryFromLocalStorage(): void {
+  dictionary =  initializeDictionary(localStorageKey);
+}
+
 export function locallyStoreHurrianDictionary(): void {
   locallyStoreSetValuedMap(dictionary, localStorageKey);
 }
 
+function loadLexicalDatabaseFromLocalStorage(): void {
+  loadHurrianDictionaryFromLocalStorage();
+  loadStemTranslationsFromLocalStorage();
+  loadConcordanceFromLocalStorage();
+  loadCorpusFromLocalStorage();
+}
+
 fetch(getHurrianLexicalDatabaseUrl)
-  .then(response => response.json())
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Unexpected response status ' + response.status);
+    } else {
+      const contentType = response.headers.get('Content-Type');
+      if (contentType === null || !contentType.startsWith('application/json')) {
+        throw new Error('Unexpected content type: ' + contentType);
+      }
+    }
+    return response.json();
+  })
   .then(json => {
-    updateSetValuedMapWithOverride(dictionary, json.dictionary);
-    const {glosses, concordance, corpus} = json;
-    upgradeGlosses(glosses);
-    updateConcordance(concordance);
-    updateCorpus(corpus);
+    if (Object.keys(json.dictionary).length > 0) {
+      updateSetValuedMapWithOverride(dictionary, json.dictionary);
+      const {glosses, concordance, corpus} = json;
+      upgradeGlosses(glosses);
+      updateConcordance(concordance);
+      updateCorpus(corpus);
+      updateSegmenter(dictionary);
+    } else {
+      loadLexicalDatabaseFromLocalStorage();
+    }
+  })
+  .catch(err => {
+    console.log(err);
+    loadLexicalDatabaseFromLocalStorage();
   });
 
 export function setGlobalDictionary(newDictionary: Dictionary): void {

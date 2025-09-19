@@ -5,15 +5,19 @@ import { Line, makeLine } from './lineConstructor';
 import { makeWord, updateMorphologicalAnalysis, hasGivenAnalysis } from './wordConstructor';
 import { findLine, findLineStart, getParent } from './lineFinder';
 import { readMorphAnalysisValue } from '../morphologicalAnalysis/auxiliary';
-import { /*loadMapFromLocalStorage,*/ locallyStoreMap } from '../dictLocalStorage/localStorageUtils';
+import { loadMapFromLocalStorage, locallyStoreMap } from '../dictLocalStorage/localStorageUtils';
 import { makeGlossFromMorphologicalAnalysis, postJSON } from '../common/utils';
 import { addLineUrl, updateLineUrl } from '../../../urls';
 
 const localStorageKey = 'HurrianCorpus';
-const corpus: Map<string, Line> = new Map(); //loadMapFromLocalStorage(localStorageKey);
-cleanUpCorpus();
+let corpus: Map<string, Line> = new Map();
+
 export function locallyStoreHurrianCorpus(): void {
   locallyStoreMap(corpus, localStorageKey);
+}
+
+export function loadCorpusFromLocalStorage(): void {
+  corpus = loadMapFromLocalStorage(localStorageKey);
 }
 
 function cleanUpCorpus(): void {

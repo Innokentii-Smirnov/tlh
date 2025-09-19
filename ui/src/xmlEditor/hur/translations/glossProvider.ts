@@ -1,12 +1,17 @@
 import {convertDictionary, updateGlossesLexicon} from '../common/utility';
-import { /*loadSetValuedMapFromLocalStorage,*/ locallyStoreSetValuedMap }
+import { loadSetValuedMapFromLocalStorage, locallyStoreSetValuedMap }
   from '../dictLocalStorage/localStorageUtils';
 
 //Dieses Modul kann Bedeutungen von Stämmen speichern und nachschlagen.
 const localStorageKey = 'HurrianStemTranslations';
-export const glosses: Map<string, Set<string>> = new Map(); // loadSetValuedMapFromLocalStorage(localStorageKey);
+export let glosses: Map<string, Set<string>> = new Map();
+
 export function locallyStoreHurrianStemTranslations(): void {
   locallyStoreSetValuedMap(glosses, localStorageKey);
+}
+
+export function loadStemTranslationsFromLocalStorage(): void {
+  glosses = loadSetValuedMapFromLocalStorage(localStorageKey);
 }
 
 const translationWordSeparator = '; ';
