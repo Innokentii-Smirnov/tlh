@@ -7,8 +7,8 @@ import { Entry } from './Wordform';
 import { groupBy } from '../common/utils';
 import { Dictionary, setGlobalDictionary } from '../dict/dictionary';
 import { locallyStoreHurrianData } from '../dictLocalStorage/hurrianDataLocalStorage';
-import { getHurrianLexicalDatabaseUpdatesUrl } from '../../../urls';
 import { modifyAnalysis } from '../dict/analysisModifier';
+import { updatesStream } from '../lexicalDatabaseInteraction';
 
 interface Subentry {
   transcription: string;
@@ -27,7 +27,6 @@ export function DictionaryViewerContainer({getInitialDictionary}: IProps): JSX.E
   const [dictionary, setDictionary] = useState(initialDictionary);
 
   useEffect(() => {
-    const updatesStream = new EventSource(getHurrianLexicalDatabaseUpdatesUrl);
     const listener = (event: MessageEvent) => {
       if (event.data !== 'Starting' && event.data !== '"Initial message"') {
         const { transcriptions, origin, target } = JSON.parse(event.data);
