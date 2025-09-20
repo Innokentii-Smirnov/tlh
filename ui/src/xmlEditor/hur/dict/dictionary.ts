@@ -17,6 +17,7 @@ import { upgradeGlosses, loadStemTranslationsFromLocalStorage, getGlosses } from
 import { updateConcordance, loadConcordanceFromLocalStorage, getConcordance } from '../concordance/concordance';
 import { updateCorpus, loadCorpusFromLocalStorage, getCorpus } from '../corpus/corpus';
 import { postJSON } from '../common/utils';
+import { enableLexicalDatabaseUpdateHandling } from '../lexicalDatabaseInteraction';
 
 export type Dictionary = Map<string, Set<string>>;
 
@@ -86,6 +87,7 @@ fetch(getHurrianLexicalDatabaseUrl)
       };
       postJSON(uploadLexicalDatabaseUrl, obj);
     }
+    enableLexicalDatabaseUpdateHandling();
   })
   .catch(err => {
     console.log(err);
