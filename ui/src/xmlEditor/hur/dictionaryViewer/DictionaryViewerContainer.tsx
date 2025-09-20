@@ -7,6 +7,8 @@ import { Entry } from './Wordform';
 import { groupBy } from '../common/utils';
 import { Dictionary, setGlobalDictionary } from '../dict/dictionary';
 import { locallyStoreHurrianData } from '../dictLocalStorage/hurrianDataLocalStorage';
+import { getHurrianLexicalDatabaseUpdatesUrl } from '../../../urls';
+import { modifyAnalysis } from '../dict/analysisModifier';
 
 interface Subentry {
   transcription: string;
@@ -23,6 +25,23 @@ export function DictionaryViewerContainer({getInitialDictionary}: IProps): JSX.E
   const initialDictionary = getInitialDictionary();
   const [loaded, setLoaded] = useState(initialDictionary.size > 0);
   const [dictionary, setDictionary] = useState(initialDictionary);
+
+  useEffect(() => {
+    const updatesStream = new EventSource(getHurrianLexicalDatabaseUpdatesUrl);
+    const listener = (event: MessageEvent) => {
+      if (event.data !== 'Starting' && event.data !== '"Initial message"') {
+        const { transcriptions, origin, target } = JSON.parse(event.data);
+        const newMorphologicalAnalysis = readMorphAnalysisValue(target);
+        if (newMorphologicalAnalysis !== undefined) {
+          setDictionary(dictionary =>
+            modifyAnalysis(dictionary, transcriptions, origin, newMorphologicalAnalysis)
+          );
+        }
+      }
+    };
+    updatesStream.addEventListener('replaceMorphologicalAnalysis', listener);
+    return (() => updatesStream.removeEventListener('replaceMorphologicalAnalysis', listener));
+  }, []);
   
   const subentries: Subentry[] = [];
   
