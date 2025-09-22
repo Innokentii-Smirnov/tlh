@@ -2,18 +2,16 @@ import { getKey, glosses, splitTranslationIntoWords } from './glossProvider';
 import { postJSON } from '../common/utils';
 import { replaceStemUrl, replacePosUrl, replaceTranslationUrl } from '../../../urls';
 
-export function changeStem(oldStem: string, newStem: string, pos: string, translation: string): void {
+export function localChangeStem(oldStem: string, newStem: string, pos: string, translation: string): void {
   const oldKey = getKey(oldStem, pos);
   const newKey = getKey(newStem, pos);
   changeKey(oldKey, newKey, translation);
-  postJSON(replaceStemUrl, {oldStem, newStem, pos, translation});
 }
 
-export function changePos(stem: string, oldPos: string, newPos: string, translation: string): void {
+export function localChangePos(stem: string, oldPos: string, newPos: string, translation: string): void {
   const oldKey = getKey(stem, oldPos);
   const newKey = getKey(stem, newPos);
   changeKey(oldKey, newKey, translation);
-  postJSON(replacePosUrl, {stem, oldPos, newPos, translation});
 }
 
 function changeKey(oldKey: string, newKey: string, translation: string): void {
@@ -36,7 +34,7 @@ function changeKey(oldKey: string, newKey: string, translation: string): void {
   }
 }
 
-export function changeTranslation(stem: string, pos: string, oldTranslation: string, newTranslation: string): void {
+export function localChangeTranslation(stem: string, pos: string, oldTranslation: string, newTranslation: string): void {
   const key = getKey(stem, pos);
   let current = glosses.get(key);
   if (current === undefined) {
@@ -52,5 +50,19 @@ export function changeTranslation(stem: string, pos: string, oldTranslation: str
   for (const newTranslationWord of newTranslationWords) {
     current.add(newTranslationWord);
   }
+}
+
+export function changeStem(oldStem: string, newStem: string, pos: string, translation: string): void {
+  localChangeStem(oldStem, newStem, pos, translation);
+  postJSON(replaceStemUrl, {oldStem, newStem, pos, translation});
+}
+
+export function changePos(stem: string, oldPos: string, newPos: string, translation: string): void {
+  localChangePos(stem, oldPos, newPos, translation);
+  postJSON(replacePosUrl, {stem, oldPos, newPos, translation});
+}
+
+export function changeTranslation(stem: string, pos: string, oldTranslation: string, newTranslation: string): void {
+  localChangeTranslation(stem, pos, oldTranslation, newTranslation);
   postJSON(replaceTranslationUrl, {stem, pos, oldTranslation, newTranslation});
 }
