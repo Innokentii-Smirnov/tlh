@@ -35,10 +35,12 @@ export function enableLexicalDatabaseUpdateHandling(): void {
   };
   const addAttestationListener = (event: MessageEvent) => {
     const { analysis, attestation } = JSON.parse(event.data);
+    console.log('Adding', analysis, attestation);
     localAddAttestation(analysis, attestation);
   };
   const removeAttestationListener = (event: MessageEvent) => {
     const { analysis, attestation } = JSON.parse(event.data);
+    console.log('Removing', analysis, attestation);
     localRemoveAttestation(analysis, attestation);
   };
   updatesStream.addEventListener('replaceMorphologicalAnalysis',
@@ -49,7 +51,7 @@ export function enableLexicalDatabaseUpdateHandling(): void {
                                  replacePosListener);
   updatesStream.addEventListener('replaceTranslation',
                                  replaceTranslationListener);
-  updatesStream.addEventListener('addAtestation',
+  updatesStream.addEventListener('addAttestation',
                                  addAttestationListener);
   updatesStream.addEventListener('removeAttestation',
                                  removeAttestationListener);
