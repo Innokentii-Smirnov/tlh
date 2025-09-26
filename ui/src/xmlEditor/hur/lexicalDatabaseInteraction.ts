@@ -3,7 +3,8 @@ import { dictionary, setGlobalDictionary } from './dict/dictionary';
 import { readMorphAnalysisValue } from './morphologicalAnalysis/auxiliary';
 import { modifyAnalysis } from './dict/analysisModifier';
 import { localChangeStem, localChangePos, localChangeTranslation } from './translations/modifyTranslations';
-import { updateConcordanceKey } from './concordance/concordance';
+import { updateConcordanceKey, localAddAttestation, localRemoveAttestation }
+  from './concordance/concordance';
 import { replaceMorphologicalAnalysis } from './corpus/corpus';
 export const updatesStream = new EventSource(getHurrianLexicalDatabaseUpdatesUrl);
 export function enableLexicalDatabaseUpdateHandling(): void {
@@ -32,6 +33,14 @@ export function enableLexicalDatabaseUpdateHandling(): void {
     const { stem, pos, oldTranslation, newTranslation } = JSON.parse(event.data);
     localChangeTranslation(stem, pos, oldTranslation, newTranslation);
   };
+  const addAttestationListener = (event: MessageEvent) => {
+    const { analysis, attestation } = JSON.parse(event.data);
+    localAddAttestation(analysis, attestation);
+  };
+  const removeAttestationListener = (event: MessageEvent) => {
+    const { analysis, attestation } = JSON.parse(event.data);
+    localRemoveAttestation(analysis, attestation);
+  };
   updatesStream.addEventListener('replaceMorphologicalAnalysis',
                                  replaceMorphologicalAnalysisListener);
   updatesStream.addEventListener('replaceStem',
@@ -40,4 +49,8 @@ export function enableLexicalDatabaseUpdateHandling(): void {
                                  replacePosListener);
   updatesStream.addEventListener('replaceTranslation',
                                  replaceTranslationListener);
+  updatesStream.addEventListener('addAtestation',
+                                 addAttestationListener);
+  updatesStream.addEventListener('removeAttestation',
+                                 removeAttestationListener);
 }

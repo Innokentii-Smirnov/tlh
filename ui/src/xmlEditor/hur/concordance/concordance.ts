@@ -45,11 +45,21 @@ function preprocess(analysis: string): string {
   }
 }
 
+export function localAddAttestation(analysis: string, attestation: string) {
+  add(concordance, analysis, attestation);
+}
+
+export function localRemoveAttestation(analysis: string, attestation: string) {
+  if (!hasMultipleOccurences(analysis, attestation)) {
+    remove(concordance, analysis, attestation);
+  }
+}
+
 export function addAttestation(rawAnalysis: string, attestationObject: Attestation) {
   if (isValid(rawAnalysis)) {
     const attestation = attestationObject.toString();
     const analysis = preprocess(rawAnalysis);
-    add(concordance, analysis, attestation);
+    localAddAttestation(analysis, attestation);
     postJSON(addAttestationUrl, {analysis, attestation});
   }
 }
