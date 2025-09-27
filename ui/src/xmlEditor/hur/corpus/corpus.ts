@@ -2,7 +2,7 @@ import { updateMapping, convertMapping } from '../common/utility';
 import { Attestation, quickGetAttestations } from '../concordance/concordance';
 import { XmlElementNode, getElementByPath } from 'simple_xml';
 import { Line, makeLine } from './lineConstructor';
-import { makeWord, updateMorphologicalAnalysis, hasGivenAnalysis } from './wordConstructor';
+import { Word, makeWord, updateMorphologicalAnalysis, hasGivenAnalysis } from './wordConstructor';
 import { findLine, findLineStart, getParent } from './lineFinder';
 import { readMorphAnalysisValue } from '../morphologicalAnalysis/auxiliary';
 import { loadMapFromLocalStorage, locallyStoreMap } from '../dictLocalStorage/localStorageUtils';
@@ -35,18 +35,29 @@ function cleanUpCorpus(): void {
     updateCorpus(corpus);
   });*/
 
+function localAddLine(attestation: string, line: Line): void {
+  corpus.set(attestation, line);
+}
+
 function addLine(attestation: string, nodes: XmlElementNode[]): void {
   const line = makeLine(nodes);
-  corpus.set(attestation, line);
+  localAddLine(attestation, line);
   postJSON(addLineUrl, {attestation, line});
 }
 
-function updateLine(attestation: string, line: Line, position: number, node: XmlElementNode): void {
-  const word = makeWord(node);
-  if (word !== undefined) {
+function localUpdateLine(attestation: string, position: number, word: Word): void {
+  const line = corpus.get(attestation);
+  if (line !== undefined && 0 <= position && position < line.length) {
     line[position] = word;
   }
-  postJSON(updateLineUrl, {attestation, position, word});
+}
+
+function updateLine(attestation: string, position: number, node: XmlElementNode): void {
+  const word = makeWord(node);
+  if (word !== undefined) {
+    localUpdateLine(attestation, position, word);
+    postJSON(updateLineUrl, {attestation, position, word});
+  }
 }
 
 export function addOrUpdateLineBySingleNodePath(address: Attestation,
@@ -60,7 +71,7 @@ export function addOrUpdateLineBySingleNodePath(address: Attestation,
     const start = findLineStart(current, parent);
     const position = current - (start + 1);
     const node = getElementByPath(rootNode, path);
-    updateLine(key, storedLine, position, node);
+    updateLine(key, position, node);
   } else {
     addLine(key, nodes);
   }
