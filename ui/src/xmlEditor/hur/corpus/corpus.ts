@@ -35,7 +35,7 @@ function cleanUpCorpus(): void {
     updateCorpus(corpus);
   });*/
 
-function localAddLine(attestation: string, line: Line): void {
+export function localAddLine(attestation: string, line: Line): void {
   corpus.set(attestation, line);
 }
 
@@ -45,7 +45,7 @@ function addLine(attestation: string, nodes: XmlElementNode[]): void {
   postJSON(addLineUrl, {attestation, line});
 }
 
-function localUpdateLine(attestation: string, position: number, word: Word): void {
+export function localUpdateLine(attestation: string, position: number, word: Word): void {
   const line = corpus.get(attestation);
   if (line !== undefined && 0 <= position && position < line.length) {
     line[position] = word;
