@@ -3,6 +3,12 @@ volumes:
   hur_lex_db_data_volume: { }
 
 services:
+  tlh:
+    image: tlh/tlh-server
+    build:
+      context: ./html
+    ports:
+      - "127.0.0.1:8067:80"
   db:
     image: mariadb:10.2
     restart: always
