@@ -55,12 +55,12 @@ export function localRemoveAttestation(analysis: string, attestation: string) {
   }
 }
 
-export function addAttestation(rawAnalysis: string, attestationObject: Attestation) {
+export function addAttestation(transcription: string, rawAnalysis: string, attestationObject: Attestation) {
   if (isValid(rawAnalysis)) {
     const attestation = attestationObject.toString();
     const analysis = preprocess(rawAnalysis);
     localAddAttestation(analysis, attestation);
-    postJSON(addAttestationUrl, {analysis, attestation});
+    postJSON(addAttestationUrl, {transcription, analysis, attestation});
   }
 }
 
