@@ -1,5 +1,5 @@
 import {MorphologicalAnalysis} from '../../model/morphologicalAnalysis';
-import {JSX, useEffect, useState, RefObject} from 'react';
+import {JSX, useEffect, useState} from 'react';
 import {MorphAnalysisOptionButtons} from './MorphAnalysisButtons';
 import {MorphAnalysisOptionEditor} from './MorphAnalysisOptionEditor';
 
@@ -12,7 +12,6 @@ interface IProps extends CanToggleAnalysisSelection {
   updateMorphology: (ma: MorphologicalAnalysis) => void;
   setKeyHandlingEnabled: (b: boolean) => void;
   hurrian: boolean;
-  globalUpdateButtonRef?: RefObject<HTMLButtonElement>;
   transcription: string;
   deleteMorphology: (ma: MorphologicalAnalysis) => void;
 }
@@ -23,7 +22,6 @@ export function MorphAnalysisOptionContainer({
   toggleAnalysisSelection,
   setKeyHandlingEnabled,
   hurrian,
-  globalUpdateButtonRef,
   transcription,
   deleteMorphology
 }: IProps): JSX.Element {
@@ -58,7 +56,6 @@ export function MorphAnalysisOptionContainer({
                                   enableEditMode={enableUpdateMode}
                                   updateMorphology={updateMorphology}
                                   hurrian={hurrian}
-                                  globalUpdateButtonRef={globalUpdateButtonRef}
                                   transcription={transcription}
                                   deleteMorphology={deleteMorphology}/>;
 }

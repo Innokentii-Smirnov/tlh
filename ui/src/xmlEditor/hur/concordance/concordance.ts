@@ -6,6 +6,7 @@ import { readMorphAnalysisValue } from '../morphologicalAnalysis/auxiliary';
 import { loadSetValuedMapFromLocalStorage, locallyStoreSetValuedMap }
   from '../dictLocalStorage/localStorageUtils';
 import { hasMultipleOccurences } from '../corpus/corpus';
+import { addMorphologicalAnalysis } from '../dict/dictionaryUpdater';
 
 const sep = ',';
 
@@ -37,8 +38,9 @@ function preprocess(analysis: string): string {
   }
 }
 
-export function addAttestation(analysis: string, attestation: Attestation) {
+export function addAttestation(transcription: string, analysis: string, attestation: Attestation) {
   if (isValid(analysis)) {
+    addMorphologicalAnalysis(transcription, analysis);
     add(concordance, preprocess(analysis), attestation.toString());
   }
 }

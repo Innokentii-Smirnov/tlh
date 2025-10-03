@@ -1,4 +1,4 @@
-import {JSX, useState, useEffect, RefObject} from 'react';
+import {JSX, useState} from 'react';
 import {useTranslation} from 'react-i18next';
 import {SingleMorphAnalysisOptionButton} from './SingleMorphAnalysisOptionButton';
 import {isSingleMorphologicalAnalysis, MorphologicalAnalysis, MultiMorphologicalAnalysis, writeMorphAnalysisValue} from '../../model/morphologicalAnalysis';
@@ -7,9 +7,7 @@ import {MultiMorphAnalysisOptionButtons} from './MultiMorphAnalysisOptionButtons
 import classNames from 'classnames';
 import {analysisIsInNumerus, numeri, NumerusOption, stringifyNumerus} from './numerusOption';
 import update from 'immutability-helper';
-import { basicSaveGloss } from '../hur/translations/glossUpdater';
-import { basicUpdateHurrianDictionary, deleteAnalysisFromHurrianDictionary }
-  from '../hur/dict/dictionary';
+import { deleteAnalysisFromHurrianDictionary } from '../hur/dict/dictionary';
 import { getPartsOfSpeech, getPos } from '../hur/partsOfSpeech/partsOfSpeech';
 import {TranslationEditor} from '../hur/translations/TranslationEditor';
 import {getStem} from '../hur/common/splitter';
@@ -19,12 +17,11 @@ interface IProps extends CanToggleAnalysisSelection {
   enableEditMode: () => void;
   updateMorphology: (ma: MorphologicalAnalysis) => void;
   hurrian: boolean;
-  globalUpdateButtonRef?: RefObject<HTMLButtonElement>;
   transcription: string;
   deleteMorphology: (ma: MorphologicalAnalysis) => void;
 }
 
-export function MorphAnalysisOptionButtons({morphologicalAnalysis, toggleAnalysisSelection, enableEditMode, updateMorphology, hurrian, globalUpdateButtonRef, transcription, deleteMorphology}: IProps): JSX.Element {
+export function MorphAnalysisOptionButtons({morphologicalAnalysis, toggleAnalysisSelection, enableEditMode, updateMorphology, hurrian, transcription, deleteMorphology}: IProps): JSX.Element {
 
   const {t} = useTranslation('common');
   const [isReduced, setIsReduced] = useState(false);
@@ -47,37 +44,6 @@ export function MorphAnalysisOptionButtons({morphologicalAnalysis, toggleAnalysi
       setParadigmClass(newParadigmClass);
       actualParadigmClass = newParadigmClass;
     }
-
-    const updateDictionary = () => {
-      const value: string = writeMorphAnalysisValue(
-        update(morphologicalAnalysis, { paradigmClass: { $set: actualParadigmClass } })
-      );
-      basicUpdateHurrianDictionary(transcription, value);
-    };
-
-    const updateLexicon = () => {
-      basicSaveGloss(morphologicalAnalysis);
-    };
-
-    useEffect(() => {
-      if (!globalUpdateButtonRef) {
-        throw new Error('No global update button passed.');
-      }
-      if (!globalUpdateButtonRef.current) {
-        console.log('The global update button is null.');
-      } else {
-        globalUpdateButtonRef.current.addEventListener('click', updateLexicon);
-        globalUpdateButtonRef.current.addEventListener('click', updateDictionary);
-        return () => {
-          if (!globalUpdateButtonRef.current) {
-            console.log('The global update button is null.');
-          } else {
-            globalUpdateButtonRef.current.removeEventListener('click', updateLexicon);
-            globalUpdateButtonRef.current.removeEventListener('click', updateDictionary);
-          }
-        };
-      }
-    });
   }
 
   const isSingleAnalysisOption = isSingleMorphologicalAnalysis(morphologicalAnalysis);

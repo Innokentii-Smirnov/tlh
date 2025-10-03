@@ -19,6 +19,8 @@ import {isSelected} from '../hur/morphologicalAnalysis/auxiliary';
 
 type States = 'DefaultState' | 'AddMorphology' | 'EditEditingQuestion' | 'EditFootNoteState' | 'EditContent';
 
+const noTranscriptionMarker = 'no_transcription';
+
 export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnabled, rootNode, updateOtherNode, globalUpdateButtonRef}: XmlEditableNodeIProps<'w'>): JSX.Element {
 
   const {t} = useTranslation('common');
@@ -41,6 +43,7 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
   if (isHurrian) {
     annotateHurrianWord(node);
   }
+  const transcription = node.attributes.trans || noTranscriptionMarker;
 
   const selectedMorphologies: SelectedMorphAnalysis[] = node.attributes.mrp0sel !== undefined
     ? readSelectedMorphology(node.attributes.mrp0sel)
@@ -83,7 +86,7 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
             }
           } else {
             if (targetState === undefined || targetState === true) {
-              concordanceModifier = () => addAttestation(analysis, attestation);
+              concordanceModifier = () => addAttestation(transcription, analysis, attestation);
             }
           }
           if (concordanceModifier !== undefined) {
@@ -165,7 +168,7 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
           if (oldValue !== undefined) {
             removeAttestation(oldValue, attestation);
           }
-          addAttestation(value, attestation);
+          addAttestation(transcription, value, attestation);
         };
         const oldConcordanceModifier = updateMorphologyConcordanceModifiers.current.get(number);
         if (oldConcordanceModifier !== undefined) {
@@ -311,7 +314,6 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
                 updateMorphology={(newMa) => updateMorphology(m.number, newMa)}
                 setKeyHandlingEnabled={setKeyHandlingEnabled}
 				hurrian={language === 'Hur'}
-				globalUpdateButtonRef={globalUpdateButtonRef}
 				transcription={node.attributes.trans || ''}
 				deleteMorphology={(ma: MorphologicalAnalysis) => deleteMorphology(ma.number)}
               />
