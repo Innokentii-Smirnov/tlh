@@ -1,6 +1,6 @@
 import {XmlEditableNodeIProps} from '../editorConfig';
 import {useTranslation} from 'react-i18next';
-import {JSX, useState, useEffect} from 'react';
+import {JSX, useState, useEffect, useRef} from 'react';
 import {MorphologicalAnalysis, multiMorphAnalysisWithoutEnclitics, readMorphologiesFromNode, writeMorphAnalysisValue} from '../../model/morphologicalAnalysis';
 import {MorphAnalysisOptionContainer} from '../morphAnalysisOption/MorphAnalysisOptionContainer';
 import {findFirstXmlElementByTagName, isXmlElementNode, lastChildNode, xmlElementNode, XmlElementNode} from 'simple_xml';
@@ -23,6 +23,10 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
 
   const {t} = useTranslation('common');
   const [state, setState] = useState<States>('DefaultState');
+
+  type EventHandler = (event: Event) => void;
+  const toggleMorphologyConcordanceModifiers = useRef(new Map<number, EventHandler>());
+  const updateMorphologyConcordanceModifiers = useRef(new Map<number, EventHandler>());
 
   const textLanguage = AOption.of(findFirstXmlElementByTagName(rootNode, 'text'))
     .map((textElement) => textElement.attributes['xml:lang'])
@@ -83,6 +87,11 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
             }
           }
           if (concordanceModifier !== undefined) {
+            const oldConcordanceModifier = toggleMorphologyConcordanceModifiers.current.get(morphNumber);
+            if (oldConcordanceModifier !== undefined) {
+              globalUpdateButtonRef.current.removeEventListener('click', oldConcordanceModifier);
+            }
+            toggleMorphologyConcordanceModifiers.current.set(morphNumber, concordanceModifier);
             globalUpdateButtonRef.current.addEventListener('click', concordanceModifier);
           }
         }
@@ -158,6 +167,11 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
           }
           addAttestation(value, attestation);
         };
+        const oldConcordanceModifier = updateMorphologyConcordanceModifiers.current.get(number);
+        if (oldConcordanceModifier !== undefined) {
+          globalUpdateButtonRef.current.removeEventListener('click', oldConcordanceModifier);
+        }
+        updateMorphologyConcordanceModifiers.current.set(number, concordanceModifier);
         globalUpdateButtonRef.current.addEventListener('click', concordanceModifier);
       }
     }
