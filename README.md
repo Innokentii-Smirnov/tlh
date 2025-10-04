@@ -34,3 +34,7 @@ php -S 0.0.0.0:8066
 cd ui
 npm run start
 ```
+### Automated end-to-end testing
+```bash
+npx nightwatch test
+```
