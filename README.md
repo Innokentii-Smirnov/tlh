@@ -36,5 +36,6 @@ npm run start
 ```
 ### Automated end-to-end testing
 ```bash
+cd ui
 npx nightwatch test
 ```
