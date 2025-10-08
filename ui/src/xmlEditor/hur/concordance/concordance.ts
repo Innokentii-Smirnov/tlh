@@ -59,6 +59,7 @@ export function addAttestation(transcription: string, rawAnalysis: string, attes
   if (isValid(rawAnalysis)) {
     const attestation = attestationObject.toString();
     const analysis = preprocess(rawAnalysis);
+    addMorphologicalAnalysis(transcription, analysis);
     localAddAttestation(analysis, attestation);
     postJSON(addAttestationUrl, {transcription, analysis, attestation});
   }
