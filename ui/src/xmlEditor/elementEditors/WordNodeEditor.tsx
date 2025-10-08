@@ -95,7 +95,7 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
               globalUpdateButtonRef.current.removeEventListener('click', oldConcordanceModifier);
             }
             toggleMorphologyConcordanceModifiers.current.set(morphNumber, concordanceModifier);
-            globalUpdateButtonRef.current.addEventListener('click', concordanceModifier);
+            globalUpdateButtonRef.current.addEventListener('click', concordanceModifier, {once: true});
           }
         }
       }
@@ -175,7 +175,7 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
           globalUpdateButtonRef.current.removeEventListener('click', oldConcordanceModifier);
         }
         updateMorphologyConcordanceModifiers.current.set(number, concordanceModifier);
-        globalUpdateButtonRef.current.addEventListener('click', concordanceModifier);
+        globalUpdateButtonRef.current.addEventListener('click', concordanceModifier, {once: true});
       }
     }
   }
