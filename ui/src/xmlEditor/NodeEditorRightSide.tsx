@@ -1,5 +1,5 @@
 import {NodeDisplay} from './NodeDisplay';
-import {JSX} from 'react';
+import {JSX, RefObject} from 'react';
 import {XmlElementNode} from 'simple_xml';
 import {DeleteButton, SelectableButton} from '../genericElements/Buttons';
 import {useTranslation} from 'react-i18next';
@@ -14,6 +14,7 @@ export interface NodeEditorRightSideProps {
   cancelSelection: () => void;
   jumpElement?: (forward: boolean) => void;
   fontSizeSelectorProps: FontSizeSelectorProps;
+  globalUpdateButtonRef?: RefObject<HTMLButtonElement>;
 }
 
 interface IProps extends NodeEditorRightSideProps {
@@ -29,7 +30,8 @@ export function NodeEditorRightSide({
   deleteNode,
   jumpElement,
   fontSizeSelectorProps,
-  cancelSelection
+  cancelSelection,
+  globalUpdateButtonRef
 }: IProps): JSX.Element {
 
   const {t} = useTranslation('common');
@@ -50,7 +52,7 @@ export function NodeEditorRightSide({
 
           {deleteNode && <DeleteButton onClick={deleteNode} otherClasses={['ml-2', 'px-2', 'rounded']}/>}
 
-          <SelectableButton selected={changed} onClick={applyUpdates} otherClasses={['ml-2', 'px-2', 'rounded']}>
+          <SelectableButton selected={changed} onClick={applyUpdates} otherClasses={['ml-2', 'px-2', 'rounded']} ref={globalUpdateButtonRef}>
             <>{t('update')}</>
           </SelectableButton>
 

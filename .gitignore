@@ -18,3 +18,8 @@ html/public/*
 /.settings/
 /bin/
 /build/
+
+# Nightwatch
+/ui/nightwatch
+/ui/logs
+/ui/tests_output

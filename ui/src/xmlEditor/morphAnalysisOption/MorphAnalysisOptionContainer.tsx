@@ -11,6 +11,9 @@ interface IProps extends CanToggleAnalysisSelection {
   morphologicalAnalysis: MorphologicalAnalysis;
   updateMorphology: (ma: MorphologicalAnalysis) => void;
   setKeyHandlingEnabled: (b: boolean) => void;
+  hurrian: boolean;
+  transcription: string;
+  deleteMorphology: (ma: MorphologicalAnalysis) => void;
 }
 
 export function MorphAnalysisOptionContainer({
@@ -18,6 +21,9 @@ export function MorphAnalysisOptionContainer({
   updateMorphology,
   toggleAnalysisSelection,
   setKeyHandlingEnabled,
+  hurrian,
+  transcription,
+  deleteMorphology
 }: IProps): JSX.Element {
 
   const [isUpdateMode, setIsUpdateMode] = useState(false);
@@ -45,7 +51,11 @@ export function MorphAnalysisOptionContainer({
   }
 
   return isUpdateMode
-    ? <MorphAnalysisOptionEditor initialMorphologicalAnalysis={morphologicalAnalysis} onSubmit={onEditSubmit} cancelUpdate={disableUpdateMode}/>
+    ? <MorphAnalysisOptionEditor initialMorphologicalAnalysis={morphologicalAnalysis} onSubmit={onEditSubmit} cancelUpdate={disableUpdateMode} hurrian={hurrian}/>
     : <MorphAnalysisOptionButtons morphologicalAnalysis={morphologicalAnalysis} toggleAnalysisSelection={toggleAnalysisSelection}
-                                  enableEditMode={enableUpdateMode}/>;
+                                  enableEditMode={enableUpdateMode}
+                                  updateMorphology={updateMorphology}
+                                  hurrian={hurrian}
+                                  transcription={transcription}
+                                  deleteMorphology={deleteMorphology}/>;
 }

@@ -11,6 +11,7 @@ interface IProps {
   toggleElementInsert: (tagName: string, ip: InsertablePositions) => void;
   toggleCompareChanges: () => void;
   onExportXml: () => void;
+  onExportDict: () => void;
   exportDisabled: boolean;
   otherButton: ReactElement | undefined;
   children: ReactElement | undefined;
@@ -22,6 +23,7 @@ export function EditorEmptyRightSide({
   toggleElementInsert,
   toggleCompareChanges,
   onExportXml,
+  onExportDict,
   exportDisabled,
   otherButton,
   children
@@ -53,6 +55,7 @@ export function EditorEmptyRightSide({
       <div className="mt-4 flex space-x-4 justify-center">
         <button type="button" className={amberButtonClasses} onClick={toggleCompareChanges}>{t('compareChanges')}</button>
         <button type="button" className={blueButtonClasses} onClick={onExportXml} disabled={exportDisabled}>{t('exportXml')}</button>
+        <button type="button" className={blueButtonClasses} onClick={onExportDict} disabled={exportDisabled}>{'Wörterbuch exportieren'}</button>
         {otherButton}
       </div>
     </div>

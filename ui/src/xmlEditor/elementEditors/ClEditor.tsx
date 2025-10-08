@@ -1,11 +1,14 @@
 import {inputClasses, XmlEditableNodeIProps, XmlSingleInsertableEditableNodeConfig} from '../editorConfig';
 import {JSX} from 'react';
 import {useTranslation} from 'react-i18next';
+import {LanguageInput} from '../LanguageInput';
+import {findFirstXmlElementByTagName} from 'simple_xml';
+import {AOption} from '../../myOption';
 import {getElementByPath, XmlElementNode} from 'simple_xml';
 import {buildActionSpec} from '../XmlDocumentEditor';
 import {displayReplace} from '../editorConfig/displayReplacement';
 
-type clAttrs = 'id';
+type clAttrs = 'id' | 'lg';
 
 export const clEditorConfig: XmlSingleInsertableEditableNodeConfig<'cl', clAttrs> = {
   replace: ({node, renderChildren}) => displayReplace(
@@ -36,15 +39,22 @@ export const clEditorConfig: XmlSingleInsertableEditableNodeConfig<'cl', clAttrs
   }
 };
 
-function ClEditor({node, updateAttribute, setKeyHandlingEnabled}: XmlEditableNodeIProps<'cl', clAttrs>): JSX.Element {
+function ClEditor({node, updateAttribute, setKeyHandlingEnabled, rootNode}: XmlEditableNodeIProps<'cl', clAttrs>): JSX.Element {
 
   const {t} = useTranslation('common');
+
+  const textLanguage = AOption.of(findFirstXmlElementByTagName(rootNode, 'text'))
+    .map((textElement) => textElement.attributes['xml:lang'])
+    .get();
 
   return (
     <>
       <label htmlFor="id" className="font-bold block">{t('id')}:</label>
       <input type="text" id="id" className={inputClasses} defaultValue={node.attributes.id} onFocus={() => setKeyHandlingEnabled(false)}
              onChange={(event) => updateAttribute('id', event.target.value)}/>
+      <div className="mb-4">
+          <LanguageInput initialValue={node.attributes.lg} parentLanguages={{text: textLanguage}} onChange={(value) => updateAttribute('lg', value)}/>
+      </div>
     </>
   );
 }

@@ -9,6 +9,8 @@ import { OxtedExportData } from './OxtedExportData';
 import { makeDownload } from '../downloadHelper';
 import { DocumentEditTypes } from './documentEditTypes';
 import { XmlValidityChecker } from './XmlValidityChecker';
+import { downloadDictionary } from './hur/dict/files/dictionaryFileManager';
+import { DictionaryUploader } from './hur/dict/files/DictionaryUploader';
 
 const locStoreKey = 'editorState';
 
@@ -127,7 +129,9 @@ export function StandAloneOXTED({ editorConfig }: IProps): ReactElement {
         ? (
           <XmlValidityChecker xmlSource={loadedDocument.source}>
             {(rootNode) =>
-              <XmlDocumentEditor node={rootNode} editorConfig={editorConfig} onExportXml={download} filename={loadedDocument.filename}
+              <XmlDocumentEditor node={rootNode} editorConfig={editorConfig} onExportXml={download}
+              onExportDict={downloadDictionary}
+              filename={loadedDocument.filename}
                 closeFile={closeFile} autoSave={(node) => autoSave(loadedDocument.filename, node)}>
                 <OxtedExportData setExportNode={setExportAddNode} />
               </XmlDocumentEditor>}
@@ -135,6 +139,7 @@ export function StandAloneOXTED({ editorConfig }: IProps): ReactElement {
         ) : (
           <div className="container mx-auto">
             <FileLoader accept="text/xml" onLoad={readFile} />
+            <DictionaryUploader onUpload={() => { /*do nothing*/ }}/>
           </div>
         )}
     </div>

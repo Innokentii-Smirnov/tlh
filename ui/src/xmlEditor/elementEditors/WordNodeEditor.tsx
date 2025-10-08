@@ -1,10 +1,9 @@
 import {XmlEditableNodeIProps} from '../editorConfig';
 import {useTranslation} from 'react-i18next';
-import {JSX, useState} from 'react';
+import {JSX, useState, useEffect, useRef} from 'react';
 import {MorphologicalAnalysis, multiMorphAnalysisWithoutEnclitics, readMorphologiesFromNode, writeMorphAnalysisValue} from '../../model/morphologicalAnalysis';
 import {MorphAnalysisOptionContainer} from '../morphAnalysisOption/MorphAnalysisOptionContainer';
 import {findFirstXmlElementByTagName, isXmlElementNode, lastChildNode, xmlElementNode, XmlElementNode} from 'simple_xml';
-import {MorphAnalysisOptionEditor} from '../morphAnalysisOption/MorphAnalysisOptionEditor';
 import {WordContentEditor} from './wordContentEditor/WordContentEditor';
 import {LanguageInput} from '../LanguageInput';
 import {readSelectedMorphology, SelectedMorphAnalysis} from '../../model/selectedMorphologicalAnalysis';
@@ -12,13 +11,24 @@ import {WordStringChildEditor} from './WordStringChildEditor';
 import {getPriorSibling, getPriorSiblingPath} from '../../nodeIterators';
 import {AOption} from '../../myOption';
 import {fetchCuneiform} from './LineBreakEditor';
+import {annotateHurrianWord} from '../hur/dict/dictionary';
+import {Attestation, addAttestation, removeAttestation} from '../hur/concordance/concordance';
+import {basicGetText} from '../hur/common/xmlUtilities';
+import {addOrUpdateLineBySingleNodePath} from '../hur/corpus/corpus';
+import {isSelected} from '../hur/morphologicalAnalysis/auxiliary';
 
 type States = 'DefaultState' | 'AddMorphology' | 'EditEditingQuestion' | 'EditFootNoteState' | 'EditContent';
 
-export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnabled, rootNode, updateOtherNode}: XmlEditableNodeIProps<'w'>): JSX.Element {
+const noTranscriptionMarker = 'no_transcription';
+
+export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnabled, rootNode, updateOtherNode, globalUpdateButtonRef}: XmlEditableNodeIProps<'w'>): JSX.Element {
 
   const {t} = useTranslation('common');
   const [state, setState] = useState<States>('DefaultState');
+
+  type EventHandler = (event: Event) => void;
+  const toggleMorphologyConcordanceModifiers = useRef(new Map<number, EventHandler>());
+  const updateMorphologyConcordanceModifiers = useRef(new Map<number, EventHandler>());
 
   const textLanguage = AOption.of(findFirstXmlElementByTagName(rootNode, 'text'))
     .map((textElement) => textElement.attributes['xml:lang'])
@@ -28,11 +38,28 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
     .map((lineBreakElement) => lineBreakElement.attributes.lg)
     .get();
 
+  const language: string = node.attributes.lg || lineBreakLanguage || textLanguage || 'Hit';
+  const isHurrian: boolean = (language === 'Hur');
+  if (isHurrian) {
+    annotateHurrianWord(node);
+  }
+  const transcription = node.attributes.trans || noTranscriptionMarker;
+
   const selectedMorphologies: SelectedMorphAnalysis[] = node.attributes.mrp0sel !== undefined
     ? readSelectedMorphology(node.attributes.mrp0sel)
     : [];
 
   const morphologies: MorphologicalAnalysis[] = readMorphologiesFromNode(node, selectedMorphologies);
+  
+  const textName: string = AOption.of(findFirstXmlElementByTagName(rootNode, 'AO:TxtPubl'))
+    .map((textElement) => basicGetText(textElement))
+    .get() || '';
+
+  const lineNumber: string = AOption.of(getPriorSibling(rootNode, path, 'lb'))
+    .map((lineBreakElement) => lineBreakElement.attributes.lnr)
+    .get() || '';
+    
+  const attestation = new Attestation(textName, lineNumber);
 
   function toggleMorphology(currentMrp0sel: string, morphNumber: number, letter: string | undefined, encLetter: string | undefined, targetState: boolean | undefined): string {
 
@@ -40,6 +67,40 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
 
     // Check if selected
     const selected = currentMrp0sel.includes(value);
+    
+    if (isHurrian) {
+      // Add to or remove from the concordance
+      const attribute = 'mrp' + morphNumber;
+      const analysis = node.attributes[attribute];
+      if (analysis !== undefined) {
+        if (!globalUpdateButtonRef) {
+          throw new Error('No global update button passed.');
+        }
+        if (!globalUpdateButtonRef.current) {
+          console.log('The global update button is null.');
+        } else {
+          let concordanceModifier;
+          if (selected) {
+            if (targetState === undefined || targetState === false) {
+              concordanceModifier = () => removeAttestation(analysis, attestation);
+            }
+          } else {
+            if (targetState === undefined || targetState === true) {
+              concordanceModifier = () => addAttestation(transcription, analysis, attestation);
+            }
+          }
+          if (concordanceModifier !== undefined) {
+            const oldConcordanceModifier = toggleMorphologyConcordanceModifiers.current.get(morphNumber);
+            if (oldConcordanceModifier !== undefined) {
+              globalUpdateButtonRef.current.removeEventListener('click', oldConcordanceModifier);
+            }
+            toggleMorphologyConcordanceModifiers.current.set(morphNumber, concordanceModifier);
+            globalUpdateButtonRef.current.addEventListener('click', concordanceModifier);
+          }
+        }
+      }
+    }
+
 
     if (targetState !== undefined && targetState === selected) {
       // Nothing to do...
@@ -51,6 +112,14 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
         : currentMrp0sel + ' ' + value;
     }
   }
+  
+  const corpusModifier = () => {
+    const lineLanguage: string = lineBreakLanguage || textLanguage || 'Hit';
+    if (isHurrian || lineLanguage === 'Hur') {
+      addOrUpdateLineBySingleNodePath(attestation, rootNode, path);
+    }
+  };
+  useEffect(corpusModifier); 
 
   const toggleAnalysisSelection = (morphNumber: number, letter: string | undefined, encLetter: string | undefined, targetState: boolean | undefined): void => updateEditedNode({
     attributes: {mrp0sel: (value) => toggleMorphology(value || '', morphNumber, letter, encLetter, targetState)}
@@ -80,16 +149,43 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
   }
 
   function updateMorphology(number: number, newMa: MorphologicalAnalysis): void {
-    updateEditedNode({attributes: {[`mrp${number}`]: {$set: writeMorphAnalysisValue(newMa)}}});
+    const attribute = 'mrp' + number;
+    const oldValue = node.attributes[attribute];
+    
+    const value: string = writeMorphAnalysisValue(newMa);
+    updateEditedNode({attributes: {[`mrp${number}`]: {$set: value}}});
+    setState('DefaultState');
+    
+    if (isHurrian && isSelected(newMa)) {
+      // Remove the old value from and add the new value to the concordance
+      if (!globalUpdateButtonRef) {
+        throw new Error('No global update button passed.');
+      }
+      if (!globalUpdateButtonRef.current) {
+        console.log('The global update button is null.');
+      } else {
+        const concordanceModifier = () => {
+          if (oldValue !== undefined) {
+            removeAttestation(oldValue, attestation);
+          }
+          addAttestation(transcription, value, attestation);
+        };
+        const oldConcordanceModifier = updateMorphologyConcordanceModifiers.current.get(number);
+        if (oldConcordanceModifier !== undefined) {
+          globalUpdateButtonRef.current.removeEventListener('click', oldConcordanceModifier);
+        }
+        updateMorphologyConcordanceModifiers.current.set(number, concordanceModifier);
+        globalUpdateButtonRef.current.addEventListener('click', concordanceModifier);
+      }
+    }
+  }
+
+  function deleteMorphology(number: number): void {
+    updateEditedNode({attributes: {$unset: [`mrp${number}`]}});
     setState('DefaultState');
   }
 
-  function toggleAddMorphology(): void {
-    setKeyHandlingEnabled(state === 'AddMorphology');
-    setState(state === 'AddMorphology' ? 'DefaultState' : 'AddMorphology');
-  }
-
-  const nextMorphAnalysis = (): MorphologicalAnalysis => multiMorphAnalysisWithoutEnclitics(Math.max(0, ...morphologies.map(({number}) => number)) + 1);
+  const nextMorphAnalysis = (): MorphologicalAnalysis => multiMorphAnalysisWithoutEnclitics(Math.max(0, ...morphologies.map(({number}) => number)) + 1, node.attributes.trans || '');
 
   const updateAttribute = (name: string, value: string | undefined): void => updateEditedNode({attributes: {[name]: {$set: value}}});
 
@@ -217,21 +313,22 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
                 toggleAnalysisSelection={(letter, encLetter, targetState) => toggleAnalysisSelection(m.number, letter, encLetter, targetState)}
                 updateMorphology={(newMa) => updateMorphology(m.number, newMa)}
                 setKeyHandlingEnabled={setKeyHandlingEnabled}
+				hurrian={language === 'Hur'}
+				transcription={node.attributes.trans || ''}
+				deleteMorphology={(ma: MorphologicalAnalysis) => deleteMorphology(ma.number)}
               />
             </div>
           )}
-
-        {state === 'AddMorphology'
-          ? <MorphAnalysisOptionEditor initialMorphologicalAnalysis={nextMorphAnalysis()}
-                                       onSubmit={(newMa) => updateMorphology(morphologies.length, newMa)}
-                                       cancelUpdate={toggleAddMorphology}/>
-          : (
-            <div className="text-center">
-              <button type="button" className="my-4 px-4 py-2 rounded bg-cyan-400 text-white" onClick={toggleAddMorphology}>
-                {t('manuallyAddMorphologicalAnalysis')}
-              </button>
-            </div>
-          )}
+          <div className="text-center">
+            <button
+              type="button"
+              className="my-4 px-4 py-2 rounded bg-cyan-400 text-white"
+              onClick={() =>
+                updateMorphology(Math.max(0, ...morphologies.map(({number}) => number)) + 1, nextMorphAnalysis())
+              }>
+              {t('manuallyAddMorphologicalAnalysis')}
+            </button>
+          </div>
       </section>
     </>
   );

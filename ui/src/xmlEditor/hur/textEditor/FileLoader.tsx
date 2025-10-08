@@ -1,0 +1,51 @@
+import {ChangeEvent, JSX, useRef, useState} from 'react';
+import {useTranslation} from 'react-i18next';
+
+interface IProps {
+  accept?: string;
+  onLoad: (f: File) => Promise<void>;
+  text?: string;
+  cleanUp: () => void;
+}
+
+export function FileLoader({accept, onLoad, text, cleanUp}: IProps): JSX.Element {
+
+  const {t} = useTranslation('common');
+  const fileInput = useRef<HTMLInputElement | null>(null);
+  const [loading, setIsLoading] = useState(false);
+
+  function handleFile(event: ChangeEvent<HTMLInputElement>): void {
+    const files = event.target.files;
+    if (files && files.length > 0) {
+      setIsLoading(true);
+      
+      for (let i = 0; i < files.length; i++) {
+        const file = files[i];
+        onLoad(file)
+          .then(() => {
+            if (i === files.length - 1) {
+              setIsLoading(false);
+            }
+          });
+      }
+    }
+  }
+
+  return (
+    <>
+      <button type="button"
+              className="p-2 rounded border border-slate-500 w-full"
+              onClick={() => {
+                cleanUp();
+                if (fileInput.current) {
+                  fileInput.current.click();
+                }
+              }}
+              disabled={loading}>
+        {text || t('chooseFile')}
+      </button>
+
+      <input type="file" onChange={handleFile} accept={accept} ref={fileInput} hidden multiple />
+    </>
+  );
+}

@@ -52,6 +52,8 @@
   "rendered": "Gerenderter Text",
   "xmlView": "XML-Ansicht",
   "exportXml": "XML exportieren",
+  "exportDict": "Wörterbuch exportieren",
+  "exportChanges": "Änderungen exportieren",
   "documentApproved": "Dokument bestätigt",
   "backToHome": "Zurück zur Startseite",
   "submitApproval": "Bestätigung durchführen",
@@ -213,5 +215,15 @@
   "close": "Schließen",
   "startingDocumentState": "Ursprunglicher Zustand",
   "currentDocumentState": "Aktueller Zustand",
-  "password_repeat": "Passwort wiederholen"
+  "password_repeat": "Passwort wiederholen",
+  "dictionaryViewer": "Wörterbuch",
+  "uploadDictionary": "Wörterbuch hochladen",
+  "macroeditor": "Makroeditor",
+  "changes": "Änderungen",
+  "uploadChanges": "Änderungen hochladen",
+  "textEditor": "Texteditor",
+  "uploadText": "Text hochladen",
+  "clearChangesList": "Liste der Änderungen leeren",
+  "unfoldAll": "Alle aufklappen",
+  "foldAll": "Alle zuklappen"
 }

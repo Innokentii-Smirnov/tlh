@@ -52,6 +52,8 @@
   "rendered": "Rendered text",
   "xmlView": "XML view",
   "exportXml": "Export XML file",
+  "exportDict": "Export dictionary",
+  "exportChanges": "Export changes",
   "documentApproved": "Document approved",
   "backToHome": "Back to home",
   "submitApproval": "Submit approval",
@@ -213,5 +215,15 @@
   "close": "Close",
   "startingDocumentState": "Original state",
   "currentDocumentState": "Current state",
-  "password_repeat": "Repeat password"
+  "password_repeat": "Repeat password",
+  "dictionaryViewer": "Dictionary",
+  "uploadDictionary": "Upload dictionary",
+  "macroeditor": "Macroeditor",
+  "changes": "Changes",
+  "uploadChanges": "Upload changes",
+  "textEditor": "Text editor",
+  "uploadText": "Upload text",
+  "clearChangesList": "Clear changes list",
+  "unfoldAll": "Unfold all",
+  "foldAll": "Fold all"
 }

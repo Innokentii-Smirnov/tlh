@@ -44,7 +44,9 @@ function Inner({mainIdentifier, initialXml}: IProps): JSX.Element {
   }
 
   return (
-    <XmlDocumentEditor node={rootNodeParseResult.value as XmlElementNode} filename={mainIdentifier} onExportXml={onExport} exportDisabled={loading}/>
+    <XmlDocumentEditor node={rootNodeParseResult.value as XmlElementNode} filename={mainIdentifier} onExportXml={onExport} onExportDict={() => {
+      // do nothing
+    }} exportDisabled={loading}/>
   );
 }
 

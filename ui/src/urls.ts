@@ -29,6 +29,10 @@ export const xmlComparatorUrl = '/xmlComparator';
 
 export const documentMergerUrl = '/documentMerger';
 
+export const dictionaryViewerUrl = '/dictionaryViewer';
+
+export const macroeditorUrl = '/macroeditor';
+
 export const userManagementUrl = '/userManagement';
 
 export const pipelineManagementUrl = '/pipelineManagement';

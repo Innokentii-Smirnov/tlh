@@ -20,7 +20,9 @@ import {
   transliterationReviewUrl,
   userManagementUrl,
   xmlComparatorUrl,
-  xmlConversionUrl
+  xmlConversionUrl,
+  dictionaryViewerUrl,
+  macroeditorUrl
 } from './urls';
 import {RegisterForm} from './forms/RegisterForm';
 import {Home} from './Home';
@@ -33,6 +35,8 @@ import {DocumentMergerContainer} from './documentMerger/DocumentMergerContainer'
 import {tlhXmlEditorConfig} from './xmlEditor/tlhXmlEditorConfig';
 import {Preferences} from './Preferences';
 import {XmlComparatorContainer} from './xmlComparator/XmlComparatorContainer';
+import {DictionaryViewerContainer} from './xmlEditor/hur/dictionaryViewer/DictionaryViewerContainer';
+import {MacroeditorContainer} from './xmlEditor/hur/macroeditor/MacroeditorContainer';
 import {Rights, XmlReviewType} from './graphql';
 import {ManuscriptData} from './manuscript/ManuscriptData';
 import {UploadPicturesForm} from './manuscript/UploadPicturesForm';
@@ -45,6 +49,8 @@ import {XmlReview} from './manuscript/review/XmlReview';
 import {DocumentApproval} from './manuscript/DocumentApproval';
 import {ForgotPasswordForm} from './forms/ForgotPasswordForm';
 import {ResetPasswordForm} from './forms/ResetPasswordForm';
+import {getGlobalDictionary} from './xmlEditor/hur/dict/dictionary';
+import {getChanges} from './xmlEditor/hur/changes/changesAccumulator';
 
 export const router = createBrowserRouter([
     {
@@ -88,6 +94,11 @@ export const router = createBrowserRouter([
         {path: oxtedUrl, element: <StandAloneOXTED editorConfig={tlhXmlEditorConfig}/>},
 
         {path: xmlComparatorUrl, element: <XmlComparatorContainer/>},
+        
+        {path: dictionaryViewerUrl,
+         element: <DictionaryViewerContainer getInitialDictionary={getGlobalDictionary}/>},
+        
+        {path: macroeditorUrl, element: <MacroeditorContainer getChanges={getChanges}/>},
 
         {path: preferencesUrl, element: <Preferences/>},
 
