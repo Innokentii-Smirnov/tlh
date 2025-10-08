@@ -82,7 +82,7 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
           let concordanceModifier;
           if (selected) {
             if (targetState === undefined || targetState === false) {
-              concordanceModifier = () => removeAttestation(analysis, attestation);
+              concordanceModifier = () => removeAttestation(transcription, analysis, attestation);
             }
           } else {
             if (targetState === undefined || targetState === true) {
@@ -166,7 +166,7 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
       } else {
         const concordanceModifier = () => {
           if (oldValue !== undefined) {
-            removeAttestation(oldValue, attestation);
+            removeAttestation(transcription, oldValue, attestation);
           }
           addAttestation(transcription, value, attestation);
         };
