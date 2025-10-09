@@ -7,6 +7,7 @@ import { loadSetValuedMapFromLocalStorage, locallyStoreSetValuedMap }
   from '../dictLocalStorage/localStorageUtils';
 import { hasMultipleOccurences } from '../corpus/corpus';
 import { addMorphologicalAnalysis } from '../dict/dictionaryUpdater';
+import { deleteAnalysisFromHurrianDictionary } from '../dict/dictionary';
 
 const sep = ',';
 
@@ -45,10 +46,14 @@ export function addAttestation(transcription: string, analysis: string, attestat
   }
 }
 
-export function removeAttestation(analysis: string, attestation: Attestation) {
+export function removeAttestation(transcription: string, analysis: string, attestation: Attestation) {
   const address = attestation.toString();
   if (!hasMultipleOccurences(analysis, address)) {
-    remove(concordance, preprocess(analysis), address);
+    const preprocessedAnalysis = preprocess(analysis);
+    remove(concordance, preprocessedAnalysis, address);
+    if (!concordance.has(address)) {
+      deleteAnalysisFromHurrianDictionary(transcription, preprocessedAnalysis);
+    }
   }
 }
 
