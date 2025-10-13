@@ -51,7 +51,7 @@ export function removeAttestation(transcription: string, analysis: string, attes
   if (!hasMultipleOccurences(analysis, address)) {
     const preprocessedAnalysis = preprocess(analysis);
     remove(concordance, preprocessedAnalysis, address);
-    if (!concordance.has(address)) {
+    if (!concordance.has(preprocessedAnalysis)) {
       deleteAnalysisFromHurrianDictionary(transcription, preprocessedAnalysis);
     }
   }
