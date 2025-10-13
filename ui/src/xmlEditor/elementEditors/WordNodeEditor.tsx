@@ -29,6 +29,7 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
   type EventHandler = (event: Event) => void;
   const toggleMorphologyConcordanceModifiers = useRef(new Map<number, EventHandler>());
   const updateMorphologyConcordanceModifiers = useRef(new Map<number, EventHandler>());
+  const removers = useRef(new Map<number, EventHandler>());
 
   const textLanguage = AOption.of(findFirstXmlElementByTagName(rootNode, 'text'))
     .map((textElement) => textElement.attributes['xml:lang'])
@@ -164,10 +165,18 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
       if (!globalUpdateButtonRef.current) {
         console.log('The global update button is null.');
       } else {
-        const concordanceModifier = () => {
+        const remover = () => {
           if (oldValue !== undefined) {
             removeAttestation(transcription, oldValue, attestation);
+            removers.current.delete(number);
           }
+        };
+        // The initial analysis, and not its modified versions, should be removed.
+        if (!removers.current.has(number)) {
+          removers.current.set(number, remover);
+          globalUpdateButtonRef.current.addEventListener('click', remover, {once: true});
+        }
+        const concordanceModifier = () => {
           addAttestation(transcription, value, attestation);
         };
         const oldConcordanceModifier = updateMorphologyConcordanceModifiers.current.get(number);

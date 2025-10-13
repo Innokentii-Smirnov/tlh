@@ -10,7 +10,7 @@ import { isValid, normalize } from './morphologicalAnalysisValidator';
 import segmenter from '../segmentation/segmenter';
 import { readMorphAnalysisValue } from '../morphologicalAnalysis/auxiliary';
 import { inConcordance } from '../concordance/concordance';
-import { objectToSetValuedMap, updateSetValuedMapWithOverride, formIsFragment } from '../common/utils';
+import { objectToSetValuedMap, updateSetValuedMapWithOverride, formIsFragment, remove } from '../common/utils';
 import { locallyStoreSetValuedMap } from '../dictLocalStorage/localStorageUtils';
 
 export type Dictionary = Map<string, Set<string>>;
@@ -153,10 +153,7 @@ export function basicUpdateHurrianDictionary(
 }
 
 export function deleteAnalysisFromHurrianDictionary(transcription: string, analysis: string) {
-  const possibilities = dictionary.get(transcription);
-  if (possibilities !== undefined) {
-    possibilities.delete(analysis);
-  }
+  remove(dictionary, transcription, analysis);
 }
 
 export function getDictionary(): { [key: string]: string[] } {
