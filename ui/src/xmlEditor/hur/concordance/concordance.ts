@@ -73,7 +73,7 @@ export function removeAttestation(transcription: string, analysis: string, attes
     if (!concordance.has(preprocessedAnalysis)) {
       deleteAnalysisFromHurrianDictionary(transcription, preprocessedAnalysis);
     }
-    postJSON(removeAttestationUrl, {analysis, attestation});
+    postJSON(removeAttestationUrl, {transcription, analysis: preprocessedAnalysis, attestation: address});
   }
 }
 
