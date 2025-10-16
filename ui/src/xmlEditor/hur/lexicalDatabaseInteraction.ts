@@ -1,7 +1,7 @@
 import { getHurrianLexicalDatabaseUpdatesUrl } from '../../urls';
 import { dictionary, setGlobalDictionary } from './dict/dictionary';
 import { readMorphAnalysisValue } from './morphologicalAnalysis/auxiliary';
-import { modifyAnalysis } from './dict/analysisModifier';
+import { modifyAnalysis, addAnalysis } from './dict/analysisModifier';
 import { localChangeStem, localChangePos, localChangeTranslation } from './translations/modifyTranslations';
 import { updateConcordanceKey, localAddAttestation, localRemoveAttestation }
   from './concordance/concordance';
@@ -34,9 +34,11 @@ export function enableLexicalDatabaseUpdateHandling(): void {
     localChangeTranslation(stem, pos, oldTranslation, newTranslation);
   };
   const addAttestationListener = (event: MessageEvent) => {
-    const { analysis, attestation } = JSON.parse(event.data);
+    const { transcription, analysis, attestation } = JSON.parse(event.data);
     console.log('Adding', analysis, attestation);
     localAddAttestation(analysis, attestation);
+    const newDictionary = addAnalysis(dictionary, transcription, analysis);
+    setGlobalDictionary(newDictionary);
   };
   const removeAttestationListener = (event: MessageEvent) => {
     const { analysis, attestation } = JSON.parse(event.data);

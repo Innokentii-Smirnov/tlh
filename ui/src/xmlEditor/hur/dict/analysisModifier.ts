@@ -11,3 +11,16 @@ export function modifyAnalysis(dictionary: Dictionary, transcriptions: string[],
   }
   return update(dictionary, spec);
 }
+
+export function addAnalysis(dictionary: Dictionary, transcription: string,
+                            analysis: string): Dictionary {
+  let spec: Spec<Dictionary>;
+  if (dictionary.has(transcription)) {
+    spec = {[transcription]: {$add: [analysis]}};
+  } else {
+    const values = new Set<string>();
+    values.add(analysis);
+    spec = {$add: [[transcription, values]]};
+  }
+  return update(dictionary, spec);
+}
