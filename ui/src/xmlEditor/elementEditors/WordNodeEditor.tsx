@@ -30,6 +30,7 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
   const toggleMorphologyConcordanceModifiers = useRef(new Map<number, EventHandler>());
   const updateMorphologyConcordanceModifiers = useRef(new Map<number, EventHandler>());
   const removers = useRef(new Map<number, EventHandler>());
+  const corpusNeedsUpdate = useRef(false);
 
   const textLanguage = AOption.of(findFirstXmlElementByTagName(rootNode, 'text'))
     .map((textElement) => textElement.attributes['xml:lang'])
@@ -83,11 +84,17 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
           let concordanceModifier;
           if (selected) {
             if (targetState === undefined || targetState === false) {
-              concordanceModifier = () => removeAttestation(transcription, analysis, attestation);
+              concordanceModifier = () => {
+                removeAttestation(transcription, analysis, attestation);
+                corpusNeedsUpdate.current = true;
+              };
             }
           } else {
             if (targetState === undefined || targetState === true) {
-              concordanceModifier = () => addAttestation(transcription, analysis, attestation);
+              concordanceModifier = () => {
+                addAttestation(transcription, analysis, attestation);
+                corpusNeedsUpdate.current = true;
+              };
             }
           }
           if (concordanceModifier !== undefined) {
@@ -115,9 +122,12 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
   }
   
   const corpusModifier = () => {
-    const lineLanguage: string = lineBreakLanguage || textLanguage || 'Hit';
-    if (isHurrian || lineLanguage === 'Hur') {
-      addOrUpdateLineBySingleNodePath(attestation, rootNode, path);
+    if (corpusNeedsUpdate.current) {
+      const lineLanguage: string = lineBreakLanguage || textLanguage || 'Hit';
+      if (isHurrian || lineLanguage === 'Hur') {
+        addOrUpdateLineBySingleNodePath(attestation, rootNode, path);
+      }
+      corpusNeedsUpdate.current = false;
     }
   };
   useEffect(corpusModifier); 
@@ -178,6 +188,7 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
         }
         const concordanceModifier = () => {
           addAttestation(transcription, value, attestation);
+          corpusNeedsUpdate.current = true;
         };
         const oldConcordanceModifier = updateMorphologyConcordanceModifiers.current.get(number);
         if (oldConcordanceModifier !== undefined) {
