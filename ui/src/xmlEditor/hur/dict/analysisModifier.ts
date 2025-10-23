@@ -6,10 +6,22 @@ export function modifyAnalysis(dictionary: Dictionary, transcriptions: string[],
   oldAnalysis: string, newMorphologicalAnalysis: MorphologicalAnalysis): Dictionary {
   const newMorphologicalAnalysisValue = writeMorphAnalysisValue(newMorphologicalAnalysis);
   const spec: Spec<Dictionary> = {};
+  const newPairs: [string, Set<string>][] = [];
   for (const transcription of transcriptions) {
-    spec[transcription] = {$remove: [oldAnalysis], $add: [newMorphologicalAnalysisValue]};
+    if (dictionary.has(transcription)) {
+      spec[transcription] = {$remove: [oldAnalysis], $add: [newMorphologicalAnalysisValue]};
+    } else {
+      const valueSet = new Set<string>();
+      valueSet.add(newMorphologicalAnalysisValue);
+      const pair: [string, Set<string>] = [transcription, valueSet];
+      newPairs.push(pair);
+    }
   }
-  return update(dictionary, spec);
+  let newDictionary = update(dictionary, spec);
+  if (newPairs.length > 0) {
+    newDictionary = update(newDictionary, {$add: newPairs});
+  }
+  return newDictionary;
 }
 
 export function addAnalysis(dictionary: Dictionary, transcription: string,
