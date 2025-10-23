@@ -7,7 +7,7 @@ import { Entry } from './Wordform';
 import { groupBy } from '../common/utils';
 import { Dictionary, setGlobalDictionary } from '../dict/dictionary';
 import { locallyStoreHurrianData } from '../dictLocalStorage/hurrianDataLocalStorage';
-import { modifyAnalysis, addAnalysis } from '../dict/analysisModifier';
+import { modifyAnalysis, addAnalysis, removeAnalysis } from '../dict/analysisModifier';
 import { updatesStream } from '../lexicalDatabaseInteraction';
 
 interface Subentry {
@@ -42,13 +42,19 @@ export function DictionaryViewerContainer({getInitialDictionary}: IProps): JSX.E
       const { transcription, analysis } = JSON.parse(event.data);
       setDictionary(dictionary => addAnalysis(dictionary, transcription, analysis));
     };
+    const removeAttestationListener = (event: MessageEvent) => {
+      const { transcription, analysis } = JSON.parse(event.data);
+      setDictionary(dictionary => removeAnalysis(dictionary, transcription, analysis));
+    };
     updatesStream.addEventListener('replaceMorphologicalAnalysis', replaceAnalysisListener);
     updatesStream.addEventListener('addAttestation', addAttestationListener);
+    updatesStream.addEventListener('removeAttestation', removeAttestationListener);
     return () => {
       updatesStream.removeEventListener(
         'replaceMorphologicalAnalysis', replaceAnalysisListener
       );
       updatesStream.removeEventListener('addAttestation', addAttestationListener);
+      updatesStream.removeEventListener('removeAttestation', removeAttestationListener);
     };
   }, []);
   

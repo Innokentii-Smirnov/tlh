@@ -24,3 +24,14 @@ export function addAnalysis(dictionary: Dictionary, transcription: string,
   }
   return update(dictionary, spec);
 }
+
+export function removeAnalysis(dictionary: Dictionary, transcription: string,
+                               analysis: string): Dictionary {
+  let spec: Spec<Dictionary>;
+  if (dictionary.has(transcription)) {
+    spec = {[transcription]: {$remove: [analysis]}};
+    return update(dictionary, spec);
+  } else {
+    return dictionary;
+  }
+}
