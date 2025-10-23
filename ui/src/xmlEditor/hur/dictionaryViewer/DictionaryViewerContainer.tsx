@@ -7,7 +7,7 @@ import { Entry } from './Wordform';
 import { groupBy } from '../common/utils';
 import { Dictionary, setGlobalDictionary } from '../dict/dictionary';
 import { locallyStoreHurrianData } from '../dictLocalStorage/hurrianDataLocalStorage';
-import { modifyAnalysis } from '../dict/analysisModifier';
+import { modifyAnalysis, addAnalysis } from '../dict/analysisModifier';
 import { updatesStream } from '../lexicalDatabaseInteraction';
 
 interface Subentry {
@@ -27,7 +27,7 @@ export function DictionaryViewerContainer({getInitialDictionary}: IProps): JSX.E
   const [dictionary, setDictionary] = useState(initialDictionary);
 
   useEffect(() => {
-    const listener = (event: MessageEvent) => {
+    const replaceAnalysisListener = (event: MessageEvent) => {
       if (event.data !== 'Starting' && event.data !== '"Initial message"') {
         const { transcriptions, origin, target } = JSON.parse(event.data);
         const newMorphologicalAnalysis = readMorphAnalysisValue(target);
@@ -38,8 +38,18 @@ export function DictionaryViewerContainer({getInitialDictionary}: IProps): JSX.E
         }
       }
     };
-    updatesStream.addEventListener('replaceMorphologicalAnalysis', listener);
-    return (() => updatesStream.removeEventListener('replaceMorphologicalAnalysis', listener));
+    const addAttestationListener = (event: MessageEvent) => {
+      const { transcription, analysis } = JSON.parse(event.data);
+      setDictionary(dictionary => addAnalysis(dictionary, transcription, analysis));
+    };
+    updatesStream.addEventListener('replaceMorphologicalAnalysis', replaceAnalysisListener);
+    updatesStream.addEventListener('addAttestation', addAttestationListener);
+    return () => {
+      updatesStream.removeEventListener(
+        'replaceMorphologicalAnalysis', replaceAnalysisListener
+      );
+      updatesStream.removeEventListener('addAttestation', addAttestationListener);
+    };
   }, []);
   
   const subentries: Subentry[] = [];
