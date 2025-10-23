@@ -28,8 +28,13 @@ export function addAnalysis(dictionary: Dictionary, transcription: string,
 export function removeAnalysis(dictionary: Dictionary, transcription: string,
                                analysis: string): Dictionary {
   let spec: Spec<Dictionary>;
-  if (dictionary.has(transcription)) {
-    spec = {[transcription]: {$remove: [analysis]}};
+  const analysisSet = dictionary.get(transcription);
+  if (analysisSet !== undefined) {
+    if (analysisSet.size == 1 && Array.from(analysisSet)[0] == analysis) {
+      spec = {$remove: [transcription]};
+    } else {
+      spec = {[transcription]: {$remove: [analysis]}};
+    }
     return update(dictionary, spec);
   } else {
     return dictionary;
