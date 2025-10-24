@@ -1,5 +1,6 @@
 volumes:
   db_data_volume: { }
+  hur_lex_db_data_volume: { }
 
 services:
   db:
@@ -22,6 +23,8 @@ services:
       context: ./LexicalDatabase
     image: tlh/lexical_database
     volumes:
-      - ./LexicalDatabase/data:/data/data:z
+      - type: volume
+        source: hur_lex_db_data_volume
+        target: /data/data
     ports:
       - "127.0.0.1:8080:8080"
