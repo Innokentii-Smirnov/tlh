@@ -93,6 +93,7 @@ fetch(getHurrianLexicalDatabaseUrl)
     enableLexicalDatabaseUpdateHandling();
   })
   .catch(err => {
+    console.log("An error occurred on attempt to download the Hurrian lexical database from the server.");
     console.log(err);
     loadLexicalDatabaseFromLocalStorage();
   });
