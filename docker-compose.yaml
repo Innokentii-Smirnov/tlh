@@ -6,7 +6,7 @@ services:
   tlh:
     image: tlh/tlh-server
     build:
-      context: ./html
+      context: .
     ports:
       - "127.0.0.1:8067:80"
   db:
