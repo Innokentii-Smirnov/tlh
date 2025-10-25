@@ -82,8 +82,15 @@ export function DictionaryViewerContainer({getInitialDictionary}: IProps): JSX.E
   }
     
   useEffect(() => {
-    setGlobalDictionary(dictionary);
-    locallyStoreHurrianData();
+    // The size check is necessary because the dictionary is initialized
+    // as empty and then loaded from local storage if the database is
+    // empty or unaccessible in an asynchronous (!) callback.
+    // This code could override the dictionary in the local storage
+    // without the size check.
+    if (dictionary.size > 0) {
+      setGlobalDictionary(dictionary);
+      locallyStoreHurrianData();
+    }
   });
   
   return (

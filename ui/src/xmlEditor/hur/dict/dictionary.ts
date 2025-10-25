@@ -49,9 +49,12 @@ export function locallyStoreHurrianDictionary(): void {
 }
 
 function loadLexicalDatabaseFromLocalStorage(): void {
-  loadHurrianDictionaryFromLocalStorage();
   loadStemTranslationsFromLocalStorage();
   loadConcordanceFromLocalStorage();
+  // The dictionary should be loaded after the concordance
+  // Because the concordance is used to validate it
+  // (delete entries which have no attestations).
+  loadHurrianDictionaryFromLocalStorage();
   loadCorpusFromLocalStorage();
 }
 
