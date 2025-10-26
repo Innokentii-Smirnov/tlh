@@ -9,6 +9,7 @@ import { hasMultipleOccurences } from '../corpus/corpus';
 import { addMorphologicalAnalysis } from '../dict/dictionaryUpdater';
 import { deleteAnalysisFromHurrianDictionary } from '../dict/dictionary';
 import { addAttestationUrl, removeAttestationUrl } from '../../../urls';
+import { saveGloss } from '../translations/glossUpdater';
 
 const sep = ',';
 
@@ -45,8 +46,9 @@ function preprocess(analysis: string): string {
   }
 }
 
-export function localAddAttestation(analysis: string, attestation: string) {
+export function localAddAttestation(transcription: string, analysis: string, attestation: string) {
   add(concordance, analysis, attestation);
+  saveGloss(analysis);
 }
 
 export function localRemoveAttestation(analysis: string, attestation: string) {
@@ -60,7 +62,7 @@ export function addAttestation(transcription: string, rawAnalysis: string, attes
     const attestation = attestationObject.toString();
     const analysis = preprocess(rawAnalysis);
     addMorphologicalAnalysis(transcription, analysis);
-    localAddAttestation(analysis, attestation);
+    localAddAttestation(transcription, analysis, attestation);
     postJSON(addAttestationUrl, {transcription, analysis, attestation});
   }
 }

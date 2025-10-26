@@ -1,10 +1,10 @@
-import {MorphologicalAnalysis, readMorphologicalAnalysis,
-		readMorphologiesFromNode, writeMorphAnalysisValue}
+import {MorphologicalAnalysis, readMorphologiesFromNode, writeMorphAnalysisValue}
 		from '../../../model/morphologicalAnalysis';
 import {XmlElementNode} from 'simple_xml';
 import {storeGloss, retrieveGloss} from './glossProvider';
 import {getStem} from '../common/splitter';
 import { isValidForm } from '../dict/morphologicalAnalysisValidator';
+import { readMorphAnalysisValue } from '../morphologicalAnalysis/auxiliary';
 
 export function getPos(template: string): string
 {
@@ -37,10 +37,8 @@ export function setGlosses(node: XmlElementNode): void
 	}
 }
 
-export function saveGloss(number: number, mrp: string): void {
-	const ma: MorphologicalAnalysis | undefined = readMorphologicalAnalysis(
-      number, mrp, []
-    );
+export function saveGloss(mrp: string): void {
+	const ma: MorphologicalAnalysis | undefined = readMorphAnalysisValue(mrp);
 	if (ma !== undefined) {
 		basicSaveGloss(ma);
 	}

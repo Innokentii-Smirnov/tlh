@@ -174,7 +174,7 @@ export function updateHurrianDictionary(
   }
   const transcription: string = node.attributes.trans || '';
   basicUpdateHurrianDictionary(transcription, value);
-  saveGloss(number, value);
+  saveGloss(value);
 }
 
 export function basicUpdateHurrianDictionary(

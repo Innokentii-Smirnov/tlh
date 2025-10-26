@@ -36,7 +36,7 @@ export function enableLexicalDatabaseUpdateHandling(): void {
   const addAttestationListener = (event: MessageEvent) => {
     const { transcription, analysis, attestation } = JSON.parse(event.data);
     console.log('Adding', analysis, attestation);
-    localAddAttestation(analysis, attestation);
+    localAddAttestation(transcription, analysis, attestation);
     const newDictionary = addAnalysis(dictionary, transcription, analysis);
     setGlobalDictionary(newDictionary);
   };
