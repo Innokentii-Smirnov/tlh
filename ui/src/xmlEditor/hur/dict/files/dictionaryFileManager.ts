@@ -4,6 +4,8 @@ import { getPartsOfSpeech, setPartsOfSpeech } from '../../partsOfSpeech/partsOfS
 import { getConcordance, updateConcordance } from '../../concordance/concordance';
 import { getCorpus, updateCorpus } from '../../corpus/corpus';
 import { makeDownload } from '../../../../downloadHelper';
+import { postJSON } from '../../common/utils';
+import { uploadLexicalDatabaseUrl } from '../../../../urls';
 
 export function downloadDictionary() {
   const dictionary = getDictionary();
@@ -33,4 +35,9 @@ export async function readDict(file: File) {
   if ('corpus' in parsed) {
     updateCorpus(parsed.corpus);
   }
+  const { concordance, corpus } = parsed;
+  const lexicalDatabaseObject = {
+    dictionary, glosses, concordance, corpus
+  };
+  postJSON(uploadLexicalDatabaseUrl, lexicalDatabaseObject);
 }
