@@ -50,6 +50,7 @@ import {DocumentApproval} from './manuscript/DocumentApproval';
 import {ForgotPasswordForm} from './forms/ForgotPasswordForm';
 import {ResetPasswordForm} from './forms/ResetPasswordForm';
 import {getGlobalDictionary} from './xmlEditor/hur/dict/dictionary';
+import {getGlobalEnglishTranslations} from './xmlEditor/hur/translations/englishTranslations';
 import {getChanges} from './xmlEditor/hur/changes/changesAccumulator';
 
 export const router = createBrowserRouter([
@@ -96,7 +97,9 @@ export const router = createBrowserRouter([
         {path: xmlComparatorUrl, element: <XmlComparatorContainer/>},
         
         {path: dictionaryViewerUrl,
-         element: <DictionaryViewerContainer getInitialDictionary={getGlobalDictionary}/>},
+         element: <DictionaryViewerContainer
+                    getInitialDictionary={getGlobalDictionary}
+                    getInitialEnglishTranslations={getGlobalEnglishTranslations} />},
         
         {path: macroeditorUrl, element: <MacroeditorContainer getChanges={getChanges}/>},
 
