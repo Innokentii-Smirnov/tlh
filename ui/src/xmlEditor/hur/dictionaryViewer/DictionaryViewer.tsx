@@ -12,6 +12,19 @@ import { blueButtonClasses } from '../../../defaultDesign';
 import { useTranslation } from 'react-i18next';
 import { getEnglishTranslationKey, EnglishTranslations, setGlobalEnglishTranslations } from '../translations/englishTranslations';
 import update from 'immutability-helper';
+import { gql } from '@apollo/client';
+import { useQuery } from '@apollo/client/react';
+
+const GET_STEM = gql`
+query GetStem($form: String!, $pos: String!, $deu: String!) {
+  stem(form: $form, pos: $pos, deu: $deu) {
+    form
+    pos
+    deu
+    eng
+  }
+}
+`;
 
 interface IProps {
   entries: Entry[];
@@ -67,7 +80,24 @@ export function DictionaryViewer({entries, setDictionary, initialEnglishTranslat
           const englishTranslationKey = getEnglishTranslationKey(stemObject.form,
                                                                  stemObject.pos,
                                                                  stemObject.translation);
-          const englishTranslation = englishTranslations.get(englishTranslationKey) || '';
+          let englishTranslation: string;
+          const maybeEnglishTranslation: string | undefined = englishTranslations.get(englishTranslationKey);
+          if (maybeEnglishTranslation === undefined) {
+            const { loading, error, data } = useQuery(GET_STEM, {
+              variables: {form: stemObject.form,
+                          pos: stemObject.pos,
+                          deu: stemObject.translation}
+            });
+            if (loading || error) {
+              englishTranslation = '';
+              console.log(loading, error);
+            } else {
+              console.log(data);
+              englishTranslation = data.stem.eng;
+            }
+          } else {
+            englishTranslation = maybeEnglishTranslation;
+          }
           const setEnglishTranslation = (newEnglishTranslation: string) => {
             if (!(englishTranslation === '' && newEnglishTranslation === '')) {
               setEnglishTranslations(oldEnglishTranslations => update(
