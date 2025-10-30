@@ -150,6 +150,7 @@ type Query {
   manuscriptCount: Int!
   myManuscripts: [String!]
   reviewerQueries: Reviewer
+  stem(deu: String!, form: String!, pos: String!): Stem
 }
 
 type Reviewer {
@@ -166,6 +167,13 @@ enum Rights {
   Author
   ExecutiveEditor
   Reviewer
+}
+
+type Stem {
+  deu: String
+  eng: String
+  form: String
+  pos: String
 }
 
 type User {

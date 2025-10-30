@@ -283,6 +283,7 @@ export type Query = {
   manuscriptCount: Scalars['Int']['output'];
   myManuscripts?: Maybe<Array<Scalars['String']['output']>>;
   reviewerQueries?: Maybe<Reviewer>;
+  stem?: Maybe<Stem>;
 };
 
 
@@ -293,6 +294,13 @@ export type QueryAllManuscriptsArgs = {
 
 export type QueryManuscriptArgs = {
   mainIdentifier: Scalars['String']['input'];
+};
+
+
+export type QueryStemArgs = {
+  deu: Scalars['String']['input'];
+  form: Scalars['String']['input'];
+  pos: Scalars['String']['input'];
 };
 
 export type Reviewer = {
@@ -330,6 +338,14 @@ export const enum Rights {
   Author = 'Author',
   ExecutiveEditor = 'ExecutiveEditor',
   Reviewer = 'Reviewer'
+};
+
+export type Stem = {
+  __typename?: 'Stem';
+  deu?: Maybe<Scalars['String']['output']>;
+  eng?: Maybe<Scalars['String']['output']>;
+  form?: Maybe<Scalars['String']['output']>;
+  pos?: Maybe<Scalars['String']['output']>;
 };
 
 export type User = {

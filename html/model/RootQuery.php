@@ -7,6 +7,7 @@ require_once __DIR__ . '/ExecutiveEditor.php';
 require_once __DIR__ . '/Manuscript.php';
 require_once __DIR__ . '/Reviewer.php';
 require_once __DIR__ . '/User.php';
+require_once __DIR__ . '/Stem.php';
 
 use GraphQL\Type\Definition\{ObjectType, Type};
 
@@ -43,6 +44,15 @@ RootQuery::$queryType = new ObjectType([
         'mainIdentifier' => Type::nonNull(Type::string())
       ],
       'resolve' => fn(?int $_rootValue, array $args): ?Manuscript => Manuscript::selectManuscriptById($args['mainIdentifier'])
+    ],
+    'stem' => [
+      'type' => Stem::$graphQLType,
+      'args' => [
+        'form' => Type::nonNull(Type::string()),
+        'pos' => Type::nonNull(Type::string()),
+        'deu' => Type::nonNull(Type::string())
+      ],
+      'resolve' => fn(?int $_rootValue, array $args): ?Stem => Stem::selectStemFromDatabase($args['form'], $args['pos'], $args['deu'])
     ],
     'reviewerQueries' => [
       'type' => Reviewer::$queryType,

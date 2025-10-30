@@ -14,12 +14,13 @@ require_once __DIR__ . '/model/User.php';
 require_once __DIR__ . '/model/Reviewer.php';
 require_once __DIR__ . '/model/ExecutiveEditor.php';
 require_once __DIR__ . '/model/RootQuery.php';
+require_once __DIR__ . '/model/Stem.php';
 
 use GraphQL\Error\{DebugFlag, FormattedError};
 use GraphQL\GraphQL;
 use GraphQL\Type\{Schema, SchemaConfig};
 use GraphQL\Type\Definition\{ObjectType, Type};
-use model\{ExecutiveEditor, Manuscript, ManuscriptInput, Reviewer, RootQuery, User};
+use model\{ExecutiveEditor, Manuscript, ManuscriptInput, Reviewer, RootQuery, User, Stem};
 use Ramsey\Uuid\Uuid;
 use function jwt_helpers\{createJsonWebToken, extractJsonWebToken};
 
