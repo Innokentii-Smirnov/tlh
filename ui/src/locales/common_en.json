@@ -225,5 +225,7 @@
   "uploadText": "Upload text",
   "clearChangesList": "Clear changes list",
   "unfoldAll": "Unfold all",
-  "foldAll": "Fold all"
+  "foldAll": "Fold all",
+  "exportEnglishTranslations": "Export English translations",
+  "uploadEnglishTranslations": "Upload English translations"
 }

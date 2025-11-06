@@ -225,5 +225,7 @@
   "uploadText": "Text hochladen",
   "clearChangesList": "Liste der Änderungen leeren",
   "unfoldAll": "Alle aufklappen",
-  "foldAll": "Alle zuklappen"
+  "foldAll": "Alle zuklappen",
+  "exportEnglishTranslations": "Englische Glossen exportieren",
+  "uploadEnglishTranslations": "Englische Glossen hochladen"
 }
