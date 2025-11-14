@@ -56,9 +56,9 @@ class Stem
 Stem::$graphQLType = new ObjectType([
   'name' => 'Stem',
   'fields' => [
-    'form' => Type::string(),
-    'pos' => Type::string(),
-    'deu' => Type::string(),
-    'eng' => Type::string()
+    'form' => Type::nonNull(Type::string()),
+    'pos' => Type::nonNull(Type::string()),
+    'deu' => Type::nonNull(Type::string()),
+    'eng' => Type::nonNull(Type::string())
   ]
 ]);

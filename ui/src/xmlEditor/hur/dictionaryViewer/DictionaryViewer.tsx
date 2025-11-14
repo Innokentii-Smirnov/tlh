@@ -12,19 +12,7 @@ import { blueButtonClasses } from '../../../defaultDesign';
 import { useTranslation } from 'react-i18next';
 import { getEnglishTranslationKey, EnglishTranslations, setGlobalEnglishTranslations } from '../translations/englishTranslations';
 import update from 'immutability-helper';
-import { gql } from '@apollo/client';
-import { useQuery } from '@apollo/client/react';
-
-const GET_STEM = gql`
-query GetStem($form: String!, $pos: String!, $deu: String!) {
-  stem(form: $form, pos: $pos, deu: $deu) {
-    form
-    pos
-    deu
-    eng
-  }
-}
-`;
+import { useStemQuery } from '../../../graphql';
 
 interface IProps {
   entries: Entry[];
@@ -83,7 +71,7 @@ export function DictionaryViewer({entries, setDictionary, initialEnglishTranslat
           let englishTranslation: string;
           const maybeEnglishTranslation: string | undefined = englishTranslations.get(englishTranslationKey);
           if (maybeEnglishTranslation === undefined) {
-            const { loading, error, data } = useQuery(GET_STEM, {
+            const { loading, error, data } = useStemQuery({
               variables: {form: stemObject.form,
                           pos: stemObject.pos,
                           deu: stemObject.translation}
@@ -92,8 +80,13 @@ export function DictionaryViewer({entries, setDictionary, initialEnglishTranslat
               englishTranslation = '';
               console.log(loading, error);
             } else {
-              console.log(data);
-              englishTranslation = data.stem.eng;
+              if (data !== undefined &&
+                  data.stem !== undefined && data.stem !== null) {
+                console.log(data);
+                englishTranslation = data.stem.eng;
+              } else {
+                englishTranslation = '';
+              }
             }
           } else {
             englishTranslation = maybeEnglishTranslation;

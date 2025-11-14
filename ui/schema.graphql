@@ -170,10 +170,10 @@ enum Rights {
 }
 
 type Stem {
-  deu: String
-  eng: String
-  form: String
-  pos: String
+  deu: String!
+  eng: String!
+  form: String!
+  pos: String!
 }
 
 type User {

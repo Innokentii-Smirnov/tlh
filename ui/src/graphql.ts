@@ -342,10 +342,10 @@ export const enum Rights {
 
 export type Stem = {
   __typename?: 'Stem';
-  deu?: Maybe<Scalars['String']['output']>;
-  eng?: Maybe<Scalars['String']['output']>;
-  form?: Maybe<Scalars['String']['output']>;
-  pos?: Maybe<Scalars['String']['output']>;
+  deu: Scalars['String']['output'];
+  eng: Scalars['String']['output'];
+  form: Scalars['String']['output'];
+  pos: Scalars['String']['output'];
 };
 
 export type User = {
@@ -519,6 +519,15 @@ export type PipelineOverviewQueryVariables = Exact<{
 
 
 export type PipelineOverviewQuery = { __typename?: 'Query', executiveEditorQueries?: { __typename?: 'ExecutiveEditor', allReviewers: Array<string>, documentsInPipeline: Array<{ __typename?: 'DocumentInPipeline', manuscriptIdentifier: string, author: string, appointedTransliterationReviewer?: string | null, transliterationReviewDateString?: string | null, appointedXmlConverter?: string | null, xmlConversionDateString?: string | null, appointedFirstXmlReviewer?: string | null, firstXmlReviewDateString?: string | null, appointedSecondXmlReviewer?: string | null, secondXmlReviewDateString?: string | null }> } | null };
+
+export type StemQueryVariables = Exact<{
+  form: Scalars['String']['input'];
+  pos: Scalars['String']['input'];
+  deu: Scalars['String']['input'];
+}>;
+
+
+export type StemQuery = { __typename?: 'Query', stem?: { __typename?: 'Stem', form: string, pos: string, deu: string, eng: string } | null };
 
 export type AppointTransliterationReviewerMutationVariables = Exact<{
   manuscriptIdentifier: Scalars['String']['input'];
@@ -1384,6 +1393,51 @@ export type PipelineOverviewQueryHookResult = ReturnType<typeof usePipelineOverv
 export type PipelineOverviewLazyQueryHookResult = ReturnType<typeof usePipelineOverviewLazyQuery>;
 export type PipelineOverviewSuspenseQueryHookResult = ReturnType<typeof usePipelineOverviewSuspenseQuery>;
 export type PipelineOverviewQueryResult = Apollo.QueryResult<PipelineOverviewQuery, PipelineOverviewQueryVariables>;
+export const StemDocument = gql`
+    query Stem($form: String!, $pos: String!, $deu: String!) {
+  stem(form: $form, pos: $pos, deu: $deu) {
+    form
+    pos
+    deu
+    eng
+  }
+}
+    `;
+
+/**
+ * __useStemQuery__
+ *
+ * To run a query within a React component, call `useStemQuery` and pass it any options that fit your needs.
+ * When your component renders, `useStemQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useStemQuery({
+ *   variables: {
+ *      form: // value for 'form'
+ *      pos: // value for 'pos'
+ *      deu: // value for 'deu'
+ *   },
+ * });
+ */
+export function useStemQuery(baseOptions: Apollo.QueryHookOptions<StemQuery, StemQueryVariables> & ({ variables: StemQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<StemQuery, StemQueryVariables>(StemDocument, options);
+      }
+export function useStemLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<StemQuery, StemQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<StemQuery, StemQueryVariables>(StemDocument, options);
+        }
+export function useStemSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<StemQuery, StemQueryVariables>) {
+          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
+          return Apollo.useSuspenseQuery<StemQuery, StemQueryVariables>(StemDocument, options);
+        }
+export type StemQueryHookResult = ReturnType<typeof useStemQuery>;
+export type StemLazyQueryHookResult = ReturnType<typeof useStemLazyQuery>;
+export type StemSuspenseQueryHookResult = ReturnType<typeof useStemSuspenseQuery>;
+export type StemQueryResult = Apollo.QueryResult<StemQuery, StemQueryVariables>;
 export const AppointTransliterationReviewerDocument = gql`
     mutation AppointTransliterationReviewer($manuscriptIdentifier: String!, $reviewer: String!) {
   executiveEditor {
