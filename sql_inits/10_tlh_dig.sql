@@ -1,7 +1,6 @@
 use hpm;
 
 drop table if exists
-  tive_stems,
   tlh_dig_approved_transliterations,
   tlh_dig_second_xml_reviews,
   tlh_dig_second_xml_review_appointments,
@@ -157,14 +156,4 @@ create table if not exists tlh_dig_approved_transliterations (
   input             mediumtext   not null,
   approval_username varchar(100) not null references tlh_dig_users (username) on update cascade on delete cascade,
   approval_date     date         not null default now()
-);
-
--- Hurrian stems
-
-create table if not exists tive_stems (
-  stem_id smallint unsigned auto_increment                                            not null primary key,
-  form    varchar(63)                                                                             not null,
-  pos     enum ('ADV', 'CONJ', 'PREP', 'POST', 'INTJ','NUM', 'PRON','NF','noun','verb','unclear') not null,
-  deu     varchar(127)                                                                            not null,
-  eng     varchar(127)                                                                            not null
 );

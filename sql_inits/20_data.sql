@@ -15,6 +15,3 @@ values (@mainid, '1'' # this °m.D°IS-A test?');
 
 insert into tlh_dig_released_transliterations (main_identifier)
 values (@mainid);
-
-insert into tive_stems (form, pos, deu, eng)
-values ('nāli', 'NOUN', 'Rehbock', 'deer');

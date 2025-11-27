@@ -241,17 +241,6 @@ query PipelineOverview($page: Int) {
   }
 }
 
-# Tive queries
-
-query Stem($form: String!, $pos: String!, $deu: String!) {
-  stem(form: $form, pos: $pos, deu: $deu) {
-    form
-    pos
-    deu
-    eng
-  }
-}
-
 # Mutations
 
 mutation AppointTransliterationReviewer($manuscriptIdentifier: String!, $reviewer: String!) {

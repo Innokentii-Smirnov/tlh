@@ -520,15 +520,6 @@ export type PipelineOverviewQueryVariables = Exact<{
 
 export type PipelineOverviewQuery = { __typename?: 'Query', executiveEditorQueries?: { __typename?: 'ExecutiveEditor', allReviewers: Array<string>, documentsInPipeline: Array<{ __typename?: 'DocumentInPipeline', manuscriptIdentifier: string, author: string, appointedTransliterationReviewer?: string | null, transliterationReviewDateString?: string | null, appointedXmlConverter?: string | null, xmlConversionDateString?: string | null, appointedFirstXmlReviewer?: string | null, firstXmlReviewDateString?: string | null, appointedSecondXmlReviewer?: string | null, secondXmlReviewDateString?: string | null }> } | null };
 
-export type StemQueryVariables = Exact<{
-  form: Scalars['String']['input'];
-  pos: Scalars['String']['input'];
-  deu: Scalars['String']['input'];
-}>;
-
-
-export type StemQuery = { __typename?: 'Query', stem?: { __typename?: 'Stem', form: string, pos: string, deu: string, eng: string } | null };
-
 export type AppointTransliterationReviewerMutationVariables = Exact<{
   manuscriptIdentifier: Scalars['String']['input'];
   reviewer: Scalars['String']['input'];
@@ -567,6 +558,15 @@ export type DeleteManuscriptMutationVariables = Exact<{
 
 
 export type DeleteManuscriptMutation = { __typename?: 'Mutation', executiveEditor?: { __typename?: 'ExecutiveEditorMutations', deleteManuscript: boolean } | null };
+
+export type EnglishTranslationQueryVariables = Exact<{
+  form: Scalars['String']['input'];
+  pos: Scalars['String']['input'];
+  deu: Scalars['String']['input'];
+}>;
+
+
+export type EnglishTranslationQuery = { __typename?: 'Query', stem?: { __typename?: 'Stem', eng: string } | null };
 
 export type RegisterMutationVariables = Exact<{
   userInput: UserInput;
@@ -1393,51 +1393,6 @@ export type PipelineOverviewQueryHookResult = ReturnType<typeof usePipelineOverv
 export type PipelineOverviewLazyQueryHookResult = ReturnType<typeof usePipelineOverviewLazyQuery>;
 export type PipelineOverviewSuspenseQueryHookResult = ReturnType<typeof usePipelineOverviewSuspenseQuery>;
 export type PipelineOverviewQueryResult = Apollo.QueryResult<PipelineOverviewQuery, PipelineOverviewQueryVariables>;
-export const StemDocument = gql`
-    query Stem($form: String!, $pos: String!, $deu: String!) {
-  stem(form: $form, pos: $pos, deu: $deu) {
-    form
-    pos
-    deu
-    eng
-  }
-}
-    `;
-
-/**
- * __useStemQuery__
- *
- * To run a query within a React component, call `useStemQuery` and pass it any options that fit your needs.
- * When your component renders, `useStemQuery` returns an object from Apollo Client that contains loading, error, and data properties
- * you can use to render your UI.
- *
- * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
- *
- * @example
- * const { data, loading, error } = useStemQuery({
- *   variables: {
- *      form: // value for 'form'
- *      pos: // value for 'pos'
- *      deu: // value for 'deu'
- *   },
- * });
- */
-export function useStemQuery(baseOptions: Apollo.QueryHookOptions<StemQuery, StemQueryVariables> & ({ variables: StemQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<StemQuery, StemQueryVariables>(StemDocument, options);
-      }
-export function useStemLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<StemQuery, StemQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<StemQuery, StemQueryVariables>(StemDocument, options);
-        }
-export function useStemSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<StemQuery, StemQueryVariables>) {
-          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
-          return Apollo.useSuspenseQuery<StemQuery, StemQueryVariables>(StemDocument, options);
-        }
-export type StemQueryHookResult = ReturnType<typeof useStemQuery>;
-export type StemLazyQueryHookResult = ReturnType<typeof useStemLazyQuery>;
-export type StemSuspenseQueryHookResult = ReturnType<typeof useStemSuspenseQuery>;
-export type StemQueryResult = Apollo.QueryResult<StemQuery, StemQueryVariables>;
 export const AppointTransliterationReviewerDocument = gql`
     mutation AppointTransliterationReviewer($manuscriptIdentifier: String!, $reviewer: String!) {
   executiveEditor {
@@ -1619,6 +1574,48 @@ export function useDeleteManuscriptMutation(baseOptions?: Apollo.MutationHookOpt
 export type DeleteManuscriptMutationHookResult = ReturnType<typeof useDeleteManuscriptMutation>;
 export type DeleteManuscriptMutationResult = Apollo.MutationResult<DeleteManuscriptMutation>;
 export type DeleteManuscriptMutationOptions = Apollo.BaseMutationOptions<DeleteManuscriptMutation, DeleteManuscriptMutationVariables>;
+export const EnglishTranslationDocument = gql`
+    query EnglishTranslation($form: String!, $pos: String!, $deu: String!) {
+  stem(form: $form, pos: $pos, deu: $deu) {
+    eng
+  }
+}
+    `;
+
+/**
+ * __useEnglishTranslationQuery__
+ *
+ * To run a query within a React component, call `useEnglishTranslationQuery` and pass it any options that fit your needs.
+ * When your component renders, `useEnglishTranslationQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useEnglishTranslationQuery({
+ *   variables: {
+ *      form: // value for 'form'
+ *      pos: // value for 'pos'
+ *      deu: // value for 'deu'
+ *   },
+ * });
+ */
+export function useEnglishTranslationQuery(baseOptions: Apollo.QueryHookOptions<EnglishTranslationQuery, EnglishTranslationQueryVariables> & ({ variables: EnglishTranslationQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<EnglishTranslationQuery, EnglishTranslationQueryVariables>(EnglishTranslationDocument, options);
+      }
+export function useEnglishTranslationLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<EnglishTranslationQuery, EnglishTranslationQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<EnglishTranslationQuery, EnglishTranslationQueryVariables>(EnglishTranslationDocument, options);
+        }
+export function useEnglishTranslationSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<EnglishTranslationQuery, EnglishTranslationQueryVariables>) {
+          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
+          return Apollo.useSuspenseQuery<EnglishTranslationQuery, EnglishTranslationQueryVariables>(EnglishTranslationDocument, options);
+        }
+export type EnglishTranslationQueryHookResult = ReturnType<typeof useEnglishTranslationQuery>;
+export type EnglishTranslationLazyQueryHookResult = ReturnType<typeof useEnglishTranslationLazyQuery>;
+export type EnglishTranslationSuspenseQueryHookResult = ReturnType<typeof useEnglishTranslationSuspenseQuery>;
+export type EnglishTranslationQueryResult = Apollo.QueryResult<EnglishTranslationQuery, EnglishTranslationQueryVariables>;
 export const RegisterDocument = gql`
     mutation Register($userInput: UserInput!) {
   register(userInput: $userInput)

@@ -12,7 +12,7 @@ import { blueButtonClasses } from '../../../defaultDesign';
 import { useTranslation } from 'react-i18next';
 import { getEnglishTranslationKey, EnglishTranslations, setGlobalEnglishTranslations } from '../translations/englishTranslations';
 import update from 'immutability-helper';
-import { useStemQuery } from '../../../graphql';
+import { useEnglishTranslationQuery } from '../../../graphql';
 
 interface IProps {
   entries: Entry[];
@@ -71,7 +71,7 @@ export function DictionaryViewer({entries, setDictionary, initialEnglishTranslat
           let englishTranslation: string;
           const maybeEnglishTranslation: string | undefined = englishTranslations.get(englishTranslationKey);
           if (maybeEnglishTranslation === undefined) {
-            const { loading, error, data } = useStemQuery({
+            const { loading, error, data } = useEnglishTranslationQuery({
               variables: {form: stemObject.form,
                           pos: stemObject.pos,
                           deu: stemObject.translation}
