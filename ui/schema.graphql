@@ -145,6 +145,7 @@ enum PalaeographicClassification {
 
 type Query {
   allManuscripts(page: Int!): [ManuscriptMetaData!]!
+  allStems: [Stem!]!
   executiveEditorQueries: ExecutiveEditor
   manuscript(mainIdentifier: String!): ManuscriptMetaData
   manuscriptCount: Int!

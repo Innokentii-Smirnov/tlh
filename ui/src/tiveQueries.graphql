@@ -3,3 +3,12 @@ query EnglishTranslation($form: String!, $pos: String!, $deu: String!) {
     eng
   }
 }
+
+query AllStems {
+  allStems {
+    form
+    pos
+    deu
+    eng
+  }
+}

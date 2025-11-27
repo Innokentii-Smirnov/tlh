@@ -51,6 +51,16 @@ class Stem
       fn(mysqli_stmt $stmt): bool => $stmt->bind_param('ssss', $this->form, $this->pos, $this->deu, $this->eng)
     );
   }
+
+  /** @return Manuscript[] */
+  static function selectAllStems(): array
+  {
+    return SqlHelpers::executeMultiSelectQuery(
+      "select * from tive_stems;",
+      fn(mysqli_stmt $stmt): bool => $stmt,
+      fn(array $row): Stem => Stem::fromDbAssocArray($row)
+    );
+  }
 }
 
 Stem::$graphQLType = new ObjectType([

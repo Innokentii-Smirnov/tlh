@@ -278,6 +278,7 @@ export const enum PalaeographicClassification {
 export type Query = {
   __typename?: 'Query';
   allManuscripts: Array<ManuscriptMetaData>;
+  allStems: Array<Stem>;
   executiveEditorQueries?: Maybe<ExecutiveEditor>;
   manuscript?: Maybe<ManuscriptMetaData>;
   manuscriptCount: Scalars['Int']['output'];
@@ -567,6 +568,11 @@ export type EnglishTranslationQueryVariables = Exact<{
 
 
 export type EnglishTranslationQuery = { __typename?: 'Query', stem?: { __typename?: 'Stem', eng: string } | null };
+
+export type AllStemsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type AllStemsQuery = { __typename?: 'Query', allStems: Array<{ __typename?: 'Stem', form: string, pos: string, deu: string, eng: string }> };
 
 export type RegisterMutationVariables = Exact<{
   userInput: UserInput;
@@ -1616,6 +1622,48 @@ export type EnglishTranslationQueryHookResult = ReturnType<typeof useEnglishTran
 export type EnglishTranslationLazyQueryHookResult = ReturnType<typeof useEnglishTranslationLazyQuery>;
 export type EnglishTranslationSuspenseQueryHookResult = ReturnType<typeof useEnglishTranslationSuspenseQuery>;
 export type EnglishTranslationQueryResult = Apollo.QueryResult<EnglishTranslationQuery, EnglishTranslationQueryVariables>;
+export const AllStemsDocument = gql`
+    query AllStems {
+  allStems {
+    form
+    pos
+    deu
+    eng
+  }
+}
+    `;
+
+/**
+ * __useAllStemsQuery__
+ *
+ * To run a query within a React component, call `useAllStemsQuery` and pass it any options that fit your needs.
+ * When your component renders, `useAllStemsQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useAllStemsQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useAllStemsQuery(baseOptions?: Apollo.QueryHookOptions<AllStemsQuery, AllStemsQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<AllStemsQuery, AllStemsQueryVariables>(AllStemsDocument, options);
+      }
+export function useAllStemsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<AllStemsQuery, AllStemsQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<AllStemsQuery, AllStemsQueryVariables>(AllStemsDocument, options);
+        }
+export function useAllStemsSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<AllStemsQuery, AllStemsQueryVariables>) {
+          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
+          return Apollo.useSuspenseQuery<AllStemsQuery, AllStemsQueryVariables>(AllStemsDocument, options);
+        }
+export type AllStemsQueryHookResult = ReturnType<typeof useAllStemsQuery>;
+export type AllStemsLazyQueryHookResult = ReturnType<typeof useAllStemsLazyQuery>;
+export type AllStemsSuspenseQueryHookResult = ReturnType<typeof useAllStemsSuspenseQuery>;
+export type AllStemsQueryResult = Apollo.QueryResult<AllStemsQuery, AllStemsQueryVariables>;
 export const RegisterDocument = gql`
     mutation Register($userInput: UserInput!) {
   register(userInput: $userInput)

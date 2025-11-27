@@ -54,6 +54,10 @@ RootQuery::$queryType = new ObjectType([
       ],
       'resolve' => fn(?int $_rootValue, array $args): ?Stem => Stem::selectStemFromDatabase($args['form'], $args['pos'], $args['deu'])
     ],
+    'allStems' => [
+      'type' => Type::nonNull(Type::listOf(Type::nonNull(Stem::$graphQLType))),
+      'resolve' => fn(?int $_rootValue, array $args): array => Stem::selectAllStems()
+    ],
     'reviewerQueries' => [
       'type' => Reviewer::$queryType,
       'resolve' => fn(?int $_rootValue, array $args, ?User $user): ?User => !is_null($user) && $user->isReviewer() ? $user : null
