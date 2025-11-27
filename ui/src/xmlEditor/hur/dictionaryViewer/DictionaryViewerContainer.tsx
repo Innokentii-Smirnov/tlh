@@ -1,7 +1,6 @@
 import { JSX, useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { readMorphAnalysisValue } from '../morphologicalAnalysis/auxiliary';
-import { DictionaryUploader } from '../dict/files/DictionaryUploader';
 import { DictionaryViewer } from './DictionaryViewer';
 import { Entry } from './Wordform';
 import { groupBy } from '../common/utils';
@@ -26,7 +25,6 @@ export function DictionaryViewerContainer({getInitialDictionary,
   const {t} = useTranslation('common');
   const initialDictionary = getInitialDictionary();
   const initialEnglishTranslations = getInitialEnglishTranslations();
-  const [loaded, setLoaded] = useState(initialDictionary.size > 0);
   const [dictionary, setDictionary] = useState(initialDictionary);
   
   const subentries: Subentry[] = [];
@@ -60,9 +58,8 @@ export function DictionaryViewerContainer({getInitialDictionary,
   return (
     <div className="container mx-auto">
       <h1 className="font-bold text-2xl text-center">{t('dictionaryViewer')}</h1>
-      {!loaded ? <DictionaryUploader onUpload={() => setLoaded(true)} /> :
       <DictionaryViewer entries={entries} setDictionary={setDictionary}
-                        initialEnglishTranslations={initialEnglishTranslations} />}
+        initialEnglishTranslations={initialEnglishTranslations} />
     </div>
   );
 }

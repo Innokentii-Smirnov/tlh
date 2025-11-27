@@ -30,8 +30,11 @@ export class Stem {
   form: string;
   translation: string;
   pos: string;
-  constructor(repr: string) {
-    [this.index, this.form, this.translation, this.pos] = repr.split('@');
+  constructor(index: number, form: string, translation: string, pos: string) {
+    this.index = index.toString();
+    this.form = form;
+    this.translation = translation;
+    this.pos = pos;
   }
   toString(): string {
     return [this.index, this.form, this.translation, this.pos].join('@');

@@ -7,12 +7,12 @@ import { DictionaryDownloader } from '../dict/files/DictionaryDownloader';
 import { ChangesDownloader } from '../changes/ChangesDownloader';
 import { writeMorphAnalysisValue } from '../../../model/morphologicalAnalysis';
 import { SetDictionary } from '../dict/dictionary';
-import { compare } from '../common/comparison';
+import { compareStems } from '../common/comparison';
 import { blueButtonClasses } from '../../../defaultDesign';
 import { useTranslation } from 'react-i18next';
 import { getEnglishTranslationKey, EnglishTranslations, setGlobalEnglishTranslations } from '../translations/englishTranslations';
 import update from 'immutability-helper';
-import { useEnglishTranslationQuery } from '../../../graphql';
+import { useAllStemsQuery, Stem as GQStem } from '../../../graphql';
 
 interface IProps {
   entries: Entry[];
@@ -49,8 +49,20 @@ export function DictionaryViewer({entries, setDictionary, initialEnglishTranslat
   }, [englishTranslations]);
   
   const grouped = groupBy(entries, keyFunc, valueFunc);
+
+  const { data, loading, error } = useAllStemsQuery({
+    variables: {
+    },
+  });
   
-  const stems = Array.from(grouped.keys()).sort(compare);
+  let stems: GQStem[];
+
+  if (loading || error || data === undefined) {
+    console.log(loading, error);
+    stems = [];
+  } else {
+    stems = data.allStems.sort(compareStems);
+  }
   
   return (
     <div className="grid grid-cols-2 gap-2 my-2 uneven-columns">
@@ -58,39 +70,15 @@ export function DictionaryViewer({entries, setDictionary, initialEnglishTranslat
         Click on the button &quot;&#8744;&quot; or a stem&apos;s number to see its derivatives and inflected forms. <br /> 
         Click on a similar button next to a word to see its attestations. <br />
         <br />
-        {stems.map((stem: string, index: number) => {
-          const group = grouped.get(stem);
+        {stems.map(({form, pos, deu, eng}: GQStem, index: number) => {
+          const stem = new Stem(index + 1, form, deu, pos);
+          const group = grouped.get(stem.toString());
           const entries: Entry[] = group === undefined ? [] : Array.from(group);
-          const stemObject = new Stem((index + 1).toString() + '.@' + stem);
           const key = entries
             .map(entry => writeMorphAnalysisValue(entry.morphologicalAnalysis))
             .join('|');
-          const englishTranslationKey = getEnglishTranslationKey(stemObject.form,
-                                                                 stemObject.pos,
-                                                                 stemObject.translation);
-          let englishTranslation: string;
-          const maybeEnglishTranslation: string | undefined = englishTranslations.get(englishTranslationKey);
-          if (maybeEnglishTranslation === undefined) {
-            const { loading, error, data } = useEnglishTranslationQuery({
-              variables: {form: stemObject.form,
-                          pos: stemObject.pos,
-                          deu: stemObject.translation}
-            });
-            if (loading || error) {
-              englishTranslation = '';
-              console.log(loading, error);
-            } else {
-              if (data !== undefined &&
-                  data.stem !== undefined && data.stem !== null) {
-                console.log(data);
-                englishTranslation = data.stem.eng;
-              } else {
-                englishTranslation = '';
-              }
-            }
-          } else {
-            englishTranslation = maybeEnglishTranslation;
-          }
+          const englishTranslationKey = getEnglishTranslationKey(form, pos, deu);
+          const englishTranslation = eng;
           const setEnglishTranslation = (newEnglishTranslation: string) => {
             if (!(englishTranslation === '' && newEnglishTranslation === '')) {
               setEnglishTranslations(oldEnglishTranslations => update(
@@ -109,7 +97,7 @@ export function DictionaryViewer({entries, setDictionary, initialEnglishTranslat
           ));
           return (
             <StemViewer
-              stem={stemObject}
+              stem={stem}
               initialEntries={entries}
               key={key} 
               setDictionary={setDictionary}

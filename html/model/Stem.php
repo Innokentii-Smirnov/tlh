@@ -52,13 +52,16 @@ class Stem
     );
   }
 
-  /** @return Manuscript[] */
+  /** @return Stem[] */
   static function selectAllStems(): array
   {
+    $form = "nāli";
+    $pos = "noun";
+    $deu = "Rehbock";
     return SqlHelpers::executeMultiSelectQuery(
       "select * from tive_stems;",
-      fn(mysqli_stmt $stmt): bool => $stmt,
-      fn(array $row): Stem => Stem::fromDbAssocArray($row)
+      null,
+      fn(array $row): Stem => Stem::fromDbAssocRow($row)
     );
   }
 }
