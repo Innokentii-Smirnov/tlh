@@ -55,9 +55,6 @@ class Stem
   /** @return Stem[] */
   static function selectAllStems(): array
   {
-    $form = "nāli";
-    $pos = "noun";
-    $deu = "Rehbock";
     return SqlHelpers::executeMultiSelectQuery(
       "select * from tive_stems;",
       null,
