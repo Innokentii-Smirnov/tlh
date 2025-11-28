@@ -217,6 +217,12 @@ export const enum ManuscriptStatus {
   XmlConversionPerformed = 'XmlConversionPerformed'
 };
 
+export type MorphologicalAnalysis = {
+  __typename?: 'MorphologicalAnalysis';
+  gloss: Scalars['String']['output'];
+  segmentation: Scalars['String']['output'];
+};
+
 export type Mutation = {
   __typename?: 'Mutation';
   createManuscript: Scalars['String']['output'];
@@ -282,6 +288,7 @@ export type Query = {
   executiveEditorQueries?: Maybe<ExecutiveEditor>;
   manuscript?: Maybe<ManuscriptMetaData>;
   manuscriptCount: Scalars['Int']['output'];
+  morphologicalAnalysesByStemId: Array<MorphologicalAnalysis>;
   myManuscripts?: Maybe<Array<Scalars['String']['output']>>;
   reviewerQueries?: Maybe<Reviewer>;
   stem?: Maybe<Stem>;
@@ -295,6 +302,11 @@ export type QueryAllManuscriptsArgs = {
 
 export type QueryManuscriptArgs = {
   mainIdentifier: Scalars['String']['input'];
+};
+
+
+export type QueryMorphologicalAnalysesByStemIdArgs = {
+  stemId: Scalars['Int']['input'];
 };
 
 

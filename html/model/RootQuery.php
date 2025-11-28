@@ -8,6 +8,7 @@ require_once __DIR__ . '/Manuscript.php';
 require_once __DIR__ . '/Reviewer.php';
 require_once __DIR__ . '/User.php';
 require_once __DIR__ . '/Stem.php';
+require_once __DIR__ . '/MorphologicalAnalysis.php';
 
 use GraphQL\Type\Definition\{ObjectType, Type};
 

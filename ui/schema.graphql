@@ -120,6 +120,11 @@ enum ManuscriptStatus {
   XmlConversionPerformed
 }
 
+type MorphologicalAnalysis {
+  gloss: String!
+  segmentation: String!
+}
+
 type Mutation {
   createManuscript(values: ManuscriptMetaDataInput): String!
   executiveEditor: ExecutiveEditorMutations
@@ -149,6 +154,7 @@ type Query {
   executiveEditorQueries: ExecutiveEditor
   manuscript(mainIdentifier: String!): ManuscriptMetaData
   manuscriptCount: Int!
+  morphologicalAnalysesByStemId(stemId: Int!): [MorphologicalAnalysis!]!
   myManuscripts: [String!]
   reviewerQueries: Reviewer
   stem(deu: String!, form: String!, pos: String!): Stem
