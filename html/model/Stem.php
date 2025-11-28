@@ -14,13 +14,15 @@ class Stem
 {
   static ObjectType $graphQLType;
 
+  public int $id;
   public string $form;
   public string $pos;
   public string $deu;
   public string $eng;
 
-  function __construct(string $form, string $pos, string $deu, string $eng)
+  function __construct(int $id, string $form, string $pos, string $deu, string $eng)
   {
+    $this->id = $id;
     $this->form = $form;
     $this->pos = $pos;
     $this->deu = $deu;
@@ -29,7 +31,7 @@ class Stem
 
   private static function fromDbAssocRow(array $row): Stem
   {
-    return new Stem($row['form'], $row['pos'], $row['deu'], $row['eng']);
+    return new Stem($row['id'], $row['form'], $row['pos'], $row['deu'], $row['eng']);
   }
 
   // SQL
@@ -56,7 +58,7 @@ class Stem
   static function selectAllStems(): array
   {
     return SqlHelpers::executeMultiSelectQuery(
-      "select * from tive_stems;",
+      "select stem_id as id, form, pos, deu, eng from tive_stems;",
       null,
       fn(array $row): Stem => Stem::fromDbAssocRow($row)
     );
@@ -66,6 +68,7 @@ class Stem
 Stem::$graphQLType = new ObjectType([
   'name' => 'Stem',
   'fields' => [
+    'id' => Type::nonNull(Type::int()),
     'form' => Type::nonNull(Type::string()),
     'pos' => Type::nonNull(Type::string()),
     'deu' => Type::nonNull(Type::string()),
