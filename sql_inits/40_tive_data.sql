@@ -29,3 +29,115 @@ values ('kul', 'verb', 'sprechen', 'speak');
 
 insert into tive_stems (form, pos, deu, eng)
 values ('am', 'verb', 'ansehen', 'look at');
+
+insert into tive_suffix_chains (suffixes, morph_tag, pos)
+values ('', '.ABS', 'noun');
+
+insert into tive_suffix_chains (suffixes, morph_tag, pos)
+values ('ne-ž', 'RELAT.SG-ERG', 'noun');
+
+insert into tive_suffix_chains (suffixes, morph_tag, pos)
+values ('o-m', 'TR.PFV-3A.SG', 'verb');
+
+insert into tive_suffix_chains (suffixes, morph_tag, pos)
+values ('ne-e', 'RELAT.SG-DIR/LOC', 'noun');
+
+insert into tive_suffix_chains (suffixes, morph_tag, pos)
+values ('u', 'MED', 'verb');
+
+insert into tive_suffix_chains (suffixes, morph_tag, pos)
+values ('ar-ill-ō-m', 'ITER-INGR-TR.PFV-3A.SG', 'verb');
+
+insert into tive_suffix_chains (suffixes, morph_tag, pos)
+values ('i-l-ānni', 'MOD.ACT-l-DESID', 'verb');
+
+insert into tive_suffix_chains (suffixes, morph_tag, pos)
+values ('ōr-o-m', 'ōr-TR.PFV-3A.SG', 'verb');
+
+insert into tive_suffix_chains (suffixes, morph_tag, pos)
+values ('ār-a', 'ITER-3A.SG', 'verb');
+
+insert into tive_morphological_analyses (stem_id, suffix_chain_id)
+values (
+  (select stem_id from tive_stems where deu = 'Rehbock'),
+  (select suffix_chain_id from tive_suffix_chains where morph_tag = '.ABS')
+);
+
+insert into tive_morphological_analyses (stem_id, suffix_chain_id)
+values (
+  (select stem_id from tive_stems where deu = 'Berg'),
+  (select suffix_chain_id from tive_suffix_chains where morph_tag = 'RELAT.SG-ERG')
+);
+
+insert into tive_morphological_analyses (stem_id, suffix_chain_id)
+values (
+  (select stem_id from tive_stems where deu = 'vertreiben'),
+  (select suffix_chain_id from tive_suffix_chains where morph_tag = 'TR.PFV-3A.SG')
+);
+
+insert into tive_morphological_analyses (stem_id, suffix_chain_id)
+values (
+  (select stem_id from tive_stems where deu = 'Berg'),
+  (select suffix_chain_id from tive_suffix_chains where morph_tag = 'RElAT.SG-DIR/LOC')
+);
+
+insert into tive_morphological_analyses (stem_id, suffix_chain_id)
+values (
+  (select stem_id from tive_stems where deu = 'sehen'),
+  (select suffix_chain_id from tive_suffix_chains where morph_tag = 'MED')
+);
+
+insert into tive_morphological_analyses (stem_id, suffix_chain_id)
+values (
+  (select stem_id from tive_stems where deu = 'verfluchen'),
+  (select suffix_chain_id from tive_suffix_chains where morph_tag = 'TR.PFV-3A.SG')
+);
+
+insert into tive_morphological_analyses (stem_id, suffix_chain_id)
+values (
+  (select stem_id from tive_stems where deu = 'Berg'),
+  (select suffix_chain_id from tive_suffix_chains where morph_tag = '.ABS')
+);
+
+insert into tive_morphological_analyses (stem_id, suffix_chain_id)
+values (
+  (select stem_id from tive_stems where deu = 'verbrennen'),
+  (select suffix_chain_id from tive_suffix_chains where morph_tag = 'MOD.ACT-l-DESID')
+);
+
+insert into tive_morphological_analyses (stem_id, suffix_chain_id)
+values (
+  (select stem_id from tive_stems where deu = 'Feuer'),
+  (select suffix_chain_id from tive_suffix_chains where morph_tag = 'RELAT.SG-ERG')
+);
+
+insert into tive_morphological_analyses (stem_id, suffix_chain_id)
+values (
+  (select stem_id from tive_stems where deu = 'schlagen'),
+  (select suffix_chain_id from tive_suffix_chains where morph_tag = 'MOD.ACT-l-DESID')
+);
+
+insert into tive_morphological_analyses (stem_id, suffix_chain_id)
+values (
+  (select stem_id from tive_stems where deu = 'schlagen'),
+  (select suffix_chain_id from tive_suffix_chains where morph_tag = 'MOD.ACT-l-DESID')
+);
+
+insert into tive_morphological_analyses (stem_id, suffix_chain_id)
+values (
+  (select stem_id from tive_stems where deu = 'sprechen'),
+  (select suffix_chain_id from tive_suffix_chains where morph_tag = 'ōr-TR.PFV-3A.SG')
+);
+
+
+insert into tive_morphological_analyses (stem_id, suffix_chain_id)
+values (
+  (select stem_id from tive_stems where deu = 'verfluchen'),
+  (select suffix_chain_id from tive_suffix_chains where morph_tag = 'ITER-3A.SG')
+);
+
+insert into tive_morphological_analyses (stem_id, suffix_chain_id)
+values (
+  (select stem_id from tive_stems where deu = 'ansehen'),
+  (select suffix_chain_id from tive_suffix_chains where morph_tag = 'ITER-INGR-TR.PFV-3A.SG')
+);
