@@ -4,16 +4,18 @@ import { Entry, WordformElement } from './Wordform';
 import { MorphologicalAnalysis, writeMorphAnalysisValue }
   from '../../../model/morphologicalAnalysis';
 import update, { Spec } from 'immutability-helper';
-import { findBoundary, getTranslationAndMorphTag } from '../common/splitter';
+import { findBoundary/*, getTranslationAndMorphTag*/ } from '../common/splitter';
 import { changeStem, changePos, changeTranslation } from '../translations/modifyTranslations';
 import { Dictionary, SetDictionary, containsAnalysis } from '../dict/dictionary';
-import { modifyAnalysis } from '../dict/analysisModifier';
+//import { modifyAnalysis } from '../dict/analysisModifier';
 import { addChange } from '../changes/changesAccumulator';
 import { updateConcordanceKey } from '../concordance/concordance';
 import { replaceMorphologicalAnalysis } from '../corpus/corpus';
 import { areCorrect } from '../dict/morphologicalAnalysisValidator';
 import { getMorphTags } from '../morphologicalAnalysis/auxiliary';
 import { getEnglishTranslationKey } from '../translations/englishTranslations';
+import { useMorphologicalAnalysesByStemIdQuery, MorphologicalAnalysis as GQMorph }
+  from '../../../graphql';
 
 const errorSymbol = <>&#9876;</>;
 
@@ -72,7 +74,7 @@ function modifyTranslation(value: string) {
   };
   return setTranslation;
 }
-
+/*
 function handleSegmentationInput(entries: Entry[], index: number, value: string): Entry[] {
   const newEntries = update(entries,
     { [index]: { morphologicalAnalysis: { referenceWord: { $set: value } } } }
@@ -132,7 +134,7 @@ function handleAnalysisBlur(dictionary: Dictionary,
   applySideEffects(initialAnalysis, target, containsAnalysis(dictionary, target));
   return modifyAnalysis(dictionary, transcriptions, initialAnalysis, morphologicalAnalysis);
 }
-
+*/
 function modifyLocalEntries(entries: Entry[],
   modification: (ma: MorphologicalAnalysis) => MorphologicalAnalysis): Entry[] {
   const newEntries: Entry[] = [];
@@ -214,7 +216,7 @@ type StemViewerState = {
   entries: Entry[];
 }
 
-export function StemViewer({stem, initialEntries, setDictionary, initialUnfolded,
+export function StemViewer({id, stem, initialEntries, setDictionary, initialUnfolded,
                             allUnfolded, englishTranslation,
                             onEnglishTranslationBlur,
                             updateEnglishTranslationKey }: IProps): JSX.Element {
@@ -234,6 +236,21 @@ export function StemViewer({stem, initialEntries, setDictionary, initialUnfolded
       areCorrect(entry.morphologicalAnalysis.referenceWord, morphTag)
     )
   );
+
+  const { data, loading, error } = useMorphologicalAnalysesByStemIdQuery({
+    variables: {
+      stemId: id
+    },
+  });
+
+  let morphs: GQMorph[];
+
+  if (loading || error || data === undefined) {
+    console.log(loading, error);
+    morphs = [];
+  } else {
+    morphs = data.morphologicalAnalysesByStemId;
+  }
   
   return (
     <div className="flex flex-row">
@@ -284,35 +301,26 @@ export function StemViewer({stem, initialEntries, setDictionary, initialUnfolded
           englishTranslation={englishTranslation}
           onEnglishTranslationBlur={onEnglishTranslationBlur} />
         <br />
-        {(unfolded || allUnfolded) && entries.map(
-          (entry: Entry, index: number) => {
-            const morphAnalysisValue = writeMorphAnalysisValue(
-              initialEntries[index].morphologicalAnalysis
-            );
+        {(unfolded || allUnfolded) && morphs.map(
+          ({ segmentation, gloss }) => {
 
             return (
-                <WordformElement entry={entry} key={morphAnalysisValue}
+              <WordformElement
+                segmentation={segmentation}
+                gloss={gloss}
+                key={segmentation + ' ' + gloss}
                 initialShowAttestations={allUnfolded}
-                initialMorphologicalAnalysis={initialEntries[index].morphologicalAnalysis}
-                handleSegmentationInput={(value: string) =>
-                  setState(update(state, { entries:
-                    { $set: handleSegmentationInput(entries, index, value) }
-                  }))
-                }
-                handleSegmentationBlur={(value: string) => {
-                  setDictionary((dictionary: Dictionary) =>
-                    handleSegmentationBlur(dictionary, entries, index, value, morphAnalysisValue)
-                  ); 
+                handleSegmentationInput={() => {
+                  // Do nothing.
                 }}
-                handleAnalysisInput={(value: string, optionIndex: number) =>
-                  setState(update(state, { entries:
-                    { $set: handleAnalysisInput(entries, index, value, optionIndex) }
-                  }))
-                }
-                handleAnalysisBlur={(value: string, optionIndex: number) => {
-                  setDictionary((dictionary: Dictionary) =>
-                    handleAnalysisBlur(dictionary, entries, index, value, optionIndex, morphAnalysisValue)
-                  );
+                handleSegmentationBlur={() => {
+                  // Do nothing.
+                }}
+                handleAnalysisInput={() => {
+                  // Do nothing.
+                }}
+                handleAnalysisBlur={() => {
+                  // Do nothing.
                 }} />
               );
             }
