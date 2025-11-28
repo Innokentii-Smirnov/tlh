@@ -180,6 +180,7 @@ type Stem {
   deu: String!
   eng: String!
   form: String!
+  id: Int!
   pos: String!
 }
 

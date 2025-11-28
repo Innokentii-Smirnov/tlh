@@ -42,6 +42,7 @@ export class Stem {
 }
     
 interface IProps {
+  id: number;
   stem: Stem;
   initialEntries: Entry[];
   setDictionary: SetDictionary;

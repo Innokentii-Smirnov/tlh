@@ -358,6 +358,7 @@ export type Stem = {
   deu: Scalars['String']['output'];
   eng: Scalars['String']['output'];
   form: Scalars['String']['output'];
+  id: Scalars['Int']['output'];
   pos: Scalars['String']['output'];
 };
 
@@ -584,7 +585,14 @@ export type EnglishTranslationQuery = { __typename?: 'Query', stem?: { __typenam
 export type AllStemsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type AllStemsQuery = { __typename?: 'Query', allStems: Array<{ __typename?: 'Stem', form: string, pos: string, deu: string, eng: string }> };
+export type AllStemsQuery = { __typename?: 'Query', allStems: Array<{ __typename?: 'Stem', id: number, form: string, pos: string, deu: string, eng: string }> };
+
+export type MorphologicalAnalysesByStemIdQueryVariables = Exact<{
+  stemId: Scalars['Int']['input'];
+}>;
+
+
+export type MorphologicalAnalysesByStemIdQuery = { __typename?: 'Query', morphologicalAnalysesByStemId: Array<{ __typename?: 'MorphologicalAnalysis', segmentation: string, gloss: string }> };
 
 export type RegisterMutationVariables = Exact<{
   userInput: UserInput;
@@ -1637,6 +1645,7 @@ export type EnglishTranslationQueryResult = Apollo.QueryResult<EnglishTranslatio
 export const AllStemsDocument = gql`
     query AllStems {
   allStems {
+    id
     form
     pos
     deu
@@ -1676,6 +1685,47 @@ export type AllStemsQueryHookResult = ReturnType<typeof useAllStemsQuery>;
 export type AllStemsLazyQueryHookResult = ReturnType<typeof useAllStemsLazyQuery>;
 export type AllStemsSuspenseQueryHookResult = ReturnType<typeof useAllStemsSuspenseQuery>;
 export type AllStemsQueryResult = Apollo.QueryResult<AllStemsQuery, AllStemsQueryVariables>;
+export const MorphologicalAnalysesByStemIdDocument = gql`
+    query MorphologicalAnalysesByStemId($stemId: Int!) {
+  morphologicalAnalysesByStemId(stemId: $stemId) {
+    segmentation
+    gloss
+  }
+}
+    `;
+
+/**
+ * __useMorphologicalAnalysesByStemIdQuery__
+ *
+ * To run a query within a React component, call `useMorphologicalAnalysesByStemIdQuery` and pass it any options that fit your needs.
+ * When your component renders, `useMorphologicalAnalysesByStemIdQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useMorphologicalAnalysesByStemIdQuery({
+ *   variables: {
+ *      stemId: // value for 'stemId'
+ *   },
+ * });
+ */
+export function useMorphologicalAnalysesByStemIdQuery(baseOptions: Apollo.QueryHookOptions<MorphologicalAnalysesByStemIdQuery, MorphologicalAnalysesByStemIdQueryVariables> & ({ variables: MorphologicalAnalysesByStemIdQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<MorphologicalAnalysesByStemIdQuery, MorphologicalAnalysesByStemIdQueryVariables>(MorphologicalAnalysesByStemIdDocument, options);
+      }
+export function useMorphologicalAnalysesByStemIdLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<MorphologicalAnalysesByStemIdQuery, MorphologicalAnalysesByStemIdQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<MorphologicalAnalysesByStemIdQuery, MorphologicalAnalysesByStemIdQueryVariables>(MorphologicalAnalysesByStemIdDocument, options);
+        }
+export function useMorphologicalAnalysesByStemIdSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<MorphologicalAnalysesByStemIdQuery, MorphologicalAnalysesByStemIdQueryVariables>) {
+          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
+          return Apollo.useSuspenseQuery<MorphologicalAnalysesByStemIdQuery, MorphologicalAnalysesByStemIdQueryVariables>(MorphologicalAnalysesByStemIdDocument, options);
+        }
+export type MorphologicalAnalysesByStemIdQueryHookResult = ReturnType<typeof useMorphologicalAnalysesByStemIdQuery>;
+export type MorphologicalAnalysesByStemIdLazyQueryHookResult = ReturnType<typeof useMorphologicalAnalysesByStemIdLazyQuery>;
+export type MorphologicalAnalysesByStemIdSuspenseQueryHookResult = ReturnType<typeof useMorphologicalAnalysesByStemIdSuspenseQuery>;
+export type MorphologicalAnalysesByStemIdQueryResult = Apollo.QueryResult<MorphologicalAnalysesByStemIdQuery, MorphologicalAnalysesByStemIdQueryVariables>;
 export const RegisterDocument = gql`
     mutation Register($userInput: UserInput!) {
   register(userInput: $userInput)

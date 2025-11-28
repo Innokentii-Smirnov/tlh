@@ -6,9 +6,17 @@ query EnglishTranslation($form: String!, $pos: String!, $deu: String!) {
 
 query AllStems {
   allStems {
+    id
     form
     pos
     deu
     eng
+  }
+}
+
+query MorphologicalAnalysesByStemId($stemId: Int!) {
+  morphologicalAnalysesByStemId(stemId: $stemId) {
+    segmentation
+    gloss
   }
 }

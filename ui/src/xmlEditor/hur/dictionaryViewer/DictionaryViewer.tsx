@@ -70,7 +70,7 @@ export function DictionaryViewer({entries, setDictionary, initialEnglishTranslat
         Click on the button &quot;&#8744;&quot; or a stem&apos;s number to see its derivatives and inflected forms. <br /> 
         Click on a similar button next to a word to see its attestations. <br />
         <br />
-        {stems.map(({form, pos, deu, eng}: GQStem, index: number) => {
+        {stems.map(({id, form, pos, deu, eng}: GQStem, index: number) => {
           const stem = new Stem(index + 1, form, deu, pos);
           const group = grouped.get(stem.toString());
           const entries: Entry[] = group === undefined ? [] : Array.from(group);
@@ -97,6 +97,7 @@ export function DictionaryViewer({entries, setDictionary, initialEnglishTranslat
           ));
           return (
             <StemViewer
+              id={id}
               stem={stem}
               initialEntries={entries}
               key={key} 
