@@ -63,6 +63,9 @@ values ('ār-a', 'ITER-3A.SG', 'verb');
 insert into tive_suffix_chains (suffixes, morph_tag, pos)
 values ('=ma', '=CON', 'CONJ');
 
+insert into tive_suffix_chains (suffixes, morph_tag, pos)
+values ('', '', 'CONJ');
+
 insert into tive_morphological_analyses (stem_id, suffix_chain_id)
 values (
   (select stem_id from tive_stems where deu = 'Rehbock'),
@@ -145,5 +148,5 @@ values (
 insert into tive_morphological_analyses (stem_id, suffix_chain_id)
 values (
   (select stem_id from tive_stems where deu = 'falls; wenn'),
-  (select suffix_chain_id from tive_suffix_chains where morph_tag = '=CON')
+  (select suffix_chain_id from tive_suffix_chains where morph_tag = '' and pos = 'CONJ')
 );
