@@ -58,6 +58,13 @@ RootQuery::$queryType = new ObjectType([
       'type' => Type::nonNull(Type::listOf(Type::nonNull(Stem::$graphQLType))),
       'resolve' => fn(?int $_rootValue, array $args): array => Stem::selectAllStems()
     ],
+    'morphologicalAnalysesByStemId' => [
+      'type' => Type::nonNull(Type::listOf(Type::nonNull(MorphologicalAnalysis::$graphQLType))),
+      'args' => [
+        'stemId' => Type::nonNull(Type::int())
+      ],
+      'resolve' => fn(?int $_rootValue, array $args): array => MorphologicalAnalysis::selectMorphologicalAnalysesByStemId($args['stemId'])
+    ],
     'reviewerQueries' => [
       'type' => Reviewer::$queryType,
       'resolve' => fn(?int $_rootValue, array $args, ?User $user): ?User => !is_null($user) && $user->isReviewer() ? $user : null
