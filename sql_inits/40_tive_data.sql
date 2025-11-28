@@ -119,12 +119,6 @@ values (
 
 insert into tive_morphological_analyses (stem_id, suffix_chain_id)
 values (
-  (select stem_id from tive_stems where deu = 'schlagen'),
-  (select suffix_chain_id from tive_suffix_chains where morph_tag = 'MOD.ACT-l-DESID')
-);
-
-insert into tive_morphological_analyses (stem_id, suffix_chain_id)
-values (
   (select stem_id from tive_stems where deu = 'sprechen'),
   (select suffix_chain_id from tive_suffix_chains where morph_tag = 'ōr-TR.PFV-3A.SG')
 );
