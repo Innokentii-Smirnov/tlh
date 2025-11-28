@@ -1,5 +1,7 @@
 use hpm;
 
+-- Hurrian stems
+
 insert into tive_stems (form, pos, deu, eng)
 values ('nāli', 'noun', 'Rehbock', 'deer');
 
@@ -33,6 +35,8 @@ values ('am', 'verb', 'ansehen', 'look at');
 insert into tive_stems (form, pos, deu, eng)
 values ('ai', 'CONJ', 'falls; wenn', 'in case; if');
 
+-- Hurrian suffix chains
+
 insert into tive_suffix_chains (suffixes, morph_tag, pos)
 values ('', '.ABS', 'noun');
 
@@ -65,6 +69,8 @@ values ('=ma', '=CON', 'CONJ');
 
 insert into tive_suffix_chains (suffixes, morph_tag, pos)
 values ('', '', 'CONJ');
+
+-- Hurrian morphological analyses
 
 insert into tive_morphological_analyses (stem_id, suffix_chain_id)
 values (
@@ -132,7 +138,6 @@ values (
   (select suffix_chain_id from tive_suffix_chains where morph_tag = 'ōr-TR.PFV-3A.SG')
 );
 
-
 insert into tive_morphological_analyses (stem_id, suffix_chain_id)
 values (
   (select stem_id from tive_stems where deu = 'verfluchen'),
@@ -143,6 +148,12 @@ insert into tive_morphological_analyses (stem_id, suffix_chain_id)
 values (
   (select stem_id from tive_stems where deu = 'ansehen'),
   (select suffix_chain_id from tive_suffix_chains where morph_tag = 'ITER-INGR-TR.PFV-3A.SG')
+);
+
+insert into tive_morphological_analyses (stem_id, suffix_chain_id)
+values (
+  (select stem_id from tive_stems where deu = 'falls; wenn'),
+  (select suffix_chain_id from tive_suffix_chains where morph_tag = '=CON')
 );
 
 insert into tive_morphological_analyses (stem_id, suffix_chain_id)
