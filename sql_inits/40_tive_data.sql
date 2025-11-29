@@ -161,3 +161,94 @@ values (
   (select stem_id from tive_stems where deu = 'falls; wenn'),
   (select suffix_chain_id from tive_suffix_chains where morph_tag = '' and pos = 'CONJ')
 );
+
+-- Hurrian word-forms
+
+insert into tive_wordforms (transcription)
+values ('nāli');
+
+insert into tive_wordforms (transcription)
+values ('ide[v]inež');
+
+insert into tive_wordforms (transcription)
+values ('pabanniž');
+
+insert into tive_wordforms (transcription)
+values ('melaḫḫum');
+
+insert into tive_wordforms (transcription)
+values ('ōlbīni');
+
+insert into tive_wordforms (transcription)
+values ('pabanni');
+
+insert into tive_wordforms (transcription)
+values ('ḫabānab');
+
+insert into tive_wordforms (transcription)
+values ('fūru');
+
+insert into tive_wordforms (transcription)
+values ('tēlu');
+
+insert into tive_wordforms (transcription)
+values ('tapšū');
+
+insert into tive_wordforms (transcription)
+values ('šidarillōm');
+
+insert into tive_wordforms (transcription)
+values ('āi');
+
+insert into tive_wordforms (transcription)
+values ('pābanni');
+
+insert into tive_wordforms (transcription)
+values ('amelānni');
+
+insert into tive_wordforms (transcription)
+values ('tārrež');
+
+insert into tive_wordforms (transcription)
+values ('idilānni');
+
+insert into tive_wordforms (transcription)
+values ('teššōbaž');
+
+insert into tive_wordforms (transcription)
+values ('tārriž');
+
+insert into tive_wordforms (transcription)
+values ('pabāni');
+
+insert into tive_wordforms (transcription)
+values ('ḫāžīmai');
+
+insert into tive_wordforms (transcription)
+values ('kulōrum');
+
+insert into tive_wordforms (transcription)
+values ('šidāra');
+
+insert into tive_wordforms (transcription)
+values ('amarillōm');
+
+insert into tive_wordforms (transcription)
+values ('aima');
+
+insert into tive_wordforms (transcription)
+values ('āima');
+
+insert into tive_wordforms (transcription)
+values ('āi');
+
+-- Hurrian morphosyntactic words
+
+insert into tive_morphosyntactic_words (wordform_id, morphological_analysis_id)
+select wordform_id, morphological_analysis_id from
+  (select wordform_id from tive_wordforms
+    where transcription regexp '[aā]ima') wordforms cross join
+  (select morphological_analysis_id from tive_morphological_analyses ma
+    inner join tive_stems stem on ma.stem_id = stem.stem_id
+    inner join tive_suffix_chains suff on ma.suffix_chain_id = suff.suffix_chain_id
+    where stem.deu = 'falls; wenn' and suff.morph_tag = '=CON') morphs;
