@@ -20,3 +20,9 @@ query MorphologicalAnalysesByStemId($stemId: Int!) {
     gloss
   }
 }
+
+query TranscriptionsByMorphologicalAnalysisId($morphologicalAnalysisId: Int!) {
+  transcriptionsByMorphologicalAnalysisId(morphologicalAnalysisId: $morphologicalAnalysisId) {
+    transcription
+  }
+}

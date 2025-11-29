@@ -605,6 +605,13 @@ export type MorphologicalAnalysesByStemIdQueryVariables = Exact<{
 
 export type MorphologicalAnalysesByStemIdQuery = { __typename?: 'Query', morphologicalAnalysesByStemId: Array<{ __typename?: 'MorphologicalAnalysis', segmentation: string, gloss: string }> };
 
+export type TranscriptionsByMorphologicalAnalysisIdQueryVariables = Exact<{
+  morphologicalAnalysisId: Scalars['Int']['input'];
+}>;
+
+
+export type TranscriptionsByMorphologicalAnalysisIdQuery = { __typename?: 'Query', transcriptionsByMorphologicalAnalysisId: Array<{ __typename?: 'Wordform', transcription: string }> };
+
 export type RegisterMutationVariables = Exact<{
   userInput: UserInput;
 }>;
@@ -1737,6 +1744,48 @@ export type MorphologicalAnalysesByStemIdQueryHookResult = ReturnType<typeof use
 export type MorphologicalAnalysesByStemIdLazyQueryHookResult = ReturnType<typeof useMorphologicalAnalysesByStemIdLazyQuery>;
 export type MorphologicalAnalysesByStemIdSuspenseQueryHookResult = ReturnType<typeof useMorphologicalAnalysesByStemIdSuspenseQuery>;
 export type MorphologicalAnalysesByStemIdQueryResult = Apollo.QueryResult<MorphologicalAnalysesByStemIdQuery, MorphologicalAnalysesByStemIdQueryVariables>;
+export const TranscriptionsByMorphologicalAnalysisIdDocument = gql`
+    query TranscriptionsByMorphologicalAnalysisId($morphologicalAnalysisId: Int!) {
+  transcriptionsByMorphologicalAnalysisId(
+    morphologicalAnalysisId: $morphologicalAnalysisId
+  ) {
+    transcription
+  }
+}
+    `;
+
+/**
+ * __useTranscriptionsByMorphologicalAnalysisIdQuery__
+ *
+ * To run a query within a React component, call `useTranscriptionsByMorphologicalAnalysisIdQuery` and pass it any options that fit your needs.
+ * When your component renders, `useTranscriptionsByMorphologicalAnalysisIdQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useTranscriptionsByMorphologicalAnalysisIdQuery({
+ *   variables: {
+ *      morphologicalAnalysisId: // value for 'morphologicalAnalysisId'
+ *   },
+ * });
+ */
+export function useTranscriptionsByMorphologicalAnalysisIdQuery(baseOptions: Apollo.QueryHookOptions<TranscriptionsByMorphologicalAnalysisIdQuery, TranscriptionsByMorphologicalAnalysisIdQueryVariables> & ({ variables: TranscriptionsByMorphologicalAnalysisIdQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<TranscriptionsByMorphologicalAnalysisIdQuery, TranscriptionsByMorphologicalAnalysisIdQueryVariables>(TranscriptionsByMorphologicalAnalysisIdDocument, options);
+      }
+export function useTranscriptionsByMorphologicalAnalysisIdLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<TranscriptionsByMorphologicalAnalysisIdQuery, TranscriptionsByMorphologicalAnalysisIdQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<TranscriptionsByMorphologicalAnalysisIdQuery, TranscriptionsByMorphologicalAnalysisIdQueryVariables>(TranscriptionsByMorphologicalAnalysisIdDocument, options);
+        }
+export function useTranscriptionsByMorphologicalAnalysisIdSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<TranscriptionsByMorphologicalAnalysisIdQuery, TranscriptionsByMorphologicalAnalysisIdQueryVariables>) {
+          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
+          return Apollo.useSuspenseQuery<TranscriptionsByMorphologicalAnalysisIdQuery, TranscriptionsByMorphologicalAnalysisIdQueryVariables>(TranscriptionsByMorphologicalAnalysisIdDocument, options);
+        }
+export type TranscriptionsByMorphologicalAnalysisIdQueryHookResult = ReturnType<typeof useTranscriptionsByMorphologicalAnalysisIdQuery>;
+export type TranscriptionsByMorphologicalAnalysisIdLazyQueryHookResult = ReturnType<typeof useTranscriptionsByMorphologicalAnalysisIdLazyQuery>;
+export type TranscriptionsByMorphologicalAnalysisIdSuspenseQueryHookResult = ReturnType<typeof useTranscriptionsByMorphologicalAnalysisIdSuspenseQuery>;
+export type TranscriptionsByMorphologicalAnalysisIdQueryResult = Apollo.QueryResult<TranscriptionsByMorphologicalAnalysisIdQuery, TranscriptionsByMorphologicalAnalysisIdQueryVariables>;
 export const RegisterDocument = gql`
     mutation Register($userInput: UserInput!) {
   register(userInput: $userInput)
