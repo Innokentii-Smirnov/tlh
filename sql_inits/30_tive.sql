@@ -9,7 +9,7 @@ drop table if exists
 
 create table if not exists tive_stems (
   stem_id smallint unsigned auto_increment                                                        not null,
-  form    varchar(63)                                                                             not null,
+  form    varchar(63) character set utf8mb4 collate utf8mb4_unicode_ci                            not null,
   pos     enum ('ADV', 'CONJ', 'PREP', 'POST', 'INTJ','NUM', 'PRON','NF','noun','verb','unclear') not null,
   deu     varchar(127)                                                                            not null,
   eng     varchar(127)                                                                            not null,
@@ -18,7 +18,7 @@ create table if not exists tive_stems (
 
 create table if not exists tive_suffix_chains (
   suffix_chain_id smallint unsigned auto_increment                                                not null,
-  suffixes        varchar(63)                                                                     not null,
+  suffixes        varchar(63) character set utf8mb4 collate utf8mb4_unicode_ci                    not null,
   morph_tag       varchar(127)                                                                    not null,
   pos     enum ('ADV', 'CONJ', 'PREP', 'POST', 'INTJ','NUM', 'PRON','NF','noun','verb','unclear') not null,
   constraint pk_tive_suffix_chains primary key (suffix_chain_id)
@@ -36,8 +36,8 @@ create table if not exists tive_morphological_analyses (
 );
 
 create table if not exists tive_wordforms (
-  wordform_id   smallint unsigned auto_increment  not null,
-  transcription varchar(127)                      not null,
+  wordform_id   smallint unsigned auto_increment                                    not null,
+  transcription varchar(127) character set utf8mb4 collate utf8mb4_unicode_ci       not null,
   constraint pk_tive_wordforms primary key (wordform_id)
 );
 

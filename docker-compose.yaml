@@ -17,3 +17,5 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=abcd
       - MYSQL_DATABASE=hpm
+      - LANG=C.UTF-8
+    command: ['mysqld', '--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci']
