@@ -184,6 +184,13 @@ $mutationType = new ObjectType([
       ],
       'resolve' => fn(?int $_rootValue, array $args): ?Manuscript => Manuscript::selectManuscriptById($args['mainIdentifier'])
     ],
+    'stem' => [
+      'type' => Stem::$graphQLMutationsType,
+      'args' => [
+        'stemId' => Type::nonNull(Type::int())
+      ],
+      'resolve' => fn(?int $_rootValue, array $args): Stem => Stem::selectStemById($args['stemId'])
+    ],
     'reviewerMutations' => [
       'type' => Reviewer::$mutationType,
       'resolve' => fn(?int $_rootValue, array $_args, ?User $user): ?User => !is_null($user) && $user->isReviewer() ? $user : null

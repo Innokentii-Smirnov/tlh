@@ -13,6 +13,7 @@ use sql_helpers\SqlHelpers;
 class Stem
 {
   static ObjectType $graphQLType;
+  static ObjectType $graphQLMutationsType;
 
   public int $id;
   public string $form;
@@ -54,6 +55,15 @@ class Stem
     );
   }
 
+  static function selectStemById(int $id): Stem
+  {
+    return SqlHelpers::executeSingleReturnRowQuery(
+      "select stem_id as id, form, pos, deu, eng from tive_stems where stem_id = ?;",
+      fn(mysqli_stmt $stmt): bool => $stmt->bind_param('i', $id),
+      fn(array $row): Stem => Stem::fromDbAssocRow($row)
+    );
+  }
+
   /** @return Stem[] */
   static function selectAllStems(): array
   {
@@ -61,6 +71,42 @@ class Stem
       "select stem_id as id, form, pos, deu, eng from tive_stems;",
       null,
       fn(array $row): Stem => Stem::fromDbAssocRow($row)
+    );
+  }
+
+  /** @throws Exception */
+  function changeForm(string $form): bool
+  {
+    return SqlHelpers::executeSingleChangeQuery(
+      "update tive_stems set form = ? where stem_id = ?;",
+      fn(mysqli_stmt $stmt): bool => $stmt->bind_param('si', $form, $this->id)
+    );
+  }
+
+  /** @throws Exception */
+  function changePos(string $pos): bool
+  {
+    return SqlHelpers::executeSingleChangeQuery(
+      "update tive_stems set pos = ? where stem_id = ?;",
+      fn(mysqli_stmt $stmt): bool => $stmt->bind_param('si', $pos, $this->id)
+    );
+  }
+
+  /** @throws Exception */
+  function changeGermanTranslation(string $deu): bool
+  {
+    return SqlHelpers::executeSingleChangeQuery(
+      "update tive_stems set deu = ? where stem_id = ?;",
+      fn(mysqli_stmt $stmt): bool => $stmt->bind_param('si', $deu, $this->id)
+    );
+  }
+
+  /** @throws Exception */
+  function changeEnglishTranslation(string $eng): bool
+  {
+    return SqlHelpers::executeSingleChangeQuery(
+      "update tive_stems set eng = ? where stem_id = ?;",
+      fn(mysqli_stmt $stmt): bool => $stmt->bind_param('si', $eng, $this->id)
     );
   }
 }
@@ -73,5 +119,47 @@ Stem::$graphQLType = new ObjectType([
     'pos' => Type::nonNull(Type::string()),
     'deu' => Type::nonNull(Type::string()),
     'eng' => Type::nonNull(Type::string())
+  ]
+]);
+
+Stem::$graphQLMutationsType = new ObjectType([
+  'name' => 'StemMutations',
+  'fields' => [
+    'changeForm' => [
+      'type' => Type::nonNull(Type::boolean()),
+      'args' => [
+        'form' => Type::nonNull(Type::string())
+      ],
+      'resolve' => function(Stem $stem, array $args): bool {
+        return $stem->changeForm($args['form']);
+      }
+    ],
+    'changePos' => [
+      'type' => Type::nonNull(Type::boolean()),
+      'args' => [
+        'pos' => Type::nonNull(Type::string())
+      ],
+      'resolve' => function(Stem $stem, array $args): bool {
+        return $stem->changePos($args['pos']);
+      }
+    ],
+    'changeGermanTranslation' => [
+      'type' => Type::nonNull(Type::boolean()),
+      'args' => [
+        'deu' => Type::nonNull(Type::string())
+      ],
+      'resolve' => function(Stem $stem, array $args): bool {
+        return $stem->changeGermanTranslation($args['deu']);
+      }
+    ],
+    'changeEnglishTranslation' => [
+      'type' => Type::nonNull(Type::boolean()),
+      'args' => [
+        'eng' => Type::nonNull(Type::string())
+      ],
+      'resolve' => function(Stem $stem, array $args): bool {
+        return $stem->changeEnglishTranslation($args['eng']);
+      }
+    ]
   ]
 ]);

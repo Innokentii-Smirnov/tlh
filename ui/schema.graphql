@@ -135,6 +135,7 @@ type Mutation {
   register(userInput: UserInput!): String
   resetPassword(newPassword: String!, newPasswordRepeat: String!, uuid: String!): String
   reviewerMutations: ReviewerMutations
+  stem(stemId: Int!): StemMutations
 }
 
 enum PalaeographicClassification {
@@ -184,6 +185,13 @@ type Stem {
   form: String!
   id: Int!
   pos: String!
+}
+
+type StemMutations {
+  changeEnglishTranslation(eng: String!): Boolean!
+  changeForm(form: String!): Boolean!
+  changeGermanTranslation(deu: String!): Boolean!
+  changePos(pos: String!): Boolean!
 }
 
 type User {

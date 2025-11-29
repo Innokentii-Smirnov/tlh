@@ -234,6 +234,7 @@ export type Mutation = {
   register?: Maybe<Scalars['String']['output']>;
   resetPassword?: Maybe<Scalars['String']['output']>;
   reviewerMutations?: Maybe<ReviewerMutations>;
+  stem?: Maybe<StemMutations>;
 };
 
 
@@ -268,6 +269,11 @@ export type MutationResetPasswordArgs = {
   newPassword: Scalars['String']['input'];
   newPasswordRepeat: Scalars['String']['input'];
   uuid: Scalars['String']['input'];
+};
+
+
+export type MutationStemArgs = {
+  stemId: Scalars['Int']['input'];
 };
 
 export const enum PalaeographicClassification {
@@ -367,6 +373,34 @@ export type Stem = {
   form: Scalars['String']['output'];
   id: Scalars['Int']['output'];
   pos: Scalars['String']['output'];
+};
+
+export type StemMutations = {
+  __typename?: 'StemMutations';
+  changeEnglishTranslation: Scalars['Boolean']['output'];
+  changeForm: Scalars['Boolean']['output'];
+  changeGermanTranslation: Scalars['Boolean']['output'];
+  changePos: Scalars['Boolean']['output'];
+};
+
+
+export type StemMutationsChangeEnglishTranslationArgs = {
+  eng: Scalars['String']['input'];
+};
+
+
+export type StemMutationsChangeFormArgs = {
+  form: Scalars['String']['input'];
+};
+
+
+export type StemMutationsChangeGermanTranslationArgs = {
+  deu: Scalars['String']['input'];
+};
+
+
+export type StemMutationsChangePosArgs = {
+  pos: Scalars['String']['input'];
 };
 
 export type User = {
