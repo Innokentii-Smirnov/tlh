@@ -3,7 +3,8 @@ import { MorphologicalAnalysis as Morph } from '../../../model/morphologicalAnal
 import { Attestation } from '../concordance/concordance';
 import { getLine } from '../corpus/corpus';
 import { ConcordanceEntryViewer } from '../concordanceEntryViewer/ConcordanceEntryViewer';
-import { MorphologicalAnalysis } from '../../../graphql';
+import { MorphologicalAnalysis, useTranscriptionsByMorphologicalAnalysisIdQuery,
+         Wordform } from '../../../graphql';
 
 export interface Entry {
   transcriptions: string[];
@@ -23,9 +24,24 @@ export function WordformElement({ morphologicalAnalysis, handleSegmentationInput
   handleSegmentationBlur, handleAnalysisInput, handleAnalysisBlur,
   initialShowAttestations }: IProps): JSX.Element {
   
-  const { segmentation, gloss } = morphologicalAnalysis;
+  const { id, segmentation, gloss } = morphologicalAnalysis;
   const [showAttestations, setShowAttestations] = useState(initialShowAttestations);
-  const transcriptions: string[] = [];
+
+  const { data, loading, error } = useTranscriptionsByMorphologicalAnalysisIdQuery({
+    variables: {
+      morphologicalAnalysisId: id
+    },
+  });
+  let transcriptions: string[];
+  if (loading || error || data === undefined) {
+    console.log(loading, error);
+    transcriptions = [];
+  } else {
+    transcriptions = data.transcriptionsByMorphologicalAnalysisId.map(
+      (wordform: Wordform) => wordform.transcription
+    );
+  }
+
   const attestations: Attestation[] = [];
   
   return (
