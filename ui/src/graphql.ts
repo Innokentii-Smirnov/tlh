@@ -220,6 +220,7 @@ export const enum ManuscriptStatus {
 export type MorphologicalAnalysis = {
   __typename?: 'MorphologicalAnalysis';
   gloss: Scalars['String']['output'];
+  id: Scalars['Int']['output'];
   segmentation: Scalars['String']['output'];
 };
 
@@ -603,7 +604,7 @@ export type MorphologicalAnalysesByStemIdQueryVariables = Exact<{
 }>;
 
 
-export type MorphologicalAnalysesByStemIdQuery = { __typename?: 'Query', morphologicalAnalysesByStemId: Array<{ __typename?: 'MorphologicalAnalysis', segmentation: string, gloss: string }> };
+export type MorphologicalAnalysesByStemIdQuery = { __typename?: 'Query', morphologicalAnalysesByStemId: Array<{ __typename?: 'MorphologicalAnalysis', id: number, segmentation: string, gloss: string }> };
 
 export type TranscriptionsByMorphologicalAnalysisIdQueryVariables = Exact<{
   morphologicalAnalysisId: Scalars['Int']['input'];
@@ -1706,6 +1707,7 @@ export type AllStemsQueryResult = Apollo.QueryResult<AllStemsQuery, AllStemsQuer
 export const MorphologicalAnalysesByStemIdDocument = gql`
     query MorphologicalAnalysesByStemId($stemId: Int!) {
   morphologicalAnalysesByStemId(stemId: $stemId) {
+    id
     segmentation
     gloss
   }

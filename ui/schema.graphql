@@ -122,6 +122,7 @@ enum ManuscriptStatus {
 
 type MorphologicalAnalysis {
   gloss: String!
+  id: Int!
   segmentation: String!
 }
 
