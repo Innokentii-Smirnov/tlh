@@ -2,8 +2,8 @@
 
 namespace model;
 
-require_once __DIR__ . '../verndor/autoload.php';
-require_once __DIR__ . '../sql_helpers.php';
+require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/../sql_helpers.php';
 
 use Exception;
 use GraphQL\Type\Definition\{ObjectType, Type};

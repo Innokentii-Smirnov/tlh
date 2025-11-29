@@ -292,6 +292,7 @@ export type Query = {
   myManuscripts?: Maybe<Array<Scalars['String']['output']>>;
   reviewerQueries?: Maybe<Reviewer>;
   stem?: Maybe<Stem>;
+  transcriptionsByMorphologicalAnalysisId: Array<Wordform>;
 };
 
 
@@ -314,6 +315,11 @@ export type QueryStemArgs = {
   deu: Scalars['String']['input'];
   form: Scalars['String']['input'];
   pos: Scalars['String']['input'];
+};
+
+
+export type QueryTranscriptionsByMorphologicalAnalysisIdArgs = {
+  morphologicalAnalysisId: Scalars['Int']['input'];
 };
 
 export type Reviewer = {
@@ -378,6 +384,11 @@ export type UserInput = {
   password: Scalars['String']['input'];
   passwordRepeat: Scalars['String']['input'];
   username: Scalars['String']['input'];
+};
+
+export type Wordform = {
+  __typename?: 'Wordform';
+  transcription: Scalars['String']['output'];
 };
 
 export const enum XmlReviewType {

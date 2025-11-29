@@ -158,6 +158,7 @@ type Query {
   myManuscripts: [String!]
   reviewerQueries: Reviewer
   stem(deu: String!, form: String!, pos: String!): Stem
+  transcriptionsByMorphologicalAnalysisId(morphologicalAnalysisId: Int!): [Wordform!]!
 }
 
 type Reviewer {
@@ -199,6 +200,10 @@ input UserInput {
   password: String!
   passwordRepeat: String!
   username: String!
+}
+
+type Wordform {
+  transcription: String!
 }
 
 enum XmlReviewType {
