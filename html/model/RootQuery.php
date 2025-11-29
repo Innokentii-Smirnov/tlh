@@ -9,6 +9,7 @@ require_once __DIR__ . '/Reviewer.php';
 require_once __DIR__ . '/User.php';
 require_once __DIR__ . '/Stem.php';
 require_once __DIR__ . '/MorphologicalAnalysis.php';
+require_once __DIR__ . '/Wordform.php';
 
 use GraphQL\Type\Definition\{ObjectType, Type};
 
@@ -65,6 +66,13 @@ RootQuery::$queryType = new ObjectType([
         'stemId' => Type::nonNull(Type::int())
       ],
       'resolve' => fn(?int $_rootValue, array $args): array => MorphologicalAnalysis::selectMorphologicalAnalysesByStemId($args['stemId'])
+    ],
+    'transcriptionsByMorphologicalAnalysisId' => [
+      'type' => Type::nonNull(Type::listOf(Type::nonNull(Wordform::$graphQLType))),
+      'args' => [
+        'morphologicalAnalysisId' => Type::nonNull(Type::int())
+      ],
+      'resolve' => fn(?int $_rootValue, array $args): array => Wordform::selectTranscriptionsByMorphologicalAnalysisId($args['morphologicalAnalysisId'])
     ],
     'reviewerQueries' => [
       'type' => Reviewer::$queryType,
