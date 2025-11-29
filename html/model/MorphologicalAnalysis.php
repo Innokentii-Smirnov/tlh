@@ -14,18 +14,20 @@ class MorphologicalAnalysis
 {
   static ObjectType $graphQLType;
 
+  public int $id;
   public string $segmentation;
   public string $gloss;
 
-  function __construct(string $segmentation, string $gloss)
+  function __construct(int $id, string $segmentation, string $gloss)
   {
+    $this->id = $id;
     $this->segmentation = $segmentation;
     $this->gloss = $gloss;
   }
 
   private static function fromDbAssocRow(array $row): MorphologicalAnalysis
   {
-    return new MorphologicalAnalysis($row['segmentation'], $row['gloss']);
+    return new MorphologicalAnalysis($row['id'],  $row['segmentation'], $row['gloss']);
   }
 
   /** @return MorphologicalAnalysis[] */
@@ -33,6 +35,7 @@ class MorphologicalAnalysis
   {
     $sqlQuery = <<<'SQL'
     select
+      analysis.morphological_analysis_id as id,
       case
         when suff.suffixes = '' or suff.suffixes like '=%'
           then concat(stem.form, suff.suffixes)
@@ -61,6 +64,7 @@ SQL;
 MorphologicalAnalysis::$graphQLType = new ObjectType([
   'name' => 'MorphologicalAnalysis',
   'fields' => [
+    'id' => Type::nonNull(Type::int()),
     'segmentation' => Type::nonNull(Type::string()),
     'gloss' => Type::nonNull(Type::string())
   ]
