@@ -1,17 +1,17 @@
 import { JSX, useState } from 'react';
-import { MorphologicalAnalysis } from '../../../model/morphologicalAnalysis';
+import { MorphologicalAnalysis as Morph } from '../../../model/morphologicalAnalysis';
 import { Attestation } from '../concordance/concordance';
 import { getLine } from '../corpus/corpus';
 import { ConcordanceEntryViewer } from '../concordanceEntryViewer/ConcordanceEntryViewer';
+import { MorphologicalAnalysis } from '../../../graphql';
 
 export interface Entry {
   transcriptions: string[];
-  morphologicalAnalysis: MorphologicalAnalysis;
+  morphologicalAnalysis: Morph;
 }
 
 interface IProps {
-  segmentation: string;
-  gloss: string;
+  morphologicalAnalysis: MorphologicalAnalysis;
   handleSegmentationInput: (value: string) => void;
   handleSegmentationBlur: (value: string) => void;
   handleAnalysisInput: (value: string) => void;
@@ -19,10 +19,11 @@ interface IProps {
   initialShowAttestations: boolean;
 }
 
-export function WordformElement({ segmentation, gloss, handleSegmentationInput,
+export function WordformElement({ morphologicalAnalysis, handleSegmentationInput,
   handleSegmentationBlur, handleAnalysisInput, handleAnalysisBlur,
   initialShowAttestations }: IProps): JSX.Element {
   
+  const { segmentation, gloss } = morphologicalAnalysis;
   const [showAttestations, setShowAttestations] = useState(initialShowAttestations);
   const transcriptions: string[] = [];
   const attestations: Attestation[] = [];

@@ -302,12 +302,11 @@ export function StemViewer({id, stem, initialEntries, setDictionary, initialUnfo
           onEnglishTranslationBlur={onEnglishTranslationBlur} />
         <br />
         {(unfolded || allUnfolded) && morphs.map(
-          ({ segmentation, gloss }) => {
-
+          (morphologicalAnalysis) => {
+            const { segmentation, gloss } = morphologicalAnalysis;
             return (
               <WordformElement
-                segmentation={segmentation}
-                gloss={gloss}
+                morphologicalAnalysis={morphologicalAnalysis}
                 key={segmentation + ' ' + gloss}
                 initialShowAttestations={allUnfolded}
                 handleSegmentationInput={() => {
