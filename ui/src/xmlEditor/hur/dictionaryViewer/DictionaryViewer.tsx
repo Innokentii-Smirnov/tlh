@@ -98,7 +98,7 @@ export function DictionaryViewer({entries, setDictionary, initialEnglishTranslat
           ));
           return (
             <StemViewer
-              stemListIndex={index}
+              stemListIndex={index + 1}
               stem={gqStem}
               initialEntries={entries}
               key={key}
