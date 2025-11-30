@@ -17,8 +17,8 @@ query AllStems {
 query MorphologicalAnalysesByStemId($stemId: Int!) {
   morphologicalAnalysesByStemId(stemId: $stemId) {
     id
-    segmentation
-    gloss
+    suffixes
+    morphTag
   }
 }
 

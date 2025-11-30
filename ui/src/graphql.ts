@@ -219,9 +219,9 @@ export const enum ManuscriptStatus {
 
 export type MorphologicalAnalysis = {
   __typename?: 'MorphologicalAnalysis';
-  gloss: Scalars['String']['output'];
   id: Scalars['Int']['output'];
-  segmentation: Scalars['String']['output'];
+  morphTag: Scalars['String']['output'];
+  suffixes: Scalars['String']['output'];
 };
 
 export type Mutation = {
@@ -638,7 +638,7 @@ export type MorphologicalAnalysesByStemIdQueryVariables = Exact<{
 }>;
 
 
-export type MorphologicalAnalysesByStemIdQuery = { __typename?: 'Query', morphologicalAnalysesByStemId: Array<{ __typename?: 'MorphologicalAnalysis', id: number, segmentation: string, gloss: string }> };
+export type MorphologicalAnalysesByStemIdQuery = { __typename?: 'Query', morphologicalAnalysesByStemId: Array<{ __typename?: 'MorphologicalAnalysis', id: number, suffixes: string, morphTag: string }> };
 
 export type TranscriptionsByMorphologicalAnalysisIdQueryVariables = Exact<{
   morphologicalAnalysisId: Scalars['Int']['input'];
@@ -1774,8 +1774,8 @@ export const MorphologicalAnalysesByStemIdDocument = gql`
     query MorphologicalAnalysesByStemId($stemId: Int!) {
   morphologicalAnalysesByStemId(stemId: $stemId) {
     id
-    segmentation
-    gloss
+    suffixes
+    morphTag
   }
 }
     `;

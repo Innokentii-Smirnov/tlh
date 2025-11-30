@@ -15,19 +15,19 @@ class MorphologicalAnalysis
   static ObjectType $graphQLType;
 
   public int $id;
-  public string $segmentation;
-  public string $gloss;
+  public string $suffixes;
+  public string $morphTag;
 
-  function __construct(int $id, string $segmentation, string $gloss)
+  function __construct(int $id, string $suffixes, string $morphTag)
   {
     $this->id = $id;
-    $this->segmentation = $segmentation;
-    $this->gloss = $gloss;
+    $this->suffixes = $suffixes;
+    $this->morphTag = $morphTag;
   }
 
   private static function fromDbAssocRow(array $row): MorphologicalAnalysis
   {
-    return new MorphologicalAnalysis($row['id'],  $row['segmentation'], $row['gloss']);
+    return new MorphologicalAnalysis($row['id'],  $row['suffixes'], $row['morph_tag']);
   }
 
   /** @return MorphologicalAnalysis[] */
@@ -36,19 +36,9 @@ class MorphologicalAnalysis
     $sqlQuery = <<<'SQL'
     select
       analysis.morphological_analysis_id as id,
-      case
-        when suff.suffixes = '' or suff.suffixes like '=%'
-          then concat(stem.form, suff.suffixes)
-        else concat(stem.form, '-', suff.suffixes)
-      end segmentation,
-      case
-        when suff.morph_tag = '' or suff.morph_tag like '=%' or suff.morph_tag like '.%'
-          then concat(stem.deu, suff.morph_tag)
-        else concat(stem.deu, '-', suff.morph_tag)
-      end gloss
+      suff.suffixes as suffixes,
+      suff.morph_tag as morph_tag
     from tive_morphological_analyses as analysis
-      inner join tive_stems as stem
-        on analysis.stem_id = stem.stem_id
       inner join tive_suffix_chains as suff
         on analysis.suffix_chain_id = suff.suffix_chain_id
     where analysis.stem_id = ?;
@@ -65,7 +55,7 @@ MorphologicalAnalysis::$graphQLType = new ObjectType([
   'name' => 'MorphologicalAnalysis',
   'fields' => [
     'id' => Type::nonNull(Type::int()),
-    'segmentation' => Type::nonNull(Type::string()),
-    'gloss' => Type::nonNull(Type::string())
+    'suffixes' => Type::nonNull(Type::string()),
+    'morphTag' => Type::nonNull(Type::string())
   ]
 ]);

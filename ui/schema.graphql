@@ -121,9 +121,9 @@ enum ManuscriptStatus {
 }
 
 type MorphologicalAnalysis {
-  gloss: String!
   id: Int!
-  segmentation: String!
+  morphTag: String!
+  suffixes: String!
 }
 
 type Mutation {
