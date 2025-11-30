@@ -268,6 +268,13 @@ export function StemViewer({id, stem, initialEntries, setDictionary, initialUnfo
       pos: partOfSpeech
     },
   });
+
+  const [changeStemGermanTranslationMutation, deuMutation] = useChangeStemGermanTranslationMutation({
+    variables: {
+      stemId: id,
+      deu: translation
+    },
+  });
   
   return (
     <div className="flex flex-row">
@@ -311,6 +318,11 @@ export function StemViewer({id, stem, initialEntries, setDictionary, initialUnfo
                 return modifyGlobalEntries(dictionary, initialEntries, entries);
               });
               updateEnglishTranslationKey(getEnglishTranslationKey(stemForm, partOfSpeech, value));
+              if (deuMutation.loading || deuMutation.error) {
+                console.log(deuMutation.loading, deuMutation.error);
+              } else {
+                changeStemGermanTranslationMutation();
+              }
             }
           }}
           onPartOfSpeechChange={(value: string) => {
