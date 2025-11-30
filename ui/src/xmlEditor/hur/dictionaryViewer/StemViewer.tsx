@@ -16,7 +16,7 @@ import { getMorphTags } from '../morphologicalAnalysis/auxiliary';
 import { getEnglishTranslationKey } from '../translations/englishTranslations';
 import { useMorphologicalAnalysesByStemIdQuery, MorphologicalAnalysis as GQMorph,
   useChangeStemFormMutation, useChangeStemPosMutation, useChangeStemGermanTranslationMutation,
-  useChangeStemEnglishTranslationMutation
+  useChangeStemEnglishTranslationMutation, Stem as GQStem
 } from '../../../graphql';
 
 const errorSymbol = <>&#9876;</>;
@@ -46,13 +46,12 @@ export class Stem {
 }
     
 interface IProps {
-  id: number;
-  stem: Stem;
+  stemListIndex: number,
+  stem: GQStem;
   initialEntries: Entry[];
   setDictionary: SetDictionary;
   initialUnfolded: boolean;
   allUnfolded: boolean;
-  englishTranslation: string;
   onEnglishTranslationBlur: (eglishTranslation: string) => void;
   updateEnglishTranslationKey: (newEglishTranslationKey: string) => void;
 }
@@ -213,28 +212,29 @@ function modifyGlobalPartOfSpeech(dictionary: Dictionary, initialEntries: Entry[
 }
 
 type StemViewerState = {
-  stemForm: string;
-  partOfSpeech: string;
-  translation: string;
+  form: string;
+  pos: string;
+  deu: string;
   eng: string;
   entries: Entry[];
 }
 
-export function StemViewer({id, stem, initialEntries, setDictionary, initialUnfolded,
-                            allUnfolded, englishTranslation,
+export function StemViewer({stemListIndex, stem, initialEntries, setDictionary, initialUnfolded,
+                            allUnfolded,
                             onEnglishTranslationBlur,
                             updateEnglishTranslationKey }: IProps): JSX.Element {
   
   const [unfolded, setUnfolded] = useState(initialUnfolded);
+  const id = stem.id;
   const initialState: StemViewerState = {
-    stemForm: stem.form,
-    partOfSpeech: stem.pos,
-    translation: stem.translation,
-    eng: englishTranslation,
+    form: stem.form,
+    pos: stem.pos,
+    deu: stem.deu,
+    eng: stem.eng,
     entries: initialEntries
   };
   const [state, setState] = useState(initialState);
-  const { stemForm, partOfSpeech, translation, eng, entries } = state;
+  const { form, pos, deu, eng, entries } = state;
   
   const isCorrect = entries.every(entry => 
     getMorphTags(entry.morphologicalAnalysis).every(morphTag =>
@@ -260,21 +260,21 @@ export function StemViewer({id, stem, initialEntries, setDictionary, initialUnfo
   const [changeStemFormMutation, formMutation] = useChangeStemFormMutation({
     variables: {
       stemId: id,
-      form: stemForm
+      form
     },
   });
 
   const [changeStemPosMutation, posMutation] = useChangeStemPosMutation({
     variables: {
       stemId: id,
-      pos: partOfSpeech
+      pos
     },
   });
 
   const [changeStemGermanTranslationMutation, deuMutation] = useChangeStemGermanTranslationMutation({
     variables: {
       stemId: id,
-      deu: translation
+      deu
     },
   });
 
@@ -289,24 +289,25 @@ export function StemViewer({id, stem, initialEntries, setDictionary, initialUnfo
     <div className="flex flex-row">
       <div>
         <StemElement
-          index={stem.index}
-          form={stemForm} 
-          translation={translation}
-          pos={partOfSpeech}
+          index={stemListIndex.toString()}
+          form={form}
+          pos={pos}
+          translation={deu}
+          englishTranslation={eng}
           handleClick={() => setUnfolded(!unfolded)}
           onFormChange={(value: string) => {
             setState(update(state,
-              { stemForm: { $set: value },
+              { form: { $set: value },
                 entries: { $set: modifyLocalEntries(entries, modifyStem(value)) } }
             ));
           }}
           onFormBlur={(value: string) => {
             if (value !== stem.form) {
-              changeStem(stem.form, value, partOfSpeech, translation);
+              changeStem(stem.form, value, pos, deu);
               setDictionary((dictionary: Dictionary) => {
                 return modifyGlobalEntries(dictionary, initialEntries, entries);
               });
-              updateEnglishTranslationKey(getEnglishTranslationKey(value, partOfSpeech, translation));
+              updateEnglishTranslationKey(getEnglishTranslationKey(value, pos, deu));
               if (formMutation.loading || formMutation.error) {
                 console.log(formMutation.loading, formMutation.error);
               } else {
@@ -316,17 +317,17 @@ export function StemViewer({id, stem, initialEntries, setDictionary, initialUnfo
           }}        
           onTranslationChange={(value: string) => {
             setState(update(state,
-              { translation: { $set: value },
+              { deu: { $set: value },
                 entries: { $set: modifyLocalEntries(entries, modifyTranslation(value)) } }
             ));
           }}
           onTranslationBlur={(value: string) => {
-            if (value !== stem.translation) {
-              changeTranslation(stemForm, partOfSpeech, stem.translation, value);
+            if (value !== stem.deu) {
+              changeTranslation(form, pos, stem.deu, value);
               setDictionary((dictionary: Dictionary) => {
                 return modifyGlobalEntries(dictionary, initialEntries, entries);
               });
-              updateEnglishTranslationKey(getEnglishTranslationKey(stemForm, partOfSpeech, value));
+              updateEnglishTranslationKey(getEnglishTranslationKey(form, pos, value));
               if (deuMutation.loading || deuMutation.error) {
                 console.log(deuMutation.loading, deuMutation.error);
               } else {
@@ -335,21 +336,20 @@ export function StemViewer({id, stem, initialEntries, setDictionary, initialUnfo
             }
           }}
           onPartOfSpeechChange={(value: string) => {
-            setState(update(state, { partOfSpeech: { $set: value } }));
+            setState(update(state, { pos: { $set: value } }));
           }}
           onPartOfSpeechBlur={(value: string) => {
-            changePos(stemForm, stem.pos, value, translation);
+            changePos(form, stem.pos, value, deu);
             setDictionary((dictionary: Dictionary) => {
               return modifyGlobalPartOfSpeech(dictionary, initialEntries, value);
             });
-            updateEnglishTranslationKey(getEnglishTranslationKey(stemForm, value, translation));
+            updateEnglishTranslationKey(getEnglishTranslationKey(form, value, deu));
             if (posMutation.loading || posMutation.error) {
               console.log(posMutation.loading, posMutation.error);
             } else {
               changeStemPosMutation();
             }
           }}
-          englishTranslation={englishTranslation}
           onEnglishTranslationChange={(value: string) => {
             setState(update(state, { eng: { $set: value } }));
           }}
