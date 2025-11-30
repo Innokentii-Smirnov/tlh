@@ -27,3 +27,27 @@ query TranscriptionsByMorphologicalAnalysisId($morphologicalAnalysisId: Int!) {
     transcription
   }
 }
+
+mutation ChangeStemForm($stemId: Int!, $form: String!) {
+  stem(stemId: $stemId) {
+    changeForm(form: $form)
+  }
+}
+
+mutation ChangeStemPos($stemId: Int!, $pos: String!) {
+  stem(stemId: $stemId) {
+    changePos(pos: $pos)
+  }
+}
+
+mutation ChangeStemGermanTranslation($stemId: Int!, $deu: String!) {
+  stem(stemId: $stemId) {
+    changeGermanTranslation(deu: $deu)
+  }
+}
+
+mutation ChangeStemEnglishTranslation($stemId: Int!, $eng: String!) {
+  stem(stemId: $stemId) {
+    changeEnglishTranslation(eng: $eng)
+  }
+}

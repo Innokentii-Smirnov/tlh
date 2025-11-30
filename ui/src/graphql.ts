@@ -647,6 +647,38 @@ export type TranscriptionsByMorphologicalAnalysisIdQueryVariables = Exact<{
 
 export type TranscriptionsByMorphologicalAnalysisIdQuery = { __typename?: 'Query', transcriptionsByMorphologicalAnalysisId: Array<{ __typename?: 'Wordform', transcription: string }> };
 
+export type ChangeStemFormMutationVariables = Exact<{
+  stemId: Scalars['Int']['input'];
+  form: Scalars['String']['input'];
+}>;
+
+
+export type ChangeStemFormMutation = { __typename?: 'Mutation', stem?: { __typename?: 'StemMutations', changeForm: boolean } | null };
+
+export type ChangeStemPosMutationVariables = Exact<{
+  stemId: Scalars['Int']['input'];
+  pos: Scalars['String']['input'];
+}>;
+
+
+export type ChangeStemPosMutation = { __typename?: 'Mutation', stem?: { __typename?: 'StemMutations', changePos: boolean } | null };
+
+export type ChangeStemGermanTranslationMutationVariables = Exact<{
+  stemId: Scalars['Int']['input'];
+  deu: Scalars['String']['input'];
+}>;
+
+
+export type ChangeStemGermanTranslationMutation = { __typename?: 'Mutation', stem?: { __typename?: 'StemMutations', changeGermanTranslation: boolean } | null };
+
+export type ChangeStemEnglishTranslationMutationVariables = Exact<{
+  stemId: Scalars['Int']['input'];
+  eng: Scalars['String']['input'];
+}>;
+
+
+export type ChangeStemEnglishTranslationMutation = { __typename?: 'Mutation', stem?: { __typename?: 'StemMutations', changeEnglishTranslation: boolean } | null };
+
 export type RegisterMutationVariables = Exact<{
   userInput: UserInput;
 }>;
@@ -1822,6 +1854,142 @@ export type TranscriptionsByMorphologicalAnalysisIdQueryHookResult = ReturnType<
 export type TranscriptionsByMorphologicalAnalysisIdLazyQueryHookResult = ReturnType<typeof useTranscriptionsByMorphologicalAnalysisIdLazyQuery>;
 export type TranscriptionsByMorphologicalAnalysisIdSuspenseQueryHookResult = ReturnType<typeof useTranscriptionsByMorphologicalAnalysisIdSuspenseQuery>;
 export type TranscriptionsByMorphologicalAnalysisIdQueryResult = Apollo.QueryResult<TranscriptionsByMorphologicalAnalysisIdQuery, TranscriptionsByMorphologicalAnalysisIdQueryVariables>;
+export const ChangeStemFormDocument = gql`
+    mutation ChangeStemForm($stemId: Int!, $form: String!) {
+  stem(stemId: $stemId) {
+    changeForm(form: $form)
+  }
+}
+    `;
+export type ChangeStemFormMutationFn = Apollo.MutationFunction<ChangeStemFormMutation, ChangeStemFormMutationVariables>;
+
+/**
+ * __useChangeStemFormMutation__
+ *
+ * To run a mutation, you first call `useChangeStemFormMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useChangeStemFormMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [changeStemFormMutation, { data, loading, error }] = useChangeStemFormMutation({
+ *   variables: {
+ *      stemId: // value for 'stemId'
+ *      form: // value for 'form'
+ *   },
+ * });
+ */
+export function useChangeStemFormMutation(baseOptions?: Apollo.MutationHookOptions<ChangeStemFormMutation, ChangeStemFormMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useMutation<ChangeStemFormMutation, ChangeStemFormMutationVariables>(ChangeStemFormDocument, options);
+      }
+export type ChangeStemFormMutationHookResult = ReturnType<typeof useChangeStemFormMutation>;
+export type ChangeStemFormMutationResult = Apollo.MutationResult<ChangeStemFormMutation>;
+export type ChangeStemFormMutationOptions = Apollo.BaseMutationOptions<ChangeStemFormMutation, ChangeStemFormMutationVariables>;
+export const ChangeStemPosDocument = gql`
+    mutation ChangeStemPos($stemId: Int!, $pos: String!) {
+  stem(stemId: $stemId) {
+    changePos(pos: $pos)
+  }
+}
+    `;
+export type ChangeStemPosMutationFn = Apollo.MutationFunction<ChangeStemPosMutation, ChangeStemPosMutationVariables>;
+
+/**
+ * __useChangeStemPosMutation__
+ *
+ * To run a mutation, you first call `useChangeStemPosMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useChangeStemPosMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [changeStemPosMutation, { data, loading, error }] = useChangeStemPosMutation({
+ *   variables: {
+ *      stemId: // value for 'stemId'
+ *      pos: // value for 'pos'
+ *   },
+ * });
+ */
+export function useChangeStemPosMutation(baseOptions?: Apollo.MutationHookOptions<ChangeStemPosMutation, ChangeStemPosMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useMutation<ChangeStemPosMutation, ChangeStemPosMutationVariables>(ChangeStemPosDocument, options);
+      }
+export type ChangeStemPosMutationHookResult = ReturnType<typeof useChangeStemPosMutation>;
+export type ChangeStemPosMutationResult = Apollo.MutationResult<ChangeStemPosMutation>;
+export type ChangeStemPosMutationOptions = Apollo.BaseMutationOptions<ChangeStemPosMutation, ChangeStemPosMutationVariables>;
+export const ChangeStemGermanTranslationDocument = gql`
+    mutation ChangeStemGermanTranslation($stemId: Int!, $deu: String!) {
+  stem(stemId: $stemId) {
+    changeGermanTranslation(deu: $deu)
+  }
+}
+    `;
+export type ChangeStemGermanTranslationMutationFn = Apollo.MutationFunction<ChangeStemGermanTranslationMutation, ChangeStemGermanTranslationMutationVariables>;
+
+/**
+ * __useChangeStemGermanTranslationMutation__
+ *
+ * To run a mutation, you first call `useChangeStemGermanTranslationMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useChangeStemGermanTranslationMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [changeStemGermanTranslationMutation, { data, loading, error }] = useChangeStemGermanTranslationMutation({
+ *   variables: {
+ *      stemId: // value for 'stemId'
+ *      deu: // value for 'deu'
+ *   },
+ * });
+ */
+export function useChangeStemGermanTranslationMutation(baseOptions?: Apollo.MutationHookOptions<ChangeStemGermanTranslationMutation, ChangeStemGermanTranslationMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useMutation<ChangeStemGermanTranslationMutation, ChangeStemGermanTranslationMutationVariables>(ChangeStemGermanTranslationDocument, options);
+      }
+export type ChangeStemGermanTranslationMutationHookResult = ReturnType<typeof useChangeStemGermanTranslationMutation>;
+export type ChangeStemGermanTranslationMutationResult = Apollo.MutationResult<ChangeStemGermanTranslationMutation>;
+export type ChangeStemGermanTranslationMutationOptions = Apollo.BaseMutationOptions<ChangeStemGermanTranslationMutation, ChangeStemGermanTranslationMutationVariables>;
+export const ChangeStemEnglishTranslationDocument = gql`
+    mutation ChangeStemEnglishTranslation($stemId: Int!, $eng: String!) {
+  stem(stemId: $stemId) {
+    changeEnglishTranslation(eng: $eng)
+  }
+}
+    `;
+export type ChangeStemEnglishTranslationMutationFn = Apollo.MutationFunction<ChangeStemEnglishTranslationMutation, ChangeStemEnglishTranslationMutationVariables>;
+
+/**
+ * __useChangeStemEnglishTranslationMutation__
+ *
+ * To run a mutation, you first call `useChangeStemEnglishTranslationMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useChangeStemEnglishTranslationMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [changeStemEnglishTranslationMutation, { data, loading, error }] = useChangeStemEnglishTranslationMutation({
+ *   variables: {
+ *      stemId: // value for 'stemId'
+ *      eng: // value for 'eng'
+ *   },
+ * });
+ */
+export function useChangeStemEnglishTranslationMutation(baseOptions?: Apollo.MutationHookOptions<ChangeStemEnglishTranslationMutation, ChangeStemEnglishTranslationMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useMutation<ChangeStemEnglishTranslationMutation, ChangeStemEnglishTranslationMutationVariables>(ChangeStemEnglishTranslationDocument, options);
+      }
+export type ChangeStemEnglishTranslationMutationHookResult = ReturnType<typeof useChangeStemEnglishTranslationMutation>;
+export type ChangeStemEnglishTranslationMutationResult = Apollo.MutationResult<ChangeStemEnglishTranslationMutation>;
+export type ChangeStemEnglishTranslationMutationOptions = Apollo.BaseMutationOptions<ChangeStemEnglishTranslationMutation, ChangeStemEnglishTranslationMutationVariables>;
 export const RegisterDocument = gql`
     mutation Register($userInput: UserInput!) {
   register(userInput: $userInput)
