@@ -12,7 +12,8 @@ interface IProps {
   onFormBlur: (newStem: string) => void;
   onTranslationChange: (translation: string) => void;
   onTranslationBlur: (translation: string) => void;
-  onEnglishTranslationBlur: (translation: string) => void;
+  onEnglishTranslationChange: (eng: string) => void;
+  onEnglishTranslationBlur: (eng: string) => void;
   onPartOfSpeechBlur: (value: string) => void;
   onPartOfSpeechChange: (value: string) => void;
 }
@@ -21,6 +22,7 @@ export function StemElement({index, form, translation, englishTranslation, pos,
                              handleClick,
                              onFormChange, onFormBlur,
                              onTranslationChange, onTranslationBlur,
+                             onEnglishTranslationChange,
                              onEnglishTranslationBlur,
                              onPartOfSpeechBlur,
                              onPartOfSpeechChange}: IProps): JSX.Element {
@@ -41,6 +43,7 @@ export function StemElement({index, form, translation, englishTranslation, pos,
              onBlur={event => onTranslationBlur(event.target.value)} />
       <input type="text" defaultValue={englishTranslation}
              className="p-2 border-y border-r border-slate-500"
+             onChange={event => onEnglishTranslationChange(event.target.value)}
              onBlur={event => onEnglishTranslationBlur(event.target.value)} />
       <div className="p-2 border-y border-r border-slate-500">
         <PartOfSpeechSelector partOfSpeech={pos}

@@ -216,6 +216,7 @@ type StemViewerState = {
   stemForm: string;
   partOfSpeech: string;
   translation: string;
+  eng: string;
   entries: Entry[];
 }
 
@@ -229,10 +230,11 @@ export function StemViewer({id, stem, initialEntries, setDictionary, initialUnfo
     stemForm: stem.form,
     partOfSpeech: stem.pos,
     translation: stem.translation,
+    eng: englishTranslation,
     entries: initialEntries
   };
   const [state, setState] = useState(initialState);
-  const { stemForm, partOfSpeech, translation, entries } = state;
+  const { stemForm, partOfSpeech, translation, eng, entries } = state;
   
   const isCorrect = entries.every(entry => 
     getMorphTags(entry.morphologicalAnalysis).every(morphTag =>
@@ -273,6 +275,13 @@ export function StemViewer({id, stem, initialEntries, setDictionary, initialUnfo
     variables: {
       stemId: id,
       deu: translation
+    },
+  });
+
+  const [changeStemEnglishTranslationMutation, engMutation] = useChangeStemEnglishTranslationMutation({
+    variables: {
+      stemId: id,
+      eng
     },
   });
   
@@ -341,7 +350,17 @@ export function StemViewer({id, stem, initialEntries, setDictionary, initialUnfo
             }
           }}
           englishTranslation={englishTranslation}
-          onEnglishTranslationBlur={onEnglishTranslationBlur} />
+          onEnglishTranslationChange={(value: string) => {
+            setState(update(state, { eng: { $set: value } }));
+          }}
+          onEnglishTranslationBlur={(value: string) => {
+            onEnglishTranslationBlur(value);
+            if (engMutation.loading || engMutation.error) {
+              console.log(engMutation.loading, engMutation.error);
+            } else {
+              changeStemEnglishTranslationMutation();
+            }
+          }} />
         <br />
         {(unfolded || allUnfolded) && morphs.map(
           (morphologicalAnalysis) => {
