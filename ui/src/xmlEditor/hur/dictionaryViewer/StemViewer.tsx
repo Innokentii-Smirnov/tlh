@@ -364,11 +364,10 @@ export function StemViewer({stemListIndex, stem, initialEntries, setDictionary, 
         <br />
         {(unfolded || allUnfolded) && morphs.map(
           (morphologicalAnalysis) => {
-            const { segmentation, gloss } = morphologicalAnalysis;
             return (
               <WordformElement
                 morphologicalAnalysis={morphologicalAnalysis}
-                key={segmentation + ' ' + gloss}
+                key={morphologicalAnalysis.id}
                 initialShowAttestations={allUnfolded}
                 handleSegmentationInput={() => {
                   // Do nothing.
