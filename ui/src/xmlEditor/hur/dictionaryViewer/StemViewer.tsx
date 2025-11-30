@@ -366,6 +366,8 @@ export function StemViewer({stemListIndex, stem, initialEntries, setDictionary, 
           (morphologicalAnalysis) => {
             return (
               <WordformElement
+                stem={form}
+                deu={deu}
                 morphologicalAnalysis={morphologicalAnalysis}
                 key={morphologicalAnalysis.id}
                 initialShowAttestations={allUnfolded}

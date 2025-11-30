@@ -5,6 +5,7 @@ import { getLine } from '../corpus/corpus';
 import { ConcordanceEntryViewer } from '../concordanceEntryViewer/ConcordanceEntryViewer';
 import { MorphologicalAnalysis, useTranscriptionsByMorphologicalAnalysisIdQuery,
          Wordform } from '../../../graphql';
+import { makeSegmentation, makeGloss } from '../common/auxiliary';
 
 export interface Entry {
   transcriptions: string[];
@@ -12,6 +13,8 @@ export interface Entry {
 }
 
 interface IProps {
+  stem: string;
+  deu: string;
   morphologicalAnalysis: MorphologicalAnalysis;
   handleSegmentationInput: (value: string) => void;
   handleSegmentationBlur: (value: string) => void;
@@ -20,11 +23,13 @@ interface IProps {
   initialShowAttestations: boolean;
 }
 
-export function WordformElement({ morphologicalAnalysis, handleSegmentationInput,
+export function WordformElement({ stem, deu, morphologicalAnalysis, handleSegmentationInput,
   handleSegmentationBlur, handleAnalysisInput, handleAnalysisBlur,
   initialShowAttestations }: IProps): JSX.Element {
   
-  const { id, segmentation, gloss } = morphologicalAnalysis;
+  const { id, suffixes, morphTag } = morphologicalAnalysis;
+  const segmentation = makeSegmentation(stem, suffixes);
+  const gloss = makeGloss(deu, morphTag);
   const [showAttestations, setShowAttestations] = useState(initialShowAttestations);
 
   const { data, loading, error } = useTranscriptionsByMorphologicalAnalysisIdQuery({
