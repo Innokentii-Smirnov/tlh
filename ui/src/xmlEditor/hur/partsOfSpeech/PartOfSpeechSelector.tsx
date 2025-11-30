@@ -4,12 +4,14 @@ import { getPartsOfSpeech } from './partsOfSpeech';
 interface IProps {
   partOfSpeech: string;
   onChange: (value: string) => void;
+  onBlur: (value: string) => void;
 }
 
-export function PartOfSpeechSelector({ partOfSpeech, onChange }: IProps): JSX.Element {
+export function PartOfSpeechSelector({ partOfSpeech, onChange, onBlur }: IProps): JSX.Element {
   return (
     <select value={partOfSpeech}
-            onChange={event => onChange(event.target.value)}>
+            onChange={event => onChange(event.target.value)}
+            onBlur={event => onBlur(event.target.value)}>
       {
         getPartsOfSpeech().map((partOfSpeech: string, index: number) => {
           return (

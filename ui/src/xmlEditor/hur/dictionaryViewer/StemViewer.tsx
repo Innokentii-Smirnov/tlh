@@ -14,8 +14,10 @@ import { replaceMorphologicalAnalysis } from '../corpus/corpus';
 import { areCorrect } from '../dict/morphologicalAnalysisValidator';
 import { getMorphTags } from '../morphologicalAnalysis/auxiliary';
 import { getEnglishTranslationKey } from '../translations/englishTranslations';
-import { useMorphologicalAnalysesByStemIdQuery, MorphologicalAnalysis as GQMorph }
-  from '../../../graphql';
+import { useMorphologicalAnalysesByStemIdQuery, MorphologicalAnalysis as GQMorph,
+  useChangeStemFormMutation, useChangeStemPosMutation, useChangeStemGermanTranslationMutation,
+  useChangeStemEnglishTranslationMutation
+} from '../../../graphql';
 
 const errorSymbol = <>&#9876;</>;
 
@@ -212,6 +214,7 @@ function modifyGlobalPartOfSpeech(dictionary: Dictionary, initialEntries: Entry[
 
 type StemViewerState = {
   stemForm: string;
+  partOfSpeech: string;
   translation: string;
   entries: Entry[];
 }
@@ -224,12 +227,12 @@ export function StemViewer({id, stem, initialEntries, setDictionary, initialUnfo
   const [unfolded, setUnfolded] = useState(initialUnfolded);
   const initialState: StemViewerState = {
     stemForm: stem.form,
+    partOfSpeech: stem.pos,
     translation: stem.translation,
     entries: initialEntries
   };
   const [state, setState] = useState(initialState);
-  const { stemForm, translation, entries } = state;
-  const partOfSpeech = stem.pos;
+  const { stemForm, partOfSpeech, translation, entries } = state;
   
   const isCorrect = entries.every(entry => 
     getMorphTags(entry.morphologicalAnalysis).every(morphTag =>
@@ -251,6 +254,20 @@ export function StemViewer({id, stem, initialEntries, setDictionary, initialUnfo
   } else {
     morphs = data.morphologicalAnalysesByStemId;
   }
+
+  const [changeStemFormMutation, formMutation] = useChangeStemFormMutation({
+    variables: {
+      stemId: id,
+      form: stemForm
+    },
+  });
+
+  const [changeStemPosMutation, posMutation] = useChangeStemPosMutation({
+    variables: {
+      stemId: id,
+      pos: partOfSpeech
+    },
+  });
   
   return (
     <div className="flex flex-row">
@@ -274,6 +291,11 @@ export function StemViewer({id, stem, initialEntries, setDictionary, initialUnfo
                 return modifyGlobalEntries(dictionary, initialEntries, entries);
               });
               updateEnglishTranslationKey(getEnglishTranslationKey(value, partOfSpeech, translation));
+              if (formMutation.loading || formMutation.error) {
+                console.log(formMutation.loading, formMutation.error);
+              } else {
+                changeStemFormMutation();
+              }
             }
           }}        
           onTranslationChange={(value: string) => {
@@ -292,11 +314,19 @@ export function StemViewer({id, stem, initialEntries, setDictionary, initialUnfo
             }
           }}
           onPartOfSpeechChange={(value: string) => {
+            setState(update(state, { partOfSpeech: { $set: value } }));
+          }}
+          onPartOfSpeechBlur={(value: string) => {
             changePos(stemForm, stem.pos, value, translation);
             setDictionary((dictionary: Dictionary) => {
               return modifyGlobalPartOfSpeech(dictionary, initialEntries, value);
             });
             updateEnglishTranslationKey(getEnglishTranslationKey(stemForm, value, translation));
+            if (posMutation.loading || posMutation.error) {
+              console.log(posMutation.loading, posMutation.error);
+            } else {
+              changeStemPosMutation();
+            }
           }}
           englishTranslation={englishTranslation}
           onEnglishTranslationBlur={onEnglishTranslationBlur} />
