@@ -4,6 +4,7 @@ namespace model;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 require_once __DIR__ . '/../sql_helpers.php';
+require_once __DIR__ . '/Stem.php';
 
 use Exception;
 use GraphQL\Type\Definition\{ObjectType, Type};
@@ -15,19 +16,21 @@ class MorphologicalAnalysis
   static ObjectType $graphQLType;
 
   public int $id;
+  public int $stemId;
   public string $suffixes;
   public string $morphTag;
 
-  function __construct(int $id, string $suffixes, string $morphTag)
+  function __construct(int $id, int $stemId, string $suffixes, string $morphTag)
   {
     $this->id = $id;
+    $this->stemId = $stemId;
     $this->suffixes = $suffixes;
     $this->morphTag = $morphTag;
   }
 
   private static function fromDbAssocRow(array $row): MorphologicalAnalysis
   {
-    return new MorphologicalAnalysis($row['id'],  $row['suffixes'], $row['morph_tag']);
+    return new MorphologicalAnalysis($row['id'], $row['stem_id'], $row['suffixes'], $row['morph_tag']);
   }
 
   /** @return MorphologicalAnalysis[] */
@@ -36,6 +39,7 @@ class MorphologicalAnalysis
     $sqlQuery = <<<'SQL'
     select
       analysis.morphological_analysis_id as id,
+      analysis.stem_id as stem_id,
       suff.suffixes as suffixes,
       suff.morph_tag as morph_tag
     from tive_morphological_analyses as analysis
@@ -55,6 +59,10 @@ MorphologicalAnalysis::$graphQLType = new ObjectType([
   'name' => 'MorphologicalAnalysis',
   'fields' => [
     'id' => Type::nonNull(Type::int()),
+    'stem' => [
+      'type' => Type::nonNull(Stem::$graphQLType),
+      'resolve' => fn(MorphologicalAnalysis $morph): Stem => Stem::selectStemById($morph->stemId)
+    ],
     'suffixes' => Type::nonNull(Type::string()),
     'morphTag' => Type::nonNull(Type::string())
   ]
