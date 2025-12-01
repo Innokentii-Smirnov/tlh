@@ -1,5 +1,5 @@
 query EnglishTranslation($form: String!, $pos: String!, $deu: String!) {
-  stem(form: $form, pos: $pos, deu: $deu) {
+  stemLookup(form: $form, pos: $pos, deu: $deu) {
     eng
   }
 }

@@ -298,7 +298,7 @@ export type Query = {
   morphologicalAnalysesByStemId: Array<MorphologicalAnalysis>;
   myManuscripts?: Maybe<Array<Scalars['String']['output']>>;
   reviewerQueries?: Maybe<Reviewer>;
-  stem?: Maybe<Stem>;
+  stemLookup?: Maybe<Stem>;
   transcriptionsByMorphologicalAnalysisId: Array<Wordform>;
 };
 
@@ -318,7 +318,7 @@ export type QueryMorphologicalAnalysesByStemIdArgs = {
 };
 
 
-export type QueryStemArgs = {
+export type QueryStemLookupArgs = {
   deu: Scalars['String']['input'];
   form: Scalars['String']['input'];
   pos: Scalars['String']['input'];
@@ -633,7 +633,7 @@ export type EnglishTranslationQueryVariables = Exact<{
 }>;
 
 
-export type EnglishTranslationQuery = { __typename?: 'Query', stem?: { __typename?: 'Stem', eng: string } | null };
+export type EnglishTranslationQuery = { __typename?: 'Query', stemLookup?: { __typename?: 'Stem', eng: string } | null };
 
 export type AllStemsQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -1694,7 +1694,7 @@ export type DeleteManuscriptMutationResult = Apollo.MutationResult<DeleteManuscr
 export type DeleteManuscriptMutationOptions = Apollo.BaseMutationOptions<DeleteManuscriptMutation, DeleteManuscriptMutationVariables>;
 export const EnglishTranslationDocument = gql`
     query EnglishTranslation($form: String!, $pos: String!, $deu: String!) {
-  stem(form: $form, pos: $pos, deu: $deu) {
+  stemLookup(form: $form, pos: $pos, deu: $deu) {
     eng
   }
 }

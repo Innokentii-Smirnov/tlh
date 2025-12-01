@@ -47,7 +47,7 @@ RootQuery::$queryType = new ObjectType([
       ],
       'resolve' => fn(?int $_rootValue, array $args): ?Manuscript => Manuscript::selectManuscriptById($args['mainIdentifier'])
     ],
-    'stem' => [
+    'stemLookup' => [
       'type' => Stem::$graphQLType,
       'args' => [
         'form' => Type::nonNull(Type::string()),
