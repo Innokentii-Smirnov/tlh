@@ -1,4 +1,3 @@
-echo $1
 curl --header "Content-Type: application/json" \
      --header "Accept: application/graphql-response+json" \
      --data-raw "$1" \
