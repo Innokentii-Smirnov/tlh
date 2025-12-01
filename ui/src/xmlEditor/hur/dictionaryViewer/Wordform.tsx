@@ -3,7 +3,7 @@ import { MorphologicalAnalysis as Morph } from '../../../model/morphologicalAnal
 import { Attestation } from '../concordance/concordance';
 import { getLine } from '../corpus/corpus';
 import { ConcordanceEntryViewer } from '../concordanceEntryViewer/ConcordanceEntryViewer';
-import { useTranscriptionsByMorphologicalAnalysisIdQuery, Wordform } from '../../../graphql';
+import { useTranscriptionsByMorphologicalAnalysisIdQuery } from '../../../graphql';
 import { makeSegmentation, makeGloss } from '../common/auxiliary';
 
 export interface Entry {
@@ -52,8 +52,8 @@ export function WordformElement({ stem, deu, morphologicalAnalysis, handleSegmen
     console.log(loading, error);
     transcriptions = [];
   } else {
-    transcriptions = data.transcriptionsByMorphologicalAnalysisId.map(
-      (wordform: Wordform) => wordform.transcription
+    transcriptions = data.morphologicalAnalysis.morphosyntacticWords.map(
+      word => word.wordform.transcription
     );
   }
 
