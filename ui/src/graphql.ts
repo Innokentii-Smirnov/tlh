@@ -221,6 +221,7 @@ export type MorphologicalAnalysis = {
   __typename?: 'MorphologicalAnalysis';
   id: Scalars['Int']['output'];
   morphTag: Scalars['String']['output'];
+  stem: Stem;
   suffixes: Scalars['String']['output'];
 };
 

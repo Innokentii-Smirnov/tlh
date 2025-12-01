@@ -123,6 +123,7 @@ enum ManuscriptStatus {
 type MorphologicalAnalysis {
   id: Int!
   morphTag: String!
+  stem: Stem!
   suffixes: String!
 }
 
