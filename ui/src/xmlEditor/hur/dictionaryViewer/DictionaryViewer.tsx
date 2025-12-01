@@ -1,18 +1,18 @@
 import { JSX, useState, useEffect } from 'react';
 import { getStem } from '../common/splitter';
 import { groupBy } from '../common/utils';
-import { StemViewer, Stem } from './StemViewer';
+import { StemViewer, Stem, IStem } from './StemViewer';
 import { Entry } from './Wordform';
 import { DictionaryDownloader } from '../dict/files/DictionaryDownloader';
 import { ChangesDownloader } from '../changes/ChangesDownloader';
 import { writeMorphAnalysisValue } from '../../../model/morphologicalAnalysis';
 import { SetDictionary } from '../dict/dictionary';
-import { compareStems } from '../common/comparison';
+import { compareByForm } from '../common/comparison';
 import { blueButtonClasses } from '../../../defaultDesign';
 import { useTranslation } from 'react-i18next';
 import { getEnglishTranslationKey, EnglishTranslations, setGlobalEnglishTranslations } from '../translations/englishTranslations';
 import update from 'immutability-helper';
-import { useAllStemsQuery, Stem as GQStem } from '../../../graphql';
+import { useAllStemsQuery } from '../../../graphql';
 
 interface IProps {
   entries: Entry[];
@@ -55,13 +55,13 @@ export function DictionaryViewer({entries, setDictionary, initialEnglishTranslat
     },
   });
   
-  let stems: GQStem[];
+  let stems: IStem[];
 
   if (loading || error || data === undefined) {
     console.log(loading, error);
     stems = [];
   } else {
-    stems = data.allStems.sort(compareStems);
+    stems = data.allStems.sort(compareByForm);
   }
   
   return (
@@ -70,7 +70,7 @@ export function DictionaryViewer({entries, setDictionary, initialEnglishTranslat
         Click on the button &quot;&#8744;&quot; or a stem&apos;s number to see its derivatives and inflected forms. <br /> 
         Click on a similar button next to a word to see its attestations. <br />
         <br />
-        {stems.map((gqStem: GQStem, index: number) => {
+        {stems.map((gqStem: IStem, index: number) => {
           const {form, pos, deu, eng} = gqStem;
           const stem = new Stem(index + 1, form, deu, pos);
           const group = grouped.get(stem.toString());

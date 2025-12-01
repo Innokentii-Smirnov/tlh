@@ -16,7 +16,7 @@ import { getMorphTags } from '../morphologicalAnalysis/auxiliary';
 import { getEnglishTranslationKey } from '../translations/englishTranslations';
 import { useMorphologicalAnalysesByStemIdQuery,
   useChangeStemFormMutation, useChangeStemPosMutation, useChangeStemGermanTranslationMutation,
-  useChangeStemEnglishTranslationMutation, Stem as GQStem
+  useChangeStemEnglishTranslationMutation
 } from '../../../graphql';
 
 const errorSymbol = <>&#9876;</>;
@@ -44,10 +44,18 @@ export class Stem {
     return [this.index, this.form, this.translation, this.pos].join('@');
   }
 }
+
+export interface IStem {
+  id: number;
+  form: string;
+  pos: string;
+  deu: string;
+  eng: string;
+}
     
 interface IProps {
   stemListIndex: number,
-  stem: GQStem;
+  stem: IStem;
   initialEntries: Entry[];
   setDictionary: SetDictionary;
   initialUnfolded: boolean;

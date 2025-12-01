@@ -1,5 +1,4 @@
 import { removeMacron } from './utils';
-import { Stem } from '../../../graphql';
 
 function preprocessLetter(letter: string): string {
   return removeMacron(letter).toLowerCase();
@@ -31,6 +30,10 @@ export function compare(a: string, b: string): number {
   return b.length - a.length;
 }
 
-export function compareStems(a: Stem, b: Stem): number {
+interface HasForm {
+  form: string;
+}
+
+export function compareByForm(a: HasForm, b: HasForm): number {
   return compare(a.form, b.form);
 }
