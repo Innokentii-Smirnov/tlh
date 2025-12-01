@@ -122,8 +122,15 @@ enum ManuscriptStatus {
 
 type MorphologicalAnalysis {
   id: Int!
+  morphosyntacticWords: [MorphosyntacticWord!]!
   stem: Stem!
   suffixChain: SuffixChain!
+}
+
+type MorphosyntacticWord {
+  id: Int!
+  morphologicalAnalysis: MorphologicalAnalysis!
+  wordform: Wordform!
 }
 
 type Mutation {
@@ -156,11 +163,11 @@ type Query {
   executiveEditorQueries: ExecutiveEditor
   manuscript(mainIdentifier: String!): ManuscriptMetaData
   manuscriptCount: Int!
+  morphologicalAnalysis(id: Int!): MorphologicalAnalysis!
   myManuscripts: [String!]
   reviewerQueries: Reviewer
   stem(id: Int!): Stem!
   stemLookup(deu: String!, form: String!, pos: String!): Stem
-  transcriptionsByMorphologicalAnalysisId(morphologicalAnalysisId: Int!): [Wordform!]!
 }
 
 type Reviewer {

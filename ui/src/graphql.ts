@@ -220,8 +220,16 @@ export const enum ManuscriptStatus {
 export type MorphologicalAnalysis = {
   __typename?: 'MorphologicalAnalysis';
   id: Scalars['Int']['output'];
+  morphosyntacticWords: Array<MorphosyntacticWord>;
   stem: Stem;
   suffixChain: SuffixChain;
+};
+
+export type MorphosyntacticWord = {
+  __typename?: 'MorphosyntacticWord';
+  id: Scalars['Int']['output'];
+  morphologicalAnalysis: MorphologicalAnalysis;
+  wordform: Wordform;
 };
 
 export type Mutation = {
@@ -295,11 +303,11 @@ export type Query = {
   executiveEditorQueries?: Maybe<ExecutiveEditor>;
   manuscript?: Maybe<ManuscriptMetaData>;
   manuscriptCount: Scalars['Int']['output'];
+  morphologicalAnalysis: MorphologicalAnalysis;
   myManuscripts?: Maybe<Array<Scalars['String']['output']>>;
   reviewerQueries?: Maybe<Reviewer>;
   stem: Stem;
   stemLookup?: Maybe<Stem>;
-  transcriptionsByMorphologicalAnalysisId: Array<Wordform>;
 };
 
 
@@ -313,6 +321,11 @@ export type QueryManuscriptArgs = {
 };
 
 
+export type QueryMorphologicalAnalysisArgs = {
+  id: Scalars['Int']['input'];
+};
+
+
 export type QueryStemArgs = {
   id: Scalars['Int']['input'];
 };
@@ -322,11 +335,6 @@ export type QueryStemLookupArgs = {
   deu: Scalars['String']['input'];
   form: Scalars['String']['input'];
   pos: Scalars['String']['input'];
-};
-
-
-export type QueryTranscriptionsByMorphologicalAnalysisIdArgs = {
-  morphologicalAnalysisId: Scalars['Int']['input'];
 };
 
 export type Reviewer = {
@@ -653,7 +661,7 @@ export type TranscriptionsByMorphologicalAnalysisIdQueryVariables = Exact<{
 }>;
 
 
-export type TranscriptionsByMorphologicalAnalysisIdQuery = { __typename?: 'Query', transcriptionsByMorphologicalAnalysisId: Array<{ __typename?: 'Wordform', transcription: string }> };
+export type TranscriptionsByMorphologicalAnalysisIdQuery = { __typename?: 'Query', morphologicalAnalysis: { __typename?: 'MorphologicalAnalysis', morphosyntacticWords: Array<{ __typename?: 'MorphosyntacticWord', wordform: { __typename?: 'Wordform', transcription: string } }> } };
 
 export type ChangeStemFormMutationVariables = Exact<{
   stemId: Scalars['Int']['input'];
@@ -1826,10 +1834,12 @@ export type MorphologicalAnalysesByStemIdSuspenseQueryHookResult = ReturnType<ty
 export type MorphologicalAnalysesByStemIdQueryResult = Apollo.QueryResult<MorphologicalAnalysesByStemIdQuery, MorphologicalAnalysesByStemIdQueryVariables>;
 export const TranscriptionsByMorphologicalAnalysisIdDocument = gql`
     query TranscriptionsByMorphologicalAnalysisId($morphologicalAnalysisId: Int!) {
-  transcriptionsByMorphologicalAnalysisId(
-    morphologicalAnalysisId: $morphologicalAnalysisId
-  ) {
-    transcription
+  morphologicalAnalysis(id: $morphologicalAnalysisId) {
+    morphosyntacticWords {
+      wordform {
+        transcription
+      }
+    }
   }
 }
     `;

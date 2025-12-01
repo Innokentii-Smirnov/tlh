@@ -27,8 +27,12 @@ query MorphologicalAnalysesByStemId($stemId: Int!) {
 }
 
 query TranscriptionsByMorphologicalAnalysisId($morphologicalAnalysisId: Int!) {
-  transcriptionsByMorphologicalAnalysisId(morphologicalAnalysisId: $morphologicalAnalysisId) {
-    transcription
+  morphologicalAnalysis(id: $morphologicalAnalysisId) {
+    morphosyntacticWords {
+      wordform {
+        transcription
+      }
+    }
   }
 }
 
