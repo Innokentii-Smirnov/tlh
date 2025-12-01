@@ -159,6 +159,7 @@ type Query {
   morphologicalAnalysesByStemId(stemId: Int!): [MorphologicalAnalysis!]!
   myManuscripts: [String!]
   reviewerQueries: Reviewer
+  stem(id: Int!): Stem!
   stemLookup(deu: String!, form: String!, pos: String!): Stem
   transcriptionsByMorphologicalAnalysisId(morphologicalAnalysisId: Int!): [Wordform!]!
 }

@@ -298,6 +298,7 @@ export type Query = {
   morphologicalAnalysesByStemId: Array<MorphologicalAnalysis>;
   myManuscripts?: Maybe<Array<Scalars['String']['output']>>;
   reviewerQueries?: Maybe<Reviewer>;
+  stem: Stem;
   stemLookup?: Maybe<Stem>;
   transcriptionsByMorphologicalAnalysisId: Array<Wordform>;
 };
@@ -315,6 +316,11 @@ export type QueryManuscriptArgs = {
 
 export type QueryMorphologicalAnalysesByStemIdArgs = {
   stemId: Scalars['Int']['input'];
+};
+
+
+export type QueryStemArgs = {
+  id: Scalars['Int']['input'];
 };
 
 

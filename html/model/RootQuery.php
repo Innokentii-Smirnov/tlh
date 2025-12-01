@@ -60,6 +60,14 @@ RootQuery::$queryType = new ObjectType([
       'type' => Type::nonNull(Type::listOf(Type::nonNull(Stem::$graphQLType))),
       'resolve' => fn(?int $_rootValue, array $args): array => Stem::selectAllStems()
     ],
+    'stem' => [
+      'type' => Type::nonNull(Stem::$graphQLType),
+      'args' => [
+        'id' => Type::nonNull(Type::int())
+      ],
+      'resolve' => fn(?int $_rootValue, array $args): Stem =>
+      Stem::selectStemById($args['id'])
+    ],
     'morphologicalAnalysesByStemId' => [
       'type' => Type::nonNull(Type::listOf(Type::nonNull(MorphologicalAnalysis::$graphQLType))),
       'args' => [
