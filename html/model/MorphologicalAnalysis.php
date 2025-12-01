@@ -5,6 +5,7 @@ namespace model;
 require_once __DIR__ . '/../vendor/autoload.php';
 require_once __DIR__ . '/../sql_helpers.php';
 require_once __DIR__ . '/Stem.php';
+require_once __DIR__ . '/SuffixChain.php';
 
 use Exception;
 use GraphQL\Type\Definition\{ObjectType, Type};
@@ -17,34 +18,25 @@ class MorphologicalAnalysis
 
   public int $id;
   public int $stemId;
-  public string $suffixes;
-  public string $morphTag;
+  public int $suffixChainId;
 
-  function __construct(int $id, int $stemId, string $suffixes, string $morphTag)
+  function __construct(int $id, int $stemId, int $suffixChainId)
   {
     $this->id = $id;
     $this->stemId = $stemId;
-    $this->suffixes = $suffixes;
-    $this->morphTag = $morphTag;
+    $this->suffixChainId = $suffixChainId;
   }
 
   private static function fromDbAssocRow(array $row): MorphologicalAnalysis
   {
-    return new MorphologicalAnalysis($row['id'], $row['stem_id'], $row['suffixes'], $row['morph_tag']);
+    return new MorphologicalAnalysis($row['morphological_analysis_id'], $row['stem_id'], $row['suffix_chain_id']);
   }
 
   /** @return MorphologicalAnalysis[] */
   static function selectMorphologicalAnalysesByStemId(int $stemId): array
   {
     $sqlQuery = <<<'SQL'
-    select
-      analysis.morphological_analysis_id as id,
-      analysis.stem_id as stem_id,
-      suff.suffixes as suffixes,
-      suff.morph_tag as morph_tag
-    from tive_morphological_analyses as analysis
-      inner join tive_suffix_chains as suff
-        on analysis.suffix_chain_id = suff.suffix_chain_id
+    select * from tive_morphological_analyses as analysis
     where analysis.stem_id = ?;
 SQL;
     return SqlHelpers::executeMultiSelectQuery(
@@ -63,7 +55,9 @@ MorphologicalAnalysis::$graphQLType = new ObjectType([
       'type' => Type::nonNull(Stem::$graphQLType),
       'resolve' => fn(MorphologicalAnalysis $morph): Stem => Stem::selectStemById($morph->stemId)
     ],
-    'suffixes' => Type::nonNull(Type::string()),
-    'morphTag' => Type::nonNull(Type::string())
+    'suffixChain' => [
+      'type' => Type::nonNull(SuffixChain::$graphQLType),
+      'resolve' => fn(MorphologicalAnalysis $morph): SuffixChain => SuffixChain::selectSuffixChainById($morph->suffixChainId)
+    ]
   ]
 ]);
