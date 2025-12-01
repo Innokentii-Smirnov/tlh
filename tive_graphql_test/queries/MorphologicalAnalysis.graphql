@@ -1,0 +1,21 @@
+{
+  morphologicalAnalysis(id: 3) {
+    stem {
+      id,
+      form,
+      pos,
+      deu,
+      eng
+    }
+    suffixChain {
+      id,
+      suffixes,
+      morphTag
+    }
+    morphosyntacticWords {
+      wordform {
+        transcription
+      }
+    }
+  }
+}

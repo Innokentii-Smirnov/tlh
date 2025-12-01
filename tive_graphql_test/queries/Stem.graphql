@@ -1,0 +1,15 @@
+{
+  stem(id: 1) {
+    id,
+    form,
+    pos,
+    deu,
+    eng,
+  	morphologicalAnalyses {
+      suffixChain {
+        suffixes,
+        morphTag
+      }
+    }
+  }
+}
