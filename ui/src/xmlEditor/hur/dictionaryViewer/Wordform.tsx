@@ -11,10 +11,14 @@ export interface Entry {
   morphologicalAnalysis: Morph;
 }
 
-export interface IMorphologicalAnalysis {
-  id: number;
+interface ISuffixChain {
   suffixes: string;
   morphTag: string;
+}
+
+export interface IMorphologicalAnalysis {
+  id: number;
+  suffixChain: ISuffixChain;
 }
 
 interface IProps {
@@ -32,7 +36,8 @@ export function WordformElement({ stem, deu, morphologicalAnalysis, handleSegmen
   handleSegmentationBlur, handleAnalysisInput, handleAnalysisBlur,
   initialShowAttestations }: IProps): JSX.Element {
   
-  const { id, suffixes, morphTag } = morphologicalAnalysis;
+  const { id, suffixChain } = morphologicalAnalysis;
+  const { suffixes, morphTag } = suffixChain;
   const segmentation = makeSegmentation(stem, suffixes);
   const gloss = makeGloss(deu, morphTag);
   const [showAttestations, setShowAttestations] = useState(initialShowAttestations);
