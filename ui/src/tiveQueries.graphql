@@ -15,11 +15,13 @@ query AllStems {
 }
 
 query MorphologicalAnalysesByStemId($stemId: Int!) {
-  morphologicalAnalysesByStemId(stemId: $stemId) {
-    id
-    suffixChain {
-      suffixes
-      morphTag
+  stem(id: $stemId) {
+    morphologicalAnalyses {
+      id
+      suffixChain {
+        suffixes
+        morphTag
+      }
     }
   }
 }

@@ -254,7 +254,7 @@ export function StemViewer({stemListIndex, stem, initialEntries, setDictionary, 
     console.log(loading, error);
     morphs = [];
   } else {
-    morphs = data.morphologicalAnalysesByStemId;
+    morphs = data.stem.morphologicalAnalyses;
   }
 
   const [changeStemFormMutation, formMutation] = useChangeStemFormMutation({

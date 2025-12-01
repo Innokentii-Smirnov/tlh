@@ -295,7 +295,6 @@ export type Query = {
   executiveEditorQueries?: Maybe<ExecutiveEditor>;
   manuscript?: Maybe<ManuscriptMetaData>;
   manuscriptCount: Scalars['Int']['output'];
-  morphologicalAnalysesByStemId: Array<MorphologicalAnalysis>;
   myManuscripts?: Maybe<Array<Scalars['String']['output']>>;
   reviewerQueries?: Maybe<Reviewer>;
   stem: Stem;
@@ -311,11 +310,6 @@ export type QueryAllManuscriptsArgs = {
 
 export type QueryManuscriptArgs = {
   mainIdentifier: Scalars['String']['input'];
-};
-
-
-export type QueryMorphologicalAnalysesByStemIdArgs = {
-  stemId: Scalars['Int']['input'];
 };
 
 
@@ -378,6 +372,7 @@ export type Stem = {
   eng: Scalars['String']['output'];
   form: Scalars['String']['output'];
   id: Scalars['Int']['output'];
+  morphologicalAnalyses: Array<MorphologicalAnalysis>;
   pos: Scalars['String']['output'];
 };
 
@@ -651,7 +646,7 @@ export type MorphologicalAnalysesByStemIdQueryVariables = Exact<{
 }>;
 
 
-export type MorphologicalAnalysesByStemIdQuery = { __typename?: 'Query', morphologicalAnalysesByStemId: Array<{ __typename?: 'MorphologicalAnalysis', id: number, suffixChain: { __typename?: 'SuffixChain', suffixes: string, morphTag: string } }> };
+export type MorphologicalAnalysesByStemIdQuery = { __typename?: 'Query', stem: { __typename?: 'Stem', morphologicalAnalyses: Array<{ __typename?: 'MorphologicalAnalysis', id: number, suffixChain: { __typename?: 'SuffixChain', suffixes: string, morphTag: string } }> } };
 
 export type TranscriptionsByMorphologicalAnalysisIdQueryVariables = Exact<{
   morphologicalAnalysisId: Scalars['Int']['input'];
@@ -1785,11 +1780,13 @@ export type AllStemsSuspenseQueryHookResult = ReturnType<typeof useAllStemsSuspe
 export type AllStemsQueryResult = Apollo.QueryResult<AllStemsQuery, AllStemsQueryVariables>;
 export const MorphologicalAnalysesByStemIdDocument = gql`
     query MorphologicalAnalysesByStemId($stemId: Int!) {
-  morphologicalAnalysesByStemId(stemId: $stemId) {
-    id
-    suffixChain {
-      suffixes
-      morphTag
+  stem(id: $stemId) {
+    morphologicalAnalyses {
+      id
+      suffixChain {
+        suffixes
+        morphTag
+      }
     }
   }
 }

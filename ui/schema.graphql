@@ -156,7 +156,6 @@ type Query {
   executiveEditorQueries: ExecutiveEditor
   manuscript(mainIdentifier: String!): ManuscriptMetaData
   manuscriptCount: Int!
-  morphologicalAnalysesByStemId(stemId: Int!): [MorphologicalAnalysis!]!
   myManuscripts: [String!]
   reviewerQueries: Reviewer
   stem(id: Int!): Stem!
@@ -185,6 +184,7 @@ type Stem {
   eng: String!
   form: String!
   id: Int!
+  morphologicalAnalyses: [MorphologicalAnalysis!]!
   pos: String!
 }
 
