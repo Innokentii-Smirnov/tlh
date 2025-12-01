@@ -6,6 +6,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
 require_once __DIR__ . '/../sql_helpers.php';
 require_once __DIR__ . '/Stem.php';
 require_once __DIR__ . '/SuffixChain.php';
+require_once __DIR__ . '/MorphosyntacticWord.php';
 
 use Exception;
 use GraphQL\Type\Definition\{ObjectType, Type};
@@ -30,6 +31,15 @@ class MorphologicalAnalysis
   private static function fromDbAssocRow(array $row): MorphologicalAnalysis
   {
     return new MorphologicalAnalysis($row['morphological_analysis_id'], $row['stem_id'], $row['suffix_chain_id']);
+  }
+
+  static function selectMorphologicalAnalysisById(int $id): MorphologicalAnalysis
+  {
+    return SqlHelpers::executeSingleReturnRowQuery(
+      "select * from tive_morphological_analyses where morphological_analysis_id = ?;",
+      fn(mysqli_stmt $stmt): bool => $stmt->bind_param('i', $id),
+      fn(array $row): MorphologicalAnalysis => MorphologicalAnalysis::fromDbAssocRow($row)
+    );
   }
 
   /** @return MorphologicalAnalysis[] */
@@ -58,6 +68,10 @@ MorphologicalAnalysis::$graphQLType = new ObjectType([
     'suffixChain' => [
       'type' => Type::nonNull(SuffixChain::$graphQLType),
       'resolve' => fn(MorphologicalAnalysis $morph): SuffixChain => SuffixChain::selectSuffixChainById($morph->suffixChainId)
+    ],
+    'morphosyntacticWords' => [
+      'type' => Type::nonNull(Type::listof(Type::nonNull(MorphosyntacticWord::$graphQLType))),
+      'resolve' => fn(MorphologicalAnalysis $morph): array => MorphosyntacticWord::selectMorphosyntacticWordsByMorphologicalAnalysisId($morph->id)
     ]
   ]
 ]);

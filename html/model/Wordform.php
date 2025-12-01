@@ -26,22 +26,11 @@ class Wordform
     return new Wordform($row['transcription']);
   }
 
-  /** @return Wordform[] */
-  static function selectTranscriptionsByMorphologicalAnalysisId(
-    int $morphologicalAnalysisId): array
+  static function selectWordformById(int $id): Wordform
   {
-    $sqlQuery = <<<'SQL'
-    select wordform.transcription as transcription
-    from tive_morphosyntactic_words as word
-      inner join tive_wordforms as wordform
-        on word.wordform_id = wordform.wordform_id
-      inner join tive_morphological_analyses as ma
-      on word.morphological_analysis_id = ma.morphological_analysis_id
-    where ma.morphological_analysis_id = ?
-SQL;
-    return SqlHelpers::executeMultiSelectQuery(
-      $sqlQuery,
-      fn(mysqli_stmt $stmt): bool => $stmt->bind_param('i', $morphologicalAnalysisId),
+    return SqlHelpers::executeSingleReturnRowQuery(
+      "select transcription from tive_wordforms where wordform_id = ?;",
+      fn(mysqli_stmt $stmt): bool => $stmt->bind_param('i', $id),
       fn(array $row): Wordform => Wordform::fromDbAssocRow($row)
     );
   }
