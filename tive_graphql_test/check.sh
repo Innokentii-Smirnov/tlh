@@ -1,0 +1,1 @@
+diff -s expected output
