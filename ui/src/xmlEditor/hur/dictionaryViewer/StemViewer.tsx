@@ -1,6 +1,6 @@
 import { JSX, useState } from 'react';
 import { StemElement } from './Stem';
-import { Entry, WordformElement } from './Wordform';
+import { Entry, WordformElement, IMorphologicalAnalysis } from './Wordform';
 import { MorphologicalAnalysis, writeMorphAnalysisValue }
   from '../../../model/morphologicalAnalysis';
 import update, { Spec } from 'immutability-helper';
@@ -14,7 +14,7 @@ import { replaceMorphologicalAnalysis } from '../corpus/corpus';
 import { areCorrect } from '../dict/morphologicalAnalysisValidator';
 import { getMorphTags } from '../morphologicalAnalysis/auxiliary';
 import { getEnglishTranslationKey } from '../translations/englishTranslations';
-import { useMorphologicalAnalysesByStemIdQuery, MorphologicalAnalysis as GQMorph,
+import { useMorphologicalAnalysesByStemIdQuery,
   useChangeStemFormMutation, useChangeStemPosMutation, useChangeStemGermanTranslationMutation,
   useChangeStemEnglishTranslationMutation, Stem as GQStem
 } from '../../../graphql';
@@ -248,7 +248,7 @@ export function StemViewer({stemListIndex, stem, initialEntries, setDictionary, 
     },
   });
 
-  let morphs: GQMorph[];
+  let morphs: IMorphologicalAnalysis[];
 
   if (loading || error || data === undefined) {
     console.log(loading, error);

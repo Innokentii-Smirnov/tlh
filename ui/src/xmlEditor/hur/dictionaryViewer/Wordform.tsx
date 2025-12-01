@@ -3,8 +3,7 @@ import { MorphologicalAnalysis as Morph } from '../../../model/morphologicalAnal
 import { Attestation } from '../concordance/concordance';
 import { getLine } from '../corpus/corpus';
 import { ConcordanceEntryViewer } from '../concordanceEntryViewer/ConcordanceEntryViewer';
-import { MorphologicalAnalysis, useTranscriptionsByMorphologicalAnalysisIdQuery,
-         Wordform } from '../../../graphql';
+import { useTranscriptionsByMorphologicalAnalysisIdQuery, Wordform } from '../../../graphql';
 import { makeSegmentation, makeGloss } from '../common/auxiliary';
 
 export interface Entry {
@@ -12,10 +11,16 @@ export interface Entry {
   morphologicalAnalysis: Morph;
 }
 
+export interface IMorphologicalAnalysis {
+  id: number;
+  suffixes: string;
+  morphTag: string;
+}
+
 interface IProps {
   stem: string;
   deu: string;
-  morphologicalAnalysis: MorphologicalAnalysis;
+  morphologicalAnalysis: IMorphologicalAnalysis;
   handleSegmentationInput: (value: string) => void;
   handleSegmentationBlur: (value: string) => void;
   handleAnalysisInput: (value: string) => void;
