@@ -49,7 +49,7 @@ SQL;
 
 MorphologicalAnalysis::$graphQLType = new ObjectType([
   'name' => 'MorphologicalAnalysis',
-  'fields' => [
+  'fields' => static fn(): array => [
     'id' => Type::nonNull(Type::int()),
     'stem' => [
       'type' => Type::nonNull(Stem::$graphQLType),

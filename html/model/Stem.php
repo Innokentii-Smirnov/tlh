@@ -4,6 +4,7 @@ namespace model;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 require_once __DIR__ . '/../sql_helpers.php';
+require_once __DIR__ . '/MorphologicalAnalysis.php';
 
 use Exception;
 use GraphQL\Type\Definition\{ObjectType, Type};
@@ -113,12 +114,16 @@ class Stem
 
 Stem::$graphQLType = new ObjectType([
   'name' => 'Stem',
-  'fields' => [
+  'fields' => static fn(): array => [
     'id' => Type::nonNull(Type::int()),
     'form' => Type::nonNull(Type::string()),
     'pos' => Type::nonNull(Type::string()),
     'deu' => Type::nonNull(Type::string()),
-    'eng' => Type::nonNull(Type::string())
+    'eng' => Type::nonNull(Type::string()),
+    'morphologicalAnalyses' => [
+      'type' => Type::nonNull(Type::listOf(Type::nonNull(MorphologicalAnalysis::$graphQLType))),
+      'resolve' => fn(Stem $stem): array => MorphologicalAnalysis::selectMorphologicalAnalysesByStemId($stem->id)
+    ]
   ]
 ]);
 

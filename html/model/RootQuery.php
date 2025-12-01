@@ -68,13 +68,6 @@ RootQuery::$queryType = new ObjectType([
       'resolve' => fn(?int $_rootValue, array $args): Stem =>
       Stem::selectStemById($args['id'])
     ],
-    'morphologicalAnalysesByStemId' => [
-      'type' => Type::nonNull(Type::listOf(Type::nonNull(MorphologicalAnalysis::$graphQLType))),
-      'args' => [
-        'stemId' => Type::nonNull(Type::int())
-      ],
-      'resolve' => fn(?int $_rootValue, array $args): array => MorphologicalAnalysis::selectMorphologicalAnalysesByStemId($args['stemId'])
-    ],
     'transcriptionsByMorphologicalAnalysisId' => [
       'type' => Type::nonNull(Type::listOf(Type::nonNull(Wordform::$graphQLType))),
       'args' => [
