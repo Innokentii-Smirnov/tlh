@@ -220,9 +220,8 @@ export const enum ManuscriptStatus {
 export type MorphologicalAnalysis = {
   __typename?: 'MorphologicalAnalysis';
   id: Scalars['Int']['output'];
-  morphTag: Scalars['String']['output'];
   stem: Stem;
-  suffixes: Scalars['String']['output'];
+  suffixChain: SuffixChain;
 };
 
 export type Mutation = {
@@ -402,6 +401,13 @@ export type StemMutationsChangeGermanTranslationArgs = {
 
 export type StemMutationsChangePosArgs = {
   pos: Scalars['String']['input'];
+};
+
+export type SuffixChain = {
+  __typename?: 'SuffixChain';
+  id: Scalars['Int']['output'];
+  morphTag: Scalars['String']['output'];
+  suffixes: Scalars['String']['output'];
 };
 
 export type User = {
@@ -639,7 +645,7 @@ export type MorphologicalAnalysesByStemIdQueryVariables = Exact<{
 }>;
 
 
-export type MorphologicalAnalysesByStemIdQuery = { __typename?: 'Query', morphologicalAnalysesByStemId: Array<{ __typename?: 'MorphologicalAnalysis', id: number, suffixes: string, morphTag: string }> };
+export type MorphologicalAnalysesByStemIdQuery = { __typename?: 'Query', morphologicalAnalysesByStemId: Array<{ __typename?: 'MorphologicalAnalysis', id: number, suffixChain: { __typename?: 'SuffixChain', suffixes: string, morphTag: string } }> };
 
 export type TranscriptionsByMorphologicalAnalysisIdQueryVariables = Exact<{
   morphologicalAnalysisId: Scalars['Int']['input'];
@@ -1775,8 +1781,10 @@ export const MorphologicalAnalysesByStemIdDocument = gql`
     query MorphologicalAnalysesByStemId($stemId: Int!) {
   morphologicalAnalysesByStemId(stemId: $stemId) {
     id
-    suffixes
-    morphTag
+    suffixChain {
+      suffixes
+      morphTag
+    }
   }
 }
     `;

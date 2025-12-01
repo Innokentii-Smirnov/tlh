@@ -122,9 +122,8 @@ enum ManuscriptStatus {
 
 type MorphologicalAnalysis {
   id: Int!
-  morphTag: String!
   stem: Stem!
-  suffixes: String!
+  suffixChain: SuffixChain!
 }
 
 type Mutation {
@@ -193,6 +192,12 @@ type StemMutations {
   changeForm(form: String!): Boolean!
   changeGermanTranslation(deu: String!): Boolean!
   changePos(pos: String!): Boolean!
+}
+
+type SuffixChain {
+  id: Int!
+  morphTag: String!
+  suffixes: String!
 }
 
 type User {
