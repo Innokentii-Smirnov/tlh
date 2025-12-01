@@ -1,1 +1,21 @@
-{allStems{form}}
+{
+  allStems {
+    id,
+    form,
+    pos,
+    deu,
+    eng,
+    morphologicalAnalyses {
+      suffixChain {
+        id,
+        suffixes,
+        morphTag
+      },
+      morphosyntacticWords {
+        wordform {
+          transcription
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,5 @@
 mkdir -p output
 for file in queries/*; do
-  data=$(jq -R '{query: .}' < $file)
+  data=$(tr -d '[:space:]' < $file | jq -R '{query: .}')
   ./query.sh "$data" > "output/$(basename $file .graphql).json"
 done
