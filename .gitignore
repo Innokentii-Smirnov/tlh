@@ -23,3 +23,6 @@ html/public/*
 /ui/nightwatch
 /ui/logs
 /ui/tests_output
+
+# Tive GraphQL test
+tive_graphql_test/output
