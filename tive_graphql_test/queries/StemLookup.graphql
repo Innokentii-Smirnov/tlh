@@ -1,0 +1,9 @@
+{
+  stemLookup(form: "fūr", pos: "verb", deu: "sehen") {
+    id,
+    form,
+    pos,
+    deu,
+    eng
+  }
+}

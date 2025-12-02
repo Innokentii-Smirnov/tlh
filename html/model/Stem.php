@@ -41,7 +41,7 @@ class Stem
   static function selectStemFromDatabase(string $form, string $pos, string $deu): ?Stem
   {
     return SqlHelpers::executeSingleReturnRowQuery(
-      "select * from tive_stems where form = ? and pos = ? and deu = ?;",
+      "select stem_id as id, form, pos, deu, eng from tive_stems where form = ? and pos = ? and deu = ?;",
       fn(mysqli_stmt $stmt): bool => $stmt->bind_param('sss', $form, $pos, $deu),
       fn(array $row): Stem => Stem::fromDbAssocRow($row)
     );
