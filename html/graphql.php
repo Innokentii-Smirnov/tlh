@@ -21,7 +21,7 @@ use GraphQL\Error\{DebugFlag, FormattedError};
 use GraphQL\GraphQL;
 use GraphQL\Type\{Schema, SchemaConfig};
 use GraphQL\Type\Definition\{ObjectType, Type};
-use model\{ExecutiveEditor, Manuscript, ManuscriptInput, Reviewer, RootQuery, User, Stem};
+use model\{ExecutiveEditor, Manuscript, ManuscriptInput, Reviewer, RootQuery, User, Stem, StemInput};
 use Ramsey\Uuid\Uuid;
 use function jwt_helpers\{createJsonWebToken, extractJsonWebToken};
 
