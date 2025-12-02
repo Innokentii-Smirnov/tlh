@@ -7,11 +7,12 @@ require_once __DIR__ . '/ExecutiveEditor.php';
 require_once __DIR__ . '/Manuscript.php';
 require_once __DIR__ . '/Reviewer.php';
 require_once __DIR__ . '/User.php';
-require_once __DIR__ . '/Stem.php';
-require_once __DIR__ . '/MorphologicalAnalysis.php';
-require_once __DIR__ . '/Wordform.php';
+require_once __DIR__ . '/tive/Stem.php';
+require_once __DIR__ . '/tive/MorphologicalAnalysis.php';
+require_once __DIR__ . '/tive/Wordform.php';
 
 use GraphQL\Type\Definition\{ObjectType, Type};
+use model\tive\{Stem, MorphologicalAnalysis, Wordform};
 
 abstract class RootQuery
 {

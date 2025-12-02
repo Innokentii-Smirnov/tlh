@@ -135,6 +135,7 @@ type MorphosyntacticWord {
 
 type Mutation {
   createManuscript(values: ManuscriptMetaDataInput): String!
+  createStem(stemInput: StemInput!): Boolean!
   executiveEditor: ExecutiveEditorMutations
   forgotPassword(mail: String!, version: String!): Boolean!
   login(password: String!, username: String!): String
@@ -192,6 +193,12 @@ type Stem {
   form: String!
   id: Int!
   morphologicalAnalyses: [MorphologicalAnalysis!]!
+  pos: String!
+}
+
+input StemInput {
+  deu: String!
+  form: String!
   pos: String!
 }
 

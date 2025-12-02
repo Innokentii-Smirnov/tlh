@@ -235,6 +235,7 @@ export type MorphosyntacticWord = {
 export type Mutation = {
   __typename?: 'Mutation';
   createManuscript: Scalars['String']['output'];
+  createStem: Scalars['Boolean']['output'];
   executiveEditor?: Maybe<ExecutiveEditorMutations>;
   forgotPassword: Scalars['Boolean']['output'];
   login?: Maybe<Scalars['String']['output']>;
@@ -248,6 +249,11 @@ export type Mutation = {
 
 export type MutationCreateManuscriptArgs = {
   values?: InputMaybe<ManuscriptMetaDataInput>;
+};
+
+
+export type MutationCreateStemArgs = {
+  stemInput: StemInput;
 };
 
 
@@ -382,6 +388,12 @@ export type Stem = {
   id: Scalars['Int']['output'];
   morphologicalAnalyses: Array<MorphologicalAnalysis>;
   pos: Scalars['String']['output'];
+};
+
+export type StemInput = {
+  deu: Scalars['String']['input'];
+  form: Scalars['String']['input'];
+  pos: Scalars['String']['input'];
 };
 
 export type StemMutations = {

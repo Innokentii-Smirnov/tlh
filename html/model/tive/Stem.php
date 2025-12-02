@@ -1,9 +1,9 @@
 <?php
 
-namespace model;
+namespace model\tive;
 
-require_once __DIR__ . '/../vendor/autoload.php';
-require_once __DIR__ . '/../sql_helpers.php';
+require_once __DIR__ . '/../../vendor/autoload.php';
+require_once __DIR__ . '/../../sql_helpers.php';
 require_once __DIR__ . '/MorphologicalAnalysis.php';
 
 use Exception;
