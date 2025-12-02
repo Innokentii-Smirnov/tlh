@@ -28,4 +28,13 @@ class StemInput
     $this->pos = $pos;
     $this->deu = $deu;
   }
+  
+  static function fromGraphQLInput(array $input): StemInput
+  {
+    return new StemInput($input['form'], $input['pos'], $input['deu']);
+  }
+  
+  function insert(): bool
+  {
+  }
 }
