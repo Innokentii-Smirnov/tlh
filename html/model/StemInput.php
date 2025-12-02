@@ -4,10 +4,6 @@ namespace model;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 require_once __DIR__ . '/../sql_helpers.php';
-require_once __DIR__ . '/ManuscriptIdentifier.php';
-require_once __DIR__ . '/ManuscriptLanguage.php';
-require_once __DIR__ . '/AbstractManuscript.php';
-
 
 use GraphQL\Type\Definition\{InputObjectType, Type};
 use mysqli;
@@ -42,3 +38,14 @@ class StemInput
     );
   }
 }
+
+// GraphQL
+
+StemInput::$graphQLInputObjectType = new InputObjectType([
+  'name' => 'StemInput',
+  'fields' => [
+    'form' => Type::nonNull(Type::string()),
+    'pos' => Type::nonNull(Type::string()),
+    'deu' => Type::nonNull(Type::string())
+  ]
+]);
