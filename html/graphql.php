@@ -15,6 +15,7 @@ require_once __DIR__ . '/model/Reviewer.php';
 require_once __DIR__ . '/model/ExecutiveEditor.php';
 require_once __DIR__ . '/model/RootQuery.php';
 require_once __DIR__ . '/model/Stem.php';
+require_once __DIR__ . '/model/StemInput.php';
 
 use GraphQL\Error\{DebugFlag, FormattedError};
 use GraphQL\GraphQL;
@@ -123,6 +124,18 @@ function resolveResetPassword(string $uuid, string $newPassword, string $newPass
   }
 }
 
+/** @throws MySafeGraphQLException */
+function resolveStemIsertion(array $args): bool
+{
+  $stem = StemInput::fromGraphQLInput($args['stemInput']);
+
+  if ($stem->insert()) {
+    return true;
+  } else {
+    throw new MySafeGraphQLException("Could not insert stem into database!");
+  }
+}
+
 $mutationType = new ObjectType([
   'name' => 'Mutation',
   'fields' => [
@@ -176,6 +189,13 @@ $mutationType = new ObjectType([
           throw new MySafeGraphQLException("Could not insert manuscript " . $manuscript->mainIdentifier->identifier);
         }
       }
+    ],
+    'createStem' => [
+      'type' => Type::nonNull(Type::boolean()),
+      'args' => [
+        'stemInput' => Type::nonNull(Stem::string())
+      ],
+      'resolve' => => fn(?int $_rootValue, array $args) => resolveRegister($args)
     ],
     'manuscript' => [
       'type' => Manuscript::$graphQLMutationsType,
