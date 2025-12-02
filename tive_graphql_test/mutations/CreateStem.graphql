@@ -1,0 +1,7 @@
+mutation {
+  createStem(stemInput: {
+    form: "ag",
+    pos: "verb",
+    deu: "aufnehmen; aufrichten; erheben; heraufkommen"
+  })
+}
