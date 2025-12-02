@@ -125,7 +125,7 @@ function resolveResetPassword(string $uuid, string $newPassword, string $newPass
 }
 
 /** @throws MySafeGraphQLException */
-function resolveStemIsertion(array $args): bool
+function resolveStemInsertion(array $args): bool
 {
   $stem = StemInput::fromGraphQLInput($args['stemInput']);
 
@@ -193,9 +193,9 @@ $mutationType = new ObjectType([
     'createStem' => [
       'type' => Type::nonNull(Type::boolean()),
       'args' => [
-        'stemInput' => Type::nonNull(Stem::string())
+        'stemInput' => Type::nonNull(StemInput::$graphQLInputObjectType)
       ],
-      'resolve' => => fn(?int $_rootValue, array $args) => resolveRegister($args)
+      'resolve' => fn(?int $_rootValue, array $args) => resolveStemInsertion($args)
     ],
     'manuscript' => [
       'type' => Manuscript::$graphQLMutationsType,
