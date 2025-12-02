@@ -33,7 +33,7 @@ class Stem
 
   private static function fromDbAssocRow(array $row): Stem
   {
-    return new Stem($row['id'], $row['form'], $row['pos'], $row['deu'], $row['eng']);
+    return new Stem($row['stem_id'], $row['form'], $row['pos'], $row['deu'], $row['eng']);
   }
 
   // SQL
@@ -41,7 +41,7 @@ class Stem
   static function selectStemFromDatabase(string $form, string $pos, string $deu): ?Stem
   {
     return SqlHelpers::executeSingleReturnRowQuery(
-      "select stem_id as id, form, pos, deu, eng from tive_stems where form = ? and pos = ? and deu = ?;",
+      "select * from tive_stems where form = ? and pos = ? and deu = ?;",
       fn(mysqli_stmt $stmt): bool => $stmt->bind_param('sss', $form, $pos, $deu),
       fn(array $row): Stem => Stem::fromDbAssocRow($row)
     );
@@ -59,7 +59,7 @@ class Stem
   static function selectStemById(int $id): Stem
   {
     return SqlHelpers::executeSingleReturnRowQuery(
-      "select stem_id as id, form, pos, deu, eng from tive_stems where stem_id = ?;",
+      "select * from tive_stems where stem_id = ?;",
       fn(mysqli_stmt $stmt): bool => $stmt->bind_param('i', $id),
       fn(array $row): Stem => Stem::fromDbAssocRow($row)
     );
@@ -69,7 +69,7 @@ class Stem
   static function selectAllStems(): array
   {
     return SqlHelpers::executeMultiSelectQuery(
-      "select stem_id as id, form, pos, deu, eng from tive_stems;",
+      "select * from tive_stems;",
       null,
       fn(array $row): Stem => Stem::fromDbAssocRow($row)
     );
