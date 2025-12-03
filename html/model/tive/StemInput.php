@@ -33,7 +33,7 @@ class StemInput
   function insert(): bool
   {
     return SqlHelpers::executeSingleChangeQuery(
-      "insert into tive_stems (form, pos, deu, eng) values (?, ?, ?, '');",
+      "insert ignore into tive_stems (form, pos, deu, eng) values (?, ?, ?, '');",
       fn(mysqli_stmt $stmt) => $stmt->bind_param('sss', $this->form, $this->pos, $this->deu)
     );
   }
