@@ -4,6 +4,7 @@ namespace model\tive;
 
 require_once __DIR__ . '/../../vendor/autoload.php';
 require_once __DIR__ . '/../../sql_helpers.php';
+require_once __DIR__ . '/Stem.php';
 
 use GraphQL\Type\Definition\{InputObjectType, Type};
 use mysqli;
@@ -36,6 +37,12 @@ class StemInput
       "insert ignore into tive_stems (form, pos, deu, eng) values (?, ?, ?, '');",
       fn(mysqli_stmt $stmt) => $stmt->bind_param('sss', $this->form, $this->pos, $this->deu)
     );
+  }
+
+  function findOrInsert(): Stem
+  {
+    $this->insert();
+    return Stem::selectStemFromDatabase($this->form, $this->pos, $this->deu);
   }
 }
 

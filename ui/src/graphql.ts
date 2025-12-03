@@ -237,6 +237,7 @@ export type Mutation = {
   createManuscript: Scalars['String']['output'];
   createStem: Scalars['Boolean']['output'];
   executiveEditor?: Maybe<ExecutiveEditorMutations>;
+  findOrCreateStem: Stem;
   forgotPassword: Scalars['Boolean']['output'];
   login?: Maybe<Scalars['String']['output']>;
   manuscript?: Maybe<ManuscriptMutations>;
@@ -253,6 +254,11 @@ export type MutationCreateManuscriptArgs = {
 
 
 export type MutationCreateStemArgs = {
+  stemInput: StemInput;
+};
+
+
+export type MutationFindOrCreateStemArgs = {
   stemInput: StemInput;
 };
 

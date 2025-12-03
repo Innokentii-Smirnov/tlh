@@ -26,3 +26,4 @@ html/public/*
 
 # Tive GraphQL test
 tive_graphql_test/output
+tive_graphql_test/mutation_output

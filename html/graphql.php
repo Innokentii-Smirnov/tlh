@@ -137,6 +137,12 @@ function resolveStemInsertion(array $args): bool
   }
 }
 
+function resolveStemRetrievalOrInsertion(array $args): Stem
+{
+  $stem = StemInput::fromGraphQLInput($args['stemInput']);
+  return $stem->findOrInsert();
+}
+
 $mutationType = new ObjectType([
   'name' => 'Mutation',
   'fields' => [
@@ -197,6 +203,13 @@ $mutationType = new ObjectType([
         'stemInput' => Type::nonNull(StemInput::$graphQLInputObjectType)
       ],
       'resolve' => fn(?int $_rootValue, array $args) => resolveStemInsertion($args)
+    ],
+    'findOrCreateStem' => [
+      'type' => Type::nonNull(Stem::$graphQLType),
+      'args' => [
+        'stemInput' => Type::nonNull(StemInput::$graphQLInputObjectType)
+      ],
+      'resolve' => fn(?int $_rootValue, array $args) => resolveStemRetrievalOrInsertion($args)
     ],
     'manuscript' => [
       'type' => Manuscript::$graphQLMutationsType,

@@ -137,6 +137,7 @@ type Mutation {
   createManuscript(values: ManuscriptMetaDataInput): String!
   createStem(stemInput: StemInput!): Boolean!
   executiveEditor: ExecutiveEditorMutations
+  findOrCreateStem(stemInput: StemInput!): Stem!
   forgotPassword(mail: String!, version: String!): Boolean!
   login(password: String!, username: String!): String
   manuscript(mainIdentifier: String!): ManuscriptMutations

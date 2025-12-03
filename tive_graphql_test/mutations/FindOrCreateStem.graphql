@@ -1,7 +1,13 @@
 mutation {
-  createStem(stemInput: {
+  findOrCreateStem(stemInput: {
     form: "ag",
     pos: "verb",
     deu: "aufnehmen; aufrichten; erheben; heraufkommen"
-  })
+  }) {
+    id,
+    form,
+    pos,
+    deu,
+    eng
+  }
 }
