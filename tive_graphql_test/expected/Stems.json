@@ -56,6 +56,25 @@
         "morphologicalAnalyses": [
           {
             "suffixChain": {
+              "id": 1,
+              "suffixes": "",
+              "morphTag": ".ABS"
+            },
+            "morphosyntacticWords": [
+              {
+                "wordform": {
+                  "transcription": "pabanni"
+                }
+              },
+              {
+                "wordform": {
+                  "transcription": "pābanni"
+                }
+              }
+            ]
+          },
+          {
+            "suffixChain": {
               "id": 2,
               "suffixes": "ne-ž",
               "morphTag": "RELAT.SG-ERG"
@@ -73,25 +92,6 @@
               "id": 4,
               "suffixes": "ne-e",
               "morphTag": "RELAT.SG-DIR/LOC"
-            },
-            "morphosyntacticWords": [
-              {
-                "wordform": {
-                  "transcription": "pabanni"
-                }
-              },
-              {
-                "wordform": {
-                  "transcription": "pābanni"
-                }
-              }
-            ]
-          },
-          {
-            "suffixChain": {
-              "id": 1,
-              "suffixes": "",
-              "morphTag": ".ABS"
             },
             "morphosyntacticWords": [
               {
