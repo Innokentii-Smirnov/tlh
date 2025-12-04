@@ -1,1 +1,1 @@
-diff -s expected output
+diff -s expected/"$1" output/"$1"

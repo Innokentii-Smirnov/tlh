@@ -1,7 +1,7 @@
-rm -r output
-mkdir output
-for file in queries/*; do
+rm -r "output/$1"
+mkdir -p "output/$1"
+for file in input/"$1"/*; do
   data=$(jq -R --slurp '{query: .}' $file)
-  ./query.sh "$data" > "output/$(basename $file .graphql).json"
+  ./query.sh "$data" > "output/$1/$(basename $file .graphql).json"
 done
-./check.sh
+./check.sh "$1"
