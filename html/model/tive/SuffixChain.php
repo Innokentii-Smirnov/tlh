@@ -17,17 +17,19 @@ class SuffixChain
   public int $id;
   public string $suffixes;
   public string $morphTag;
+  public string $pos;
 
-  function __construct(int $id, string $suffixes, string $morphTag)
+  function __construct(int $id, string $suffixes, string $morphTag, string $pos)
   {
     $this->id = $id;
     $this->suffixes = $suffixes;
     $this->morphTag = $morphTag;
+    $this->pos = $pos;
   }
 
   private static function fromDbAssocRow(array $row): SuffixChain
   {
-    return new SuffixChain($row['suffix_chain_id'], $row['suffixes'], $row['morph_tag']);
+    return new SuffixChain($row['suffix_chain_id'], $row['suffixes'], $row['morph_tag'], $row['pos']);
   }
 
   static function selectSuffixChainById(int $id): SuffixChain
@@ -38,6 +40,15 @@ class SuffixChain
       fn(array $row): SuffixChain => SuffixChain::fromDbAssocRow($row)
     );
   }
+
+  static function selectByUniqueKey(string $suffixes, string $morphTag, string $pos): ?SuffixChain
+  {
+    return SqlHelpers::executeSingleReturnRowQuery(
+      "select * from tive_suffix_chains where suffixes = ? and morph_tag = ? and pos = ?;",
+      fn(mysqli_stmt $stmt): bool => $stmt->bind_param('sss', $suffixes, $morphTag, $pos),
+      fn(array $row): SuffixChain => SuffixChain::fromDbAssocRow($row)
+    );
+  }
 }
 
 SuffixChain::$graphQLType = new ObjectType([
@@ -45,6 +56,7 @@ SuffixChain::$graphQLType = new ObjectType([
   'fields' => [
     'id' => Type::nonNull(Type::int()),
     'suffixes' => Type::nonNull(Type::string()),
-    'morphTag' => Type::nonNull(Type::string())
+    'morphTag' => Type::nonNull(Type::string()),
+    'pos' => Type::nonNull(Type::string())
   ]
 ]);

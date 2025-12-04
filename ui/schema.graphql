@@ -138,6 +138,7 @@ type Mutation {
   createStem(stemInput: StemInput!): Boolean!
   executiveEditor: ExecutiveEditorMutations
   findOrCreateStem(stemInput: StemInput!): Stem!
+  findOrCreateSuffixChain(suffixChainInput: SuffixChainInput!): SuffixChain!
   forgotPassword(mail: String!, version: String!): Boolean!
   login(password: String!, username: String!): String
   manuscript(mainIdentifier: String!): ManuscriptMutations
@@ -213,6 +214,13 @@ type StemMutations {
 type SuffixChain {
   id: Int!
   morphTag: String!
+  pos: String!
+  suffixes: String!
+}
+
+input SuffixChainInput {
+  morphTag: String!
+  pos: String!
   suffixes: String!
 }
 

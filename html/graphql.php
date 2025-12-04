@@ -16,13 +16,15 @@ require_once __DIR__ . '/model/ExecutiveEditor.php';
 require_once __DIR__ . '/model/RootQuery.php';
 require_once __DIR__ . '/model/tive/Stem.php';
 require_once __DIR__ . '/model/tive/StemInput.php';
+require_once __DIR__ . '/model/tive/SuffixChain.php';
+require_once __DIR__ . '/model/tive/SuffixChainInput.php';
 
 use GraphQL\Error\{DebugFlag, FormattedError};
 use GraphQL\GraphQL;
 use GraphQL\Type\{Schema, SchemaConfig};
 use GraphQL\Type\Definition\{ObjectType, Type};
 use model\{ExecutiveEditor, Manuscript, ManuscriptInput, Reviewer, RootQuery, User};
-use model\tive\{Stem, StemInput};
+use model\tive\{Stem, StemInput, SuffixChain, SuffixChainInput};
 use Ramsey\Uuid\Uuid;
 use function jwt_helpers\{createJsonWebToken, extractJsonWebToken};
 
@@ -143,6 +145,12 @@ function resolveStemRetrievalOrInsertion(array $args): Stem
   return $stem->findOrInsert();
 }
 
+function resolveSuffixChainRetrievalOrInsertion(array $args): SuffixChain
+{
+  $suffixChain = SuffixChainInput::fromGraphQLInput($args['suffixChainInput']);
+  return $suffixChain->findOrInsert();
+}
+
 $mutationType = new ObjectType([
   'name' => 'Mutation',
   'fields' => [
@@ -210,6 +218,13 @@ $mutationType = new ObjectType([
         'stemInput' => Type::nonNull(StemInput::$graphQLInputObjectType)
       ],
       'resolve' => fn(?int $_rootValue, array $args) => resolveStemRetrievalOrInsertion($args)
+    ],
+    'findOrCreateSuffixChain' => [
+      'type' => Type::nonNull(SuffixChain::$graphQLType),
+      'args' => [
+        'suffixChainInput' => Type::nonNull(SuffixChainInput::$graphQLInputObjectType)
+      ],
+      'resolve' => fn(?int $_rootValue, array $args) => resolveSuffixChainRetrievalOrInsertion($args)
     ],
     'manuscript' => [
       'type' => Manuscript::$graphQLMutationsType,

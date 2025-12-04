@@ -238,6 +238,7 @@ export type Mutation = {
   createStem: Scalars['Boolean']['output'];
   executiveEditor?: Maybe<ExecutiveEditorMutations>;
   findOrCreateStem: Stem;
+  findOrCreateSuffixChain: SuffixChain;
   forgotPassword: Scalars['Boolean']['output'];
   login?: Maybe<Scalars['String']['output']>;
   manuscript?: Maybe<ManuscriptMutations>;
@@ -260,6 +261,11 @@ export type MutationCreateStemArgs = {
 
 export type MutationFindOrCreateStemArgs = {
   stemInput: StemInput;
+};
+
+
+export type MutationFindOrCreateSuffixChainArgs = {
+  suffixChainInput: SuffixChainInput;
 };
 
 
@@ -434,7 +440,14 @@ export type SuffixChain = {
   __typename?: 'SuffixChain';
   id: Scalars['Int']['output'];
   morphTag: Scalars['String']['output'];
+  pos: Scalars['String']['output'];
   suffixes: Scalars['String']['output'];
+};
+
+export type SuffixChainInput = {
+  morphTag: Scalars['String']['input'];
+  pos: Scalars['String']['input'];
+  suffixes: Scalars['String']['input'];
 };
 
 export type User = {

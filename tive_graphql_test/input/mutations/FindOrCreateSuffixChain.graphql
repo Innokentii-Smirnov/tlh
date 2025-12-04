@@ -1,0 +1,12 @@
+mutation {
+  findOrCreateSuffixChain(suffixChainInput: {
+    suffixes: "da",
+    morphTag: "DIR",
+    pos: "noun"
+  }) {
+    id
+    suffixes
+    morphTag
+    pos
+  }
+}
