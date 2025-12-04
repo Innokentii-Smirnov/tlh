@@ -62,9 +62,10 @@ load data
 
 insert into tive_morphosyntactic_words (wordform_id, morphological_analysis_id)
 select w.wordform_id, ma.morphological_analysis_id
-from tive_wordforms w
-  cross join tive_morphological_analyses ma
+from tive_morphological_analyses ma
   inner join tive_stems stem on ma.stem_id = stem.stem_id
   inner join tive_suffix_chains suff on ma.suffix_chain_id = suff.suffix_chain_id
-  inner join tive_morphosyntactic_words_input input on w.transcription regexp input.transcription
-    and stem.deu = input.deu and suff.morph_tag = input.morph_tag and suff.pos = input.pos;
+  inner join tive_morphosyntactic_words_input input
+    on stem.deu = input.deu and suff.morph_tag = input.morph_tag and suff.pos = input.pos
+  inner join tive_wordforms w
+    on w.transcription regexp input.transcription;
