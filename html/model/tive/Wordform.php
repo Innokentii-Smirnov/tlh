@@ -14,22 +14,24 @@ class Wordform
 {
   static ObjectType $graphQLType;
 
+  public int $id;
   public string $transcription;
 
-  function __construct(string $transcription)
+  function __construct(int $id, string $transcription)
   {
+    $this->id = $id;
     $this->transcription = $transcription;
   }
 
   private static function fromDbAssocRow(array $row): Wordform
   {
-    return new Wordform($row['transcription']);
+    return new Wordform($row['wordform_id'], $row['transcription']);
   }
 
   static function selectWordformById(int $id): Wordform
   {
     return SqlHelpers::executeSingleReturnRowQuery(
-      "select transcription from tive_wordforms where wordform_id = ?;",
+      "select * from tive_wordforms where wordform_id = ?;",
       fn(mysqli_stmt $stmt): bool => $stmt->bind_param('i', $id),
       fn(array $row): Wordform => Wordform::fromDbAssocRow($row)
     );
@@ -38,7 +40,7 @@ class Wordform
   static function selectByUniqueKey(string $transcription): Wordform
   {
     return SqlHelpers::executeSingleReturnRowQuery(
-      "select transcription from tive_wordforms where transcription = ?;",
+      "select * from tive_wordforms where transcription = ?;",
       fn(mysqli_stmt $stmt): bool => $stmt->bind_param('s', $transcription),
       fn(array $row): Wordform => Wordform::fromDbAssocRow($row)
     );
@@ -48,6 +50,7 @@ class Wordform
 Wordform::$graphQLType = new ObjectType([
   'name' => 'Wordform',
   'fields' => [
+    'id' => Type::nonNull(Type::int()),
     'transcription' => Type::nonNull(Type::string())
   ]
 ]);

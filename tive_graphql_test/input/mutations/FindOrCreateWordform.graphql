@@ -2,6 +2,7 @@ mutation {
   findOrCreateWordform(wordformInput: {
     transcription: "[m]ilōle"
   }) {
+    id
     transcription
   }
 }
