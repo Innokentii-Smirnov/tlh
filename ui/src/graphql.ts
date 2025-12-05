@@ -245,6 +245,7 @@ export type Mutation = {
   findOrCreateMorphologicalAnalysis: MorphologicalAnalysis;
   findOrCreateStem: Stem;
   findOrCreateSuffixChain: SuffixChain;
+  findOrCreateWordform: Wordform;
   forgotPassword: Scalars['Boolean']['output'];
   login?: Maybe<Scalars['String']['output']>;
   manuscript?: Maybe<ManuscriptMutations>;
@@ -277,6 +278,11 @@ export type MutationFindOrCreateStemArgs = {
 
 export type MutationFindOrCreateSuffixChainArgs = {
   suffixChainInput: SuffixChainInput;
+};
+
+
+export type MutationFindOrCreateWordformArgs = {
+  wordformInput: WordformInput;
 };
 
 
@@ -482,6 +488,10 @@ export type UserInput = {
 export type Wordform = {
   __typename?: 'Wordform';
   transcription: Scalars['String']['output'];
+};
+
+export type WordformInput = {
+  transcription: Scalars['String']['input'];
 };
 
 export const enum XmlReviewType {

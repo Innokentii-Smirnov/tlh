@@ -1,0 +1,7 @@
+mutation {
+  findOrCreateWordform(wordformInput: {
+    transcription: "[m]ilōle"
+  }) {
+    transcription
+  }
+}

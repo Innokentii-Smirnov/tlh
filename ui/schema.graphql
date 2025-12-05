@@ -145,6 +145,7 @@ type Mutation {
   findOrCreateMorphologicalAnalysis(morphologicalAnalysisInput: MorphologicalAnalysisInput!): MorphologicalAnalysis!
   findOrCreateStem(stemInput: StemInput!): Stem!
   findOrCreateSuffixChain(suffixChainInput: SuffixChainInput!): SuffixChain!
+  findOrCreateWordform(wordformInput: WordformInput!): Wordform!
   forgotPassword(mail: String!, version: String!): Boolean!
   login(password: String!, username: String!): String
   manuscript(mainIdentifier: String!): ManuscriptMutations
@@ -248,6 +249,10 @@ input UserInput {
 }
 
 type Wordform {
+  transcription: String!
+}
+
+input WordformInput {
   transcription: String!
 }
 

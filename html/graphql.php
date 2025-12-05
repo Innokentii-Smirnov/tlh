@@ -20,13 +20,16 @@ require_once __DIR__ . '/model/tive/SuffixChain.php';
 require_once __DIR__ . '/model/tive/SuffixChainInput.php';
 require_once __DIR__ . '/model/tive/MorphologicalAnalysis.php';
 require_once __DIR__ . '/model/tive/MorphologicalAnalysisInput.php';
+require_once __DIR__ . '/model/tive/Wordform.php';
+require_once __DIR__ . '/model/tive/WordformInput.php';
 
 use GraphQL\Error\{DebugFlag, FormattedError};
 use GraphQL\GraphQL;
 use GraphQL\Type\{Schema, SchemaConfig};
 use GraphQL\Type\Definition\{ObjectType, Type};
 use model\{ExecutiveEditor, Manuscript, ManuscriptInput, Reviewer, RootQuery, User};
-use model\tive\{Stem, StemInput, SuffixChain, SuffixChainInput, MorphologicalAnalysis, MorphologicalAnalysisInput};
+use model\tive\{Stem, StemInput, SuffixChain, SuffixChainInput, MorphologicalAnalysis,
+  MorphologicalAnalysisInput, Wordform, WordformInput};
 use Ramsey\Uuid\Uuid;
 use function jwt_helpers\{createJsonWebToken, extractJsonWebToken};
 
@@ -159,6 +162,12 @@ function resolveMorphologicalAnalysisRetrievalOrInsertion(array $args): Morpholo
   return $morphologicalAnalysis->findOrInsert();
 }
 
+function resolveWordformRetrievalOrInsertion(array $args): Wordform
+{
+  $wordform = WordformInput::fromGraphQLInput($args['wordformInput']);
+  return $wordform->findOrInsert();
+}
+
 $mutationType = new ObjectType([
   'name' => 'Mutation',
   'fields' => [
@@ -240,6 +249,13 @@ $mutationType = new ObjectType([
         'morphologicalAnalysisInput' => Type::nonNull(MorphologicalAnalysisInput::$graphQLInputObjectType)
       ],
       'resolve' => fn(?int $_rootValue, array $args) => resolveMorphologicalAnalysisRetrievalOrInsertion($args)
+    ],
+    'findOrCreateWordform' => [
+      'type' => Type::nonNull(Wordform::$graphQLType),
+      'args' => [
+        'wordformInput' => Type::nonNull(WordformInput::$graphQLInputObjectType)
+      ],
+      'resolve' => fn(?int $_rootValue, array $args) => resolveWordformRetrievalOrInsertion($args)
     ],
     'manuscript' => [
       'type' => Manuscript::$graphQLMutationsType,

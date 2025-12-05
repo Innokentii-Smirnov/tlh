@@ -34,6 +34,15 @@ class Wordform
       fn(array $row): Wordform => Wordform::fromDbAssocRow($row)
     );
   }
+
+  static function selectByUniqueKey(string $transcription): Wordform
+  {
+    return SqlHelpers::executeSingleReturnRowQuery(
+      "select transcription from tive_wordforms where transcription = ?;",
+      fn(mysqli_stmt $stmt): bool => $stmt->bind_param('s', $transcription),
+      fn(array $row): Wordform => Wordform::fromDbAssocRow($row)
+    );
+  }
 }
 
 Wordform::$graphQLType = new ObjectType([
