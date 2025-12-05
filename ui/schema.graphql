@@ -138,11 +138,17 @@ type MorphosyntacticWord {
   wordform: Wordform!
 }
 
+input MorphosyntacticWordInput {
+  morphologicalAnalysisInput: MorphologicalAnalysisInput!
+  wordformInput: WordformInput!
+}
+
 type Mutation {
   createManuscript(values: ManuscriptMetaDataInput): String!
   createStem(stemInput: StemInput!): Boolean!
   executiveEditor: ExecutiveEditorMutations
   findOrCreateMorphologicalAnalysis(morphologicalAnalysisInput: MorphologicalAnalysisInput!): MorphologicalAnalysis!
+  findOrCreateMorphosyntacticWord(morphosyntacticWordInput: MorphosyntacticWordInput!): MorphosyntacticWord!
   findOrCreateStem(stemInput: StemInput!): Stem!
   findOrCreateSuffixChain(suffixChainInput: SuffixChainInput!): SuffixChain!
   findOrCreateWordform(wordformInput: WordformInput!): Wordform!
@@ -249,6 +255,7 @@ input UserInput {
 }
 
 type Wordform {
+  id: Int!
   transcription: String!
 }
 

@@ -237,12 +237,18 @@ export type MorphosyntacticWord = {
   wordform: Wordform;
 };
 
+export type MorphosyntacticWordInput = {
+  morphologicalAnalysisInput: MorphologicalAnalysisInput;
+  wordformInput: WordformInput;
+};
+
 export type Mutation = {
   __typename?: 'Mutation';
   createManuscript: Scalars['String']['output'];
   createStem: Scalars['Boolean']['output'];
   executiveEditor?: Maybe<ExecutiveEditorMutations>;
   findOrCreateMorphologicalAnalysis: MorphologicalAnalysis;
+  findOrCreateMorphosyntacticWord: MorphosyntacticWord;
   findOrCreateStem: Stem;
   findOrCreateSuffixChain: SuffixChain;
   findOrCreateWordform: Wordform;
@@ -268,6 +274,11 @@ export type MutationCreateStemArgs = {
 
 export type MutationFindOrCreateMorphologicalAnalysisArgs = {
   morphologicalAnalysisInput: MorphologicalAnalysisInput;
+};
+
+
+export type MutationFindOrCreateMorphosyntacticWordArgs = {
+  morphosyntacticWordInput: MorphosyntacticWordInput;
 };
 
 
@@ -487,6 +498,7 @@ export type UserInput = {
 
 export type Wordform = {
   __typename?: 'Wordform';
+  id: Scalars['Int']['output'];
   transcription: Scalars['String']['output'];
 };
 

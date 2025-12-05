@@ -1,0 +1,42 @@
+mutation {
+  findOrCreateMorphosyntacticWord(
+    morphosyntacticWordInput: {
+      morphologicalAnalysisInput: {
+        stemInput: {
+          form: "nakk",
+          pos: "verb",
+          deu: "freilassen; gewähren"
+        }
+        suffixChainInput: {
+          suffixes: "ed-uw-a",
+          morphTag: "FUT-MED-3A.SG",
+          pos: "verb"
+        }
+      }
+      wordformInput: {
+        transcription: "na]kkiduwa"
+      }
+    }
+  ) {
+    id
+    morphologicalAnalysis {
+      stem {
+        id
+        form
+        pos
+        deu
+        eng
+      }
+      suffixChain {
+        id
+        suffixes
+        morphTag
+        pos
+      }
+    }
+    wordform {
+      id
+      transcription
+    }
+  }
+}

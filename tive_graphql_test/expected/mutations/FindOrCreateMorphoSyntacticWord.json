@@ -1,0 +1,26 @@
+{
+  "data": {
+    "findOrCreateMorphosyntacticWord": {
+      "id": 18,
+      "morphologicalAnalysis": {
+        "stem": {
+          "id": 36,
+          "form": "nakk",
+          "pos": "verb",
+          "deu": "freilassen; gewähren",
+          "eng": ""
+        },
+        "suffixChain": {
+          "id": 36,
+          "suffixes": "ed-uw-a",
+          "morphTag": "FUT-MED-3A.SG",
+          "pos": "verb"
+        }
+      },
+      "wordform": {
+        "id": 34,
+        "transcription": "na]kkiduwa"
+      }
+    }
+  }
+}

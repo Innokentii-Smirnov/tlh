@@ -22,6 +22,8 @@ require_once __DIR__ . '/model/tive/MorphologicalAnalysis.php';
 require_once __DIR__ . '/model/tive/MorphologicalAnalysisInput.php';
 require_once __DIR__ . '/model/tive/Wordform.php';
 require_once __DIR__ . '/model/tive/WordformInput.php';
+require_once __DIR__ . '/model/tive/MorphosyntacticWord.php';
+require_once __DIR__ . '/model/tive/MorphosyntacticWordInput.php';
 
 use GraphQL\Error\{DebugFlag, FormattedError};
 use GraphQL\GraphQL;
@@ -29,7 +31,9 @@ use GraphQL\Type\{Schema, SchemaConfig};
 use GraphQL\Type\Definition\{ObjectType, Type};
 use model\{ExecutiveEditor, Manuscript, ManuscriptInput, Reviewer, RootQuery, User};
 use model\tive\{Stem, StemInput, SuffixChain, SuffixChainInput, MorphologicalAnalysis,
-  MorphologicalAnalysisInput, Wordform, WordformInput};
+  MorphologicalAnalysisInput, Wordform, WordformInput, MorphosyntacticWord,
+  MorphosyntacticWordInput
+};
 use Ramsey\Uuid\Uuid;
 use function jwt_helpers\{createJsonWebToken, extractJsonWebToken};
 
@@ -168,6 +172,12 @@ function resolveWordformRetrievalOrInsertion(array $args): Wordform
   return $wordform->findOrInsert();
 }
 
+function resolveMorphosyntacticWordRetrievalOrInsertion(array $args): MorphosyntacticWord
+{
+  $morphosyntacticWord = MorphosyntacticWordInput::fromGraphQLInput($args['morphosyntacticWordInput']);
+  return $morphosyntacticWord->findOrInsert();
+}
+
 $mutationType = new ObjectType([
   'name' => 'Mutation',
   'fields' => [
@@ -256,6 +266,13 @@ $mutationType = new ObjectType([
         'wordformInput' => Type::nonNull(WordformInput::$graphQLInputObjectType)
       ],
       'resolve' => fn(?int $_rootValue, array $args) => resolveWordformRetrievalOrInsertion($args)
+    ],
+    'findOrCreateMorphosyntacticWord' => [
+      'type' => Type::nonNull(MorphosyntacticWord::$graphQLType),
+      'args' => [
+        'morphosyntacticWordInput' => Type::nonNull(MorphosyntacticWordInput::$graphQLInputObjectType)
+      ],
+      'resolve' => fn(?int $_rootValue, array $args) => resolveMorphosyntacticWordRetrievalOrInsertion($args)
     ],
     'manuscript' => [
       'type' => Manuscript::$graphQLMutationsType,

@@ -32,6 +32,15 @@ class MorphosyntacticWord
     return new MorphosyntacticWord($row['morphosyntactic_word_id'], $row['morphological_analysis_id'], $row['wordform_id']);
   }
 
+  public static function selectByUniqueKey(int $morphologicalAnalysisId, int $transcriptionId): MorphosyntacticWord
+  {
+    return SqlHelpers::executeSingleReturnRowQuery(
+      "select * from tive_morphosyntactic_words where morphological_analysis_id = ? and wordform_id = ?;",
+      fn(mysqli_stmt $stmt): bool => $stmt->bind_param('ii', $morphologicalAnalysisId, $transcriptionId),
+      fn(array $row): MorphosyntacticWord => MorphosyntacticWord::fromDbAssocRow($row)
+    );
+  }
+
   /** @return MorphologicalAnalysis[] */
   static function selectMorphosyntacticWordsByMorphologicalAnalysisId(int $morphologicalAnalysisId): array
   {
