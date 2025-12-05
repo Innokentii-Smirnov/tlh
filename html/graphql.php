@@ -18,13 +18,15 @@ require_once __DIR__ . '/model/tive/Stem.php';
 require_once __DIR__ . '/model/tive/StemInput.php';
 require_once __DIR__ . '/model/tive/SuffixChain.php';
 require_once __DIR__ . '/model/tive/SuffixChainInput.php';
+require_once __DIR__ . '/model/tive/MorphologicalAnalysis.php';
+require_once __DIR__ . '/model/tive/MorphologicalAnalysisInput.php';
 
 use GraphQL\Error\{DebugFlag, FormattedError};
 use GraphQL\GraphQL;
 use GraphQL\Type\{Schema, SchemaConfig};
 use GraphQL\Type\Definition\{ObjectType, Type};
 use model\{ExecutiveEditor, Manuscript, ManuscriptInput, Reviewer, RootQuery, User};
-use model\tive\{Stem, StemInput, SuffixChain, SuffixChainInput};
+use model\tive\{Stem, StemInput, SuffixChain, SuffixChainInput, MorphologicalAnalysis, MorphologicalAnalysisInput};
 use Ramsey\Uuid\Uuid;
 use function jwt_helpers\{createJsonWebToken, extractJsonWebToken};
 
@@ -151,6 +153,12 @@ function resolveSuffixChainRetrievalOrInsertion(array $args): SuffixChain
   return $suffixChain->findOrInsert();
 }
 
+function resolveMorphologicalAnalysisRetrievalOrInsertion(array $args): MorphologicalAnalysis
+{
+  $morphologicalAnalysis = MorphologicalAnalysisInput::fromGraphQLInput($args['morphologicalAnalysisInput']);
+  return $morphologicalAnalysis->findOrInsert();
+}
+
 $mutationType = new ObjectType([
   'name' => 'Mutation',
   'fields' => [
@@ -225,6 +233,13 @@ $mutationType = new ObjectType([
         'suffixChainInput' => Type::nonNull(SuffixChainInput::$graphQLInputObjectType)
       ],
       'resolve' => fn(?int $_rootValue, array $args) => resolveSuffixChainRetrievalOrInsertion($args)
+    ],
+    'findOrCreateMorphologicalAnalysis' => [
+      'type' => Type::nonNull(MorphologicalAnalysis::$graphQLType),
+      'args' => [
+        'morphologicalAnalysisInput' => Type::nonNull(MorphologicalAnalysisInput::$graphQLInputObjectType)
+      ],
+      'resolve' => fn(?int $_rootValue, array $args) => resolveMorphologicalAnalysisRetrievalOrInsertion($args)
     ],
     'manuscript' => [
       'type' => Manuscript::$graphQLMutationsType,

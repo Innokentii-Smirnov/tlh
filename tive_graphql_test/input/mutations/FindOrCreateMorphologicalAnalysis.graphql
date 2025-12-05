@@ -1,0 +1,29 @@
+mutation {
+  findOrCreateMorphologicalAnalysis(morphologicalAnalysisInput: {
+    stemInput: {
+      form: "ker",
+      pos: "verb",
+      deu: "lang / dauerhaft sein"
+    },
+    suffixChainInput: {
+      suffixes: "āž-o-ež",
+      morphTag: "āž-MOD.PAT-OPT",
+      pos: "verb"
+    }
+  }) {
+    id
+    stem {
+      id
+      form
+      pos
+      deu
+      eng
+    }
+    suffixChain {
+      id
+      suffixes
+      morphTag
+      pos
+    }
+  }
+}

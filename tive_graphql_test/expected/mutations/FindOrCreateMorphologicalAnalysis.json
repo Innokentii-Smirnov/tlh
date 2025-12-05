@@ -1,0 +1,20 @@
+{
+  "data": {
+    "findOrCreateMorphologicalAnalysis": {
+      "id": 16,
+      "stem": {
+        "id": 15,
+        "form": "ker",
+        "pos": "verb",
+        "deu": "lang / dauerhaft sein",
+        "eng": ""
+      },
+      "suffixChain": {
+        "id": 15,
+        "suffixes": "āž-o-ež",
+        "morphTag": "āž-MOD.PAT-OPT",
+        "pos": "verb"
+      }
+    }
+  }
+}

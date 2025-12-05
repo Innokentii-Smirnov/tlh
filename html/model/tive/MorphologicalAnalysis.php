@@ -42,6 +42,15 @@ class MorphologicalAnalysis
     );
   }
 
+  static function selectByUniqueKey(int $stemId, int $suffixChainId): MorphologicalAnalysis
+  {
+    return SqlHelpers::executeSingleReturnRowQuery(
+      "select * from tive_morphological_analyses where stem_id = ? and suffix_chain_id = ?;",
+      fn(mysqli_stmt $stmt): bool => $stmt->bind_param('ii', $stemId, $suffixChainId),
+      fn(array $row): MorphologicalAnalysis => MorphologicalAnalysis::fromDbAssocRow($row)
+    );
+  }
+
   /** @return MorphologicalAnalysis[] */
   static function selectMorphologicalAnalysesByStemId(int $stemId): array
   {

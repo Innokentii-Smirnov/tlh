@@ -225,6 +225,11 @@ export type MorphologicalAnalysis = {
   suffixChain: SuffixChain;
 };
 
+export type MorphologicalAnalysisInput = {
+  stemInput: StemInput;
+  suffixChainInput: SuffixChainInput;
+};
+
 export type MorphosyntacticWord = {
   __typename?: 'MorphosyntacticWord';
   id: Scalars['Int']['output'];
@@ -237,6 +242,7 @@ export type Mutation = {
   createManuscript: Scalars['String']['output'];
   createStem: Scalars['Boolean']['output'];
   executiveEditor?: Maybe<ExecutiveEditorMutations>;
+  findOrCreateMorphologicalAnalysis: MorphologicalAnalysis;
   findOrCreateStem: Stem;
   findOrCreateSuffixChain: SuffixChain;
   forgotPassword: Scalars['Boolean']['output'];
@@ -256,6 +262,11 @@ export type MutationCreateManuscriptArgs = {
 
 export type MutationCreateStemArgs = {
   stemInput: StemInput;
+};
+
+
+export type MutationFindOrCreateMorphologicalAnalysisArgs = {
+  morphologicalAnalysisInput: MorphologicalAnalysisInput;
 };
 
 

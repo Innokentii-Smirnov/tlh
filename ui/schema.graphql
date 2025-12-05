@@ -127,6 +127,11 @@ type MorphologicalAnalysis {
   suffixChain: SuffixChain!
 }
 
+input MorphologicalAnalysisInput {
+  stemInput: StemInput!
+  suffixChainInput: SuffixChainInput!
+}
+
 type MorphosyntacticWord {
   id: Int!
   morphologicalAnalysis: MorphologicalAnalysis!
@@ -137,6 +142,7 @@ type Mutation {
   createManuscript(values: ManuscriptMetaDataInput): String!
   createStem(stemInput: StemInput!): Boolean!
   executiveEditor: ExecutiveEditorMutations
+  findOrCreateMorphologicalAnalysis(morphologicalAnalysisInput: MorphologicalAnalysisInput!): MorphologicalAnalysis!
   findOrCreateStem(stemInput: StemInput!): Stem!
   findOrCreateSuffixChain(suffixChainInput: SuffixChainInput!): SuffixChain!
   forgotPassword(mail: String!, version: String!): Boolean!
