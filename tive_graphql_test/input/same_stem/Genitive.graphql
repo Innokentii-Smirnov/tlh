@@ -1,0 +1,42 @@
+mutation {
+  findOrCreateMorphosyntacticWord(
+    morphosyntacticWordInput: {
+      morphologicalAnalysisInput: {
+        stemInput: {
+          form: "avari",
+          pos: "noun",
+          deu: "Feld"
+        }
+        suffixChainInput: {
+          suffixes: "ne-ve",
+          morphTag: "RELAT.SG-GEN",
+          pos: "noun"
+        }
+      }
+      wordformInput: {
+        transcription: "avarribi"
+      }
+    }
+  ) {
+    id
+    morphologicalAnalysis {
+      stem {
+        id
+        form
+        pos
+        deu
+        eng
+      }
+      suffixChain {
+        id
+        suffixes
+        morphTag
+        pos
+      }
+    }
+    wordform {
+      id
+      transcription
+    }
+  }
+}

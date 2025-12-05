@@ -1,0 +1,2 @@
+The morphosyntactic words created during this test
+should be assigned to the same stem.
