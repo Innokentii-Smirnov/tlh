@@ -40,7 +40,7 @@ class MorphologicalAnalysisInput
   function insert(): bool
   {
     return SqlHelpers::executeSingleChangeQuery(
-      "insert ignore into tive_morphological_analyses (suffix_chain_id, stem_id) values (?, ?);",
+      "insert ignore into tive_morphological_analyses (stem_id, suffix_chain_id) values (?, ?);",
       fn(mysqli_stmt $stmt) => $stmt->bind_param('ii', $this->stem->id, $this->suffixChain->id)
     );
   }
