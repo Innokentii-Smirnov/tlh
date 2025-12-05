@@ -759,6 +759,18 @@ export type ChangeStemEnglishTranslationMutationVariables = Exact<{
 
 export type ChangeStemEnglishTranslationMutation = { __typename?: 'Mutation', stem?: { __typename?: 'StemMutations', changeEnglishTranslation: boolean } | null };
 
+export type CreateMorphosyntacticWordMutationVariables = Exact<{
+  stem: Scalars['String']['input'];
+  pos: Scalars['String']['input'];
+  deu: Scalars['String']['input'];
+  suffixes: Scalars['String']['input'];
+  morphTag: Scalars['String']['input'];
+  transcription: Scalars['String']['input'];
+}>;
+
+
+export type CreateMorphosyntacticWordMutation = { __typename?: 'Mutation', findOrCreateMorphosyntacticWord: { __typename?: 'MorphosyntacticWord', id: number } };
+
 export type RegisterMutationVariables = Exact<{
   userInput: UserInput;
 }>;
@@ -2076,6 +2088,46 @@ export function useChangeStemEnglishTranslationMutation(baseOptions?: Apollo.Mut
 export type ChangeStemEnglishTranslationMutationHookResult = ReturnType<typeof useChangeStemEnglishTranslationMutation>;
 export type ChangeStemEnglishTranslationMutationResult = Apollo.MutationResult<ChangeStemEnglishTranslationMutation>;
 export type ChangeStemEnglishTranslationMutationOptions = Apollo.BaseMutationOptions<ChangeStemEnglishTranslationMutation, ChangeStemEnglishTranslationMutationVariables>;
+export const CreateMorphosyntacticWordDocument = gql`
+    mutation CreateMorphosyntacticWord($stem: String!, $pos: String!, $deu: String!, $suffixes: String!, $morphTag: String!, $transcription: String!) {
+  findOrCreateMorphosyntacticWord(
+    morphosyntacticWordInput: {morphologicalAnalysisInput: {stemInput: {form: $stem, pos: $pos, deu: $deu}, suffixChainInput: {suffixes: $suffixes, morphTag: $morphTag, pos: $pos}}, wordformInput: {transcription: $transcription}}
+  ) {
+    id
+  }
+}
+    `;
+export type CreateMorphosyntacticWordMutationFn = Apollo.MutationFunction<CreateMorphosyntacticWordMutation, CreateMorphosyntacticWordMutationVariables>;
+
+/**
+ * __useCreateMorphosyntacticWordMutation__
+ *
+ * To run a mutation, you first call `useCreateMorphosyntacticWordMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useCreateMorphosyntacticWordMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [createMorphosyntacticWordMutation, { data, loading, error }] = useCreateMorphosyntacticWordMutation({
+ *   variables: {
+ *      stem: // value for 'stem'
+ *      pos: // value for 'pos'
+ *      deu: // value for 'deu'
+ *      suffixes: // value for 'suffixes'
+ *      morphTag: // value for 'morphTag'
+ *      transcription: // value for 'transcription'
+ *   },
+ * });
+ */
+export function useCreateMorphosyntacticWordMutation(baseOptions?: Apollo.MutationHookOptions<CreateMorphosyntacticWordMutation, CreateMorphosyntacticWordMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useMutation<CreateMorphosyntacticWordMutation, CreateMorphosyntacticWordMutationVariables>(CreateMorphosyntacticWordDocument, options);
+      }
+export type CreateMorphosyntacticWordMutationHookResult = ReturnType<typeof useCreateMorphosyntacticWordMutation>;
+export type CreateMorphosyntacticWordMutationResult = Apollo.MutationResult<CreateMorphosyntacticWordMutation>;
+export type CreateMorphosyntacticWordMutationOptions = Apollo.BaseMutationOptions<CreateMorphosyntacticWordMutation, CreateMorphosyntacticWordMutationVariables>;
 export const RegisterDocument = gql`
     mutation Register($userInput: UserInput!) {
   register(userInput: $userInput)

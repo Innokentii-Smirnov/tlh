@@ -50,6 +50,19 @@ export function getMorphTags(analysis: MorphologicalAnalysis): string[] {
   }
 }
 
+export function getSelectedMorphTags(analysis: MorphologicalAnalysis): string[] {
+  switch (analysis._type) {
+    case 'SingleMorphAnalysisWithoutEnclitics':
+      return [analysis.analysis];
+    case 'MultiMorphAnalysisWithoutEnclitics':
+      return analysis.analysisOptions
+        .filter(({selected}) => selected)
+        .map(({analysis}) => analysis);
+    default:
+      return [];
+  }
+}
+
 function convertToSingle(multi: MultiMorphologicalAnalysisWithoutEnclitics): 
   SingleMorphologicalAnalysisWithoutEnclitics {
   const { number, referenceWord, translation, paradigmClass, determinative, encliticsAnalysis } = multi;

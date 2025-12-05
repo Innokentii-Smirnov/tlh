@@ -73,3 +73,13 @@ export function getTranslationAndMorphTag(analysis: string): [string, string] {
   }
   return [translation, tag];
 }
+
+export function getStemAndSuffixes(segmentation: string): [string, string] {
+  const i = findBoundary(segmentation);
+  const stem = segmentation.substring(0, i);
+  let suffixes = segmentation.substring(i);
+  if (suffixes.startsWith('-')) {
+    suffixes = suffixes.substring(1);
+  }
+  return [stem, suffixes];
+}

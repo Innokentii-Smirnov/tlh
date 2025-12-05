@@ -8,6 +8,10 @@ import { loadSetValuedMapFromLocalStorage, locallyStoreSetValuedMap }
 import { hasMultipleOccurences } from '../corpus/corpus';
 import { addMorphologicalAnalysis } from '../dict/dictionaryUpdater';
 import { deleteAnalysisFromHurrianDictionary } from '../dict/dictionary';
+import { CreateMorphosyntacticWordDocument } from '../../../graphql';
+import { getStemAndSuffixes } from '../common/splitter';
+import { getSelectedMorphTags } from '../morphologicalAnalysis/auxiliary';
+import { apolloClient } from '../../../apolloClient';
 
 const sep = ',';
 
@@ -39,8 +43,29 @@ function preprocess(analysis: string): string {
   }
 }
 
+function createMorphosyntacticWord(transcription: string, analysis: string): void {
+  const ma = readMorphAnalysisValue(analysis);
+  if (ma !== undefined) {
+    const [stem, suffixes] = getStemAndSuffixes(ma.referenceWord);
+    for (const morphTag of getSelectedMorphTags(ma)) {
+      apolloClient.mutate({
+        mutation: CreateMorphosyntacticWordDocument,
+        variables: {
+          stem,
+          pos: ma.paradigmClass,
+          deu: ma.translation,
+          suffixes,
+          morphTag,
+          transcription
+        }
+      });
+    }
+  }
+}
+
 export function addAttestation(transcription: string, analysis: string, attestation: Attestation) {
   if (isValid(analysis)) {
+    createMorphosyntacticWord(transcription, analysis);
     addMorphologicalAnalysis(transcription, analysis);
     add(concordance, preprocess(analysis), attestation.toString());
   }

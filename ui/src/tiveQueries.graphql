@@ -59,3 +59,27 @@ mutation ChangeStemEnglishTranslation($stemId: Int!, $eng: String!) {
     changeEnglishTranslation(eng: $eng)
   }
 }
+
+mutation CreateMorphosyntacticWord($stem: String!, $pos: String!, $deu: String!,  $suffixes: String!, $morphTag: String!, $transcription: String!) {
+  findOrCreateMorphosyntacticWord(
+    morphosyntacticWordInput: {
+      morphologicalAnalysisInput: {
+        stemInput: {
+          form: $stem,
+          pos: $pos,
+          deu: $deu
+        }
+        suffixChainInput: {
+          suffixes: $suffixes,
+          morphTag: $morphTag,
+          pos: $pos
+        }
+      }
+      wordformInput: {
+        transcription: $transcription
+      }
+    }
+  ) {
+    id
+  }
+}
