@@ -49,8 +49,12 @@ class Wordform
 
 Wordform::$graphQLType = new ObjectType([
   'name' => 'Wordform',
-  'fields' => [
+  'fields' => static fn(): array => [
     'id' => Type::nonNull(Type::int()),
-    'transcription' => Type::nonNull(Type::string())
+    'transcription' => Type::nonNull(Type::string()),
+    'morphosyntacticWords' => [
+      'type' => Type::nonNull(Type::listof(Type::nonNull(MorphosyntacticWord::$graphQLType))),
+      'resolve' => fn(Wordform $wordform): array => MorphosyntacticWord::selectMorphosyntacticWordsByWordformId($wordform->id)
+    ]
   ]
 ]);

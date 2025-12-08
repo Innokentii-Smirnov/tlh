@@ -184,6 +184,7 @@ type Query {
   reviewerQueries: Reviewer
   stem(id: Int!): Stem!
   stemLookup(deu: String!, form: String!, pos: String!): Stem
+  wordform(transcription: String!): Wordform!
 }
 
 type Reviewer {
@@ -256,6 +257,7 @@ input UserInput {
 
 type Wordform {
   id: Int!
+  morphosyntacticWords: [MorphosyntacticWord!]!
   transcription: String!
 }
 

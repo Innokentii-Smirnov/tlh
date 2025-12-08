@@ -54,6 +54,20 @@ SQL;
       fn(array $row): MorphosyntacticWord => MorphosyntacticWord::fromDbAssocRow($row)
     );
   }
+
+  /** @return MorphosyntacticWord[] */
+  static function selectMorphosyntacticWordsByWordformId(int $wordformId): array
+  {
+    $sqlQuery = <<<'SQL'
+    select * from tive_morphosyntactic_words as word
+    where word.wordform_id = ?;
+SQL;
+    return SqlHelpers::executeMultiSelectQuery(
+      $sqlQuery,
+      fn(mysqli_stmt $stmt): bool => $stmt->bind_param('i', $wordformId),
+      fn(array $row): MorphosyntacticWord => MorphosyntacticWord::fromDbAssocRow($row)
+    );
+  }
 }
 
 MorphosyntacticWord::$graphQLType = new ObjectType([

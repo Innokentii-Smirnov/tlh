@@ -1,0 +1,24 @@
+query {
+  wordform(transcription: "pabanni") {
+    id
+    transcription
+    morphosyntacticWords {
+      id
+      morphologicalAnalysis {
+        id
+        stem {
+          id
+          form
+          pos
+          deu
+          eng
+        }
+        suffixChain {
+          id
+          suffixes
+          morphTag
+        }
+      }
+    }
+  }
+}

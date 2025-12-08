@@ -354,6 +354,7 @@ export type Query = {
   reviewerQueries?: Maybe<Reviewer>;
   stem: Stem;
   stemLookup?: Maybe<Stem>;
+  wordform: Wordform;
 };
 
 
@@ -381,6 +382,11 @@ export type QueryStemLookupArgs = {
   deu: Scalars['String']['input'];
   form: Scalars['String']['input'];
   pos: Scalars['String']['input'];
+};
+
+
+export type QueryWordformArgs = {
+  transcription: Scalars['String']['input'];
 };
 
 export type Reviewer = {
@@ -499,6 +505,7 @@ export type UserInput = {
 export type Wordform = {
   __typename?: 'Wordform';
   id: Scalars['Int']['output'];
+  morphosyntacticWords: Array<MorphosyntacticWord>;
   transcription: Scalars['String']['output'];
 };
 

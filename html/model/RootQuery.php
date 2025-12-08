@@ -77,6 +77,14 @@ RootQuery::$queryType = new ObjectType([
       'resolve' => fn(?int $_rootValue, array $args): MorphologicalAnalysis =>
       MorphologicalAnalysis::selectMorphologicalAnalysisById($args['id'])
     ],
+    'wordform' => [
+      'type' => Type::nonNull(Wordform::$graphQLType),
+      'args' => [
+        'transcription' => Type::nonNull(Type::string())
+      ],
+      'resolve' => fn(?int $_rootValue, array $args): Wordform =>
+      Wordform::selectByUniqueKey($args['transcription'])
+    ],
     'reviewerQueries' => [
       'type' => Reviewer::$queryType,
       'resolve' => fn(?int $_rootValue, array $args, ?User $user): ?User => !is_null($user) && $user->isReviewer() ? $user : null
