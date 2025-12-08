@@ -36,6 +36,24 @@ query TranscriptionsByMorphologicalAnalysisId($morphologicalAnalysisId: Int!) {
   }
 }
 
+query MorphologicalAnalysesByTranscription($transcription: String!) {
+  wordform(transcription: $transcription) {
+    morphosyntacticWords {
+      morphologicalAnalysis {
+        stem {
+          form
+          pos
+          deu
+        }
+        suffixChain {
+          suffixes
+          morphTag
+        }
+      }
+    }
+  }
+}
+
 mutation ChangeStemForm($stemId: Int!, $form: String!) {
   stem(stemId: $stemId) {
     changeForm(form: $form)

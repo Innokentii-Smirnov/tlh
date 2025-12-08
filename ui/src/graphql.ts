@@ -734,6 +734,13 @@ export type TranscriptionsByMorphologicalAnalysisIdQueryVariables = Exact<{
 
 export type TranscriptionsByMorphologicalAnalysisIdQuery = { __typename?: 'Query', morphologicalAnalysis: { __typename?: 'MorphologicalAnalysis', morphosyntacticWords: Array<{ __typename?: 'MorphosyntacticWord', wordform: { __typename?: 'Wordform', transcription: string } }> } };
 
+export type MorphologicalAnalysesByTranscriptionQueryVariables = Exact<{
+  transcription: Scalars['String']['input'];
+}>;
+
+
+export type MorphologicalAnalysesByTranscriptionQuery = { __typename?: 'Query', wordform: { __typename?: 'Wordform', morphosyntacticWords: Array<{ __typename?: 'MorphosyntacticWord', morphologicalAnalysis: { __typename?: 'MorphologicalAnalysis', stem: { __typename?: 'Stem', form: string, pos: string, deu: string }, suffixChain: { __typename?: 'SuffixChain', suffixes: string, morphTag: string } } }> } };
+
 export type ChangeStemFormMutationVariables = Exact<{
   stemId: Scalars['Int']['input'];
   form: Scalars['String']['input'];
@@ -1959,6 +1966,58 @@ export type TranscriptionsByMorphologicalAnalysisIdQueryHookResult = ReturnType<
 export type TranscriptionsByMorphologicalAnalysisIdLazyQueryHookResult = ReturnType<typeof useTranscriptionsByMorphologicalAnalysisIdLazyQuery>;
 export type TranscriptionsByMorphologicalAnalysisIdSuspenseQueryHookResult = ReturnType<typeof useTranscriptionsByMorphologicalAnalysisIdSuspenseQuery>;
 export type TranscriptionsByMorphologicalAnalysisIdQueryResult = Apollo.QueryResult<TranscriptionsByMorphologicalAnalysisIdQuery, TranscriptionsByMorphologicalAnalysisIdQueryVariables>;
+export const MorphologicalAnalysesByTranscriptionDocument = gql`
+    query MorphologicalAnalysesByTranscription($transcription: String!) {
+  wordform(transcription: $transcription) {
+    morphosyntacticWords {
+      morphologicalAnalysis {
+        stem {
+          form
+          pos
+          deu
+        }
+        suffixChain {
+          suffixes
+          morphTag
+        }
+      }
+    }
+  }
+}
+    `;
+
+/**
+ * __useMorphologicalAnalysesByTranscriptionQuery__
+ *
+ * To run a query within a React component, call `useMorphologicalAnalysesByTranscriptionQuery` and pass it any options that fit your needs.
+ * When your component renders, `useMorphologicalAnalysesByTranscriptionQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useMorphologicalAnalysesByTranscriptionQuery({
+ *   variables: {
+ *      transcription: // value for 'transcription'
+ *   },
+ * });
+ */
+export function useMorphologicalAnalysesByTranscriptionQuery(baseOptions: Apollo.QueryHookOptions<MorphologicalAnalysesByTranscriptionQuery, MorphologicalAnalysesByTranscriptionQueryVariables> & ({ variables: MorphologicalAnalysesByTranscriptionQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<MorphologicalAnalysesByTranscriptionQuery, MorphologicalAnalysesByTranscriptionQueryVariables>(MorphologicalAnalysesByTranscriptionDocument, options);
+      }
+export function useMorphologicalAnalysesByTranscriptionLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<MorphologicalAnalysesByTranscriptionQuery, MorphologicalAnalysesByTranscriptionQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<MorphologicalAnalysesByTranscriptionQuery, MorphologicalAnalysesByTranscriptionQueryVariables>(MorphologicalAnalysesByTranscriptionDocument, options);
+        }
+export function useMorphologicalAnalysesByTranscriptionSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<MorphologicalAnalysesByTranscriptionQuery, MorphologicalAnalysesByTranscriptionQueryVariables>) {
+          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
+          return Apollo.useSuspenseQuery<MorphologicalAnalysesByTranscriptionQuery, MorphologicalAnalysesByTranscriptionQueryVariables>(MorphologicalAnalysesByTranscriptionDocument, options);
+        }
+export type MorphologicalAnalysesByTranscriptionQueryHookResult = ReturnType<typeof useMorphologicalAnalysesByTranscriptionQuery>;
+export type MorphologicalAnalysesByTranscriptionLazyQueryHookResult = ReturnType<typeof useMorphologicalAnalysesByTranscriptionLazyQuery>;
+export type MorphologicalAnalysesByTranscriptionSuspenseQueryHookResult = ReturnType<typeof useMorphologicalAnalysesByTranscriptionSuspenseQuery>;
+export type MorphologicalAnalysesByTranscriptionQueryResult = Apollo.QueryResult<MorphologicalAnalysesByTranscriptionQuery, MorphologicalAnalysesByTranscriptionQueryVariables>;
 export const ChangeStemFormDocument = gql`
     mutation ChangeStemForm($stemId: Int!, $form: String!) {
   stem(stemId: $stemId) {

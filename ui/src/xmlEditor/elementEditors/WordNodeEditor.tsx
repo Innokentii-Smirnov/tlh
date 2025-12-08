@@ -16,6 +16,10 @@ import {Attestation, addAttestation, removeAttestation} from '../hur/concordance
 import {basicGetText} from '../hur/common/xmlUtilities';
 import {addOrUpdateLineBySingleNodePath} from '../hur/corpus/corpus';
 import {isSelected} from '../hur/morphologicalAnalysis/auxiliary';
+import {useMorphologicalAnalysesByTranscriptionQuery} from '../../graphql';
+import {getText} from '../hur/common/xmlUtilities';
+import {makeBoundTranscription} from '../hur/transduction/transcribe';
+import {convertMorphologicalAnalysesFromGraphQL} from '../hur/conversionFromGraphQL';
 
 type States = 'DefaultState' | 'AddMorphology' | 'EditEditingQuestion' | 'EditFootNoteState' | 'EditContent';
 
@@ -42,7 +46,17 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
   const language: string = node.attributes.lg || lineBreakLanguage || textLanguage || 'Hit';
   const isHurrian: boolean = (language === 'Hur');
   if (isHurrian) {
-    annotateHurrianWord(node);
+    const transliteration: string = getText(node);
+    const transcription: string = makeBoundTranscription(transliteration);
+    const { data, loading, error } = useMorphologicalAnalysesByTranscriptionQuery({
+      variables: {
+        transcription
+      }
+    });
+    if (!(loading || error || data === undefined)) {
+      const morphologicalAnalyses = convertMorphologicalAnalysesFromGraphQL(data);
+      annotateHurrianWord(node, transcription, morphologicalAnalyses);
+    }
   }
   const transcription = node.attributes.trans || noTranscriptionMarker;
 

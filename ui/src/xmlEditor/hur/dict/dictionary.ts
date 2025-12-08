@@ -1,6 +1,5 @@
 import { XmlElementNode } from 'simple_xml';
-import { getText, getMrps } from '../common/xmlUtilities';
-import { makeBoundTranscription } from '../transduction/transcribe';
+import { getMrps } from '../common/xmlUtilities';
 import { makeStandardAnalyses } from '../transduction/standardAnalysis';
 import { setGlosses, saveGloss } from '../translations/glossUpdater';
 import { MorphologicalAnalysis, writeMorphAnalysisValue, readMorphologicalAnalysis }
@@ -57,21 +56,14 @@ export function containsAnalysis(dictionary: Dictionary, analysis: string): bool
   return Array.from(dictionary.values()).some(analyses => analyses.has(analysis));
 }
 
-export function annotateHurrianWord(node: XmlElementNode): void {
-  const transliteration: string = getText(node);
-  const transcription: string = makeBoundTranscription(transliteration);
-
+export function annotateHurrianWord(node: XmlElementNode, transcription: string, morphologicalAnalyses: MorphologicalAnalysis[]): void {
   node.attributes.trans = transcription;
   if (node.attributes.mrp0sel === 'HURR') {
     node.attributes.mrp0sel = '';
   }
 
-  if (dictionary.has(transcription)) {
+  if (morphologicalAnalyses.length > 0) {
     setGlosses(node);
-    const possibilities: Set<string> | undefined = dictionary.get(transcription);
-    if (possibilities === undefined) {
-      throw new Error();
-    }
     if (node.attributes.firstAnalysisIsPlaceholder === 'true') {
       delete node.attributes.mrp1;
       delete node.attributes.firstAnalysisIsPlaceholder;
@@ -79,7 +71,8 @@ export function annotateHurrianWord(node: XmlElementNode): void {
     const mrps: Map<string, string> = getMrps(node);
     if (mrps.size === 0) {
       let i = 1;
-      for (const analysis of possibilities) {
+      for (const morphologicalAnalysis of morphologicalAnalyses) {
+        const analysis = writeMorphAnalysisValue(morphologicalAnalysis);
         if (isValid(analysis)) {
           node.attributes['mrp' + i.toString()] = analysis;
           i++;
