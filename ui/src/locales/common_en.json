@@ -227,5 +227,6 @@
   "unfoldAll": "Unfold all",
   "foldAll": "Fold all",
   "exportEnglishTranslations": "Export English translations",
-  "uploadEnglishTranslations": "Upload English translations"
+  "uploadEnglishTranslations": "Upload English translations",
+  "suffixDictionary": "Suffixes"
 }

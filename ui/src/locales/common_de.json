@@ -227,5 +227,6 @@
   "unfoldAll": "Alle aufklappen",
   "foldAll": "Alle zuklappen",
   "exportEnglishTranslations": "Englische Glossen exportieren",
-  "uploadEnglishTranslations": "Englische Glossen hochladen"
+  "uploadEnglishTranslations": "Englische Glossen hochladen",
+  "suffixDictionary": "Suffixe"
 }
