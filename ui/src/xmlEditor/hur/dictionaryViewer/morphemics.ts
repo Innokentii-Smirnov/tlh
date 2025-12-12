@@ -1,8 +1,8 @@
 import { GrammaticalMorpheme } from './grammaticalMorpheme';
 import { MorphologicalAnalysis } from '../../../model/morphologicalAnalysis';
 import { getGrammaticalMorphemesWithBoundary } from '../common/splitter';
-import { getMorphTags } from '../morphologicalAnalysis/auxiliary';
 
+const sep = ' ~ ';
 const grammaticalMorphemeStringSplitPattern = /(?=[-=])/;
 const morphTagSplitPattern = /(?=[-=])|(?<![123](?:SG|PL))(?=.ABS)/;
 const errorForm = '';
@@ -12,12 +12,32 @@ export function getGrammaticalMorphemes(morphologicalAnalysis: MorphologicalAnal
   const grammaticalMorphemeString = getGrammaticalMorphemesWithBoundary(
     morphologicalAnalysis.referenceWord
   );
-  const grammaticalMorphemes: GrammaticalMorpheme[] = [];
-  for (const morphTag of getMorphTags(morphologicalAnalysis)) {
-    for (const gram of getInflectionalSuffixesAndEnclitics(morphTag, grammaticalMorphemeString))
-      grammaticalMorphemes.push(gram);
+  switch(morphologicalAnalysis._type) {
+    case 'SingleMorphAnalysisWithoutEnclitics': {
+      const { analysis } = morphologicalAnalysis;
+      return getInflectionalSuffixesAndEnclitics(analysis, grammaticalMorphemeString);
+    }
+    case 'MultiMorphAnalysisWithoutEnclitics': {
+      const { analysisOptions } = morphologicalAnalysis;
+      const analyses = analysisOptions.map(({ analysis }) => analysis);
+      const first = analyses[0];
+      const grammaticalMorphemes = getInflectionalSuffixesAndEnclitics(first, grammaticalMorphemeString);
+      for (const morphTag of analyses.slice(1)) {
+        const grams = getInflectionalSuffixesAndEnclitics(morphTag, grammaticalMorphemeString);
+        for (let i = 0; i < grams.length; i++) {
+          const gram = grams[i];
+          if (gram.form === grammaticalMorphemes[i].form) {
+            if (!grammaticalMorphemes[i].label.includes(gram.label)) {
+              grammaticalMorphemes[i].label += sep + gram.label;
+            }
+          }
+        }
+      }
+      return grammaticalMorphemes;
+    }
+    default:
+      return [];
   }
-  return grammaticalMorphemes;
 }
 
 function preprocessMorphTag(morphTag: string): string {
