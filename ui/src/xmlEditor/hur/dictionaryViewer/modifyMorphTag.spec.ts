@@ -38,3 +38,27 @@ describe('modifying morphological analyses', () => {
   );
 
 });
+
+describe('modifying morphological analyses and merging identical options', () => {
+
+  test.each<[string, string, string, string, string]>([
+    ['tav-ud-o @ u.B. @ { a → NEG-MOD.PAT} { b → ud-MOD.PAT} @ verb @ ',
+    'tav-ud-o @ u.B. @ { a → NEG-MOD.PAT} @ verb @ ',
+     '-ud', '-NEG', '-ud'],
+    ['nav-an-ed-a @ weiden @ { a → CAUS-FUT-3A.SG} { b → an-FUT-3A.SG} @ verb @ ',
+    'nav-an-ed-a @ weiden @ { a → CAUS-FUT-3A.SG} @ verb @ ',
+     '-an', '-CAUS', '-an']
+  ])(
+    'for %s, the new analysis should be %s',
+     (oldMorphologicalAnalysisString, newMorphologicalAnalysisString,
+      oldLabel, newLabel, form) => {
+        const modification = replaceMorphemeLabel(oldLabel, newLabel, form);
+        const analysisModification = modifyMorphTag(modification);
+        expect(writeMorphAnalysisValue(analysisModification(
+          readMorphAnalysisValue(oldMorphologicalAnalysisString) as MorphologicalAnalysis
+        )))
+        .toEqual(newMorphologicalAnalysisString)
+      }
+  );
+
+});

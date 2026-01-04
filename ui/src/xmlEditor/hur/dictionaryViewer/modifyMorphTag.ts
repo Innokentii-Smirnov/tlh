@@ -1,5 +1,6 @@
 import { MorphologicalAnalysis } from '../../../model/morphologicalAnalysis';
 import update from 'immutability-helper';
+import mergeIdenticalOptions from '../morphologicalAnalysis/optionMerger';
 
 type MorphTagModification = (segmentation: string, morphTag: string) => string;
 
@@ -15,7 +16,7 @@ export default function modifyMorphTag(morphTagModification: MorphTagModificatio
       case 'MultiMorphAnalysisWithoutEnclitics': {
         const segmentation = morphologicalAnalysis.referenceWord;
         const { analysisOptions } =  morphologicalAnalysis;
-        return update(morphologicalAnalysis, {
+        const newMa = update(morphologicalAnalysis, {
           analysisOptions: {
             $set: analysisOptions.map(option => update(option, {
               analysis: {
@@ -24,6 +25,7 @@ export default function modifyMorphTag(morphTagModification: MorphTagModificatio
             }))
           }
         });
+        return mergeIdenticalOptions(newMa);
       }
       default:
         return morphologicalAnalysis;
