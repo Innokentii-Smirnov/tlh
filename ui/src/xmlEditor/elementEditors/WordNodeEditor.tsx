@@ -53,10 +53,13 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
         transcription
       }
     });
+    let morphologicalAnalyses: MorphologicalAnalysis[];
     if (!(loading || error || data === undefined)) {
-      const morphologicalAnalyses = convertMorphologicalAnalysesFromGraphQL(data);
-      annotateHurrianWord(node, transcription, morphologicalAnalyses);
+      morphologicalAnalyses = convertMorphologicalAnalysesFromGraphQL(data);
+    } else {
+      morphologicalAnalyses = [];
     }
+    annotateHurrianWord(node, transcription, morphologicalAnalyses);
   }
   const transcription = node.attributes.trans || noTranscriptionMarker;
 
