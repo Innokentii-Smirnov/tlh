@@ -14,9 +14,7 @@ services:
       - type: bind
         source: ./sql_inits/
         target: /docker-entrypoint-initdb.d/
-      - type: bind
-        source: ./hur_lex_data/
-        target: /hur_lex_data/
+      - ./hur_lex_data/:/hur_lex_data/:z
     environment:
       - MYSQL_ROOT_PASSWORD=abcd
       - MYSQL_DATABASE=hpm
