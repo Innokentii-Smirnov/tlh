@@ -57,7 +57,6 @@ export function containsAnalysis(dictionary: Dictionary, analysis: string): bool
 }
 
 export function annotateHurrianWord(node: XmlElementNode, transcription: string, morphologicalAnalyses: MorphologicalAnalysis[]): void {
-  node.attributes.trans = transcription;
   if (node.attributes.mrp0sel === 'HURR') {
     node.attributes.mrp0sel = '';
   }

@@ -48,6 +48,7 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
   if (isHurrian) {
     const transliteration: string = getText(node);
     const transcription: string = makeBoundTranscription(transliteration);
+    node.attributes.trans = transcription;
     const { data, loading, error } = useMorphologicalAnalysesByTranscriptionQuery({
       variables: {
         transcription
@@ -56,10 +57,8 @@ export function WordNodeEditor({node, path, updateEditedNode, setKeyHandlingEnab
     let morphologicalAnalyses: MorphologicalAnalysis[];
     if (!(loading || error || data === undefined)) {
       morphologicalAnalyses = convertMorphologicalAnalysesFromGraphQL(data);
-    } else {
-      morphologicalAnalyses = [];
+      annotateHurrianWord(node, transcription, morphologicalAnalyses);
     }
-    annotateHurrianWord(node, transcription, morphologicalAnalyses);
   }
   const transcription = node.attributes.trans || noTranscriptionMarker;
 
