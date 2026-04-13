@@ -15,6 +15,7 @@ import { areCorrect } from '../dict/morphologicalAnalysisValidator';
 import { getMorphTags } from '../morphologicalAnalysis/auxiliary';
 import { getEnglishTranslationKey } from '../translations/englishTranslations';
 import { getReferenceKey } from '../references/references';
+import { getNumericIDKey } from '../numericIDs/numericIDs';
 import { getStemVariants } from '../dict/dictionary';
 import { groupBy } from '../common/utils';
 import { areLexicallyEquivalent, areEquivalent } from '../morphologicalAnalysis/lexicalEquivalence';
@@ -73,8 +74,10 @@ interface IProps {
   onEnglishTranslationBlur: (eglishTranslation: string) => void;
   updateEnglishTranslationKey: (newEglishTranslationKey: string) => void;
   reference: string;
+  numericIDs: Set<number>;
   onReferenceBlur: (reference: string) => void;
   updateReferenceKey: (newReferenceKey: string) => void;
+  updateNumericIDKey: (newNumericIDKey: string) => void;
 }
 
 function replaceStem(newStem: string, segmentation: string, newStemHasUnclosedBracket: boolean) {
@@ -294,8 +297,10 @@ export function StemViewer({index, stem, initialEntries, setDictionary, initialU
                             onEnglishTranslationBlur,
                             updateEnglishTranslationKey,
                             reference,
+                            numericIDs,
                             onReferenceBlur,
-                            updateReferenceKey}: IProps): JSX.Element {
+                            updateReferenceKey,
+                            updateNumericIDKey}: IProps): JSX.Element {
   
   const [unfolded, setUnfolded] = useState(initialUnfolded);
   const initialState: StemViewerState = {
@@ -320,6 +325,7 @@ export function StemViewer({index, stem, initialEntries, setDictionary, initialU
   const updateKeys = (stemForm: string, partOfSpeech: string, germanTranslation: string) => {
     updateEnglishTranslationKey(getEnglishTranslationKey(stemForm, partOfSpeech, germanTranslation));
     updateReferenceKey(getReferenceKey(stemForm, partOfSpeech, germanTranslation));
+    updateNumericIDKey(getNumericIDKey(stemForm, partOfSpeech, germanTranslation));
   };
   
   return (
@@ -371,7 +377,8 @@ export function StemViewer({index, stem, initialEntries, setDictionary, initialU
           englishTranslation={englishTranslation}
           onEnglishTranslationBlur={onEnglishTranslationBlur}
           reference={reference}
-          onReferenceBlur={onReferenceBlur} />
+          onReferenceBlur={onReferenceBlur}
+          numericIDs={Array.from(numericIDs).sort()}/>
         <br />
         {(unfolded || allUnfolded) &&
           <pre className="stem-variants">

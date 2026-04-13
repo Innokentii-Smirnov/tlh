@@ -8,6 +8,7 @@ interface IProps {
   englishTranslation: string;
   reference: string;
   pos: string;
+  numericIDs: number[];
   handleClick: () => void;
   onFormChange: (newStem: string) => void;
   onFormBlur: (newStem: string) => void;
@@ -20,6 +21,7 @@ interface IProps {
 
 export function StemElement({index, form, translation, englishTranslation, pos,
                              reference,
+                             numericIDs,
                              handleClick,
                              onFormChange, onFormBlur,
                              onTranslationChange, onTranslationBlur,
@@ -50,6 +52,9 @@ export function StemElement({index, form, translation, englishTranslation, pos,
       <div className="p-2 border-y border-r border-slate-500">
         <PartOfSpeechSelector partOfSpeech={pos}
                               onChange={onPartOfSpeechChange} />
+      </div>
+      <div className="p-2 border-y border-r border-slate-500">
+        {numericIDs.join(', ')}
       </div>
       <button onClick={handleClick}
               className="p-2 border-y border-r border-slate-500 unfold-button">&#8744;</button>

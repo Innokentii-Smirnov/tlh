@@ -1,7 +1,7 @@
 import { objectToSetValuedMap, objectToMap, objectToArrayMap } from '../common/utils';
 import { convertDictionary, convertMapping } from '../common/utility';
 
-export function loadSetValuedMapFromLocalStorage(localStorageKey: string): Map<string, Set<string>> {
+export function loadSetValuedMapFromLocalStorage<TValue>(localStorageKey: string): Map<string, Set<TValue>> {
   const locallyStoredMap = localStorage.getItem(localStorageKey);
   if (locallyStoredMap === null) {
     return new Map();
@@ -46,7 +46,7 @@ export function loadFromLocalStorage<T>(key: string, defaultValue: T): T {
   return foundString ? JSON.parse(foundString) : defaultValue;
 }
 
-export function locallyStoreSetValuedMap(map: Map<string, Set<string>>, localStorageKey: string): void {
+export function locallyStoreSetValuedMap<TValue>(map: Map<string, Set<TValue>>, localStorageKey: string): void {
   const object = convertDictionary(map);
   const jsonText = JSON.stringify(object);
   localStorage.setItem(localStorageKey, jsonText);
