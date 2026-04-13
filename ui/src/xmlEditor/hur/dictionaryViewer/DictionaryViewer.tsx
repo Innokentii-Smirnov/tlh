@@ -13,6 +13,7 @@ import { useTranslation } from 'react-i18next';
 import { getEnglishTranslationKey, EnglishTranslations, setGlobalEnglishTranslations,
   getGlobalEnglishTranslations
 } from '../translations/englishTranslations';
+import { getReferenceKey, References, setGlobalReferences } from '../references/references';
 import update from 'immutability-helper';
 import { EnglishTranslationsDownloader } from '../translations/files/EnglishTranslationsDownloader';
 import { DictionaryUploader } from '../dict/files/DictionaryUploader';
@@ -28,6 +29,7 @@ import { SearchForm } from '../search/SearchForm';
 interface IProps {
   entries: Entry[];
   initialEnglishTranslations: EnglishTranslations;
+  initialReferences: References;
   setDictionary: SetDictionary;
 }
 
@@ -41,7 +43,7 @@ function valueFunc(entry: Entry): Entry {
   return entry;
 }
 
-export function DictionaryViewer({entries, setDictionary, initialEnglishTranslations}: IProps): JSX.Element {
+export function DictionaryViewer({entries, setDictionary, initialEnglishTranslations, initialReferences}: IProps): JSX.Element {
   
   const {t} = useTranslation('common');
   
@@ -58,6 +60,12 @@ export function DictionaryViewer({entries, setDictionary, initialEnglishTranslat
   useEffect(() => {
     setGlobalEnglishTranslations(englishTranslations);
   }, [englishTranslations]);
+
+  const [references, setReferences] = useState<References>(initialReferences);
+
+  useEffect(() => {
+    setGlobalReferences(references);
+  }, [references]);
 
   type StemQuery = SearchQuery<keyof IStem>;
   const initialStemQuery: StemQuery = [
@@ -126,6 +134,8 @@ export function DictionaryViewer({entries, setDictionary, initialEnglishTranslat
                                                                  stemObject.pos,
                                                                  stemObject.translation);
           const englishTranslation = englishTranslations.get(englishTranslationKey) || '';
+          const referenceKey = getReferenceKey(stemObject.form, stemObject.pos, stemObject.translation);
+          const reference = references.get(referenceKey) || '';
           const key = entries
             .map(entry => writeMorphAnalysisValue(entry.morphologicalAnalysis))
             .concat([englishTranslation])
@@ -150,6 +160,28 @@ export function DictionaryViewer({entries, setDictionary, initialEnglishTranslat
               });
             }
           });
+
+          const setReference = (newReference: string) => {
+            if (!(reference === '' && newReference === '')) {
+              setReferences(oldReferences => update(
+                oldReferences, {$add: [[referenceKey, newReference]]}
+              ));
+            }
+          };
+
+          const updateReferenceKey = (newReferenceKey: string) =>
+          setReferences(oldReferences => {
+            if (oldReferences.has(newReferenceKey) &&
+              oldReferences.get(newReferenceKey) !== '') {
+              return update(oldReferences, {$remove: [referenceKey]});
+              } else {
+                return update(oldReferences, {
+                  $add: [[newReferenceKey, reference]],
+                  $remove: [referenceKey]
+                });
+              }
+          });
+
           const isFragmentary = entries.every(entry => {
             return getStem(entry.morphologicalAnalysis.referenceWord).endsWith(openingBracket);
           });
@@ -169,7 +201,10 @@ export function DictionaryViewer({entries, setDictionary, initialEnglishTranslat
               allUnfolded={allUnfolded}
               englishTranslation={englishTranslation}
               onEnglishTranslationBlur={setEnglishTranslation}
-              updateEnglishTranslationKey={updateEnglishTranslationKey}/>
+              updateEnglishTranslationKey={updateEnglishTranslationKey}
+              reference={reference}
+              onReferenceBlur={setReference}
+              updateReferenceKey={updateReferenceKey}/>
           );
         })}
       </div>
