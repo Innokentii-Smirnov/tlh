@@ -13,11 +13,13 @@ import { useTranslation } from 'react-i18next';
 import { getEnglishTranslationKey, EnglishTranslations, setGlobalEnglishTranslations,
   getGlobalEnglishTranslations
 } from '../translations/englishTranslations';
-import { getReferenceKey, References, setGlobalReferences } from '../references/references';
+import { getReferenceKey, References, setGlobalReferences, getGlobalReferences } from '../references/references';
 import update from 'immutability-helper';
 import { EnglishTranslationsDownloader } from '../translations/files/EnglishTranslationsDownloader';
+import { ReferencesDownloader } from '../references/files/ReferencesDownloader';
 import { DictionaryUploader } from '../dict/files/DictionaryUploader';
 import { EnglishTranslationsUploader } from '../translations/files/EnglishTranslationsUploader';
+import { ReferencesUploader } from '../references/files/ReferencesUploader';
 import { rootMayBeOnlyPartiallyPreserved, shouldBeShownInTheDictionary } from './dictionaryFilter';
 import { DictionaryConfig } from '../../dictionaryConfig';
 import { LookupConfig } from '../../lookupConfig';
@@ -216,6 +218,7 @@ export function DictionaryViewer({entries, setDictionary, initialEnglishTranslat
             {allUnfolded ? t('foldAll') : t('unfoldAll')}
           </button>
           <EnglishTranslationsDownloader />
+          <ReferencesDownloader />
           <DictionaryUploader onUpload={() => {
             const globalDictionary = getGlobalDictionary();
             setDictionary(() => globalDictionary);
@@ -223,6 +226,10 @@ export function DictionaryViewer({entries, setDictionary, initialEnglishTranslat
           <EnglishTranslationsUploader onUpload={() => {
             const globalEnglishTranslations = getGlobalEnglishTranslations();
             setEnglishTranslations(globalEnglishTranslations);
+          }}/>
+          <ReferencesUploader onUpload={() => {
+            const globalReferences = getGlobalReferences();
+            setReferences(globalReferences);
           }}/>
         </div>
       </div>
