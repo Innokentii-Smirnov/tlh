@@ -55,6 +55,7 @@ import {ForgotPasswordForm} from './forms/ForgotPasswordForm';
 import {ResetPasswordForm} from './forms/ResetPasswordForm';
 import {getGlobalDictionary} from './xmlEditor/hur/dict/dictionary';
 import {getGlobalEnglishTranslations} from './xmlEditor/hur/translations/englishTranslations';
+import {getGlobalReferences} from './xmlEditor/hur/references/references';
 import {getChanges} from './xmlEditor/hur/changes/changesAccumulator';
 import {TextDisplay} from './xmlEditor/hur/concordanceEntryViewer/TextDisplay';
 import {SuffixDictionaryContainer} from './xmlEditor/hur/dictionaryViewer/SuffixDictionaryContainer';
@@ -107,7 +108,8 @@ export const router = createBrowserRouter([
         {path: dictionaryViewerUrl,
          element: <DictionaryViewerContainer
                     getInitialDictionary={getGlobalDictionary}
-                    getInitialEnglishTranslations={getGlobalEnglishTranslations} />},
+                    getInitialEnglishTranslations={getGlobalEnglishTranslations}
+                    getInitialReferences={getGlobalReferences} />},
         
         {path: macroeditorUrl, element: <MacroeditorContainer getChanges={getChanges}/>},
 
