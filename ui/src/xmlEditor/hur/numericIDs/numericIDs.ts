@@ -7,15 +7,6 @@ export function getNumericIDKey(stem: string, pos: string, germanTranslation: st
   return [stem, pos, germanTranslation].join(fieldSeparator);
 }
 
-export function getNumericIDsByKey(numericIDs: NumericIDs, numericIDKey: string): Set<number> {
-  const currentNumericIDs = numericIDs.get(numericIDKey);
-  if (currentNumericIDs === undefined || currentNumericIDs.size === 0) {
-    return generateNewNumericID(numericIDKey);
-  } else {
-    return currentNumericIDs;
-  }
-}
-
 export type NumericIDs = Map<string, Set<number>>;
 export type NumericIDsObject = { [key: string]: number[] };
 
@@ -51,16 +42,4 @@ export function getNumericIDs(): NumericIDsObject {
 export function setNumericIDs(newNumericIDs: NumericIDsObject): void {
   numericIDs = objectToSetValuedMap(newNumericIDs);
   locallyStoreNumericIDs();
-}
-
-export function generateNewNumericID(key: string): Set<number> {
-  const existingIDs: number[] = Array.from(numericIDs.values())
-    .map((value: Set<number>) => Array.from(value)).flat();
-  const maximalExistingID = existingIDs.reduce((a: number, b: number) => Math.max(a, b), 0);
-  const newID = maximalExistingID + 1;
-  const newIDs = new Set<number>();
-  newIDs.add(newID);
-  numericIDs.set(key, newIDs);
-  locallyStoreNumericIDs();
-  return newIDs;
 }

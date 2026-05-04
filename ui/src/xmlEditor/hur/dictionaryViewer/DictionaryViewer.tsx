@@ -15,7 +15,7 @@ import { getEnglishTranslationKey, EnglishTranslations, setGlobalEnglishTranslat
 } from '../translations/englishTranslations';
 import { References, setGlobalReferences, getGlobalReferences,
   aggregateAndGetValue } from '../references/references';
-import { getNumericIDKey, NumericIDs, setGlobalNumericIDs, getNumericIDsByKey } from '../numericIDs/numericIDs';
+import { getNumericIDKey, NumericIDs, setGlobalNumericIDs } from '../numericIDs/numericIDs';
 import update from 'immutability-helper';
 import { EnglishTranslationsDownloader } from '../translations/files/EnglishTranslationsDownloader';
 import { ReferencesDownloader } from '../references/files/ReferencesDownloader';
@@ -148,7 +148,7 @@ export function DictionaryViewer({entries, setDictionary, initialEnglishTranslat
                                                                  stemObject.translation);
           const englishTranslation = englishTranslations.get(englishTranslationKey) || '';
           const numericIDKey = getNumericIDKey(stemObject.form, stemObject.pos, stemObject.translation);
-          const numericIDs = getNumericIDsByKey(allNumericIDs, numericIDKey);
+          const numericIDs = allNumericIDs.get(numericIDKey) || new Set<number>();
           const reference = aggregateAndGetValue(Array.from(numericIDs));
           const key = entries
             .map(entry => writeMorphAnalysisValue(entry.morphologicalAnalysis))
