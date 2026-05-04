@@ -2,13 +2,10 @@ import { locallyStoreMap, loadMapFromLocalStorage } from '../dictLocalStorage/lo
 import { convertMapping } from '../common/utility';
 import { objectToMap } from '../common/utils';
 
-const fieldSeparator = ' @ ';
-export function getReferenceKey(stem: string, pos: string, germanTranslation: string): string {
-  return [stem, pos, germanTranslation].join(fieldSeparator);
-}
+export type References = Map<number, string>;
+export type ReferencesObject = { [key: number]: string };
 
-export type References = Map<string, string>;
-export type ReferencesObject = { [key: string]: string };
+const aggregatedReferencesSeparator = ';';
 
 const localStorageKey = 'references';
 let references: References;
@@ -20,6 +17,21 @@ try {
 }
 function locallyStoreReferences() {
   locallyStoreMap(references, localStorageKey);
+}
+
+export function aggregateAndGetValue(numericIDs: number[]): string {
+  const values = new Set<string>();
+  for (const numericID of numericIDs) {
+    const value = references.get(numericID);
+    if (value !== undefined && value !== '') {
+      values.add(value);
+    }
+  }
+  const aggregatedValue = Array.from(values).sort().join(aggregatedReferencesSeparator);
+  for (const numericID of numericIDs) {
+    references.set(numericID, aggregatedValue);
+  }
+  return aggregatedValue;
 }
 
 // Accessors for the dictionary editor
