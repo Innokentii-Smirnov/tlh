@@ -1,6 +1,6 @@
-import { locallyStoreMap, loadMapFromLocalStorage } from '../dictLocalStorage/localStorageUtils';
-import { convertMapping } from '../common/utility';
-import { objectToMap } from '../common/utils';
+import { locallyStoreMapWithNumericKeys, loadMapWithNumericKeysFromLocalStorage } from '../dictLocalStorage/localStorageUtils';
+import { convertMappingWithNumericKeys } from '../common/utility';
+import { objectWithNumericKeysToMap } from '../common/utils';
 
 export type References = Map<number, string>;
 export type ReferencesObject = { [key: number]: string };
@@ -10,13 +10,13 @@ const aggregatedReferencesSeparator = ';';
 const localStorageKey = 'references';
 let references: References;
 try {
-  references = loadMapFromLocalStorage(localStorageKey);
+  references = loadMapWithNumericKeysFromLocalStorage(localStorageKey);
 } catch(SyntaxError) {
   console.log('The English translations could not be loaded from the local storage.');
   references = new Map();
 }
 function locallyStoreReferences() {
-  locallyStoreMap(references, localStorageKey);
+  locallyStoreMapWithNumericKeys(references, localStorageKey);
 }
 
 export function aggregateAndGetValue(numericIDs: number[]): string {
@@ -48,10 +48,10 @@ export function setGlobalReferences(newReferences: References): void {
 // Accessors for saving and loading JSON files
 
 export function getReferences(): ReferencesObject {
-  return convertMapping(references);
+  return convertMappingWithNumericKeys(references);
 }
 
 export function setReferences(newReferences: ReferencesObject): void {
-  references = objectToMap(newReferences);
+  references = objectWithNumericKeysToMap(newReferences);
   locallyStoreReferences();
 }

@@ -1,5 +1,5 @@
-import { objectToSetValuedMap, objectToMap, objectToArrayMap } from '../common/utils';
-import { convertDictionary, convertMapping } from '../common/utility';
+import { objectToSetValuedMap, objectToMap, objectWithNumericKeysToMap, objectToArrayMap } from '../common/utils';
+import { convertDictionary, convertMapping, convertMappingWithNumericKeys } from '../common/utility';
 
 export function loadSetValuedMapFromLocalStorage<TValue>(localStorageKey: string): Map<string, Set<TValue>> {
   const locallyStoredMap = localStorage.getItem(localStorageKey);
@@ -18,6 +18,16 @@ export function loadMapFromLocalStorage<TValue>(localStorageKey: string): Map<st
   } else {
     const object = JSON.parse(locallyStoredMap);
     return objectToMap(object);
+  }
+}
+
+export function loadMapWithNumericKeysFromLocalStorage<TValue>(localStorageKey: string): Map<number, TValue> {
+  const locallyStoredMap = localStorage.getItem(localStorageKey);
+  if (locallyStoredMap === null) {
+    return new Map();
+  } else {
+    const object = JSON.parse(locallyStoredMap);
+    return objectWithNumericKeysToMap(object);
   }
 }
 
@@ -54,6 +64,12 @@ export function locallyStoreSetValuedMap<TValue>(map: Map<string, Set<TValue>>, 
 
 export function locallyStoreMap<TValue>(map: Map<string, TValue>, localStorageKey: string): void {
   const object = convertMapping(map);
+  const jsonText = JSON.stringify(object);
+  localStorage.setItem(localStorageKey, jsonText);
+}
+
+export function locallyStoreMapWithNumericKeys<TValue>(map: Map<number, TValue>, localStorageKey: string): void {
+  const object = convertMappingWithNumericKeys(map);
   const jsonText = JSON.stringify(object);
   localStorage.setItem(localStorageKey, jsonText);
 }

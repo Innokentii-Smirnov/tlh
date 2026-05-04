@@ -13,7 +13,8 @@ import { useTranslation } from 'react-i18next';
 import { getEnglishTranslationKey, EnglishTranslations, setGlobalEnglishTranslations,
   getGlobalEnglishTranslations
 } from '../translations/englishTranslations';
-import { getReferenceKey, References, setGlobalReferences, getGlobalReferences } from '../references/references';
+import { References, setGlobalReferences, getGlobalReferences,
+  aggregateAndGetValue } from '../references/references';
 import { getNumericIDKey, NumericIDs, setGlobalNumericIDs, getNumericIDsByKey } from '../numericIDs/numericIDs';
 import update from 'immutability-helper';
 import { EnglishTranslationsDownloader } from '../translations/files/EnglishTranslationsDownloader';
@@ -146,10 +147,9 @@ export function DictionaryViewer({entries, setDictionary, initialEnglishTranslat
                                                                  stemObject.pos,
                                                                  stemObject.translation);
           const englishTranslation = englishTranslations.get(englishTranslationKey) || '';
-          const referenceKey = getReferenceKey(stemObject.form, stemObject.pos, stemObject.translation);
-          const reference = references.get(referenceKey) || '';
           const numericIDKey = getNumericIDKey(stemObject.form, stemObject.pos, stemObject.translation);
           const numericIDs = getNumericIDsByKey(allNumericIDs, numericIDKey);
+          const reference = aggregateAndGetValue(Array.from(numericIDs));
           const key = entries
             .map(entry => writeMorphAnalysisValue(entry.morphologicalAnalysis))
             .concat([englishTranslation])
@@ -178,23 +178,12 @@ export function DictionaryViewer({entries, setDictionary, initialEnglishTranslat
           const setReference = (newReference: string) => {
             if (!(reference === '' && newReference === '')) {
               setReferences(oldReferences => update(
-                oldReferences, {$add: [[referenceKey, newReference]]}
+                oldReferences, {$add:
+                  Array.from(numericIDs).map(numericID => ([numericID, newReference]))
+                }
               ));
             }
           };
-
-          const updateReferenceKey = (newReferenceKey: string) =>
-          setReferences(oldReferences => {
-            if (oldReferences.has(newReferenceKey) &&
-              oldReferences.get(newReferenceKey) !== '') {
-              return update(oldReferences, {$remove: [referenceKey]});
-              } else {
-                return update(oldReferences, {
-                  $add: [[newReferenceKey, reference]],
-                  $remove: [referenceKey]
-                });
-              }
-          });
 
           const updateNumericIDKey = (newNumericIDKey: string) =>
           setNumericIDs(oldNumericIDs => {
@@ -234,7 +223,6 @@ export function DictionaryViewer({entries, setDictionary, initialEnglishTranslat
               reference={reference}
               numericIDs={numericIDs}
               onReferenceBlur={setReference}
-              updateReferenceKey={updateReferenceKey}
               updateNumericIDKey={updateNumericIDKey} />
           );
         })}

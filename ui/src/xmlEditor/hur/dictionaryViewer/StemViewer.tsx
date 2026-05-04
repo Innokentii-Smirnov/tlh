@@ -14,7 +14,6 @@ import { replaceMorphologicalAnalysis } from '../corpus/corpus';
 import { areCorrect } from '../dict/morphologicalAnalysisValidator';
 import { getMorphTags } from '../morphologicalAnalysis/auxiliary';
 import { getEnglishTranslationKey } from '../translations/englishTranslations';
-import { getReferenceKey } from '../references/references';
 import { getNumericIDKey } from '../numericIDs/numericIDs';
 import { getStemVariants } from '../dict/dictionary';
 import { groupBy } from '../common/utils';
@@ -76,7 +75,6 @@ interface IProps {
   reference: string;
   numericIDs: Set<number>;
   onReferenceBlur: (reference: string) => void;
-  updateReferenceKey: (newReferenceKey: string) => void;
   updateNumericIDKey: (newNumericIDKey: string) => void;
 }
 
@@ -299,7 +297,6 @@ export function StemViewer({index, stem, initialEntries, setDictionary, initialU
                             reference,
                             numericIDs,
                             onReferenceBlur,
-                            updateReferenceKey,
                             updateNumericIDKey}: IProps): JSX.Element {
   
   const [unfolded, setUnfolded] = useState(initialUnfolded);
@@ -324,7 +321,6 @@ export function StemViewer({index, stem, initialEntries, setDictionary, initialU
 
   const updateKeys = (stemForm: string, partOfSpeech: string, germanTranslation: string) => {
     updateEnglishTranslationKey(getEnglishTranslationKey(stemForm, partOfSpeech, germanTranslation));
-    updateReferenceKey(getReferenceKey(stemForm, partOfSpeech, germanTranslation));
     updateNumericIDKey(getNumericIDKey(stemForm, partOfSpeech, germanTranslation));
   };
   
