@@ -16,6 +16,7 @@ import { getEnglishTranslationKey, EnglishTranslations, setGlobalEnglishTranslat
 import { References, setGlobalReferences, getGlobalReferences,
   aggregateAndGetValue } from '../references/references';
 import { getNumericIDKey, NumericIDs, setGlobalNumericIDs } from '../numericIDs/numericIDs';
+import { assignIDsToNewStems } from '../numericIDs/numericIDAssignment';
 import update from 'immutability-helper';
 import { EnglishTranslationsDownloader } from '../translations/files/EnglishTranslationsDownloader';
 import { ReferencesDownloader } from '../references/files/ReferencesDownloader';
@@ -248,6 +249,11 @@ export function DictionaryViewer({entries, setDictionary, initialEnglishTranslat
             const globalReferences = getGlobalReferences();
             setReferences(globalReferences);
           }}/>
+          <button type="button" className={blueButtonClasses} onClick={() =>
+            setNumericIDs((stemIDs: NumericIDs) => assignIDsToNewStems(stemIDs, stemObjects))
+          }>
+            {t('assignIDsToNewStems')}
+          </button>
         </div>
       </div>
     </div>
