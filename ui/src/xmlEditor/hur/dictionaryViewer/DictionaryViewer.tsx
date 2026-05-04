@@ -15,14 +15,17 @@ import { getEnglishTranslationKey, EnglishTranslations, setGlobalEnglishTranslat
 } from '../translations/englishTranslations';
 import { References, setGlobalReferences, getGlobalReferences,
   aggregateAndGetValue } from '../references/references';
-import { getNumericIDKey, NumericIDs, setGlobalNumericIDs } from '../numericIDs/numericIDs';
+import { getNumericIDKey, NumericIDs, setGlobalNumericIDs,
+  getGlobalNumericIDs } from '../numericIDs/numericIDs';
 import { assignIDsToNewStems } from '../numericIDs/numericIDAssignment';
 import update from 'immutability-helper';
 import { EnglishTranslationsDownloader } from '../translations/files/EnglishTranslationsDownloader';
 import { ReferencesDownloader } from '../references/files/ReferencesDownloader';
+import { NumericIDsDownloader } from '../numericIDs/files/NumericIDsDownloader';
 import { DictionaryUploader } from '../dict/files/DictionaryUploader';
 import { EnglishTranslationsUploader } from '../translations/files/EnglishTranslationsUploader';
 import { ReferencesUploader } from '../references/files/ReferencesUploader';
+import { NumericIDsUploader } from '../numericIDs/files/NumericIDsUploader';
 import { rootMayBeOnlyPartiallyPreserved, shouldBeShownInTheDictionary } from './dictionaryFilter';
 import { DictionaryConfig } from '../../dictionaryConfig';
 import { LookupConfig } from '../../lookupConfig';
@@ -237,6 +240,7 @@ export function DictionaryViewer({entries, setDictionary, initialEnglishTranslat
           </button>
           <EnglishTranslationsDownloader />
           <ReferencesDownloader />
+          <NumericIDsDownloader />
           <DictionaryUploader onUpload={() => {
             const globalDictionary = getGlobalDictionary();
             setDictionary(() => globalDictionary);
@@ -248,6 +252,10 @@ export function DictionaryViewer({entries, setDictionary, initialEnglishTranslat
           <ReferencesUploader onUpload={() => {
             const globalReferences = getGlobalReferences();
             setReferences(globalReferences);
+          }}/>
+          <NumericIDsUploader onUpload={() => {
+            const globalNumericIDs = getGlobalNumericIDs();
+            setNumericIDs(globalNumericIDs);
           }}/>
           <button type="button" className={blueButtonClasses} onClick={() =>
             setNumericIDs((stemIDs: NumericIDs) => assignIDsToNewStems(stemIDs, stemObjects))

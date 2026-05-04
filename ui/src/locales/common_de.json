@@ -319,6 +319,8 @@
   "form": "Form",
   "pos": "Wortart",
   "assignIDsToNewStems": "Neuen Stämmen Schlüssel zuweisen",
+  "exportStems": "Stämme exportieren",
+  "uploadStems": "Stämme hochladen",
   "submitSeachQuery": "Suchen",
   "newVersionAvailable": "Neue Version verfügbar",
   "versionUpdateMessage": "Version {{latest}} ist jetzt verfügbar (Derzeit läuft {{current}})",
