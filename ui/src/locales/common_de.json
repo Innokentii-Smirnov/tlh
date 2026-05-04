@@ -318,6 +318,7 @@
   "stemSearch": "Nach Stämmen suchen",
   "form": "Form",
   "pos": "Wortart",
+  "assignIDsToNewStems": "Neuen Stämmen Schlüssel zuweisen",
   "submitSeachQuery": "Suchen",
   "newVersionAvailable": "Neue Version verfügbar",
   "versionUpdateMessage": "Version {{latest}} ist jetzt verfügbar (Derzeit läuft {{current}})",

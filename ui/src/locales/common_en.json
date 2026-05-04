@@ -318,6 +318,7 @@
   "stemSearch": "Search for stems",
   "form": "Form",
   "pos": "Part of speech",
+  "assignIDsToNewStems": "Assign IDs to new stems",
   "submitSeachQuery": "Search",
   "newVersionAvailable": "New Version Available",
   "versionUpdateMessage": "Version {{latest}} is now available (currently running {{current}})",
