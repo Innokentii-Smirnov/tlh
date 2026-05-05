@@ -267,6 +267,12 @@ export function DictionaryViewer({entries, setDictionary, initialEnglishTranslat
           <DictionaryUploader onUpload={() => {
             const globalDictionary = getGlobalDictionary();
             setDictionary(() => globalDictionary);
+            const globalNumericIDs = getGlobalNumericIDs();
+            setNumericIDs(() => globalNumericIDs);
+            setState(state => {
+              const newReferences = aggregateReferences(state.references, state.allNumericIDs);
+              return update(state, {references: {$set: newReferences}});
+            });
           }}/>
           <EnglishTranslationsUploader onUpload={() => {
             const globalEnglishTranslations = getGlobalEnglishTranslations();
