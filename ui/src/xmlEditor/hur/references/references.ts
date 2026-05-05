@@ -5,8 +5,6 @@ import { objectWithNumericKeysToMap } from '../common/utils';
 export type References = Map<number, string>;
 export type ReferencesObject = { [key: number]: string };
 
-const aggregatedReferencesSeparator = ';';
-
 const localStorageKey = 'references';
 let references: References;
 try {
@@ -17,21 +15,6 @@ try {
 }
 function locallyStoreReferences() {
   locallyStoreMapWithNumericKeys(references, localStorageKey);
-}
-
-export function aggregateAndGetValue(numericIDs: number[]): string {
-  const values = new Set<string>();
-  for (const numericID of numericIDs) {
-    const value = references.get(numericID);
-    if (value !== undefined && value !== '') {
-      values.add(value);
-    }
-  }
-  const aggregatedValue = Array.from(values).sort().join(aggregatedReferencesSeparator);
-  for (const numericID of numericIDs) {
-    references.set(numericID, aggregatedValue);
-  }
-  return aggregatedValue;
 }
 
 // Accessors for the dictionary editor

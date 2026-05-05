@@ -13,8 +13,8 @@ import { useTranslation } from 'react-i18next';
 import { getEnglishTranslationKey, EnglishTranslations, setGlobalEnglishTranslations,
   getGlobalEnglishTranslations
 } from '../translations/englishTranslations';
-import { References, setGlobalReferences, getGlobalReferences,
-  aggregateAndGetValue } from '../references/references';
+import { References, setGlobalReferences, getGlobalReferences } from '../references/references';
+import { aggregateReferences } from '../references/aggregation';
 import { getNumericIDKey, NumericIDs, setGlobalNumericIDs,
   getGlobalNumericIDs } from '../numericIDs/numericIDs';
 import { assignIDsToNewStems } from '../numericIDs/numericIDAssignment';
@@ -153,7 +153,9 @@ export function DictionaryViewer({entries, setDictionary, initialEnglishTranslat
           const englishTranslation = englishTranslations.get(englishTranslationKey) || '';
           const numericIDKey = getNumericIDKey(stemObject.form, stemObject.pos, stemObject.translation);
           const numericIDs = allNumericIDs.get(numericIDKey) || new Set<number>();
-          const reference = aggregateAndGetValue(Array.from(numericIDs));
+          const reference = numericIDs.size > 0
+            ? references.get(Array.from(numericIDs)[0]) || ''
+            : '';
           const key = entries
             .map(entry => writeMorphAnalysisValue(entry.morphologicalAnalysis))
             .concat([englishTranslation])
