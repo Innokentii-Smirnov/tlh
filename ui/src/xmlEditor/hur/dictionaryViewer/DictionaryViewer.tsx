@@ -207,20 +207,25 @@ export function DictionaryViewer({entries, setDictionary, initialEnglishTranslat
             }
           };
 
-          const updateNumericIDKey = (newNumericIDKey: string) =>
-          setNumericIDs(oldNumericIDs => {
-            if (oldNumericIDs.has(newNumericIDKey)) {
-                return update(oldNumericIDs, {
-                  [newNumericIDKey]: {$add: Array.from(numericIDs)},
-                  $remove: [numericIDKey]
-                });
-              } else {
-                return update(oldNumericIDs, {
-                  $add: [[newNumericIDKey, numericIDs]],
-                  $remove: [numericIDKey]
-                });
-              }
-          });
+          const updateNumericIDKey = (newNumericIDKey: string) => {
+            setNumericIDs(oldNumericIDs => {
+              if (oldNumericIDs.has(newNumericIDKey)) {
+                  return update(oldNumericIDs, {
+                    [newNumericIDKey]: {$add: Array.from(numericIDs)},
+                    $remove: [numericIDKey]
+                  });
+                } else {
+                  return update(oldNumericIDs, {
+                    $add: [[newNumericIDKey, numericIDs]],
+                    $remove: [numericIDKey]
+                  });
+                }
+            });
+            setState(state => {
+              const newReferences = aggregateReferences(state.references, state.allNumericIDs);
+              return update(state, {references: {$set: newReferences}});
+            });
+          };
 
           const isFragmentary = entries.every(entry => {
             return getStem(entry.morphologicalAnalysis.referenceWord).endsWith(openingBracket);
