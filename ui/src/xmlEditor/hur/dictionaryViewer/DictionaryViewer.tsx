@@ -42,6 +42,11 @@ interface IProps {
   setDictionary: SetDictionary;
 }
 
+type DictionaryViewerState = {
+  references: References;
+  allNumericIDs: NumericIDs;
+}
+
 function keyFunc({morphologicalAnalysis}: Entry): string {
   return [getStemWithoutFinalOpeningBracket(morphologicalAnalysis.referenceWord),
           morphologicalAnalysis.translation,
@@ -72,13 +77,24 @@ export function DictionaryViewer({entries, setDictionary, initialEnglishTranslat
     setGlobalEnglishTranslations(englishTranslations);
   }, [englishTranslations]);
 
-  const [references, setReferences] = useState<References>(initialReferences);
+  const [state, setState] = useState<DictionaryViewerState>({
+    references: initialReferences,
+    allNumericIDs: initialNumericIDs,
+  });
+
+  const {references, allNumericIDs} = state;
+
+  const setReferences = (modification: (oldReferences: References) => References) => {
+    setState(state => update(state, {references: {$set: modification(state.references)}}));
+  };
+
+  const setNumericIDs = (modification: (oldNumericIDs: NumericIDs) => NumericIDs) => {
+    setState(state => update(state, {allNumericIDs: {$set: modification(state.allNumericIDs)}}));
+  };
 
   useEffect(() => {
     setGlobalReferences(references);
   }, [references]);
-
-  const [allNumericIDs, setNumericIDs] = useState<NumericIDs>(initialNumericIDs);
 
   useEffect(() => {
     setGlobalNumericIDs(allNumericIDs);
@@ -253,11 +269,11 @@ export function DictionaryViewer({entries, setDictionary, initialEnglishTranslat
           }}/>
           <ReferencesUploader onUpload={() => {
             const globalReferences = getGlobalReferences();
-            setReferences(globalReferences);
+            setReferences(() => globalReferences);
           }}/>
           <NumericIDsUploader onUpload={() => {
             const globalNumericIDs = getGlobalNumericIDs();
-            setNumericIDs(globalNumericIDs);
+            setNumericIDs(() => globalNumericIDs);
           }}/>
           <button type="button" className={blueButtonClasses} onClick={() =>
             setNumericIDs((stemIDs: NumericIDs) => assignIDsToNewStems(stemIDs, stemObjects))
