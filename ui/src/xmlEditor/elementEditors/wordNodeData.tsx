@@ -6,7 +6,7 @@ import {SpacesEditor} from './SpacesEditor';
 import {selectedNodeClass} from '../tlhXmlEditorConfig';
 import {ReactElement} from 'react';
 import {getPriorSibling} from '../../nodeIterators';
-import {isFullyPreservedNotAnnotatedHurrian} from '../hur/colourMarking/isFullyPreservedNotAnnotatedHurrian';
+import {isPartiallyPreservedNotAnnotatedHurrian} from '../hur/colourMarking/isPartiallyPreservedNotAnnotatedHurrian';
 import {isHurrian} from '../nodeLanguage';
 import {hasDeprecatedAnalyses} from '../hur/colourMarking/hasDeprecatedAnalyses';
 
@@ -35,7 +35,7 @@ function backgroundColor(node: XmlElementNode<'w'>, isSelected: boolean, selecte
     return 'bg-red-500';
   }
 
-  if (isFullyPreservedNotAnnotatedHurrian(node, path, rootNode)) {
+  if (isPartiallyPreservedNotAnnotatedHurrian(node, path, rootNode)) {
     return 'bg-yellow-300';
   }
 
