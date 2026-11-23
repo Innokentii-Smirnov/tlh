@@ -1,5 +1,6 @@
 import { JSX, useState, useEffect } from 'react';
-import { getStemWithoutFinalOpeningBracket, getStem, openingBracket } from '../common/splitter';
+import { getStemWithoutFinalOpeningBracket, getStem } from '../common/splitter';
+import { openingBracket } from '../common/symbols';
 import { groupBy } from '../common/utils';
 import { StemViewer, Stem, IStem } from './StemViewer';
 import { Entry } from './Wordform';

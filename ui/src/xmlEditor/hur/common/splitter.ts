@@ -1,6 +1,5 @@
 import { removePotentiallyImproperSuffix } from './auxiliary';
-
-export const openingBracket = '[';
+import { openingBracket } from './symbols';
 
 /**
  * Determine whether the letter at the specified position

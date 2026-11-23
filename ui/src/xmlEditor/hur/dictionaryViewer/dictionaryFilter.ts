@@ -1,9 +1,9 @@
 import { Entry } from './Wordform';
-import { getStem, openingBracket } from '../common/splitter';
+import { getStem } from '../common/splitter';
+import { openingBracket } from '../common/symbols';
 import { MorphologicalAnalysis } from '../../../model/morphologicalAnalysis';
+import { unknownMeaningSymbol, unclearPartOfSpeechSymbol } from '../common/symbols';
 
-const unknownMeaningSymbol = 'u.B.';
-const unclearPartOfSpeechSymbol = 'unclear';
 const embracketedFragmentarySigns = /\[x+\]/u;
 const stemInUnopenedBracket = /^[^[]*\]$/u;
 
