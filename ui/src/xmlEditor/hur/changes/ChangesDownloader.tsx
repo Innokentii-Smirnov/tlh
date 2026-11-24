@@ -1,5 +1,8 @@
 import { useTranslation } from 'react-i18next';
 import { downloadChanges } from './changesFileManager';
+import { downloadNumericIDs } from '../numericIDs/files/numericIDsFileManager';
+import { downloadEnglishTranslations } from '../translations/files/englishTranslationsFileManager';
+import { downloadReferences } from '../references/files/referencesFileManager';
 import { blueButtonClasses } from '../../../defaultDesign';
 
 export function ChangesDownloader() {
@@ -10,7 +13,14 @@ export function ChangesDownloader() {
     <button
       type="button"
       className={blueButtonClasses}
-      onClick={downloadChanges}>
+      onClick={() => {
+        alert('Ch');
+        downloadChanges();
+        alert('N');
+        downloadNumericIDs();
+        downloadEnglishTranslations();
+        downloadReferences();
+      }}>
       {t('exportChanges')}
     </button>
   );

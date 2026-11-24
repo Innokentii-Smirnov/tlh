@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { downloadDictionary } from './englishTranslationsFileManager';
+import { downloadEnglishTranslations } from './englishTranslationsFileManager';
 import { blueButtonClasses } from '../../../../defaultDesign';
 
 export function EnglishTranslationsDownloader() {
@@ -10,7 +10,7 @@ export function EnglishTranslationsDownloader() {
     <button
       type="button"
       className={blueButtonClasses}
-      onClick={downloadDictionary}>
+      onClick={downloadEnglishTranslations}>
       {t('exportEnglishTranslations')}
     </button>
   );

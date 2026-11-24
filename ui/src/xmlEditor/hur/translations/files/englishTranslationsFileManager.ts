@@ -1,7 +1,7 @@
 import { getEnglishTranslations, setEnglishTranslations } from '../../translations/englishTranslations';
 import { makeDownload } from '../../../../downloadHelper';
 
-export function downloadDictionary() {
+export function downloadEnglishTranslations() {
   const englishTranslations = getEnglishTranslations();
   const obj = {englishTranslations};
   const jsonText = JSON.stringify(obj, undefined, '\t');
