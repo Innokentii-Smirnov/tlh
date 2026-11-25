@@ -4,6 +4,7 @@ import { defaultEditorKeyConfig, EditorKeyConfig } from './xmlEditor/editorKeyCo
 import { defaultDictionaryConfig, DictionaryConfig, dictionaryConfigKey } from './xmlEditor/dictionaryConfig';
 import { defaultAlphabetizationConfig, AlphabetizationConfig, alphabetizationConfigKey } from './xmlEditor/alphabetizationConfig';
 import { defaultLookupConfig, LookupConfig, lookupConfigKey } from './xmlEditor/lookupConfig';
+import { defaultHurrianAnnotationConfig, HurrianAnnotationConfig, hurrianAnnotationConfigKey } from './xmlEditor/hurrianAnnotationConfig';
 
 function loadFromLocalStorage<T>(key: string, defaultValue: T): T {
   const foundString = localStorage.getItem(key);
@@ -134,6 +135,27 @@ export const { updateLookupPreferences } = lookupConfigSlice.actions;
 export const lookupConfigSelector: (store: StoreState) => LookupConfig =
   ({ lookupConfig }) => lookupConfig.lookupConfig;
 
+// Hurrian annotation configuration
+
+const hurrianAnnotationConfigSlice = createSlice({
+  name: 'hurrianAnnotation',
+  initialState: () => ({
+    hurrianAnnotationConfig:
+    loadFromLocalStorage<HurrianAnnotationConfig>(hurrianAnnotationConfigKey, defaultHurrianAnnotationConfig)
+  }),
+  reducers: {
+    updateHurrianAnnotationPreferences(state, { payload }: PayloadAction<HurrianAnnotationConfig>) {
+      localStorage.setItem(hurrianAnnotationConfigKey, JSON.stringify(payload));
+      state.hurrianAnnotationConfig = payload;
+    }
+  }
+});
+
+export const { updateHurrianAnnotationPreferences } = hurrianAnnotationConfigSlice.actions;
+
+export const hurrianAnnotationConfigSelector: (store: StoreState) => HurrianAnnotationConfig =
+  ({ hurrianAnnotationConfig }) => hurrianAnnotationConfig.hurrianAnnotationConfig;
+
 // Store
 
 interface StoreState {
@@ -142,6 +164,7 @@ interface StoreState {
   dictionaryConfig: { dictionaryConfig: DictionaryConfig };
   lookupConfig: { lookupConfig: LookupConfig };
   alphabetizationConfig: { alphabetizationConfig: AlphabetizationConfig };
+  hurrianAnnotationConfig: { hurrianAnnotationConfig: HurrianAnnotationConfig };
 }
 
 export const newStore = configureStore({
@@ -151,6 +174,7 @@ export const newStore = configureStore({
     dictionaryConfig: dictionaryConfigSlice.reducer,
     lookupConfig: lookupConfigSlice.reducer,
     alphabetizationConfig: alphabetizationConfigSlice.reducer,
+    hurrianAnnotationConfig: hurrianAnnotationConfigSlice.reducer,
   }
 });
 

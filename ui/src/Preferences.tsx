@@ -4,18 +4,20 @@ import {useDispatch, useSelector} from 'react-redux';
 import {editorKeyConfigSelector, updatePreferences,
   dictionaryConfigSelector, updateDictionaryPreferences,
   alphabetizationConfigSelector, updateAlphabetizationPreferences,
-  lookupConfigSelector, updateLookupPreferences}
-  from './newStore';
+  lookupConfigSelector, updateLookupPreferences,
+  hurrianAnnotationConfigSelector, updateHurrianAnnotationPreferences,
+} from './newStore';
 import {JSX, useState} from 'react';
 import {EditorKeyConfig} from './xmlEditor/editorKeyConfig';
 import {DictionaryConfig, dictionaryConfigKeys} from './xmlEditor/dictionaryConfig';
 import {AlphabetizationConfig, alphabetizationConfigKeys} from './xmlEditor/alphabetizationConfig';
+import {HurrianAnnotationConfig, hurrianAnnotationConfigKeys} from './xmlEditor/hurrianAnnotationConfig';
 import {LookupConfig, lookupConfigKeys} from './xmlEditor/lookupConfig';
 import {rebuildSimplifiedDictionaryWithNewConfig} from './xmlEditor/hur/dict/dictionary';
 
 const splitKey = ',';
 
-interface FormValues extends DictionaryConfig, AlphabetizationConfig, LookupConfig {
+interface FormValues extends DictionaryConfig, AlphabetizationConfig, LookupConfig, HurrianAnnotationConfig {
   updateAndNextNodeKeys: string;
   nextNodeKeys: string;
   updateAndPrevNodeKeys: string;
@@ -41,6 +43,7 @@ export function Preferences(): JSX.Element {
   const currentDictionaryConfig: DictionaryConfig = useSelector(dictionaryConfigSelector);
   const currentAlphabetizationConfig: AlphabetizationConfig = useSelector(alphabetizationConfigSelector);
   const currentLookupConfig: LookupConfig = useSelector(lookupConfigSelector);
+  const currentHurrianAnnotationConfig: HurrianAnnotationConfig = useSelector(hurrianAnnotationConfigSelector);
   const [updated, setUpdated] = useState(false);
 
   const initialValues: FormValues = {
@@ -52,6 +55,7 @@ export function Preferences(): JSX.Element {
     ...currentDictionaryConfig,
     ...currentAlphabetizationConfig,
     ...currentLookupConfig,
+    ...currentHurrianAnnotationConfig
   };
 
   function onSubmit(newConfig: FormValues): void {
@@ -59,7 +63,9 @@ export function Preferences(): JSX.Element {
            fragmInSuffixDict, showUnclearForms, showFragmentaryGrammaticalMorphemes,
            alphabetizeFAsP, alphabetizeVAsB, alphabetizeIAsE, alphabetizeOAsU,
            alphabetizeVoicedConsonantsAsVoiceless,
-           ignorePlene, mergeLabials,mergeMidAndHighVowels, ignoreVoice,} = newConfig;
+           ignorePlene, mergeLabials,mergeMidAndHighVowels, ignoreVoice,
+           highlightUnannotatedFragmentaryForms,
+    } = newConfig;
 
     const updateAndNextEditableNodeKeys = dismantleFormEntry(updateAndNextNodeKeys);
     const nextEditableNodeKeys = dismantleFormEntry(nextNodeKeys);
@@ -127,6 +133,14 @@ export function Preferences(): JSX.Element {
       updateLookupPreferences(newLookupConfig)
     );
 
+    const newHurrianAnnotationConfig: HurrianAnnotationConfig = {
+      highlightUnannotatedFragmentaryForms,
+    };
+
+    dispatch(
+      updateHurrianAnnotationPreferences(newHurrianAnnotationConfig)
+    );
+
     setUpdated(true);
 
     rebuildSimplifiedDictionaryWithNewConfig(newLookupConfig);
@@ -185,6 +199,19 @@ export function Preferences(): JSX.Element {
 
           <>
             {lookupConfigKeys.map((key: string) => (
+              <div className="mt-4" key={key}>
+              <label htmlFor={key} className="font-bold checkbox-label">{t(key)}</label>
+              <Field type="checkbox" id={key} name={key} className="rounded border border-slate-500"/>
+              </div>
+            ))}
+          </>
+
+          <br/>
+
+          <h2 className="font-bold text-xl">{t('hurrianAnnotationOptions')}</h2>
+
+          <>
+            {hurrianAnnotationConfigKeys.map((key: string) => (
               <div className="mt-4" key={key}>
               <label htmlFor={key} className="font-bold checkbox-label">{t(key)}</label>
               <Field type="checkbox" id={key} name={key} className="rounded border border-slate-500"/>
