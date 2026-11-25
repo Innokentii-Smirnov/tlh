@@ -3,6 +3,7 @@ import {JSX, ReactElement, RefObject} from 'react';
 import {InsertablePositions} from './insertablePositions';
 import {Spec} from 'immutability-helper';
 import {DisplayReplacement} from './editorConfig/displayReplacement';
+import {HurrianAnnotationConfig} from './hurrianAnnotationConfig';
 
 export const inputClasses = 'mt-2 p-2 rounded border border-slate-500 w-full';
 
@@ -13,6 +14,7 @@ interface ReplaceArgs<T extends string = string, A extends string = string> {
   renderChildren: () => ReactElement;
   isSelected: boolean;
   isLeftSide: boolean;
+  hurrianAnnotationConfig?: HurrianAnnotationConfig;
 }
 
 export interface XmlEditableNodeIProps<T extends string = string, A extends string = string> {

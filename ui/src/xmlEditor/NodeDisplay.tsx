@@ -11,6 +11,7 @@ import {
 } from './editorConfig';
 import { NodePath } from './insertablePositions';
 import { tlhXmlEditorConfig } from './tlhXmlEditorConfig';
+import { HurrianAnnotationConfig } from './hurrianAnnotationConfig';
 
 export interface InsertionData {
   insertablePaths: string[];
@@ -25,6 +26,9 @@ export interface NodeDisplayIProps {
   path?: NodePath;
   insertionData?: InsertionData;
   isLeftSide: boolean;
+
+  /** ↓ New props added for colour marking */
+  hurrianAnnotationConfig?: HurrianAnnotationConfig,
 
   /** ↓ New props added for hover handling */
   hoveredPath?: NodePath | null;
@@ -66,6 +70,7 @@ export function NodeDisplay({
   hoveredPath,
   onHoverEnter,
   onHoverLeave,
+  hurrianAnnotationConfig,
   ...inheritedProps
 }: NodeDisplayIProps): ReactElement {
 
@@ -98,6 +103,7 @@ export function NodeDisplay({
           key={i}
           node={c}
           path={[...path, i]}
+          hurrianAnnotationConfig={hurrianAnnotationConfig}
           {...inheritedProps}
           hoveredPath={hoveredPath}
           onHoverEnter={onHoverEnter}
@@ -118,6 +124,7 @@ export function NodeDisplay({
       renderChildren,
       isSelected,
       isLeftSide,
+      hurrianAnnotationConfig,
     })
     : { clickablePrior: renderChildren(), notClickable: undefined, posterior: undefined };
 

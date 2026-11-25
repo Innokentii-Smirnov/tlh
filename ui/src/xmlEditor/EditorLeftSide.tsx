@@ -1,4 +1,5 @@
 import { JSX, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { NodeDisplay, NodeDisplayIProps } from './NodeDisplay';
 import { useTranslation } from 'react-i18next';
 import { parseNewXml, XmlElementNode } from 'simple_xml';
@@ -10,6 +11,8 @@ import { NodePath } from './insertablePositions';
 import { tlhXmlEditorConfig } from './tlhXmlEditorConfig';
 import { XmlSourceEditor } from './XmlSourceEditor';
 import { HeaderEditor } from './HeaderEditor';
+import { HurrianAnnotationConfig } from './hurrianAnnotationConfig';
+import { hurrianAnnotationConfigSelector } from '../newStore';
 
 export interface EditorLeftSideProps extends NodeDisplayIProps {
   filename: string;
@@ -43,6 +46,8 @@ export function EditorLeftSide({
   onToggleMarkForDeletion,
 }: EditorLeftSideProps): JSX.Element {
   const { t } = useTranslation('common');
+
+  const hurrianAnnotationConfig: HurrianAnnotationConfig = useSelector(hurrianAnnotationConfigSelector);
 
   /* ---------- UI state ---------- */
   const [uiState, setUiState] = useState<IState>({
@@ -239,6 +244,7 @@ export function EditorLeftSide({
               onSelect={onNodeSelect}
               insertionData={insertionData}
               isLeftSide={true}
+              hurrianAnnotationConfig={hurrianAnnotationConfig}
               hoveredPath={hoveredPath}
               onHoverEnter={handleHoverEnter}
               onHoverLeave={handleHoverLeave}

@@ -6,14 +6,18 @@ import {SpacesEditor} from './SpacesEditor';
 import {selectedNodeClass} from '../tlhXmlEditorConfig';
 import {ReactElement} from 'react';
 import {getPriorSibling} from '../../nodeIterators';
-import {isPartiallyPreservedNotAnnotatedHurrian} from '../hur/colourMarking/isPartiallyPreservedNotAnnotatedHurrian';
 import {isHurrian} from '../nodeLanguage';
 import {hasDeprecatedAnalyses} from '../hur/colourMarking/hasDeprecatedAnalyses';
+import {isNotAnnotated} from '../hur/colourMarking/isNotAnnotated';
+import {containsPreservedSign} from '../hur/colourMarking/containsPreservedSign';
+import {isFragmentary} from '../hur/colourMarking/isFragmentary';
+import {HurrianAnnotationConfig, defaultHurrianAnnotationConfig} from '../hurrianAnnotationConfig';
 
 const isOnlySpaces = ({children}: XmlElementNode): boolean => children.length === 1 && isXmlElementNode(children[0]) && children[0].tagName === 'space';
 
 function backgroundColor(node: XmlElementNode<'w'>, isSelected: boolean, selectedMorphology: string | undefined,
-                         path: number[], rootNode: XmlElementNode | undefined): string | undefined {
+                         path: number[], rootNode: XmlElementNode | undefined,
+                         hurrianAnnotationConfig: HurrianAnnotationConfig | undefined): string | undefined {
   if (isSelected) { // Prio 1: current selection
     return selectedNodeClass;
   }
@@ -35,8 +39,21 @@ function backgroundColor(node: XmlElementNode<'w'>, isSelected: boolean, selecte
     return 'bg-red-500';
   }
 
-  if (isPartiallyPreservedNotAnnotatedHurrian(node, path, rootNode)) {
-    return 'bg-yellow-300';
+  if (hurrianAnnotationConfig === undefined) {
+    hurrianAnnotationConfig = defaultHurrianAnnotationConfig;
+  }
+
+  if (isNotAnnotated(node) && isHurrian(node, path, rootNode)) {
+  const {highlightUnannotatedFragmentaryForms} = hurrianAnnotationConfig;
+    if (highlightUnannotatedFragmentaryForms) {
+      if (containsPreservedSign(node)) {
+        return 'bg-yellow-300';
+      }
+    } else {
+      if (!isFragmentary(node, path, rootNode)) {
+        return 'bg-yellow-300';
+      }
+    }
   }
 
   return undefined;
@@ -44,7 +61,7 @@ function backgroundColor(node: XmlElementNode<'w'>, isSelected: boolean, selecte
 
 
 export const wordNodeConfig: XmlSingleInsertableEditableNodeConfig<'w'> = {
-  replace: ({rootNode, node, path, renderChildren, isSelected}): ReactElement => {
+  replace: ({rootNode, node, path, renderChildren, isSelected, hurrianAnnotationConfig}): ReactElement => {
 
     const lbElement = rootNode
       ? getPriorSibling(rootNode, path, 'lb')
@@ -59,7 +76,7 @@ export const wordNodeConfig: XmlSingleInsertableEditableNodeConfig<'w'> = {
       isOnlySpaces(node)
         ? [isSelected ? selectedNodeClass : 'bg-gray-200']
         : [
-          backgroundColor(node, isSelected, node.attributes.mrp0sel?.trim(), path, rootNode),
+          backgroundColor(node, isSelected, node.attributes.mrp0sel?.trim(), path, rootNode, hurrianAnnotationConfig),
           {'text-red-600': node.children.length === 0}
         ]
     );
